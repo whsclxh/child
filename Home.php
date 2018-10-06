@@ -127,7 +127,7 @@ button {
   <img src="img/兒童e樂園.png">
 </div>
 <div class="divcss5-right">
-<form method="post" action="connect.php" action="update.php">
+<form method="post" action="connect.php">
   <div class="container">
     <label for="uname"><b>帳號(信箱)</b></label>
     <input type="email" placeholder="輸入帳號" name="id" required>

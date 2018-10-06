@@ -161,7 +161,8 @@
     </div>
     <div class="form-group">
       <label for="age">年齡</label>
-      <select class="form-control" id="age" name="age">
+      <input type="number" class="form-control" id="age" name="age" value=7>
+      <!-- <select class="form-control" id="age" name="age">
         <option>小於5歲</option>
         <option>5歲</option>
         <option>6歲</option>
@@ -172,7 +173,7 @@
         <option>11歲</option>
         <option>12歲</option>
         <option>大於12歲</option>
-      </select>
+      </select> -->
     </div>
     <fieldset class="form-group">
       <div class="form-check">

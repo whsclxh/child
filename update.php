@@ -172,52 +172,56 @@
 </script>
 <?php
 include 'mysql_connect.php';
+$link = connect_to_db();
 if($_SESSION['username'] != null){
         //將$_SESSION['username']丟給$id
         //這樣在下SQL語法時才可以給搜尋的值
         $id = $_SESSION['username'];
         //若以下$id直接用$_SESSION['username']將無法使用
-        $sql = "SELECT * FROM list where username='$id'";
-        $result = mysqli_query($link,$sql);
+        $sql = "SELECT * FROM users where username='$id'";
+        $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_row($result);
-        echo "<body>";
-        echo "<div class='all'>";
-        echo "<form class='form1' name='form' style='margin-left: 30%; margin-right: 30%;' method='post' action='update_finish.php' onclick='return false'>";
-        echo "<br/><br/><br/><br/><br/>";
-        echo "<div class='a'>";
-        echo "<br/>";
-        echo "<fieldset>";
-        echo "<legend style='text-align:center;'>修改資料</legend>";
-        echo "<br/>";
-        echo "<div class='form-group'>";
-        echo "<label for='exampleInputEmail'>帳號(電子信箱)</label>";
-        echo "<div>$row[0]</div>";
-        echo "</div>";
-        echo "<div class='form-group' name='psw'>";
-        echo "<label for='exampleInputPassword'>密碼</label>";
-        echo "<input type='password' class='form-control' id='exampleInputPassword' placeholder='至少8碼 至多15碼' name='pw' onblur='yanzheng(this.value)'>";
-        echo "</div>";
-        echo "<div class='form-group'>";
-        echo "<label for='exampleInputPassword'>再次輸入密碼</label>";
-        echo "<input type='password' class='form-control' id='exampleInputPasswordAgain' placeholder='至少8碼 至多15碼' name='pw2' onblur='testpw()'>";
-        echo "</div>";
-        echo "<div class='form-group'>";
-        echo "<label for='exampleInputNickname'>暱稱</label>";
-        echo "<input type='text' class='form-control' id='exampleInputNickname'  placeholder='輸入暱稱' name='nickname' onblur='testnn()'>";
-        echo "</div>";
-        echo "</fieldset>";
-        echo "<div>";
-        echo "<button class='btn btn-primary' onclick=\"javascript:location.href='Topic.php'\">返回</button>";
-        echo "    ";
-        echo "<button type='submit' class='btn btn-primary' id='button'>提交</button>";
-        echo "</div>";
-        echo "</div>";
-        echo "</form>";
-        echo "</div>";
-        echo "</body>";
+?>
+<body>";
+    <div class='all'>
+        <form class='form1' name='form' style='margin-left: 30%; margin-right: 30%;' method='post' action='update_finish.php' onclick='return false'>
+            <br/><br/><br/><br/><br/>
+            <div class='a'>
+                <br/>
+                <fieldset>
+                    <legend style='text-align:center;'>修改資料</legend>
+                    <br/>
+                    <div class='form-group'>
+                        <label for='exampleInputEmail'>帳號(電子信箱)</label>
+                        <div><?php echo $row[0]; ?></div>
+                    </div>
+                    <div class='form-group' name='psw'>
+                        <label for='exampleInputPassword'>密碼</label>
+                        <input type='password' class='form-control' id='exampleInputPassword' placeholder='至少8碼 至多15碼' name='pw' onblur='yanzheng(this.value)'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='exampleInputPassword'>再次輸入密碼</label>
+                        <input type='password' class='form-control' id='exampleInputPasswordAgain' placeholder='至少8碼 至多15碼' name='pw2' onblur='testpw()'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='exampleInputNickname'>暱稱</label>
+                        <input type='text' class='form-control' id='exampleInputNickname'  placeholder='輸入暱稱' name='nickname' onblur='testnn()'>
+                    </div>
+                </fieldset>
+                <div>
+                    <button class='btn btn-primary' onclick="javascript:location.href='Topic.php'">返回</button>
+                        
+                    <button type='submit' class='btn btn-primary' id='button'>提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<?php
 }
 else{   
         echo "<script>alert('技術上失誤,請洽服務人員!');</script>";
         echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
 }
+mysqli_close($link);
 ?>
