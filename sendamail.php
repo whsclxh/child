@@ -1,13 +1,13 @@
 <?php session_start(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php 
-include("class.phpmailer.php"); //匯入PHPMailer類別
-include("mysql_connect.php");
+include 'class.phpmailer.php'; //匯入PHPMailer類別
+include 'mysql_connect.php';
 $id = $_POST['email'];
 
 $sql = "SELECT * FROM list where username = '$id'";
-$result = mysql_query($sql);
-$row = @mysql_fetch_row($result);
+$result = mysqli_query($link,$sql);
+$row = @mysqli_fetch_row($result);
 	if($row[0] == $id){
 		$id = $_POST['email'];
         $mail= new PHPMailer(); //建立新物件

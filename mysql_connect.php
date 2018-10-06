@@ -6,16 +6,15 @@
 </head>
 <body>
 <?php
-$link = mysqli_connect("localhost", "whsclxh", "1234") 
-        or die("無法開啟MySQL資料庫連接!<br/>");
-$dbname = "newdatabase";
-// 開啟指定的資料庫
-if ( !mysqli_select_db($link, $dbname) )
-   die("無法開啟 $dbname 資料庫!<br/>");
-else
-   echo "資料庫: $dbname 開啟成功!<br/>";
+$link = mysqli_connect("127.0.0.1", "whsclxh", "1234","newdatabase"); 
 
-mysqli_close($link);  // 關閉資料庫連接
+if (!$link)
+{
+	echo "Failed to connect to MYSQL: " . mysqli_connect_error();
+}
+;
+
+
 ?>
 </body>
 </html>

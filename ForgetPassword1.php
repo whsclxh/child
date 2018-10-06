@@ -11,7 +11,7 @@
 	body {
       margin:0;
       padding:0;
-      background: #000 url(img/ModifyData.png) center center fixed no-repeat;
+      background: #000 url(img/修改資料頁.png) center center fixed no-repeat;
       -moz-background-size: cover;
       background-size: cover;
       height: 100%;
@@ -19,7 +19,7 @@
     .a{
     	margin-top: 0%;
     	width:100%;
-    	background-image: url(img/Wood.png);
+    	background-image: url(img/木板.png);
     	background-repeat: no-repeat;
     	background-size: cover;
     	background-position: center;

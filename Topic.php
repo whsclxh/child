@@ -34,7 +34,7 @@ include("mysql_connect.php");
 	body{
 	  margin:0;
       padding:0;
-      background: #000 url(img/Menu.png) center center fixed no-repeat;
+      background: #000 url(img/選單.png) center center fixed no-repeat;
       -moz-background-size: cover;
       background-size: cover;
       height: 100%;
@@ -241,7 +241,7 @@ include("mysql_connect.php");
 <body>
 	<div class="container">
 	<div class="left">
-  	<img src="img/Child.png">
+  	<img src="img/兒童e樂園.png">
   	</div>
   	<div class="right">
   	<ul>
@@ -256,10 +256,10 @@ include("mysql_connect.php");
     <br/><br/><br/>
 	<div style="text-align: center;" class="XX">
 		<input type="image" src="img/123.png" onClick="javascript:location.href='數學.html'" width="20%;" height="20%;">
-		<input type="image" src="img/1qa.png" onClick="javascript:location.href='國語.html'" width="20%;" height="20%;">
-		<input type="image" src="imgCognition.png" onClick="javascript:location.href='認知.html'" width="20%;" height="20%;">
+		<input type="image" src="img/ㄅㄆㄇ.png" onClick="javascript:location.href='國語.html'" width="20%;" height="20%;">
+		<input type="image" src="img/認知.png" onClick="javascript:location.href='認知.html'" width="20%;" height="20%;">
 		<input type="image" src="img/clock.png" onClick="javascript:location.href='時間.html'" width="20%;" height="20%;">
 	</div>
-    <div class="im"><img src="img/Home1.png"></div>
+	<div class="im"><img src="img/主題頁插圖.png"><div>
 </body>
 </html>

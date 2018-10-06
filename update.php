@@ -9,7 +9,7 @@
     body{
       margin:0;
       padding:0;
-      background: #000 url(img/ModifyData.png) center center fixed no-repeat;
+      background: #000 url(img/修改資料頁.png) center center fixed no-repeat;
       -moz-background-size: cover;
       background-size: cover;
       height: 100%;
@@ -17,7 +17,7 @@
     .all{
     margin-top: 0%;
     width:100%;
-    background-image: url(img/Wood.png);
+    background-image: url(img/木板.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -171,15 +171,15 @@
   }
 </script>
 <?php
-include("mysql_connect.php");
+include 'mysql_connect.php';
 if($_SESSION['username'] != null){
         //將$_SESSION['username']丟給$id
         //這樣在下SQL語法時才可以給搜尋的值
         $id = $_SESSION['username'];
         //若以下$id直接用$_SESSION['username']將無法使用
         $sql = "SELECT * FROM list where username='$id'";
-        $result = mysql_query($sql);
-        $row = mysql_fetch_row($result);
+        $result = mysqli_query($link,$sql);
+        $row = mysqli_fetch_row($result);
         echo "<body>";
         echo "<div class='all'>";
         echo "<form class='form1' name='form' style='margin-left: 30%; margin-right: 30%;' method='post' action='update_finish.php' onclick='return false'>";

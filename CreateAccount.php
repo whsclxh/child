@@ -10,7 +10,7 @@
     body {
       margin:0;
       padding:0;
-      background: #000 url(img/CreateAccount.png) center center fixed no-repeat;
+      background: #000 url(img/建立帳號頁.png) center center fixed no-repeat;
       -moz-background-size: cover;
       background-size: cover;
       height: 100%;
@@ -156,11 +156,11 @@
       <select class="form-control" id="sex" name="sex">
         <option>男</option>
         <option>女</option>
-        <option>保留</option>
+        
       </select>
     </div>
     <div class="form-group">
-      <label for="sex">性別</label>
+      <label for="age">年齡</label>
       <select class="form-control" id="age" name="age">
         <option>小於5歲</option>
         <option>5歲</option>

@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-include("mysql_connect.php");
+include 'mysql_connect.php';
 echo '<a href="logout.php">登出</a>  <br><br>';
 
 //此判斷為判定觀看此頁有沒有權限

@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-include("mysql_connect.php");
+include 'mysql_connect.php';
 
 $id = $_POST['id'];
 $pw = $_POST['pw'];
@@ -13,8 +13,8 @@ $nickname = $_POST['nickname'];
         $id = $_SESSION['username'];
     
         //更新資料庫資料語法
-        $sql = "update list set password='$pw', nickname='$nickname' where username='$id'";
-        if(mysql_query($sql)){
+        $sql = "update users set password='$pw', nickname='$nickname' where username='$id'";
+        if(mysqli_query($sql)){
                 echo "<script>alert('修改成功!');</script>";
                 echo '<meta http-equiv=REFRESH CONTENT=2;url=Topic.php>';
                 }
