@@ -138,7 +138,7 @@ button {
     <button type="submit">登入</button>
   </div>
     <div style="text-align: center;">
-    <sapn class="psw"><a style="color: black; font-weight: bold;" href="CreateAccount.php">建立帳號</a></span>
+    <span class="psw"><a style="color: black; font-weight: bold;" href="CreateAccount.php">建立帳號</a></span>
     |
     <span class="psw"><a style="color: black; font-weight: bold;" href="ForgetPassword1.php">忘記密碼</a></span>
     </div>

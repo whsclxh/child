@@ -15,7 +15,7 @@ if($_SESSION['username'] != null && $pw != null){
         //更新資料庫資料語法
         $sql = "update users set password='$pw', nickname='$nickname' where username='$id'";
         if(mysqli_query($link, $sql)){
-                echo "<script>alert('修改成功!');</script>";
+                echo "<script>alert('修改成功!');location.href='hello.noip.me/Home.php';</script>";
                 // echo '<meta http-equiv=REFRESH CONTENT=2;url=Topic.php>';
         }
         else {   
