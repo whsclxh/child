@@ -16,7 +16,7 @@ if($_SESSION['username'] != null && $pw != null){
         $sql = "update users set password='$pw', nickname='$nickname' where username='$id'";
         if(mysqli_query($link, $sql)){
                 echo "<script>alert('修改成功!');</script>";
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=Topic.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
                 unset($_SESSION['username']);
         }
         else {   
