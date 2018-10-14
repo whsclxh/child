@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="softkeys-0.0.1.css">
+  <title>Document</title>
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="softkeys-0.0.1.js"></script>
+<body>
+  <script src="data.js"></script>
+<script type="text/javascript">  
+var cart = JSON.parse ( jsonString ); 
+var rand=new Array(5);
+var C;
+for(var p=0;p<5;p++){
+    var x = Math.floor((Math.random() * 60) + 0);
+    if(rand.indexOf(x)>=0)
+    p--;
+    else
+    rand[p]=x;}
+
+for(var c=0;c<5;c++){
+C=rand[c];
+document.write('<img src="pic/'+C+'.jpg"height="100" width="150">')
+document.write("&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;"+cart.contents[C].one+"&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;");}
+var s=rand[0];
+var s1=rand[1];
+var s2=rand[2];
+var s3=rand[3];
+var s4=rand[4];
+
+
+window.onload=function(){
+var s6=document.getElementById("anwone");
+s6.value=cart.contents[s].two;
+var s7=document.getElementById("anwtwo");
+s7.value=cart.contents[s1].two;
+var s8=document.getElementById("anwthree");
+s8.value=cart.contents[s2].two;
+var s9=document.getElementById("anwfour");
+s9.value=cart.contents[s3].two;
+var s10=document.getElementById("anwfive");
+s10.value=cart.contents[s4].two;
+}
+
+
+
+// function LOL(){
+//   var x=document.getElementById("test").value;
+//   if(x==cart.contents[s].two)
+//   alert("yes");
+//   else
+//   alert("no");
+// }
+// function LOL1(){
+//   var x=document.getElementById("test1").value;
+//   if(x==cart.contents[s1].two)
+//   alert("yes");
+//   else
+//   alert("no");
+// }
+// function LOL2(){
+//   var x=document.getElementById("test2").value;
+//   if(x==cart.contents[s2].two)
+//   alert("yes");
+//   else
+//   alert("no");
+// }
+// function LOL3(){
+//   var x=document.getElementById("test3").value;
+//   if(x==cart.contents[s3].two)
+//   alert("yes");
+//   else
+//   alert("no");
+// }
+// function LOL4(){
+//   var x=document.getElementById("test4").value;
+//   if(x==cart.contents[s4].two)
+//   alert("yes");
+//   else
+//   alert("no");
+// }
+</script>
+<div class="container-fluid">
+            <div class="row">            
+          
+                    <form class="row form">
+                        <div class="col-sm-offset-4 col-sm-4 form-group">
+                            
+                            
+                        </div>
+
+                        <div style="top:300px;left:10px;position:absolute;" class="softkeys" data-target="input[name='code']"></div>
+                        <div style="top:300px;left:10px;position:absolute;" class="softkeys" data-target="input[name='code1']"></div>
+                        <div style="top:300px;left:10px;position:absolute;" class="softkeys" data-target="input[name='code2']"></div>
+                        <div style="top:300px;left:10px;position:absolute;" class="softkeys" data-target="input[name='code3']"></div>
+                        <div style="top:300px;left:10px;position:absolute;" class="softkeys" data-target="input[name='code4']"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function(){
+                $('.softkeys').softkeys({
+                    target : $('.softkeys').data('target'),
+                    layout : [
+                        [
+                            ['ㄅ','ㄅ'],
+                            ['ㄉ','!'],
+                            ['ˇ','@'],
+                            ['ˋ','#'],
+                            ['ˊ','$'],
+                            ['˙','%'],
+                            ['ㄓ','^'],
+                            ['ㄚ','&amp;'],
+                            ['ㄞ','*'],
+                            ['ㄢ','('],
+                            ['5',')'],
+                            ['6', '_'],
+                            ['7','+'],
+                            'delete'
+                        ],
+                        [
+                            'ㄆ','ㄊ','ㄍ','ㄐ','ㄔ','ㄗ','ㄧ','ㄛ','ㄟ','ㄣ',
+                            ['8','0'],
+                            ['9','0']
+                        ],
+                        [
+                            
+                            'ㄇ','ㄋ','ㄎ','ㄑ','ㄕ','ㄘ','ㄨ','ㄜ','ㄠ',
+                            ['ㄤ','ㄤ'],
+                            ["0",'&quot;'],
+                            ['+','|']
+                        ],
+                        [
+                            
+                            'ㄈ','ㄌ','ㄏ','ㄒ','ㄖ','ㄙ','ㄩ',
+                            ['ㄝ','ㄡ'],
+                            ['ㄡ','&gt;'],
+                            ['ㄥ','?'],
+                            ['-']
+                        ]
+                    ]
+                });
+            });
+        </script>
+<form method="post" action="chinese_finish.php">
+<div style="top:130px;left:0px;position:absolute;"><input type="text" id="test" name="code"></div>
+<div style="top:130px;left:280px;position:absolute;"><input type="text" id="test1" name="code1"></div>
+<div style="top:130px;left:560px;position:absolute;"><input type="text" id="test2" name="code2"></div>
+<div style="top:130px;left:840px;position:absolute;"><input type="text" id="test3" name="code3"></div>
+<div style="top:130px;left:1120px;position:absolute;"><input type="text" id="test4" name="code4"></div>
+<input type="hidden" id="anwone" name="Anwone">
+<input type="hidden" id="anwtwo" name="Anwtwo">
+<input type="hidden" id="anwthree" name="Anwthree">
+<input type="hidden" id="anwfour" name="Anwfour">
+<input type="hidden" id="anwfive" name="Anwfive">
+<div  style="top:230px;left:1120px;position:absolute;"><button  type="submit" name="" value="hi">確認</div>
+
+</form>
+</body>
+</html>

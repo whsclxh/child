@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	window.onload=function(){
+		var a1 = document.getElementById("anw1");
+		a1.value = num[0];
+		var a2 = document.getElementById("anw2");        
+		a2.value = num[1];
+		var a3 = document.getElementById("anw3");        
+		a3.value = num[2];
+		var a4 = document.getElementById("anw4");        
+		a4.value = num[3];
+		var a5 = document.getElementById("anw5");        
+		a5.value = num[4];
+		var a6 = document.getElementById("anw6");
+		a6.value = num[5];
+		var a7 = document.getElementById("anw7");        
+		a7.value = num[6];
+		var a8 = document.getElementById("anw8");        
+		a8.value = num[7];
+		var a9 = document.getElementById("anw9");        
+		a9.value = num[8];
+		var a10 = document.getElementById("anw10");        
+		a10.value = num[9];
+		var p1 = document.getElementById("pic1");        								//傳送圖片樣式到後端
+		p1.value = pic[0];
+		var p2 = document.getElementById("pic2");        
+		p2.value = pic[1];
+		var p3 = document.getElementById("pic3");        
+		p3.value = pic[2];
+		var p4 = document.getElementById("pic4");        
+		p4.value = pic[3];
+		var p5 = document.getElementById("pic5");        
+		p5.value = pic[4];
+		var p6 = document.getElementById("pic6");        								//傳送圖片樣式到後端
+		p6.value = pic[5];
+		var p7 = document.getElementById("pic7");        
+		p7.value = pic[6];
+		var p8 = document.getElementById("pic8");        
+		p8.value = pic[7];
+		var p9 = document.getElementById("pic9");        
+		p9.value = pic[8];
+		var p10 = document.getElementById("pic10");        
+		p10.value = pic[9];
+	}
+	function getRandom(minNum,maxNum){	
+		return Math.floor(Math.random()*(maxNum-minNum+1))+minNum;
+	}
+
+	function getRandomArray(minNum,maxNum,n){	                                         //隨機產生不重覆的n個數字
+		var rdmArray=[n];		                                                             //儲存產生的陣列
+		for(var i=0;i<n;i++){
+			var rdm=0;		                                                             //暫存的亂數
+			do{
+				var exist=false;															 //此亂數是否已存在
+				rdm=getRandom(minNum, maxNum);											 //取得亂數
+																							 //檢查亂數是否存在於陣列中，若存在則繼續回圈
+				if(rdmArray.indexOf(rdm)!=-1) exist=true;
+			}while(exist);																 //產生沒出現過的亂數時離開迴圈
+			rdmArray[i]=rdm;
+		}
+		return rdmArray;
+	}
+
+	var num=getRandomArray(4,14,10);															 //這是圖片個數的array
+	var pic=getRandomArray(0,11,10);															 //這是選擇圖片的array
+
+	function pictures(x){
+		var imgurl=[
+    	'img/fruit/apple.png',
+    	'img/fruit/banana.png',
+    	'img/fruit/kiwi.png',
+    	'img/fruit/melon.png',
+    	'img/fruit/orange.png',
+    	'img/fruit/peach.png',
+    	'img/fruit/pear.png',
+    	'img/fruit/pear2.png',
+    	'img/fruit/pepper.png',
+    	'img/fruit/persimmon.png',
+    	'img/fruit/strawberry.png',
+    	'img/fruit/tomato.png',
+	];
+		for(var i=1;i<=num[x];i++){
+			document.write('<img src="'+imgurl[pic[x]]+'">');
+		}
+	}
+</script>
+<body>
+	<h3>數一數,並選出比較多的那種,一格1分</h3>
+	<form method="post" action="cognition_finish.php">
+		<table border="1" width="100%">
+			<tr>
+				<td style="text-align: center;">圖</td>
+				<td style="text-align: center;">個數</td>
+				<td style="text-align: center;">選比較多</td>
+			</tr>
+			<tr>
+				<td width="90%"><script>pictures(0);</script></td>
+				<td width="5%" style="text-align: center;"><input type="number" id="q11" name="question11" ></td>
+				<td width="5%" style="text-align: center;"><input id="qq1" name="question1" type="radio" value="1" checked /></td>
+			</tr>
+			<tr>
+				<td width="90%"><script>pictures(1);</script></td>
+				<td width="5%" style="text-align: center;"><input type="number" id="q12" name="question12"></td>
+				<td width="5%" style="text-align: center;"><input id="qq2" name="question1" type="radio" value="2"/></td>
+			</tr>
+		</table>
+		<br/>
+		<table border="1" width="100%">
+			<tr>
+				<td width="90%"><script>pictures(2);</script></td>
+				<td width="5%" style="text-align: center;"><input type="number" id="q21" name="question21" ></td>
+				<td width="5%" style="text-align: center;"><input id="qq3" name="question2" value="1" type="radio" checked/></td>
+			</tr>
+			<tr>
+				<td width="90%"><script>pictures(3);</script></td>
+				<td width="5%" style="text-align: center;"><input type="number" id="q22" name="question22" ></td>
+				<td width="5%" style="text-align: center;"><input id="qq4" name="question2" type="radio" value="2" /></td>
+			</tr>
+		</table>
+		<br/>
+		<table border="1" width="100%">
+			<tr>
+				<td width="90%"><script>pictures(4);</script></td>
+				<td width="5%" style="text-align: center;"><input type="number" id="q31" name="question31" ></td>
+				<td width="5%" style="text-align: center;"><input id="qq5" name="question3" type="radio" value="1" checked/></td>
+			</tr>
+			<tr>
+				<td width="90%" ><script>pictures(5);</script></td>
+				<td width="5%" style="text-align: center;"><input type="number" id="q32" name="question32" ></td>
+				<td width="5%" style="text-align: center;"><input id="qq6" name="question3" type="radio" value="2"/></td>
+			</tr>
+		</table>
+		<br/>
+		<table border="1" width="100%">
+			<tr>
+				<td width="90%"><script>pictures(6);</script></td>
+				<td width="5%" style="text-align: center;"><input type="number" id="q41" name="question41" ></td>
+				<td width="5%" style="text-align: center;"><input id="qq7" name="question4" type="radio" value="1" checked/></td>
+			</tr>
+			<tr>
+				<td width="90%"><script>pictures(7);</script></td>
+				<td width="5%" style="text-align: center;"><input type="number" id="q42" name="question42" ></td>
+				<td width="5%" style="text-align: center;"><input id="qq8" name="question4" type="radio" value="2"/></td>
+			</tr>
+		</table>
+		<br/>
+		<table border="1" width="100%">
+			<tr>
+				<td width="90%"><script>pictures(8);</script></td>
+				<td width="5%" style="text-align: center;"><input type="number" id="q51" name="question51" ></td>
+				<td width="5%" style="text-align: center;"><input id="qq9" name="question5" type="radio" value="1" checked/></td>
+			</tr>
+			<tr>
+				<td width="90%"><script>pictures(9);</script></td>
+				<td width="5%" style="text-align: center;"><input type="number" id="q52" name="question52" ></td>
+				<td width="5%" style="text-align: center;"><input id="qq10" name="question5" type="radio" value="2"/></td>
+			</tr>
+		</table>
+		<button>離開</button>
+		<button type="submit" id="button">結束作答</button>
+		<input type="hidden" id="anw1" name="anwser1"/>				
+		<input type="hidden" id="anw2" name="anwser2"/>
+		<input type="hidden" id="anw3" name="anwser3"/>
+		<input type="hidden" id="anw4" name="anwser4"/>
+		<input type="hidden" id="anw5" name="anwser5"/>
+		<input type="hidden" id="anw6" name="anwser6"/>				
+		<input type="hidden" id="anw7" name="anwser7"/>
+		<input type="hidden" id="anw8" name="anwser8"/>
+		<input type="hidden" id="anw9" name="anwser9"/>
+		<input type="hidden" id="anw10" name="anwser10"/>
+		<input type="hidden" id="pic1" name="picture1"/>				
+		<input type="hidden" id="pic2" name="picture2"/>
+		<input type="hidden" id="pic3" name="picture3"/>
+		<input type="hidden" id="pic4" name="picture4"/>
+		<input type="hidden" id="pic5" name="picture5"/>
+		<input type="hidden" id="pic6" name="picture6"/>				
+		<input type="hidden" id="pic7" name="picture7"/>
+		<input type="hidden" id="pic8" name="picture8"/>
+		<input type="hidden" id="pic9" name="picture9"/>
+		<input type="hidden" id="pic10" name="picture10"/>
+	</form>
+</body>
+</html>

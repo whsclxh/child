@@ -1,0 +1,29 @@
+<?php 
+$anw1=$_POST['code'];
+$anw2=$_POST['code1'];
+$anw3=$_POST['code2'];
+$anw4=$_POST['code3'];
+$anw5=$_POST['code4'];
+$s1=$_POST['Anwone'];
+$s2=$_POST['Anwtwo'];
+$s3=$_POST['Anwthree'];
+$s4=$_POST['Anwfour'];
+$s5=$_POST['Anwfive'];
+$score=0;
+if(($anw1)==($s1)){
+	$score=$score+4;
+}
+if(($anw2)==($s2)){
+	$score=$score+4;
+}
+if(($anw3)==($s3)){
+	$score=$score+4;
+}
+if(($anw4)==($s4)){
+	$score=$score+4;
+}
+if(($anw5)==($s5)){
+	$score=$score+4;
+}
+?>
+<?php echo "<h1>得分為:$score 分!</h1>";

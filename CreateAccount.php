@@ -8,13 +8,23 @@
 	<title>申請帳號</title>
   <style type="text/css">
     body {
-      margin:0;
-      padding:0;
-      background: #000 url(img/建立帳號頁.png) center center fixed no-repeat;
-      -moz-background-size: cover;
-      background-size: cover;
-      height: 100%;
+     background: #000 url(img/account.png) center center fixed
+     no-repeat;
+     background-position:center center;
+     -webkit-background-size:cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     background-size:cover;
+     height:100%;
+     overflow:hidden;
     }
+
+
+    body{
+    height:100%;
+    } 
+
+    
     body form{
       margin-right: 30%;
       margin-top: 5%;
@@ -130,7 +140,7 @@
  });
   </script>
 </head>
-<body style="background-color: pink">
+<body>
 	<form name="form1" method="post" action="register_finish.php" onclick="return false">
   <fieldset>
     <legend style="color: black; font-weight: bold;">建立帳號</legend>

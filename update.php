@@ -6,14 +6,23 @@
 <title>修改資料</title>
 <script src="jquery-3.3.1.min.js"></script>
 <style type="text/css">
-    body{
-      margin:0;
-      padding:0;
-      background: #000 url(img/修改資料頁.png) center center fixed no-repeat;
-      -moz-background-size: cover;
-      background-size: cover;
-      height: 100%;
+    body {
+     background: #000 url(img/Modifydata.png) center center fixed
+     no-repeat;
+     background-position:center-center;
+     -webkit-background-size:cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     background-size:cover;
+     height:100%;
+     overflow:hidden;
     }
+
+
+    body{
+    height:100%;
+    }
+
     .all{
     margin-top: 0%;
     width:100%;

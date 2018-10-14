@@ -8,18 +8,27 @@
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <style type="text/css">
-	body {
-      margin:0;
-      padding:0;
-      background: #000 url(img/修改資料頁.png) center center fixed no-repeat;
-      -moz-background-size: cover;
-      background-size: cover;
-      height: 100%;
+         body {
+     background: #000 url(img/Modifydata.png) center center fixed
+     no-repeat;
+     background-position:center center;
+     -webkit-background-size:cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     background-size:cover;
+     height:100%;
+     overflow:hidden;
     }
+
+
+    body{
+    height:100%;
+    }
+
     .a{
     	margin-top: 0%;
     	width:100%;
-    	background-image: url(img/木板.png);
+    	background-image: url(img/board.png);
     	background-repeat: no-repeat;
     	background-size: cover;
     	background-position: center;

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1~15的數</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<style type="text/css">
+	.ta{
+		margin-left: 1%;
+		margin-top: 1%;
+	}
+</style>
+<script src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	window.onload = function(){        
+		var a = document.getElementById("q11");        									//設置input value
+		a.value = no1[0];
+		var b = document.getElementById("q12");        
+		b.value = no1[1];
+		var c = document.getElementById("q13");        
+		c.value = no1[2];
+		var d = document.getElementById("q14");        
+		d.value = no1[3];
+		var e = document.getElementById("q15");        
+		e.value = no1[4];
+		var f = document.getElementById("q21");        
+		f.value = no2[0];
+		var g = document.getElementById("q22");        
+		g.value = no2[1];
+		var h = document.getElementById("q23");        
+		h.value = no2[2];
+		var i = document.getElementById("q24");        
+		i.value = no2[3];
+		var j = document.getElementById("q25");        
+		j.value = no2[4];
+		var k = document.getElementById("q31");        
+		k.value = no3[0];
+		var l = document.getElementById("q32");        
+		l.value = no3[1];
+		var m = document.getElementById("q33");        
+		m.value = no3[2];
+		var n = document.getElementById("q34");        
+		n.value = no3[3];
+		var o = document.getElementById("q35");        
+		o.value = no3[4];
+		var p = document.getElementById("q41");        
+		p.value = no4[0];
+		var q = document.getElementById("q42");        
+		q.value = no4[1];
+		var r = document.getElementById("q43");        
+		r.value = no4[2];
+		var s = document.getElementById("q44");        
+		s.value = no4[3];
+		var t = document.getElementById("q45");        
+		t.value = no4[4];
+		var u = document.getElementById("q51");        
+		u.value = no5[0];
+		var v = document.getElementById("q52");        
+		v.value = no5[1];
+		var w = document.getElementById("q53");        
+		w.value = no5[2];
+		var x = document.getElementById("q54");        
+		x.value = no5[3];
+		var y = document.getElementById("q55");        
+		y.value = no5[4];
+		var a1 = document.getElementById("anw1");        								//傳送答案到後端
+		a1.value = num[0];
+		var a2 = document.getElementById("anw2");        
+		a2.value = num[1];
+		var a3 = document.getElementById("anw3");        
+		a3.value = num[2];
+		var a4 = document.getElementById("anw4");        
+		a4.value = num[3];
+		var a5 = document.getElementById("anw5");        
+		a5.value = num[4];
+		var p1 = document.getElementById("pic1");        								//傳送圖片樣式到後端
+		p1.value = pic[0];
+		var p2 = document.getElementById("pic2");        
+		p2.value = pic[1];
+		var p3 = document.getElementById("pic3");        
+		p3.value = pic[2];
+		var p4 = document.getElementById("pic4");        
+		p4.value = pic[3];
+		var p5 = document.getElementById("pic5");        
+		p5.value = pic[4];
+		var aa = document.getElementById("opt11");        									//設置input value
+		aa.value = no1[0];
+		var bb = document.getElementById("opt12");        
+		bb.value = no1[1];
+		var cc = document.getElementById("opt13");        
+		cc.value = no1[2];
+		var dd = document.getElementById("opt14");        
+		dd.value = no1[3];
+		var ee = document.getElementById("opt15");        
+		ee.value = no1[4];
+		var ff= document.getElementById("opt21");        
+		ff.value = no2[0];
+		var gg = document.getElementById("opt22");        
+		gg.value = no2[1];
+		var hh = document.getElementById("opt23");        
+		hh.value = no2[2];
+		var ii = document.getElementById("opt24");        
+		ii.value = no2[3];
+		var jj = document.getElementById("opt25");        
+		jj.value = no2[4];
+		var kk = document.getElementById("opt31");        
+		kk.value = no3[0];
+		var ll = document.getElementById("opt32");        
+		ll.value = no3[1];
+		var mm = document.getElementById("opt33");        
+		mm.value = no3[2];
+		var nn = document.getElementById("opt34");        
+		nn.value = no3[3];
+		var oo = document.getElementById("opt35");        
+		oo.value = no3[4];
+		var pp = document.getElementById("opt41");        
+		pp.value = no4[0];
+		var qq = document.getElementById("opt42");        
+		qq.value = no4[1];
+		var rr = document.getElementById("opt43");        
+		rr.value = no4[2];
+		var ss = document.getElementById("opt44");        
+		ss.value = no4[3];
+		var tt = document.getElementById("opt45");        
+		tt.value = no4[4];
+		var uu = document.getElementById("opt51");        
+		uu.value = no5[0];
+		var vv = document.getElementById("opt52");        
+		vv.value = no5[1];
+		var ww = document.getElementById("opt53");        
+		ww.value = no5[2];
+		var xx = document.getElementById("opt54");        
+		xx.value = no5[3];
+		var yy = document.getElementById("opt55");        
+		yy.value = no5[4];
+    };
+
+	function getRandom(minNum,maxNum){	
+		return Math.floor(Math.random()*(maxNum-minNum+1))+minNum;
+	}
+
+	function getRandomArray(minNum,maxNum,n){	                                         //隨機產生不重覆的n個數字
+		var rdmArray=[n];		                                                             //儲存產生的陣列
+		for(var i=0;i<n;i++){
+			var rdm=0;		                                                             //暫存的亂數
+			do{
+				var exist=false;															 //此亂數是否已存在
+				rdm=getRandom(minNum, maxNum);											 //取得亂數
+																							 //檢查亂數是否存在於陣列中，若存在則繼續回圈
+				if(rdmArray.indexOf(rdm)!=-1) exist=true;
+			}while(exist);																 //產生沒出現過的亂數時離開迴圈
+			rdmArray[i]=rdm;
+		}
+		return rdmArray;
+	}
+
+	var num=getRandomArray(4,14,5);															 //這是圖片個數的array
+	var pic=getRandomArray(0,11,5);															 //這是選擇圖片的array
+
+	function pictures(x){
+		var imgurl=[
+    	'img/fruit/apple.png',
+    	'img/fruit/banana.png',
+    	'img/fruit/kiwi.png',
+    	'img/fruit/melon.png',
+    	'img/fruit/orange.png',
+    	'img/fruit/peach.png',
+    	'img/fruit/pear.png',
+    	'img/fruit/pear2.png',
+    	'img/fruit/pepper.png',
+    	'img/fruit/persimmon.png',
+    	'img/fruit/strawberry.png',
+    	'img/fruit/tomato.png',
+	];
+		for(var i=1;i<=num[x];i++){
+			document.write('<img src="'+imgurl[pic[x]]+'">');
+		}
+	}
+
+	function checkoption(x){
+		var no=[];
+		do{	
+			var a=true;
+			no=getRandomArray(num[x]-3,num[x]+3,5);
+				if(no.indexOf(num[x])!=-1) 
+					var a=false;
+			}while(a);
+		return no;
+	}
+
+	var no1=checkoption(0);
+	var no2=checkoption(1);
+	var no3=checkoption(2);
+	var no4=checkoption(3);
+	var no5=checkoption(4);
+
+	function write(p,q){
+		document.write(p[q]);
+	}
+</script>
+<body>
+	<form method="post" action="math_finish.php">
+		<div class="ta">
+		<table border="1">
+		<h2>數一數,選出正確的數量,一題4分</h2>
+		<tr>
+		<td>1.</td>
+		<td class="a"><script>pictures(0);</script></td>
+		<td class="b">
+			<label><input id="q11" name="question1" type="radio" checked /><script>write(no1,0);</script></label>
+			<label><input id="q12" name="question1" type="radio"/><script>write(no1,1);</script></label>
+			<label><input id="q13" name="question1" type="radio"/><script>write(no1,2);</script></label>
+			<label><input id="q14" name="question1" type="radio"/><script>write(no1,3);</script></label>
+			<label><input id="q15" name="question1" type="radio"/><script>write(no1,4);</script></label>
+		</td>
+		</tr>
+		<tr>
+		<td>2.</td>
+		<td class="a"><script>pictures(1);</script></td>
+		<td class="b">
+			<label><input id="q21" name="question2" type="radio" checked/><script>write(no2,0);</script></label>
+			<label><input id="q22" name="question2" type="radio"/><script>write(no2,1);</script></label>
+			<label><input id="q23" name="question2" type="radio"/><script>write(no2,2);</script></label>
+			<label><input id="q24" name="question2" type="radio"/><script>write(no2,3);</script></label>
+			<label><input id="q25" name="question2" type="radio"/><script>write(no2,4);</script></label>
+		</td>
+		</tr>
+		<tr>
+		<td>3.</td>
+		<td class="a"><script>pictures(2);</script></td>
+		<td class="b">
+			<label><input id="q31" name="question3" type="radio" checked/><script>write(no3,0);</script></label>
+			<label><input id="q32" name="question3" type="radio"/><script>write(no3,1);</script></label>
+			<label><input id="q33" name="question3" type="radio"/><script>write(no3,2);</script></label>
+			<label><input id="q34" name="question3" type="radio"/><script>write(no3,3);</script></label>
+			<label><input id="q35" name="question3" type="radio"/><script>write(no3,4);</script></label>
+		</td>
+		</tr>
+		<tr>
+		<td>4.</td>
+		<td class="a"><script>pictures(3);</script></td>
+		<td class="b">
+			<label><input id="q41" name="question4" type="radio" checked/><script>write(no4,0);</script></label>
+			<label><input id="q42" name="question4" type="radio"/><script>write(no4,1);</script></label>
+			<label><input id="q43" name="question4" type="radio"/><script>write(no4,2);</script></label>
+			<label><input id="q44" name="question4" type="radio"/><script>write(no4,3);</script></label>
+			<label><input id="q45" name="question4" type="radio"/><script>write(no4,4);</script></label>
+		</td>
+		</tr>
+		<tr>
+		<td>5.</td>
+		<td class="a"><script>pictures(4);</script></td>
+		<td class="b">
+			<label><input id="q51" name="question5" type="radio" checked/><script>write(no5,0);</script></label>
+			<label><input id="q52" name="question5" type="radio"/><script>write(no5,1);</script></label>
+			<label><input id="q53" name="question5" type="radio"/><script>write(no5,2);</script></label>
+			<label><input id="q54" name="question5" type="radio"/><script>write(no5,3);</script></label>
+			<label><input id="q55" name="question5" type="radio"/><script>write(no5,4);</script></label>
+		</td>
+		</tr>
+		</table>
+		<input type="hidden" id="anw1" name="anwser1"/>				
+		<input type="hidden" id="anw2" name="anwser2"/>
+		<input type="hidden" id="anw3" name="anwser3"/>
+		<input type="hidden" id="anw4" name="anwser4"/>
+		<input type="hidden" id="anw5" name="anwser5"/>
+		<input type="hidden" id="pic1" name="picture1"/>				
+		<input type="hidden" id="pic2" name="picture2"/>
+		<input type="hidden" id="pic3" name="picture3"/>
+		<input type="hidden" id="pic4" name="picture4"/>
+		<input type="hidden" id="pic5" name="picture5"/>
+		<input type="hidden" id="opt11" name="option11"/>
+		<input type="hidden" id="opt12" name="option12"/>
+		<input type="hidden" id="opt13" name="option13"/>
+		<input type="hidden" id="opt14" name="option14"/>
+		<input type="hidden" id="opt15" name="option15"/>
+		<input type="hidden" id="opt21" name="option21"/>
+		<input type="hidden" id="opt22" name="option22"/>
+		<input type="hidden" id="opt23" name="option23"/>
+		<input type="hidden" id="opt24" name="option24"/>
+		<input type="hidden" id="opt25" name="option25"/>
+		<input type="hidden" id="opt31" name="option31"/>
+		<input type="hidden" id="opt32" name="option32"/>
+		<input type="hidden" id="opt33" name="option33"/>
+		<input type="hidden" id="opt34" name="option34"/>
+		<input type="hidden" id="opt35" name="option35"/>
+		<input type="hidden" id="opt41" name="option41"/>
+		<input type="hidden" id="opt42" name="option42"/>
+		<input type="hidden" id="opt43" name="option43"/>
+		<input type="hidden" id="opt44" name="option44"/>
+		<input type="hidden" id="opt45" name="option45"/>
+		<input type="hidden" id="opt51" name="option51"/>
+		<input type="hidden" id="opt52" name="option52"/>
+		<input type="hidden" id="opt53" name="option53"/>
+		<input type="hidden" id="opt54" name="option54"/>
+		<input type="hidden" id="opt55" name="option55"/>
+		<button>離開</button>
+		<button type="submit" id="button">結束作答</button>
+		</div>
+	</form>
+</body>
+</html>

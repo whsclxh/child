@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <script src="data.js"></script>
+<script type="text/javascript">  
+var cart = JSON.parse ( jsonString ); 
+var rand=new Array(5);
+var C;
+for(var p=0;p<5;p++){
+    var x = Math.floor((Math.random() * 60) + 0);
+    if(rand.indexOf(x)>=0)
+    p--;
+    else
+    rand[p]=x;}
+
+for(var c=0;c<5;c++){
+C=rand[c];
+document.write('<img src="pic/'+C+'.jpg"height="100" width="150">')
+document.write("&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;"+cart.contents[C].one+"&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;");}
+var s=rand[0];
+var s1=rand[1];
+var s2=rand[2];
+var s3=rand[3];
+var s4=rand[4];
+function LOL(){
+  var x=document.getElementById("test").value;
+  if(x==cart.contents[s].two)
+  alert("yes");
+  else
+  alert("no");
+}
+function LOL1(){
+  var x=document.getElementById("test1").value;
+  if(x==cart.contents[s1].two)
+  alert("yes");
+  else
+  alert("no");
+}
+function LOL2(){
+  var x=document.getElementById("test2").value;
+  if(x==cart.contents[s2].two)
+  alert("yes");
+  else
+  alert("no");
+}
+function LOL3(){
+  var x=document.getElementById("test3").value;
+  if(x==cart.contents[s3].two)
+  alert("yes");
+  else
+  alert("no");
+}
+function LOL4(){
+  var x=document.getElementById("test4").value;
+  if(x==cart.contents[s4].two)
+  alert("yes");
+  else
+  alert("no");
+}
+</script>
+<P><input type="text" id="test"></P> 
+<div style="top:130px;left:280px;position:absolute;"><input type="text" id="test1"></div>
+<div style="top:130px;left:560px;position:absolute;"><input type="text" id="test2"></div>
+<div style="top:130px;left:840px;position:absolute;"><input type="text" id="test3"></div>
+<div style="top:130px;left:1120px;position:absolute;"><input type="text" id="test4"></div>
+<button onclick="LOL()">Click me</button>
+<div style="top:160px;left:280px;position:absolute;"><button onclick="LOL1()">Click me</button></div>
+<div style="top:160px;left:560px;position:absolute;"><button onclick="LOL2()">Click me</button></div>
+<div style="top:160px;left:840px;position:absolute;"><button onclick="LOL3()">Click me</button></div>
+<div style="top:160px;left:1120px;position:absolute;"><button onclick="LOL4()">Click me</button></div>
+</body>
+</html>

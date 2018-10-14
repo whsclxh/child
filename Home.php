@@ -3,18 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
 <link rel="stylesheet" type="text/css" href="css/default.css">
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <style>
-body {
-      margin:0;
-      padding:0;
-      background: #000 url(img/首頁圖.png) center center fixed no-repeat;
-      -moz-background-size: cover;
-      background-size: cover;
-      height: 100%;
-      max-width: 100%;
+    body {
+     background: #000 url(img/home.png) center center fixed
+     no-repeat;
+     background-position:center-center;
+     -webkit-background-size:cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     background-size:cover;
+     height:100%;
+     overflow:hidden;
     }
+
+
+    body{
+    height:100%;
+    }
+
 .t{
   top:0;
   right:0;
@@ -124,7 +133,7 @@ button {
 <body>
 <header class="htmleaf-header">
 <div class="t">
-  <img src="img/兒童e樂園.png">
+  <img src="img/e.png">
 </div>
 <div class="divcss5-right">
 <form method="post" action="connect.php">

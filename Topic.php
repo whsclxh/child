@@ -31,14 +31,23 @@ include("mysql_connect.php");
 	width: 350px;
 	margin-bottom: 0%;
 }
-	body{
-	  margin:0;
-      padding:0;
-      background: #000 url(img/選單.png) center center fixed no-repeat;
-      -moz-background-size: cover;
-      background-size: cover;
-      height: 100%;
-	}
+    html {
+     background: #000 url(img/menu.png) center center fixed
+     no-repeat;
+     background-position:center center;
+     -webkit-background-size:cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     background-size:cover;
+     height:100%;
+     overflow:hidden;
+    }
+
+
+    body{
+    height:100%;
+    }
+
 	.left{
   		float: left;
    		width: 70%;
@@ -241,7 +250,7 @@ include("mysql_connect.php");
 <body>
 	<div class="container">
 	<div class="left">
-  	<img src="img/兒童e樂園.png">
+  	<img src="img/e.png">
   	</div>
   	<div class="right">
   	<ul>
@@ -255,11 +264,11 @@ include("mysql_connect.php");
     </div>
     <br/><br/><br/>
 	<div style="text-align: center;" class="XX">
-		<input type="image" src="img/123.png" onClick="javascript:location.href='數學.html'" width="20%;" height="20%;">
-		<input type="image" src="img/ㄅㄆㄇ.png" onClick="javascript:location.href='國語.html'" width="20%;" height="20%;">
-		<input type="image" src="img/認知.png" onClick="javascript:location.href='認知.html'" width="20%;" height="20%;">
-		<input type="image" src="img/clock.png" onClick="javascript:location.href='時間.html'" width="20%;" height="20%;">
+		<input type="image" src="img/123.png" onClick="javascript:location.href='math.html'" width="20%;" height="20%;">
+		<input type="image" src="img/chinese.png" onClick="javascript:location.href='chinese.html'" width="20%;" height="20%;">
+		<input type="image" src="img/cognition.png" onClick="javascript:location.href='cognition.html'" width="20%;" height="20%;">
+		<input type="image" src="img/clock.png" onClick="javascript:location.href='time.html'" width="20%;" height="20%;">
 	</div>
-	<div class="im"><img src="img/主題頁插圖.png"><div>
+	<div class="im"><img src="img/illustration.png"><div>
 </body>
 </html>

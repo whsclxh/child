@@ -1,0 +1,48 @@
+<style>
+.table12_2 table {
+	width:100%;
+	margin:15px 0;
+	border:0;
+}
+.table12_2 th {
+	background-color:#ACF3FF;
+	color:#000000
+}
+.table12_2,.table12_2 th,.table12_2 td {
+	font-size:0.95em;
+	text-align:center;
+	padding:4px;
+	border-collapse:collapse;
+}
+.table12_2 th,.table12_2 td {
+	border: 1px solid #90effe;
+	border-width:1px 0 1px 0;
+	border:2px outset #ffffff;
+}
+.table12_2 tr {
+	border: 1px solid #ffffff;
+}
+.table12_2 tr:nth-child(odd){
+	background-color:#e3fbfe;
+}
+.table12_2 tr:nth-child(even){
+	background-color:#ffffff;
+}
+</style>
+<table class=table12_2>
+<tr>
+	<th>SAMPLE</th><th>SAMPLE</th><th>SAMPLE</th>
+</tr>
+<tr>
+	<td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td>
+</tr>
+<tr>
+	<td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td>
+</tr>
+	<tr>
+	<td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td>
+</tr>
+<tr>
+	<td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td>
+</tr>
+</table>
