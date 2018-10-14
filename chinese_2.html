@@ -39,58 +39,24 @@ for(var y=0;y<5;y++){
     else
     rand2[y]=P;
 }
-
+var rand3=new Array(5);
 
 for(var T=0;T<5;T++){
 C=rand[rand2[T]];
 var K=T+1;
 document.write(K+"."+cart.contents[C].one+cart.contents[C].two+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;");
+rand3[rand2[T]]=T+1;
 }
-var s=rand[0];
-var s1=rand[1];
-var s2=rand[2];
-var s3=rand[3];
-var s4=rand[4];
-
-var l=document.getElementById("test").innerHTML;    
-var l2=document.getElementById("test1");    
-var l3=document.getElementById("test2");    
-var l4=document.getElementById("test3");    
-var l5=document.getElementById("test4");  
-
-function myFunction() {
-alert(l);
-}
-
-// var j=l.value;
-// var j2=l2.value;
-// var j3=l3.value;
-// var j4=l4.value;
-// var j5=l5.value;
+s=rand3[0];
+s1=rand3[1];
+s2=rand3[2];
+s3=rand3[3];
+s4=rand3[4];  
 
 
-// var L=rand[rand2[j-1]];
-// var L2=rand[rand2[j2-1]];
-// var L3=rand[rand2[j3-1]];
-// var L4=rand[rand2[j4-1]];
-// var L5=rand[rand2[j5-1]];  
 
 
 window.onload=function(){
-
-// var s6=document.getElementById("anwone");
-// s6.value=L;
-// var s7=document.getElementById("anwtwo");
-// s7.value=L2;
-// var s8=document.getElementById("anwthree");
-// s8.value=L3;
-// var s9=document.getElementById("anwfour");
-// s9.value=L4;
-// var s10=document.getElementById("anwfive");
-// s10.value=L5;
-
-
-
 var s11=document.getElementById("anwone1");
 s11.value=s;
 var s12=document.getElementById("anwtwo1");
@@ -102,14 +68,14 @@ s14.value=s3;
 var s15=document.getElementById("anwfive1");
 s15.value=s4;
 }
-
 </script>
-<form method="post" action="chinese2_finish.php">
-<div style="top:50px;left:280px;position:absolute;"><input type="text"  id="test"  name="code"></div>
-<div style="top:200px;left:280px;position:absolute;"><input type="text" id="test1" name="code1"></div>
-<div style="top:350px;left:280px;position:absolute;"><input type="text" id="test2" name="code2"></div>
-<div style="top:500px;left:280px;position:absolute;"><input type="text" id="test3" name="code3"></div>
-<div style="top:650px;left:280px;position:absolute;"><input type="text" id="test4" name="code4"></div>
+<form   name="myform" method="post" action="chinese2_finish.php">
+<div style="top:50px;left:280px;position:absolute;"><input type="number"  id="test"  name="code"/></div>
+<div style="top:200px;left:280px;position:absolute;"><input type="number" id="test1" name="code1"></div>
+<div style="top:350px;left:280px;position:absolute;"><input type="number" id="test2" name="code2"></div>
+<div style="top:500px;left:280px;position:absolute;"><input type="number" id="test3" name="code3"></div>
+<div style="top:650px;left:280px;position:absolute;"><input type="number" id="test4" name="code4"></div>
+
 <input type="hidden" id="anwone" name="Anwone">
 <input type="hidden" id="anwtwo" name="Anwtwo">
 <input type="hidden" id="anwthree" name="Anwthree">
@@ -123,6 +89,6 @@ s15.value=s4;
 <input type="hidden" id="anwfive1" name="Anwfive1">
 <div  style="top:230px;left:1120px;position:absolute;"><button  type="submit" name="" value="hi">確認</div>
 </form>
-<button onclick="myFunction()">Click me</button>
+
 </body>
 </html>
