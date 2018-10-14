@@ -78,8 +78,8 @@
 		}else if(x==7){
 			var direction=[
 			'上面',
-			'右邊',
-			'左邊',];
+			'左邊',
+			'右邊',];
 			document.write(direction[y]);
 		}else{
 			var direction=[
