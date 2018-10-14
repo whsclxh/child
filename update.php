@@ -26,7 +26,7 @@
     .all{
     margin-top: 0%;
     width:100%;
-    background-image: url(img/木板.png);
+    background-image: url(img/Wood.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
