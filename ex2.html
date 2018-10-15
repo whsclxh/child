@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 60em;
+    }
+
+    .problems {
+      position: relative;
+    }
+
+    .problem {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .problem-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .float-left {
+      float: left;
+    }
+
+    .float-right {
+      float: right;
+    }
+
+    .clock {
+      margin-right: 1em;
+    }
+
+    .dot {
+      height: 25px;
+      width: 25px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .space {
+      width: 100%;
+    }
+
+    .time-answer {
+      margin-left: 1em;
+      margin-right: 1em;
+      font-size: 2em;
+    }
+
+    .line {
+      position: absolute;
+      z-index: -1;
+      height: 0.5em;
+      width: 0.5em;
+      background: teal;
+    }
+
+    .check-answer-button {
+      padding: 1em;
+      font-size: 2em;
+      background: #999;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div style="text-align: center;">把相同的時間連在一起。</div>
+  </header>
+
+  <div align="center">
+    <div class="container" align="center">
+      <div id="problems" class="problems">
+        <!-- <div class="problem">
+          <canvas id="clock1" class="clock" height="200px" width="200px"></canvas>
+          <span class="dot"></span>
+          <span class="space"></span>
+          <span class="dot"></span>
+          <span class="time-answer">1:11</span>
+        </div>
+        <div class="problem">
+          <canvas id="clock2" class="clock" height="200px" width="200px"></canvas>
+          <span class="dot"></span>
+          <span class="space"></span>
+          <span class="dot"></span>
+          <span class="time-answer">1:11</span>
+        </div>
+        <div class="problem">
+          <canvas id="clock3" class="clock" height="200px" width="200px"></canvas>
+          <span class="dot"></span>
+          <span class="space"></span>
+          <span class="dot"></span>
+          <span class="time-answer">1:11</span>
+        </div>
+        <div class="problem">
+          <canvas id="clock4" class="clock" height="200px" width="200px"></canvas>
+          <span class="dot"></span>
+          <span class="space"></span>
+          <span class="dot"></span>
+          <span class="time-answer">1:11</span>
+        </div>
+        <div style="z-index: -1; background: blueviolet; width: 10px; height: 10px; left: 0;">
+        </div> -->
+      </div>
+      <div id="check-answer-button" class="check-answer-button">
+        Check
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function add_listener(element, event_name, handler) {
+      if (element.addEventListener) {
+        element.addEventListener(event_name, handler, false);
+      } else if (element.attachEvent) {
+        element.attachEvent('on' + event_name, handler);
+      } else {
+        element['on' + event_name] = handler;
+      }
+    }
+
+    function remove_listener(element, event_name, handler) {
+      if (element.addEventListener) {
+        element.removeEventListener(event_name, handler, false);
+      } else if (element.detachEvent) {
+        element.detachEvent('on' + event_name, handler);
+      } else {
+        element['on' + event_name] = null;
+      }
+    }
+
+    function random_int(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+    (function (win) {
+      function DrawClock(options) {
+        this.canvas = options.el;
+        this.hour = options.hour;
+        this.minute = options.minute;
+        this.ctx = this.canvas.getContext('2d'); //方法返回一個用於在畫布上繪圖的環境
+        this.width = this.ctx.canvas.width;
+        this.height = this.ctx.canvas.height;
+        this.r = this.width / 2;
+        this.rem = this.width / 200;
+        this.digits = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2];
+
+        this.init();
+      }
+
+      DrawClock.prototype = {
+        init: function () {
+          var ctx = this.ctx;
+          ctx.clearRect(0, 0, this.width, this.height); //在給定的矩形內清除指定的畫素
+
+          this.drawBackground();
+          this.drawHour();
+          this.drawMinute();
+          this.drawDot();
+          ctx.restore();
+        },
+        drawBackground: function () {
+          var ctx = this.ctx;
+          var self = this;
+          ctx.save();
+          ctx.translate(this.r, this.r); //重新對映畫布上的 (0,0) 位置
+          ctx.beginPath();
+          ctx.lineWidth = 8 * this.rem;
+          ctx.arc(0, 0, this.r - ctx.lineWidth / 2, 0, 2 * Math.PI, false); //建立弧/曲線（用於建立圓形或部分圓）
+          ctx.stroke();
+          ctx.font = 16 * this.rem + "px Arial"; //設定或返回文字內容的當前字型屬性
+          ctx.textAlign = "center"; //設定或返回文字內容的當前對齊方式
+          ctx.textBaseline = "middle"; //設定或返回在繪製文字時使用的當前文字基線
+          this.digits.forEach(function (number, i) {
+            var rad = 2 * Math.PI / 12 * i;
+            var x = Math.cos(rad) * (self.r - 33 * self.rem);
+            var y = Math.sin(rad) * (self.r - 33 * self.rem);
+            ctx.fillText(number, x, y); //在畫布上繪製"被填充的"文字
+          });
+
+          //分鐘的刻度，每分鐘轉6deg
+          for (var i = 0; i < 60; i++) {
+            ctx.save(); //儲存當前環境的狀態
+            ctx.rotate(6 * i * Math.PI / 180); //旋轉當前繪圖
+            ctx.beginPath(); //起始一條路徑，或重置當前路徑
+            ctx.moveTo(0, -82 * this.rem); //把路徑移動到畫布中的指定點，不建立線條
+            ctx.lineTo(0, -87 * this.rem); //新增一個新點，然後在畫布中建立從該點到最後指定點的線條
+            ctx.closePath(); //建立從當前點回到起始點的路徑
+            ctx.strokeStyle = '#000'; //設定或返回用於筆觸的顏色、漸變或模式
+            ctx.lineWidth = 1 * this.rem; //設定或返回當前的線條寬度
+            ctx.stroke(); //繪製已定義的路徑
+            ctx.restore(); //返回之前儲存過的路徑狀態和屬性
+          }
+          //小時的刻度，每小時轉30deg
+          for (var i = 0; i < 12; i++) {
+            ctx.save();
+            ctx.rotate(30 * i * Math.PI / 180);
+            ctx.beginPath();
+            ctx.moveTo(0, -79 * this.rem);
+            ctx.lineTo(0, -87 * this.rem);
+            ctx.closePath();
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 2 * this.rem;
+            ctx.stroke();
+            ctx.restore();
+          }
+        },
+        drawHour: function () {
+          var ctx = this.ctx;
+          ctx.save();
+          ctx.beginPath();
+          var hRad = 2 * Math.PI / 12 * this.hour;
+          var mRad = 2 * Math.PI / 12 / 60 * this.minute;
+          ctx.rotate(hRad + mRad);
+          ctx.lineWidth = 6 * this.rem;
+          ctx.lineCap = "round"; //設定或返回線條的結束端點樣式
+          ctx.moveTo(0, 10 * this.rem);
+          ctx.lineTo(0, -this.r / 2);
+          ctx.stroke();
+          ctx.restore();
+        },
+        drawMinute: function () {
+          var ctx = this.ctx;
+          ctx.save();
+          ctx.beginPath();
+          var rad = 2 * Math.PI / 60 * this.minute;
+          ctx.rotate(rad);
+          ctx.lineWidth = 3 * this.rem;
+          ctx.lineCap = "round";
+          ctx.moveTo(0, 10 * this.rem);
+          ctx.lineTo(0, -this.r + 26 * this.rem);
+          ctx.stroke();
+          ctx.restore();
+        },
+        drawDot: function (minute) {
+          var ctx = this.ctx;
+          ctx.beginPath();
+          ctx.fillStyle = "#fff";
+          ctx.arc(0, 0, 3 * this.rem, 0, 2 * Math.PI, false);
+          ctx.fill();
+        }
+      };
+
+      win.DrawClock = DrawClock;
+    })(window);
+
+    (function (win) {
+      function Problem(options) {
+        this.problem_element = document.createElement('div');
+        this.clock_canvas = document.createElement('canvas');
+        this.dot_clock = document.createElement('span');
+        this.dot_answer = document.createElement('span');
+        this.answer = document.createElement('span');
+        this.group_left = document.createElement('div');
+        this.group_right = document.createElement('div');
+
+        this.id = options.id;
+        this.left_onclick = options.left_onclick;
+        this.right_onclick = options.right_onclick;
+        this.clock_hour = options.clock_hour;
+        this.clock_minute = options.clock_minute;
+        this.answer_hour = options.answer_hour;
+        this.answer_minute = options.answer_minute;
+
+        this.group_left.classList.add('problem-group');
+        this.group_right.classList.add('problem-left');
+        this.group_left.appendChild(this.clock_canvas);
+        this.group_left.appendChild(this.dot_clock);
+        this.group_right.appendChild(this.dot_answer);
+        this.group_right.appendChild(this.answer);
+
+        this.problem_element.classList.add('problem');
+        this.problem_element.appendChild(this.group_left);
+        this.problem_element.appendChild(this.group_right);
+
+        this.clock_canvas.classList.add('clock');
+        this.clock_canvas.setAttribute('width', '200px');
+        this.clock_canvas.setAttribute('height', '200px');
+
+        this.dot_clock.classList.add('dot');
+        this.dot_answer.classList.add('dot');
+        this.answer.classList.add('time-answer');
+
+        this.updateClock();
+        this.updateAnswer();
+      }
+      Problem.prototype = {
+        updateClock: function () {
+          new DrawClock({
+            el: this.clock_canvas,
+            hour: this.clock_hour,
+            minute: this.clock_minute
+          });
+        },
+        updateAnswer: function () {
+          this.answer.innerHTML = this.answer_hour + ':' + (this.answer_minute < 10 ? '0' : '') + this.answer_minute;
+        },
+        set left_onclick(handler) {
+          let problem_this = this;
+          add_listener(this.dot_clock, 'click', function() {
+            console.log('left ' + problem_this.id);
+            handler && handler(problem_this.id);
+          });
+        },
+        set right_onclick(handler) {
+          let problem_this = this;
+          add_listener(this.dot_answer, 'click', function() {
+            console.log('right ' + problem_this.id);
+            handler && handler(problem_this.id);
+          });
+        },
+        set clock_hour(hour) {
+          this.ch = hour;
+          this.updateClock();
+        },
+        get clock_hour() {
+          return this.ch;
+        },
+        set clock_minute(minute) {
+          this.cm = minute;
+          this.updateClock();
+        },
+        get clock_minute() {
+          return this.cm;
+        },
+        set answer_hour(hour) {
+          this.ah = hour;
+          this.updateAnswer();
+        },
+        get answer_hour() {
+          return this.ah;
+        },
+        set answer_minute(minute) {
+          this.am = minute;
+          this.updateAnswer();
+        },
+        get answer_minute() {
+          return this.am;
+        }
+      };
+      win.Problem = Problem;
+    })(window);
+    
+    (function (win) {
+      function Line(options) {
+        this.element = document.createElement('span');
+        this.element.classList.add('line');
+        this.height = this.element.style.height;
+      }
+      Line.prototype = {
+        set start_x(x) {
+          this.sx = x;
+          this.update();
+        },
+        set start_y(y) {
+          this.sy = y;
+          this.update();
+        },
+        set end_x(x) {
+          this.ex = x;
+          this.update();
+        },
+        set end_y(y) {
+          this.ey = y;
+          this.update();
+        },
+        end_xy: function(x, y) {
+          this.ex = x;
+          this.ey = y;
+          this.update();
+        },
+        update: function() {
+          let opposite = this.ey - this.sy;
+          let adjacent = this.ex - this.sx;
+          console.log('' + adjacent + ' ' + opposite);
+          let hypotenuse = Math.sqrt(opposite * opposite + adjacent * adjacent);
+          let angle = 180 / Math.PI * Math.acos(adjacent / hypotenuse);
+          this.element.style.top = (this.sy ) + 'px';
+          this.element.style.left = (this.sx ) + 'px';
+          this.element.style.width = hypotenuse + 'px';
+          this.element.style["-webkit-transform"] = 'rotate('+ angle +'deg)';
+          this.element.style["-moz-transform"] = 'rotate('+ angle +'deg)';
+          this.element.style["-ms-transform"] = 'rotate('+ angle +'deg)';
+          this.element.style["-o-transform"] = 'rotate('+ angle +'deg)';
+          this.element.style["-transform"] = 'rotate('+ angle +'deg)';
+          // this.element.style.top = this.ey + 'px';
+          // this.element.style.left = this.ex + 'px';
+        }
+      };
+      win.Line = Line;
+    })(window);
+
+    (function() {
+      let num_of_problems = 4;
+      let questions = new Array();
+      let answers = new Array();
+      let user_answers_lr = new Array();
+      let user_answers_rl = new Array();
+      let displays = new Array();
+      let problems_element = document.getElementById('problems');
+
+      var clicked_left = undefined;
+      var clicked_right = undefined;
+
+      function left_onclick(id) {
+        console.log('left_onclick()');
+        if ((right = user_answers_lr[id]) != undefined) {
+          user_answers_lr[id] = undefined;
+          user_answers_rl[right] = undefined;
+        }
+        if ((right = clicked_right) != undefined) {
+          user_answers_lr[id] = right;
+          user_answers_rl[right] = id;
+          clicked_left = undefined;
+          clicked_right = undefined;
+        } else if (clicked_left == id) {
+          clicked_left = undefined;
+        } else {
+          clicked_left = id;
+        }
+        console.log(user_answers_lr.join());
+        console.log(user_answers_rl.join());
+      }
+
+      function right_onclick(id) {
+        console.log('right_onclick()');
+        if ((left = user_answers_rl[id]) != undefined) {
+          user_answers_rl[id] = undefined;
+          user_answers_lr[left] = undefined;
+        }
+        if ((left = clicked_left) != undefined) {
+          user_answers_rl[id] = left;
+          user_answers_lr[left] = id;
+          clicked_left = undefined;
+          clicked_right = undefined;
+        } else if (clicked_right == id) {
+          clicked_right = undefined;
+        } else {
+          clicked_right = id;
+        }
+        console.log(user_answers_lr.join());
+        console.log(user_answers_rl.join());
+      }
+
+      function check_answer() {
+        for (var i = 0; i < num_of_problems; ++i) {
+          if (answers[i] != user_answers_lr[i]) {
+            return false;
+          }
+          return true;
+        }
+      }
+
+      for (var i = 0; i < num_of_problems; ++i) {
+        user_answers_lr[i] = undefined;
+        user_answers_rl[i] = undefined;
+        questions.push({
+          hour: random_int(12),
+          minute: random_int(60)
+        });
+        answers.push(i);
+      }
+      for (var i = 0; i < num_of_problems; ++i) {
+        let j = random_int(num_of_problems);
+        let tmp = answers[i];
+        answers[i] = answers[j];
+        answers[j] = tmp;
+      }
+      for (var i = 0; i < num_of_problems; ++i) {
+        displays[i] = new Problem({
+          id: i,
+          left_onclick: left_onclick,
+          right_onclick: right_onclick,
+          clock_hour: questions[i].hour,
+          clock_minute: questions[i].minute,
+          answer_hour: questions[answers[i]].hour,
+          answer_minute: questions[answers[i]].minute
+        });
+        problems_element.appendChild(displays[i].problem_element);
+      }
+
+      add_listener(document.getElementById('check-answer-button'), 'click', function() {
+        if (check_answer()) {
+          alert('All Correct :D');
+        } else {
+          alert('Something Wrong :(')
+        }
+      });
+
+      let line1 = new Line();
+      let line2 = new Line();
+      problems_element.appendChild(line1.element);
+      problems_element.appendChild(line2.element);
+
+      // add_listener(problems_element, 'mousemove', function(event) {
+      //   let x = event.clientX - problems_element.offsetLeft;
+      //   let y = event.clientY - problems_element.offsetTop;
+      //   line1.end_xy(x, y);
+      //   console.log('X: ' + x + ', Y: ' + y);
+      // });
+      line1.start_x = 0;
+      line1.start_y = 0;
+      line1.end_xy(300, 300);
+      line2.element.style.top = 300 + 'px';
+      line2.element.style.left = 300 + 'px';
+
+      // var p1 = new Problem({
+      //   clock_hour: 5,
+      //   clock_minute: 48,
+      //   answer_hour: 9,
+      //   answer_minute: 23
+      // });
+      // problems_element.appendChild(p1.problem_element);
+
+      // new DrawClock({
+      //   el: document.getElementById("clock1"),
+      //   hour: 1,
+      //   minute: 2
+      // });
+      // new DrawClock({
+      //   el: document.getElementById("clock2"),
+      //   hour: 3,
+      //   minute: 4
+      // });
+
+      // new DrawClock({
+      //   el: document.getElementById("clock3"),
+      //   hour: 3,
+      //   minute: 4
+      // });
+
+      // new DrawClock({
+      //   el: document.getElementById("clock4"),
+      //   hour: 3,
+      //   minute: 4
+      // });
+    })();
+  </script>
+
+</body>
+
+</html>
