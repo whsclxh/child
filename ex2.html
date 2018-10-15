@@ -20,13 +20,11 @@
     }
 
     .problem {
-      margin-top: 1em;
-      margin-bottom: 1em;
+      margin: 1em;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      position: relative;
     }
 
     .problem-group {
@@ -54,21 +52,29 @@
       display: inline-block;
     }
 
+    .dot:hover {
+      transform: scale(1.3);
+    }
+
+    .dot:active {
+      transform: scale(1.1);
+    }
+
     .space {
       width: 100%;
     }
 
     .time-answer {
       margin-left: 1em;
-      margin-right: 1em;
       font-size: 2em;
     }
 
     .line {
       position: absolute;
       z-index: -1;
-      height: 0.5em;
-      width: 0.5em;
+      height: 1em;
+      width: 1em;
+      border-radius: 1em;
       background: teal;
     }
 
@@ -89,36 +95,6 @@
   <div align="center">
     <div class="container" align="center">
       <div id="problems" class="problems">
-        <!-- <div class="problem">
-          <canvas id="clock1" class="clock" height="200px" width="200px"></canvas>
-          <span class="dot"></span>
-          <span class="space"></span>
-          <span class="dot"></span>
-          <span class="time-answer">1:11</span>
-        </div>
-        <div class="problem">
-          <canvas id="clock2" class="clock" height="200px" width="200px"></canvas>
-          <span class="dot"></span>
-          <span class="space"></span>
-          <span class="dot"></span>
-          <span class="time-answer">1:11</span>
-        </div>
-        <div class="problem">
-          <canvas id="clock3" class="clock" height="200px" width="200px"></canvas>
-          <span class="dot"></span>
-          <span class="space"></span>
-          <span class="dot"></span>
-          <span class="time-answer">1:11</span>
-        </div>
-        <div class="problem">
-          <canvas id="clock4" class="clock" height="200px" width="200px"></canvas>
-          <span class="dot"></span>
-          <span class="space"></span>
-          <span class="dot"></span>
-          <span class="time-answer">1:11</span>
-        </div>
-        <div style="z-index: -1; background: blueviolet; width: 10px; height: 10px; left: 0;">
-        </div> -->
       </div>
       <div id="check-answer-button" class="check-answer-button">
         Check
@@ -316,14 +292,12 @@
         set left_onclick(handler) {
           let problem_this = this;
           add_listener(this.dot_clock, 'click', function() {
-            console.log('left ' + problem_this.id);
             handler && handler(problem_this.id);
           });
         },
         set right_onclick(handler) {
           let problem_this = this;
           add_listener(this.dot_answer, 'click', function() {
-            console.log('right ' + problem_this.id);
             handler && handler(problem_this.id);
           });
         },
@@ -354,6 +328,26 @@
         },
         get answer_minute() {
           return this.am;
+        },
+        set dot_clock_color(color) {
+          this.dcc = color;
+          this.dot_clock.style.background = color;
+        },
+        get dot_clock_color() {
+          return this.dcc;
+        },
+        dot_clock_reset_color: function() {
+          this.dot_clock_color = "";
+        },
+        set dot_answer_color(color) {
+          this.dac = color;
+          this.dot_answer.style.background = color;
+        },
+        get dot_answer_color() {
+          return this.dac;
+        },
+        dot_answer_reset_color: function() {
+          this.dot_answer_color = "";
         }
       };
       win.Problem = Problem;
@@ -361,6 +355,7 @@
     
     (function (win) {
       function Line(options) {
+        this.parent = options.parent;
         this.element = document.createElement('span');
         this.element.classList.add('line');
         this.height = this.element.style.height;
@@ -382,87 +377,204 @@
           this.ey = y;
           this.update();
         },
+        set color(color) {
+          this.c = color;
+          this.element.style.background = color;
+        },
+        get color() {
+          return this.c;
+        },
+        reset_color: function() {
+          this.color = "";
+        },
         end_xy: function(x, y) {
           this.ex = x;
           this.ey = y;
           this.update();
         },
+        on_element: function(element) {
+          this.connect_elements(element, element);
+        },
+        connect_elements: function(e1, e2) {
+          this.e1 = e1;
+          this.e2 = e2;
+          this.update_coordinate();
+        },
+        update_coordinate: function() {
+          if (this.e1 != undefined && this.e2 != undefined) {
+            let a = this.sy, b = this.sx, c = this.ey, d = this.ex;
+            this.sy = this.e1.offsetTop + this.e1.offsetHeight / 2;
+            this.sx = this.e1.offsetLeft + this.e1.offsetWidth / 2;
+            this.ey = this.e2.offsetTop + this.e2.offsetHeight / 2;
+            this.ex = this.e2.offsetLeft + this.e2.offsetWidth / 2;
+            if (a != this.sy || b != this.sx || c != this.ey || d != this.ex) {
+              this.update();
+            }
+          }
+        },
         update: function() {
           let opposite = this.ey - this.sy;
           let adjacent = this.ex - this.sx;
-          console.log('' + adjacent + ' ' + opposite);
           let hypotenuse = Math.sqrt(opposite * opposite + adjacent * adjacent);
-          let angle = 180 / Math.PI * Math.acos(adjacent / hypotenuse);
-          this.element.style.top = (this.sy ) + 'px';
-          this.element.style.left = (this.sx ) + 'px';
+          var angle = 180 / Math.PI * Math.acos(adjacent / hypotenuse);
+          if (opposite < 0) angle *= -1;
+          this.element.style.top = (this.sy + opposite / 2 - this.element.offsetHeight / 2) + 'px';
+          this.element.style.left = (this.sx + adjacent / 2 - hypotenuse / 2) + 'px';
           this.element.style.width = hypotenuse + 'px';
           this.element.style["-webkit-transform"] = 'rotate('+ angle +'deg)';
           this.element.style["-moz-transform"] = 'rotate('+ angle +'deg)';
           this.element.style["-ms-transform"] = 'rotate('+ angle +'deg)';
           this.element.style["-o-transform"] = 'rotate('+ angle +'deg)';
           this.element.style["-transform"] = 'rotate('+ angle +'deg)';
-          // this.element.style.top = this.ey + 'px';
-          // this.element.style.left = this.ex + 'px';
+        },
+        remove: function() {
+          this.element.remove();
+        },
+        append_to_parent: function() {
+          this.parent.appendChild(this.element);
         }
       };
       win.Line = Line;
     })(window);
 
     (function() {
+      const color_list = new Array(
+        "#ff1744",
+        "#d500f9",
+        "#651fff",
+        "#2979ff",
+        "#00b0ff",
+        "#00e5ff",
+        "#1de9b6",
+        "#00e676",
+        "#76ff03",
+        "#c6ff00",
+        "#ffea00",
+        "#ffc400",
+        "#ff9100",
+        "#ff3d00",
+      );
+      let colors_used = new Array();
+      let colors_unused = color_list.slice();
       let num_of_problems = 4;
       let questions = new Array();
       let answers = new Array();
       let user_answers_lr = new Array();
       let user_answers_rl = new Array();
-      let displays = new Array();
       let problems_element = document.getElementById('problems');
+      let displays = new Array();
+      let lines = new Array();
+      let line_on_mouse = new Line({parent: problems_element});
 
       var clicked_left = undefined;
       var clicked_right = undefined;
+      var current_color = undefined;
+
+      line_on_mouse.parent = problems_element;
+
+      function get_color() {
+        let index = random_int(colors_unused.length);
+        let color = colors_unused[index];
+        colors_unused.splice(index, 1);
+        colors_used.push(color);
+        return color;
+      }
+
+      function put_color(color) {
+        let index = colors_used.indexOf(color);
+        if (index > -1) {
+          colors_used.splice(index, 1);
+          colors_unused.push(color);
+        }
+      }
+
+      function set_current_color(color) {
+        current_color = color;
+        line_on_mouse.color = color;
+      }
+
+      function reset_current_color() {
+        current_color = undefined;
+        line_on_mouse.color = "";
+      }
+
+      function remove_line(left) {
+        let right = user_answers_lr[left];
+        user_answers_lr[left] = undefined;
+        user_answers_rl[right] = undefined;
+        put_color(lines[left].color);
+        lines[left].remove();
+        displays[left].dot_clock_reset_color();
+        displays[right].dot_answer_reset_color();
+      }
+
+      function link_dots(left, right) {
+        user_answers_lr[left] = right;
+        user_answers_rl[right] = left;
+        clicked_left = undefined;
+        clicked_right = undefined;
+        lines[left].append_to_parent();
+        lines[left].connect_elements(displays[left].dot_clock, displays[right].dot_answer);
+        line_on_mouse.remove();
+        lines[left].color = current_color;
+        displays[left].dot_clock_color = current_color;
+        displays[right].dot_answer_color = current_color;
+        reset_current_color();
+      }
 
       function left_onclick(id) {
-        console.log('left_onclick()');
-        if ((right = user_answers_lr[id]) != undefined) {
-          user_answers_lr[id] = undefined;
-          user_answers_rl[right] = undefined;
+        if (user_answers_lr[id] != undefined) {
+          remove_line(id);
         }
-        if ((right = clicked_right) != undefined) {
-          user_answers_lr[id] = right;
-          user_answers_rl[right] = id;
-          clicked_left = undefined;
-          clicked_right = undefined;
+        if (clicked_right != undefined) {
+          link_dots(id, clicked_right);
         } else if (clicked_left == id) {
           clicked_left = undefined;
+          line_on_mouse.remove();
+          put_color(current_color);
+          reset_current_color();
+          displays[id].dot_clock_reset_color();
         } else {
+          if (clicked_left != undefined) {
+            displays[clicked_left].dot_clock_reset_color();
+          }
           clicked_left = id;
+          line_on_mouse.append_to_parent();
+          line_on_mouse.on_element(displays[id].dot_clock);
+          let color = get_color();
+          set_current_color(color);
+          displays[id].dot_clock_color = color;
         }
-        console.log(user_answers_lr.join());
-        console.log(user_answers_rl.join());
       }
 
       function right_onclick(id) {
-        console.log('right_onclick()');
         if ((left = user_answers_rl[id]) != undefined) {
-          user_answers_rl[id] = undefined;
-          user_answers_lr[left] = undefined;
+          remove_line(left);
         }
         if ((left = clicked_left) != undefined) {
-          user_answers_rl[id] = left;
-          user_answers_lr[left] = id;
-          clicked_left = undefined;
-          clicked_right = undefined;
+          link_dots(clicked_left, id);
         } else if (clicked_right == id) {
           clicked_right = undefined;
+          line_on_mouse.remove();
+          put_color(current_color);
+          reset_current_color();
+          displays[id].dot_answer_reset_color();
         } else {
+          if (clicked_right != undefined) {
+            displays[clicked_right].dot_answer_reset_color();
+          }
           clicked_right = id;
+          line_on_mouse.append_to_parent();
+          line_on_mouse.on_element(displays[id].dot_answer);
+          let color = get_color();
+          set_current_color(color);
+          displays[id].dot_answer_color = color;
         }
-        console.log(user_answers_lr.join());
-        console.log(user_answers_rl.join());
       }
 
       function check_answer() {
         for (var i = 0; i < num_of_problems; ++i) {
-          if (answers[i] != user_answers_lr[i]) {
+          if (answers[i] != user_answers_rl[i]) {
             return false;
           }
           return true;
@@ -472,6 +584,7 @@
       for (var i = 0; i < num_of_problems; ++i) {
         user_answers_lr[i] = undefined;
         user_answers_rl[i] = undefined;
+        lines.push(new Line({parent: problems_element}));
         questions.push({
           hour: random_int(12),
           minute: random_int(60)
@@ -505,53 +618,20 @@
         }
       });
 
-      let line1 = new Line();
-      let line2 = new Line();
-      problems_element.appendChild(line1.element);
-      problems_element.appendChild(line2.element);
+      add_listener(problems_element, 'mousemove', function(event) {
+        let x = event.clientX - problems_element.offsetLeft + (window.pageXOffset || document.documentElement.scrollLeft) - (document.documentElement.clientLeft || 0);
+        let y = event.clientY - problems_element.offsetTop + (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
+        line_on_mouse.end_xy(x, y);
+      });
 
-      // add_listener(problems_element, 'mousemove', function(event) {
-      //   let x = event.clientX - problems_element.offsetLeft;
-      //   let y = event.clientY - problems_element.offsetTop;
-      //   line1.end_xy(x, y);
-      //   console.log('X: ' + x + ', Y: ' + y);
-      // });
-      line1.start_x = 0;
-      line1.start_y = 0;
-      line1.end_xy(300, 300);
-      line2.element.style.top = 300 + 'px';
-      line2.element.style.left = 300 + 'px';
+      function update_lines() {
+        for (var i = 0; i < num_of_problems; ++i) {
+          lines[i].update_coordinate();
+        }
+      }
 
-      // var p1 = new Problem({
-      //   clock_hour: 5,
-      //   clock_minute: 48,
-      //   answer_hour: 9,
-      //   answer_minute: 23
-      // });
-      // problems_element.appendChild(p1.problem_element);
-
-      // new DrawClock({
-      //   el: document.getElementById("clock1"),
-      //   hour: 1,
-      //   minute: 2
-      // });
-      // new DrawClock({
-      //   el: document.getElementById("clock2"),
-      //   hour: 3,
-      //   minute: 4
-      // });
-
-      // new DrawClock({
-      //   el: document.getElementById("clock3"),
-      //   hour: 3,
-      //   minute: 4
-      // });
-
-      // new DrawClock({
-      //   el: document.getElementById("clock4"),
-      //   hour: 3,
-      //   minute: 4
-      // });
+      add_listener(window, 'resize', update_lines);
+      setInterval(update_lines, 100);
     })();
   </script>
 
