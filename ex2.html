@@ -103,6 +103,8 @@
   </div>
 
   <script>
+    let BreakException = {};
+
     function add_listener(element, event_name, handler) {
       if (element.addEventListener) {
         element.addEventListener(event_name, handler, false);
@@ -585,9 +587,29 @@
         user_answers_lr[i] = undefined;
         user_answers_rl[i] = undefined;
         lines.push(new Line({parent: problems_element}));
+        var exist = false;
+        var hour = 0, minute = 0;
+        do {
+          exist = false;
+          hour = random_int(13);
+          minute = random_int(12) * 5;
+          try {
+            questions.forEach(function(element) {
+              if (element.hour == hour && element.minute == minute) {
+                throw BreakException;
+              }
+            });
+          } catch (e) {
+            if (e === BreakException) {
+              exist = true;
+            } else {
+              throw e;
+            }
+          }
+        } while (exist);
         questions.push({
-          hour: random_int(12),
-          minute: random_int(60)
+          hour: hour,
+          minute: minute
         });
         answers.push(i);
       }
