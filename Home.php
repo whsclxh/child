@@ -8,7 +8,14 @@
 <link rel="stylesheet" type="text/css" href="css/default.css">
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <style>
-    body {
+
+  
+* {
+    box-sizing: border-box;
+}
+
+
+body {
      background: #000 url(img/home.png) center center fixed
      no-repeat;
      background-position:center-center;
@@ -18,12 +25,12 @@
      background-size:cover;
      height:100%;
      overflow:hidden;
-    }
+}
 
 
-    body{
+body{
     height:100%;
-    }
+}
 
 .t{
   top:0;
