@@ -9,6 +9,17 @@
     body {
       height: 100%;
       margin: 0;
+      background: #ff8a50;
+      font-family: sans-serif;
+    }
+
+    .disable-select {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none;   /* Chrome/Safari/Opera */
+      -khtml-user-select: none;    /* Konqueror */
+      -moz-user-select: none;      /* Firefox */
+      -ms-user-select: none;       /* Internet Explorer/Edge */
+      user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
     }
 
     .container {
@@ -47,9 +58,11 @@
     .dot {
       height: 25px;
       width: 25px;
-      background-color: #bbb;
+      background-color: #ff5722;
       border-radius: 50%;
       display: inline-block;
+      transition: all 500ms ease;
+      cursor: pointer;
     }
 
     .dot:hover {
@@ -64,9 +77,16 @@
       width: 100%;
     }
 
-    .time-answer {
+    .time-text {
+      display: inline-block;
+      min-width: 3.5em;
       margin-left: 1em;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      background: #ff5622c0;
+      color: #ffb089;
       font-size: 2em;
+      font-weight: 900;
     }
 
     .line {
@@ -79,9 +99,25 @@
     }
 
     .check-answer-button {
-      padding: 1em;
-      font-size: 2em;
-      background: #999;
+      margin: 1rem;
+      padding: 2rem;
+      font-size: 3em;
+      font-weight: 900;
+      background: #a1a1a18f;
+      border-radius: 1rem;
+      color: #666d;
+      transition: all 500ms ease;
+      cursor: pointer;
+    }
+
+    .check-answer-button-clear {
+      background: #51ff68da;
+      color: rgba(19, 116, 0, 0.867);
+    }
+
+    .check-answer-button-wrong {
+      background: #ff5151da;
+      color: rgba(116, 0, 0, 0.867);
     }
   </style>
 
@@ -94,9 +130,9 @@
 
   <div align="center">
     <div class="container" align="center">
-      <div id="problems" class="problems">
+      <div id="problems" class="problems disable-select">
       </div>
-      <div id="check-answer-button" class="check-answer-button">
+      <div id="check-answer-button" class="check-answer-button disable-select">
         Check
       </div>
     </div>
@@ -163,10 +199,13 @@
           ctx.beginPath();
           ctx.lineWidth = 8 * this.rem;
           ctx.arc(0, 0, this.r - ctx.lineWidth / 2, 0, 2 * Math.PI, false); //建立弧/曲線（用於建立圓形或部分圓）
+          ctx.fillStyle = "#fff";
+          ctx.fill();
           ctx.stroke();
           ctx.font = 16 * this.rem + "px Arial"; //設定或返回文字內容的當前字型屬性
           ctx.textAlign = "center"; //設定或返回文字內容的當前對齊方式
           ctx.textBaseline = "middle"; //設定或返回在繪製文字時使用的當前文字基線
+          ctx.fillStyle = "#000";
           this.digits.forEach(function (number, i) {
             var rad = 2 * Math.PI / 12 * i;
             var x = Math.cos(rad) * (self.r - 33 * self.rem);
@@ -257,6 +296,8 @@
         this.clock_minute = options.clock_minute;
         this.answer_hour = options.answer_hour;
         this.answer_minute = options.answer_minute;
+        this.get_dragging_info = options.get_dragging_info;
+        this.set_dragging_info = options.set_dragging_info;
 
         this.group_left.classList.add('problem-group');
         this.group_right.classList.add('problem-left');
@@ -275,7 +316,7 @@
 
         this.dot_clock.classList.add('dot');
         this.dot_answer.classList.add('dot');
-        this.answer.classList.add('time-answer');
+        this.answer.classList.add('time-text');
 
         this.updateClock();
         this.updateAnswer();
@@ -289,18 +330,41 @@
           });
         },
         updateAnswer: function () {
-          this.answer.innerHTML = this.answer_hour + ':' + (this.answer_minute < 10 ? '0' : '') + this.answer_minute;
+          this.answer.innerHTML = this.answer_hour + ':' +
+            (this.answer_minute < 10 ? '0' : '') + this.answer_minute;
         },
         set left_onclick(handler) {
           let problem_this = this;
-          add_listener(this.dot_clock, 'click', function() {
-            handler && handler(problem_this.id);
+          add_listener(this.dot_clock, 'mousedown', function(event) {
+            event.stopPropagation();
+            problem_this.set_dragging_info(true, true);
+            handler(problem_this.id);
+          });
+          add_listener(this.dot_clock, 'mouseup', function(event) {
+            event.stopPropagation();
+            let dragging_info = problem_this.get_dragging_info();
+            if (dragging_info.is_dragging &&
+                !dragging_info.is_left) {
+              problem_this.set_dragging_info(false);
+              handler(problem_this.id);
+            }
           });
         },
         set right_onclick(handler) {
           let problem_this = this;
-          add_listener(this.dot_answer, 'click', function() {
-            handler && handler(problem_this.id);
+          add_listener(this.dot_answer, 'mousedown', function(event) {
+            event.stopPropagation();
+            problem_this.set_dragging_info(true, false);
+            handler(problem_this.id);
+          });
+          add_listener(this.dot_answer, 'mouseup', function(event) {
+            event.stopPropagation();
+            let dragging_info = problem_this.get_dragging_info();
+            if (dragging_info.is_dragging &&
+                dragging_info.is_left) {
+              problem_this.set_dragging_info(false);
+              handler(problem_this.id);
+            }
           });
         },
         set clock_hour(hour) {
@@ -403,38 +467,46 @@
           this.update_coordinate();
         },
         update_coordinate: function() {
-          if (this.e1 != undefined && this.e2 != undefined) {
-            let a = this.sy, b = this.sx, c = this.ey, d = this.ex;
-            this.sy = this.e1.offsetTop + this.e1.offsetHeight / 2;
-            this.sx = this.e1.offsetLeft + this.e1.offsetWidth / 2;
-            this.ey = this.e2.offsetTop + this.e2.offsetHeight / 2;
-            this.ex = this.e2.offsetLeft + this.e2.offsetWidth / 2;
-            if (a != this.sy || b != this.sx || c != this.ey || d != this.ex) {
-              this.update();
+          if (this.is_displaying) {
+            if (this.e1 != undefined && this.e2 != undefined) {
+              let a = this.sy, b = this.sx, c = this.ey, d = this.ex;
+              this.sy = this.e1.offsetTop + this.e1.offsetHeight / 2;
+              this.sx = this.e1.offsetLeft + this.e1.offsetWidth / 2;
+              this.ey = this.e2.offsetTop + this.e2.offsetHeight / 2;
+              this.ex = this.e2.offsetLeft + this.e2.offsetWidth / 2;
+              if (a != this.sy || b != this.sx || c != this.ey || d != this.ex) {
+                this.update();
+              }
             }
           }
         },
         update: function() {
-          let opposite = this.ey - this.sy;
-          let adjacent = this.ex - this.sx;
-          let hypotenuse = Math.sqrt(opposite * opposite + adjacent * adjacent);
-          var angle = 180 / Math.PI * Math.acos(adjacent / hypotenuse);
-          if (opposite < 0) angle *= -1;
-          this.element.style.top = (this.sy + opposite / 2 - this.element.offsetHeight / 2) + 'px';
-          this.element.style.left = (this.sx + adjacent / 2 - hypotenuse / 2) + 'px';
-          this.element.style.width = hypotenuse + 'px';
-          this.element.style["-webkit-transform"] = 'rotate('+ angle +'deg)';
-          this.element.style["-moz-transform"] = 'rotate('+ angle +'deg)';
-          this.element.style["-ms-transform"] = 'rotate('+ angle +'deg)';
-          this.element.style["-o-transform"] = 'rotate('+ angle +'deg)';
-          this.element.style["-transform"] = 'rotate('+ angle +'deg)';
+          if (this.is_displaying) {
+            let opposite = this.ey - this.sy;
+            let adjacent = this.ex - this.sx;
+            let hypotenuse = Math.sqrt(opposite * opposite + adjacent * adjacent);
+            var angle = 180 / Math.PI * Math.acos(adjacent / hypotenuse);
+            if (opposite < 0) angle *= -1;
+            this.element.style.top = (this.sy + opposite / 2 -
+                                      this.element.offsetHeight / 2) + 'px';
+            this.element.style.left = (this.sx + adjacent / 2 -
+                                       hypotenuse / 2) + 'px';
+            this.element.style.width = hypotenuse + 'px';
+            this.element.style["-webkit-transform"] = 'rotate('+ angle +'deg)';
+            this.element.style["-moz-transform"] = 'rotate('+ angle +'deg)';
+            this.element.style["-ms-transform"] = 'rotate('+ angle +'deg)';
+            this.element.style["-o-transform"] = 'rotate('+ angle +'deg)';
+            this.element.style["-transform"] = 'rotate('+ angle +'deg)';
+          }
         },
         remove: function() {
+          this.is_displaying = false;
           this.element.remove();
         },
         append_to_parent: function() {
+          this.is_displaying = true;
           this.parent.appendChild(this.element);
-        }
+        },
       };
       win.Line = Line;
     })(window);
@@ -453,7 +525,7 @@
         "#c6ff00",
         "#ffea00",
         "#ffc400",
-        "#ff9100",
+        //"#ff9100",
         "#ff3d00",
       );
       let colors_used = new Array();
@@ -464,6 +536,7 @@
       let user_answers_lr = new Array();
       let user_answers_rl = new Array();
       let problems_element = document.getElementById('problems');
+      let check_answer_button = document.getElementById('check-answer-button');
       let displays = new Array();
       let lines = new Array();
       let line_on_mouse = new Line({parent: problems_element});
@@ -471,6 +544,19 @@
       var clicked_left = undefined;
       var clicked_right = undefined;
       var current_color = undefined;
+
+      var dragging_info = {};
+
+      function get_dragging_info() {
+        return dragging_info;
+      }
+
+      function set_dragging_info(is_dragging, is_left) {
+        dragging_info = {
+          is_dragging: is_dragging,
+          is_left: is_left,
+        };
+      }
 
       line_on_mouse.parent = problems_element;
 
@@ -516,7 +602,8 @@
         clicked_left = undefined;
         clicked_right = undefined;
         lines[left].append_to_parent();
-        lines[left].connect_elements(displays[left].dot_clock, displays[right].dot_answer);
+        lines[left].connect_elements(displays[left].dot_clock,
+                                     displays[right].dot_answer);
         line_on_mouse.remove();
         lines[left].color = current_color;
         displays[left].dot_clock_color = current_color;
@@ -524,18 +611,33 @@
         reset_current_color();
       }
 
+      function cancel_linking_left(id) {
+        clicked_left = undefined;
+        line_on_mouse.remove();
+        put_color(current_color);
+        reset_current_color();
+        displays[id].dot_clock_reset_color();
+      }
+
+      function cancel_linking_right(id) {
+        clicked_right = undefined;
+        line_on_mouse.remove();
+        put_color(current_color);
+        reset_current_color();
+        displays[id].dot_answer_reset_color();
+      }
+
       function left_onclick(id) {
         if (user_answers_lr[id] != undefined) {
           remove_line(id);
+          check_answer();
         }
         if (clicked_right != undefined) {
           link_dots(id, clicked_right);
+          check_answer();
         } else if (clicked_left == id) {
-          clicked_left = undefined;
-          line_on_mouse.remove();
-          put_color(current_color);
-          reset_current_color();
-          displays[id].dot_clock_reset_color();
+          cancel_linking_left(id);
+          check_answer();
         } else {
           if (clicked_left != undefined) {
             displays[clicked_left].dot_clock_reset_color();
@@ -552,15 +654,14 @@
       function right_onclick(id) {
         if ((left = user_answers_rl[id]) != undefined) {
           remove_line(left);
+          check_answer();
         }
         if ((left = clicked_left) != undefined) {
           link_dots(clicked_left, id);
+          check_answer();
         } else if (clicked_right == id) {
-          clicked_right = undefined;
-          line_on_mouse.remove();
-          put_color(current_color);
-          reset_current_color();
-          displays[id].dot_answer_reset_color();
+          cancel_linking_right(id);
+          check_answer();
         } else {
           if (clicked_right != undefined) {
             displays[clicked_right].dot_answer_reset_color();
@@ -574,12 +675,30 @@
         }
       }
 
-      function check_answer() {
+      function verify_answer() {
         for (var i = 0; i < num_of_problems; ++i) {
           if (answers[i] != user_answers_rl[i]) {
             return false;
           }
-          return true;
+        }
+        return true;
+      }
+
+      function set_clear() {
+        check_answer_button.innerHTML = "Clear!!";
+        check_answer_button.classList.add("check-answer-button-clear");
+      }
+
+      function unset_clear() {
+        check_answer_button.innerHTML = "Check";
+        check_answer_button.classList.remove("check-answer-button-clear");
+      }
+
+      function check_answer() {
+        if (verify_answer()) {
+          set_clear();
+        } else {
+          unset_clear();
         }
       }
 
@@ -595,7 +714,7 @@
           minute = random_int(12) * 5;
           try {
             questions.forEach(function(element) {
-              if (element.hour == hour && element.minute == minute) {
+              if (element.hour === hour && element.minute === minute) {
                 throw BreakException;
               }
             });
@@ -627,16 +746,29 @@
           clock_hour: questions[i].hour,
           clock_minute: questions[i].minute,
           answer_hour: questions[answers[i]].hour,
-          answer_minute: questions[answers[i]].minute
+          answer_minute: questions[answers[i]].minute,
+          get_dragging_info: get_dragging_info,
+          set_dragging_info: set_dragging_info,
         });
         problems_element.appendChild(displays[i].problem_element);
       }
 
-      add_listener(document.getElementById('check-answer-button'), 'click', function() {
-        if (check_answer()) {
-          alert('All Correct :D');
+      add_listener(check_answer_button, 'click', function() {
+        if (this.last_timeout != undefined) {
+          clearTimeout(this.last_timeout);
+        }
+        if (verify_answer()) {
+          set_clear();
         } else {
-          alert('Something Wrong :(')
+          unset_clear();
+          check_answer_button.innerHTML = "Wrong!";
+          check_answer_button.classList.add("check-answer-button-wrong");
+          this.last_timeout = setTimeout(function() {
+            check_answer_button.classList.remove("check-answer-button-wrong");
+            if (!verify_answer()) {
+              unset_clear();
+            }
+          }, 1000);
         }
       });
 
@@ -644,6 +776,15 @@
         let x = event.clientX - problems_element.offsetLeft + (window.pageXOffset || document.documentElement.scrollLeft) - (document.documentElement.clientLeft || 0);
         let y = event.clientY - problems_element.offsetTop + (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
         line_on_mouse.end_xy(x, y);
+      });
+
+      add_listener(problems_element, 'mousedown', function(event) {
+        if (clicked_left != undefined) {
+          cancel_linking_left(clicked_left);
+        }
+        if (clicked_right != undefined) {
+          cancel_linking_right(clicked_right);
+        }
       });
 
       function update_lines() {
