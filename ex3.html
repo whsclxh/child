@@ -22,32 +22,42 @@
 </head>
 
 <body>
-    <header><div style="text-align: center;">請問現在是幾點幾分? 輸入正確時間。</div></header>
+    <header><div style="text-align: center;">請問現在是幾點鐘? 把正確的數字圈起來。</div></header>
   <table>
     <tr style="height: 280px">
-      <td style="width: 380px"><canvas id="clock1" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
-      <td><canvas id="clock2" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
+      <td style="width: 380px" colspan="3"><canvas id="clock1" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
+      <td style="width: 380px" colspan="3"><canvas id="clock2" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
     </tr>
     <tr style="height:  40px">
-      <td><div style="text-align: center"><label for="appt-time">Answer:</label>
-        <input type="number" id="n1" name="hour" min="1" max="12" required="required" />:<input type="number" id="n2" name="minute" min="00" max="59" step="5" required="required" ></div></td>
-        
-      <td><div style="text-align: center"><label for="appt-time">Answer:</label>
-        <input type="number" id="n3" name="hour" min="1" max="12" required="required" />:<input type="number" id="n4" name="minute" min="00" max="59" step="5" required="required" ></div></td>
+      
+    <td><input type="checkbox" id="n1" name="ans" ></td>
+    <td><input type="checkbox" id="n2" name="ans" ></td>
+    <td><input type="checkbox" id="n3" name="ans" ></td>
+    <td><input type="checkbox" id="n4" name="ans" ></td>
+    <td><input type="checkbox" id="n5" name="ans" ></td>
+    <td><input type="checkbox" id="n6" name="ans" ></td>
     </tr>
+        
+      
+
     <tr style="height: 280px">
-      <td>
+      <td style="width: 380px" colspan="3">
         <canvas id="clock3" width="200px" height="200px" style="display:block; margin:auto;"></canvas>
       </td>
-      <td><canvas id="clock4" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
+
+      <td style="width: 380px" colspan="3">
+        <canvas id="clock4" width="200px" height="200px" style="display:block; margin:auto;"></canvas>
+      </td>
+
     </tr>
+
     <tr style="height: 40px">
-      <td><div style="text-align: center"><label for="appt-time">Answer:</label>
-        <input type="number" id="n5" name="hour" min="1" max="12" required="required" />:<input type="number" id="n6" name="minute" min="00" max="59" step="5" required="required" ></div></td>
-        
-      <td><div style="text-align: center"><label for="appt-time">Answer:</label>
-        <input type="number" id="n7" name="hour" min="1" max="12" required="required" />:<input type="number" id="n8" name="minute" min="00" max="59" step="5" required="required" ></div></td>
-        
+        <td><input type="checkbox" id="n7" name="ans"></td>
+        <td><input type="checkbox" id="n8" name="ans"></td>
+        <td><input type="checkbox" id="n9" name="ans"></td>
+        <td><input type="checkbox" id="n10" name="ans"></td>
+        <td><input type="checkbox" id="n11" name="ans"></td>
+        <td><input type="checkbox" id="n12" name="ans"></td>
     </tr>
   </table>
   <script>
@@ -69,11 +79,11 @@
         //drawClock();
       }
 
-       function random_int(max) {
-      return Math.floor(Math.random() * max);
-    }
-    
-
+    //   function random_int(max) {
+    //  return Math.floor(Math.random() * max);
+    //}
+        
+      
       DrawClock.prototype = {
         init: function () {
           var ctx = this.ctx;
@@ -83,7 +93,7 @@
                       var minutes = now.getMinutes();
                       var seconds = now.getSeconds();*/
           var hours = Math.floor(Math.random() * 12);
-          var minutes = random_int(12) * 5;
+          var minutes = 0;
           //var seconds = Math.floor(Math.random() * 60);
 
           var hour = hours >= 12 ? hours - 12 : hours;
@@ -95,6 +105,8 @@
           //this.drawSecond(seconds);
           this.drawDot();
           ctx.restore();
+          
+          
         },
         drawBackground: function () {
           var ctx = this.ctx;
@@ -169,9 +181,9 @@
           ctx.stroke();
           ctx.restore();
         },
-        //drawSecond: function (second){
-        //
-        //},
+
+
+      
 
         drawDot: function (minute) {
           var ctx = this.ctx;
@@ -201,7 +213,7 @@
     });
   </script>
     <input type="button" onclick="location.href='http://hello.noip.me/Topic.php'" value="首頁">
-        <input type="button" value="下一題" style="position:absolute;top:80%;left:95%;" onclick="location.href='http://hello.noip.me/ex2.html'">
+        <input type="button" value="下一題" style="position:absolute;top:80%;left:95%;" onclick="location.href=''">
 </body>
 
 </html>

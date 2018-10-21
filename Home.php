@@ -2,12 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
 <link rel="stylesheet" type="text/css" href="css/default.css">
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <style>
-    body {
+
+
+
+
+
+body {
      background: #000 url(img/home.png) center center fixed
      no-repeat;
      background-position:center-center;
@@ -17,12 +23,12 @@
      background-size:cover;
      height:100%;
      overflow:hidden;
-    }
+}
 
 
-    body{
+body{
     height:100%;
-    }
+}
 
 .t{
   top:0;
