@@ -9,10 +9,8 @@
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <style>
 
-  
-* {
-    box-sizing: border-box;
-}
+
+
 
 
 body {
