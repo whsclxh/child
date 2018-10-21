@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	  <script src="data4.js"></script>
+	<style>
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    ;
+}
+th, td {
+    padding: 5px;
+    text-align:left;
+}
+</style>
+</head>
+<body>	
+<script type="text/javascript">
+var cart = JSON.parse (jsonString); 
+var rand=new  Array(5);
+var rand2=new Array(2);
+var rand3=new Array(2);
+var rand4=new Array(2);
+//2
+var rand5=new Array(2);
+var rand6=new Array(2);
+var rand7=new Array(2);
+//3
+var rand8=new Array(2);
+var rand9=new Array(2);
+var rand10=new Array(2);
+//4
+var rand11=new Array(2);
+var rand12=new Array(2);
+var rand13=new Array(2);
+//5
+var rand14=new Array(2);
+var rand15=new Array(2);
+var rand16=new Array(2);
+
+
+//1
+for(var i3=0;i3<2;i3++){
+  var j2=Math.floor((Math.random() * 2) + 0);
+   if(rand2.indexOf(j2)>=0)
+    i3--;
+  else
+    rand2[i3]=j2;
+}
+for(var i4=0;i4<2;i4++){
+  var j3=Math.floor((Math.random() * 2) + 0);
+   if(rand4.indexOf(j3)>=0)
+    i4--;
+  else
+    rand4[i4]=j3;
+}
+//2
+for(var i5=0;i5<2;i5++){
+  var j4=Math.floor((Math.random() * 2) + 0);
+   if(rand5.indexOf(j4)>=0)
+    i5--;
+  else
+    rand5[i5]=j4;
+}
+for(var i6=0;i6<2;i6++){
+  var j5=Math.floor((Math.random() * 2) + 0);
+   if(rand7.indexOf(j5)>=0)
+    i6--;
+  else
+    rand7[i6]=j5;
+}
+//3
+for(var i7=0;i7<2;i7++){
+  var j6=Math.floor((Math.random() * 2) + 0);
+   if(rand8.indexOf(j6)>=0)
+    i7--;
+  else
+    rand8[i7]=j6;
+}
+for(var i8=0;i8<2;i8++){
+  var j7=Math.floor((Math.random() * 2) + 0);
+   if(rand10.indexOf(j7)>=0)
+    i8--;
+  else
+    rand10[i8]=j7;
+}
+//4
+for(var i9=0;i9<2;i9++){
+  var j8=Math.floor((Math.random() * 2) + 0);
+   if(rand11.indexOf(j8)>=0)
+    i9--;
+  else
+    rand11[i9]=j8;
+}
+for(var i10=0;i10<2;i10++){
+  var j9=Math.floor((Math.random() * 2) + 0);
+   if(rand13.indexOf(j9)>=0)
+    i10--;
+  else
+    rand13[i10]=j9;
+}
+
+//5
+for(var i11=0;i11<2;i11++){
+  var j10=Math.floor((Math.random() * 2) + 0);
+   if(rand14.indexOf(j10)>=0)
+    i11--;
+  else
+    rand14[i11]=j10;
+}
+for(var i12=0;i12<2;i12++){
+  var j11=Math.floor((Math.random() * 2) + 0);
+   if(rand16.indexOf(j11)>=0)
+    i12--;
+  else
+    rand16[i12]=j11;
+}
+
+
+
+
+
+
+for(var i=0;i<5;i++){
+	var x=Math.floor((Math.random() * 20) + 0);
+	 if(rand.indexOf(x)>=0)
+    i--;
+    else
+    rand[i]=x;
+}
+var x=rand[0];
+var x2=rand[1];
+var x3=rand[2];
+var x4=rand[3];
+var x5=rand[4];	
+var k1,k2,k3,k4,k5,k6,k7,k8,k9,k10;
+//1
+rand3[rand2[0]]=cart.contents[x].one;
+rand3[rand2[1]]=cart.contents[x].three;
+rand4[0]=rand3[0];
+rand4[1]=rand3[1];
+if(rand2[0]==0){
+k1=cart.contents[x].two;
+k2=cart.contents[x].four;
+}
+else{
+k1=cart.contents[x].four;
+k2=cart.contents[x].two;}
+//2
+rand6[rand5[0]]=cart.contents[x2].one;
+rand6[rand5[1]]=cart.contents[x2].three;
+rand7[0]=rand6[0];
+rand7[1]=rand6[1];
+if(rand5[0]==0){
+k3=cart.contents[x2].two;
+k4=cart.contents[x2].four;
+}
+else{
+k3=cart.contents[x2].four;
+k4=cart.contents[x2].two;}
+//3
+rand9[rand8[0]]=cart.contents[x3].one;
+rand9[rand8[1]]=cart.contents[x3].three;
+rand10[0]=rand9[0];
+rand10[1]=rand9[1];
+if(rand8[0]==0){
+k5=cart.contents[x3].two;
+k6=cart.contents[x3].four;
+}
+else{
+k5=cart.contents[x3].four;
+k6=cart.contents[x3].two;}
+//4
+rand12[rand11[0]]=cart.contents[x4].one;
+rand12[rand11[1]]=cart.contents[x4].three;
+rand13[0]=rand12[0];
+rand13[1]=rand12[1];
+if(rand11[0]==0){
+k7=cart.contents[x4].two;
+k8=cart.contents[x4].four;
+}
+else{
+k7=cart.contents[x4].four;
+k8=cart.contents[x4].two;}
+//5
+rand15[rand14[0]]=cart.contents[x5].one;
+rand15[rand14[1]]=cart.contents[x5].three;
+rand16[0]=rand15[0];
+rand16[1]=rand15[1];
+if(rand14[0]==0){
+k9=cart.contents[x5].two;
+k10=cart.contents[x5].four;
+}
+else{
+k9=cart.contents[x5].four;
+k10=cart.contents[x5].two;}
+
+window.onload = function(){   
+var aa= document.getElementById("g1"); 
+aa.value=cart.contents[x].two;
+var bb= document.getElementById("g2"); 
+bb.value=cart.contents[x].four;
+var cc= document.getElementById("g3"); 
+cc.value=cart.contents[x].two;
+var dd= document.getElementById("g4"); 
+dd.value=cart.contents[x].four;
+var ee= document.getElementById("g5"); 
+ee.value=cart.contents[x2].two;
+var ff= document.getElementById("g6"); 
+ff.value=cart.contents[x2].four;
+var gg= document.getElementById("g7"); 
+gg.value=cart.contents[x2].two;
+var hh= document.getElementById("g8"); 
+hh.value=cart.contents[x2].four;
+var ii= document.getElementById("g9"); 
+ii.value=cart.contents[x3].two;
+var jj= document.getElementById("g10"); 
+jj.value=cart.contents[x3].four;
+var kk= document.getElementById("g11"); 
+kk.value=cart.contents[x3].two;
+var ll= document.getElementById("g12"); 
+ll.value=cart.contents[x3].four;
+var oo= document.getElementById("g13"); 
+oo.value=cart.contents[x4].two;
+var pp= document.getElementById("g14"); 
+pp.value=cart.contents[x4].four;
+var nn= document.getElementById("g15"); 
+nn.value=cart.contents[x4].two;
+var mm= document.getElementById("g16"); 
+mm.value=cart.contents[x4].four;
+var tt= document.getElementById("g17"); 
+tt.value=cart.contents[x5].two;
+var uu= document.getElementById("g18"); 
+uu.value=cart.contents[x5].four;
+var xx= document.getElementById("g19"); 
+xx.value=cart.contents[x5].two;
+var yy= document.getElementById("g20"); 
+yy.value=cart.contents[x5].four;
+var aa1=document.getElementById("anw1");
+aa1.value=k1;
+var aa2=document.getElementById("anw2");
+aa2.value=k2;
+var aa3=document.getElementById("anw3");
+aa3.value=k3;
+var aa4=document.getElementById("anw4");
+aa4.value=k4;
+var aa5=document.getElementById("anw5");
+aa5.value=k5;
+var aa6=document.getElementById("anw6");
+aa6.value=k6;
+var aa7=document.getElementById("anw7");
+aa7.value=k7;
+var aa8=document.getElementById("anw8");
+aa8.value=k8;
+var aa9=document.getElementById("anw9");
+aa9.value=k9;
+var aa10=document.getElementById("anw10");
+aa10.value=k10;
+};
+
+</script>
+<p>選擇正確的注音</p>
+
+<form   name="myform" method="post" action="chinese_4.php">
+<table style="width:80%">
+1.
+  <tr>
+    <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand4[0])</script></font></th>
+    <th> 
+    
+    <input name="c1" id="g1" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x].two)</script></font>
+    <input name="c1" id="g2" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x].four)</script></font>
+    
+    </th>
+  </tr>
+
+  <tr>
+   <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand4[1])</script></font></th>
+    <th> 
+    
+    <input name="c2" type="radio" id="g3"  style="zoom: 2" "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x].two)</script></font>
+    <input name="c2" type="radio" id="g4"  style="zoom: 2" "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x].four)</script></font>
+   
+    </th>
+  </tr>
+
+</table>
+<table style="width:80%">
+2.
+  <tr>
+    <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand7[0])</script></font></th>
+    <th> 
+   
+    <input name="c3" type="radio" id="g5" style="zoom: 2" "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x2].two)</script></font>
+    <input name="c3" type="radio" id="g6"  style="zoom: 2" "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x2].four)</script></font>
+   
+    </th>
+  </tr>
+
+
+  <tr>
+   <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand7[1])</script></font></th>
+    <th> 
+    
+    <input name="c4" type="radio" id="g7" style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x2].two)</script></font>
+    <input name="c4" type="radio" id="g8"  style="zoom: 2" "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x2].four)</script></font>
+ 
+    </th>
+  </tr>
+
+</table>
+3.
+<table style="width:80%">
+
+  <tr>
+    <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand10[0])</script></font></th>
+    <th> 
+ 
+    <input name="c5" type="radio" id="g9" style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x3].two)</script></font>
+    <input name="c5" type="radio" id="g10"  style="zoom: 2""><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x3].four)</script></font>
+
+    </th>
+  </tr>
+
+
+  <tr>
+   <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand10[1])</script></font></th>
+    <th> 
+ 
+    <input name="c6" type="radio" id="g11" style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x3].two)</script></font>
+    <input name="c6" type="radio" id="g12" style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x3].four)</script></font>
+
+    </th>
+  </tr>
+
+</table>
+4.
+
+<table style="width:80%">
+
+  <tr>
+    <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand13[0])</script></font></th>
+    <th> 
+
+    <input name="c7" type="radio" id="g13" style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x4].two)</script></font>
+    <input name="c7" type="radio" id="g14" style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x4].four)</script></font>
+   
+    </th>
+  </tr>
+
+
+  <tr>
+   <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand13[1])</script></font></th>
+    <th> 
+   
+    <input name="c8" type="radio" id="g15" style="zoom: 2" "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x4].two)</script></font>
+    <input name="c8" type="radio" id="g16" style="zoom: 2" "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x4].four)</script></font>
+    
+    </th>
+  </tr>
+
+</table>
+5.
+
+<table style="width:80%">
+
+  <tr>
+    <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand16[0])</script></font></th>
+    <th> 
+
+    <input name="c9" type="radio" id="g17" style="zoom: 2" "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x5].two)</script></font>
+    <input name="c9" type="radio" id="g18" style="zoom: 2" "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x5].four)</script></font>
+   
+    </th>
+  </tr>
+
+
+  <tr>
+   <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand16[1])</script></font></th>
+    <th> 
+ 
+    <input name="c10" type="radio" id="g19" style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x5].two)</script></font>
+    <input name="c10" type="radio" id="g20" style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(cart.contents[x5].four)</script></font>
+   
+    </th>
+  </tr>
+
+</table>
+<div  style="top:850px;left:1120px;position:absolute;"><button  type="submit" name="" value="hi">確認</div>
+
+	<input type="hidden" id="anw1" name="ar1"/>				
+	<input type="hidden" id="anw2" name="ar2"/>
+	<input type="hidden" id="anw3" name="ar3"/>
+	<input type="hidden" id="anw4" name="ar4"/>
+	<input type="hidden" id="anw5" name="ar5"/>
+  <input type="hidden" id="anw6" name="ar6"/>       
+  <input type="hidden" id="anw7" name="ar7"/>
+  <input type="hidden" id="anw8" name="ar8"/>
+  <input type="hidden" id="anw9" name="ar9"/>
+  <input type="hidden" id="anw10" name="ar10"/> 	
+</form>
+</body>
+</html>
