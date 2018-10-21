@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+	function getRandom(minNum,maxNum){	
+		return Math.floor(Math.random()*(maxNum-minNum+1))+minNum;
+	}
+
+	function getRandomArray(minNum,maxNum,n){	                                         //隨機產生不重覆的n個數字
+		var rdmArray=[n];		                                                             //儲存產生的陣列
+		for(var i=0;i<n;i++){
+			var rdm=0;		                                                             //暫存的亂數
+			do{
+				var exist=false;															 //此亂數是否已存在
+				rdm=getRandom(minNum, maxNum);											 //取得亂數
+																							 //檢查亂數是否存在於陣列中，若存在則繼續回圈
+				if(rdmArray.indexOf(rdm)!=-1) exist=true;
+			}while(exist);																 //產生沒出現過的亂數時離開迴圈
+			rdmArray[i]=rdm;
+		}
+		return rdmArray;
+	}
+	var randomquestion1=getRandomArray(1,6,2);
+	var randomquestion2=getRandomArray(1,6,2);
+	var randomquestion3=getRandomArray(1,6,2);
+	var randomquestion4=getRandomArray(1,6,2);
+	var randomquestion5=getRandomArray(1,6,2);
+	var getthenumoftheq=getRandomArray(10,90,5);
+	function a(){
+		if(randomquestion1[0]==1){
+			document.getElementById('q11').disabled=true;
+			document.getElementById('q11').value=getthenumoftheq[0];
+		}
+		if(randomquestion1[0]==2){
+			document.getElementById('q12').disabled=true;
+			document.getElementById('q12').value=getthenumoftheq[0]+1;
+		}
+		if(randomquestion1[0]==3){
+			document.getElementById('q13').disabled=true;
+			document.getElementById('q13').value=getthenumoftheq[0]+2;
+		}
+		if(randomquestion1[0]==4){
+			document.getElementById('q14').disabled=true;
+			document.getElementById('q14').value=getthenumoftheq[0]+3;
+		}
+		if(randomquestion1[0]==5){
+			document.getElementById('q15').disabled=true;
+			document.getElementById('q15').value=getthenumoftheq[0]+4;
+		}
+		if(randomquestion1[0]==6){
+			document.getElementById('q16').disabled=true;
+			document.getElementById('q16').value=getthenumoftheq[0]+5;
+		}
+		if(randomquestion1[1]==1){
+			document.getElementById('q11').disabled=true;
+			document.getElementById('q11').value=getthenumoftheq[0];
+		}
+		if(randomquestion1[1]==2){
+			document.getElementById('q12').disabled=true;
+			document.getElementById('q12').value=getthenumoftheq[0]+1;
+		}
+		if(randomquestion1[1]==3){
+			document.getElementById('q13').disabled=true;
+			document.getElementById('q13').value=getthenumoftheq[0]+2;
+		}
+		if(randomquestion1[1]==4){
+			document.getElementById('q14').disabled=true;
+			document.getElementById('q14').value=getthenumoftheq[0]+3;
+		}
+		if(randomquestion1[1]==5){
+			document.getElementById('q15').disabled=true;
+			document.getElementById('q15').value=getthenumoftheq[0]+4;
+		}
+		if(randomquestion1[1]==6){
+			document.getElementById('q16').disabled=true;
+			document.getElementById('q16').value=getthenumoftheq[0]+5;
+		}
+		if(randomquestion2[0]==1){
+			document.getElementById('q21').disabled=true;
+			document.getElementById('q21').value=getthenumoftheq[1];
+		}
+		if(randomquestion2[0]==2){
+			document.getElementById('q22').disabled=true;
+			document.getElementById('q22').value=getthenumoftheq[1]-1;
+		}
+		if(randomquestion2[0]==3){
+			document.getElementById('q23').disabled=true;
+			document.getElementById('q23').value=getthenumoftheq[1]-2;
+		}
+		if(randomquestion2[0]==4){
+			document.getElementById('q24').disabled=true;
+			document.getElementById('q24').value=getthenumoftheq[1]-3;
+		}
+		if(randomquestion2[0]==5){
+			document.getElementById('q25').disabled=true;
+			document.getElementById('q25').value=getthenumoftheq[1]-4;
+		}
+		if(randomquestion2[0]==6){
+			document.getElementById('q26').disabled=true;
+			document.getElementById('q26').value=getthenumoftheq[1]-5;
+		}
+		if(randomquestion2[1]==1){
+			document.getElementById('q21').disabled=true;
+			document.getElementById('q21').value=getthenumoftheq[1];
+		}
+		if(randomquestion2[1]==2){
+			document.getElementById('q22').disabled=true;
+			document.getElementById('q22').value=getthenumoftheq[1]-1;
+		}
+		if(randomquestion2[1]==3){
+			document.getElementById('q23').disabled=true;
+			document.getElementById('q23').value=getthenumoftheq[1]-2;
+		}
+		if(randomquestion2[1]==4){
+			document.getElementById('q24').disabled=true;
+			document.getElementById('q24').value=getthenumoftheq[1]-3;
+		}
+		if(randomquestion2[1]==5){
+			document.getElementById('q25').disabled=true;
+			document.getElementById('q25').value=getthenumoftheq[1]-4;
+		}
+		if(randomquestion2[1]==6){
+			document.getElementById('q26').disabled=true;
+			document.getElementById('q26').value=getthenumoftheq[1]-5;
+		}
+		if(randomquestion3[0]==1){
+			document.getElementById('q31').disabled=true;
+			document.getElementById('q31').value=getthenumoftheq[2];
+		}
+		if(randomquestion3[0]==2){
+			document.getElementById('q32').disabled=true;
+			document.getElementById('q32').value=getthenumoftheq[2]-1;
+		}
+		if(randomquestion3[0]==3){
+			document.getElementById('q33').disabled=true;
+			document.getElementById('q33').value=getthenumoftheq[2]-2;
+		}
+		if(randomquestion3[0]==4){
+			document.getElementById('q34').disabled=true;
+			document.getElementById('q34').value=getthenumoftheq[2]-3;
+		}
+		if(randomquestion3[0]==5){
+			document.getElementById('q35').disabled=true;
+			document.getElementById('q35').value=getthenumoftheq[2]-4;
+		}
+		if(randomquestion3[0]==6){
+			document.getElementById('q36').disabled=true;
+			document.getElementById('q36').value=getthenumoftheq[2]-5;
+		}
+		if(randomquestion3[1]==1){
+			document.getElementById('q31').disabled=true;
+			document.getElementById('q31').value=getthenumoftheq[2];
+		}
+		if(randomquestion3[1]==2){
+			document.getElementById('q32').disabled=true;
+			document.getElementById('q32').value=getthenumoftheq[2]-1;
+		}
+		if(randomquestion3[1]==3){
+			document.getElementById('q33').disabled=true;
+			document.getElementById('q33').value=getthenumoftheq[2]-2;
+		}
+		if(randomquestion3[1]==4){
+			document.getElementById('q34').disabled=true;
+			document.getElementById('q34').value=getthenumoftheq[2]-3;
+		}
+		if(randomquestion3[1]==5){
+			document.getElementById('q35').disabled=true;
+			document.getElementById('q35').value=getthenumoftheq[2]-4;
+		}
+		if(randomquestion3[1]==6){
+			document.getElementById('q36').disabled=true;
+			document.getElementById('q36').value=getthenumoftheq[2]-5;
+		}
+		if(randomquestion4[0]==1){
+			document.getElementById('q41').disabled=true;
+			document.getElementById('q41').value=getthenumoftheq[3];
+		}
+		if(randomquestion4[0]==2){
+			document.getElementById('q42').disabled=true;
+			document.getElementById('q42').value=getthenumoftheq[3]+1;
+		}
+		if(randomquestion4[0]==3){
+			document.getElementById('q43').disabled=true;
+			document.getElementById('q43').value=getthenumoftheq[3]+2;
+		}
+		if(randomquestion4[0]==4){
+			document.getElementById('q44').disabled=true;
+			document.getElementById('q44').value=getthenumoftheq[3]+3;
+		}
+		if(randomquestion4[0]==5){
+			document.getElementById('q45').disabled=true;
+			document.getElementById('q45').value=getthenumoftheq[3]+4;
+		}
+		if(randomquestion4[0]==6){
+			document.getElementById('q46').disabled=true;
+			document.getElementById('q46').value=getthenumoftheq[3]+5;
+		}
+		if(randomquestion4[1]==1){
+			document.getElementById('q41').disabled=true;
+			document.getElementById('q41').value=getthenumoftheq[3];
+		}
+		if(randomquestion4[1]==2){
+			document.getElementById('q42').disabled=true;
+			document.getElementById('q42').value=getthenumoftheq[3]+1;
+		}
+		if(randomquestion4[1]==3){
+			document.getElementById('q43').disabled=true;
+			document.getElementById('q43').value=getthenumoftheq[3]+2;
+		}
+		if(randomquestion4[1]==4){
+			document.getElementById('q44').disabled=true;
+			document.getElementById('q44').value=getthenumoftheq[3]+3;
+		}
+		if(randomquestion4[1]==5){
+			document.getElementById('q45').disabled=true;
+			document.getElementById('q45').value=getthenumoftheq[3]+4;
+		}
+		if(randomquestion4[1]==6){
+			document.getElementById('q46').disabled=true;
+			document.getElementById('q46').value=getthenumoftheq[3]+5;
+		}
+		if(randomquestion5[0]==1){
+			document.getElementById('q51').disabled=true;
+			document.getElementById('q51').value=getthenumoftheq[4];
+		}
+		if(randomquestion5[0]==2){
+			document.getElementById('q52').disabled=true;
+			document.getElementById('q52').value=getthenumoftheq[4]-1;
+		}
+		if(randomquestion5[0]==3){
+			document.getElementById('q53').disabled=true;
+			document.getElementById('q53').value=getthenumoftheq[4]-2;
+		}
+		if(randomquestion5[0]==4){
+			document.getElementById('q54').disabled=true;
+			document.getElementById('q54').value=getthenumoftheq[4]-3;
+		}
+		if(randomquestion5[0]==5){
+			document.getElementById('q55').disabled=true;
+			document.getElementById('q55').value=getthenumoftheq[4]-4;
+		}
+		if(randomquestion5[0]==6){
+			document.getElementById('q56').disabled=true;
+			document.getElementById('q56').value=getthenumoftheq[4]-5;
+		}
+		if(randomquestion5[1]==1){
+			document.getElementById('q51').disabled=true;
+			document.getElementById('q51').value=getthenumoftheq[4];
+		}
+		if(randomquestion5[1]==2){
+			document.getElementById('q52').disabled=true;
+			document.getElementById('q52').value=getthenumoftheq[4]-1;
+		}
+		if(randomquestion5[1]==3){
+			document.getElementById('q53').disabled=true;
+			document.getElementById('q53').value=getthenumoftheq[4]-2;
+		}
+		if(randomquestion5[1]==4){
+			document.getElementById('q54').disabled=true;
+			document.getElementById('q54').value=getthenumoftheq[4]-3;
+		}
+		if(randomquestion5[1]==5){
+			document.getElementById('q55').disabled=true;
+			document.getElementById('q55').value=getthenumoftheq[4]-4;
+		}
+		if(randomquestion5[1]==6){
+			document.getElementById('q56').disabled=true;
+			document.getElementById('q56').value=getthenumoftheq[4]-5;
+		}
+		var s11 = document.getElementById("s11");        									
+		s11.value = randomquestion1[0];
+		var s12 = document.getElementById("s12");        									
+		s12.value = randomquestion1[1];
+		var s21 = document.getElementById("s21");        									
+		s21.value = randomquestion2[0];
+		var s22 = document.getElementById("s22");        									
+		s22.value = randomquestion2[1];
+		var s31 = document.getElementById("s31");        									
+		s31.value = randomquestion3[0];
+		var s32 = document.getElementById("s32");        									
+		s32.value = randomquestion3[1];
+		var s41 = document.getElementById("s41");        									
+		s41.value = randomquestion4[0];
+		var s42 = document.getElementById("s42");        									
+		s42.value = randomquestion4[1];
+		var s51 = document.getElementById("s51");        									
+		s51.value = randomquestion5[0];
+		var s52 = document.getElementById("s52");        									
+		s52.value = randomquestion5[1];
+		var qq1 = document.getElementById("qq1");        									
+		qq1.value = getthenumoftheq[0];
+		var qq2 = document.getElementById("qq2");        									
+		qq2.value = getthenumoftheq[1];
+		var qq3 = document.getElementById("qq3");        									
+		qq3.value = getthenumoftheq[2];
+		var qq4 = document.getElementById("qq4");        									
+		qq4.value = getthenumoftheq[3];
+		var qq5 = document.getElementById("qq5");        									
+		qq5.value = getthenumoftheq[4];
+	}
+</script>
+<body onload="a()">
+	<h2>算一算,空格裡的數字是多少,一格1分</h2>
+	<form method="post" action="math3_finish.php">
+		<table border="1" style="margin: auto;">
+			<tr>
+				<td>
+  					<label><input type="number" name="q11" id="q11" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q12" id="q12" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q13" id="q13" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q14" id="q14" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q15" id="q15" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q16" id="q16" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td>
+  					<label><input type="number" name="q21" id="q21" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q22" id="q22" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q23" id="q23" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q24" id="q24" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q25" id="q25" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q26" id="q26" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td>
+  					<label><input type="number" name="q31" id="q31" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q32" id="q32" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q33" id="q33" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q34" id="q34" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q35" id="q35" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q36" id="q36" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td>
+  					<label><input type="number" name="q41" id="q41" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q42" id="q42" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q43" id="q43" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q44" id="q44" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q45" id="q45" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q46" id="q46" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td>
+  					<label><input type="number" name="q51" id="q51" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q52" id="q52" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q53" id="q53" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q54" id="q54" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q55" id="q55" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  					<label><input type="number" name="q56" id="q56" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label>
+  				</td>
+  			</tr>
+  		</table>
+  		<div style="text-align: center;">
+  			<button>離開</button>
+			<button type="submit" id="button">結束作答</button>
+		</div>
+		<input type="hidden" id="s11" name="seat11">
+  		<input type="hidden" id="s21" name="seat21">
+  		<input type="hidden" id="s31" name="seat31">
+  		<input type="hidden" id="s41" name="seat41">
+  		<input type="hidden" id="s51" name="seat51">
+  		<input type="hidden" id="s12" name="seat12">
+  		<input type="hidden" id="s22" name="seat22">
+  		<input type="hidden" id="s32" name="seat32">
+  		<input type="hidden" id="s42" name="seat42">
+  		<input type="hidden" id="s52" name="seat52">
+  		<input type="hidden" id="qq1" name="question1">
+  		<input type="hidden" id="qq2" name="question2">
+  		<input type="hidden" id="qq3" name="question3">
+  		<input type="hidden" id="qq4" name="question4">
+  		<input type="hidden" id="qq5" name="question5">
+  	</form>
+</body>
+</html>
