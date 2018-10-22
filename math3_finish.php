@@ -8,36 +8,36 @@
 	}
 </script>
 <?php
-$anw1 = $_POST['q11'];
-$anw2 = $_POST['q12'];
-$anw3 = $_POST['q13'];
-$anw4 = $_POST['q14'];
-$anw5 = $_POST['q15'];
-$anw6 = $_POST['q16'];
-$anw7 = $_POST['q21'];
-$anw8 = $_POST['q22'];
-$anw9 = $_POST['q23'];
-$anw10 = $_POST['q24'];
-$anw11 = $_POST['q25'];
-$anw12 = $_POST['q26'];
-$anw13 = $_POST['q31'];
-$anw14 = $_POST['q32'];
-$anw15 = $_POST['q33'];
-$anw16 = $_POST['q34'];
-$anw17 = $_POST['q35'];
-$anw18 = $_POST['q36'];
-$anw19 = $_POST['q41'];
-$anw20 = $_POST['q42'];
-$anw21 = $_POST['q43'];
-$anw22 = $_POST['q44'];
-$anw23 = $_POST['q45'];
-$anw24 = $_POST['q46'];
-$anw25 = $_POST['q51'];
-$anw26 = $_POST['q52'];
-$anw27 = $_POST['q53'];
-$anw28 = $_POST['q54'];
-$anw29 = $_POST['q55'];
-$anw30 = $_POST['q56'];
+@$anw1 = $_POST['q11'];
+@$anw2 = $_POST['q12'];
+@$anw3 = $_POST['q13'];
+@$anw4 = $_POST['q14'];
+@$anw5 = $_POST['q15'];
+@$anw6 = $_POST['q16'];
+@$anw7 = $_POST['q21'];
+@$anw8 = $_POST['q22'];
+@$anw9 = $_POST['q23'];
+@$anw10 = $_POST['q24'];
+@$anw11 = $_POST['q25'];
+@$anw12 = $_POST['q26'];
+@$anw13 = $_POST['q31'];
+@$anw14 = $_POST['q32'];
+@$anw15 = $_POST['q33'];
+@$anw16 = $_POST['q34'];
+@$anw17 = $_POST['q35'];
+@$anw18 = $_POST['q36'];
+@$anw19 = $_POST['q41'];
+@$anw20 = $_POST['q42'];
+@$anw21 = $_POST['q43'];
+@$anw22 = $_POST['q44'];
+@$anw23 = $_POST['q45'];
+@$anw24 = $_POST['q46'];
+@$anw25 = $_POST['q51'];
+@$anw26 = $_POST['q52'];
+@$anw27 = $_POST['q53'];
+@$anw28 = $_POST['q54'];
+@$anw29 = $_POST['q55'];
+@$anw30 = $_POST['q56'];
 $q1=$_POST['question1'];
 $q11=$q1+1;
 $q12=$q1+2;
@@ -128,7 +128,7 @@ if($anw30==$q5-5)$score=$score+1;
   			<label><input type="number" name="q11" id="1" style="height: 80px; width: 80px; font-size: 55px; text-align: center;" disabled <?php if($s11=="3"||$s12=="3") echo "value=\"$q12\""; else echo "value=\"$anw3\""; ?>></label>
   			<label><input type="number" name="q11" id="1" style="height: 80px; width: 80px; font-size: 55px; text-align: center;" disabled <?php if($s11=="4"||$s12=="4") echo "value=\"$q13\""; else echo "value=\"$anw4\""; ?>></label>
   			<label><input type="number" name="q11" id="1" style="height: 80px; width: 80px; font-size: 55px; text-align: center;" disabled <?php if($s11=="5"||$s12=="5") echo "value=\"$q14\""; else echo "value=\"$anw5\""; ?>></label>
-  			<label><input type="number" name="q11" id="1" style="height: 80px; width: 80px; font-size: 55px; text-align: center;" disabled <?php if($s11=="6"||$s12=="6") echo "value=\"$q15\""; else echo "value=\"$an61\""; ?>></label>
+  			<label><input type="number" name="q11" id="1" style="height: 80px; width: 80px; font-size: 55px; text-align: center;" disabled <?php if($s11=="6"||$s12=="6") echo "value=\"$q15\""; else echo "value=\"$anw6\""; ?>></label>
 		</td>
 		<td>
 			<?php echo "<label><div id=\"a1\" style=\"color:red; display:none;\"><input type=\"number\" name=\"q11\" id=\"q11\" style=\"height: 80px; width: 80px; font-size: 55px; text-align: center;\" value=\"$q1\" disabled></label>"; ?>
