@@ -22,7 +22,7 @@
       user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
     }
 
-    .container {
+    .container {                   
       max-width: 60em;
     }
 
@@ -41,14 +41,6 @@
     .problem-group {
       display: flex;
       align-items: center;
-    }
-
-    .float-left {
-      float: left;
-    }
-
-    .float-right {
-      float: right;
     }
 
     .clock {
@@ -705,7 +697,9 @@
       for (var i = 0; i < num_of_problems; ++i) {
         user_answers_lr[i] = undefined;
         user_answers_rl[i] = undefined;
+
         lines.push(new Line({parent: problems_element}));
+
         var exist = false;
         var hour = 0, minute = 0;
         do {
@@ -715,29 +709,27 @@
           try {
             questions.forEach(function(element) {
               if (element.hour === hour && element.minute === minute) {
+                exist = true;
                 throw BreakException;
               }
             });
-          } catch (e) {
-            if (e === BreakException) {
-              exist = true;
-            } else {
-              throw e;
-            }
-          }
+          } catch (e) { }
         } while (exist);
+
         questions.push({
           hour: hour,
           minute: minute
         });
         answers.push(i);
       }
+      // answer = [0, 1, 2, 3]
       for (var i = 0; i < num_of_problems; ++i) {
         let j = random_int(num_of_problems);
         let tmp = answers[i];
         answers[i] = answers[j];
         answers[j] = tmp;
       }
+      // answer = [3, 1, 0, 2]
       for (var i = 0; i < num_of_problems; ++i) {
         displays[i] = new Problem({
           id: i,

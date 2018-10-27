@@ -30,12 +30,12 @@
     </tr>
     <tr style="height:  40px">
       
-    <td><input type="checkbox" id="n1" name="ans" ></td>
-    <td><input type="checkbox" id="n2" name="ans" ></td>
-    <td><input type="checkbox" id="n3" name="ans" ></td>
-    <td><input type="checkbox" id="n4" name="ans" ></td>
-    <td><input type="checkbox" id="n5" name="ans" ></td>
-    <td><input type="checkbox" id="n6" name="ans" ></td>
+    <td><input type="checkbox" id="n1" name="ans" ><span id="f00"></span></td>
+    <td><input type="checkbox" id="n2" name="ans" ><span id="f01"></span></td>
+    <td><input type="checkbox" id="n3" name="ans" ><span id="f02"></span></td>
+    <td><input type="checkbox" id="n4" name="ans" ><span id="f03"></span></td>
+    <td><input type="checkbox" id="n5" name="ans" ><span id="f04"></span></td>
+    <td><input type="checkbox" id="n6" name="ans" ><span id="f05"></span></td>
     </tr>
         
       
@@ -52,17 +52,19 @@
     </tr>
 
     <tr style="height: 40px">
-        <td><input type="checkbox" id="n7" name="ans"></td>
-        <td><input type="checkbox" id="n8" name="ans"></td>
-        <td><input type="checkbox" id="n9" name="ans"></td>
-        <td><input type="checkbox" id="n10" name="ans"></td>
-        <td><input type="checkbox" id="n11" name="ans"></td>
-        <td><input type="checkbox" id="n12" name="ans"></td>
+        <td><input type="checkbox" id="n7" name="ans"><span id="f06"></span></td>
+        <td><input type="checkbox" id="n8" name="ans"><span id="f07"></span></td>
+        <td><input type="checkbox" id="n9" name="ans"><span id="f08"></span></td>
+        <td><input type="checkbox" id="n10" name="ans"><span id="f09"></span></td>
+        <td><input type="checkbox" id="n11" name="ans"><span id="f10"></span></td>
+        <td><input type="checkbox" id="n12" name="ans"><span id="f11"></span></td>
     </tr>
   </table>
   <script>
     (function (win) {
       function DrawClock(options) {
+        this.hour = options.hour;
+        this.minute = options.minute;
         this.canvas = options.el;
         this.ctx = this.canvas.getContext('2d'); //方法返回一個用於在畫布上繪圖的環境
         this.width = this.ctx.canvas.width;
@@ -92,12 +94,14 @@
                       var hours = now.getHours();
                       var minutes = now.getMinutes();
                       var seconds = now.getSeconds();*/
-          var hours = Math.floor(Math.random() * 12);
-          var minutes = 0;
+          // var hours = Math.floor(Math.random() * 12);
+          // var minutes = 0;
+          var hours = this.hour;
+          var minute = this.minute;
           //var seconds = Math.floor(Math.random() * 60);
 
           var hour = hours >= 12 ? hours - 12 : hours;
-          var minute = minutes;
+          var minutes = minutes;
 
           this.drawBackground();
           this.drawHour(hour, minute);
@@ -197,19 +201,207 @@
       win.DrawClock = DrawClock;
     })(window);
 
+    var h0= Math.floor(Math.random() * 12) + 1;
+    var f0 =Math.floor(Math.random() * 3);
+
+    if(f0==0){
+      var hh1 = h0 + 1;
+      var hh2 = h0 + 2;
+      if(hh1>12){
+        hh1-=12;
+      }
+      if(hh2>12){
+        hh2-=12;
+      }
+      document.getElementById('f00').innerHTML = h0;
+      document.getElementById('f01').innerHTML = hh1;
+      document.getElementById('f02').innerHTML = hh2;
+    }
+    if(f0==1){
+      var hh1 = h0-1;
+      var hh2 = h0+1;
+      if(hh1<=0){
+        hh1+=12;
+      }
+      if(hh2>12){
+        hh2-=12;
+      }
+      document.getElementById('f00').innerHTML = hh1;
+      document.getElementById('f01').innerHTML = h0;
+      document.getElementById('f02').innerHTML = hh2;
+    }
+    if(f0==2){
+      var hh1 = h0-2;
+      var hh2 = h0-1;
+      if(hh1<=0){
+        hh1+=12;
+      }
+      if(hh2<=0){
+        hh2+=12;
+      }
+      document.getElementById('f00').innerHTML = hh1;
+      document.getElementById('f01').innerHTML = hh2;
+      document.getElementById('f02').innerHTML = h0;
+    }
+
+    
+    var h1= Math.floor(Math.random() * 12) + 1;
+    var f1 =Math.floor(Math.random() * 3);
+
+  if(f1==0){
+      var hh1 = h1 + 1;
+      var hh2 = h1 + 2;
+      if(hh1>12){
+        hh1-=12;
+      }
+      if(hh2>12){
+        hh2-=12;
+      }
+      document.getElementById('f03').innerHTML = h1;
+      document.getElementById('f04').innerHTML = hh1;
+      document.getElementById('f05').innerHTML = hh2;
+    }
+    if(f1==1){
+      var hh1 = h1-1;
+      var hh2 = h1+1;
+      if(hh1<=0){
+        hh1+=12;
+      }
+      if(hh2>12){
+        hh2-=12;
+      }
+      document.getElementById('f03').innerHTML = hh1;
+      document.getElementById('f04').innerHTML = h1;
+      document.getElementById('f05').innerHTML = hh2;
+    }
+    if(f1==2){
+      var hh1 = h1-2;
+      var hh2 = h1-1;
+      if(hh1<=0){
+        hh1+=12;
+      }
+      if(hh2<=0){
+        hh2+=12;
+      }
+      document.getElementById('f03').innerHTML = hh1;
+      document.getElementById('f04').innerHTML = hh2;
+      document.getElementById('f05').innerHTML = h1;
+    }
+
+
+    var h2= Math.floor(Math.random() * 12) + 1;
+    var f2 =Math.floor(Math.random() * 3);
+
+
+    if(f2==0){
+      var hh1 = h2 + 1;
+      var hh2 = h2 + 2;
+      if(hh1>12){
+        hh1-=12;
+      }
+      if(hh2>12){
+        hh2-=12;
+      }
+      document.getElementById('f06').innerHTML = h2;
+      document.getElementById('f07').innerHTML = hh1;
+      document.getElementById('f08').innerHTML = hh2;
+    }
+    if(f2==1){
+      var hh1 = h2-1;
+      var hh2 = h2+1;
+      if(hh1<=0){
+        hh1+=12;
+      }
+      if(hh2>12){
+        hh2-=12;
+      }
+      document.getElementById('f06').innerHTML = hh1;
+      document.getElementById('f07').innerHTML = h2;
+      document.getElementById('f08').innerHTML = hh2;
+    }
+    if(f2==2){
+      var hh1 = h2-2;
+      var hh2 = h2-1;
+      if(hh1<=0){
+        hh1+=12;
+      }
+      if(hh2<=0){
+        hh2+=12;
+      }
+      document.getElementById('f06').innerHTML = hh1;
+      document.getElementById('f07').innerHTML = hh2;
+      document.getElementById('f08').innerHTML = h2;
+    }
+
+    var h3= Math.floor(Math.random() * 12) + 1;
+    var f3 =Math.floor(Math.random() * 3);
+
+
+    if(f3==0){
+      var hh1 = h3 + 1;
+      var hh2 = h3 + 2;
+      if(hh1>12){
+        hh1-=12;
+      }
+      if(hh2>12){
+        hh2-=12;
+      }
+      document.getElementById('f09').innerHTML = h3;
+      document.getElementById('f10').innerHTML = hh1;
+      document.getElementById('f11').innerHTML = hh2;
+    }
+    if(f3==1){
+      var hh1 = h3-1;
+      var hh2 = h3+1;
+      if(hh1<=0){
+        hh1+=12;
+      }
+      if(hh2>12){
+        hh2-=12;
+      }
+      document.getElementById('f09').innerHTML = hh1;
+      document.getElementById('f10').innerHTML = h3;
+      document.getElementById('f11').innerHTML = hh2;
+    }
+    if(f3==2){
+      var hh1 = h3-2;
+      var hh2 = h3-1;
+      if(hh1<=0){
+        hh1+=12;
+      }
+      if(hh2<=0){
+        hh2+=12;
+      }
+      document.getElementById('f09').innerHTML = hh1;
+      document.getElementById('f10').innerHTML = hh2;
+      document.getElementById('f11').innerHTML = h3;
+    }
+
+
+
+    
+
     new DrawClock({
-      el: document.getElementById("clock1")
+      el: document.getElementById("clock1"),
+      hour: h0,
+      minute: 0
     });
         new DrawClock({
-      el: document.getElementById("clock2")
+      el: document.getElementById("clock2"),
+      hour: h1,
+      minute: 0
     });
       
       new DrawClock({
-      el: document.getElementById("clock3")
+      el: document.getElementById("clock3"),
+      hour: h2,
+      minute: 0
     });
       
       new DrawClock({
-      el: document.getElementById("clock4")
+      el: document.getElementById("clock4"),
+      hour: h3,
+      minute: 0
     });
   </script>
     <input type="button" onclick="location.href='http://hello.noip.me/Topic.php'" value="首頁">
