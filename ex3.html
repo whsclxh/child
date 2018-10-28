@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <header><div style="text-align: center;">請問現在是幾點鐘? 把正確的數字圈起來。</div></header>
+    <header><div style="text-align: center;">請問現在是幾點鐘? 把正確的數字勾起來。</div></header>
   <table>
     <tr style="height: 280px">
       <td style="width: 380px" colspan="3"><canvas id="clock1" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
@@ -30,12 +30,13 @@
     </tr>
     <tr style="height:  40px">
       
-    <td><input type="checkbox" id="n1" name="ans" ><span id="f00"></span></td>
-    <td><input type="checkbox" id="n2" name="ans" ><span id="f01"></span></td>
-    <td><input type="checkbox" id="n3" name="ans" ><span id="f02"></span></td>
-    <td><input type="checkbox" id="n4" name="ans" ><span id="f03"></span></td>
-    <td><input type="checkbox" id="n5" name="ans" ><span id="f04"></span></td>
-    <td><input type="checkbox" id="n6" name="ans" ><span id="f05"></span></td>
+    <td><input type="radio" id="n1" name="ans0" ><span id="f00"></span></td>
+    <td><input type="radio" id="n2" name="ans0" ><span id="f01"></span></td>
+    <td><input type="radio" id="n3" name="ans0" ><span id="f02"></span></td>
+
+    <td><input type="radio" id="n4" name="ans1" ><span id="f03"></span></td>
+    <td><input type="radio" id="n5" name="ans1" ><span id="f04"></span></td>
+    <td><input type="radio" id="n6" name="ans1" ><span id="f05"></span></td>
     </tr>
         
       
@@ -52,12 +53,13 @@
     </tr>
 
     <tr style="height: 40px">
-        <td><input type="checkbox" id="n7" name="ans"><span id="f06"></span></td>
-        <td><input type="checkbox" id="n8" name="ans"><span id="f07"></span></td>
-        <td><input type="checkbox" id="n9" name="ans"><span id="f08"></span></td>
-        <td><input type="checkbox" id="n10" name="ans"><span id="f09"></span></td>
-        <td><input type="checkbox" id="n11" name="ans"><span id="f10"></span></td>
-        <td><input type="checkbox" id="n12" name="ans"><span id="f11"></span></td>
+        <td><input type="radio" id="n7" name="ans2"><span id="f06"></span></td>
+        <td><input type="radio" id="n8" name="ans2"><span id="f07"></span></td>
+        <td><input type="radio" id="n9" name="ans2"><span id="f08"></span></td>
+
+        <td><input type="radio" id="n10" name="ans3"><span id="f09"></span></td>
+        <td><input type="radio" id="n11" name="ans3"><span id="f10"></span></td>
+        <td><input type="radio" id="n12" name="ans3"><span id="f11"></span></td>
     </tr>
   </table>
   <script>
@@ -405,7 +407,7 @@
     });
   </script>
     <input type="button" onclick="location.href='http://hello.noip.me/Topic.php'" value="首頁">
-        <input type="button" value="下一題" style="position:absolute;top:80%;left:95%;" onclick="location.href=''">
+        <input type="button" value="下一題" style="position:absolute;top:80%;left:95%;" onclick="location.href='http://hello.noip.me/ex4.html'">
 </body>
 
 </html>
