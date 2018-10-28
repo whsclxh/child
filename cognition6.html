@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript">
+	window.onload = function(){
+		var sp1 = document.getElementById("sp1");        									
+		sp1.value = shape[0];
+		var sp2 = document.getElementById("sp2");        									
+		sp2.value = shape[1];
+		var sp3 = document.getElementById("sp3");        									
+		sp3.value = shape[2];
+		var sp4 = document.getElementById("sp4");        									
+		sp4.value = shape[3];
+		var qo11 = document.getElementById("qo11");
+		qo11.value = question1[0];
+		var qo12 = document.getElementById("qo12");
+		qo12.value = question1[1];
+		var qo13 = document.getElementById("qo13");
+		qo13.value = question1[2];
+		var qo21 = document.getElementById("qo21");
+		qo21.value = question2[0];
+		var qo22 = document.getElementById("qo22");
+		qo22.value = question2[1];
+		var qo23 = document.getElementById("qo23");
+		qo23.value = question2[2];
+		var qo31 = document.getElementById("qo31");
+		qo31.value = question3[0];
+		var qo32 = document.getElementById("qo32");
+		qo32.value = question3[1];
+		var qo33 = document.getElementById("qo33");
+		qo33.value = question3[2];
+		var qo41 = document.getElementById("qo41");
+		qo41.value = question4[0];
+		var qo42 = document.getElementById("qo42");
+		qo42.value = question4[1];
+		var qo43 = document.getElementById("qo43");
+		qo43.value = question4[2];
+		var q11 = document.getElementById("q11");
+		q11.value = question1[0];
+		var q12 = document.getElementById("q12");
+		q12.value = question1[1];
+		var q13 = document.getElementById("q13");
+		q13.value = question1[2];
+		var q21 = document.getElementById("q21");
+		q21.value = question2[0];
+		var q22 = document.getElementById("q22");
+		q22.value = question2[1];
+		var q23 = document.getElementById("q23");
+		q23.value = question2[2];
+		var q31 = document.getElementById("q31");
+		q31.value = question3[0];
+		var q32 = document.getElementById("q32");
+		q32.value = question3[1];
+		var q33 = document.getElementById("q33");
+		q33.value = question3[2];
+		var q41 = document.getElementById("q41");
+		q41.value = question4[0];
+		var q42 = document.getElementById("q42");
+		q42.value = question4[1];
+		var q43 = document.getElementById("q43");
+		q43.value = question4[2];
+	}
+	function getRandom(minNum,maxNum){	
+		return Math.floor(Math.random()*(maxNum-minNum+1))+minNum;
+	}
+
+	function getRandomArray(minNum,maxNum,n){	                                         //隨機產生不重覆的n個數字
+		var rdmArray=[n];		                                                             //儲存產生的陣列
+		for(var i=0;i<n;i++){
+			var rdm=0;		                                                             //暫存的亂數
+			do{
+				var exist=false;															 //此亂數是否已存在
+				rdm=getRandom(minNum, maxNum);											 //取得亂數
+																							 //檢查亂數是否存在於陣列中，若存在則繼續回圈
+				if(rdmArray.indexOf(rdm)!=-1) exist=true;
+			}while(exist);																 //產生沒出現過的亂數時離開迴圈
+			rdmArray[i]=rdm;
+		}
+		return rdmArray;
+	}
+
+	function checkoption(x){
+		var no=[];
+		do{	
+			var a=true;
+			no=getRandomArray(0,9,1);
+				if(no.indexOf(x)==-1) 
+					var a=false;
+			}while(a);
+		return no;
+	}
+
+	function shuffle(arr){
+  		var len = arr.length;
+  		for(var i = 0; i < len - 1; i++){
+    		var idx = Math.floor(Math.random() * (len - i));
+    		var temp = arr[idx];
+    		arr[idx] = arr[len - i - 1];
+    		arr[len - i -1] = temp;
+  		}
+  		return arr;
+	}
+
+	var shape=getRandomArray(0,3,4);
+	var pic=[getRandom(0,9),getRandom(0,9),getRandom(0,9),getRandom(0,9),];
+
+	function gtqs(x){
+		if(x==0){
+		document.write('<img src="img/shape/circle0.png" width="100px"; height="100px";>');
+		}else if(x==1){
+		document.write('<img src="img/shape/squre0.png" width="100px"; height="100px";>');
+		}else if(x==2){
+		document.write('<img src="img/shape/rectangle0.png" width="100px"; height="100px";>');
+		}else{
+		document.write('<img src="img/shape/triangle0.png" width="100px"; height="100px";>');
+		}
+	}
+
+	function gtos(x){
+		if(x==0){
+			var oo1=getRandomArray(10,39,2);
+			var oo11=getRandom(0,9);
+			var getoptions1=[oo11,oo1[0],oo1[1],];
+			var option1=shuffle(getoptions1);
+			return option1;
+		}else if(x==1){
+			var oo2=getRandomArray(10,39,2);
+			var oo22=getRandom(0,9);
+			var getoptions2=[oo22,oo2[0],oo2[1],];
+			var option2=shuffle(getoptions2);
+			return option2;
+		}else if(x==2){
+			var oo3=getRandomArray(10,39,2);
+			var oo33=getRandom(0,9);
+			var getoptions3=[oo33,oo3[0],oo3[1],];
+			var option3=shuffle(getoptions3);
+			return option3;
+		}else{
+			var oo4=getRandomArray(10,39,2);
+			var oo44=getRandom(0,9);
+			var getoptions4=[oo44,oo4[0],oo4[1],];
+			var option4=shuffle(getoptions4);
+			return option4;
+		}
+	}
+	var question1=gtos(shape[0]); //2
+	var question2=gtos(shape[1]); //0
+	var question3=gtos(shape[2]); //1
+	var question4=gtos(shape[3]); //3
+
+	function insertp1(x,y){
+		if(x==0){
+			var view=[
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question1[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question1[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question1[2]]+'" width="100px"; height="100px";>');
+			}
+		}else if(x==1){
+			var view=[			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question1[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question1[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question1[2]]+'" width="100px"; height="100px";>');
+			}
+		}else if(x==2){
+			var view=[
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question1[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question1[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question1[2]]+'" width="100px"; height="100px";>');
+			}
+		}else{
+			var view=[
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question1[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question1[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question1[2]]+'" width="100px"; height="100px";>');
+			}
+		}
+	}
+	function insertp2(x,y){
+		if(x==0){
+			var view=[
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question2[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question2[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question2[2]]+'" width="100px"; height="100px";>');
+			}
+		}else if(x==1){
+			var view=[			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question2[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question2[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question2[2]]+'" width="100px"; height="100px";>');
+			}
+		}else if(x==2){
+			var view=[
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question2[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question2[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question2[2]]+'" width="100px"; height="100px";>');
+			}
+		}else{
+			var view=[
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question2[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question2[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question2[2]]+'" width="100px"; height="100px";>');
+			}
+		}
+	}
+	function insertp3(x,y){
+		if(x==0){
+			var view=[
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question3[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question3[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question3[2]]+'" width="100px"; height="100px";>');
+			}
+		}else if(x==1){
+			var view=[			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question3[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question3[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question3[2]]+'" width="100px"; height="100px";>');
+			}
+		}else if(x==2){
+			var view=[
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question3[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question3[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question3[2]]+'" width="100px"; height="100px";>');
+			}
+		}else{
+			var view=[
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question3[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question3[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question3[2]]+'" width="100px"; height="100px";>');
+			}
+		}
+	}
+	function insertp4(x,y){
+		if(x==0){
+			var view=[
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question4[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question4[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question4[2]]+'" width="100px"; height="100px";>');
+			}
+		}else if(x==1){
+			var view=[			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question4[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question4[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question4[2]]+'" width="100px"; height="100px";>');
+			}
+		}else if(x==2){
+			var view=[
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question4[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question4[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question4[2]]+'" width="100px"; height="100px";>');
+			}
+		}else{
+			var view=[
+			'img/shape/triangle/triangle1.png',
+			'img/shape/triangle/triangle2.png',
+			'img/shape/triangle/triangle3.png',
+			'img/shape/triangle/triangle4.png',
+			'img/shape/triangle/triangle5.png',
+			'img/shape/triangle/triangle6.png',
+			'img/shape/triangle/triangle7.png',
+			'img/shape/triangle/triangle8.png',
+			'img/shape/triangle/triangle9.png',
+			'img/shape/triangle/triangle10.png',
+			'img/shape/rectangle/rectangle1.png',
+			'img/shape/rectangle/rectangle2.png',
+			'img/shape/rectangle/rectangle3.png',
+			'img/shape/rectangle/rectangle4.png',
+			'img/shape/rectangle/rectangle5.png',
+			'img/shape/rectangle/rectangle6.png',
+			'img/shape/rectangle/rectangle7.png',
+			'img/shape/rectangle/rectangle8.png',
+			'img/shape/rectangle/rectangle9.png',
+			'img/shape/rectangle/rectangle10.png',			
+			'img/shape/squre/squre1.png',
+			'img/shape/squre/squre2.png',
+			'img/shape/squre/squre3.png',
+			'img/shape/squre/squre4.png',
+			'img/shape/squre/squre5.png',
+			'img/shape/squre/squre6.png',
+			'img/shape/squre/squre7.png',
+			'img/shape/squre/squre8.png',
+			'img/shape/squre/squre9.png',
+			'img/shape/squre/squre10.png',
+			'img/shape/circle/circle1.png',
+			'img/shape/circle/circle2.png',
+			'img/shape/circle/circle3.png',
+			'img/shape/circle/circle4.png',
+			'img/shape/circle/circle5.png',
+			'img/shape/circle/circle6.png',
+			'img/shape/circle/circle7.png',
+			'img/shape/circle/circle8.png',
+			'img/shape/circle/circle9.png',
+			'img/shape/circle/circle10.png',
+			];
+			if(y==1){
+				document.write('<img src="'+view[question4[0]]+'" width="100px"; height="100px";>');
+			}else if(y==2){
+				document.write('<img src="'+view[question4[1]]+'" width="100px"; height="100px";>');
+			}else{
+				document.write('<img src="'+view[question4[2]]+'" width="100px"; height="100px";>');
+			}
+		}
+	}
+</script>
+<body>
+	<h3>把跟前面形狀相似的選出來,一題5分</h3>
+	<form method="post" action="cognition6_finish.php">
+		<table border="1">
+			<tr>
+				<td><script>gtqs(shape[0]);</script></td>
+				<td>
+					<label><input type="radio" id="q11" name="question1"><script>insertp1(shape[0],1);</script></label>
+					<label><input type="radio" id="q12" name="question1"><script>insertp1(shape[0],2);</script></label>
+					<label><input type="radio" id="q13" name="question1"><script>insertp1(shape[0],3);</script></label>
+				</td>
+			</tr>
+			<tr>
+				<td><script>gtqs(shape[1]);</script></td>
+				<td>
+					<label><input type="radio" id="q21" name="question2"><script>insertp2(shape[1],1);</script></label>
+					<label><input type="radio" id="q22" name="question2"><script>insertp2(shape[1],2);</script></label>
+					<label><input type="radio" id="q23" name="question2"><script>insertp2(shape[1],3);</script></label>
+				</td>
+			</tr>
+			<tr>
+				<td><script>gtqs(shape[2]);</script></td>
+				<td>
+					<label><input type="radio" id="q31" name="question3"><script>insertp3(shape[2],1);</script></label>
+					<label><input type="radio" id="q32" name="question3"><script>insertp3(shape[2],2);</script></label>
+					<label><input type="radio" id="q33" name="question3"><script>insertp3(shape[2],3);</script></label>
+				</td>
+			</tr>
+			<tr>
+				<td><script>gtqs(shape[3]);</script></td>
+				<td>
+					<label><input type="radio" id="q41" name="question4"><script>insertp4(shape[3],1);</script></label>
+					<label><input type="radio" id="q42" name="question4"><script>insertp4(shape[3],2);</script></label>
+					<label><input type="radio" id="q43" name="question4"><script>insertp4(shape[3],3);</script></label>
+				</td>
+			</tr>
+		</table>
+		<input type="hidden" id="sp1" name="shape1"/>
+		<input type="hidden" id="sp2" name="shape2"/>
+		<input type="hidden" id="sp3" name="shape3"/>
+		<input type="hidden" id="sp4" name="shape4"/>
+		<input type="hidden" id="qo11" name="questionoption11"/>
+		<input type="hidden" id="qo12" name="questionoption12"/>
+		<input type="hidden" id="qo13" name="questionoption13"/>
+		<input type="hidden" id="qo21" name="questionoption21"/>
+		<input type="hidden" id="qo22" name="questionoption22"/>
+		<input type="hidden" id="qo23" name="questionoption23"/>
+		<input type="hidden" id="qo31" name="questionoption31"/>
+		<input type="hidden" id="qo32" name="questionoption32"/>
+		<input type="hidden" id="qo33" name="questionoption33"/>
+		<input type="hidden" id="qo41" name="questionoption41"/>
+		<input type="hidden" id="qo42" name="questionoption42"/>
+		<input type="hidden" id="qo43" name="questionoption43"/>
+
+		<button>離開</button>
+		<button type="submit" id="button">結束作答</button>
+	</form>
+</body>
+</html>
