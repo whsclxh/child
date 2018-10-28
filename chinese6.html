@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	  <script src="test1.js"></script>
+	  	<style>
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    ;
+}
+th, td {
+    padding: 5px;
+    text-align:left;
+}
+</style>
+</head>
+<body>	
+
+
+<p>選擇正確的注音</p>
+<form   name="myform" method="post" action="chinese_6.php">
+	<table style="width:80%">
+		<script type="text/javascript">
+			 var iii=Math.floor((Math.random() * 19) + 0);
+			 x=iii;		
+			for(var i=0;i<1;i++){
+             var iiii=Math.floor((Math.random() * 5) + 0);
+             xx=iiii;
+			 var y=arr[x][xx][1];
+			 if(y==null){
+			 	i--;		
+			 	}	 
+			}    
+var l=y.length;
+l--;
+var f;
+if(rand[0]==arr[x][xx][1].charAt(l)){
+f=rand[0];
+}
+else if(rand[1]==arr[x][xx][1].charAt(l)){
+f=rand[1];
+}
+else if(rand[2]==arr[x][xx][1].charAt(l)){
+f=rand[2];
+}
+else {
+f=rand[3];
+}
+
+
+
+
+for(var xxx=0;xxx<1;xxx++){
+	var x4=Math.floor((Math.random() * 4) + 0);
+if(rand[x4]==f){
+xxx--;
+}
+else{
+var ff=rand[x4];
+}
+}
+if(arr[x][xx][1].indexOf("ㄕ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄕ","ㄙ"));
+}
+else if(arr[x][xx][1].indexOf("ㄙ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄙ","ㄕ"));
+}
+else if(arr[x][xx][1].indexOf("ㄥ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄥ","ㄣ"));
+}
+else if(arr[x][xx][1].indexOf("ㄣ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄣ","ㄥ"));
+}
+else if(arr[x][xx][1].indexOf("ㄌ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄌ","ㄖ"));
+}
+else if(arr[x][xx][1].indexOf("ㄖ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄖ","ㄌ"));
+}
+else if(arr[x][xx][1].indexOf("ㄟ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄟ","ㄝ"));
+}
+else if(arr[x][xx][1].indexOf("ㄝ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄝ","ㄟ"));
+}
+else if(arr[x][xx][1].indexOf("ㄜ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄜ","ㄦ"));
+}
+else if(arr[x][xx][1].indexOf("ㄦ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄦ","ㄜ"));
+}
+else if(arr[x][xx][1].indexOf("ㄗ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄗ","ㄓ"));
+}
+else if(arr[x][xx][1].indexOf("ㄓ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄓ","ㄗ"));
+}
+else if(arr[x][xx][1].indexOf("ㄔ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄔ","ㄘ"));
+}
+else if(arr[x][xx][1].indexOf("ㄘ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄘ","ㄔ"));
+}
+else{
+	if(f==rand[3]){
+l++;
+var op1=(arr[x][xx][1]);	
+for(var t=0;t<1;t++){
+	var ss=Math.floor((Math.random() * 4) + 0);
+	if(rand[ss]==rand[3])
+		t--;
+	else
+		var sss=rand[ss];
+}
+var op2=(arr[x][xx][1].slice(0,l)+sss);
+	}
+	else{
+var op1=(arr[x][xx][1]);	
+var op2=(arr[x][xx][1].slice(0,l)+ff);
+}	 
+}
+
+var rand2 =new Array(1);
+var x3=Math.floor((Math.random() * 2) + 0);
+rand2[x3]=op1;
+if(x3==0){
+	x3++;
+	rand2[x3]=op2;
+}
+else
+	x3--;
+rand2[x3]=op2;
+var tit1=rand2[0];
+var tit2=rand2[1];
+		</script>	
+		<tr>	
+	<th  Width="1000"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){               
+                if(i==xx){
+
+    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
+    //             	var q=arr[x][i][1].indexOf("ㄕ");
+				// 	 document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
+				// }
+
+				// else{
+				document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");               			 
+				// }
+		    }
+		    else{
+		    	if(arr[x][i][0]==null){
+		    	}
+		    	else
+		    document.write(arr[x][i][0]+arr[x][i][1]);	  
+            } 
+			}</script></font></th>	
+
+   
+    	
+<script type="text/javascript">
+	document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+</script>
+  <th>    
+    <input name="c1" id="g1" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="c1" id="g2" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </th>	
+      </tr>
+    <script type="text/javascript">document.write("<br>");</script>
+
+
+<script type="text/javascript">
+			for(var uk=0;uk<1;uk++){
+		var xuu=Math.floor((Math.random() * 19) + 0);
+		if(xuu==iii){
+			uk--
+		}	
+		else{
+			x=xuu;
+		}
+	}		
+			for(var i=0;i<1;i++){
+             var yy=Math.floor((Math.random() * 5) + 0);
+             xx=yy;
+			 var y=arr[x][xx][1];
+			 if(y==null){
+			 	i--;		
+			 	}	 
+			}    
+var l=y.length;
+l--;
+var f;
+if(rand[0]==arr[x][xx][1].charAt(l)){
+f=rand[0];
+}
+else if(rand[1]==arr[x][xx][1].charAt(l)){
+f=rand[1];
+}
+else if(rand[2]==arr[x][xx][1].charAt(l)){
+f=rand[2];
+}
+else {
+f=rand[3];
+}
+
+
+
+
+for(var xxx=0;xxx<1;xxx++){
+	var x4=Math.floor((Math.random() * 4) + 0);
+if(rand[x4]==f){
+xxx--;
+}
+else{
+var ff=rand[x4];
+}
+}
+if(arr[x][xx][1].indexOf("ㄕ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄕ","ㄙ"));
+}
+else if(arr[x][xx][1].indexOf("ㄙ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄙ","ㄕ"));
+}
+else if(arr[x][xx][1].indexOf("ㄥ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄥ","ㄣ"));
+}
+else if(arr[x][xx][1].indexOf("ㄣ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄣ","ㄥ"));
+}
+else if(arr[x][xx][1].indexOf("ㄌ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄌ","ㄖ"));
+}
+else if(arr[x][xx][1].indexOf("ㄖ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄖ","ㄌ"));
+}
+else if(arr[x][xx][1].indexOf("ㄟ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄟ","ㄝ"));
+}
+else if(arr[x][xx][1].indexOf("ㄝ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄝ","ㄟ"));
+}
+else if(arr[x][xx][1].indexOf("ㄜ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄜ","ㄦ"));
+}
+else if(arr[x][xx][1].indexOf("ㄦ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄦ","ㄜ"));
+}
+else if(arr[x][xx][1].indexOf("ㄗ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄗ","ㄓ"));
+}
+else if(arr[x][xx][1].indexOf("ㄓ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄓ","ㄗ"));
+}
+else if(arr[x][xx][1].indexOf("ㄔ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄔ","ㄘ"));
+}
+else if(arr[x][xx][1].indexOf("ㄘ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄘ","ㄔ"));
+}
+else{
+	if(f==rand[3]){
+l++;
+var op1=(arr[x][xx][1]);	
+for(var t=0;t<1;t++){
+	var ss=Math.floor((Math.random() * 4) + 0);
+	if(rand[ss]==rand[3])
+		t--;
+	else
+		var sss=rand[ss];
+}
+var op2=(arr[x][xx][1].slice(0,l)+sss);
+	}
+	else{
+var op1=(arr[x][xx][1]);	
+var op2=(arr[x][xx][1].slice(0,l)+ff);
+}	 
+}
+
+var rand2 =new Array(1);
+var x3=Math.floor((Math.random() * 2) + 0);
+rand2[x3]=op1;
+if(x3==0){
+	x3++;
+	rand2[x3]=op2;
+}
+else
+	x3--;
+rand2[x3]=op2;
+var tit3=rand2[0];
+var tit4=rand2[1];
+		</script>		
+		<tr>
+	<th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+               
+                if(i==xx){
+
+    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
+    //             	var q=arr[x][i][1].indexOf("ㄕ");
+				// 	 document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
+				// }
+
+				// else{
+				document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");               			 
+				// }
+		    }
+
+		    else{
+		    	if(arr[x][i][0]==null){
+		    	}
+		    	else
+		    document.write(arr[x][i][0]+arr[x][i][1]);	  
+            } 
+			}</script></font></th>	
+    
+       
+    	
+<script type="text/javascript">
+	document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+</script>
+<th>  
+    <input name="c2" id="g3" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="c2" id="g4" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </th>	
+    </tr>
+    <script type="text/javascript">document.write("<br>");</script>
+
+<script type="text/javascript">
+	for(var u=0;u<1;u++){
+		var xu=Math.floor((Math.random() * 19) + 0);
+		if(xu==xuu){
+			u--;
+		}	
+		else if(xu==iii){
+       u--;
+		}
+		else{
+			x=xu;
+		}
+	}
+			 		
+			for(var i=0;i<1;i++){
+             var gg=Math.floor((Math.random() * 5) + 0);
+             xx=gg;
+			 var y=arr[x][xx][1];
+			 if(y==null){
+			 	i--;		
+			 	}	 
+			}    
+var l=y.length;
+l--;
+var f;
+if(rand[0]==arr[x][xx][1].charAt(l)){
+f=rand[0];
+}
+else if(rand[1]==arr[x][xx][1].charAt(l)){
+f=rand[1];
+}
+else if(rand[2]==arr[x][xx][1].charAt(l)){
+f=rand[2];
+}
+else {
+f=rand[3];
+}
+
+
+
+
+for(var xxx=0;xxx<1;xxx++){
+	var x4=Math.floor((Math.random() * 4) + 0);
+if(rand[x4]==f){
+xxx--;
+}
+else{
+var ff=rand[x4];
+}
+}
+if(arr[x][xx][1].indexOf("ㄕ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄕ","ㄙ"));
+}
+else if(arr[x][xx][1].indexOf("ㄙ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄙ","ㄕ"));
+}
+else if(arr[x][xx][1].indexOf("ㄥ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄥ","ㄣ"));
+}
+else if(arr[x][xx][1].indexOf("ㄣ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄣ","ㄥ"));
+}
+else if(arr[x][xx][1].indexOf("ㄌ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄌ","ㄖ"));
+}
+else if(arr[x][xx][1].indexOf("ㄖ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄖ","ㄌ"));
+}
+else if(arr[x][xx][1].indexOf("ㄟ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄟ","ㄝ"));
+}
+else if(arr[x][xx][1].indexOf("ㄝ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄝ","ㄟ"));
+}
+else if(arr[x][xx][1].indexOf("ㄜ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄜ","ㄦ"));
+}
+else if(arr[x][xx][1].indexOf("ㄦ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄦ","ㄜ"));
+}
+else if(arr[x][xx][1].indexOf("ㄗ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄗ","ㄓ"));
+}
+else if(arr[x][xx][1].indexOf("ㄓ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄓ","ㄗ"));
+}
+else if(arr[x][xx][1].indexOf("ㄔ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄔ","ㄘ"));
+}
+else if(arr[x][xx][1].indexOf("ㄘ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄘ","ㄔ"));
+}
+else if(arr[x][xx][1].indexOf("ㄍ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄍ","ㄎ"));
+}
+else if(arr[x][xx][1].indexOf("ㄎ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄎ","ㄍ"));
+}
+else{
+	if(f==rand[3]){
+l++;
+var op1=(arr[x][xx][1]);	
+for(var t=0;t<1;t++){
+	var ss=Math.floor((Math.random() * 4) + 0);
+	if(rand[ss]==rand[3])
+		t--;
+	else
+		var sss=rand[ss];
+}
+var op2=(arr[x][xx][1].slice(0,l)+sss);
+	}
+	else{
+var op1=(arr[x][xx][1]);	
+var op2=(arr[x][xx][1].slice(0,l)+ff);
+}	 
+}
+
+var rand2 =new Array(1);
+var x3=Math.floor((Math.random() * 2) + 0);
+rand2[x3]=op1;
+if(x3==0){
+	x3++;
+	rand2[x3]=op2;
+}
+else
+	x3--;
+rand2[x3]=op2;
+var tit5=rand2[0];
+var tit6=rand2[1];
+		</script>	
+		<tr>
+	<th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+               
+                if(i==xx){
+
+    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
+    //             	var q=arr[x][i][1].indexOf("ㄕ");
+				// 	 document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
+				// }
+
+				// else{
+				document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");               			 
+				// }
+		    }
+
+		    else{
+		    	if(arr[x][i][0]==null){
+		    	}
+		    	else
+		    document.write(arr[x][i][0]+arr[x][i][1]);	  
+            } 
+			}</script></font></th>	
+
+        
+
+<script type="text/javascript">
+	document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+</script>
+<th> 
+    <input name="c3" id="g5" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="c3" id="g6" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </th>	
+        </tr>
+    <script type="text/javascript">document.write("<br>");</script>
+
+
+
+<script type="text/javascript">
+	for(var u=0;u<1;u++){
+		var xo=Math.floor((Math.random() * 19) + 0);
+		if(xo==xuu){
+			u--;
+		}	
+		else if(xo==iii){
+       u--;
+		}
+		else if(xo==xu){
+       u--;
+		}
+		else{
+			x=xo;
+		}
+	}
+			 		
+			for(var i=0;i<1;i++){
+             var gk=Math.floor((Math.random() * 5) + 0);
+             xx=gk;
+			 var y=arr[x][xx][1];
+			 if(y==null){
+			 	i--;		
+			 	}	 
+			}    
+var l=y.length;
+l--;
+var f;
+if(rand[0]==arr[x][xx][1].charAt(l)){
+f=rand[0];
+}
+else if(rand[1]==arr[x][xx][1].charAt(l)){
+f=rand[1];
+}
+else if(rand[2]==arr[x][xx][1].charAt(l)){
+f=rand[2];
+}
+else {
+f=rand[3];
+}
+
+
+
+
+for(var xxx=0;xxx<1;xxx++){
+	var x4=Math.floor((Math.random() * 4) + 0);
+if(rand[x4]==f){
+xxx--;
+}
+else{
+var ff=rand[x4];
+}
+}
+if(arr[x][xx][1].indexOf("ㄕ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄕ","ㄙ"));
+}
+else if(arr[x][xx][1].indexOf("ㄙ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄙ","ㄕ"));
+}
+else if(arr[x][xx][1].indexOf("ㄥ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄥ","ㄣ"));
+}
+else if(arr[x][xx][1].indexOf("ㄣ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄣ","ㄥ"));
+}
+else if(arr[x][xx][1].indexOf("ㄌ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄌ","ㄖ"));
+}
+else if(arr[x][xx][1].indexOf("ㄖ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄖ","ㄌ"));
+}
+else if(arr[x][xx][1].indexOf("ㄟ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄟ","ㄝ"));
+}
+else if(arr[x][xx][1].indexOf("ㄝ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄝ","ㄟ"));
+}
+else if(arr[x][xx][1].indexOf("ㄜ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄜ","ㄦ"));
+}
+else if(arr[x][xx][1].indexOf("ㄦ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄦ","ㄜ"));
+}
+else if(arr[x][xx][1].indexOf("ㄗ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄗ","ㄓ"));
+}
+else if(arr[x][xx][1].indexOf("ㄓ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄓ","ㄗ"));
+}
+else if(arr[x][xx][1].indexOf("ㄔ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄔ","ㄘ"));
+}
+else if(arr[x][xx][1].indexOf("ㄘ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄘ","ㄔ"));
+}
+else if(arr[x][xx][1].indexOf("ㄍ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄍ","ㄎ"));
+}
+else if(arr[x][xx][1].indexOf("ㄎ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄎ","ㄍ"));
+}
+else{
+	if(f==rand[3]){
+l++;
+var op1=(arr[x][xx][1]);	
+for(var t=0;t<1;t++){
+	var ss=Math.floor((Math.random() * 4) + 0);
+	if(rand[ss]==rand[3])
+		t--;
+	else
+		var sss=rand[ss];
+}
+var op2=(arr[x][xx][1].slice(0,l)+sss);
+	}
+	else{
+var op1=(arr[x][xx][1]);	
+var op2=(arr[x][xx][1].slice(0,l)+ff);
+}	 
+}
+
+var rand2 =new Array(1);
+var x3=Math.floor((Math.random() * 2) + 0);
+rand2[x3]=op1;
+if(x3==0){
+	x3++;
+	rand2[x3]=op2;
+}
+else
+	x3--;
+rand2[x3]=op2;
+var tit7=rand2[0];
+var tit8=rand2[1];
+		</script>	
+		<tr>
+	<th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+               
+                if(i==xx){
+
+    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
+    //             	var q=arr[x][i][1].indexOf("ㄕ");
+				// 	 document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
+				// }
+
+				// else{
+				document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");               			 
+				// }
+		    }
+
+		    else{
+		    	if(arr[x][i][0]==null){
+		    	}
+		    	else
+		    document.write(arr[x][i][0]+arr[x][i][1]);	  
+            } 
+			}</script></font></th>	
+   
+       
+
+<script type="text/javascript">
+	document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+</script>
+    <th> 
+    <input name="c4" id="g7" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="c4" id="g8" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </th>	
+     </tr>
+    <script type="text/javascript">document.write("<br>");</script>
+
+
+
+
+
+
+<script type="text/javascript">
+	for(var u=0;u<1;u++){
+		var ku=Math.floor((Math.random() * 19) + 0);
+		if(ku==xuu){
+			u--;
+		}	
+		else if(ku==iii){
+       u--;
+		}
+		else if(ku==xu){
+       u--;
+		}else if(ku==xo){
+       u--;
+		}
+		else{
+			x=ku;
+		}
+	}
+			 		
+			for(var i=0;i<1;i++){
+             var ap=Math.floor((Math.random() * 5) + 0);
+             xx=ap;
+			 var y=arr[x][xx][1];
+			 if(y==null){
+			 	i--;		
+			 	}	 
+			}    
+var l=y.length;
+l--;
+var f;
+if(rand[0]==arr[x][xx][1].charAt(l)){
+f=rand[0];
+}
+else if(rand[1]==arr[x][xx][1].charAt(l)){
+f=rand[1];
+}
+else if(rand[2]==arr[x][xx][1].charAt(l)){
+f=rand[2];
+}
+else {
+f=rand[3];
+}
+
+
+
+
+for(var xxx=0;xxx<1;xxx++){
+	var x4=Math.floor((Math.random() * 4) + 0);
+if(rand[x4]==f){
+xxx--;
+}
+else{
+var ff=rand[x4];
+}
+}
+if(arr[x][xx][1].indexOf("ㄕ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄕ","ㄙ"));
+}
+else if(arr[x][xx][1].indexOf("ㄙ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄙ","ㄕ"));
+}
+else if(arr[x][xx][1].indexOf("ㄥ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄥ","ㄣ"));
+}
+else if(arr[x][xx][1].indexOf("ㄣ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄣ","ㄥ"));
+}
+else if(arr[x][xx][1].indexOf("ㄌ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄌ","ㄖ"));
+}
+else if(arr[x][xx][1].indexOf("ㄖ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄖ","ㄌ"));
+}
+else if(arr[x][xx][1].indexOf("ㄟ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄟ","ㄝ"));
+}
+else if(arr[x][xx][1].indexOf("ㄝ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄝ","ㄟ"));
+}
+else if(arr[x][xx][1].indexOf("ㄜ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄜ","ㄦ"));
+}
+else if(arr[x][xx][1].indexOf("ㄦ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄦ","ㄜ"));
+}
+else if(arr[x][xx][1].indexOf("ㄗ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄗ","ㄓ"));
+}
+else if(arr[x][xx][1].indexOf("ㄓ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄓ","ㄗ"));
+}
+else if(arr[x][xx][1].indexOf("ㄔ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄔ","ㄘ"));
+}
+else if(arr[x][xx][1].indexOf("ㄘ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄘ","ㄔ"));
+}
+else if(arr[x][xx][1].indexOf("ㄍ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄍ","ㄎ"));
+}
+else if(arr[x][xx][1].indexOf("ㄎ")!=-1){
+var  op1=(arr[x][xx][1]);		
+var  op2=(arr[x][xx][1].replace("ㄎ","ㄍ"));
+}
+else{
+	if(f==rand[3]){
+l++;
+var op1=(arr[x][xx][1]);	
+for(var t=0;t<1;t++){
+	var ss=Math.floor((Math.random() * 4) + 0);
+	if(rand[ss]==rand[3])
+		t--;
+	else
+		var sss=rand[ss];
+}
+var op2=(arr[x][xx][1].slice(0,l)+sss);
+	}
+	else{
+var op1=(arr[x][xx][1]);	
+var op2=(arr[x][xx][1].slice(0,l)+ff);
+}	 
+}
+
+var rand2 =new Array(1);
+var x3=Math.floor((Math.random() * 2) + 0);
+rand2[x3]=op1;
+if(x3==0){
+	x3++;
+	rand2[x3]=op2;
+}
+else
+	x3--;
+rand2[x3]=op2;
+var tit9=rand2[0];
+var tit10=rand2[1];
+		</script>	
+		<tr>
+	<th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+               
+                if(i==xx){
+
+    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
+    //             	var q=arr[x][i][1].indexOf("ㄕ");
+				// 	 document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
+				// }
+
+				// else{
+				document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");               			 
+				// }
+		    }
+
+		    else{
+		    	if(arr[x][i][0]==null){
+		    	}
+		    	else
+		    document.write(arr[x][i][0]+arr[x][i][1]);	  
+            } 
+			}</script></font></th>	
+  
+   
+<script type="text/javascript">
+	document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+</script>
+      <th>           
+    <input name="c5" id="g9" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="c5" id="g10" type="radio"  style="zoom: 2"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </th>
+      </tr>	
+    <script type="text/javascript">document.write("<br>");</script>
+
+
+
+
+
+
+
+
+    
+    <input type="hidden" id="anw1" name="ar1"/>				
+	<input type="hidden" id="anw2" name="ar2"/>
+	<input type="hidden" id="anw3" name="ar3"/>
+	<input type="hidden" id="anw4" name="ar4"/>
+	<input type="hidden" id="anw5" name="ar5"/>   
+	</table>
+	<div  style="top:850px;left:1120px;position:absolute;"><button  type="submit" name="" value="hi">確認</div> 
+</form>
+<script>
+var k1=arr[iii][iiii][1];
+var k2=arr[xuu][yy][1];
+var k3=arr[xu][gg][1];
+var k4=arr[xo][gk][1];
+var k5=arr[ku][ap][1];
+	window.onload = function(){ 
+var aa8= document.getElementById("g1"); 
+aa8.value=tit1;
+var bb8= document.getElementById("g2"); 
+bb8.value=tit2;
+var cc8= document.getElementById("g3"); 
+cc8.value=tit3;
+var dd8= document.getElementById("g4"); 
+dd8.value=tit4;
+var ee8= document.getElementById("g5"); 
+ee8.value=tit5;
+var ff8= document.getElementById("g6"); 
+ff8.value=tit6;
+var gg8= document.getElementById("g7"); 
+gg8.value=tit7;
+var hh8= document.getElementById("g8"); 
+hh8.value=tit8;
+var ii8= document.getElementById("g9"); 
+ii8.value=tit9;
+var jj8= document.getElementById("g10"); 
+jj8.value=tit10;
+
+
+var aa1=document.getElementById("anw1");
+aa1.value=k1;
+var aa2=document.getElementById("anw2");
+aa2.value=k2;
+var aa3=document.getElementById("anw3");
+aa3.value=k3;
+var aa4=document.getElementById("anw4");
+aa4.value=k4;
+var aa5=document.getElementById("anw5");
+aa5.value=k5;
+	}
+</script>
+</body>
+</html>
