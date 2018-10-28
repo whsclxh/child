@@ -864,9 +864,9 @@ echo "<h1>得分為:$score 分!</h1>";
 	<tr>
 		<?php echo "<td><script>questionpictures($sp1);</script></td>";?>
 		<td>
-			<label><input type="radio" id="q11" name="question1" disabled <?php echo "value=\"$qo11\"";?><?php if($anw1==$qo11) echo "checked=checked";?>><?php echo "<script>insertp1($sp1,1,$question1[0]);</script>"; ?></label>
-			<label><input type="radio" id="q12" name="question1" disabled <?php echo "value=\"$qo12\"";?><?php if($anw1==$qo12) echo "checked=checked";?>><?php echo "<script>insertp1($sp1,2,$question1[1]);</script>"; ?></label>
-			<label><input type="radio" id="q13" name="question1" disabled <?php echo "value=\"$qo13\"";?><?php if($anw1==$qo13) echo "checked=checked";?>><?php echo "<script>insertp1($sp1,3,$question1[2]);</script>"; ?></label>
+			<label><input type="radio" id="q11" name="question12" disabled <?php echo "value=\"$qo11\"";?><?php if($anw1==$qo11) echo "checked=checked";?>><?php echo "<script>insertp1($sp1,1,$question1[0]);</script>"; ?></label>
+			<label><input type="radio" id="q12" name="question12" disabled <?php echo "value=\"$qo12\"";?><?php if($anw1==$qo12) echo "checked=checked";?>><?php echo "<script>insertp1($sp1,2,$question1[1]);</script>"; ?></label>
+			<label><input type="radio" id="q13" name="question12" disabled <?php echo "value=\"$qo13\"";?><?php if($anw1==$qo13) echo "checked=checked";?>><?php echo "<script>insertp1($sp1,3,$question1[2]);</script>"; ?></label>
 		</td>
 		<td>
 			<label><input type="radio" id="q11" name="question11" disabled <?php echo "value=\"$qo11\"";?><?php if($qo11<10) echo "checked=checked";?>><?php echo "<script>insertp1($sp1,1,$question1[0]);</script>"; ?></label>
@@ -877,9 +877,9 @@ echo "<h1>得分為:$score 分!</h1>";
 	<tr>
 		<?php echo "<td><script>questionpictures($sp2);</script></td>";?>
 		<td>
-			<label><input type="radio" id="q21" name="question2" disabled <?php echo "value=\"$qo21\"";?><?php if($anw2==$qo21) echo "checked=checked";?>><?php echo "<script>insertp2($sp2,1,$question2[0]);</script>"; ?></label>
-			<label><input type="radio" id="q22" name="question2" disabled <?php echo "value=\"$qo22\"";?><?php if($anw2==$qo22) echo "checked=checked";?>><?php echo "<script>insertp2($sp2,2,$question2[1]);</script>"; ?></label>
-			<label><input type="radio" id="q23" name="question2" disabled <?php echo "value=\"$qo23\"";?><?php if($anw2==$qo23) echo "checked=checked";?>><?php echo "<script>insertp2($sp2,3,$question2[2]);</script>"; ?></label>
+			<label><input type="radio" id="q21" name="question21" disabled <?php echo "value=\"$qo21\"";?><?php if($anw2==$qo21) echo "checked=checked";?>><?php echo "<script>insertp2($sp2,1,$question2[0]);</script>"; ?></label>
+			<label><input type="radio" id="q22" name="question21" disabled <?php echo "value=\"$qo22\"";?><?php if($anw2==$qo22) echo "checked=checked";?>><?php echo "<script>insertp2($sp2,2,$question2[1]);</script>"; ?></label>
+			<label><input type="radio" id="q23" name="question21" disabled <?php echo "value=\"$qo23\"";?><?php if($anw2==$qo23) echo "checked=checked";?>><?php echo "<script>insertp2($sp2,3,$question2[2]);</script>"; ?></label>
 		</td>
 		<td>
 			<label><input type="radio" id="q21" name="question22" disabled <?php echo "value=\"$qo21\"";?><?php if($qo21<10) echo "checked=checked";?>><?php echo "<script>insertp2($sp2,1,$question2[0]);</script>"; ?></label>
@@ -890,9 +890,9 @@ echo "<h1>得分為:$score 分!</h1>";
 	<tr>
 		<?php echo "<td><script>questionpictures($sp3);</script></td>";?>
 		<td>
-			<label><input type="radio" id="q31" name="question3" disabled <?php echo "value=\"$qo31\"";?><?php if($anw3==$qo31) echo "checked=checked";?>><?php echo "<script>insertp3($sp3,1,$question3[0]);</script>"; ?></label>
-			<label><input type="radio" id="q32" name="question3" disabled <?php echo "value=\"$qo32\"";?><?php if($anw3==$qo32) echo "checked=checked";?>><?php echo "<script>insertp3($sp3,2,$question3[1]);</script>"; ?></label>
-			<label><input type="radio" id="q33" name="question3" disabled <?php echo "value=\"$qo33\"";?><?php if($anw3==$qo33) echo "checked=checked";?>><?php echo "<script>insertp3($sp3,3,$question3[2]);</script>"; ?></label>
+			<label><input type="radio" id="q31" name="question31" disabled <?php echo "value=\"$qo31\"";?><?php if($anw3==$qo31) echo "checked=checked";?>><?php echo "<script>insertp3($sp3,1,$question3[0]);</script>"; ?></label>
+			<label><input type="radio" id="q32" name="question31" disabled <?php echo "value=\"$qo32\"";?><?php if($anw3==$qo32) echo "checked=checked";?>><?php echo "<script>insertp3($sp3,2,$question3[1]);</script>"; ?></label>
+			<label><input type="radio" id="q33" name="question31" disabled <?php echo "value=\"$qo33\"";?><?php if($anw3==$qo33) echo "checked=checked";?>><?php echo "<script>insertp3($sp3,3,$question3[2]);</script>"; ?></label>
 		</td>
 		<td>
 			<label><input type="radio" id="q31" name="question33" disabled <?php echo "value=\"$qo31\"";?><?php if($qo31<10) echo "checked=checked";?>><?php echo "<script>insertp3($sp3,1,$question3[0]);</script>"; ?></label>
@@ -903,9 +903,9 @@ echo "<h1>得分為:$score 分!</h1>";
 	<tr>
 		<?php echo "<td><script>questionpictures($sp4);</script></td>";?>
 		<td>
-			<label><input type="radio" id="q41" name="question4" disabled <?php echo "value=\"$qo41\"";?><?php if($anw4==$qo41) echo "checked=checked";?>><?php echo "<script>insertp4($sp4,1,$question4[0]);</script>"; ?></label>
-			<label><input type="radio" id="q42" name="question4" disabled <?php echo "value=\"$qo42\"";?><?php if($anw4==$qo42) echo "checked=checked";?>><?php echo "<script>insertp4($sp4,2,$question4[1]);</script>"; ?></label>
-			<label><input type="radio" id="q43" name="question4" disabled <?php echo "value=\"$qo43\"";?><?php if($anw4==$qo43) echo "checked=checked";?>><?php echo "<script>insertp4($sp4,3,$question4[2]);</script>"; ?></label>
+			<label><input type="radio" id="q41" name="question41" disabled <?php echo "value=\"$qo41\"";?><?php if($anw4==$qo41) echo "checked=checked";?>><?php echo "<script>insertp4($sp4,1,$question4[0]);</script>"; ?></label>
+			<label><input type="radio" id="q42" name="question41" disabled <?php echo "value=\"$qo42\"";?><?php if($anw4==$qo42) echo "checked=checked";?>><?php echo "<script>insertp4($sp4,2,$question4[1]);</script>"; ?></label>
+			<label><input type="radio" id="q43" name="question41" disabled <?php echo "value=\"$qo43\"";?><?php if($anw4==$qo43) echo "checked=checked";?>><?php echo "<script>insertp4($sp4,3,$question4[2]);</script>"; ?></label>
 		</td>
 		<td>
 			<label><input type="radio" id="q41" name="question44" disabled <?php echo "value=\"$qo41\"";?><?php if($qo41<10) echo "checked=checked";?>><?php echo "<script>insertp4($sp4,1,$question4[0]);</script>"; ?></label>
