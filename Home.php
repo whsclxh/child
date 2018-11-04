@@ -14,8 +14,8 @@
 
 
 body {
-     background: #000 url(img/home.png) center center fixed
-     no-repeat;
+     background: #000 url(img/home.png) center center fixed no-repeat;
+     
      background-position:center-center;
      -webkit-background-size:cover;
      -moz-background-size:cover;
@@ -69,6 +69,11 @@ button {
 
 .container {
     padding: 1%;
+}
+
+img{
+  width:100%;
+  height:auto;
 }
 @media only screen and (min-width: 1281px) and (min-height:1001px) and (max-height:1401px) { /*ipad pro 橫*/
       .t{
