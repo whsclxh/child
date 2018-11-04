@@ -42,28 +42,28 @@ $anw8 = $_POST['anwser8'];
 
 $score = 0;
 if(($h1)==($anw1)){
-    $score=$score+3;
+    $score=$score+2.5;
 }
 if(($m1)==($anw2)){
-    $score=$score+3;
+    $score=$score+2.5;
 }
 if(($h2)==($anw3)){
-    $score=$score+3;
+    $score=$score+2.5;
 }
 if(($m2)==($anw4)){
-    $score=$score+3;
+    $score=$score+2.5;
 }
 if(($h3)==($anw5)){
-    $score=$score+3;
+    $score=$score+2.5;
 }
 if(($m3)==($anw6)){
-    $score=$score+3;
+    $score=$score+2.5;
 }
 if(($h4)==($anw7)){
-    $score=$score+3;
+    $score=$score+2.5;
 }
 if(($m4)==($anw8)){
-    $score=$score+3;
+    $score=$score+2.5;
 }
 ?>
 <?php  echo "<h1>得分為:$score 分!</h1>";?>
@@ -74,7 +74,7 @@ if(($m4)==($anw8)){
       <td><canvas id="clock1" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
       <td><canvas id="clock2" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
     </tr>
-    <tr style="height:  40px">
+    <tr style="height: 40px">
       <td><div style="text-align: center"><label for="appt-time">Answer:</label>
         <input type="number" id="n1" name="hour1" min="1" max="12" required="required" />:<input type="number" id="n2" name="minute1" min="00" max="59" step="5" required="required" ></div></td>
         
