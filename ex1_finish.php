@@ -29,6 +29,17 @@ $m1 = $_POST['minute1'];
 $m2 = $_POST['minute2'];
 $m3 = $_POST['minute3'];
 $m4 = $_POST['minute4'];
+
+$anw1 = $_POST['anwser1'];
+$anw2 = $_POST['anwser2'];
+$anw3 = $_POST['anwser3'];
+$anw4 = $_POST['anwser4'];
+$anw5 = $_POST['anwser5'];
+$anw6 = $_POST['anwser6'];
+$anw7 = $_POST['anwser7'];
+$anw8 = $_POST['anwser8'];
+
+
 $score = 0;
 if(($h1)==($anw1)){
     $score=$score+3;
