@@ -14,7 +14,7 @@
 
 
 body {
-     /* background: #000 url(img/home.png) center center fixed no-repeat; */
+     background: #000 url(img/home.png) center center fixed no-repeat;
      
      background-position:center-center;
      -webkit-background-size:cover;
@@ -141,7 +141,7 @@ img{
     }
 </style>
 </head>
-<body background="img/home.png">
+<body>
 <header class="htmleaf-header">
 <div class="t">
   <img src="img/e.png">
