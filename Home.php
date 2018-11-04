@@ -70,6 +70,11 @@ button {
 .container {
     padding: 1%;
 }
+
+img{
+  width:100%;
+  height:auto;
+}
 @media only screen and (min-width: 1281px) and (min-height:1001px) and (max-height:1401px) { /*ipad pro 橫*/
       .t{
         margin-top: 10%;
