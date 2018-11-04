@@ -82,7 +82,7 @@ if(($m4)==($anw8)){
         <input type="number" id="n3" name="hour2" min="1" max="12" required="required" />:<input type="number" id="n4" name="minute2" min="00" max="59" step="5" required="required" ></div></td>
     </tr>
     <tr style="height: 40px">
-    <td><div style="text-align:center"><label>正確答案:</label><?php echo "<script>write($anw1);</script>";?>:<?php echo "<script>write($anw2);</script>";?></td>
+    <td><div id="aa1" style="text-align:center; color:red; display:none;"><?php echo "<script>write($anw1);</script>";?>:<?php echo "<script>write($anw2);</script>";?></div></td>
     <td><div style="text-align:center"><label>正確答案:</label><?php echo "<script>write($anw3);</script>";?>:<?php echo "<script>write($anw4);</script>";?></td>
     </tr>
     <tr style="height: 280px">
