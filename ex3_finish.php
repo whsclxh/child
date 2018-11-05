@@ -44,6 +44,5 @@ if(($h2)==($anw3)){
 if(($h3)==($anw4)){
     $score=$score+5;
 }
-
+echo "<h1>得分為:$score 分!</h1>";
 ?>
-<?php  echo "<h1>得分為:$score 分!</h1>";?>
