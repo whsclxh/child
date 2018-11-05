@@ -31,9 +31,6 @@ $anw1 = $_POST['anwser1'];
 $anw2 = $_POST['anwser2'];
 $anw3 = $_POST['anwser3'];
 $anw4 = $_POST['anwser4'];
-
-
-
 $score = 0;
 if(($h0)==($anw1)){
     $score=$score+5;
