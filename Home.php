@@ -16,12 +16,12 @@
 body {
      background: #000 url(img/home.png) center center fixed no-repeat;
      
-     /* background-position:center-center;
+     background-position:center-center;
      -webkit-background-size:cover;
      -moz-background-size:cover;
      -o-background-size:cover;
      background-size:cover;
-     overflow:hidden; */
+     overflow:hidden;
      height:auto;
      max-width:100%;
 }
