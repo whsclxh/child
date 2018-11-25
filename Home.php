@@ -38,8 +38,8 @@ body {
 }
 .divcss5-right{
   position: absolute;
-  width:40%;
-  height: 40%;
+  /* width:40%;
+  height: 40%; */
 
   margin: 0 auto; 
 } 
