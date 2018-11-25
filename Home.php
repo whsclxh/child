@@ -72,46 +72,34 @@ button {
       .t{
         margin-top: 10%;
       }
-      .divcss5-right{
-        margin-top: 25%;
-      }
+      
     }
 @media only screen and (min-width:769px) and (max-width: 1280px) and (max-height:1400px) { /*ipad pro 直*/
       .t{
         margin-top: 25%;
       }
-      .divcss5-right{
-        margin-top: 45%;
-      }
+      
     }
 @media only screen and (min-width:769px) and (max-width: 1280px) and (min-height:751px) and (max-height:1000px) {/*ipad 橫*/
       .t{
         margin-top: 20%;
       }
-      .divcss5-right{
-        margin-top: 30%;
-      }
+     
     }
 @media only screen and (min-width:481px) and (max-width: 768px) and (min-height:1001px) and (max-height:1400px) { /*ipad 直*/
       .t{
         margin-top: 25%;
       }
-      .divcss5-right{
-        margin-top: 45%;
-      }
+     
     }
 @media only screen and (min-width:769px) and (max-width: 1280px) and (max-height:500px) {/*iX/Pixel2XL 橫*/
       .t{
         margin-top: 5%;
       }
-      .divcss5-right{
-        margin-top: 20%;
-      }
+    
     }
 @media only screen and (max-width: 480px) and (min-height:751px) and (max-height:1000px) {/*iX/Pixel2XL 直*/
-      .divcss5-right{
-        margin-top: 70%
-      }
+     
       .t{
         margin-top: 35%;
       }
@@ -120,14 +108,10 @@ button {
       .t{
         margin-top: 0%;
       }
-      .divcss5-right{
-        margin-top: 20%;
-      }
+   
     }
 @media only screen and (max-width: 480px) and (min-height:500px) and (max-height:750px) {/*i5/SE/6/7/8/6+/7+/8+/Pixel2/Glaxay S5 直*/
-      .divcss5-right{
-        margin-top: 70%
-      }
+  
       .t{
         margin-top: 35%;
       }
