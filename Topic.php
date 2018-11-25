@@ -6,7 +6,7 @@ include("mysql_connect.php");
  ?>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width;initial-scale=1.0;user-scalable=0;">
 	<link rel="stylesheet" type="text/css" href="css/default.css">
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<title>首頁</title>
@@ -31,7 +31,7 @@ include("mysql_connect.php");
 	width: 350px;
 	margin-bottom: 0%;
 }
-    html {
+    body {
      background: #000 url(img/menu.png) center center fixed
      no-repeat;
      background-position:center center;
@@ -39,14 +39,13 @@ include("mysql_connect.php");
      -moz-background-size:cover;
      -o-background-size:cover;
      background-size:cover;
-     height:100%;
+     height:auto;
+	 max-width:100%;
      overflow:hidden;
     }
 
 
-    body{
-    height:100%;
-    }
+   
 
 	.left{
   		float: left;
