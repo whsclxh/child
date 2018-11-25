@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width;initial-scale=1.0;user-scalable=0;">
 
 
 <link rel="stylesheet" type="text/css" href="css/default.css">
@@ -16,19 +16,18 @@
 body {
      background: #000 url(img/home.png) center center fixed no-repeat;
      
-     background-position:center-center;
+     /* background-position:center-center;
      -webkit-background-size:cover;
      -moz-background-size:cover;
      -o-background-size:cover;
      background-size:cover;
-     height:100%;
-     overflow:hidden;
+     overflow:hidden; */
+     height:auto;
+     max-width:100%;
 }
 
 
-body{
-    height:100%;
-}
+
 
 .t{
   top:0;
@@ -71,10 +70,7 @@ button {
     padding: 1%;
 }
 
-img{
-  width:100%;
-  height:auto;
-}
+
 @media only screen and (min-width: 1281px) and (min-height:1001px) and (max-height:1401px) { /*ipad pro 橫*/
       .t{
         margin-top: 10%;
