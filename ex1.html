@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width;initial-scale=1.0;user-scalable=0;">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style type="text/css">
     table,
     td,
@@ -19,31 +20,35 @@
       margin-right: auto;
     }
 
-    .button {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    padding: 12px 24px;
-    border: 3px solid #2fa519;
-    border-radius: 16px;
-    background: #4dff29;
-    background: -webkit-gradient(linear, left top, left bottom, from(#4dff29), to(#2fa519));
-    background: -moz-linear-gradient(top, #4dff29, #2fa519);
-    background: linear-gradient(to bottom, #4dff29, #2fa519);
-    text-shadow: #227612 1px 1px 1px;
-    font: normal normal bold 35px comic sans ms;
-    color: #ffffff;
-    text-decoration: none;
-    margin:0 auto;
+    #button {
+      background:    #ffffff;
+      border:        2px solid #000000;
+      border-radius: 7px;
+      padding:       8px 20px;
+      color:         #000000;
+      font:          normal 700 25px/1 "Ubuntu", sans-serif;
+      text-align:    center;
+      text-shadow:   none;
+      width:100%;
     }
     
 
-    .button:active {
-    background: #2fa519;
-    background: -webkit-gradient(linear, left top, left bottom, from(#2fa519), to(#2fa519));
-    background: -moz-linear-gradient(top, #2fa519, #2fa519);
-    background: linear-gradient(to bottom, #2fa519, #2fa519);
+
+
+  
+    #buttons {
+      width: 10%;
+      margin:0 auto;
     }
+  
+    #button0 {
+      width: 40%;
+      margin:5px auto;
+    }
+
+
+
+
 
 
   </style>
@@ -81,9 +86,16 @@
         
     </tr>
   </table>
-  <input type="submit" id="button" class="button" value="Checked">
-  <input type="button" onclick="location.href='http://hello.noip.me/Topic.php'" value="首頁">
-  <input type="button" value="下一題" style="position:absolute;top:80%;left:95%;" onclick="location.href='http://hello.noip.me/ex2.html'">
+  
+  <div id="button0"><button type="submit" class="btn btn-outline-dark btn-lg btn-block">Checked</button></div>
+  <div id="buttons">
+  <button type="button" class="btn btn-outline-dark" id="button1" onclick="location.href='http://hello.noip.me/ex1.html'">1</button>
+  <button type="button" class="btn btn-outline-dark" id="button2" onclick="location.href='http://hello.noip.me/ex2.html'">2</button>
+  <button type="button" class="btn btn-outline-dark" id="button3" onclick="location.href='http://hello.noip.me/ex3.html'">3</button>
+  <button type="button" class="btn btn-outline-dark" id="button4" onclick="location.href='http://hello.noip.me/ex4.html'">4</button>
+  <button type="button" class="btn btn-outline-dark" id="button5" onclick="location.href='http://hello.noip.me/ex5.html'">5</button>
+  </div>
+  <!-- <input type="button" onclick="location.href='http://hello.noip.me/Topic.php'" value="首頁"> -->
   <input type="hidden" id="anw1" name="anwser1"/>				
   <input type="hidden" id="anw2" name="anwser2"/>
   <input type="hidden" id="anw3" name="anwser3"/>
@@ -296,7 +308,9 @@
     //   minute: m4
     // });
   </script>
-    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     
 
