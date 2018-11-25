@@ -37,11 +37,10 @@ body {
   margin:auto;
 }
 .divcss5-right{
-  position: absolute;
-  width:40%;
   
-
-  margin: 0 auto; 
+  margin:0 auto;
+  width:30%;
+  
 } 
 
 input[type=email], input[type=password] {
