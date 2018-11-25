@@ -18,11 +18,41 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+       .button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 3px solid #2fa519;
+    border-radius: 16px;
+    background: #4dff29;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4dff29), to(#2fa519));
+    background: -moz-linear-gradient(top, #4dff29, #2fa519);
+    background: linear-gradient(to bottom, #4dff29, #2fa519);
+    text-shadow: #227612 1px 1px 1px;
+    font: normal normal bold 35px comic sans ms;
+    color: #ffffff;
+    text-decoration: none;
+    position: absolute;
+    right: 600px;
+    left: 600px;
+    }
+    
+
+    .button:active {
+    background: #2fa519;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2fa519), to(#2fa519));
+    background: -moz-linear-gradient(top, #2fa519, #2fa519);
+    background: linear-gradient(to bottom, #2fa519, #2fa519);
+    }
   </style>
 </head>
 
 <body>
-    <header><div style="text-align: center;">請問現在是幾點鐘? 把正確的數字勾起來。</div></header>
+  <form method="POST" action="ex3_finish.php">
+    <header><div style="text-align: center;">請問現在是幾點鐘? 請選擇正確的數字。</div></header>
+
   <table>
     <tr style="height: 280px">
       <td style="width: 380px" colspan="3"><canvas id="clock1" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
@@ -30,11 +60,11 @@
     </tr>
     <tr style="height:  40px">
       
-    <td><input type="radio" id="n1" name="ans0" ><span id="f00"></span></td>
+    <td><input type="radio" id="n1" name="ans0" checked><span id="f00"></span></td>
     <td><input type="radio" id="n2" name="ans0" ><span id="f01"></span></td>
     <td><input type="radio" id="n3" name="ans0" ><span id="f02"></span></td>
 
-    <td><input type="radio" id="n4" name="ans1" ><span id="f03"></span></td>
+    <td><input type="radio" id="n4" name="ans1" checked><span id="f03"></span></td>
     <td><input type="radio" id="n5" name="ans1" ><span id="f04"></span></td>
     <td><input type="radio" id="n6" name="ans1" ><span id="f05"></span></td>
     </tr>
@@ -53,16 +83,35 @@
     </tr>
 
     <tr style="height: 40px">
-        <td><input type="radio" id="n7" name="ans2"><span id="f06"></span></td>
+        <td><input type="radio" id="n7" name="ans2" checked><span id="f06"></span></td>
         <td><input type="radio" id="n8" name="ans2"><span id="f07"></span></td>
         <td><input type="radio" id="n9" name="ans2"><span id="f08"></span></td>
 
-        <td><input type="radio" id="n10" name="ans3"><span id="f09"></span></td>
+        <td><input type="radio" id="n10" name="ans3" checked><span id="f09"></span></td>
         <td><input type="radio" id="n11" name="ans3"><span id="f10"></span></td>
         <td><input type="radio" id="n12" name="ans3"><span id="f11"></span></td>
     </tr>
   </table>
+  <input type="submit" id="button" class="button" value="Checked">
+  <input type="hidden" id="anw1" name="anwser1"/>				
+  <input type="hidden" id="anw2" name="anwser2"/>
+  <input type="hidden" id="anw3" name="anwser3"/>
+  <input type="hidden" id="anw4" name="anwser4"/>
+  </form>
+
   <script>
+        window.onload = function(){
+      var a1 = document.getElementById("anw1");
+      a1.value = h0;
+      var a2 = document.getElementById("anw2"); 
+      a2.value = h1;
+      var a3 = document.getElementById("anw3"); 
+      a3.value = h2;
+      var a4 = document.getElementById("anw4"); 
+      a4.value = h3;
+    							
+    };
+
     (function (win) {
       function DrawClock(options) {
         this.hour = options.hour;
@@ -187,9 +236,6 @@
           ctx.stroke();
           ctx.restore();
         },
-
-
-      
 
         drawDot: function (minute) {
           var ctx = this.ctx;

@@ -34,9 +34,7 @@
     font: normal normal bold 35px comic sans ms;
     color: #ffffff;
     text-decoration: none;
-    position: absolute;
-    right: 600px;
-    left: 600px;
+    margin:0 auto;
     }
     
 
@@ -46,12 +44,14 @@
     background: -moz-linear-gradient(top, #2fa519, #2fa519);
     background: linear-gradient(to bottom, #2fa519, #2fa519);
     }
+
+
   </style>
 </head>
 
 
 <body>
-    <form method="post" action="ex1_finish.php"></form>
+    <form method="post" action="ex1_finish.php">
     <header><div style="text-align: center;">請問現在是幾點幾分? 輸入正確時間。</div></header>
     
   <table>
@@ -81,6 +81,18 @@
         
     </tr>
   </table>
+  <input type="submit" id="button" class="button" value="Checked">
+  <input type="button" onclick="location.href='http://hello.noip.me/Topic.php'" value="首頁">
+  <input type="button" value="下一題" style="position:absolute;top:80%;left:95%;" onclick="location.href='http://hello.noip.me/ex2.html'">
+  <input type="hidden" id="anw1" name="anwser1"/>				
+  <input type="hidden" id="anw2" name="anwser2"/>
+  <input type="hidden" id="anw3" name="anwser3"/>
+  <input type="hidden" id="anw4" name="anwser4"/>
+  <input type="hidden" id="anw5" name="anwser5"/>				
+  <input type="hidden" id="anw6" name="anwser6"/>
+  <input type="hidden" id="anw7" name="anwser7"/>
+  <input type="hidden" id="anw8" name="anwser8"/>
+  </form>
   <script>
     window.onload = function(){
       var a1 = document.getElementById("anw1");
@@ -284,19 +296,10 @@
     //   minute: m4
     // });
   </script>
-    <form action="ex1_finish.php">
-    <input type="submit" id="button" class="button" value="Checked">
-    </form>
-    <input type="button" onclick="location.href='http://hello.noip.me/Topic.php'" value="首頁">
-    <input type="button" value="下一題" style="position:absolute;top:80%;left:95%;" onclick="location.href='http://hello.noip.me/ex2.html'">
-    <input type="hidden" id="anw1" name="anwser1"/>				
-		<input type="hidden" id="anw2" name="anwser2"/>
-		<input type="hidden" id="anw3" name="anwser3"/>
-    <input type="hidden" id="anw4" name="anwser4"/>
-    <input type="hidden" id="anw5" name="anwser5"/>				
-		<input type="hidden" id="anw6" name="anwser6"/>
-		<input type="hidden" id="anw7" name="anwser7"/>
-		<input type="hidden" id="anw8" name="anwser8"/>
+    
+
+    
+
 </body>
 
 </html>
