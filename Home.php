@@ -40,10 +40,7 @@ body {
   position: absolute;
   width:40%;
   height: 40%;
-  top:50%;
-  right:0;
-  bottom:0;
-  left:0;
+
   margin: 0 auto; 
 } 
 
