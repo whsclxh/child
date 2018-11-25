@@ -37,9 +37,8 @@ body {
   margin:auto;
 }
 .divcss5-right{
-  
   margin:0 auto;
-  width:30%;
+  width:40%;
   
 } 
 
