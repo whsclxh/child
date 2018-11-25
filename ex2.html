@@ -5,6 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width; initial-scale=1;maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
   <link rel="stylesheet" type="text/css" media="print" href="serif.css">
   <style type="text/css">
@@ -94,7 +95,7 @@
 
     .check-answer-button {
       margin: 1rem;
-      padding: 2rem;
+      padding: 1px;
       font-size: 3em;
       font-weight: 900;
       background: #a1a1a18f;
@@ -112,6 +113,17 @@
     .check-answer-button-wrong {
       background: #ff5151da;
       color: rgba(116, 0, 0, 0.867);
+    }
+
+      
+      #buttons {
+      width: 13%;
+      margin:0 auto;
+    }
+  
+    #button0 {
+      width: 40%;
+      margin:5px auto;
     }
   </style>
 
@@ -791,7 +803,16 @@
       setInterval(update_lines, 100);
     })();
   </script>
-<input type="button" value="下一題" style="position:absolute;top:80%;left:95%;" onclick="location.href='http://hello.noip.me/ex3.html'">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <div id="buttons">
+    <button type="button" class="btn btn-outline-dark" id="button1" onclick="location.href='http://hello.noip.me/ex1.html'">1</button>
+    <button type="button" class="btn btn-outline-dark" id="button2" onclick="location.href='http://hello.noip.me/ex2.html'">2</button>
+    <button type="button" class="btn btn-outline-dark" id="button3" onclick="location.href='http://hello.noip.me/ex3.html'">3</button>
+    <button type="button" class="btn btn-outline-dark" id="button4" onclick="location.href='http://hello.noip.me/ex4.html'">4</button>
+    <button type="button" class="btn btn-outline-dark" id="button5" onclick="location.href='http://hello.noip.me/ex5.html'">5</button>
+    </div>
 </body>
 
 </html>
