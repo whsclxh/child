@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style type="text/css">
+<!-- <style type="text/css">
 </style>
 <script src="jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
@@ -15,7 +15,7 @@
 	document.getElementById( "aa8" ).style.display = "";
     }
     
-</script>
+</script> -->
 
 
 
@@ -67,8 +67,8 @@ if(($m4)==($anw8)){
 }
 ?>
 <?php  echo "<h1>得分為:$score 分!</h1>";?>
-<button onclick="correction()">按一下看正確答案!</button>
-<form name="form1" method="POST">
+<!-- <button onclick="correction()">按一下看正確答案!</button> -->
+<!-- <form name="form1" method="POST">
 <table>
     <tr style="height: 280px">
       <td><canvas id="clock1" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
@@ -103,4 +103,4 @@ if(($m4)==($anw8)){
     <td><div style="text-align:center"><label>正確答案:</label><?php echo "<script>write($anw7);</script>";?>:<?php echo "<script>write($anw8);</script>";?></td>
     </tr>
   </table>
-</form>
+</form> -->
