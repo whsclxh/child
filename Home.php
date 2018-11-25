@@ -44,7 +44,7 @@ body {
   right:0;
   bottom:0;
   left:0;
-  margin:auto; 
+  margin: 0 auto; 
 } 
 
 input[type=email], input[type=password] {
@@ -69,6 +69,8 @@ button {
 .container {
     padding: 1%;
 }
+
+
 
 
 @media only screen and (min-width: 1281px) and (min-height:1001px) and (max-height:1401px) { /*ipad pro 橫*/
@@ -154,9 +156,9 @@ button {
     <button type="submit">登入</button>
   </div>
     <div style="text-align: center;">
-    <span class="psw"><a style="color: black; font-weight: bold;" href="CreateAccount.php">建立帳號</a></span>
+    <span class="psw"><a style="color: black; font-weight: bold;" href="CreateAccount.php">註冊</a></span>
     |
-    <span class="psw"><a style="color: black; font-weight: bold;" href="ForgetPassword1.php">忘記密碼</a></span>
+    <span class="psw"><a style="color: black; font-weight: bold;" href="ForgetPassword1.php">找回密碼</a></span>
     </div>
 </div>
 </form>
