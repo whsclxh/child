@@ -38,8 +38,8 @@ body {
 }
 .divcss5-right{
   position: absolute;
-  /* width:40%;
-  height: 40%; */
+  width:40%;
+  
 
   margin: 0 auto; 
 } 
@@ -143,19 +143,17 @@ button {
 </div>
 <div class="divcss5-right">
 <form method="post" action="connect.php">
-  <div class="container">
-    <label for="uname"><b>帳號(信箱)</b></label>
-    <input type="email" placeholder="輸入帳號" name="id" required>
-
-    <label for="psw"><b>密碼</b></label>
-    <input type="password" placeholder="輸入密碼" name="pw" required>
-        
-    <button type="submit">登入</button>
-  </div>
+    <div class="container">
+      <label for="uname"><b>帳號(信箱)</b></label>
+      <input type="email" placeholder="輸入帳號" name="id" required>
+      <label for="psw"><b>密碼</b></label>
+      <input type="password" placeholder="輸入密碼" name="pw" required>
+      <button type="submit">登入</button>
+    </div>
     <div style="text-align: center;">
-    <span class="psw"><a style="color: black; font-weight: bold;" href="CreateAccount.php">註冊</a></span>
-    |
-    <span class="psw"><a style="color: black; font-weight: bold;" href="ForgetPassword1.php">找回密碼</a></span>
+      <span class="psw"><a style="color: black; font-weight: bold;" href="CreateAccount.php">註冊</a></span>
+      |
+      <span class="psw"><a style="color: black; font-weight: bold;" href="ForgetPassword1.php">找回密碼</a></span>
     </div>
 </div>
 </form>
