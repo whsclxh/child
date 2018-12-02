@@ -2,142 +2,637 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>1~15的數</title>
+	<title>Document</title>
 </head>
-<link rel="stylesheet" type="text/css" href="css/default.css">
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <style type="text/css">
-	.ta{
-		margin-left: 1%;
-		margin-top: 1%;
-	}
+	
+	.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{}
 </style>
-<script src="jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
-	window.onload = function(){        
-		var a = document.getElementById("q11");        									//設置input value
-		a.value = no1[0];
-		var b = document.getElementById("q12");        
-		b.value = no1[1];
-		var c = document.getElementById("q13");        
-		c.value = no1[2];
-		var d = document.getElementById("q14");        
-		d.value = no1[3];
-		var e = document.getElementById("q15");        
-		e.value = no1[4];
-		var f = document.getElementById("q21");        
-		f.value = no2[0];
-		var g = document.getElementById("q22");        
-		g.value = no2[1];
-		var h = document.getElementById("q23");        
-		h.value = no2[2];
-		var i = document.getElementById("q24");        
-		i.value = no2[3];
-		var j = document.getElementById("q25");        
-		j.value = no2[4];
-		var k = document.getElementById("q31");        
-		k.value = no3[0];
-		var l = document.getElementById("q32");        
-		l.value = no3[1];
-		var m = document.getElementById("q33");        
-		m.value = no3[2];
-		var n = document.getElementById("q34");        
-		n.value = no3[3];
-		var o = document.getElementById("q35");        
-		o.value = no3[4];
-		var p = document.getElementById("q41");        
-		p.value = no4[0];
-		var q = document.getElementById("q42");        
-		q.value = no4[1];
-		var r = document.getElementById("q43");        
-		r.value = no4[2];
-		var s = document.getElementById("q44");        
-		s.value = no4[3];
-		var t = document.getElementById("q45");        
-		t.value = no4[4];
-		var u = document.getElementById("q51");        
-		u.value = no5[0];
-		var v = document.getElementById("q52");        
-		v.value = no5[1];
-		var w = document.getElementById("q53");        
-		w.value = no5[2];
-		var x = document.getElementById("q54");        
-		x.value = no5[3];
-		var y = document.getElementById("q55");        
-		y.value = no5[4];
-		var a1 = document.getElementById("anw1");        								//傳送答案到後端
-		a1.value = num[0];
-		var a2 = document.getElementById("anw2");        
-		a2.value = num[1];
-		var a3 = document.getElementById("anw3");        
-		a3.value = num[2];
-		var a4 = document.getElementById("anw4");        
-		a4.value = num[3];
-		var a5 = document.getElementById("anw5");        
-		a5.value = num[4];
-		var p1 = document.getElementById("pic1");        								//傳送圖片樣式到後端
-		p1.value = pic[0];
-		var p2 = document.getElementById("pic2");        
-		p2.value = pic[1];
-		var p3 = document.getElementById("pic3");        
-		p3.value = pic[2];
-		var p4 = document.getElementById("pic4");        
-		p4.value = pic[3];
-		var p5 = document.getElementById("pic5");        
-		p5.value = pic[4];
-		var aa = document.getElementById("opt11");        									//設置input value
-		aa.value = no1[0];
-		var bb = document.getElementById("opt12");        
-		bb.value = no1[1];
-		var cc = document.getElementById("opt13");        
-		cc.value = no1[2];
-		var dd = document.getElementById("opt14");        
-		dd.value = no1[3];
-		var ee = document.getElementById("opt15");        
-		ee.value = no1[4];
-		var ff= document.getElementById("opt21");        
-		ff.value = no2[0];
-		var gg = document.getElementById("opt22");        
-		gg.value = no2[1];
-		var hh = document.getElementById("opt23");        
-		hh.value = no2[2];
-		var ii = document.getElementById("opt24");        
-		ii.value = no2[3];
-		var jj = document.getElementById("opt25");        
-		jj.value = no2[4];
-		var kk = document.getElementById("opt31");        
-		kk.value = no3[0];
-		var ll = document.getElementById("opt32");        
-		ll.value = no3[1];
-		var mm = document.getElementById("opt33");        
-		mm.value = no3[2];
-		var nn = document.getElementById("opt34");        
-		nn.value = no3[3];
-		var oo = document.getElementById("opt35");        
-		oo.value = no3[4];
-		var pp = document.getElementById("opt41");        
-		pp.value = no4[0];
-		var qq = document.getElementById("opt42");        
-		qq.value = no4[1];
-		var rr = document.getElementById("opt43");        
-		rr.value = no4[2];
-		var ss = document.getElementById("opt44");        
-		ss.value = no4[3];
-		var tt = document.getElementById("opt45");        
-		tt.value = no4[4];
-		var uu = document.getElementById("opt51");        
-		uu.value = no5[0];
-		var vv = document.getElementById("opt52");        
-		vv.value = no5[1];
-		var ww = document.getElementById("opt53");        
-		ww.value = no5[2];
-		var xx = document.getElementById("opt54");        
-		xx.value = no5[3];
-		var yy = document.getElementById("opt55");        
-		yy.value = no5[4];
-    };
+	window.onload=function(){
+		//q1        
+		var q1q11 = document.getElementById("q1q11");        									//設置input value
+		q1q11.value = q1no1[0];
+		var q1q12 = document.getElementById("q1q12");        
+		q1q12.value = q1no1[1];
+		var q1q13 = document.getElementById("q1q13");        
+		q1q13.value = q1no1[2];
+		var q1q14 = document.getElementById("q1q14");        
+		q1q14.value = q1no1[3];
+		var q1q15 = document.getElementById("q1q15");        
+		q1q15.value = q1no1[4];
+		var q1q21 = document.getElementById("q1q21");        
+		q1q21.value = q1no2[0];
+		var q1q22 = document.getElementById("q1q22");        
+		q1q22.value = q1no2[1];
+		var q1q23 = document.getElementById("q1q23");        
+		q1q23.value = q1no2[2];
+		var q1q24 = document.getElementById("q1q24");        
+		q1q24.value = q1no2[3];
+		var q1q25 = document.getElementById("q1q25");        
+		q1q25.value = q1no2[4];
+		var q1q31 = document.getElementById("q1q31");        
+		q1q31.value = q1no3[0];
+		var q1q32 = document.getElementById("q1q32");        
+		q1q32.value = q1no3[1];
+		var q1q33 = document.getElementById("q1q33");        
+		q1q33.value = q1no3[2];
+		var q1q34 = document.getElementById("q1q34");        
+		q1q34.value = q1no3[3];
+		var q1q35 = document.getElementById("q1q35");        
+		q1q35.value = q1no3[4];
+		var q1q41 = document.getElementById("q1q41");        
+		q1q41.value = q1no4[0];
+		var q1q42 = document.getElementById("q1q42");        
+		q1q42.value = q1no4[1];
+		var q1q43 = document.getElementById("q1q43");        
+		q1q43.value = q1no4[2];
+		var q1q44 = document.getElementById("q1q44");        
+		q1q44.value = q1no4[3];
+		var q1q45 = document.getElementById("q1q45");        
+		q1q45.value = q1no4[4];
+		var q1q51 = document.getElementById("q1q51");        
+		q1q51.value = q1no5[0];
+		var q1q52 = document.getElementById("q1q52");        
+		q1q52.value = q1no5[1];
+		var q1q53 = document.getElementById("q1q53");        
+		q1q53.value = q1no5[2];
+		var q1q54 = document.getElementById("q1q54");        
+		q1q54.value = q1no5[3];
+		var q1q55 = document.getElementById("q1q55");        
+		q1q55.value = q1no5[4];
+		var q1anw1 = document.getElementById("q1anw1");        								//傳送答案到後端
+		q1anw1.value = q1num[0];
+		var q1anw2 = document.getElementById("q1anw2");        
+		q1anw2.value = q1num[1];
+		var q1anw3 = document.getElementById("q1anw3");        
+		q1anw3.value = q1num[2];
+		var q1anw4 = document.getElementById("q1anw4");        
+		q1anw4.value = q1num[3];
+		var q1anw5 = document.getElementById("q1anw5");        
+		q1anw5.value = q1num[4];
+		var q1pic1 = document.getElementById("q1pic1");        								//傳送圖片樣式到後端
+		q1pic1.value = q1pic[0];
+		var q1pic2 = document.getElementById("q1pic2");        
+		q1pic2.value = q1pic[1];
+		var q1pic3 = document.getElementById("q1pic3");        
+		q1pic3.value = q1pic[2];
+		var q1pic4 = document.getElementById("q1pic4");        
+		q1pic4.value = q1pic[3];
+		var q1pic5 = document.getElementById("q1pic5");        
+		q1pic5.value = q1pic[4];
+		var q1opt11 = document.getElementById("q1opt11");        									//設置input value
+		q1opt11.value = q1no1[0];
+		var q1opt12 = document.getElementById("q1opt12");        
+		q1opt12.value = q1no1[1];
+		var q1opt13 = document.getElementById("q1opt13");        
+		q1opt13.value = q1no1[2];
+		var q1opt14 = document.getElementById("q1opt14");        
+		q1opt14.value = q1no1[3];
+		var q1opt15 = document.getElementById("q1opt15");        
+		q1opt15.value = q1no1[4];
+		var q1opt21 = document.getElementById("q1opt21");        
+		q1opt21.value = q1no2[0];
+		var q1opt22 = document.getElementById("q1opt22");        
+		q1opt22.value = q1no2[1];
+		var q1opt23 = document.getElementById("q1opt23");        
+		q1opt23.value = q1no2[2];
+		var q1opt24 = document.getElementById("q1opt24");        
+		q1opt24.value = q1no2[3];
+		var q1opt25 = document.getElementById("q1opt25");        
+		q1opt25.value = q1no2[4];
+		var q1opt31 = document.getElementById("q1opt31");        
+		q1opt31.value = q1no3[0];
+		var q1opt32 = document.getElementById("q1opt32");        
+		q1opt32.value = q1no3[1];
+		var q1opt33 = document.getElementById("q1opt33");        
+		q1opt33.value = q1no3[2];
+		var q1opt34 = document.getElementById("q1opt34");        
+		q1opt34.value = q1no3[3];
+		var q1opt35 = document.getElementById("q1opt35");        
+		q1opt35.value = q1no3[4];
+		var q1opt41 = document.getElementById("q1opt41");        
+		q1opt41.value = q1no4[0];
+		var q1opt42 = document.getElementById("q1opt42");        
+		q1opt42.value = q1no4[1];
+		var q1opt43 = document.getElementById("q1opt43");        
+		q1opt43.value = q1no4[2];
+		var q1opt44 = document.getElementById("q1opt44");        
+		q1opt44.value = q1no4[3];
+		var q1opt45 = document.getElementById("q1opt45");        
+		q1opt45.value = q1no4[4];
+		var q1opt51 = document.getElementById("q1opt51");        
+		q1opt51.value = q1no5[0];
+		var q1opt52 = document.getElementById("q1opt52");        
+		q1opt52.value = q1no5[1];
+		var q1opt53 = document.getElementById("q1opt53");        
+		q1opt53.value = q1no5[2];
+		var q1opt54 = document.getElementById("q1opt54");        
+		q1opt54.value = q1no5[3];
+		var q1opt55 = document.getElementById("q1opt55");        
+		q1opt55.value = q1no5[4];
+		//q2
+		var q2pic1 = document.getElementById("q2pic1");        
+		q2pic1.value = q2pic[0];
+		var q2pic2 = document.getElementById("q2pic2");        
+		q2pic2.value = q2pic[1];
+		var q2pic3 = document.getElementById("q2pic3");        
+		q2pic3.value = q2pic[2];
+		var q2pic4 = document.getElementById("q2pic4");        
+		q2pic4.value = q2pic[3];
+		var q2pic5 = document.getElementById("q2pic5");        
+		q2pic5.value = q2pic[4];
+		var q2pic6 = document.getElementById("q2pic6");        
+		q2pic6.value = q2pic[5];
+		var q2pic7 = document.getElementById("q2pic7");        
+		q2pic7.value = q2pic[6];
+		var q2pic8 = document.getElementById("q2pic8");        
+		q2pic8.value = q2pic[7];
+		var q2pic9 = document.getElementById("q2pic9");        
+		q2pic9.value = q2pic[8];
+		var q2pic10 = document.getElementById("q2pic10");        
+		q2pic10.value = q2pic[9];
+		var q2num1 = document.getElementById("q2num1");
+		q2num1.value = q2num[0];
+		var q2num2 = document.getElementById("q2num2");
+		q2num2.value = q2num[1];
+		var q2num3 = document.getElementById("q2num3");
+		q2num3.value = q2num[2];
+		var q2num4 = document.getElementById("q2num4");
+		q2num4.value = q2num[3];
+		var q2num5 = document.getElementById("q2num5");
+		q2num5.value = q2num[4];
+		var q2num6 = document.getElementById("q2num6");
+		q2num6.value = q2num[5];
+		var q2num7 = document.getElementById("q2num7");
+		q2num7.value = q2num[6];
+		var q2num8 = document.getElementById("q2num8");
+		q2num8.value = q2num[7];
+		var q2num9 = document.getElementById("q2num9");
+		q2num9.value = q2num[8];
+		var q2num10 = document.getElementById("q2num10");
+		q2num10.value = q2num[9];
+		var q2am1 = document.getElementById("q2am1");
+		q2am1.value = q2gettheqq[0];
+		var q2am2 = document.getElementById("q2am2");
+		q2am2.value = q2gettheqq[1];
+		var q2am3 = document.getElementById("q2am3");
+		q2am3.value = q2gettheqq[2];
+		var q2am4 = document.getElementById("q2am4");
+		q2am4.value = q2gettheqq[3];
+		var q2am5 = document.getElementById("q2am5");
+		q2am5.value = q2gettheqq[4];
+		//q3
+		var q3opt01 = document.getElementById("q3opt01");        									
+		q3opt01.value = bigsmall[0];
+		var q3opt02 = document.getElementById("q3opt02");        									
+		q3opt02.value = bigsmall[1];
+		var q3opt03 = document.getElementById("q3opt03");        									
+		q3opt03.value = bigsmall[2];
+		var q3opt11 = document.getElementById("q3opt11");        									
+		q3opt11.value = bigsmall[3];
+		var q3opt12 = document.getElementById("q3opt12");        									
+		q3opt12.value = bigsmall[4];
+		var q3opt13 = document.getElementById("q3opt13");        									
+		q3opt13.value = bigsmall[5];
+		var q3opt21 = document.getElementById("q3opt21");        									
+		q3opt21.value = bigsmall[6];
+		var q3opt22 = document.getElementById("q3opt22");        									
+		q3opt22.value = bigsmall[7];
+		var q3opt23 = document.getElementById("q3opt23");        									
+		q3opt23.value = bigsmall[8];
+		var q3opt31 = document.getElementById("q3opt31");        									
+		q3opt31.value = bigsmall[9];
+		var q3opt32 = document.getElementById("q3opt32");        									
+		q3opt32.value = bigsmall[10]
+		var q3opt33 = document.getElementById("q3opt33");        									
+		q3opt33.value = bigsmall[11];
+		var q3opt41 = document.getElementById("q3opt41");        									
+		q3opt41.value = bigsmall[12];
+		var q3opt42 = document.getElementById("q3opt42");        									
+		q3opt42.value = bigsmall[13];
+		var q3opt43 = document.getElementById("q3opt43");        									
+		q3opt43.value = bigsmall[14];
+		var q3opt51 = document.getElementById("q3opt51");        									
+		q3opt51.value = bigsmall[15];
+		var q3opt52 = document.getElementById("q3opt52");        									
+		q3opt52.value = bigsmall[16];
+		var q3opt53 = document.getElementById("q3opt53");        									
+		q3opt53.value = bigsmall[17];
+		var q3opt61 = document.getElementById("q3opt61");        									
+		q3opt61.value = bigsmall[18];
+		var q3opt62 = document.getElementById("q3opt62");        									
+		q3opt62.value = bigsmall[19];
+		var q3opt63 = document.getElementById("q3opt63");        									
+		q3opt63.value = bigsmall[20];
+		var q3opt71 = document.getElementById("q3opt71");        									
+		q3opt71.value = bigsmall[21];
+		var q3opt72 = document.getElementById("q3opt72");        									
+		q3opt72.value = bigsmall[22];
+		var q3opt73 = document.getElementById("q3opt73");        									
+		q3opt73.value = bigsmall[23];
+		var q3opt81 = document.getElementById("q3opt81");        									
+		q3opt81.value = bigsmall[24];
+		var q3opt82 = document.getElementById("q3opt82");        									
+		q3opt82.value = bigsmall[25];
+		var q3opt83 = document.getElementById("q3opt83");        									
+		q3opt83.value = bigsmall[26];
+		var q3opt91 = document.getElementById("q3opt91");        									
+		q3opt91.value = bigsmall[27];
+		var q3opt92 = document.getElementById("q3opt92");        									
+		q3opt92.value = bigsmall[28];
+		var q3opt93 = document.getElementById("q3opt93");        									
+		q3opt93.value = bigsmall[29];
 
-	function getRandom(minNum,maxNum){	
+		var qq3opt0 = document.getElementById("qq3opt0");        									
+		qq3opt0.value = bigsmall[0];
+		var qq3opt1 = document.getElementById("qq3opt1");        									
+		qq3opt1.value = bigsmall[1];
+		var qq3opt2 = document.getElementById("qq3opt2");        									
+		qq3opt2.value = bigsmall[2];
+		var qq3opt3 = document.getElementById("qq3opt3");        									
+		qq3opt3.value = bigsmall[3];
+		var qq3opt4 = document.getElementById("qq3opt4");        									
+		qq3opt4.value = bigsmall[4];
+		var qq3opt5 = document.getElementById("qq3opt5");        									
+		qq3opt5.value = bigsmall[5];
+		var qq3opt6 = document.getElementById("qq3opt6");        									
+		qq3opt6.value = bigsmall[6];
+		var qq3opt7 = document.getElementById("qq3opt7");        									
+		qq3opt7.value = bigsmall[7];
+		var qq3opt8 = document.getElementById("qq3opt8");        									
+		qq3opt8.value = bigsmall[8];
+		var qq3opt9 = document.getElementById("qq3opt9");        									
+		qq3opt9.value = bigsmall[9];
+		var qq3opt10 = document.getElementById("qq3opt10");        									
+		qq3opt10.value = bigsmall[10];
+		var qq3opt11 = document.getElementById("qq3opt11");        									
+		qq3opt11.value = bigsmall[11];
+		var qq3opt12 = document.getElementById("qq3opt12");        									
+		qq3opt12.value = bigsmall[12];
+		var qq3opt13 = document.getElementById("qq3opt13");        									
+		qq3opt13.value = bigsmall[13];
+		var qq3opt14 = document.getElementById("qq3opt14");        									
+		qq3opt14.value = bigsmall[14];
+		var qq3opt15 = document.getElementById("qq3opt15");        									
+		qq3opt15.value = bigsmall[15];
+		var qq3opt16 = document.getElementById("qq3opt16");        									
+		qq3opt16.value = bigsmall[16];
+		var qq3opt17 = document.getElementById("qq3opt17");        									
+		qq3opt17.value = bigsmall[17];
+		var qq3opt18 = document.getElementById("qq3opt18");        									
+		qq3opt18.value = bigsmall[18];
+		var qq3opt19 = document.getElementById("qq3opt19");        									
+		qq3opt19.value = bigsmall[19];
+		var qq3opt20 = document.getElementById("qq3opt20");        									
+		qq3opt20.value = bigsmall[20];
+		var qq3opt21 = document.getElementById("qq3opt21");        									
+		qq3opt21.value = bigsmall[21];
+		var qq3opt22 = document.getElementById("qq3opt22");        									
+		qq3opt22.value = bigsmall[22];
+		var qq3opt23 = document.getElementById("qq3opt23");        									
+		qq3opt23.value = bigsmall[23];
+		var qq3opt24 = document.getElementById("qq3opt24");        									
+		qq3opt24.value = bigsmall[24];
+		var qq3opt25 = document.getElementById("qq3opt25");        									
+		qq3opt25.value = bigsmall[25];
+		var qq3opt26 = document.getElementById("qq3opt26");        									
+		qq3opt26.value = bigsmall[26];
+		var qq3opt27 = document.getElementById("qq3opt27");        									
+		qq3opt27.value = bigsmall[27];
+		var qq3opt28 = document.getElementById("qq3opt28");        									
+		qq3opt28.value = bigsmall[28];
+		var qq3opt29 = document.getElementById("qq3opt29");        									
+		qq3opt29.value = bigsmall[29];
+		//q4
+		if(q4randomquestion1[0]==1){
+			document.getElementById('q4q11').disabled=true;
+			document.getElementById('q4q11').value=q4getthenumoftheq[0];
+		}
+		if(q4randomquestion1[0]==2){
+			document.getElementById('q4q12').disabled=true;
+			document.getElementById('q4q12').value=q4getthenumoftheq[0]+1;
+		}
+		if(q4randomquestion1[0]==3){
+			document.getElementById('q4q13').disabled=true;
+			document.getElementById('q4q13').value=q4getthenumoftheq[0]+2;
+		}
+		if(q4randomquestion1[0]==4){
+			document.getElementById('q4q14').disabled=true;
+			document.getElementById('q4q14').value=q4getthenumoftheq[0]+3;
+		}
+		if(q4randomquestion1[0]==5){
+			document.getElementById('q4q15').disabled=true;
+			document.getElementById('q4q15').value=q4getthenumoftheq[0]+4;
+		}
+		if(q4randomquestion1[0]==6){
+			document.getElementById('q4q16').disabled=true;
+			document.getElementById('q4q16').value=q4getthenumoftheq[0]+5;
+		}
+		if(q4randomquestion1[1]==1){
+			document.getElementById('q4q11').disabled=true;
+			document.getElementById('q4q11').value=q4getthenumoftheq[0];
+		}
+		if(q4randomquestion1[1]==2){
+			document.getElementById('q4q12').disabled=true;
+			document.getElementById('q4q12').value=q4getthenumoftheq[0]+1;
+		}
+		if(q4randomquestion1[1]==3){
+			document.getElementById('q4q13').disabled=true;
+			document.getElementById('q4q13').value=q4getthenumoftheq[0]+2;
+		}
+		if(q4randomquestion1[1]==4){
+			document.getElementById('q4q14').disabled=true;
+			document.getElementById('q4q14').value=q4getthenumoftheq[0]+3;
+		}
+		if(q4randomquestion1[1]==5){
+			document.getElementById('q4q15').disabled=true;
+			document.getElementById('q4q15').value=q4getthenumoftheq[0]+4;
+		}
+		if(q4randomquestion1[1]==6){
+			document.getElementById('q4q16').disabled=true;
+			document.getElementById('q4q16').value=q4getthenumoftheq[0]+5;
+		}
+		if(q4randomquestion2[0]==1){
+			document.getElementById('q4q21').disabled=true;
+			document.getElementById('q4q21').value=q4getthenumoftheq[1];
+		}
+		if(q4randomquestion2[0]==2){
+			document.getElementById('q4q22').disabled=true;
+			document.getElementById('q4q22').value=q4getthenumoftheq[1]-1;
+		}
+		if(q4randomquestion2[0]==3){
+			document.getElementById('q4q23').disabled=true;
+			document.getElementById('q4q23').value=q4getthenumoftheq[1]-2;
+		}
+		if(q4randomquestion2[0]==4){
+			document.getElementById('q4q24').disabled=true;
+			document.getElementById('q4q24').value=q4getthenumoftheq[1]-3;
+		}
+		if(q4randomquestion2[0]==5){
+			document.getElementById('q4q25').disabled=true;
+			document.getElementById('q4q25').value=q4getthenumoftheq[1]-4;
+		}
+		if(q4randomquestion2[0]==6){
+			document.getElementById('q4q26').disabled=true;
+			document.getElementById('q4q26').value=q4getthenumoftheq[1]-5;
+		}
+		if(q4randomquestion2[1]==1){
+			document.getElementById('q4q21').disabled=true;
+			document.getElementById('q4q21').value=q4getthenumoftheq[1];
+		}
+		if(q4randomquestion2[1]==2){
+			document.getElementById('q4q22').disabled=true;
+			document.getElementById('q4q22').value=q4getthenumoftheq[1]-1;
+		}
+		if(q4randomquestion2[1]==3){
+			document.getElementById('q4q23').disabled=true;
+			document.getElementById('q4q23').value=q4getthenumoftheq[1]-2;
+		}
+		if(q4randomquestion2[1]==4){
+			document.getElementById('q4q24').disabled=true;
+			document.getElementById('q4q24').value=q4getthenumoftheq[1]-3;
+		}
+		if(q4randomquestion2[1]==5){
+			document.getElementById('q4q25').disabled=true;
+			document.getElementById('q4q25').value=q4getthenumoftheq[1]-4;
+		}
+		if(q4randomquestion2[1]==6){
+			document.getElementById('q4q26').disabled=true;
+			document.getElementById('q4q26').value=q4getthenumoftheq[1]-5;
+		}
+		if(q4randomquestion3[0]==1){
+			document.getElementById('q4q31').disabled=true;
+			document.getElementById('q4q31').value=q4getthenumoftheq[2];
+		}
+		if(q4randomquestion3[0]==2){
+			document.getElementById('q4q32').disabled=true;
+			document.getElementById('q4q32').value=q4getthenumoftheq[2]-1;
+		}
+		if(q4randomquestion3[0]==3){
+			document.getElementById('q4q33').disabled=true;
+			document.getElementById('q4q33').value=q4getthenumoftheq[2]-2;
+		}
+		if(q4randomquestion3[0]==4){
+			document.getElementById('q4q34').disabled=true;
+			document.getElementById('q4q34').value=q4getthenumoftheq[2]-3;
+		}
+		if(q4randomquestion3[0]==5){
+			document.getElementById('q4q35').disabled=true;
+			document.getElementById('q4q35').value=q4getthenumoftheq[2]-4;
+		}
+		if(q4randomquestion3[0]==6){
+			document.getElementById('q4q36').disabled=true;
+			document.getElementById('q4q36').value=q4getthenumoftheq[2]-5;
+		}
+		if(q4randomquestion3[1]==1){
+			document.getElementById('q4q31').disabled=true;
+			document.getElementById('q4q31').value=q4getthenumoftheq[2];
+		}
+		if(q4randomquestion3[1]==2){
+			document.getElementById('q4q32').disabled=true;
+			document.getElementById('q4q32').value=q4getthenumoftheq[2]-1;
+		}
+		if(q4randomquestion3[1]==3){
+			document.getElementById('q4q33').disabled=true;
+			document.getElementById('q4q33').value=q4getthenumoftheq[2]-2;
+		}
+		if(q4randomquestion3[1]==4){
+			document.getElementById('q4q34').disabled=true;
+			document.getElementById('q4q34').value=q4getthenumoftheq[2]-3;
+		}
+		if(q4randomquestion3[1]==5){
+			document.getElementById('q4q35').disabled=true;
+			document.getElementById('q4q35').value=q4getthenumoftheq[2]-4;
+		}
+		if(q4randomquestion3[1]==6){
+			document.getElementById('q4q36').disabled=true;
+			document.getElementById('q4q36').value=q4getthenumoftheq[2]-5;
+		}
+		if(q4randomquestion4[0]==1){
+			document.getElementById('q4q41').disabled=true;
+			document.getElementById('q4q41').value=q4getthenumoftheq[3];
+		}
+		if(q4randomquestion4[0]==2){
+			document.getElementById('q4q42').disabled=true;
+			document.getElementById('q4q42').value=q4getthenumoftheq[3]+1;
+		}
+		if(q4randomquestion4[0]==3){
+			document.getElementById('q4q43').disabled=true;
+			document.getElementById('q4q43').value=q4getthenumoftheq[3]+2;
+		}
+		if(q4randomquestion4[0]==4){
+			document.getElementById('q4q44').disabled=true;
+			document.getElementById('q4q44').value=q4getthenumoftheq[3]+3;
+		}
+		if(q4randomquestion4[0]==5){
+			document.getElementById('q4q45').disabled=true;
+			document.getElementById('q4q45').value=q4getthenumoftheq[3]+4;
+		}
+		if(q4randomquestion4[0]==6){
+			document.getElementById('q4q46').disabled=true;
+			document.getElementById('q4q46').value=q4getthenumoftheq[3]+5;
+		}
+		if(q4randomquestion4[1]==1){
+			document.getElementById('q4q41').disabled=true;
+			document.getElementById('q4q41').value=q4getthenumoftheq[3];
+		}
+		if(q4randomquestion4[1]==2){
+			document.getElementById('q4q42').disabled=true;
+			document.getElementById('q4q42').value=q4getthenumoftheq[3]+1;
+		}
+		if(q4randomquestion4[1]==3){
+			document.getElementById('q4q43').disabled=true;
+			document.getElementById('q4q43').value=q4getthenumoftheq[3]+2;
+		}
+		if(q4randomquestion4[1]==4){
+			document.getElementById('q4q44').disabled=true;
+			document.getElementById('q4q44').value=q4getthenumoftheq[3]+3;
+		}
+		if(q4randomquestion4[1]==5){
+			document.getElementById('q4q45').disabled=true;
+			document.getElementById('q4q45').value=q4getthenumoftheq[3]+4;
+		}
+		if(q4randomquestion4[1]==6){
+			document.getElementById('q4q46').disabled=true;
+			document.getElementById('q4q46').value=q4getthenumoftheq[3]+5;
+		}
+		if(q4randomquestion5[0]==1){
+			document.getElementById('q4q51').disabled=true;
+			document.getElementById('q4q51').value=q4getthenumoftheq[4];
+		}
+		if(q4randomquestion5[0]==2){
+			document.getElementById('q4q52').disabled=true;
+			document.getElementById('q4q52').value=q4getthenumoftheq[4]-1;
+		}
+		if(q4randomquestion5[0]==3){
+			document.getElementById('q4q53').disabled=true;
+			document.getElementById('q4q53').value=q4getthenumoftheq[4]-2;
+		}
+		if(q4randomquestion5[0]==4){
+			document.getElementById('q4q54').disabled=true;
+			document.getElementById('q4q54').value=q4getthenumoftheq[4]-3;
+		}
+		if(q4randomquestion5[0]==5){
+			document.getElementById('q4q55').disabled=true;
+			document.getElementById('q4q55').value=q4getthenumoftheq[4]-4;
+		}
+		if(q4randomquestion5[0]==6){
+			document.getElementById('q4q56').disabled=true;
+			document.getElementById('q4q56').value=q4getthenumoftheq[4]-5;
+		}
+		if(q4randomquestion5[1]==1){
+			document.getElementById('q4q51').disabled=true;
+			document.getElementById('q4q51').value=q4getthenumoftheq[4];
+		}
+		if(q4randomquestion5[1]==2){
+			document.getElementById('q4q52').disabled=true;
+			document.getElementById('q4q52').value=q4getthenumoftheq[4]-1;
+		}
+		if(q4randomquestion5[1]==3){
+			document.getElementById('q4q53').disabled=true;
+			document.getElementById('q4q53').value=q4getthenumoftheq[4]-2;
+		}
+		if(q4randomquestion5[1]==4){
+			document.getElementById('q4q54').disabled=true;
+			document.getElementById('q4q54').value=q4getthenumoftheq[4]-3;
+		}
+		if(q4randomquestion5[1]==5){
+			document.getElementById('q4q55').disabled=true;
+			document.getElementById('q4q55').value=q4getthenumoftheq[4]-4;
+		}
+		if(q4randomquestion5[1]==6){
+			document.getElementById('q4q56').disabled=true;
+			document.getElementById('q4q56').value=q4getthenumoftheq[4]-5;
+		}
+		var q4s11 = document.getElementById("q4s11");        									
+		q4s11.value = q4randomquestion1[0];
+		var q4s12 = document.getElementById("q4s12");        									
+		q4s12.value = q4randomquestion1[1];
+		var q4s21 = document.getElementById("q4s21");        									
+		q4s21.value = q4randomquestion2[0];
+		var q4s22 = document.getElementById("q4s22");        									
+		q4s22.value = q4randomquestion2[1];
+		var q4s31 = document.getElementById("q4s31");        									
+		q4s31.value = q4randomquestion3[0];
+		var q4s32 = document.getElementById("q4s32");        									
+		q4s32.value = q4randomquestion3[1];
+		var q4s41 = document.getElementById("q4s41");        									
+		q4s41.value = q4randomquestion4[0];
+		var q4s42 = document.getElementById("q4s42");        									
+		q4s42.value = q4randomquestion4[1];
+		var q4s51 = document.getElementById("q4s51");        									
+		q4s51.value = q4randomquestion5[0];
+		var q4s52 = document.getElementById("q4s52");        									
+		q4s52.value = q4randomquestion5[1];
+		var q4qq1 = document.getElementById("q4qq1");        									
+		q4qq1.value = q4getthenumoftheq[0];
+		var q4qq2 = document.getElementById("q4qq2");        									
+		q4qq2.value = q4getthenumoftheq[1];
+		var q4qq3 = document.getElementById("q4qq3");        									
+		q4qq3.value = q4getthenumoftheq[2];
+		var q4qq4 = document.getElementById("q4qq4");        									
+		q4qq4.value = q4getthenumoftheq[3];
+		var q4qq5 = document.getElementById("q4qq5");        									
+		q4qq5.value = q4getthenumoftheq[4];
+		//q5
+		var q5pic1 = document.getElementById("q5pic1");        
+		q5pic1.value = q5pic[0];
+		var q5pic2 = document.getElementById("q5pic2");        
+		q5pic2.value = q5pic[1];
+		var q5pic3 = document.getElementById("q5pic3");        
+		q5pic3.value = q5pic[2];
+		var q5pic4 = document.getElementById("q5pic4");        
+		q5pic4.value = q5pic[3];
+		var q5pic5 = document.getElementById("q5pic5");        
+		q5pic5.value = q5pic[4];
+		var q5a1 = document.getElementById("q5a1");        
+		q5a1.value = q5question1[0];
+		var q5a2 = document.getElementById("q5a2");        
+		q5a2.value = q5question1[1];
+		var q5a3 = document.getElementById("q5a3");        
+		q5a3.value = q5question1[2];
+		var q5a4 = document.getElementById("q5a4");        
+		q5a4.value = q5question1[0]+q5question1[1]+q5question1[2];
+		var q5a5 = document.getElementById("q5a5");        
+		q5a5.value = q5question2[0];
+		var q5a6 = document.getElementById("q5a6");        
+		q5a6.value = q5question2[1];
+		var q5a7 = document.getElementById("q5a7");        
+		q5a7.value = q5question2[2];
+		var q5a8 = document.getElementById("q5a8");        
+		q5a8.value = q5question2[0]+q5question2[1]+q5question2[2];
+		var q5a9 = document.getElementById("q5a9");        
+		q5a9.value = q5question3[0];
+		var q5a10 = document.getElementById("q5a10");        
+		q5a10.value = q5question3[1];
+		var q5a11 = document.getElementById("q5a11");        
+		q5a11.value = q5question3[2];
+		var q5a12 = document.getElementById("q5a12");        
+		q5a12.value = q5question3[0]+q5question3[1]+q5question3[2];
+		var q5a13 = document.getElementById("q5a13");        
+		q5a13.value = q5question4[0];
+		var q5a14 = document.getElementById("q5a14");        
+		q5a14.value = q5question4[1];
+		var q5a15 = document.getElementById("q5a15");        
+		q5a15.value = q5question4[2];
+		var q5a16 = document.getElementById("q5a16");        
+		q5a16.value = q5question4[0]+q5question4[1]+q5question4[2];
+		var q5a17 = document.getElementById("q5a17");        
+		q5a17.value = q5question5[0];
+		var q5a18 = document.getElementById("q5a18");        
+		q5a18.value = q5question5[1];
+		var q5a19 = document.getElementById("q5a19");        
+		q5a19.value = q5question5[2];
+		var q5a20 = document.getElementById("q5a20");        
+		q5a20.value = q5question5[0]+q5question5[1]+q5question5[2];
+    }
+
+    function getRandom(minNum,maxNum){	
 		return Math.floor(Math.random()*(maxNum-minNum+1))+minNum;
 	}
 
@@ -155,11 +650,11 @@
 		}
 		return rdmArray;
 	}
+	//q1
+    var q1num=getRandomArray(4,14,5);															 //這是圖片個數的array
+	var q1pic=getRandomArray(0,11,5);															 //這是選擇圖片的array
 
-	var num=getRandomArray(4,14,5);															 //這是圖片個數的array
-	var pic=getRandomArray(0,11,5);															 //這是選擇圖片的array
-
-	function pictures(x){
+	function q1pictures(x){
 		var imgurl=[
     	'img/fruit/apple.png',
     	'img/fruit/banana.png',
@@ -174,131 +669,604 @@
     	'img/fruit/strawberry.png',
     	'img/fruit/tomato.png',
 	];
-		for(var i=1;i<=num[x];i++){
-			document.write('<img src="'+imgurl[pic[x]]+'">');
+		for(var i=1;i<=q1num[x];i++){
+			document.write('<img src="'+imgurl[q1pic[x]]+'" width=65px; height=65px;>');
 		}
 	}
 
-	function checkoption(x){
+	function q1checkoption(x){
 		var no=[];
 		do{	
 			var a=true;
-			no=getRandomArray(num[x]-3,num[x]+3,5);
-				if(no.indexOf(num[x])!=-1) 
+			no=getRandomArray(q1num[x]-3,q1num[x]+3,5);
+				if(no.indexOf(q1num[x])!=-1) 
 					var a=false;
 			}while(a);
 		return no;
 	}
 
-	var no1=checkoption(0);
-	var no2=checkoption(1);
-	var no3=checkoption(2);
-	var no4=checkoption(3);
-	var no5=checkoption(4);
+	var q1no1=q1checkoption(0);
+	var q1no2=q1checkoption(1);
+	var q1no3=q1checkoption(2);
+	var q1no4=q1checkoption(3);
+	var q1no5=q1checkoption(4);
 
-	function write(p,q){
+	function q1write(p,q){
 		document.write(p[q]);
+	}
+	//q2
+	var q2num=getRandomArray(1,10,10);                              //這是圖片個數的array
+  	var q2pic=getRandomArray(0,11,10);                              //這是選擇圖片的array
+  	function q2qpictures(x,y){
+    var imgurl=[
+      'img/fruit/apple.png',
+      'img/fruit/banana.png',
+      'img/fruit/kiwi.png',
+      'img/fruit/melon.png',
+      'img/fruit/orange.png',
+      'img/fruit/peach.png',
+      'img/fruit/pear.png',
+      'img/fruit/pear2.png',
+      'img/fruit/pepper.png',
+      'img/fruit/persimmon.png',
+      'img/fruit/strawberry.png',
+      'img/fruit/tomato.png',
+  ];
+    for(var i=1;i<=q2num[x];i++){
+      document.write('<img src="'+imgurl[q2pic[x]]+'" width="50px"; height="50px";>');
+    }
+    for(var i=1;i<=q2num[y];i++){
+      document.write('<img src="'+imgurl[q2pic[y]]+'" width="50px"; height="50px";>');
+    }
+  }
+  function q2pictures(x){
+    var imgurl=[
+      'img/fruit/apple.png',
+      'img/fruit/banana.png',
+      'img/fruit/kiwi.png',
+      'img/fruit/melon.png',
+      'img/fruit/orange.png',
+      'img/fruit/peach.png',
+      'img/fruit/pear.png',
+      'img/fruit/pear2.png',
+      'img/fruit/pepper.png',
+      'img/fruit/persimmon.png',
+      'img/fruit/strawberry.png',
+      'img/fruit/tomato.png',
+  ];
+      document.write('<img src="'+imgurl[q2pic[x]]+'" width="50px" height="50px" vertical-align : middle;>');
+   
+  }
+  var q2gettheqq=[getRandom(0,1),getRandom(0,1),getRandom(0,1),getRandom(0,1),getRandom(0,1),];
+  function q2addormul(x){
+  	var am=[' 共有 ',
+  			' 相差 ',];
+  	document.write(am[q2gettheqq[x]]);
+  }
+  function q2write(x){
+    document.write(x);
+  }
+  //q3
+  var bigsmall=getRandomArray(10,99,30);
+	function q3print(x){
+		document.write(x);
+	}
+ //q4
+ 	var q4randomquestion1=getRandomArray(1,6,2);
+	var q4randomquestion2=getRandomArray(1,6,2);
+	var q4randomquestion3=getRandomArray(1,6,2);
+	var q4randomquestion4=getRandomArray(1,6,2);
+	var q4randomquestion5=getRandomArray(1,6,2);
+	var q4getthenumoftheq=getRandomArray(10,90,5);
+ //q5
+ 	var q5question1=getRandomArray(1,5,3);
+	var q5question2=getRandomArray(1,5,3);
+	var q5question3=getRandomArray(1,5,3);
+	var q5question4=getRandomArray(1,5,3);
+	var q5question5=getRandomArray(1,5,3);
+	var q5pic=getRandomArray(0,11,5);
+
+	function q5pictures(x,y){
+		var imgurl=[
+    	'img/fruit/apple.png',
+    	'img/fruit/banana.png',
+    	'img/fruit/kiwi.png',
+    	'img/fruit/melon.png',
+    	'img/fruit/orange.png',
+    	'img/fruit/peach.png',
+    	'img/fruit/pear.png',
+    	'img/fruit/pear2.png',
+    	'img/fruit/pepper.png',
+    	'img/fruit/persimmon.png',
+    	'img/fruit/strawberry.png',
+    	'img/fruit/tomato.png',
+	];
+		for(var i=1;i<=x;i++){
+			document.write('<img src="'+imgurl[q5pic[y]]+'" width="50px"; height="50px";>');
+		}
 	}
 </script>
 <body>
-	<form method="post" action="math_finish.php">
-		<div class="ta">
-		<table border="1">
-		<h2>數一數,選出正確的數量,一題4分</h2>
+	<form method="post" action="math_finish.php" data-ajax="false">
+		<div data-role="page" id="math1">
+		<table border="5" align="center" rules="none" frame="void">
+		<h3 align="center">數一數,選出正確的數量,一題4分</h3>
 		<tr>
-		<td>1.</td>
-		<td class="a"><script>pictures(0);</script></td>
-		<td class="b">
-			<label><input id="q11" name="question1" type="radio" checked /><script>write(no1,0);</script></label>
-			<label><input id="q12" name="question1" type="radio"/><script>write(no1,1);</script></label>
-			<label><input id="q13" name="question1" type="radio"/><script>write(no1,2);</script></label>
-			<label><input id="q14" name="question1" type="radio"/><script>write(no1,3);</script></label>
-			<label><input id="q15" name="question1" type="radio"/><script>write(no1,4);</script></label>
+		<td><script>q1pictures(0);</script></td>
+		<td>
+			<div style="float: left;"><label><input id="q1q11" name="q1question1" type="radio"/><script>q1write(q1no1,0);</script></label></div>
+			<div style="float: left;"><label><input id="q1q12" name="q1question1" type="radio"/><script>q1write(q1no1,1);</script></label></div>
+			<div style="float: left;"><label><input id="q1q13" name="q1question1" type="radio"/><script>q1write(q1no1,2);</script></label></div>
+			<div style="float: left;"><label><input id="q1q14" name="q1question1" type="radio"/><script>q1write(q1no1,3);</script></label></div>
+			<div style="float: left;"><label><input id="q1q15" name="q1question1" type="radio"/><script>q1write(q1no1,4);</script></label></div>
 		</td>
 		</tr>
 		<tr>
-		<td>2.</td>
-		<td class="a"><script>pictures(1);</script></td>
-		<td class="b">
-			<label><input id="q21" name="question2" type="radio" checked/><script>write(no2,0);</script></label>
-			<label><input id="q22" name="question2" type="radio"/><script>write(no2,1);</script></label>
-			<label><input id="q23" name="question2" type="radio"/><script>write(no2,2);</script></label>
-			<label><input id="q24" name="question2" type="radio"/><script>write(no2,3);</script></label>
-			<label><input id="q25" name="question2" type="radio"/><script>write(no2,4);</script></label>
+		<td><script>q1pictures(1);</script></td>
+		<td>
+			<div style="float: left;"><label><input id="q1q21" name="q1question2" type="radio"/><script>q1write(q1no2,0);</script></label></div>
+			<div style="float: left;"><label><input id="q1q22" name="q1question2" type="radio"/><script>q1write(q1no2,1);</script></label></div>
+			<div style="float: left;"><label><input id="q1q23" name="q1question2" type="radio"/><script>q1write(q1no2,2);</script></label></div>
+			<div style="float: left;"><label><input id="q1q24" name="q1question2" type="radio"/><script>q1write(q1no2,3);</script></label></div>
+			<div style="float: left;"><label><input id="q1q25" name="q1question2" type="radio"/><script>q1write(q1no2,4);</script></label></div>
 		</td>
 		</tr>
 		<tr>
-		<td>3.</td>
-		<td class="a"><script>pictures(2);</script></td>
-		<td class="b">
-			<label><input id="q31" name="question3" type="radio" checked/><script>write(no3,0);</script></label>
-			<label><input id="q32" name="question3" type="radio"/><script>write(no3,1);</script></label>
-			<label><input id="q33" name="question3" type="radio"/><script>write(no3,2);</script></label>
-			<label><input id="q34" name="question3" type="radio"/><script>write(no3,3);</script></label>
-			<label><input id="q35" name="question3" type="radio"/><script>write(no3,4);</script></label>
+		<td><script>q1pictures(2);</script></td>
+		<td>
+			<div style="float: left;"><label><input id="q1q31" name="q1question3" type="radio"/><script>q1write(q1no3,0);</script></label></div>
+			<div style="float: left;"><label><input id="q1q32" name="q1question3" type="radio"/><script>q1write(q1no3,1);</script></label></div>
+			<div style="float: left;"><label><input id="q1q33" name="q1question3" type="radio"/><script>q1write(q1no3,2);</script></label></div>
+			<div style="float: left;"><label><input id="q1q34" name="q1question3" type="radio"/><script>q1write(q1no3,3);</script></label></div>
+			<div style="float: left;"><label><input id="q1q35" name="q1question3" type="radio"/><script>q1write(q1no3,4);</script></label></div>
 		</td>
 		</tr>
 		<tr>
-		<td>4.</td>
-		<td class="a"><script>pictures(3);</script></td>
-		<td class="b">
-			<label><input id="q41" name="question4" type="radio" checked/><script>write(no4,0);</script></label>
-			<label><input id="q42" name="question4" type="radio"/><script>write(no4,1);</script></label>
-			<label><input id="q43" name="question4" type="radio"/><script>write(no4,2);</script></label>
-			<label><input id="q44" name="question4" type="radio"/><script>write(no4,3);</script></label>
-			<label><input id="q45" name="question4" type="radio"/><script>write(no4,4);</script></label>
+		<td><script>q1pictures(3);</script></td>
+		<td>
+			<div style="float: left;"><label><input id="q1q41" name="q1question4" type="radio"/><script>q1write(q1no4,0);</script></label></div>
+			<div style="float: left;"><label><input id="q1q42" name="q1question4" type="radio"/><script>q1write(q1no4,1);</script></label></div>
+			<div style="float: left;"><label><input id="q1q43" name="q1question4" type="radio"/><script>q1write(q1no4,2);</script></label></div>
+			<div style="float: left;"><label><input id="q1q44" name="q1question4" type="radio"/><script>q1write(q1no4,3);</script></label></div>
+			<div style="float: left;"><label><input id="q1q45" name="q1question4" type="radio"/><script>q1write(q1no4,4);</script></label></div>
 		</td>
 		</tr>
 		<tr>
-		<td>5.</td>
-		<td class="a"><script>pictures(4);</script></td>
-		<td class="b">
-			<label><input id="q51" name="question5" type="radio" checked/><script>write(no5,0);</script></label>
-			<label><input id="q52" name="question5" type="radio"/><script>write(no5,1);</script></label>
-			<label><input id="q53" name="question5" type="radio"/><script>write(no5,2);</script></label>
-			<label><input id="q54" name="question5" type="radio"/><script>write(no5,3);</script></label>
-			<label><input id="q55" name="question5" type="radio"/><script>write(no5,4);</script></label>
+		<td><script>q1pictures(4);</script></td>
+		<td>
+			<div style="float: left;"><label><input id="q1q51" name="q1question5" type="radio"/><script>q1write(q1no5,0);</script></label></div>
+			<div style="float: left;"><label><input id="q1q52" name="q1question5" type="radio"/><script>q1write(q1no5,1);</script></label></div>
+			<div style="float: left;"><label><input id="q1q53" name="q1question5" type="radio"/><script>q1write(q1no5,2);</script></label></div>
+			<div style="float: left;"><label><input id="q1q54" name="q1question5" type="radio"/><script>q1write(q1no5,3);</script></label></div>
+			<div style="float: left;"><label><input id="q1q55" name="q1question5" type="radio"/><script>q1write(q1no5,4);</script></label></div>
 		</td>
 		</tr>
 		</table>
-		<input type="hidden" id="anw1" name="anwser1"/>				
-		<input type="hidden" id="anw2" name="anwser2"/>
-		<input type="hidden" id="anw3" name="anwser3"/>
-		<input type="hidden" id="anw4" name="anwser4"/>
-		<input type="hidden" id="anw5" name="anwser5"/>
-		<input type="hidden" id="pic1" name="picture1"/>				
-		<input type="hidden" id="pic2" name="picture2"/>
-		<input type="hidden" id="pic3" name="picture3"/>
-		<input type="hidden" id="pic4" name="picture4"/>
-		<input type="hidden" id="pic5" name="picture5"/>
-		<input type="hidden" id="opt11" name="option11"/>
-		<input type="hidden" id="opt12" name="option12"/>
-		<input type="hidden" id="opt13" name="option13"/>
-		<input type="hidden" id="opt14" name="option14"/>
-		<input type="hidden" id="opt15" name="option15"/>
-		<input type="hidden" id="opt21" name="option21"/>
-		<input type="hidden" id="opt22" name="option22"/>
-		<input type="hidden" id="opt23" name="option23"/>
-		<input type="hidden" id="opt24" name="option24"/>
-		<input type="hidden" id="opt25" name="option25"/>
-		<input type="hidden" id="opt31" name="option31"/>
-		<input type="hidden" id="opt32" name="option32"/>
-		<input type="hidden" id="opt33" name="option33"/>
-		<input type="hidden" id="opt34" name="option34"/>
-		<input type="hidden" id="opt35" name="option35"/>
-		<input type="hidden" id="opt41" name="option41"/>
-		<input type="hidden" id="opt42" name="option42"/>
-		<input type="hidden" id="opt43" name="option43"/>
-		<input type="hidden" id="opt44" name="option44"/>
-		<input type="hidden" id="opt45" name="option45"/>
-		<input type="hidden" id="opt51" name="option51"/>
-		<input type="hidden" id="opt52" name="option52"/>
-		<input type="hidden" id="opt53" name="option53"/>
-		<input type="hidden" id="opt54" name="option54"/>
-		<input type="hidden" id="opt55" name="option55"/>
-		<button>離開</button>
-		<button type="submit" id="button">結束作答</button>
+			<div align="center">
+					<a href="#math2" class="ui-btn" style="width: 5%; display: inline-block" data-transition="slide">下一題</a>
+			</div>
 		</div>
+		<div data-role="page" id="math2">
+			<h3 align="center">數一數,填入正確的答案,一格1分</h3>
+			<table border="1" align="center" rules="none" frame="void">
+			<tr>
+				<td><script>q2qpictures(0,1);</script></td>
+				<td valign="middle"><script>q2pictures(0);</script> 和 <script>q2pictures(1);q2addormul(0)</script>
+					<input id="q2q11" name="q2q11" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px;">個</td>
+				<td><input id="q2q12" name="q2q12" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+					<input id="q2q13" name="q2q13" align="center"  type="text"  data-role="none" style="width: 15px; height: 15px; font-size: 20px;">
+					<input id="q2q14" name="q2q14" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+					=
+					<input id="q2q15" name="q2q15" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+				</td>
+			</tr>
+			<tr>
+				<td><script>q2qpictures(2,3);</script></td>
+				<td valign="middle"><script>q2pictures(2);</script> 和 <script>q2pictures(3);q2addormul(1)</script>
+					<input id="q2q21" name="q2q21" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
+				<td><input id="q2q22" name="q2q22" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+					<input id="q2q23" name="q2q23" align="center"  type="text"  data-role="none" style="width: 15px; height: 10px; font-size: 20px;">
+					<input id="q2q24" name="q2q24" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+					=
+					<input id="q2q25" name="q2q25" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+				</td>
+			</tr>
+			<tr>
+				<td><script>q2qpictures(4,5);</script></td>
+				<td valign="middle"><script>q2pictures(4);</script> 和 <script>q2pictures(5);q2addormul(2)</script>
+					<input id="q2q31" name="q2q31" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
+				<td><input id="q2q32" name="q2q32" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+					<input id="q2q33" name="q2q33" align="center"  type="text"  data-role="none" style="width: 15px; height: 10px; font-size: 20px;">
+					<input id="q2q34" name="q2q34" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+					=
+					<input id="q2q35" name="q2q35" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+				</td>
+			</tr>
+			<tr>
+				<td><script>q2qpictures(6,7);</script></td>
+				<td valign="middle"><script>q2pictures(6);</script> 和 <script>q2pictures(7);q2addormul(3)</script>
+					<input id="q2q41" name="q2q41" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size:25px;">個</td>
+				<td><input id="q2q42" name="q2q42" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+					<input id="q2q43" name="q2q43" align="center"  type="text"  data-role="none" style="width: 15px; height: 10px; font-size: 20px;">
+					<input id="q2q44" name="q2q44" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+					=
+					<input id="q2q45" name="q2q45" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+				</td>
+			</tr>
+			<tr>
+				<td><script>q2qpictures(8,9);</script></td>
+				<td valign="middle"><script>q2pictures(8);</script> 和 <script>q2pictures(9);q2addormul(4)</script>
+					<input id="q2q51" name="q2q51" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
+				<td><input id="q2q52" name="q2q52" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+					<input id="q2q53" name="q2q53" align="center"  type="text"  data-role="none" style="width: 15px; height: 10px; font-size: 20px;">
+					<input id="q2q54" name="q2q54" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+					=
+					<input id="q2q55" name="q2q55" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
+				</td>
+			</tr>			
+		</table>
+		<div align="center">
+			<a href="#math1" class="ui-btn" style="width: 5%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
+			<a href="#math3" class="ui-btn" style="width: 5%; display: inline-block" data-transition="slide">下一題</a>
+		</div>
+		</div>
+		<div data-role="page" id="math3">
+			<h3 align="center">請選出最小的數字</h3>
+	<table border="1" align="center">
+		<tr>
+			<td>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question1" id="q3opt01"><script>q3print(bigsmall[0])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question1" id="q3opt02"><script>q3print(bigsmall[1])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question1" id="q3opt03"><script>q3print(bigsmall[2])</script></label></div>
+			</td>
+			<td>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question2" id="q3opt11"><script>q3print(bigsmall[3])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question2" id="q3opt12"><script>q3print(bigsmall[4])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question2" id="q3opt13"><script>q3print(bigsmall[5])</script></label></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question3" id="q3opt21"><script>q3print(bigsmall[6])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question3" id="q3opt22"><script>q3print(bigsmall[7])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question3" id="q3opt23"><script>q3print(bigsmall[8])</script></label></div>
+			</td>
+			<td>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question4" id="q3opt31"><script>q3print(bigsmall[9])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question4" id="q3opt32"><script>q3print(bigsmall[10])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question4" id="q3opt33"><script>q3print(bigsmall[11])</script></label></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question5" id="q3opt41"><script>q3print(bigsmall[12])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question5" id="q3opt42"><script>q3print(bigsmall[13])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question5" id="q3opt43"><script>q3print(bigsmall[14])</script></label></div>
+			</td>
+			<td>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question6" id="q3opt51"><script>q3print(bigsmall[15])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question6" id="q3opt52"><script>q3print(bigsmall[16])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question6" id="q3opt53"><script>q3print(bigsmall[17])</script></label></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question7" id="q3opt61"><script>q3print(bigsmall[18])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question7" id="q3opt62"><script>q3print(bigsmall[19])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question7" id="q3opt63"><script>q3print(bigsmall[20])</script></label></div>
+			</td>
+			<td>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question8" id="q3opt71"><script>q3print(bigsmall[21])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question8" id="q3opt72"><script>q3print(bigsmall[22])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question8" id="q3opt73"><script>q3print(bigsmall[23])</script></label></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question9" id="q3opt81"><script>q3print(bigsmall[24])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question9" id="q3opt82"><script>q3print(bigsmall[25])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question9" id="q3opt83"><script>q3print(bigsmall[26])</script></label></div>
+			</td>
+			<td>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question10" id="q3opt91"><script>q3print(bigsmall[27])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question10" id="q3opt92"><script>q3print(bigsmall[28])</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="q3question10" id="q3opt93"><script>q3print(bigsmall[29])</script></label></div>
+			</td>
+		</tr>
+	</table>
+		<div align="center">
+			<a href="#math2" class="ui-btn" style="width: 5%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
+			<a href="#math4" class="ui-btn" style="width: 5%; display: inline-block" data-transition="slide">下一題</a>
+		</div>
+		</div>
+		<div data-role="page" id="math4">
+			<h3 align="center">算一算,空格裡的數字是多少,一格1分</h3>
+			<table border="1" style="margin: auto;" rules="none" frame="void">
+			<tr>
+				<td>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q11" id="q4q11" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q12" id="q4q12" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q13" id="q4q13" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q14" id="q4q14" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q15" id="q4q15" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q16" id="q4q16" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q21" id="q4q21" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q22" id="q4q22" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q23" id="q4q23" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q24" id="q4q24" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q25" id="q4q25" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q26" id="q4q26" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q31" id="q4q31" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q32" id="q4q32" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q33" id="q4q33" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q34" id="q4q34" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q35" id="q4q35" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q36" id="q4q36" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q41" id="q4q41" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q42" id="q4q42" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q43" id="q4q43" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q44" id="q4q44" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q45" id="q4q45" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q46" id="q4q46" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q51" id="q4q51" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q52" id="q4q52" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q53" id="q4q53" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q54" id="q4q54" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q55" id="q4q55" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  					<div style="float: left;"><label><input type="text" data-role="none" name="q4q56" id="q4q56" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
+  				</td>
+  			</tr>
+  		</table>
+  		<div align="center">
+			<a href="#math3" class="ui-btn" style="width: 5%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
+			<a href="#math5" class="ui-btn" style="width: 5%; display: inline-block" data-transition="slide">下一題</a>
+		</div>
+		</div>
+		<div data-role="page" id="math5">
+			<h3 align="center">請你加加看有多少?</h3>
+		<table border="1" align="center" rules="none" frame="void">
+			<tr>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question1[0],0);</script></td>
+				<td></td>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question1[1],0);</script></td>
+				<td></td>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question1[2],0);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><input type="text" name="q5anw1" data-role="none"></td>
+				<td>+</td>
+				<td style="text-align: center;"><input type="text" name="q5anw2" data-role="none"></td>
+				<td>+</td>
+				<td style="text-align: center;"><input type="text" name="q5anw3" data-role="none"></td>
+				<td>=</td>
+				<td style="text-align: center;"><input type="text" name="q5anw4" data-role="none"></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question2[0],1);</script></td>
+				<td></td>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question2[1],1);</script></td>
+				<td></td>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question2[2],1);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><input type="text" name="q5anw5" data-role="none"></td>
+				<td>+</td>
+				<td style="text-align: center;"><input type="text" name="q5anw6" data-role="none"></td>
+				<td>+</td>
+				<td style="text-align: center;"><input type="text" name="q5anw7" data-role="none"></td>
+				<td>=</td>
+				<td style="text-align: center;"><input type="text" name="q5anw8" data-role="none"></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question3[0],2);</script></td>
+				<td></td>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question3[1],2);</script></td>
+				<td></td>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question3[2],2);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><input type="text" name="q5anw9" data-role="none"></td>
+				<td>+</td>
+				<td style="text-align: center;"><input type="text" name="q5anw10" data-role="none"></td>
+				<td>+</td>
+				<td style="text-align: center;"><input type="text" name="q5anw11" data-role="none"></td>
+				<td>=</td>
+				<td style="text-align: center;"><input type="text" name="q5anw12" data-role="none"></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question4[0],3);</script></td>
+				<td></td>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question4[1],3);</script></td>
+				<td></td>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question4[2],3);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><input type="text" name="q5anw13" data-role="none"></td>
+				<td>+</td>
+				<td style="text-align: center;"><input type="text" name="q5anw14" data-role="none"></td>
+				<td>+</td>
+				<td style="text-align: center;"><input type="text" name="q5anw15" data-role="none"></td>
+				<td>=</td>
+				<td style="text-align: center;"><input type="text" name="q5anw16" data-role="none"></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question5[0],4);</script></td>
+				<td></td>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question5[1],4);</script></td>
+				<td></td>
+				<td style="text-align: center;"><script type="text/javascript">q5pictures(q5question5[2],4);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><input type="text" name="q5anw17" data-role="none"></td>
+				<td>+</td>
+				<td style="text-align: center;"><input type="text" name="q5anw18" data-role="none"></td>
+				<td>+</td>
+				<td style="text-align: center;"><input type="text" name="q5anw19" data-role="none"></td>
+				<td>=</td>
+				<td style="text-align: center;"><input type="text" name="q5anw20" data-role="none"></td>
+			</tr>
+		</table>
+		<div align="center">
+			<a href="#math4" class="ui-btn" style="width: 5%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
+			<button type="submit" id="button" style="width: 10%;">結束作答</button>
+		</div>
+		</div>
+		<!--Q1-->
+		<input type="hidden" id="q1anw1" name="q1anwser1"/>				
+		<input type="hidden" id="q1anw2" name="q1anwser2"/>
+		<input type="hidden" id="q1anw3" name="q1anwser3"/>
+		<input type="hidden" id="q1anw4" name="q1anwser4"/>
+		<input type="hidden" id="q1anw5" name="q1anwser5"/>
+		<input type="hidden" id="q1pic1" name="q1picture1"/>
+		<input type="hidden" id="q1pic2" name="q1picture2"/>
+		<input type="hidden" id="q1pic3" name="q1picture3"/>
+		<input type="hidden" id="q1pic4" name="q1picture4"/>
+		<input type="hidden" id="q1pic5" name="q1picture5"/>
+		<input type="hidden" id="q1opt11" name="q1option11"/>
+		<input type="hidden" id="q1opt12" name="q1option12"/>
+		<input type="hidden" id="q1opt13" name="q1option13"/>
+		<input type="hidden" id="q1opt14" name="q1option14"/>
+		<input type="hidden" id="q1opt15" name="q1option15"/>
+		<input type="hidden" id="q1opt21" name="q1option21"/>
+		<input type="hidden" id="q1opt22" name="q1option22"/>
+		<input type="hidden" id="q1opt23" name="q1option23"/>
+		<input type="hidden" id="q1opt24" name="q1option24"/>
+		<input type="hidden" id="q1opt25" name="q1option25"/>
+		<input type="hidden" id="q1opt31" name="q1option31"/>
+		<input type="hidden" id="q1opt32" name="q1option32"/>
+		<input type="hidden" id="q1opt33" name="q1option33"/>
+		<input type="hidden" id="q1opt34" name="q1option34"/>
+		<input type="hidden" id="q1opt35" name="q1option35"/>
+		<input type="hidden" id="q1opt41" name="q1option41"/>
+		<input type="hidden" id="q1opt42" name="q1option42"/>
+		<input type="hidden" id="q1opt43" name="q1option43"/>
+		<input type="hidden" id="q1opt44" name="q1option44"/>
+		<input type="hidden" id="q1opt45" name="q1option45"/>
+		<input type="hidden" id="q1opt51" name="q1option51"/>
+		<input type="hidden" id="q1opt52" name="q1option52"/>
+		<input type="hidden" id="q1opt53" name="q1option53"/>
+		<input type="hidden" id="q1opt54" name="q1option54"/>
+		<input type="hidden" id="q1opt55" name="q1option55"/>
+		<!--Q2-->
+		<input type="hidden" id="q2pic1" name="q2picture1">
+		<input type="hidden" id="q2pic2" name="q2picture2">
+		<input type="hidden" id="q2pic3" name="q2picture3">
+		<input type="hidden" id="q2pic4" name="q2picture4">
+		<input type="hidden" id="q2pic5" name="q2picture5">
+		<input type="hidden" id="q2pic6" name="q2picture6">
+		<input type="hidden" id="q2pic7" name="q2picture7">
+		<input type="hidden" id="q2pic8" name="q2picture8">
+		<input type="hidden" id="q2pic9" name="q2picture9">
+		<input type="hidden" id="q2pic10" name="q2picture10">
+		<input type="hidden" id="q2num1" name="q2number1">
+		<input type="hidden" id="q2num2" name="q2number2">
+		<input type="hidden" id="q2num3" name="q2number3">
+		<input type="hidden" id="q2num4" name="q2number4">
+		<input type="hidden" id="q2num5" name="q2number5">
+		<input type="hidden" id="q2num6" name="q2number6">
+		<input type="hidden" id="q2num7" name="q2number7">
+		<input type="hidden" id="q2num8" name="q2number8">
+		<input type="hidden" id="q2num9" name="q2number9">
+		<input type="hidden" id="q2num10" name="q2number10">
+		<input type="hidden" id="q2am1" name="q2addmul1">
+		<input type="hidden" id="q2am2" name="q2addmul2">
+		<input type="hidden" id="q2am3" name="q2addmul3">
+		<input type="hidden" id="q2am4" name="q2addmul4">
+		<input type="hidden" id="q2am5" name="q2addmul5">
+		<!--Q3-->
+		<input type="hidden" id="qq3opt0" name="qq3option0">
+		<input type="hidden" id="qq3opt1" name="qq3option1">
+		<input type="hidden" id="qq3opt2" name="qq3option2">
+		<input type="hidden" id="qq3opt3" name="qq3option3">
+		<input type="hidden" id="qq3opt4" name="qq3option4">
+		<input type="hidden" id="qq3opt5" name="qq3option5">
+		<input type="hidden" id="qq3opt6" name="qq3option6">
+		<input type="hidden" id="qq3opt7" name="qq3option7">
+		<input type="hidden" id="qq3opt8" name="qq3option8">
+		<input type="hidden" id="qq3opt9" name="qq3option9">
+		<input type="hidden" id="qq3opt10" name="qq3option10">
+		<input type="hidden" id="qq3opt11" name="qq3option11">
+		<input type="hidden" id="qq3opt12" name="qq3option12">
+		<input type="hidden" id="qq3opt13" name="qq3option13">
+		<input type="hidden" id="qq3opt14" name="qq3option14">
+		<input type="hidden" id="qq3opt15" name="qq3option15">
+		<input type="hidden" id="qq3opt16" name="qq3option16">
+		<input type="hidden" id="qq3opt17" name="qq3option17">
+		<input type="hidden" id="qq3opt18" name="qq3option18">
+		<input type="hidden" id="qq3opt19" name="qq3option19">
+		<input type="hidden" id="qq3opt20" name="qq3option20">
+		<input type="hidden" id="qq3opt21" name="qq3option21">
+		<input type="hidden" id="qq3opt22" name="qq3option22">
+		<input type="hidden" id="qq3opt23" name="qq3option23">
+		<input type="hidden" id="qq3opt24" name="qq3option24">
+		<input type="hidden" id="qq3opt25" name="qq3option25">
+		<input type="hidden" id="qq3opt26" name="qq3option26">
+		<input type="hidden" id="qq3opt27" name="qq3option27">
+		<input type="hidden" id="qq3opt28" name="qq3option28">
+		<input type="hidden" id="qq3opt29" name="qq3option29">
+		<!--Q4-->
+		<input type="hidden" id="q4s11" name="q4seat11">
+  		<input type="hidden" id="q4s21" name="q4seat21">
+  		<input type="hidden" id="q4s31" name="q4seat31">
+  		<input type="hidden" id="q4s41" name="q4seat41">
+  		<input type="hidden" id="q4s51" name="q4seat51">
+  		<input type="hidden" id="q4s12" name="q4seat12">
+  		<input type="hidden" id="q4s22" name="q4seat22">
+  		<input type="hidden" id="q4s32" name="q4seat32">
+  		<input type="hidden" id="q4s42" name="q4seat42">
+  		<input type="hidden" id="q4s52" name="q4seat52">
+  		<input type="hidden" id="q4qq1" name="q4question1">
+  		<input type="hidden" id="q4qq2" name="q4question2">
+  		<input type="hidden" id="q4qq3" name="q4question3">
+  		<input type="hidden" id="q4qq4" name="q4question4">
+  		<input type="hidden" id="q4qq5" name="q4question5">
+  		<!--Q5-->
+  		<input type="hidden" id="q5pic1" name="q5picture1">
+		<input type="hidden" id="q5pic2" name="q5picture2">
+		<input type="hidden" id="q5pic3" name="q5picture3">
+		<input type="hidden" id="q5pic4" name="q5picture4">
+		<input type="hidden" id="q5pic5" name="q5picture5">
+		<input type="hidden" id="q5a1" name="q5anwser1">
+		<input type="hidden" id="q5a2" name="q5anwser2">
+		<input type="hidden" id="q5a3" name="q5anwser3">
+		<input type="hidden" id="q5a4" name="q5anwser4">
+		<input type="hidden" id="q5a5" name="q5anwser5">
+		<input type="hidden" id="q5a6" name="q5anwser6">
+		<input type="hidden" id="q5a7" name="q5anwser7">
+		<input type="hidden" id="q5a8" name="q5anwser8">
+		<input type="hidden" id="q5a9" name="q5anwser9">
+		<input type="hidden" id="q5a10" name="q5anwser10">
+		<input type="hidden" id="q5a11" name="q5anwser11">
+		<input type="hidden" id="q5a12" name="q5anwser12">
+		<input type="hidden" id="q5a13" name="q5anwser13">
+		<input type="hidden" id="q5a14" name="q5anwser14">
+		<input type="hidden" id="q5a15" name="q5anwser15">
+		<input type="hidden" id="q5a16" name="q5anwser16">
+		<input type="hidden" id="q5a17" name="q5anwser17">
+		<input type="hidden" id="q5a18" name="q5anwser18">
+		<input type="hidden" id="q5a19" name="q5anwser19">
+		<input type="hidden" id="q5a20" name="q5anwser20">
 	</form>
 </body>
 </html>
