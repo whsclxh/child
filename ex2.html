@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
   <link rel="stylesheet" type="text/css" media="print" href="serif.css">
+  <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
   <style type="text/css">
     body {
       
@@ -131,17 +135,21 @@
 </head>
 
 <body>
-  <header>
-    <div style="text-align: center;">把相同的時間連在一起。</div>
-  </header>
+  
+    <h3 align="center">把相同的時間連在一起。</h3>
+  
 
   <div align="center">
     <div class="container" align="center">
       <div id="problems" class="problems disable-select">
       </div>
-      <div id="check-answer-button" class="check-answer-button disable-select">
+      <!-- <div id="check-answer-button" class="check-answer-button disable-select">
         Check
-      </div>
+      </div> -->
+      <div align="center">
+					<a href="http://hello.noip.me/ex1.html" class="ui-btn" style="width: 10%; display: inline-block"  >上一題</a>
+					<a href="http://hello.noip.me/ex3.html" class="ui-btn" style="width: 10%; display: inline-block" >下一題</a>
+				</div>
     </div>
   </div>
 
@@ -318,8 +326,8 @@
         this.problem_element.appendChild(this.group_right);
 
         this.clock_canvas.classList.add('clock');
-        this.clock_canvas.setAttribute('width', '200px');
-        this.clock_canvas.setAttribute('height', '200px');
+        this.clock_canvas.setAttribute('width', '200%');
+        this.clock_canvas.setAttribute('height', '200%');
 
         this.dot_clock.classList.add('dot');
         this.dot_answer.classList.add('dot');
@@ -804,9 +812,7 @@
       setInterval(update_lines, 100);
     })();
   </script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   <!-- <div id="buttons">
     <button type="button" class="btn btn-outline-dark" id="button1" onclick="location.href='http://hello.noip.me/ex1.html'">1</button>
     <button type="button" class="btn btn-outline-dark" id="button2" onclick="location.href='http://hello.noip.me/ex2.html'">2</button>
