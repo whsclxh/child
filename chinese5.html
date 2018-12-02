@@ -5,14 +5,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width; initial-scale=1;maximum-scale=1.0; user-scalable=0;">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
   <link rel="stylesheet" type="text/css" media="print" href="serif.css">
+  <script src="test3.js"></script>
   <style type="text/css">
     body {
       
       margin: 0 auto;
-      /* background: #ff8a50; */
+    /*  background: #ff8a50;*/
       font-family: sans-serif;
     }
 
@@ -26,7 +26,7 @@
     }
 
     .container {                   
-      max-width: 60em;
+      max-width: 80em;
     }
 
     .problems {
@@ -51,8 +51,8 @@
     }
 
     .dot {
-      height: 40px;
-      width: 40px;
+      height: 50px;
+      width: 50px;
       background-color: #ff5722;
       border-radius: 50%;
       display: inline-block;
@@ -79,7 +79,7 @@
       padding: 1rem;
       border-radius: 0.8rem;
       background: #ff5622c0;
-      color: #ffb089;
+      color: black;
       font-size: 2em;
       font-weight: 900;
     }
@@ -95,7 +95,7 @@
 
     .check-answer-button {
       margin: 1rem;
-      padding: 1px;
+      padding: 2rem;
       font-size: 3em;
       font-weight: 900;
       background: #a1a1a18f;
@@ -104,7 +104,6 @@
       transition: all 500ms ease;
       cursor: pointer;
     }
-
     .check-answer-button-clear {
       background: #51ff68da;
       color: rgba(19, 116, 0, 0.867);
@@ -113,18 +112,6 @@
     .check-answer-button-wrong {
       background: #ff5151da;
       color: rgba(116, 0, 0, 0.867);
-    }
-
-      
-      /* #buttons {
-      width: 13%;
-      margin:0 auto;
-      white-space: nowrap;
-    } */
-  
-    #button0 {
-      width: 40%;
-      margin:5px auto;
     }
   </style>
 
@@ -289,10 +276,11 @@
     (function (win) {
       function Problem(options) {
         this.problem_element = document.createElement('div');
-        this.clock_canvas = document.createElement('canvas');
+        this.clock_canvas = document.createElement('span');
         this.dot_clock = document.createElement('span');
         this.dot_answer = document.createElement('span');
         this.answer = document.createElement('span');
+        this.q = document.createElement('span');
         this.group_left = document.createElement('div');
         this.group_right = document.createElement('div');
 
@@ -310,6 +298,7 @@
         this.group_right.classList.add('problem-left');
         this.group_left.appendChild(this.clock_canvas);
         this.group_left.appendChild(this.dot_clock);
+        this.group_left.appendChild(this.q);
         this.group_right.appendChild(this.dot_answer);
         this.group_right.appendChild(this.answer);
 
@@ -318,27 +307,52 @@
         this.problem_element.appendChild(this.group_right);
 
         this.clock_canvas.classList.add('clock');
+        this.clock_canvas.classList.add('time-text');
         this.clock_canvas.setAttribute('width', '200px');
         this.clock_canvas.setAttribute('height', '200px');
 
         this.dot_clock.classList.add('dot');
         this.dot_answer.classList.add('dot');
         this.answer.classList.add('time-text');
-
+        
         this.updateClock();
         this.updateAnswer();
       }
+      var c=0;
+      var t=0;
+      var qu =new Array(4);
+      var an =new Array(4);
+        for(var i=0;i<=3;i++){
+        var x=Math.floor((Math.random() * 39845) + 0);
+        if(an.indexOf(x)==-1)
+          an[i]=x;
+        else 
+          i--;
+        }
+        
+        for(var y=0;y<=3;y++){
+        var x=Math.floor((Math.random() * 4) + 0);
+        if(qu[x]==null)
+          qu[x]=an[y];
+       else 
+        y--;
+        }
+        
+
       Problem.prototype = {
         updateClock: function () {
-          new DrawClock({
-            el: this.clock_canvas,
-            hour: this.clock_hour,
-            minute: this.clock_minute
-          });
+          // new DrawClock({
+          //   el: this.clock_canvas,
+          //   hour: this.clock_hour,
+          //   minute: this.clock_minute
+          // });
+                   
+          this.clock_canvas.innerHTML = arr[qu[c]][0][0]+arr[qu[c]][1][0]+arr[qu[c]][2][0]+arr[qu[c]][3][0];       
+          c++;
         },
         updateAnswer: function () {
-          this.answer.innerHTML = this.answer_hour + ':' +
-            (this.answer_minute < 10 ? '0' : '') + this.answer_minute;
+          this.answer.innerHTML =  arr[an[t]][0][1]+arr[an[t]][1][1]+arr[an[t]][2][1]+arr[an[t]][3][1];
+          t++;
         },
         set left_onclick(handler) {
           let problem_this = this;
@@ -374,54 +388,54 @@
             }
           });
         },
-        set clock_hour(hour) {
-          this.ch = hour;
-          this.updateClock();
-        },
-        get clock_hour() {
-          return this.ch;
-        },
-        set clock_minute(minute) {
-          this.cm = minute;
-          this.updateClock();
-        },
-        get clock_minute() {
-          return this.cm;
-        },
-        set answer_hour(hour) {
-          this.ah = hour;
-          this.updateAnswer();
-        },
-        get answer_hour() {
-          return this.ah;
-        },
-        set answer_minute(minute) {
-          this.am = minute;
-          this.updateAnswer();
-        },
-        get answer_minute() {
-          return this.am;
-        },
-        set dot_clock_color(color) {
-          this.dcc = color;
-          this.dot_clock.style.background = color;
-        },
-        get dot_clock_color() {
-          return this.dcc;
-        },
-        dot_clock_reset_color: function() {
-          this.dot_clock_color = "";
-        },
-        set dot_answer_color(color) {
-          this.dac = color;
-          this.dot_answer.style.background = color;
-        },
-        get dot_answer_color() {
-          return this.dac;
-        },
-        dot_answer_reset_color: function() {
-          this.dot_answer_color = "";
-        }
+        // set clock_hour(hour) {
+        //   this.ch = hour;
+        //   this.updateClock();
+        // },
+        // get clock_hour() {
+        //   return this.ch;
+        // },
+        // set clock_minute(minute) {
+        //   this.cm = minute;
+        //   this.updateClock();
+        // },
+        // get clock_minute() {
+        //   return this.cm;
+        // },
+        // set answer_hour(hour) {
+        //   this.ah = hour;
+        //   this.updateAnswer();
+        // },
+        // get answer_hour() {
+        //   return this.ah;
+        // },
+        // set answer_minute(minute) {
+        //   this.am = minute;
+        //   this.updateAnswer();
+        // },
+        // get answer_minute() {
+        //   return this.am;
+        // },
+        // set dot_clock_color(color) {
+        //   this.dcc = color;
+        //   this.dot_clock.style.background = color;
+        // },
+        // get dot_clock_color() {
+        //   return this.dcc;
+        // },
+        // dot_clock_reset_color: function() {
+        //   this.dot_clock_color = "";
+        // },
+        // set dot_answer_color(color) {
+        //   this.dac = color;
+        //   this.dot_answer.style.background = color;
+        // },
+        // get dot_answer_color() {
+        //   return this.dac;
+        // },
+        // dot_answer_reset_color: function() {
+        //   this.dot_answer_color = "";
+        // }
       };
       win.Problem = Problem;
     })(window);
@@ -804,16 +818,11 @@
       setInterval(update_lines, 100);
     })();
   </script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <!-- <div id="buttons">
-    <button type="button" class="btn btn-outline-dark" id="button1" onclick="location.href='http://hello.noip.me/ex1.html'">1</button>
-    <button type="button" class="btn btn-outline-dark" id="button2" onclick="location.href='http://hello.noip.me/ex2.html'">2</button>
-    <button type="button" class="btn btn-outline-dark" id="button3" onclick="location.href='http://hello.noip.me/ex3.html'">3</button>
-    <button type="button" class="btn btn-outline-dark" id="button4" onclick="location.href='http://hello.noip.me/ex4.html'">4</button>
-    <button type="button" class="btn btn-outline-dark" id="button5" onclick="location.href='http://hello.noip.me/ex5.html'">5</button>
-    </div> -->
+  <script>document.write(answers[0])</script>
+<div  style="top:900px;left:1000px;position:absolute;">
+            <a href="http://hello.noip.me/chinese4.html" class="ui-btn" style="width: 5%";  display: inline-block;  data-transition="slide">上一題</a>
+            <a href="http://hello.noip.me/chinese6.html" class="ui-btn" style="width: 5%";  display: inline-block;  data-transition="slide">下一題</a>
+        </div>
 </body>
 
 </html>
