@@ -8,126 +8,40 @@
   <!-- <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script> -->
   <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <style type="text/css">
-    table,td,th {
-      border: 1px solid black;
-    }
-
-    table {
-      height: 50%;
-      width: 40%;
-      margin-top: 100px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    #button {
-      background:    #ffffff;
-      border:        2px solid #000000;
-      border-radius: 7px;
-      padding:       8px 20px;
-      color:         #000000;
-      font:          normal 700 25px/1 "Ubuntu", sans-serif;
-      text-align:    center;
-      text-shadow:   none;
-      width:100%;
-    }
-    
-
-
-
-  
-    /* #buttons {
-      width: 10%;
-      margin:0 auto;
-      white-space: nowrap;
-    } */
-    
-  
-   
-
-    @media only screen and (min-width:768px) and (max-width: 1024px)  and (orientation : landscape){
-      #buttons {
-        width:5%;
-        margin:0 auto;
-        white-space:nowrap;
-      }
-    }
-
-    /* @media only screen and (min-width:481px) and (max-width: 768px) and (min-height:1001px) and (max-height:1400px){
-      #buttons {
-        width:5%;
-        marign:0 auto;
-        white-space:nowrap;
-      }
-    } */
-
-
-
-
-
-
-  </style>
 </head>
-
-
 <body>
-    <form method="post" action="ex1_finish.php" data-ajax="false">
+        <form method="post" action="ex1_finish.php" data-ajax="false">
         
-    <h3 align="center">請問現在是幾點幾分? 輸入正確時間。</h3>
-    
-  <table border="1" width="50%" align="center">
-    <tr style="height:280px">
-      <th><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></th>
-      <th><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></th>
-    </tr>
-    <tr style="height:  40px">
-      <td><div style="text-align: center"><label for="appt-time">Answer:</label>
-        <input type="number" id="n1" name="hour1" min="1" max="12" required="required" />:<input type="number" id="n2" name="minute1" min="00" max="59" step="5" required="required" ></div></td>
-        
-      <td><div style="text-align: center"><label for="appt-time">Answer:</label>
-        <input type="number" id="n3" name="hour2" min="1" max="12" required="required" />:<input type="number" id="n4" name="minute2" min="00" max="59" step="5" required="required" ></div></td>
-    </tr>
-    <tr style="height: 280px">
-      <td>
-        <canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
-      </td>
-      <td><canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-    </tr>
-    <tr style="height: 40px">
-      <td><div style="text-align: center"><label for="appt-time">Answer:</label>
-        <input type="number" id="n5" name="hour3" min="1" max="12" required="required" />:<input type="number" id="n6" name="minute3" min="00" max="59" step="5" required="required" ></div></td>
-        
-      <td><div style="text-align: center"><label for="appt-time">Answer:</label>
-        <input type="number" id="n7" name="hour4" min="1" max="12" required="required" />:<input type="number" id="n8" name="minute4" min="00" max="59" step="5" required="required" ></div></td>
-        
-    </tr>
-  </table>
-    <div align="center">
-			<a href="http://hello.noip.me/ex2.html" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>
-		</div>
-  
-  
-  
-  <!-- <div id="buttons">
-  <button type="button" class="btn btn-outline-dark" id="button1" onclick="location.href='http://hello.noip.me/ex1.html'">1</button>
-  <button type="button" class="btn btn-outline-dark" id="button2" onclick="location.href='http://hello.noip.me/ex2.html'">2</button>
-  <button type="button" class="btn btn-outline-dark" id="button3" onclick="location.href='http://hello.noip.me/ex3.html'">3</button>
-  <button type="button" class="btn btn-outline-dark" id="button4" onclick="location.href='http://hello.noip.me/ex4.html'">4</button>
-  <button type="button" class="btn btn-outline-dark" id="button5" onclick="location.href='http://hello.noip.me/ex5.html'">5</button>
-  </div> -->
-  <!-- <input type="button" onclick="location.href='http://hello.noip.me/Topic.php'" value="首頁"> -->
-  <input type="hidden" id="anw1" name="anwser1"/>				
-  <input type="hidden" id="anw2" name="anwser2"/>
-  <input type="hidden" id="anw3" name="anwser3"/>
-  <input type="hidden" id="anw4" name="anwser4"/>
-  <input type="hidden" id="anw5" name="anwser5"/>				
-  <input type="hidden" id="anw6" name="anwser6"/>
-  <input type="hidden" id="anw7" name="anwser7"/>
-  <input type="hidden" id="anw8" name="anwser8"/>
-  </form>
-  <script>
-    window.onload = function(){
+                <h3 align="center">請判斷經過多少時間?</h3>
+                
+             <table border="1" width="50%" align="center">
+                <tr style="height:280px">
+                  <td><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+                  <td width="5%" style="text-align: center;">經過<input type="number">分</td>
+                  <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+                  <td width="5%" style="text-align: center;">經過<input type="number">分</td>
+                  <td><canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+
+                </tr>
+             </table>
+             <br/>
+             <table border="1" width="50%" align="center">
+                <tr style="height: 280px">
+                  <td><canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+                  <td width="5%" style="text-align: center;">經過<input type="number">分</td>
+                  <td><canvas id="clock5" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+                  <td width="5%" style="text-align: center;">經過<input type="number">分</td>
+                  <td><canvas id="clock6" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+                </tr>
+                
+             </table>
+             <div align="center">
+                 <a href="http://hello.noip.me/time_3.html" class="ui-btn" style="width: 5%; display: inline-block">上一題</a>
+                 <a href="http://hello.noip.me/time_5.html" class="ui-btn" style="width: 5%; display: inline-block">下一題</a>
+             </div>
+        </form>
+<script>
+        window.onload = function(){
       var a1 = document.getElementById("anw1");
       a1.value = h1;
       var a2 = document.getElementById("anw2"); 
@@ -284,12 +198,35 @@
 
     var h1 = Math.floor(Math.random() * 12) + 1;
     var m1 = Math.floor(Math.random() * 12) * 5;
-    var h2 = Math.floor(Math.random() * 12) + 1;
-    var m2 = Math.floor(Math.random() * 12) * 5;
-    var h3 = Math.floor(Math.random() * 12) + 1;
-    var m3 = Math.floor(Math.random() * 12) * 5;
+    var m2 = m1+Math.floor(Math.random() * 12) * 5;
+    var h2 = h1;
+    if(m2>60){
+        m2=m2-60;
+        h2=h1+1;
+    }
+    var m3 = m2+Math.floor(Math.random() * 12) * 5;
+    var h3 = h2;
+    if(m3>60){
+        m3=m3-60;
+        h3=h2+1;
+    }
+
     var h4 = Math.floor(Math.random() * 12) + 1;
     var m4 = Math.floor(Math.random() * 12) * 5;
+    var m5 = m4+Math.floor(Math.random() * 12) * 5;
+    var h5 = h4;
+    if(m5>60){
+        m5=m5-60;
+        h5=h4+1;
+    }
+    var m6 = m5+Math.floor(Math.random() * 12) * 5;
+    var h6 = h5;
+    if(m6>60){
+        m6=m6-60;
+        h6=h5+1;
+    }
+
+
 
     function drawclock(clock,h,m){           //畫時鐘的function
       new DrawClock({
@@ -303,36 +240,10 @@
     drawclock("clock2",h2,m2);
     drawclock("clock3",h3,m3);
     drawclock("clock4",h4,m4);
+    drawclock("clock5",h5,m5);
+    drawclock("clock6",h6,m6);
 
 
-    // new DrawClock({
-    //   el: document.getElementById("clock1"),
-    //   hour: h1,
-    //   minute: m1
-
-    // });
-    //     new DrawClock({
-    //   el: document.getElementById("clock2"),
-    //   hour: h2,
-    //   minute: m2
-    // });
-      
-    //   new DrawClock({
-    //   el: document.getElementById("clock3"),
-    //   hour: h3,
-    //   minute: m3
-    // });
-      
-    //   new DrawClock({
-    //   el: document.getElementById("clock4"),
-    //   hour: h4,
-    //   minute: m4
-    // });
-  </script>
-    
-
-    
-
+</script>
 </body>
-
 </html>

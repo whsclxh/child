@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width;initial-scale=1.0;user-scalable=0;">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
+  <link rel="stylesheet" type="text/css" media="print" href="serif.css">
+  <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <style type="text/css">
     table,
     td,
@@ -32,47 +36,51 @@
 
 <body>
   <form method="POST" action="ex3_finish.php">
-    <header><div style="text-align: center;">請問現在是幾點鐘? 請選擇正確的數字。</div></header>
+    <h3 align="center">請問現在是幾點鐘? 請選擇正確的數字。</h3>
 
-  <table>
+  <table width="50%" align="center">
     <tr style="height: 280px">
-      <td style="width: 380px" colspan="3"><canvas id="clock1" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
-      <td style="width: 380px" colspan="3"><canvas id="clock2" width="200px" height="200px" style="display:block; margin:auto;"></canvas></td>
+      <th style="width: 380px" colspan="3"><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></th>
+      <th style="width: 380px" colspan="3"><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></th>
     </tr>
     <tr style="height:  40px">
       
-    <td><input type="radio" id="n1" name="ans0" checked><span id="f00"></span></td>
-    <td><input type="radio" id="n2" name="ans0" ><span id="f01"></span></td>
-    <td><input type="radio" id="n3" name="ans0" ><span id="f02"></span></td>
+    <th><input type="radio" id="n1" name="ans0"><span id="f00"></span></th>
+    <th><input type="radio" id="n2" name="ans0"><span id="f01"></span></th>
+    <th><input type="radio" id="n3" name="ans0"><span id="f02"></span></th>
 
-    <td><input type="radio" id="n4" name="ans1" checked><span id="f03"></span></td>
-    <td><input type="radio" id="n5" name="ans1" ><span id="f04"></span></td>
-    <td><input type="radio" id="n6" name="ans1" ><span id="f05"></span></td>
+    <th><input type="radio" id="n4" name="ans1"><span id="f03"></span></th>
+    <th><input type="radio" id="n5" name="ans1"><span id="f04"></span></th>
+    <th><input type="radio" id="n6" name="ans1"><span id="f05"></span></th>
     </tr>
         
       
 
     <tr style="height: 280px">
-      <td style="width: 380px" colspan="3">
-        <canvas id="clock3" width="200px" height="200px" style="display:block; margin:auto;"></canvas>
-      </td>
+      <th style="width: 380px" colspan="3">
+        <canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+      </th>
 
-      <td style="width: 380px" colspan="3">
-        <canvas id="clock4" width="200px" height="200px" style="display:block; margin:auto;"></canvas>
-      </td>
+      <th style="width: 380px" colspan="3">
+        <canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+      </th>
 
     </tr>
 
     <tr style="height: 40px">
-        <td><input type="radio" id="n7" name="ans2" checked><span id="f06"></span></td>
-        <td><input type="radio" id="n8" name="ans2"><span id="f07"></span></td>
-        <td><input type="radio" id="n9" name="ans2"><span id="f08"></span></td>
+        <th><input type="radio" id="n7" name="ans2"><span id="f06"></span></th>
+        <th><input type="radio" id="n8" name="ans2"><span id="f07"></span></th>
+        <th><input type="radio" id="n9" name="ans2"><span id="f08"></span></th>
 
-        <td><input type="radio" id="n10" name="ans3" checked><span id="f09"></span></td>
-        <td><input type="radio" id="n11" name="ans3"><span id="f10"></span></td>
-        <td><input type="radio" id="n12" name="ans3"><span id="f11"></span></td>
+        <th><input type="radio" id="n10" name="ans3"><span id="f09"></span></th>
+        <th><input type="radio" id="n11" name="ans3"><span id="f10"></span></th>
+        <th><input type="radio" id="n12" name="ans3"><span id="f11"></span></th>
     </tr>
   </table>
+  <div align="center">
+      <a href="http://hello.noip.me/time_2.html" class="ui-btn" style="width: 5%; display: inline-block"  >上一題</a>
+      <a href="http://hello.noip.me/time_4.html" class="ui-btn" style="width: 5%; display: inline-block" >下一題</a>
+    </div>
   
   <input type="hidden" id="anw1" name="anwser1"/>				
   <input type="hidden" id="anw2" name="anwser2"/>
@@ -433,9 +441,7 @@
       minute: 0
     });
   </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     
     <!-- <div id="buttons">
     <button type="button" class="btn btn-outline-dark" id="button1" onclick="location.href='http://hello.noip.me/ex1.html'">1</button>
