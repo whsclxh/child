@@ -14,7 +14,13 @@
 <script type="text/javascript" src="cognitionq4.js"></script>
 <script type="text/javascript" src="cognitionq5.js"></script>
 <script type="text/javascript" src="cognitiononload.js"></script>
-<?php ?>
+<?php 
+	require "q1ramdon.php";
+	require "q2ramdon.php";
+	require "q3ramdon.php";
+	require "q4ramdon.php";
+	require "q5ramdon.php";    	
+?>
 <body>
 	<form method="post" action="cognition_finish.php" data-ajax="false">
 		<div data-role="page" id="cognition">
@@ -31,12 +37,12 @@
 				<th style="text-align: center;">選比較多</td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q1pictures(0);</script></td>
+				<td width="90%"><?php echo "<script>q1pictures($q1num1,$q1pic1);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input type="number" id="q1q11" name="q1question11" ></td>
 				<td width="5%" style="text-align: center;"><input id="q1qq1" name="q1question1" type="radio" value="1"/></td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q1pictures(1);</script></td>
+				<td width="90%"><?php echo "<script>q1pictures($q1num2,$q1pic2);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input type="number" id="q1q12" name="q1question12"></td>
 				<td width="5%" style="text-align: center;"><input id="q1qq2" name="q1question1" type="radio" value="2"/></td>
 			</tr>
@@ -44,12 +50,12 @@
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
-				<td width="90%"><script>q1pictures(2);</script></td>
+				<td width="90%"><?php echo "<script>q1pictures($q1num3,$q1pic3);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input type="number" id="q1q21" name="q1question21" ></td>
 				<td width="5%" style="text-align: center;"><input id="q1qq3" name="q1question2" value="1" type="radio"/></td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q1pictures(3);</script></td>
+				<td width="90%"><?php echo "<script>q1pictures($q1num4,$q1pic4);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input type="number" id="q1q22" name="q1question22" ></td>
 				<td width="5%" style="text-align: center;"><input id="q1qq4" name="q1question2" type="radio" value="2" /></td>
 			</tr>
@@ -57,12 +63,12 @@
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
-				<td width="90%"><script>q1pictures(4);</script></td>
+				<td width="90%"><?php echo "<script>q1pictures($q1num5,$q1pic5);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input type="number" id="q1q31" name="q1question31" ></td>
 				<td width="5%" style="text-align: center;"><input id="q1qq5" name="q1question3" type="radio" value="1"/></td>
 			</tr>
 			<tr>
-				<td width="90%" ><script>q1pictures(5);</script></td>
+				<td width="90%" ><?php echo "<script>q1pictures($q1num6,$q1pic6);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input type="number" id="q1q32" name="q1question32" ></td>
 				<td width="5%" style="text-align: center;"><input id="q1qq6" name="q1question3" type="radio" value="2"/></td>
 			</tr>
@@ -70,12 +76,12 @@
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
-				<td width="90%"><script>q1pictures(6);</script></td>
+				<td width="90%"><?php echo "<script>q1pictures($q1num7,$q1pic7);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input type="number" id="q1q41" name="q1question41" ></td>
 				<td width="5%" style="text-align: center;"><input id="q1qq7" name="q1question4" type="radio" value="1"/></td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q1pictures(7);</script></td>
+				<td width="90%"><?php echo "<script>q1pictures($q1num8,$q1pic8);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input type="number" id="q1q42" name="q1question42" ></td>
 				<td width="5%" style="text-align: center;"><input id="q1qq8" name="q1question4" type="radio" value="2"/></td>
 			</tr>
@@ -83,12 +89,12 @@
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
-				<td width="90%"><script>q1pictures(8);</script></td>
+				<td width="90%"><?php echo "<script>q1pictures($q1num9,$q1pic9);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input type="number" id="q1q51" name="q1question51" ></td>
 				<td width="5%" style="text-align: center;"><input id="q1qq9" name="q1question5" type="radio" value="1"/></td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q1pictures(9);</script></td>
+				<td width="90%"><?php echo "<script>q1pictures($q1num10,$q1pic10);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input type="number" id="q1q52" name="q1question52" ></td>
 				<td width="5%" style="text-align: center;"><input id="q1qq10" name="q1question5" type="radio" value="2"/></td>
 			</tr>
@@ -101,64 +107,64 @@
 			<h3 align="center">請幫忙找一找,選出正確的答案,一題5分</h3>
 				<table border="1" style="margin: auto;">
 					<tr>
-						<td style="text-align: center;"><script>q2pictures(q2pic[0]);</script></td>
-						<td style="text-align: center;"><script>q2pictures(q2pic[1]);</script></td>
-						<td style="text-align: center;"><script>q2pictures(q2pic[2]);</script></td>
+						<td style="text-align: center;"><?php echo "<script>q2pictures($q2pic1);</script>";?></td>
+						<td style="text-align: center;"><?php echo "<script>q2pictures($q2pic2);</script>";?></td>
+						<td style="text-align: center;"><?php echo "<script>q2pictures($q2pic3);</script>";?></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;"><script>q2pictures(q2pic[3]);</script></td>
-						<td style="text-align: center;"><script>q2pictures(q2pic[4]);</script></td>
-						<td style="text-align: center;"><script>q2pictures(q2pic[5]);</script></td>
+						<td style="text-align: center;"><?php echo "<script>q2pictures($q2pic4);</script>";?></td>
+						<td style="text-align: center;"><?php echo "<script>q2pictures($q2pic5);</script>";?></td>
+						<td style="text-align: center;"><?php echo "<script>q2pictures($q2pic6);</script>";?></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;"><script>q2pictures(q2pic[6]);</script></td>
-						<td style="text-align: center;"><script>q2pictures(q2pic[7]);</script></td>
-						<td style="text-align: center;"><script>q2pictures(q2pic[8]);</script></td>
+						<td style="text-align: center;"><?php echo "<script>q2pictures($q2pic7);</script>";?></td>
+						<td style="text-align: center;"><?php echo "<script>q2pictures($q2pic8);</script>";?></td>
+						<td style="text-align: center;"><?php echo "<script>q2pictures($q2pic9);</script>";?></td>
 			     	</tr>
 				</table>
 				<table border="1" style="margin: auto; width: 60%;">
 					<tr>
 						<th>
-						1.在<script>setquestionname(questionfruit[0])</script>的<script>writedirection(questionfruit[0],0)</script>是
+						<?php echo "1.在<script>setquestionname($a[$q2qf1])</script>的<script>writedirection($q2qf1,$d[0])</script>是";?>
 						</td>
 						<td>
-							<div style="float: left;"><label><input type="radio" id="q2q11" name="q2question1"><script>q2pictures(q2pic[question1option[0]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q12" name="q2question1"><script>q2pictures(q2pic[question1option[1]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q13" name="q2question1"><script>q2pictures(q2pic[question1option[2]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q14" name="q2question1"><script>q2pictures(q2pic[question1option[3]]);</script></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q11" name="q2question1"><?php echo "<script>q2pictures($a[$q2q1op1]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q12" name="q2question1"><?php echo "<script>q2pictures($a[$q2q1op2]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q13" name="q2question1"><?php echo "<script>q2pictures($a[$q2q1op3]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q14" name="q2question1"><?php echo "<script>q2pictures($a[$q2q1op4]);</script>"; ?></label></div>
 						</td>
 					</tr>
 					<tr>
 						<th>
-						2.在<script>setquestionname(questionfruit[1])</script>的<script>writedirection(questionfruit[1],1)</script>是
+						<?php echo "2.在<script>setquestionname($a[$q2qf2])</script>的<script>writedirection($q2qf2,$d[1])</script>是";?>
 						</td>
 						<td>
-							<div style="float: left;"><label><input type="radio" id="q2q21" name="q2question2"><script>q2pictures(q2pic[question2option[0]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q22" name="q2question2"><script>q2pictures(q2pic[question2option[1]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q23" name="q2question2"><script>q2pictures(q2pic[question2option[2]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q24" name="q2question2"><script>q2pictures(q2pic[question2option[3]]);</script></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q21" name="q2question2"><?php echo "<script>q2pictures($a[$q2q2op1]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q22" name="q2question2"><?php echo "<script>q2pictures($a[$q2q2op2]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q23" name="q2question2"><?php echo "<script>q2pictures($a[$q2q2op3]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q24" name="q2question2"><?php echo "<script>q2pictures($a[$q2q2op4]);</script>"; ?></label></div>
 						</td>
 					</tr>
 					<tr>
 						<th>
-						3.在<script>setquestionname(questionfruit[2])</script>的<script>writedirection(questionfruit[2],2)</script>是
+						<?php echo "3.在<script>setquestionname($a[$q2qf3])</script>的<script>writedirection($q2qf3,$d[2])</script>是";?>
 						</td>
 						<td>
-							<div style="float: left;"><label><input type="radio" id="q2q31" name="q2question3"><script>q2pictures(q2pic[question3option[0]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q32" name="q2question3"><script>q2pictures(q2pic[question3option[1]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q33" name="q2question3"><script>q2pictures(q2pic[question3option[2]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q34" name="q2question3"><script>q2pictures(q2pic[question3option[3]]);</script></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q31" name="q2question3"><?php echo "<script>q2pictures($a[$q2q3op1]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q32" name="q2question3"><?php echo "<script>q2pictures($a[$q2q3op2]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q33" name="q2question3"><?php echo "<script>q2pictures($a[$q2q3op3]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q34" name="q2question3"><?php echo "<script>q2pictures($a[$q2q3op4]);</script>"; ?></label></div>
 						</td>
 					</tr>
 					<tr>
 						<th>
-							4.在<script>setquestionname(questionfruit[3])</script>的<script>writedirection(questionfruit[3],3)</script>是
+							<?php echo "4.在<script>setquestionname($a[$q2qf4])</script>的<script>writedirection($q2qf4,$d[3])</script>是";?>
 						</td>
 						<td>
-							<div style="float: left;"><label><input type="radio" id="q2q41" name="q2question4"><script>q2pictures(q2pic[question4option[0]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q42" name="q2question4"><script>q2pictures(q2pic[question4option[1]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q43" name="q2question4"><script>q2pictures(q2pic[question4option[2]]);</script></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q44" name="q2question4"><script>q2pictures(q2pic[question4option[3]]);</script></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q41" name="q2question4"><?php echo "<script>q2pictures($a[$q2q4op1]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q42" name="q2question4"><?php echo "<script>q2pictures($a[$q2q4op2]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q43" name="q2question4"><?php echo "<script>q2pictures($a[$q2q4op3]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q44" name="q2question4"><?php echo "<script>q2pictures($a[$q2q4op4]);</script>"; ?></label></div>
 						</td>
 					</tr>
 				</table>
@@ -175,55 +181,55 @@
 				<td style="text-align: center;">選比較長</td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q3pictures(q3questionpicture[0],q3pictureslength[0]);</script></td>
+				<td width="90%"><?php echo "<script>q3pictures($q3pic1,$q3len1);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq1" name="q3question1" type="radio"/></td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q3pictures(q3questionpicture[0],q3pictureslength[1]);</script></td>
+				<td width="90%"><?php echo "<script>q3pictures($q3pic1,$q3len2);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq2" name="q3question1" type="radio"/></td>
 			</tr>
 		</table>
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
-				<td width="90%"><script>q3pictures(q3questionpicture[1],q3pictureslength[2]);</script></td>
+				<td width="90%"><?php echo "<script>q3pictures($q3pic2,$q3len3);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq3" name="q3question2" type="radio"/></td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q3pictures(q3questionpicture[1],q3pictureslength[3]);</script></td>
+				<td width="90%"><?php echo "<script>q3pictures($q3pic2,$q3len4);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq4" name="q3question2" type="radio"/></td>
 			</tr>
 		</table>
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
-				<td width="90%"><script>q3pictures(q3questionpicture[2],q3pictureslength[4]);</script></td>
+				<td width="90%"><?php echo "<script>q3pictures($q3pic3,$q3len5);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq5" name="q3question3" type="radio" /></td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q3pictures(q3questionpicture[2],q3pictureslength[5]);</script></td>
+				<td width="90%"><?php echo "<script>q3pictures($q3pic3,$q3len6);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq6" name="q3question3" type="radio" /></td>
 			</tr>
 		</table>
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
-				<td width="90%"><script>q3pictures(q3questionpicture[3],q3pictureslength[6]);</script></td>
+				<td width="90%"><?php echo "<script>q3pictures($q3pic4,$q3len7);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq7" name="q3question4" type="radio" /></td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q3pictures(q3questionpicture[3],q3pictureslength[7]);</script></td>
+				<td width="90%"><?php echo "<script>q3pictures($q3pic4,$q3len8);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq8" name="q3question4" type="radio"/></td>
 			</tr>
 		</table>
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
-				<td width="90%"><script>q3pictures(q3questionpicture[4],q3pictureslength[8]);</script></td>
+				<td width="90%"><?php echo "<script>q3pictures($q3pic5,$q3len9);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq9" name="q3question5" type="radio" /></td>
 			</tr>
 			<tr>
-				<td width="90%"><script>q3pictures(q3questionpicture[4],q3pictureslength[9]);</script></td>
+				<td width="90%"><?php echo "<script>q3pictures($q3pic5,$q3len10);</script>";?></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq10" name="q3question5" type="radio" /></td>
 			</tr>
 		</table>
@@ -238,16 +244,16 @@
 			<table border="1">
 				<tr>
 					<td>
-						<script>
-							q4pictures(topicpictures[0]);
-							q4pictures(topicpictures[1]);
-							q4pictures(topicpictures[2]);
-							q4pictures(topicpictures[3]);
-							q4pictures(topicpictures[4]);
-							q4pictures(topicpictures[5]);
-							q4pictures(topicpictures[6]);
-							q4pictures(topicpictures[7]);
-						</script>
+						<?php echo "<script>
+							q4pictures($q4pic1);
+							q4pictures($q4pic2);
+							q4pictures($q4pic3);
+							q4pictures($q4pic4);
+							q4pictures($q4pic5);
+							q4pictures($q4pic6);
+							q4pictures($q4pic7);
+							q4pictures($q4pic8);
+						</script>";?>
 					</td>
 				</tr>
 			</table>
@@ -258,7 +264,7 @@
 				<tr>
 					<td colspan="2">
 						<div>
-						<span>(1)從<script>direction(questiondirection[0]);</script>數起,<script>q4pictures(topicpictures[questionpictures[0]]);</script>排在第</span>
+						<span>(1)從<?php echo "<script>direction($q4qd1);</script>"; ?>數起,<?php echo "<script>q4pictures($q4a[$q4qqpic1]);</script>";?>排在第</span>
 						<input type="number" id="a1" name="q4anwser1" data-role="none" style="height:50px;width:50px;line-height:30px;border:1px solid #999;vertical-align:middle">
 						個。
 						</div>
@@ -267,21 +273,21 @@
 				<tr>
 					<td>
 						<div>
-						<span style="float: left; vertical-align:middle">(2)從<script>direction(questiondirection[1]);</script>數起,第<script>w(questionpictures[1])</script>個是:</span>
+						<span style="float: left; vertical-align:middle">(2)從<?php echo "<script>direction($q4qd2);</script>";?>數起,第<?php echo "<script>w($q4qqpic2)</script>";?>個是:</span>
 						
 						</div>
 					</td>
 					<td>
-						<div style="float: left;"><label><input data-role="none" type="radio" id="a21" name="q4anwser2"><script>q4pictures(topicpictures[qq2[0]]);</script></label></div>
-						<div style="float: left;"><label><input data-role="none" type="radio" id="a22" name="q4anwser2"><script>q4pictures(topicpictures[qq2[1]]);</script></label></div>
-						<div style="float: left;"><label><input data-role="none" type="radio" id="a23" name="q4anwser2"><script>q4pictures(topicpictures[qq2[2]]);</script></label></div>
+						<div style="float: left;"><label><input data-role="none" type="radio" id="a21" name="q4anwser2"><?php echo "<script>q4pictures($q4a[$q4qq1]);</script>";?></label></div>
+						<div style="float: left;"><label><input data-role="none" type="radio" id="a22" name="q4anwser2"><?php echo "<script>q4pictures($q4a[$q4qq2]);</script>";?></label></div>
+						<div style="float: left;"><label><input data-role="none" type="radio" id="a23" name="q4anwser2"><?php echo "<script>q4pictures($q4a[$q4qq3]);</script>";?></label></div>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2">
 						<div>
-						<span>(3)從<script>direction(questiondirection[2]);</script>數起,<script>q4pictures(topicpictures[questionpictures[2]]);</script>排在第</span>
-						<input type="number" id="a3" name="q4anwser3" data-role="none" style="height:50px;width:50px; line-height:30px;border:1px solid #999;vertical-align:middle"><span>個,也可說是從<script>ww(d3);</script>數起第</span><input type="number" id="a4" name="q4anwser4" data-role="none" style="height:50px;width:50px; line-height:30px;border:1px solid #999;vertical-align:middle">個。
+						<span>(3)從<?php echo "<script>direction($q4qd3);</script>";?>數起,<?php echo "<script>q4pictures($q4a[$q4qqpic3]);</script>";?>排在第</span>
+						<input type="number" id="a3" name="q4anwser3" data-role="none" style="height:50px;width:50px; line-height:30px;border:1px solid #999;vertical-align:middle"><span>個,也可說是從<?php echo "<script>ww($q4qd3);</script>";?>數起第</span><input type="number" id="a4" name="q4anwser4" data-role="none" style="height:50px;width:50px; line-height:30px;border:1px solid #999;vertical-align:middle">個。
 						</div>
 					</td>
 				</tr>
@@ -297,35 +303,35 @@
 		<div align="center">
 		<table border="1">
 			<tr>
-				<td><script>gtqs(shape[0]);</script></td>
+				<td><?php echo "<script>gtqs($q5qpic1);</script>";?></td>
 				<td>
-					<div style="float: left;"><label><input type="radio" id="q5q11" name="q5question1" data-role="none"><script>insertp1(shape[0],1);</script></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q12" name="q5question1" data-role="none"><script>insertp1(shape[0],2);</script></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q13" name="q5question1" data-role="none"><script>insertp1(shape[0],3);</script></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q11" name="q5question1" data-role="none"><?php echo "<script>insertp1($q5qpic1,1,$q5picture1[0]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q12" name="q5question1" data-role="none"><?php echo "<script>insertp1($q5qpic1,2,$q5picture1[1]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q13" name="q5question1" data-role="none"><?php echo "<script>insertp1($q5qpic1,3,$q5picture1[2]);</script>";?></label></div>
 				</td>
 			</tr>
 			<tr>
-				<td><script>gtqs(shape[1]);</script></td>
+				<td><?php echo "<script>gtqs($q5qpic2);</script>";?></td>
 				<td>
-					<div style="float: left;"><label><input type="radio" id="q5q21" name="q5question2" data-role="none"><script>insertp2(shape[1],1);</script></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q22" name="q5question2" data-role="none"><script>insertp2(shape[1],2);</script></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q23" name="q5question2" data-role="none"><script>insertp2(shape[1],3);</script></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q21" name="q5question2" data-role="none"><?php echo "<script>insertp2($q5qpic2,1,$q5picture2[0]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q22" name="q5question2" data-role="none"><?php echo "<script>insertp2($q5qpic2,2,$q5picture2[1]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q23" name="q5question2" data-role="none"><?php echo "<script>insertp2($q5qpic2,3,$q5picture2[2]);</script>";?></label></div>
 				</td>
 			</tr>
 			<tr>
-				<td><script>gtqs(shape[2]);</script></td>
+				<td><?php echo "<script>gtqs($q5qpic3);</script>";?></td>
 				<td>
-					<div style="float: left;"><label><input type="radio" id="q5q31" name="q5question3" data-role="none"><script>insertp3(shape[2],1);</script></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q32" name="q5question3" data-role="none"><script>insertp3(shape[2],2);</script></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q33" name="q5question3" data-role="none"><script>insertp3(shape[2],3);</script></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q31" name="q5question3" data-role="none"><?php echo "<script>insertp3($q5qpic3,1,$q5picture3[0]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q32" name="q5question3" data-role="none"><?php echo "<script>insertp3($q5qpic3,2,$q5picture3[1]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q33" name="q5question3" data-role="none"><?php echo "<script>insertp3($q5qpic3,3,$q5picture3[2]);</script>";?></label></div>
 				</td>
 			</tr>
 			<tr>
-				<td><script>gtqs(shape[3]);</script></td>
+				<td><?php echo "<script>gtqs($q5qpic4);</script>";?></td>
 				<td>
-					<div style="float: left;"><label><input type="radio" id="q5q41" name="q5question4" data-role="none"><script>insertp4(shape[3],1);</script></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q42" name="q5question4" data-role="none"><script>insertp4(shape[3],2);</script></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q43" name="q5question4" data-role="none"><script>insertp4(shape[3],3);</script></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q41" name="q5question4" data-role="none"><?php echo "<script>insertp4($q5qpic4,1,$q5picture4[0]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q42" name="q5question4" data-role="none"><?php echo "<script>insertp4($q5qpic4,2,$q5picture4[1]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q43" name="q5question4" data-role="none"><?php echo "<script>insertp4($q5qpic4,3,$q5picture4[2]);</script>";?></label></div>
 				</td>
 			</tr>
 		</table>
