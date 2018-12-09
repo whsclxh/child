@@ -265,7 +265,7 @@ include("mysql_connect.php");
 	<div style="text-align: center;" class="XX">
 		<input type="image" src="img/123.png" onClick="javascript:location.href='math.html'" width="20%;" height="20%;">
 		<input type="image" src="img/chinese.png" onClick="javascript:location.href='chinese.html'" width="20%;" height="20%;">
-		<input type="image" src="img/cognition.png" onClick="javascript:location.href='cognition.html'" width="20%;" height="20%;">
+		<input type="image" src="img/cognition.png" onClick="javascript:location.href='cognition.php'" width="20%;" height="20%;">
 		<input type="image" src="img/clock.png" onClick="javascript:location.href='ex1.html'" width="20%;" height="20%;">
 	</div>
 	<div class="im"><img src="img/illustration.png"><div>
