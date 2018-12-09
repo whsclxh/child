@@ -1,0 +1,17 @@
+﻿/* CSS Document */
+/*body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}*/
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:Arial, Helvetica, sans-serif; color:#333; margin:0 auto; }
+/*table{border-collapse:collapse;border-spacing:0;}*/
+a{ color:#333; text-decoration:none;}
+a:hover{ text-decoration:none;}
+
+.tab01-log{ width:360px; margin:20px auto;}
+.tab01-log td{ padding-bottom:12px;}
+#numkeybord{ padding-top:28px; padding-left:10px; position:absolute; background:url(../images/bg02.png)  no-repeat; width:314px; font-size:12px; height:283px; display:none;}
+#keymain{  width:100%; }
+#keymain li{ background:url(../images/btn.gif) no-repeat; text-align:center; margin:0 3px 20px 15px; display:inline; line-height:46px; font-size:24px; width:54px; height:46px; display:block; float:left; color:#fff; cursor:pointer;}
+#keymain li#esc{ font-size:12px;}
+.text{ width:200px; height:20px; line-height:20px; border:1px solid #ccc;}
+

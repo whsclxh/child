@@ -1,38 +1,225 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="softkeys-0.0.1.css">
-  <title>Document</title>
-</head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="softkeys-0.0.1.js"></script>
+<!doctype html>
 <body>
-<script src="data.js"></script>
-<script type="text/javascript">  
-var cart = JSON.parse ( jsonString ); 
-var rand=new Array(5);
+<head>
+	<meta charset="utf-8">
+	<title>My APP's title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="csss/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="csss/jquery.mobile.icons.min.css" />
+	<script src="jss/jquery-1.11.3.min.js"></script>
+	<script src="jss/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js "></script>
+  <script type="text/javascript" src="jss/ablanxue.js"></script>
+	<link href="csss/ablanxue.css" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width; initial-scale=1;maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
+  <link rel="stylesheet" type="text/css" media="print" href="serif.css">
+	<script src="test3.js"></script>
+    
+
+	<style type="text/css">
+table, th, td {
+    border: 5px solid black;
+    border-collapse: collapse;
+
+    ;
+}
+th, td {
+    padding: 10px;
+    text-align:left;
+}
+  .disable-select {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none;   /* Chrome/Safari/Opera */
+      -khtml-user-select: none;    /* Konqueror */
+      -moz-user-select: none;      /* Firefox */
+      -ms-user-select: none;       /* Internet Explorer/Edge */
+      user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+    }
+
+    .container {                   
+      max-width: 80em;
+    }
+
+    .problems {
+      position: relative;
+    }
+
+    .problem {
+      margin: 1em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .problem-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .clock {
+      margin-right: 1em;
+    }
+
+    .dot {
+      height: 50px;
+      width: 50px;
+      background-color: #ff5722;
+      border-radius: 50%;
+      display: inline-block;
+      transition: all 500ms ease;
+      cursor: pointer;
+    }
+
+    .dot:hover {
+      transform: scale(1.3);
+    }
+
+    .dot:active {
+      transform: scale(1.1);
+    }
+
+    .space {
+      width: 100%;
+    }
+
+    .time-text {
+      display: inline-block;
+      min-width: 3.5em;
+      margin-left: 1em;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      background: #ff5622c0;
+      color: black;
+      font-size: 2em;
+      font-weight: 900;
+    }
+
+    .line {
+      position: absolute;
+      z-index: -1;
+      height: 1em;
+      width: 1em;
+      border-radius: 1em;
+      background: teal;
+    }
+
+    .check-answer-button {
+      margin: 1rem;
+      padding: 2rem;
+      font-size: 3em;
+      font-weight: 900;
+      background: #a1a1a18f;
+      border-radius: 1rem;
+      color: #666d;
+      transition: all 500ms ease;
+      cursor: pointer;
+    }
+    .check-answer-button-clear {
+      background: #51ff68da;
+      color: rgba(19, 116, 0, 0.867);
+    }
+
+    .check-answer-button-wrong {
+      background: #ff5151da;
+      color: rgba(116, 0, 0, 0.867);
+    }
+
+</style>
+
+	<script>
+var json= '\
+{\
+  "contentss": [\
+       {"one": "效率()","two": "ㄌㄩˋ","three": "率()先","four": "ㄕㄨㄞˋ"},\{"one": "方便()","two": "ㄅ一ㄢˋ","three": "便()宜","four": "ㄆㄧㄢˊ"},\
+       {"one": "跌倒()","two": "ㄉㄠˇ","three": "倒()退","four": "ㄉㄠˋ"},\{"one":  "假()髮","two":"ㄐㄧㄚˇ","three": "暑假()","four": "ㄐㄧㄚˋ"},\
+       {"one": "依山傍()水","two": "ㄅㄤˋ","three": "傍()晚","four": "ㄅㄤ"},\{"one": "不切()實際 ","two": "ㄑㄧㄝˋ","three": "切()斷","four": "ㄑㄧㄝ"},\
+       {"one": "出奇制勝()","two": "ㄕㄥˋ","three": "勝()任","four": "ㄕㄥ"},\{"one": "試卷()","two": "ㄐㄩㄢˋ","three": "髮卷()","four": "ㄐㄩㄢˇ"},\
+       {"one": "談吐()","two": "ㄊㄨˇ","three": "上吐()下瀉","four": "ㄊㄨˋ"},\{"one": "阻塞()","two": "ㄙㄜˋ","three": "要塞()","four": "ㄙㄞˋ"},\
+       {"one": "塞()車 ","two": "ㄙㄞ","three": "邊塞()","four": "ㄙㄞˋ"},\{"one": "傳()播","two": "ㄔㄨㄢˊ","three": "傳()記","four": "ㄓㄨㄢˋ"},\
+       {"one": "泥()巴 ","two": "ㄋㄧˊ","three": "泥()古不化 ","four": "ㄋㄧˋ"},\{"one": "炸()雞","two": "ㄓㄚˊ","three": "爆炸() ","four": "ㄓㄚˋ"},\
+       {"one": "事在人為()","two": "ㄨㄟˊ","three": "為()民服務","four": "ㄨㄟˋ"},\{"one": "當()場 ","two": "ㄉㄤ","three": "典當()","four": "ㄉㄤˋ"},\
+       {"one": "礦石() ","two": "ㄕˊ","three": "公石()","four": "ㄉㄢˋ"},\{"one": "縫()紉","two": "ㄈㄥˊ","three": "裂縫()","four": "ㄈㄥˋ"},\
+       {"one": "宣傳() ","two": "ㄔㄨㄢˊ","three": "自傳()","four": "ㄓㄨㄢˋ"},\{"one": "婀娜()","two": "ㄋㄨㄛˊ","three": "安娜()","four": "ㄋㄚˋ"}\
+              ]\
+}\
+';
+var jsonS='\
+{\
+  "contents": [\
+       {"one": "龍","two": "ㄌㄨㄥˊ"},\{"one": "八卦","two": "ㄅㄚㄍㄨㄚˋ"},\{"one": "杯筊","two": "ㄅㄟㄐㄧㄠˇ"},\
+       {"one": "木魚","two": "ㄇㄨˋㄩˊ"},\{"one": "鳳凰","two": "ㄈㄥˋㄏㄨㄤˊ"},\{"one": "燈籠","two": "ㄉㄥㄌㄨㄥˊ"},\
+       {"one": "跳加官","two": "ㄊㄧㄠˋㄐㄧㄚㄍㄨㄢ"},\{"one": "臉譜","two": "ㄌㄧㄢˇㄆㄨˇ"},\{"one": "麒麟","two": "ㄑㄧˊㄌㄧㄣˊ"},\
+       {"one": "舞獅","two": "ㄨˇㄕ"},\{"one": "中國結","two": "ㄓㄨㄥㄍㄨㄛˊㄐㄧㄝˊ"},\{"one": "蒸籠","two": "ㄓㄥㄌㄨㄥˊ"},\
+       {"one": "粽子","two": "ㄗㄨㄥˋㄗ˙"},\{"one": "帔","two": "ㄆㄟˋ"},\{"one": "篦","two": "ㄅㄧˋ"},\
+       {"one": "弁","two": "ㄅㄧㄢˋ"},\{"one": "冕","two": "ㄇㄧㄢˇ"},\{"one": "鬟","two": "ㄏㄨㄢˊ"},\
+       {"one": "笄","two": "ㄐㄧ"},\{"one": "髻","two": "ㄐㄧˋ"},\{"one": "釵","two": "ㄔㄞ"},\
+       {"one": "簪","two": "ㄗㄢ"},\{"one": "襪","two": "ㄨㄚˋ"},\{"one": "馬尾","two": "ㄇㄚˇㄨㄟˇ"},\
+       {"one": "馬靴","two": "ㄇㄚˇㄒㄩㄝ"},\{"one": "百褶裙","two": "ㄅㄞˇㄓㄜˊㄑㄩㄣˊ"},\{"one": "面具","two": "ㄇㄧㄢˋㄐㄩˋ"},\
+       {"one": "木屐","two": "ㄇㄨˋㄐㄧ"},\{"one": "別針","two": "ㄅㄧㄝˊㄓㄣ"},\{"one": "髮夾","two": "ㄈㄚˇㄐㄧㄚˊ"},\
+       {"one": "鳳冠","two": "ㄈㄥˋㄍㄨㄢ"},\{"one": "斗笠","two": "ㄉㄡˇㄌㄧˋ"},\{"one": "拉鍊","two": "ㄌㄚㄌㄧㄢˋ"},\
+       {"one": "和服","two": "ㄏㄜˊㄈㄨˊ"},\{"one": "夾克","two": "ㄐㄧㄚˊㄎㄜˋ"},\{"one": "旗袍","two": "ㄑㄧˊㄆㄠˊ"},\
+       {"one": "西裝","two": "ㄒㄧㄓㄨㄤ"},\{"one": "長袍","two": "ㄔㄤˊㄆㄠˊ"},\{"one": "燕尾服","two": " ㄧㄢˋㄨㄟˇㄈㄨˊ"},\
+       {"one": "泳衣","two": "ㄩㄥˇㄧ"},\{"one": "貓","two": "ㄇㄠ"},\{"one": "蹼","two": "ㄆㄨˊ"},\
+       {"one": "豹","two": "ㄅㄠˋ"},\{"one": "蟒","two": "ㄇㄤˇ"},\{"one": "鳧","two": "ㄈㄨˊ"},\
+       {"one": "蹄","two": "ㄊㄧˊ"},\{"one": "鹿","two": "ㄌㄨˋ"},\{"one": "螺","two": "ㄌㄨㄛˊ"},\
+       {"one": "驢","two": "ㄌㄩˊ"},\{"one": "鴿","two": "ㄍㄜ"},\{"one": "狗","two": "ㄍㄡˇ"},\
+       {"one": "龜","two": "ㄍㄨㄟ"},\{"one": "鶴","two": "ㄏㄜˋ"},\{"one": "猴","two": "ㄏㄡˊ"},\
+       {"one": "狐","two": "ㄏㄨˊ"},\{"one": "鵠","two": "ㄏㄨˊ"},\{"one": "虎","two": "ㄏㄨˇ"},\
+       {"one": "獾","two": "ㄏㄨㄢ"},\{"one": "雞","two": "ㄐㄧ"},\{"one": "羌","two": "ㄑㄧㄤ"}\
+  ]\
+}\
+';
+
+
+$(function(){
+	$('.text').numkeybord();
+	$('.tjbtn').click(function(){
+		var txtuser=$('#user').val();
+		var txtpass=$('#password').val();
+		alert(txtuser);
+		alert(txtpass);
+	})
+});
+</script>
+</head>
+
+
+
+
+
+
+
+
+
+<!-- Start of first page11111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
+<div data-role="page" id="P1">
+ <form   name="myform" method="post" action="chinese_finish.php" data-ajax="false"  > 
+	<div data-role="header">
+		<h1>Page1</h1>
+		<p  style="font-size:300%;  text-align:center;">請拼出正確的注音</p>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+	</div><!-- /content -->
+	
+	<script type="text/javascript">  
+var cart = JSON.parse ( jsonS ); 
+var rand_x=new Array(5);
 var C;
 for(var p=0;p<5;p++){
-    var x = Math.floor((Math.random() * 60) + 0);
-    if(rand.indexOf(x)>=0)
+    var x_2 = Math.floor((Math.random() * 60) + 0);
+    if(rand_x.indexOf(x_2)>=0)
     p--;
     else
-    rand[p]=x;}
-
-for(var c=0;c<5;c++){
-C=rand[c];
-document.write('<img src="pic/'+C+'.jpg"height="100" width="150">')
-document.write("&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;"+cart.contents[C].one+"&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;");}
-var s=rand[0];
-var s1=rand[1];
-var s2=rand[2];
-var s3=rand[3];
-var s4=rand[4];
-
-
+    rand_x[p]=x_2;}
+var s=rand_x[0];
+var s1=rand_x[1];
+var s2=rand_x[2];
+var s3=rand_x[3];
+var s4=rand_x[4];
 window.onload=function(){
 var s6=document.getElementById("anwone");
 s6.value=cart.contents[s].two;
@@ -45,90 +232,2364 @@ s9.value=cart.contents[s3].two;
 var s10=document.getElementById("anwfive");
 s10.value=cart.contents[s4].two;
 }
-
-
+document.write(s6.innerHTML);
+document.write("s6");
 </script>
-<div class="container-fluid">
-            <div class="row">            
-          
-                    <form class="row form">
-                        <div class="col-sm-offset-4 col-sm-4 form-group">
-                            
-                            
-                        </div>
 
-                        <div style="top:300px;left:10px;position:absolute;" class="softkeys" data-target="input[name='code']"></div>
-                        <div style="top:300px;left:10px;position:absolute;" class="softkeys" data-target="input[name='code1']"></div>
-                        <div style="top:300px;left:10px;position:absolute;" class="softkeys" data-target="input[name='code2']"></div>
-                        <div style="top:300px;left:10px;position:absolute;" class="softkeys" data-target="input[name='code3']"></div>
-                        <div style="top:300px;left:10px;position:absolute;" class="softkeys" data-target="input[name='code4']"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
 
-        <script>
-            $(document).ready(function(){
-                $('.softkeys').softkeys({
-                    target : $('.softkeys').data('target'),
-                    layout : [
-                        [
-                            ['ㄅ','ㄅ'],
-                            ['ㄉ','!'],
-                            ['ˇ','@'],
-                            ['ˋ','#'],
-                            ['ˊ','$'],
-                            ['˙','%'],
-                            ['ㄓ','^'],
-                            ['ㄚ','&amp;'],
-                            ['ㄞ','*'],
-                            ['ㄢ','('],
-                            ['5',')'],
-                            ['6', '_'],
-                            ['7','+'],
-                            'delete'
-                        ],
-                        [
-                            'ㄆ','ㄊ','ㄍ','ㄐ','ㄔ','ㄗ','ㄧ','ㄛ','ㄟ','ㄣ',
-                            ['8','0'],
-                            ['9','0']
-                        ],
-                        [
-                            
-                            'ㄇ','ㄋ','ㄎ','ㄑ','ㄕ','ㄘ','ㄨ','ㄜ','ㄠ',
-                            ['ㄤ','ㄤ'],
-                            ["0",'&quot;'],
-                            ['+','|']
-                        ],
-                        [
-                            
-                            'ㄈ','ㄌ','ㄏ','ㄒ','ㄖ','ㄙ','ㄩ',
-                            ['ㄝ','ㄡ'],
-                            ['ㄡ','&gt;'],
-                            ['ㄥ','?'],
-                            ['-']
-                        ]
-                    ]
-                });
-            });
-        </script>
-<form method="post" action="chinese2.html">
-<div style="top:130px;left:0px;position:absolute;"><input type="text" id="test" name="code"></div>
-<div style="top:130px;left:280px;position:absolute;"><input type="text" id="test1" name="code1"></div>
-<div style="top:130px;left:560px;position:absolute;"><input type="text" id="test2" name="code2"></div>
-<div style="top:130px;left:840px;position:absolute;"><input type="text" id="test3" name="code3"></div>
-<div style="top:130px;left:1120px;position:absolute;"><input type="text" id="test4" name="code4"></div>
+
+
+
+
+
+
+
+
+
+<table class="tab01-log">
+<div style="top:400px;left:100px;position:absolute;">
+<script>
+C=rand_x[0];
+
+document.write('<img src="images/'+C+'.jpg"height="100" width="150">')
+document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
+</script>
+<input type="text" id="test" name="code" class="text" maxlength="20"></div>
+<div style="top:400px;left:500px;position:absolute;">
+
+<script>
+C=rand_x[1];
+document.write('<img src="images/'+C+'.jpg"height="100" width="150">')
+document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
+</script>
+<input type="text" id="test1" name="code1" class="text" maxlength="20"></div>
+
+<div style="top:400px;left:950px;position:absolute;">
+<script>
+C=rand_x[2];
+document.write('<img src="images/'+C+'.jpg"height="100" width="150">')
+document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
+</script>
+<input type="text" id="test2" name="code2" class="text" maxlength="20"></div>
+
+<div style="top:400px;left:1400px;position:absolute;">
+<script>
+C=rand_x[3];
+document.write('<img src="images/'+C+'.jpg"height="100" width="150">')
+document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
+</script>
+<input type="text" id="test3" name="code3" class="text" maxlength="20"></div>
+
+<div style="top:400px;left:1800px;position:absolute;">
+<script>
+C=rand_x[4];
+document.write('<img src="images/'+C+'.jpg"height="100" width="150">')
+document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
+</script>
+<input type="text" id="test4" name="code4" class="text" maxlength="20"></div>
+</table>
+
 <input type="hidden" id="anwone" name="Anwone">
 <input type="hidden" id="anwtwo" name="Anwtwo">
 <input type="hidden" id="anwthree" name="Anwthree">
 <input type="hidden" id="anwfour" name="Anwfour">
 <input type="hidden" id="anwfive" name="Anwfive">
-<div  style="top:800px;left:950px;position:absolute;"><button  type="submit" name="" value="hi"></div>
+<!-- <div  style="top:800px;left:950px;position:absolute;"><button  type="submit" name="" value="hi">123</div> -->
+
+	
+	<!-- <div style="top:800px;left:1000px;position:absolute;" ><a href="#P2" >下一題</a></div> -->
+	
+  <div   align="center">
+      <a href="#P2" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>
+    </div>
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start of second page 22222222222222222222222222222222222222222222222222222222222222222222-->
+<div data-role="page" id="P2">
+
+	<div data-role="header">
+		<h1>Page2</h1>
+		<p  style="font-size:300%;  text-align:center;">請選出與圖對應的選項</p>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+	</div><!-- /content -->
+
+<script type="text/javascript">  
+var cart2 = JSON.parse (jsonS); 
+var rand_=new  Array(5);
+var rand2_=new Array(5);
+var C2;
+var x2;
+var t;
+var P2;
+for(var p2=0;p2<5;p2++){
+    var x2 = Math.floor((Math.random() * 60) + 0);
+    if(rand_.indexOf(x2)>=0)
+    p2--;
+    else
+    rand_[p2]=x2;}
+
+// for(var c2=0;c2<5;c2++){
+// C2=rand[c2];
+// document.write('<img src="images/'+C2+'.jpg"height="150" width="200"><br>');
+// }
+
+
+for(var y=0;y<5;y++){
+    var P2=Math.floor((Math.random() * 5) + 0);
+    if(rand2_.indexOf(P2)>=0)
+    y--;
+    else
+    rand2_[y]=P2;
+}
+var rand3_=new Array(5);
+</script>
+<div style="font-size:25px;    vertical-align: top; display:inline-block; ">
+<script>
+for(var T=0;T<5;T++){
+C2=rand_[rand2_[T]];
+var K=T+1;
+
+
+document.write(K+"."+cart2.contents[C2].one+cart2.contents[C2].two+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;");
+
+
+rand3_[rand2_[T]]=T+1;
+}
+</script>
+</div>
+<script>
+s_2=rand3_[0];
+s1_2=rand3_[1];
+s2_2=rand3_[2];
+s3_2=rand3_[3];
+s4_2=rand3_[4];  
+
+
+
+window.onload=function(){
+var s11=document.getElementById("anwone1");
+s11.value=s_2;
+var s12=document.getElementById("anwtwo1");
+s12.value=s1_2;
+var s13=document.getElementById("anwthree1");
+s13.value=s2_2;
+var s14=document.getElementById("anwfour1");
+s14.value=s3_2;
+var s15=document.getElementById("anwfive1");
+s15.value=s4_2;
+}
+</script>
+
+<div style="top:400px;left:100px;position:absolute;">	
+<script>
+
+  document.write('<img src="images/'+rand_[0]+'.jpg"height="150" width="200"><br>');</script>	
+<input type="number"  id="test_2"  name="code_2"/></div>
+<div style="top:400px;left:500px;position:absolute;">
+<script>
+
+  document.write('<img src="images/'+rand_[1]+'.jpg"height="150" width="200"><br>');</script>	
+<input type="number" id="test1_2" name="code1_2"></div>
+<div style="top:400px;left:950px;position:absolute;">
+<script>
+
+  document.write('<img src="images/'+rand_[2]+'.jpg"height="150" width="200"><br>');</script>	
+<input type="number" id="test2_2" name="code2_2"></div>
+<div style="top:400px;left:1400px;position:absolute;">
+<script>
+ 
+  document.write('<img src="images/'+rand_[3]+'.jpg"height="150" width="200"><br>');</script>	
+<input type="number" id="test3_2" name="code3_2"></div>
+<div style="top:400px;left:1800px;position:absolute;">
+<script>
+
+  document.write('<img src="images/'+rand_[4]+'.jpg"height="150" width="200"><br>');</script>	
+<input type="number" id="test4_2" name="code4_2"></div>
+
+
+<input type="hidden" id="anwone1" name="Anwone1">
+<input type="hidden" id="anwtwo1" name="Anwtwo1">
+<input type="hidden" id="anwthree1" name="Anwthree1">
+<input type="hidden" id="anwfour1" name="Anwfour1">
+<input type="hidden" id="anwfive1" name="Anwfive1">
+
+
+<!-- <div style="top:800px;left:1000px;position:absolute;" ><button><a href="#P1">上一題</a></button></div>
+<div style="top:800px;left:1100px;position:absolute;" ><button><a href="#P3">下一題</a></button></div> -->
+<div   align="center">
+      <a href="#P1" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a>
+      <a href="#P3" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>
+    </div>
+
+</div><!-- /page -->
+
+
+
+
+
+<!-- Start of second page33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 -->
+<div data-role="page" id="P3">
+
+	<div data-role="header">
+		<h1>Page3</h1>
+		<p    style="font-size:300%;  text-align:center;">請選出正確的注音</p>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	</div><!-- /content -->
+
+
+
+
+
+<script type="text/javascript">
+var cart3 = JSON.parse (json); 
+var rand_=new  Array(5);
+var rand_2=new Array(2);
+var rand_3=new Array(2);
+var rand_4=new Array(2);
+//2
+var rand_5=new Array(2);
+var rand_6=new Array(2);
+var rand_7=new Array(2);
+//3
+var rand_8=new Array(2);
+var rand_9=new Array(2);
+var rand_10=new Array(2);
+//4
+var rand_11=new Array(2);
+var rand_12=new Array(2);
+var rand_13=new Array(2);
+//5
+var rand_14=new Array(2);
+var rand_15=new Array(2);
+var rand_16=new Array(2);
+
+
+//1
+for(var i3=0;i3<2;i3++){
+  var j2=Math.floor((Math.random() * 2) + 0);
+   if(rand_2.indexOf(j2)>=0)
+    i3--;
+  else
+    rand_2[i3]=j2;
+}
+for(var i4=0;i4<2;i4++){
+  var j3=Math.floor((Math.random() * 2) + 0);
+   if(rand_4.indexOf(j3)>=0)
+    i4--;
+  else
+    rand_4[i4]=j3;
+}
+//2
+for(var i5=0;i5<2;i5++){
+  var j4=Math.floor((Math.random() * 2) + 0);
+   if(rand_5.indexOf(j4)>=0)
+    i5--;
+  else
+    rand_5[i5]=j4;
+}
+for(var i6=0;i6<2;i6++){
+  var j5=Math.floor((Math.random() * 2) + 0);
+   if(rand_7.indexOf(j5)>=0)
+    i6--;
+  else
+    rand_7[i6]=j5;
+}
+//3
+for(var i7=0;i7<2;i7++){
+  var j6=Math.floor((Math.random() * 2) + 0);
+   if(rand_8.indexOf(j6)>=0)
+    i7--;
+  else
+    rand_8[i7]=j6;
+}
+for(var i8=0;i8<2;i8++){
+  var j7=Math.floor((Math.random() * 2) + 0);
+   if(rand_10.indexOf(j7)>=0)
+    i8--;
+  else
+    rand_10[i8]=j7;
+}
+//4
+for(var i9=0;i9<2;i9++){
+  var j8=Math.floor((Math.random() * 2) + 0);
+   if(rand_11.indexOf(j8)>=0)
+    i9--;
+  else
+    rand_11[i9]=j8;
+}
+for(var i10=0;i10<2;i10++){
+  var j9=Math.floor((Math.random() * 2) + 0);
+   if(rand_13.indexOf(j9)>=0)
+    i10--;
+  else
+    rand_13[i10]=j9;
+}
+
+//5
+for(var i11=0;i11<2;i11++){
+  var j10=Math.floor((Math.random() * 2) + 0);
+   if(rand_14.indexOf(j10)>=0)
+    i11--;
+  else
+    rand_14[i11]=j10;
+}
+for(var i12=0;i12<2;i12++){
+  var j11=Math.floor((Math.random() * 2) + 0);
+   if(rand_16.indexOf(j11)>=0)
+    i12--;
+  else
+    rand_16[i12]=j11;
+}
+
+
+
+
+
+
+for(var i=0;i<5;i++){
+	var x=Math.floor((Math.random() * 20) + 0);
+	 if(rand_.indexOf(x)>=0)
+    i--;
+    else
+    rand_[i]=x;
+}
+var x=rand_[0];
+var x2=rand_[1];
+var x3=rand_[2];
+var x4=rand_[3];
+var x5=rand_[4];	
+var k1,k2,k3,k4,k5,k6,k7,k8,k9,k10;
+//1
+rand_3[rand_2[0]]=cart3.contentss[x].one;
+rand_3[rand_2[1]]=cart3.contentss[x].three;
+rand_4[0]=rand_3[0];
+rand_4[1]=rand_3[1];
+if(rand_2[0]==0){
+k1=cart3.contentss[x].two;
+k2=cart3.contentss[x].four;
+}
+else{
+k1=cart3.contentss[x].four;
+k2=cart3.contentss[x].two;}
+//2
+rand_6[rand_5[0]]=cart3.contentss[x2].one;
+rand_6[rand_5[1]]=cart3.contentss[x2].three;
+rand_7[0]=rand_6[0];
+rand_7[1]=rand_6[1];
+if(rand_5[0]==0){
+k3=cart3.contentss[x2].two;
+k4=cart3.contentss[x2].four;
+}
+else{
+k3=cart3.contentss[x2].four;
+k4=cart3.contentss[x2].two;}
+//3
+rand_9[rand_8[0]]=cart3.contentss[x3].one;
+rand_9[rand_8[1]]=cart3.contentss[x3].three;
+rand_10[0]=rand_9[0];
+rand_10[1]=rand_9[1];
+if(rand_8[0]==0){
+k5=cart3.contentss[x3].two;
+k6=cart3.contentss[x3].four;
+}
+else{
+k5=cart3.contentss[x3].four;
+k6=cart3.contentss[x3].two;}
+//4
+rand_12[rand_11[0]]=cart3.contentss[x4].one;
+rand_12[rand_11[1]]=cart3.contentss[x4].three;
+rand_13[0]=rand_12[0];
+rand_13[1]=rand_12[1];
+if(rand_11[0]==0){
+k7=cart3.contentss[x4].two;
+k8=cart3.contentss[x4].four;
+}
+else{
+k7=cart3.contentss[x4].four;
+k8=cart3.contentss[x4].two;}
+//5
+rand_15[rand_14[0]]=cart3.contentss[x5].one;
+rand_15[rand_14[1]]=cart3.contentss[x5].three;
+rand_16[0]=rand_15[0];
+rand_16[1]=rand_15[1];
+if(rand_14[0]==0){
+k9=cart3.contentss[x5].two;
+k10=cart3.contentss[x5].four;
+}
+else{
+k9=cart3.contentss[x5].four;
+k10=cart3.contentss[x5].two;}
+
+window.onload = function(){   
+var aa= document.getElementById("g1"); 
+aa.value=cart3.contentss[x].two;
+var bb= document.getElementById("g2"); 
+bb.value=cart3.contentss[x].four;
+var cc= document.getElementById("g3"); 
+cc.value=cart3.contentss[x].two;
+var dd= document.getElementById("g4"); 
+dd.value=cart3.contentss[x].four;
+var ee= document.getElementById("g5"); 
+ee.value=cart3.contentss[x2].two;
+var ff= document.getElementById("g6"); 
+ff.value=cart3.contentss[x2].four;
+var gg= document.getElementById("g7"); 
+gg.value=cart3.contentss[x2].two;
+var hh= document.getElementById("g8"); 
+hh.value=cart3.contentss[x2].four;
+var ii= document.getElementById("g9"); 
+ii.value=cart3.contentss[x3].two;
+var jj= document.getElementById("g10"); 
+jj.value=cart3.contentss[x3].four;
+var kk= document.getElementById("g11"); 
+kk.value=cart3.contentss[x3].two;
+var ll= document.getElementById("g12"); 
+ll.value=cart3.contentss[x3].four;
+var oo= document.getElementById("g13"); 
+oo.value=cart3.contentss[x4].two;
+var pp= document.getElementById("g14"); 
+pp.value=cart3.contentss[x4].four;
+var nn= document.getElementById("g15"); 
+nn.value=cart3.contentss[x4].two;
+var mm= document.getElementById("g16"); 
+mm.value=cart3.contentss[x4].four;
+var tt= document.getElementById("g17"); 
+tt.value=cart3.contentss[x5].two;
+var uu= document.getElementById("g18"); 
+uu.value=cart3.contentss[x5].four;
+var xx= document.getElementById("g19"); 
+xx.value=cart3.contentss[x5].two;
+var yy= document.getElementById("g20"); 
+yy.value=cart3.contentss[x5].four;
+var aa1=document.getElementById("anw1");
+aa1.value=k1;
+var aa2=document.getElementById("anw2");
+aa2.value=k2;
+var aa3=document.getElementById("anw3");
+aa3.value=k3;
+var aa4=document.getElementById("anw4");
+aa4.value=k4;
+var aa5=document.getElementById("anw5");
+aa5.value=k5;
+var aa6=document.getElementById("anw6");
+aa6.value=k6;
+var aa7=document.getElementById("anw7");
+aa7.value=k7;
+var aa8=document.getElementById("anw8");
+aa8.value=k8;
+var aa9=document.getElementById("anw9");
+aa9.value=k9;
+var aa10=document.getElementById("anw10");
+aa10.value=k10;
+};
+
+</script>
+
+
+
+<table style="width:80%">
+1.
+  <tr>
+    <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_4[0])</script></font></th>
+    <th> 
+    
+    <input name="c1" id="g1" type="radio"  style="zoom: 1.5"  ><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>
+    <input name="c1" id="g2" type="radio"  style="zoom: 1.5"  ><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
+    
+    </th>
+  </tr>
+
+  <tr>
+   <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_4[1])</script></font></th>
+    <th> 
+    
+    <input name="c2" type="radio" id="g3"  style="zoom: 1.5" ><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>
+    <input name="c2" type="radio" id="g4"  style="zoom: 1.5" ><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
+   
+    </th>
+  </tr>
+
+</table>
+<table style="width:80%">
+2.
+  <tr>
+    <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_7[0])</script></font></th>
+    <th> 
+   
+    <input name="c3" type="radio" id="g5" style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x2].two)</script></font>
+    <input name="c3" type="radio" id="g6"  style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x2].four)</script></font>
+   
+    </th>
+  </tr>
+
+
+  <tr>
+   <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_7[1])</script></font></th>
+    <th> 
+    
+    <input name="c4" type="radio" id="g7" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x2].two)</script></font>
+    <input name="c4" type="radio" id="g8"  style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x2].four)</script></font>
+ 
+    </th>
+  </tr>
+
+</table>
+3.
+<table style="width:80%">
+
+  <tr>
+    <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_10[0])</script></font></th>
+    <th> 
+ 
+    <input name="c5" type="radio" id="g9"   style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x3].two)</script></font>
+    <input name="c5" type="radio" id="g10"  style="zoom: 1.5""><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x3].four)</script></font>
+
+    </th>
+  </tr>
+
+
+  <tr>
+   <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_10[1])</script></font></th>
+    <th> 
+ 
+    <input name="c6" type="radio" id="g11" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x3].two)</script></font>
+    <input name="c6" type="radio" id="g12" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x3].four)</script></font>
+
+    </th>
+  </tr>
+
+</table>
+4.
+
+<table style="width:80%">
+
+  <tr>
+    <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_13[0])</script></font></th>
+    <th> 
+
+    <input name="c7" type="radio" id="g13" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x4].two)</script></font>
+    <input name="c7" type="radio" id="g14" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x4].four)</script></font>
+   
+    </th>
+  </tr>
+
+
+  <tr>
+   <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_13[1])</script></font></th>
+    <th> 
+   
+    <input name="c8" type="radio" id="g15" style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x4].two)</script></font>
+    <input name="c8" type="radio" id="g16" style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x4].four)</script></font>
+    
+    </th>
+  </tr>
+
+</table>
+5.
+
+<table style="width:80%">
+
+  <tr>
+    <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_16[0])</script></font></th>
+    <th> 
+
+    <input name="c9" type="radio" id="g17" style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x5].two)</script></font>
+    <input name="c9" type="radio" id="g18" style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x5].four)</script></font>
+   
+    </th>
+  </tr>
+
+
+  <tr>
+   <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_16[1])</script></font></th>
+    <th> 
+ 
+    <input name="c10" type="radio" id="g19" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x5].two)</script></font>
+    <input name="c10" type="radio" id="g20" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x5].four)</script></font>
+   
+    </th>
+  </tr>
+
+</table>
+<!-- <div  style="top:850px;left:1120px;position:absolute;"><button  type="submit" name="" value="hi">確認</div> -->
+
+	<input type="hidden" id="anw1" name="ar1"/>				
+	<input type="hidden" id="anw2" name="ar2"/>
+	<input type="hidden" id="anw3" name="ar3"/>
+	<input type="hidden" id="anw4" name="ar4"/>
+	<input type="hidden" id="anw5" name="ar5"/>
+  <input type="hidden" id="anw6" name="ar6"/>       
+  <input type="hidden" id="anw7" name="ar7"/>
+  <input type="hidden" id="anw8" name="ar8"/>
+  <input type="hidden" id="anw9" name="ar9"/>
+  <input type="hidden" id="anw10" name="ar10"/> 	
+
+
+
+	
+		   <!--  <div style="top:1850px;left:950px;position:absolute;"  ><button><a href="#P2">上一題</a></button></div>
+        <div style="top:1850px;left:1050px;position:absolute;" ><button><a href="#P4">下一題</a></button></div> -->
+	 <div align="center">
+      <a href="#P2" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a>
+      <a href="#P4" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>
+    </div>
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div data-role="page" id="P4">
+
+	<div data-role="header">
+		<h1>Page4</h1>
+      <p  style="font-size:300%;  text-align:center;">請選出正確的注音</p>
+	</div><!-- /header 44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444-->
+
+
+  <table style="width:80%">
+    <script type="text/javascript">
+       var iii=Math.floor((Math.random() * 39845) + 0);
+       x=iii;   
+      for(var i=0;i<1;i++){
+             var iiii=Math.floor((Math.random() * 4) + 0);
+             xx=iiii;
+       var y=arr[x][xx][1];
+       if(y==null){
+        i--;    
+        }  
+          }    
+
+var l=y.length;
+l--;
+var f;
+if(rand[0]==arr[x][xx][1].charAt(l)){
+f=rand[0];
+}
+else if(rand[1]==arr[x][xx][1].charAt(l)){
+f=rand[1];
+}
+else if(rand[2]==arr[x][xx][1].charAt(l)){
+f=rand[2];
+}
+else {
+f=rand[3];
+}
+
+
+
+
+for(var xxx=0;xxx<1;xxx++){
+  var x4=Math.floor((Math.random() * 4) + 0);
+if(rand[x4]==f){
+xxx--;
+}
+else{
+var ff=rand[x4];
+}
+}
+if(arr[x][xx][1].indexOf("ㄕ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄕ","ㄙ"));
+}
+else if(arr[x][xx][1].indexOf("ㄙ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄙ","ㄕ"));
+}
+else if(arr[x][xx][1].indexOf("ㄥ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄥ","ㄣ"));
+}
+else if(arr[x][xx][1].indexOf("ㄣ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄣ","ㄥ"));
+}
+else if(arr[x][xx][1].indexOf("ㄌ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄌ","ㄖ"));
+}
+else if(arr[x][xx][1].indexOf("ㄖ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄖ","ㄌ"));
+}
+else if(arr[x][xx][1].indexOf("ㄟ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄟ","ㄝ"));
+}
+else if(arr[x][xx][1].indexOf("ㄝ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄝ","ㄟ"));
+}
+else if(arr[x][xx][1].indexOf("ㄜ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄜ","ㄦ"));
+}
+else if(arr[x][xx][1].indexOf("ㄦ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄦ","ㄜ"));
+}
+else if(arr[x][xx][1].indexOf("ㄗ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄗ","ㄓ"));
+}
+else if(arr[x][xx][1].indexOf("ㄓ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄓ","ㄗ"));
+}
+else if(arr[x][xx][1].indexOf("ㄔ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄔ","ㄘ"));
+}
+else if(arr[x][xx][1].indexOf("ㄘ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄘ","ㄔ"));
+}
+else{
+  if(f==rand[3]){
+l++;
+var op1=(arr[x][xx][1]);  
+for(var t=0;t<1;t++){
+  var ss=Math.floor((Math.random() * 4) + 0);
+  if(rand[ss]==rand[3])
+    t--;
+  else
+    var sss=rand[ss];
+}
+var op2=(arr[x][xx][1].slice(0,l)+sss);
+  }
+  else{
+var op1=(arr[x][xx][1]);  
+var op2=(arr[x][xx][1].slice(0,l)+ff);
+}  
+}
+
+var rand2 =new Array(1);
+var x3=Math.floor((Math.random() * 2) + 0);
+rand2[x3]=op1;
+if(x3==0){
+  x3++;
+  rand2[x3]=op2;
+}
+else
+  x3--;
+rand2[x3]=op2;
+var tit1=rand2[0];
+var tit2=rand2[1];
+    </script> 
+    <tr>  
+  <th  Width="1000"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){               
+                if(i==xx){
+
+    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
+    //              var q=arr[x][i][1].indexOf("ㄕ");
+        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
+        // }
+
+        // else{
+        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
+        // }
+        }
+        else{
+          if(arr[x][i][0]==null){
+          }
+          else
+        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
+            } 
+      }</script></font></th>  
+
+   
+      
+<script type="text/javascript">
+  document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+</script>
+  <th>    
+
+    <input name="cc1" id="gg11" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="cc1" id="gg2" type="radio"   style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>   
+
+    </th> 
+      </tr>
+    <script type="text/javascript">document.write("<br>");</script>
+
+
+<script type="text/javascript">
+      for(var uk=0;uk<1;uk++){
+    var xuu=Math.floor((Math.random() * 39845) + 0);
+    if(xuu==iii){
+      uk--
+    } 
+    else{
+      x=xuu;
+    }
+  }   
+      for(var i=0;i<1;i++){
+             var yy=Math.floor((Math.random() * 4) + 0);
+             xx=yy;
+       var y=arr[x][xx][1];
+       if(y==null){
+        i--;    
+        }  
+      }    
+var l=y.length;
+l--;
+var f;
+if(rand[0]==arr[x][xx][1].charAt(l)){
+f=rand[0];
+}
+else if(rand[1]==arr[x][xx][1].charAt(l)){
+f=rand[1];
+}
+else if(rand[2]==arr[x][xx][1].charAt(l)){
+f=rand[2];
+}
+else {
+f=rand[3];
+}
+
+
+
+
+for(var xxx=0;xxx<1;xxx++){
+  var x4=Math.floor((Math.random() * 4) + 0);
+if(rand[x4]==f){
+xxx--;
+}
+else{
+var ff=rand[x4];
+}
+}
+if(arr[x][xx][1].indexOf("ㄕ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄕ","ㄙ"));
+}
+else if(arr[x][xx][1].indexOf("ㄙ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄙ","ㄕ"));
+}
+else if(arr[x][xx][1].indexOf("ㄥ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄥ","ㄣ"));
+}
+else if(arr[x][xx][1].indexOf("ㄣ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄣ","ㄥ"));
+}
+else if(arr[x][xx][1].indexOf("ㄌ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄌ","ㄖ"));
+}
+else if(arr[x][xx][1].indexOf("ㄖ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄖ","ㄌ"));
+}
+else if(arr[x][xx][1].indexOf("ㄟ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄟ","ㄝ"));
+}
+else if(arr[x][xx][1].indexOf("ㄝ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄝ","ㄟ"));
+}
+else if(arr[x][xx][1].indexOf("ㄜ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄜ","ㄦ"));
+}
+else if(arr[x][xx][1].indexOf("ㄦ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄦ","ㄜ"));
+}
+else if(arr[x][xx][1].indexOf("ㄗ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄗ","ㄓ"));
+}
+else if(arr[x][xx][1].indexOf("ㄓ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄓ","ㄗ"));
+}
+else if(arr[x][xx][1].indexOf("ㄔ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄔ","ㄘ"));
+}
+else if(arr[x][xx][1].indexOf("ㄘ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄘ","ㄔ"));
+}
+else{
+  if(f==rand[3]){
+l++;
+var op1=(arr[x][xx][1]);  
+for(var t=0;t<1;t++){
+  var ss=Math.floor((Math.random() * 4) + 0);
+  if(rand[ss]==rand[3])
+    t--;
+  else
+    var sss=rand[ss];
+}
+var op2=(arr[x][xx][1].slice(0,l)+sss);
+  }
+  else{
+var op1=(arr[x][xx][1]);  
+var op2=(arr[x][xx][1].slice(0,l)+ff);
+}  
+}
+
+var rand2 =new Array(1);
+var x3=Math.floor((Math.random() * 2) + 0);
+rand2[x3]=op1;
+if(x3==0){
+  x3++;
+  rand2[x3]=op2;
+}
+else
+  x3--;
+rand2[x3]=op2;
+var tit3=rand2[0];
+var tit4=rand2[1];
+    </script>   
+    <tr>
+  <th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+               
+                if(i==xx){
+
+    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
+    //              var q=arr[x][i][1].indexOf("ㄕ");
+        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
+        // }
+
+        // else{
+        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
+        // }
+        }
+
+        else{
+          if(arr[x][i][0]==null){
+          }
+          else
+        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
+            } 
+      }</script></font></th>  
+    
+<th>  
+    <input name="cc2" id="gg3" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="cc2" id="gg4" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </th> 
+    </tr>
+    <script type="text/javascript">document.write("<br>");</script>
+
+<script type="text/javascript">
+  for(var u=0;u<1;u++){
+    var xu=Math.floor((Math.random() * 39845) + 0);
+    if(xu==xuu){
+      u--;
+    } 
+    else if(xu==iii){
+       u--;
+    }
+    else{
+      x=xu;
+    }
+  }
+          
+      for(var i=0;i<1;i++){
+             var gg=Math.floor((Math.random() * 4) + 0);
+             xx=gg;
+       var y=arr[x][xx][1];
+       if(y==null){
+        i--;    
+        }  
+      }    
+var l=y.length;
+l--;
+var f;
+if(rand[0]==arr[x][xx][1].charAt(l)){
+f=rand[0];
+}
+else if(rand[1]==arr[x][xx][1].charAt(l)){
+f=rand[1];
+}
+else if(rand[2]==arr[x][xx][1].charAt(l)){
+f=rand[2];
+}
+else {
+f=rand[3];
+}
+
+
+
+
+for(var xxx=0;xxx<1;xxx++){
+  var x4=Math.floor((Math.random() * 4) + 0);
+if(rand[x4]==f){
+xxx--;
+}
+else{
+var ff=rand[x4];
+}
+}
+if(arr[x][xx][1].indexOf("ㄕ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄕ","ㄙ"));
+}
+else if(arr[x][xx][1].indexOf("ㄙ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄙ","ㄕ"));
+}
+else if(arr[x][xx][1].indexOf("ㄥ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄥ","ㄣ"));
+}
+else if(arr[x][xx][1].indexOf("ㄣ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄣ","ㄥ"));
+}
+else if(arr[x][xx][1].indexOf("ㄌ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄌ","ㄖ"));
+}
+else if(arr[x][xx][1].indexOf("ㄖ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄖ","ㄌ"));
+}
+else if(arr[x][xx][1].indexOf("ㄟ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄟ","ㄝ"));
+}
+else if(arr[x][xx][1].indexOf("ㄝ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄝ","ㄟ"));
+}
+else if(arr[x][xx][1].indexOf("ㄜ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄜ","ㄦ"));
+}
+else if(arr[x][xx][1].indexOf("ㄦ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄦ","ㄜ"));
+}
+else if(arr[x][xx][1].indexOf("ㄗ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄗ","ㄓ"));
+}
+else if(arr[x][xx][1].indexOf("ㄓ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄓ","ㄗ"));
+}
+else if(arr[x][xx][1].indexOf("ㄔ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄔ","ㄘ"));
+}
+else if(arr[x][xx][1].indexOf("ㄘ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄘ","ㄔ"));
+}
+else if(arr[x][xx][1].indexOf("ㄍ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄍ","ㄎ"));
+}
+else if(arr[x][xx][1].indexOf("ㄎ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄎ","ㄍ"));
+}
+else{
+  if(f==rand[3]){
+l++;
+var op1=(arr[x][xx][1]);  
+for(var t=0;t<1;t++){
+  var ss=Math.floor((Math.random() * 4) + 0);
+  if(rand[ss]==rand[3])
+    t--;
+  else
+    var sss=rand[ss];
+}
+var op2=(arr[x][xx][1].slice(0,l)+sss);
+  }
+  else{
+var op1=(arr[x][xx][1]);  
+var op2=(arr[x][xx][1].slice(0,l)+ff);
+}  
+}
+
+var rand2 =new Array(1);
+var x3=Math.floor((Math.random() * 2) + 0);
+rand2[x3]=op1;
+if(x3==0){
+  x3++;
+  rand2[x3]=op2;
+}
+else
+  x3--;
+rand2[x3]=op2;
+var tit5=rand2[0];
+var tit6=rand2[1];
+    </script> 
+    <tr>
+  <th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+               
+                if(i==xx){
+
+    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
+    //              var q=arr[x][i][1].indexOf("ㄕ");
+        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
+        // }
+
+        // else{
+        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
+        // }
+        }
+
+        else{
+          if(arr[x][i][0]==null){
+          }
+          else
+        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
+            } 
+      }</script></font></th>  
+
+        
+
+<script type="text/javascript">
+  document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+</script>
+<th> 
+    <input name="cc3" id="gg5" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="cc3" id="gg6" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </th> 
+        </tr>
+    <script type="text/javascript">document.write("<br>");</script>
+
+
+
+<script type="text/javascript">
+  for(var u=0;u<1;u++){
+    var xo=Math.floor((Math.random() * 39845) + 0);
+    if(xo==xuu){
+      u--;
+    } 
+    else if(xo==iii){
+       u--;
+    }
+    else if(xo==xu){
+       u--;
+    }
+    else{
+      x=xo;
+    }
+  }
+          
+      for(var i=0;i<1;i++){
+             var gk=Math.floor((Math.random() * 4) + 0);
+             xx=gk;
+       var y=arr[x][xx][1];
+       if(y==null){
+        i--;    
+        }  
+      }    
+var l=y.length;
+l--;
+var f;
+if(rand[0]==arr[x][xx][1].charAt(l)){
+f=rand[0];
+}
+else if(rand[1]==arr[x][xx][1].charAt(l)){
+f=rand[1];
+}
+else if(rand[2]==arr[x][xx][1].charAt(l)){
+f=rand[2];
+}
+else {
+f=rand[3];
+}
+
+
+
+
+for(var xxx=0;xxx<1;xxx++){
+  var x4=Math.floor((Math.random() * 4) + 0);
+if(rand[x4]==f){
+xxx--;
+}
+else{
+var ff=rand[x4];
+}
+}
+if(arr[x][xx][1].indexOf("ㄕ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄕ","ㄙ"));
+}
+else if(arr[x][xx][1].indexOf("ㄙ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄙ","ㄕ"));
+}
+else if(arr[x][xx][1].indexOf("ㄥ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄥ","ㄣ"));
+}
+else if(arr[x][xx][1].indexOf("ㄣ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄣ","ㄥ"));
+}
+else if(arr[x][xx][1].indexOf("ㄌ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄌ","ㄖ"));
+}
+else if(arr[x][xx][1].indexOf("ㄖ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄖ","ㄌ"));
+}
+else if(arr[x][xx][1].indexOf("ㄟ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄟ","ㄝ"));
+}
+else if(arr[x][xx][1].indexOf("ㄝ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄝ","ㄟ"));
+}
+else if(arr[x][xx][1].indexOf("ㄜ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄜ","ㄦ"));
+}
+else if(arr[x][xx][1].indexOf("ㄦ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄦ","ㄜ"));
+}
+else if(arr[x][xx][1].indexOf("ㄗ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄗ","ㄓ"));
+}
+else if(arr[x][xx][1].indexOf("ㄓ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄓ","ㄗ"));
+}
+else if(arr[x][xx][1].indexOf("ㄔ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄔ","ㄘ"));
+}
+else if(arr[x][xx][1].indexOf("ㄘ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄘ","ㄔ"));
+}
+else if(arr[x][xx][1].indexOf("ㄍ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄍ","ㄎ"));
+}
+else if(arr[x][xx][1].indexOf("ㄎ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄎ","ㄍ"));
+}
+else{
+  if(f==rand[3]){
+l++;
+var op1=(arr[x][xx][1]);  
+for(var t=0;t<1;t++){
+  var ss=Math.floor((Math.random() * 4) + 0);
+  if(rand[ss]==rand[3])
+    t--;
+  else
+    var sss=rand[ss];
+}
+var op2=(arr[x][xx][1].slice(0,l)+sss);
+  }
+  else{
+var op1=(arr[x][xx][1]);  
+var op2=(arr[x][xx][1].slice(0,l)+ff);
+}  
+}
+
+var rand2 =new Array(1);
+var x3=Math.floor((Math.random() * 2) + 0);
+rand2[x3]=op1;
+if(x3==0){
+  x3++;
+  rand2[x3]=op2;
+}
+else
+  x3--;
+rand2[x3]=op2;
+var tit7=rand2[0];
+var tit8=rand2[1];
+    </script> 
+    <tr>
+  <th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+               
+                if(i==xx){
+
+    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
+    //              var q=arr[x][i][1].indexOf("ㄕ");
+        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
+        // }
+
+        // else{
+        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
+        // }
+        }
+
+        else{
+          if(arr[x][i][0]==null){
+          }
+          else
+        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
+            } 
+      }</script></font></th>  
+   
+       
+
+<script type="text/javascript">
+  document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+</script>
+    <th> 
+    <input name="cc4" id="gg7" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="cc4" id="gg8" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </th> 
+     </tr>
+    <script type="text/javascript">document.write("<br>");</script>
+
+
+
+
+
+
+<script type="text/javascript">
+  for(var u=0;u<1;u++){
+    var ku=Math.floor((Math.random() * 39845) + 0);
+    if(ku==xuu){
+      u--;
+    } 
+    else if(ku==iii){
+       u--;
+    }
+    else if(ku==xu){
+       u--;
+    }else if(ku==xo){
+       u--;
+    }
+    else{
+      x=ku;
+    }
+  }
+          
+      for(var i=0;i<1;i++){
+             var ap=Math.floor((Math.random() * 4) + 0);
+             xx=ap;
+       var y=arr[x][xx][1];
+       if(y==null){
+        i--;    
+        }  
+      }    
+var l=y.length;
+l--;
+var f;
+if(rand[0]==arr[x][xx][1].charAt(l)){
+f=rand[0];
+}
+else if(rand[1]==arr[x][xx][1].charAt(l)){
+f=rand[1];
+}
+else if(rand[2]==arr[x][xx][1].charAt(l)){
+f=rand[2];
+}
+else {
+f=rand[3];
+}
+
+
+
+
+for(var xxx=0;xxx<1;xxx++){
+  var x4=Math.floor((Math.random() * 4) + 0);
+if(rand[x4]==f){
+xxx--;
+}
+else{
+var ff=rand[x4];
+}
+}
+if(arr[x][xx][1].indexOf("ㄕ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄕ","ㄙ"));
+}
+else if(arr[x][xx][1].indexOf("ㄙ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄙ","ㄕ"));
+}
+else if(arr[x][xx][1].indexOf("ㄥ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄥ","ㄣ"));
+}
+else if(arr[x][xx][1].indexOf("ㄣ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄣ","ㄥ"));
+}
+else if(arr[x][xx][1].indexOf("ㄌ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄌ","ㄖ"));
+}
+else if(arr[x][xx][1].indexOf("ㄖ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄖ","ㄌ"));
+}
+else if(arr[x][xx][1].indexOf("ㄟ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄟ","ㄝ"));
+}
+else if(arr[x][xx][1].indexOf("ㄝ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄝ","ㄟ"));
+}
+else if(arr[x][xx][1].indexOf("ㄜ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄜ","ㄦ"));
+}
+else if(arr[x][xx][1].indexOf("ㄦ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄦ","ㄜ"));
+}
+else if(arr[x][xx][1].indexOf("ㄗ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄗ","ㄓ"));
+}
+else if(arr[x][xx][1].indexOf("ㄓ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄓ","ㄗ"));
+}
+else if(arr[x][xx][1].indexOf("ㄔ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄔ","ㄘ"));
+}
+else if(arr[x][xx][1].indexOf("ㄘ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄘ","ㄔ"));
+}
+else if(arr[x][xx][1].indexOf("ㄍ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄍ","ㄎ"));
+}
+else if(arr[x][xx][1].indexOf("ㄎ")!=-1){
+var  op1=(arr[x][xx][1]);   
+var  op2=(arr[x][xx][1].replace("ㄎ","ㄍ"));
+}
+else{
+  if(f==rand[3]){
+l++;
+var op1=(arr[x][xx][1]);  
+for(var t=0;t<1;t++){
+  var ss=Math.floor((Math.random() * 4) + 0);
+  if(rand[ss]==rand[3])
+    t--;
+  else
+    var sss=rand[ss];
+}
+var op2=(arr[x][xx][1].slice(0,l)+sss);
+  }
+  else{
+var op1=(arr[x][xx][1]);  
+var op2=(arr[x][xx][1].slice(0,l)+ff);
+}  
+}
+
+var rand2 =new Array(1);
+var x3=Math.floor((Math.random() * 2) + 0);
+rand2[x3]=op1;
+if(x3==0){
+  x3++;
+  rand2[x3]=op2;
+}
+else
+  x3--;
+rand2[x3]=op2;
+var tit9=rand2[0];
+var tit10=rand2[1];
+    </script> 
+    <tr>
+  <th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+               
+                if(i==xx){
+
+    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
+    //              var q=arr[x][i][1].indexOf("ㄕ");
+        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
+        // }
+
+        // else{
+        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
+        // }
+        }
+
+        else{
+          if(arr[x][i][0]==null){
+          }
+          else
+        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
+            } 
+      }</script></font></th>  
+  
+   
+<script type="text/javascript">
+  document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+</script>
+      <th>           
+    <input name="cc5" id="gg9" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="cc5" id="gg10" type="radio" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </th>
+      </tr> 
+    <script type="text/javascript">document.write("<br>");</script>
+
+
+
+
+
+
+
+
+
+   <!-- 4444 答案  -->
+  <input type="hidden" id="anw1x" name="ar1x"/>       
+  <input type="hidden" id="anw2x" name="ar2x"/>
+  <input type="hidden" id="anw3x" name="ar3x"/>
+  <input type="hidden" id="anw4x" name="ar4x"/>
+  <input type="hidden" id="anw5x" name="ar5x"/>   
+  </table>
+
+<!--   <div  style="top:850px;left:1120px;position:absolute;"><button  type="submit" name="" value="hi">確認</div>  -->
 </form>
-<div  style="top:800px;left:950px;position:absolute;">
-            <a href="http://hello.noip.me/chinese2.html" class="ui-btn" style="width: 5%";  display: inline-block;  data-transition="slide">下一題</a>
-           
-           
-        </div>
+<script>
+var k1=arr[iii][iiii][1];
+var k2=arr[xuu][yy][1];
+var k3=arr[xu][gg][1];
+var k4=arr[xo][gk][1];
+var k5=arr[ku][ap][1];
+  window.onload = function(){ 
+var aa8= document.getElementById("gg11"); 
+aa8.value=tit1;
+var bb8= document.getElementById("gg2"); 
+bb8.value=tit2;
+var cc8= document.getElementById("gg3"); 
+cc8.value=tit3;
+var dd8= document.getElementById("gg4"); 
+dd8.value=tit4;
+var ee8= document.getElementById("gg5"); 
+ee8.value=tit5;
+var ff8= document.getElementById("gg6"); 
+ff8.value=tit6;
+var gg8= document.getElementById("gg7"); 
+gg8.value=tit7;
+var hh8= document.getElementById("gg8"); 
+hh8.value=tit8;
+var ii8= document.getElementById("gg9"); 
+ii8.value=tit9;
+var jj8= document.getElementById("gg10"); 
+jj8.value=tit10;
+
+
+var aa1=document.getElementById("anw1x");
+aa1.value=k1;
+var aa2=document.getElementById("anw2x");
+aa2.value=k2;
+var aa3=document.getElementById("anw3x");
+aa3.value=k3;
+var aa4=document.getElementById("anw4x");
+aa4.value=k4;
+var aa5=document.getElementById("anw5x");
+aa5.value=k5;
+  }
+</script>
+
+	<div role="main" class="ui-content">		
+	</div><!-- /content -->
+ <div align="center">
+      <a href="#P3" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a>
+      <a href="#P5" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>
+    </div>
+
+  <!--   <div data-role="footer" align="center">
+    <button><a href="#P3">上一題</a></button>
+    <button><a href="#P5">下一題</a></button>
+   
+  </div><!-- /footer --> -->
+</div><!-- /page -->
+
+
+<!-- 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 -->
+<div data-role="page" id="P5">
+
+  <div data-role="header">
+    <h1>Page5</h1>
+  </div><!-- /header -->
+
+  <div role="main" class="ui-content">
+    
+    <p><a href="#P1">Back to Page1</a></p>
+  </div><!-- /content -->
+
+
+
+
+
+<div align="center">
+    <div class="container" align="center">
+      <div id="problems" class="problems disable-select">
+      </div>
+      <div id="check-answer-button" class="check-answer-button disable-select">
+        Check
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let BreakException = {};
+
+    function add_listener(element, event_name, handler) {
+      if (element.addEventListener) {
+        element.addEventListener(event_name, handler, false);
+      } else if (element.attachEvent) {
+        element.attachEvent('on' + event_name, handler);
+      } else {
+        element['on' + event_name] = handler;
+      }
+    }
+
+    function remove_listener(element, event_name, handler) {
+      if (element.addEventListener) {
+        element.removeEventListener(event_name, handler, false);
+      } else if (element.detachEvent) {
+        element.detachEvent('on' + event_name, handler);
+      } else {
+        element['on' + event_name] = null;
+      }
+    }
+
+    function random_int(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+    (function (win) {
+      function DrawClock(options) {
+        this.canvas = options.el;
+        this.hour = options.hour;
+        this.minute = options.minute;
+        this.ctx = this.canvas.getContext('2d'); //方法返回一個用於在畫布上繪圖的環境
+        this.width = this.ctx.canvas.width;
+        this.height = this.ctx.canvas.height;
+        this.r = this.width / 2;
+        this.rem = this.width / 200;
+        this.digits = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2];
+
+        this.init();
+      }
+
+      DrawClock.prototype = {
+        init: function () {
+          var ctx = this.ctx;
+          ctx.clearRect(0, 0, this.width, this.height); //在給定的矩形內清除指定的畫素
+
+          this.drawBackground();
+          this.drawHour();
+          this.drawMinute();
+          this.drawDot();
+          ctx.restore();
+        },
+        drawBackground: function () {
+          var ctx = this.ctx;
+          var self = this;
+          ctx.save();
+          ctx.translate(this.r, this.r); //重新對映畫布上的 (0,0) 位置
+          ctx.beginPath();
+          ctx.lineWidth = 8 * this.rem;
+          ctx.arc(0, 0, this.r - ctx.lineWidth / 2, 0, 2 * Math.PI, false); //建立弧/曲線（用於建立圓形或部分圓）
+          ctx.fillStyle = "#fff";
+          ctx.fill();
+          ctx.stroke();
+          ctx.font = 16 * this.rem + "px Arial"; //設定或返回文字內容的當前字型屬性
+          ctx.textAlign = "center"; //設定或返回文字內容的當前對齊方式
+          ctx.textBaseline = "middle"; //設定或返回在繪製文字時使用的當前文字基線
+          ctx.fillStyle = "#000";
+          this.digits.forEach(function (number, i) {
+            var rad = 2 * Math.PI / 12 * i;
+            var x = Math.cos(rad) * (self.r - 33 * self.rem);
+            var y = Math.sin(rad) * (self.r - 33 * self.rem);
+            ctx.fillText(number, x, y); //在畫布上繪製"被填充的"文字
+          });
+
+          //分鐘的刻度，每分鐘轉6deg
+          for (var i = 0; i < 60; i++) {
+            ctx.save(); //儲存當前環境的狀態
+            ctx.rotate(6 * i * Math.PI / 180); //旋轉當前繪圖
+            ctx.beginPath(); //起始一條路徑，或重置當前路徑
+            ctx.moveTo(0, -82 * this.rem); //把路徑移動到畫布中的指定點，不建立線條
+            ctx.lineTo(0, -87 * this.rem); //新增一個新點，然後在畫布中建立從該點到最後指定點的線條
+            ctx.closePath(); //建立從當前點回到起始點的路徑
+            ctx.strokeStyle = '#000'; //設定或返回用於筆觸的顏色、漸變或模式
+            ctx.lineWidth = 1 * this.rem; //設定或返回當前的線條寬度
+            ctx.stroke(); //繪製已定義的路徑
+            ctx.restore(); //返回之前儲存過的路徑狀態和屬性
+          }
+          //小時的刻度，每小時轉30deg
+          for (var i = 0; i < 12; i++) {
+            ctx.save();
+            ctx.rotate(30 * i * Math.PI / 180);
+            ctx.beginPath();
+            ctx.moveTo(0, -79 * this.rem);
+            ctx.lineTo(0, -87 * this.rem);
+            ctx.closePath();
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 2 * this.rem;
+            ctx.stroke();
+            ctx.restore();
+          }
+        },
+        drawHour: function () {
+          var ctx = this.ctx;
+          ctx.save();
+          ctx.beginPath();
+          var hRad = 2 * Math.PI / 12 * this.hour;
+          var mRad = 2 * Math.PI / 12 / 60 * this.minute;
+          ctx.rotate(hRad + mRad);
+          ctx.lineWidth = 6 * this.rem;
+          ctx.lineCap = "round"; //設定或返回線條的結束端點樣式
+          ctx.moveTo(0, 10 * this.rem);
+          ctx.lineTo(0, -this.r / 2);
+          ctx.stroke();
+          ctx.restore();
+        },
+        drawMinute: function () {
+          var ctx = this.ctx;
+          ctx.save();
+          ctx.beginPath();
+          var rad = 2 * Math.PI / 60 * this.minute;
+          ctx.rotate(rad);
+          ctx.lineWidth = 3 * this.rem;
+          ctx.lineCap = "round";
+          ctx.moveTo(0, 10 * this.rem);
+          ctx.lineTo(0, -this.r + 26 * this.rem);
+          ctx.stroke();
+          ctx.restore();
+        },
+        drawDot: function (minute) {
+          var ctx = this.ctx;
+          ctx.beginPath();
+          ctx.fillStyle = "#fff";
+          ctx.arc(0, 0, 3 * this.rem, 0, 2 * Math.PI, false);
+          ctx.fill();
+        }
+      };
+
+      win.DrawClock = DrawClock;
+    })(window);
+
+    (function (win) {
+      function Problem(options) {
+        this.problem_element = document.createElement('div');
+        this.clock_canvas = document.createElement('span');
+        this.dot_clock = document.createElement('span');
+        this.dot_answer = document.createElement('span');
+        this.answer = document.createElement('span');
+        this.q = document.createElement('span');
+        this.group_left = document.createElement('div');
+        this.group_right = document.createElement('div');
+
+        this.id = options.id;
+        this.left_onclick = options.left_onclick;
+        this.right_onclick = options.right_onclick;
+        this.clock_hour = options.clock_hour;
+        this.clock_minute = options.clock_minute;
+        this.answer_hour = options.answer_hour;
+        this.answer_minute = options.answer_minute;
+        this.get_dragging_info = options.get_dragging_info;
+        this.set_dragging_info = options.set_dragging_info;
+
+        this.group_left.classList.add('problem-group');
+        this.group_right.classList.add('problem-left');
+        this.group_left.appendChild(this.clock_canvas);
+        this.group_left.appendChild(this.dot_clock);
+        this.group_left.appendChild(this.q);
+        this.group_right.appendChild(this.dot_answer);
+        this.group_right.appendChild(this.answer);
+
+        this.problem_element.classList.add('problem');
+        this.problem_element.appendChild(this.group_left);
+        this.problem_element.appendChild(this.group_right);
+
+        this.clock_canvas.classList.add('clock');
+        this.clock_canvas.classList.add('time-text');
+        this.clock_canvas.setAttribute('width', '200px');
+        this.clock_canvas.setAttribute('height', '200px');
+
+        this.dot_clock.classList.add('dot');
+        this.dot_answer.classList.add('dot');
+        this.answer.classList.add('time-text');
+        
+        this.updateClock();
+        this.updateAnswer();
+      }
+      var c=0;
+      var t=0;
+      var qu =new Array(4);
+      var an =new Array(4);
+        for(var i=0;i<=3;i++){
+        var x=Math.floor((Math.random() * 39845) + 0);
+        if(an.indexOf(x)==-1)
+          an[i]=x;
+        else 
+          i--;
+        }
+        
+        for(var y=0;y<=3;y++){
+        var x=Math.floor((Math.random() * 4) + 0);
+        if(qu[x]==null)
+          qu[x]=an[y];
+       else 
+        y--;
+        }
+        
+
+      Problem.prototype = {
+        updateClock: function () {
+          // new DrawClock({
+          //   el: this.clock_canvas,
+          //   hour: this.clock_hour,
+          //   minute: this.clock_minute
+          // });
+                   
+          this.clock_canvas.innerHTML = arr[qu[c]][0][0]+arr[qu[c]][1][0]+arr[qu[c]][2][0]+arr[qu[c]][3][0];       
+          c++;
+        },
+        updateAnswer: function () {
+          this.answer.innerHTML =  arr[an[t]][0][1]+arr[an[t]][1][1]+arr[an[t]][2][1]+arr[an[t]][3][1];
+          t++;
+        },
+        set left_onclick(handler) {
+          let problem_this = this;
+          add_listener(this.dot_clock, 'mousedown', function(event) {
+            event.stopPropagation();
+            problem_this.set_dragging_info(true, true);
+            handler(problem_this.id);
+          });
+          add_listener(this.dot_clock, 'mouseup', function(event) {
+            event.stopPropagation();
+            let dragging_info = problem_this.get_dragging_info();
+            if (dragging_info.is_dragging &&
+                !dragging_info.is_left) {
+              problem_this.set_dragging_info(false);
+              handler(problem_this.id);
+            }
+          });
+        },
+        set right_onclick(handler) {
+          let problem_this = this;
+          add_listener(this.dot_answer, 'mousedown', function(event) {
+            event.stopPropagation();
+            problem_this.set_dragging_info(true, false);
+            handler(problem_this.id);
+          });
+          add_listener(this.dot_answer, 'mouseup', function(event) {
+            event.stopPropagation();
+            let dragging_info = problem_this.get_dragging_info();
+            if (dragging_info.is_dragging &&
+                dragging_info.is_left) {
+              problem_this.set_dragging_info(false);
+              handler(problem_this.id);
+            }
+          });
+        },
+        // set clock_hour(hour) {
+        //   this.ch = hour;
+        //   this.updateClock();
+        // },
+        // get clock_hour() {
+        //   return this.ch;
+        // },
+        // set clock_minute(minute) {
+        //   this.cm = minute;
+        //   this.updateClock();
+        // },
+        // get clock_minute() {
+        //   return this.cm;
+        // },
+        // set answer_hour(hour) {
+        //   this.ah = hour;
+        //   this.updateAnswer();
+        // },
+        // get answer_hour() {
+        //   return this.ah;
+        // },
+        // set answer_minute(minute) {
+        //   this.am = minute;
+        //   this.updateAnswer();
+        // },
+        // get answer_minute() {
+        //   return this.am;
+        // },
+        // set dot_clock_color(color) {
+        //   this.dcc = color;
+        //   this.dot_clock.style.background = color;
+        // },
+        // get dot_clock_color() {
+        //   return this.dcc;
+        // },
+        // dot_clock_reset_color: function() {
+        //   this.dot_clock_color = "";
+        // },
+        // set dot_answer_color(color) {
+        //   this.dac = color;
+        //   this.dot_answer.style.background = color;
+        // },
+        // get dot_answer_color() {
+        //   return this.dac;
+        // },
+        // dot_answer_reset_color: function() {
+        //   this.dot_answer_color = "";
+        // }
+      };
+      win.Problem = Problem;
+    })(window);
+    
+    (function (win) {
+      function Line(options) {
+        this.parent = options.parent;
+        this.element = document.createElement('span');
+        this.element.classList.add('line');
+        this.height = this.element.style.height;
+      }
+      Line.prototype = {
+        set start_x(x) {
+          this.sx = x;
+          this.update();
+        },
+        set start_y(y) {
+          this.sy = y;
+          this.update();
+        },
+        set end_x(x) {
+          this.ex = x;
+          this.update();
+        },
+        set end_y(y) {
+          this.ey = y;
+          this.update();
+        },
+        set color(color) {
+          this.c = color;
+          this.element.style.background = color;
+        },
+        get color() {
+          return this.c;
+        },
+        reset_color: function() {
+          this.color = "";
+        },
+        end_xy: function(x, y) {
+          this.ex = x;
+          this.ey = y;
+          this.update();
+        },
+        on_element: function(element) {
+          this.connect_elements(element, element);
+        },
+        connect_elements: function(e1, e2) {
+          this.e1 = e1;
+          this.e2 = e2;
+          this.update_coordinate();
+        },
+        update_coordinate: function() {
+          if (this.is_displaying) {
+            if (this.e1 != undefined && this.e2 != undefined) {
+              let a = this.sy, b = this.sx, c = this.ey, d = this.ex;
+              this.sy = this.e1.offsetTop + this.e1.offsetHeight / 2;
+              this.sx = this.e1.offsetLeft + this.e1.offsetWidth / 2;
+              this.ey = this.e2.offsetTop + this.e2.offsetHeight / 2;
+              this.ex = this.e2.offsetLeft + this.e2.offsetWidth / 2;
+              if (a != this.sy || b != this.sx || c != this.ey || d != this.ex) {
+                this.update();
+              }
+            }
+          }
+        },
+        update: function() {
+          if (this.is_displaying) {
+            let opposite = this.ey - this.sy;
+            let adjacent = this.ex - this.sx;
+            let hypotenuse = Math.sqrt(opposite * opposite + adjacent * adjacent);
+            var angle = 180 / Math.PI * Math.acos(adjacent / hypotenuse);
+            if (opposite < 0) angle *= -1;
+            this.element.style.top = (this.sy + opposite / 2 -
+                                      this.element.offsetHeight / 2) + 'px';
+            this.element.style.left = (this.sx + adjacent / 2 -
+                                       hypotenuse / 2) + 'px';
+            this.element.style.width = hypotenuse + 'px';
+            this.element.style["-webkit-transform"] = 'rotate('+ angle +'deg)';
+            this.element.style["-moz-transform"] = 'rotate('+ angle +'deg)';
+            this.element.style["-ms-transform"] = 'rotate('+ angle +'deg)';
+            this.element.style["-o-transform"] = 'rotate('+ angle +'deg)';
+            this.element.style["-transform"] = 'rotate('+ angle +'deg)';
+          }
+        },
+        remove: function() {
+          this.is_displaying = false;
+          this.element.remove();
+        },
+        append_to_parent: function() {
+          this.is_displaying = true;
+          this.parent.appendChild(this.element);
+        },
+      };
+      win.Line = Line;
+    })(window);
+
+    (function() {
+      const color_list = new Array(
+        "#ff1744",
+        "#d500f9",
+        "#651fff",
+        "#2979ff",
+        "#00b0ff",
+        "#00e5ff",
+        "#1de9b6",
+        "#00e676",
+        "#76ff03",
+        "#c6ff00",
+        "#ffea00",
+        "#ffc400",
+        //"#ff9100",
+        "#ff3d00",
+      );
+      let colors_used = new Array();
+      let colors_unused = color_list.slice();
+      let num_of_problems = 4;
+      let questions = new Array();
+      let answers = new Array();
+      let user_answers_lr = new Array();
+      let user_answers_rl = new Array();
+      let problems_element = document.getElementById('problems');
+      let check_answer_button = document.getElementById('check-answer-button');
+      let displays = new Array();
+      let lines = new Array();
+      let line_on_mouse = new Line({parent: problems_element});
+
+      var clicked_left = undefined;
+      var clicked_right = undefined;
+      var current_color = undefined;
+
+      var dragging_info = {};
+
+      function get_dragging_info() {
+        return dragging_info;
+      }
+
+      function set_dragging_info(is_dragging, is_left) {
+        dragging_info = {
+          is_dragging: is_dragging,
+          is_left: is_left,
+        };
+      }
+
+      line_on_mouse.parent = problems_element;
+
+      function get_color() {
+        let index = random_int(colors_unused.length);
+        let color = colors_unused[index];
+        colors_unused.splice(index, 1);
+        colors_used.push(color);
+        return color;
+      }
+
+      function put_color(color) {
+        let index = colors_used.indexOf(color);
+        if (index > -1) {
+          colors_used.splice(index, 1);
+          colors_unused.push(color);
+        }
+      }
+
+      function set_current_color(color) {
+        current_color = color;
+        line_on_mouse.color = color;
+      }
+
+      function reset_current_color() {
+        current_color = undefined;
+        line_on_mouse.color = "";
+      }
+
+      function remove_line(left) {
+        let right = user_answers_lr[left];
+        user_answers_lr[left] = undefined;
+        user_answers_rl[right] = undefined;
+        put_color(lines[left].color);
+        lines[left].remove();
+        displays[left].dot_clock_reset_color();
+        displays[right].dot_answer_reset_color();
+      }
+
+      function link_dots(left, right) {
+        user_answers_lr[left] = right;
+        user_answers_rl[right] = left;
+        clicked_left = undefined;
+        clicked_right = undefined;
+        lines[left].append_to_parent();
+        lines[left].connect_elements(displays[left].dot_clock,
+                                     displays[right].dot_answer);
+        line_on_mouse.remove();
+        lines[left].color = current_color;
+        displays[left].dot_clock_color = current_color;
+        displays[right].dot_answer_color = current_color;
+        reset_current_color();
+      }
+
+      function cancel_linking_left(id) {
+        clicked_left = undefined;
+        line_on_mouse.remove();
+        put_color(current_color);
+        reset_current_color();
+        displays[id].dot_clock_reset_color();
+      }
+
+      function cancel_linking_right(id) {
+        clicked_right = undefined;
+        line_on_mouse.remove();
+        put_color(current_color);
+        reset_current_color();
+        displays[id].dot_answer_reset_color();
+      }
+
+      function left_onclick(id) {
+        if (user_answers_lr[id] != undefined) {
+          remove_line(id);
+          check_answer();
+        }
+        if (clicked_right != undefined) {
+          link_dots(id, clicked_right);
+          check_answer();
+        } else if (clicked_left == id) {
+          cancel_linking_left(id);
+          check_answer();
+        } else {
+          if (clicked_left != undefined) {
+            displays[clicked_left].dot_clock_reset_color();
+          }
+          clicked_left = id;
+          line_on_mouse.append_to_parent();
+          line_on_mouse.on_element(displays[id].dot_clock);
+          let color = get_color();
+          set_current_color(color);
+          displays[id].dot_clock_color = color;
+        }
+      }
+
+      function right_onclick(id) {
+        if ((left = user_answers_rl[id]) != undefined) {
+          remove_line(left);
+          check_answer();
+        }
+        if ((left = clicked_left) != undefined) {
+          link_dots(clicked_left, id);
+          check_answer();
+        } else if (clicked_right == id) {
+          cancel_linking_right(id);
+          check_answer();
+        } else {
+          if (clicked_right != undefined) {
+            displays[clicked_right].dot_answer_reset_color();
+          }
+          clicked_right = id;
+          line_on_mouse.append_to_parent();
+          line_on_mouse.on_element(displays[id].dot_answer);
+          let color = get_color();
+          set_current_color(color);
+          displays[id].dot_answer_color = color;
+        }
+      }
+
+      function verify_answer() {
+        for (var i = 0; i < num_of_problems; ++i) {
+          if (answers[i] != user_answers_rl[i]) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function set_clear() {
+        check_answer_button.innerHTML = "Clear!!";
+        check_answer_button.classList.add("check-answer-button-clear");
+      }
+
+      function unset_clear() {
+        check_answer_button.innerHTML = "Check";
+        check_answer_button.classList.remove("check-answer-button-clear");
+      }
+
+      function check_answer() {
+        if (verify_answer()) {
+          set_clear();
+        } else {
+          unset_clear();
+        }
+      }
+
+      for (var i = 0; i < num_of_problems; ++i) {
+        user_answers_lr[i] = undefined;
+        user_answers_rl[i] = undefined;
+
+        lines.push(new Line({parent: problems_element}));
+
+        var exist = false;
+        var hour = 0, minute = 0;
+        do {
+          exist = false;
+          hour = random_int(13);
+          minute = random_int(12) * 5;
+          try {
+            questions.forEach(function(element) {
+              if (element.hour === hour && element.minute === minute) {
+                exist = true;
+                throw BreakException;
+              }
+            });
+          } catch (e) { }
+        } while (exist);
+
+        questions.push({
+          hour: hour,
+          minute: minute
+        });
+        answers.push(i);
+      }
+      // answer = [0, 1, 2, 3]
+      for (var i = 0; i < num_of_problems; ++i) {
+        let j = random_int(num_of_problems);
+        let tmp = answers[i];
+        answers[i] = answers[j];
+        answers[j] = tmp;
+      }
+      // answer = [3, 1, 0, 2]
+      for (var i = 0; i < num_of_problems; ++i) {
+        displays[i] = new Problem({
+          id: i,
+          left_onclick: left_onclick,
+          right_onclick: right_onclick,
+          clock_hour: questions[i].hour,
+          clock_minute: questions[i].minute,
+          answer_hour: questions[answers[i]].hour,
+          answer_minute: questions[answers[i]].minute,
+          get_dragging_info: get_dragging_info,
+          set_dragging_info: set_dragging_info,
+        });
+        problems_element.appendChild(displays[i].problem_element);
+      }
+
+      add_listener(check_answer_button, 'click', function() {
+        if (this.last_timeout != undefined) {
+          clearTimeout(this.last_timeout);
+        }
+        if (verify_answer()) {
+          set_clear();
+        } else {
+          unset_clear();
+          check_answer_button.innerHTML = "Wrong!";
+          check_answer_button.classList.add("check-answer-button-wrong");
+          this.last_timeout = setTimeout(function() {
+            check_answer_button.classList.remove("check-answer-button-wrong");
+            if (!verify_answer()) {
+              unset_clear();
+            }
+          }, 1000);
+        }
+      });
+
+      add_listener(problems_element, 'mousemove', function(event) {
+        let x = event.clientX - problems_element.offsetLeft + (window.pageXOffset || document.documentElement.scrollLeft) - (document.documentElement.clientLeft || 0);
+        let y = event.clientY - problems_element.offsetTop + (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
+        line_on_mouse.end_xy(x, y);
+      });
+
+      add_listener(problems_element, 'mousedown', function(event) {
+        if (clicked_left != undefined) {
+          cancel_linking_left(clicked_left);
+        }
+        if (clicked_right != undefined) {
+          cancel_linking_right(clicked_right);
+        }
+      });
+
+      function update_lines() {
+        for (var i = 0; i < num_of_problems; ++i) {
+          lines[i].update_coordinate();
+        }
+      }
+
+      add_listener(window, 'resize', update_lines);
+      setInterval(update_lines, 100);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div data-role="footer">
+   <!--  <h4><a href="#P4">上一題</a></h4>
+    <h5><a href="#P4">結束作答</a></h5> -->
+
+ <div align="center">
+      <a href="#P4" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a>
+      
+    </div>
+  </div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+
 </body>
 </html>
