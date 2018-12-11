@@ -16,10 +16,10 @@
 <script type="text/javascript" src="cognitiononload.js"></script>
 <?php 
 	require "q1ramdon.php";
-	require "q2ramdon.php";
-	require "q3ramdon.php";
-	require "q4ramdon.php";
-	require "q5ramdon.php";    	
+	//require "q2ramdon.php";
+	//require "q3ramdon.php";
+	//require "q4ramdon.php";
+	//require "q5ramdon.php";    	
 ?>
 <body>
 	<form method="post" action="cognition_finish.php" data-ajax="false">
