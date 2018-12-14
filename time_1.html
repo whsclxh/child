@@ -95,15 +95,7 @@
         <input type="number" id="n3" name="hour2" min="1" max="12" required="required" />:<input type="number" id="n4" name="minute2" min="00" max="59" step="5" required="required" ></div>
       </td>
     </tr>
-    <tr style="height:40px">
-        <td style="display:none"><div style="text-align: center" id="a1"></div>
-        </td>
-
-        <td style="display:none"><div style="text-align: center" id="a2"></div>
-        </td>
-    </tr>
-        
-  
+ 
     <tr style="height: 280px">
       <td>
         <canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
@@ -119,13 +111,6 @@
       <td><div style="text-align: center"><label for="appt-time">你的答案</label>
         <input type="number" id="n7" name="hour4" min="1" max="12" required="required" />:<input type="number" id="n8" name="minute4" min="00" max="59" step="5" required="required" ></div>
       </td>
-    </tr>
-    <tr style="height:40px">
-        <td><div style="text-align: center" id="a3"></div>
-        </td>
-
-        <td><div style="text-align: center" id="a4"></div>
-        </td>
     </tr>
   </table>
   
@@ -326,17 +311,7 @@
       });
       }
 
-      var a1 = document.getElementById('a1');
-      a1.innerHTML ="正解 " + h1 + ":" + m1;
-
-      var a2 = document.getElementById('a2');
-      a2.innerHTML ="正解 " + h2 + ":" + m2;
-
-      var a3 = document.getElementById('a3');
-      a3.innerHTML ="正解 " + h3 + ":" + m3;
-
-      var a4 = document.getElementById('a4');
-      a4.innerHTML ="正解 " + h4 + ":" + m4;
+ 
   
       drawclock("clock1",h1,m1);             
       drawclock("clock2",h2,m2);
