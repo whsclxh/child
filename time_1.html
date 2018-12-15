@@ -129,9 +129,39 @@
       cursor: pointer;
     }
   </style>
-
-
 </head>
+
+<script>
+  window.onload = function(){
+    var n9 = document.getElementById("n9");        									//設置input value
+		n9.value = q1no1[0];
+		var n10 = document.getElementById("n10");        
+		n9.value = q1no1[1];
+		var n11 = document.getElementById("n11");        
+		n11.value = q1no1[2];
+    }
+
+     	function q1checkoption(x){
+		var no=[];
+		do{	
+			var a=true;
+			no=getRandomArray(q1num[x]-1,q1num[x]+1,3);
+				if(no.indexOf(q1num[x])!=-1) 
+					var a=false;
+			}while(a);
+		return no;
+  }
+
+  var q1no1=q1checkoption(0);
+	var q1no2=q1checkoption(1);
+	var q1no3=q1checkoption(2);
+
+  
+  function q1write(p,q){
+		document.write(p[q]);
+  } 
+
+  </script>
 
 
 <body>
@@ -146,11 +176,11 @@
     </tr>
     <tr style="height:40px">
       <td><div style="text-align: center" class="form-inline"><label for="appt-time" >你的答案</label>
-        <input type="number" id="n1" name="hour1" min="1" max="12" required="required">:<input type="number" id="n2" name="minute1" min="00" max="59" step="5" required="required"></div>
+        <input type="number" id="n1" name="hour1" min="1" max="12" required="required">時<input type="number" id="n2" name="minute1" min="00" max="59" step="5" required="required">分</div>
       </td>
         
       <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <input type="number" id="n3" name="hour2" min="1" max="12" required="required" />:<input type="number" id="n4" name="minute2" min="00" max="59" step="5" required="required" ></div>
+        <input type="number" id="n3" name="hour2" min="1" max="12" required="required">時<input type="number" id="n4" name="minute2" min="00" max="59" step="5" required="required">分</div>
       </td>
     </tr>
  
@@ -163,11 +193,11 @@
     </tr>
     <tr style="height: 40px">
       <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <input type="number" id="n5" name="hour3" min="1" max="12" required="required" />:<input type="number" id="n6" name="minute3" min="00" max="59" step="5" required="required" ></div>
+        <input type="number" id="n5" name="hour3" min="1" max="12" required="required">時<input type="number" id="n6" name="minute3" min="00" max="59" step="5" required="required">分</div>
       </td>
         
       <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <input type="number" id="n7" name="hour4" min="1" max="12" required="required" />:<input type="number" id="n8" name="minute4" min="00" max="59" step="5" required="required" ></div>
+        <input type="number" id="n7" name="hour4" min="1" max="12" required="required">時<input type="number" id="n8" name="minute4" min="00" max="59" step="5" required="required">分</div>
       </td>
     </tr>
   </table>
@@ -199,28 +229,22 @@
             </tr>
             <tr style="height:  40px">  
             <th>
-              <input type="radio" id="n1" name="ans0" value=>
-              <span id="f00"></span>
+                <label><input id="n9" name="ans0" type="radio"/></script></label>
             </th>
             <th>
-              <input type="radio" id="n2" name="ans0">
-              <span id="f01"></span>
+                <div style="float: left;"><label><input id="n10" name="ans0" type="radio"/><script>q1write(q1no1,0);</script></label></div>              
             </th>
             <th>
-              <input type="radio" id="n3" name="ans0">
-              <span id="f02"></span>
+                <div style="float: left;"><label><input id="n11" name="ans0" type="radio"/><script></script></label></div>              
             </th>
-        
+    
             <th>
-              <input type="radio" id="n4" name="ans1">
-              <span id="f03"></span></th>
+                <div style="float: left;"><label><input id="n12" name="ans1" type="radio"/><script></script></label></div>              
             <th>
-              <input type="radio" id="n5" name="ans1">
-              <span id="f04"></span>
+                <div style="float: left;"><label><input id="n13" name="ans1" type="radio"/><script></script></label></div>              
             </th>
             <th>
-              <input type="radio" id="n6" name="ans1">
-              <span id="f05"></span>
+                <div style="float: left;"><label><input id="n14" name="ans1" type="radio"/><script></script></label></div>              
             </th>
             </tr>
                 
@@ -239,28 +263,26 @@
         
             <tr style="height: 40px">
                 <th>
-                  <input type="radio" id="n7" name="ans2">
-                  <span id="f06"></span>
+                  <div style="float: left;"><label><input id="n15" name="ans2" type="radio"/><script></script></label></div>
+                  
                 </th>
                 <th>
-                  <input type="radio" id="n8" name="ans2">
-                  <span id="f07"></span>
+                  <div style="float: left;"><label><input id="n16" name="ans2" type="radio"/><script></script></label></div>
+                  
                 </th>
-                <th><input type="radio" id="n9" name="ans2">
-                  <span id="f08"></span>
+                <th>
+                  <div style="float: left;"><label><input id="n17" name="ans2" type="radio"/><script></script></label></div>
+                  
                 </th>
         
                 <th>
-                  <input type="radio" id="n10" name="ans3">
-                  <span id="f09"></span>
+                    <div style="float: left;"><label><input id="n18" name="ans3" type="radio"/><script></script></label></div>                  
                 </th>
                 <th>
-                  <input type="radio" id="n11" name="ans3">
-                  <span id="f10"></span>
+                    <div style="float: left;"><label><input id="n19" name="ans3" type="radio"/><script></script></label></div>
                 </th>
                 <th>
-                  <input type="radio" id="n12" name="ans3">
-                  <span id="f11"></span>
+                    <div style="float: left;"><label><input id="n20" name="ans3" type="radio"/><script></script></label></div>
                 </th>
             </tr>
           </table>
@@ -281,6 +303,7 @@
   <input type="hidden" id="anw8" name="anwser8"/>
   </form>
   <script>
+ 
   drawclock("clock1",h1,m1);             
   drawclock("clock2",h2,m2);
   drawclock("clock3",h3,m3);
@@ -291,182 +314,12 @@
   drawclock("clock7",h7,0);
   drawclock("clock8",h8,0);
 
+
+
   
 
 
-var f0 =Math.floor(Math.random() * 3);
 
-if(f0==0){
-  var hh1 = h5 + 1;
-  var hh2 = h5 + 2;
-  if(hh1>12){
-    hh1-=12;
-  }
-  if(hh2>12){
-    hh2-=12;
-  }
-  document.getElementById('f00').innerHTML = h5;
-  document.getElementById('f01').innerHTML = hh1;
-  document.getElementById('f02').innerHTML = hh2;
-}
-if(f0==1){
-  var hh1 = h5-1;
-  var hh2 = h5+1;
-  if(hh1<=0){
-    hh1+=12;
-  }
-  if(hh2>12){
-    hh2-=12;
-  }
-  document.getElementById('f00').innerHTML = hh1;
-  document.getElementById('f01').innerHTML = h5;
-  document.getElementById('f02').innerHTML = hh2;
-}
-if(f0==2){
-  var hh1 = h5-2;
-  var hh2 = h5-1;
-  if(hh1<=0){
-    hh1+=12;
-  }
-  if(hh2<=0){
-    hh2+=12;
-  }
-  document.getElementById('f00').innerHTML = hh1;
-  document.getElementById('f01').innerHTML = hh2;
-  document.getElementById('f02').innerHTML = h5;
-}
-
-
-
-var f1 =Math.floor(Math.random() * 3);
-
-if(f1==0){
-  var hh6 = h6 + 1;
-  var hh2 = h6 + 2;
-  if(hh1>12){
-    hh1-=12;
-  }
-  if(hh2>12){
-    hh2-=12;
-  }
-  document.getElementById('f03').innerHTML = h6;
-  document.getElementById('f04').innerHTML = hh1;
-  document.getElementById('f05').innerHTML = hh2;
-}
-if(f1==1){
-  var hh1 = h6-1;
-  var hh2 = h6+1;
-  if(hh1<=0){
-    hh1+=12;
-  }
-  if(hh2>12){
-    hh2-=12;
-  }
-  document.getElementById('f03').innerHTML = hh1;
-  document.getElementById('f04').innerHTML = h6;
-  document.getElementById('f05').innerHTML = hh2;
-}
-if(f1==2){
-  var hh1 = h6-2;
-  var hh2 = h6-1;
-  if(hh1<=0){
-    hh1+=12;
-  }
-  if(hh2<=0){
-    hh2+=12;
-  }
-  document.getElementById('f03').innerHTML = hh1;
-  document.getElementById('f04').innerHTML = hh2;
-  document.getElementById('f05').innerHTML = h6;
-}
-
-
-
-var f2 =Math.floor(Math.random() * 3);
-
-
-if(f2==0){
-  var hh1 = h7 + 1;
-  var hh2 = h7 + 2;
-  if(hh1>12){
-    hh1-=12;
-  }
-  if(hh2>12){
-    hh2-=12;
-  }
-  document.getElementById('f06').innerHTML = h7;
-  document.getElementById('f07').innerHTML = hh1;
-  document.getElementById('f08').innerHTML = hh2;
-}
-if(f2==1){
-  var hh1 = h7-1;
-  var hh2 = h7+1;
-  if(hh1<=0){
-    hh1+=12;
-  }
-  if(hh2>12){
-    hh2-=12;
-  }
-  document.getElementById('f06').innerHTML = hh1;
-  document.getElementById('f07').innerHTML = h7;
-  document.getElementById('f08').innerHTML = hh2;
-}
-if(f2==2){
-  var hh1 = h7-2;
-  var hh2 = h7-1;
-  if(hh1<=0){
-    hh1+=12;
-  }
-  if(hh2<=0){
-    hh2+=12;
-  }
-  document.getElementById('f06').innerHTML = hh1;
-  document.getElementById('f07').innerHTML = hh2;
-  document.getElementById('f08').innerHTML = h7;
-}
-
-var f3 =Math.floor(Math.random() * 3);
-
-
-if(f3==0){
-  var hh1 = h8 + 1;
-  var hh2 = h8 + 2;
-  if(hh1>12){
-    hh1-=12;
-  }
-  if(hh2>12){
-    hh2-=12;
-  }
-  document.getElementById('f09').innerHTML = h8;
-  document.getElementById('f10').innerHTML = hh1;
-  document.getElementById('f11').innerHTML = hh2;
-}
-if(f3==1){
-  var hh1 = h8-1;
-  var hh2 = h8+1;
-  if(hh1<=0){
-    hh1+=12;
-  }
-  if(hh2>12){
-    hh2-=12;
-  }
-  document.getElementById('f09').innerHTML = hh1;
-  document.getElementById('f10').innerHTML = h8;
-  document.getElementById('f11').innerHTML = hh2;
-}
-if(f3==2){
-  var hh1 = h8-2;
-  var hh2 = h8-1;
-  if(hh1<=0){
-    hh1+=12;
-  }
-  if(hh2<=0){
-    hh2+=12;
-  }
-  document.getElementById('f09').innerHTML = hh1;
-  document.getElementById('f10').innerHTML = hh2;
-  document.getElementById('f11').innerHTML = h8;
-}
 </script>
 </body>
 
