@@ -1,3 +1,3 @@
 <?php 
 throw new Exception();
->
+?>
