@@ -1,7 +1,7 @@
 <?php 
      session_start();
 	 include('q1ramdon.php');
-	 include('q2ramdon.php');
+	//  include('q2ramdon.php');
 	//  include('q3ramdon.php');
 	//  include('q4ramdon.php');
 	//  include('q5ramdon.php');   	
