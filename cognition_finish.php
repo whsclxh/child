@@ -1,3 +1,11 @@
+<?php
+session_start();
+include('q1ramdon.php');
+include('q2ramdon.php');
+include('q3ramdon.php');
+include('q4ramdon.php');
+include('q5ramdon.php');
+?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -9,11 +17,6 @@
 <script type="text/javascript" src="cognitionq5_finish.js"></script>
 <?php
 //q1參數
-require 'q1ramdon.php';
-require 'q2ramdon.php';
-require 'q3ramdon.php';
-require 'q4ramdon.php';
-require 'q5ramdon.php';
 @$q1q11 = $_POST['q1question11'];
 @$q1q12 = $_POST['q1question12'];
 @$q1q21 = $_POST['q1question21'];

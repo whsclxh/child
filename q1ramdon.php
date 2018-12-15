@@ -1,4 +1,5 @@
 <?php
+session_start();
 	function getRandomArray($minNum,$maxNum,$n){
 	mt_srand((double)microtime()*1000000);  //以時間當亂數種子
 	$num = Array(); //定義為陣列

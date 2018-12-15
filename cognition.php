@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+	include('q1ramdon.php');
+	include('q2ramdon.php');
+	include('q3ramdon.php');
+	include('q4ramdon.php');
+	include('q5ramdon.php');   	
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,15 +21,6 @@
 <script type="text/javascript" src="cognitionq3.js"></script>
 <script type="text/javascript" src="cognitionq4.js"></script>
 <script type="text/javascript" src="cognitionq5.js"></script>
-<script type="text/javascript" src="cognitiononload.js"></script>
-<?php 
-	require "q1ramdon.php";
-	//require "q2ramdon.php";
-	//require "q3ramdon.php";
-	//require "q4ramdon.php";
-	//require "q5ramdon.php";    	
-?>
-<body>
 	<form method="post" action="cognition_finish.php" data-ajax="false">
 		<div data-role="page" id="cognition">
 		<div align="center" valign="middle">
@@ -128,10 +127,10 @@
 						<?php echo "1.在<script>setquestionname($a[$q2qf1])</script>的<script>writedirection($q2qf1,$d[0])</script>是";?>
 						</td>
 						<td>
-							<div style="float: left;"><label><input type="radio" id="q2q11" name="q2question1"><?php echo "<script>q2pictures($a[$q2q1op1]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q12" name="q2question1"><?php echo "<script>q2pictures($a[$q2q1op2]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q13" name="q2question1"><?php echo "<script>q2pictures($a[$q2q1op3]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q14" name="q2question1"><?php echo "<script>q2pictures($a[$q2q1op4]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q11" name="q2question1" <?php echo "value=\"$question1option[0]\""; ?>><?php echo "<script>q2pictures($a[$q2q1op1]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q12" name="q2question1" <?php echo "value=\"$question1option[1]\""; ?>><?php echo "<script>q2pictures($a[$q2q1op2]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q13" name="q2question1" <?php echo "value=\"$question1option[2]\""; ?>><?php echo "<script>q2pictures($a[$q2q1op3]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q14" name="q2question1" <?php echo "value=\"$question1option[3]\""; ?>><?php echo "<script>q2pictures($a[$q2q1op4]);</script>"; ?></label></div>
 						</td>
 					</tr>
 					<tr>
@@ -139,10 +138,10 @@
 						<?php echo "2.在<script>setquestionname($a[$q2qf2])</script>的<script>writedirection($q2qf2,$d[1])</script>是";?>
 						</td>
 						<td>
-							<div style="float: left;"><label><input type="radio" id="q2q21" name="q2question2"><?php echo "<script>q2pictures($a[$q2q2op1]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q22" name="q2question2"><?php echo "<script>q2pictures($a[$q2q2op2]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q23" name="q2question2"><?php echo "<script>q2pictures($a[$q2q2op3]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q24" name="q2question2"><?php echo "<script>q2pictures($a[$q2q2op4]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q21" name="q2question2" <?php echo "value=\"$question2option[0]\""; ?>><?php echo "<script>q2pictures($a[$q2q2op1]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q22" name="q2question2" <?php echo "value=\"$question2option[1]\""; ?>><?php echo "<script>q2pictures($a[$q2q2op2]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q23" name="q2question2" <?php echo "value=\"$question2option[2]\""; ?>><?php echo "<script>q2pictures($a[$q2q2op3]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q24" name="q2question2" <?php echo "value=\"$question2option[3]\""; ?>><?php echo "<script>q2pictures($a[$q2q2op4]);</script>"; ?></label></div>
 						</td>
 					</tr>
 					<tr>
@@ -150,10 +149,10 @@
 						<?php echo "3.在<script>setquestionname($a[$q2qf3])</script>的<script>writedirection($q2qf3,$d[2])</script>是";?>
 						</td>
 						<td>
-							<div style="float: left;"><label><input type="radio" id="q2q31" name="q2question3"><?php echo "<script>q2pictures($a[$q2q3op1]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q32" name="q2question3"><?php echo "<script>q2pictures($a[$q2q3op2]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q33" name="q2question3"><?php echo "<script>q2pictures($a[$q2q3op3]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q34" name="q2question3"><?php echo "<script>q2pictures($a[$q2q3op4]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q31" name="q2question3" <?php echo "value=\"$question3option[0]\""; ?>><?php echo "<script>q2pictures($a[$q2q3op1]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q32" name="q2question3" <?php echo "value=\"$question3option[1]\""; ?>><?php echo "<script>q2pictures($a[$q2q3op2]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q33" name="q2question3" <?php echo "value=\"$question3option[2]\""; ?>><?php echo "<script>q2pictures($a[$q2q3op3]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q34" name="q2question3" <?php echo "value=\"$question3option[3]\""; ?>><?php echo "<script>q2pictures($a[$q2q3op4]);</script>"; ?></label></div>
 						</td>
 					</tr>
 					<tr>
@@ -161,10 +160,10 @@
 							<?php echo "4.在<script>setquestionname($a[$q2qf4])</script>的<script>writedirection($q2qf4,$d[3])</script>是";?>
 						</td>
 						<td>
-							<div style="float: left;"><label><input type="radio" id="q2q41" name="q2question4"><?php echo "<script>q2pictures($a[$q2q4op1]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q42" name="q2question4"><?php echo "<script>q2pictures($a[$q2q4op2]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q43" name="q2question4"><?php echo "<script>q2pictures($a[$q2q4op3]);</script>"; ?></label></div>
-							<div style="float: left;"><label><input type="radio" id="q2q44" name="q2question4"><?php echo "<script>q2pictures($a[$q2q4op4]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q41" name="q2question4" <?php echo "value=\"$question4option[0]\""; ?>><?php echo "<script>q2pictures($a[$q2q4op1]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q42" name="q2question4" <?php echo "value=\"$question4option[1]\""; ?>><?php echo "<script>q2pictures($a[$q2q4op2]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q43" name="q2question4" <?php echo "value=\"$question4option[2]\""; ?>><?php echo "<script>q2pictures($a[$q2q4op3]);</script>"; ?></label></div>
+							<div style="float: left;"><label><input type="radio" id="q2q44" name="q2question4" <?php echo "value=\"$question4option[3]\""; ?>><?php echo "<script>q2pictures($a[$q2q4op4]);</script>"; ?></label></div>
 						</td>
 					</tr>
 				</table>
@@ -182,55 +181,55 @@
 			</tr>
 			<tr>
 				<td width="90%"><?php echo "<script>q3pictures($q3pic1,$q3len1);</script>";?></td>
-				<td width="5%" style="text-align: center;"><input id="q3qq1" name="q3question1" type="radio"/></td>
+				<td width="5%" style="text-align: center;"><input id="q3qq1" name="q3question1" type="radio" <?php echo "value=\"$q3pictureslength[0]\""; ?>></td>
 			</tr>
 			<tr>
 				<td width="90%"><?php echo "<script>q3pictures($q3pic1,$q3len2);</script>";?></td>
-				<td width="5%" style="text-align: center;"><input id="q3qq2" name="q3question1" type="radio"/></td>
+				<td width="5%" style="text-align: center;"><input id="q3qq2" name="q3question1" type="radio" <?php echo "value=\"$q3pictureslength[1]\""; ?>></td>
 			</tr>
 		</table>
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
 				<td width="90%"><?php echo "<script>q3pictures($q3pic2,$q3len3);</script>";?></td>
-				<td width="5%" style="text-align: center;"><input id="q3qq3" name="q3question2" type="radio"/></td>
+				<td width="5%" style="text-align: center;"><input id="q3qq3" name="q3question2" type="radio" <?php echo "value=\"$q3pictureslength[2]\""; ?>></td>
 			</tr>
 			<tr>
 				<td width="90%"><?php echo "<script>q3pictures($q3pic2,$q3len4);</script>";?></td>
-				<td width="5%" style="text-align: center;"><input id="q3qq4" name="q3question2" type="radio"/></td>
+				<td width="5%" style="text-align: center;"><input id="q3qq4" name="q3question2" type="radio" <?php echo "value=\"$q3pictureslength[3]\""; ?>></td>
 			</tr>
 		</table>
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
 				<td width="90%"><?php echo "<script>q3pictures($q3pic3,$q3len5);</script>";?></td>
-				<td width="5%" style="text-align: center;"><input id="q3qq5" name="q3question3" type="radio" /></td>
+				<td width="5%" style="text-align: center;"><input id="q3qq5" name="q3question3" type="radio" <?php echo "value=\"$q3pictureslength[4]\""; ?>></td>
 			</tr>
 			<tr>
 				<td width="90%"><?php echo "<script>q3pictures($q3pic3,$q3len6);</script>";?></td>
-				<td width="5%" style="text-align: center;"><input id="q3qq6" name="q3question3" type="radio" /></td>
+				<td width="5%" style="text-align: center;"><input id="q3qq6" name="q3question3" type="radio" <?php echo "value=\"$q3pictureslength[5]\""; ?>></td>
 			</tr>
 		</table>
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
 				<td width="90%"><?php echo "<script>q3pictures($q3pic4,$q3len7);</script>";?></td>
-				<td width="5%" style="text-align: center;"><input id="q3qq7" name="q3question4" type="radio" /></td>
+				<td width="5%" style="text-align: center;"><input id="q3qq7" name="q3question4" type="radio" <?php echo "value=\"$q3pictureslength[6]\""; ?>></td>
 			</tr>
 			<tr>
 				<td width="90%"><?php echo "<script>q3pictures($q3pic4,$q3len8);</script>";?></td>
-				<td width="5%" style="text-align: center;"><input id="q3qq8" name="q3question4" type="radio"/></td>
+				<td width="5%" style="text-align: center;"><input id="q3qq8" name="q3question4" type="radio" <?php echo "value=\"$q3pictureslength[7]\""; ?>></td>
 			</tr>
 		</table>
 		<br/>
 		<table border="1" width="60%" align="center">
 			<tr>
 				<td width="90%"><?php echo "<script>q3pictures($q3pic5,$q3len9);</script>";?></td>
-				<td width="5%" style="text-align: center;"><input id="q3qq9" name="q3question5" type="radio" /></td>
+				<td width="5%" style="text-align: center;"><input id="q3qq9" name="q3question5" type="radio" <?php echo "value=\"$q3pictureslength[8]\""; ?>></td>
 			</tr>
 			<tr>
 				<td width="90%"><?php echo "<script>q3pictures($q3pic5,$q3len10);</script>";?></td>
-				<td width="5%" style="text-align: center;"><input id="q3qq10" name="q3question5" type="radio" /></td>
+				<td width="5%" style="text-align: center;"><input id="q3qq10" name="q3question5" type="radio" <?php echo "value=\"$q3pictureslength[9]\""; ?>></td>
 			</tr>
 		</table>
 		<div align="center">
@@ -278,9 +277,9 @@
 						</div>
 					</td>
 					<td>
-						<div style="float: left;"><label><input data-role="none" type="radio" id="a21" name="q4anwser2"><?php echo "<script>q4pictures($q4a[$q4qq1]);</script>";?></label></div>
-						<div style="float: left;"><label><input data-role="none" type="radio" id="a22" name="q4anwser2"><?php echo "<script>q4pictures($q4a[$q4qq2]);</script>";?></label></div>
-						<div style="float: left;"><label><input data-role="none" type="radio" id="a23" name="q4anwser2"><?php echo "<script>q4pictures($q4a[$q4qq3]);</script>";?></label></div>
+						<div style="float: left;"><label><input data-role="none" type="radio" id="a21" name="q4anwser2" <?php echo "value=\"$qq2[0]\""; ?>><?php echo "<script>q4pictures($q4a[$q4qq1]);</script>";?></label></div>
+						<div style="float: left;"><label><input data-role="none" type="radio" id="a22" name="q4anwser2" <?php echo "value=\"$qq2[1]\""; ?>><?php echo "<script>q4pictures($q4a[$q4qq2]);</script>";?></label></div>
+						<div style="float: left;"><label><input data-role="none" type="radio" id="a23" name="q4anwser2" <?php echo "value=\"$qq2[2]\""; ?>><?php echo "<script>q4pictures($q4a[$q4qq3]);</script>";?></label></div>
 					</td>
 				</tr>
 				<tr>
@@ -305,33 +304,33 @@
 			<tr>
 				<td><?php echo "<script>gtqs($q5qpic1);</script>";?></td>
 				<td>
-					<div style="float: left;"><label><input type="radio" id="q5q11" name="q5question1" data-role="none"><?php echo "<script>insertp1($q5qpic1,1,$q5picture1[0]);</script>";?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q12" name="q5question1" data-role="none"><?php echo "<script>insertp1($q5qpic1,2,$q5picture1[1]);</script>";?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q13" name="q5question1" data-role="none"><?php echo "<script>insertp1($q5qpic1,3,$q5picture1[2]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q11" name="q5question1" data-role="none" <?php echo "value=\"$question1[0]\""; ?>><?php echo "<script>insertp1($q5qpic1,1,$q5picture1[0]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q12" name="q5question1" data-role="none" <?php echo "value=\"$question1[1]\""; ?>><?php echo "<script>insertp1($q5qpic1,2,$q5picture1[1]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q13" name="q5question1" data-role="none" <?php echo "value=\"$question1[2]\""; ?>><?php echo "<script>insertp1($q5qpic1,3,$q5picture1[2]);</script>";?></label></div>
 				</td>
 			</tr>
 			<tr>
 				<td><?php echo "<script>gtqs($q5qpic2);</script>";?></td>
 				<td>
-					<div style="float: left;"><label><input type="radio" id="q5q21" name="q5question2" data-role="none"><?php echo "<script>insertp2($q5qpic2,1,$q5picture2[0]);</script>";?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q22" name="q5question2" data-role="none"><?php echo "<script>insertp2($q5qpic2,2,$q5picture2[1]);</script>";?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q23" name="q5question2" data-role="none"><?php echo "<script>insertp2($q5qpic2,3,$q5picture2[2]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q21" name="q5question2" data-role="none" <?php echo "value=\"$question2[0]\""; ?>><?php echo "<script>insertp2($q5qpic2,1,$q5picture2[0]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q22" name="q5question2" data-role="none" <?php echo "value=\"$question2[1]\""; ?>><?php echo "<script>insertp2($q5qpic2,2,$q5picture2[1]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q23" name="q5question2" data-role="none" <?php echo "value=\"$question2[2]\""; ?>><?php echo "<script>insertp2($q5qpic2,3,$q5picture2[2]);</script>";?></label></div>
 				</td>
 			</tr>
 			<tr>
 				<td><?php echo "<script>gtqs($q5qpic3);</script>";?></td>
 				<td>
-					<div style="float: left;"><label><input type="radio" id="q5q31" name="q5question3" data-role="none"><?php echo "<script>insertp3($q5qpic3,1,$q5picture3[0]);</script>";?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q32" name="q5question3" data-role="none"><?php echo "<script>insertp3($q5qpic3,2,$q5picture3[1]);</script>";?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q33" name="q5question3" data-role="none"><?php echo "<script>insertp3($q5qpic3,3,$q5picture3[2]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q31" name="q5question3" data-role="none" <?php echo "value=\"$question3[0]\""; ?>><?php echo "<script>insertp3($q5qpic3,1,$q5picture3[0]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q32" name="q5question3" data-role="none" <?php echo "value=\"$question3[1]\""; ?>><?php echo "<script>insertp3($q5qpic3,2,$q5picture3[1]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q33" name="q5question3" data-role="none" <?php echo "value=\"$question3[2]\""; ?>><?php echo "<script>insertp3($q5qpic3,3,$q5picture3[2]);</script>";?></label></div>
 				</td>
 			</tr>
 			<tr>
 				<td><?php echo "<script>gtqs($q5qpic4);</script>";?></td>
 				<td>
-					<div style="float: left;"><label><input type="radio" id="q5q41" name="q5question4" data-role="none"><?php echo "<script>insertp4($q5qpic4,1,$q5picture4[0]);</script>";?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q42" name="q5question4" data-role="none"><?php echo "<script>insertp4($q5qpic4,2,$q5picture4[1]);</script>";?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q5q43" name="q5question4" data-role="none"><?php echo "<script>insertp4($q5qpic4,3,$q5picture4[2]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q41" name="q5question4" data-role="none" <?php echo "value=\"$question4[0]\""; ?>><?php echo "<script>insertp4($q5qpic4,1,$q5picture4[0]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q42" name="q5question4" data-role="none" <?php echo "value=\"$question4[1]\""; ?>><?php echo "<script>insertp4($q5qpic4,2,$q5picture4[1]);</script>";?></label></div>
+					<div style="float: left;"><label><input type="radio" id="q5q43" name="q5question4" data-role="none" <?php echo "value=\"$question4[2]\""; ?>><?php echo "<script>insertp4($q5qpic4,3,$q5picture4[2]);</script>";?></label></div>
 				</td>
 			</tr>
 		</table>

@@ -84,9 +84,9 @@
 	function getanwser($x,$y){
 		if($x==0){
 			if($y==0){
-				$anw=x+3;
+				$anw=$x+3;
 			}else{
-				$anw=x+1;
+				$anw=$x+1;
 			}
 		}else if($x==1){
 			if($y==0){
@@ -265,16 +265,16 @@
    		setcookie("q2q4op4",$question4option[3],time()+60);
 	}
 	if(!isset($_COOKIE["q2ca1"])) {
-   		setcookie("q2ca1",$correctanwse[0],time()+60);
+   		setcookie("q2ca1",$correctanwser[0],time()+60);
 	}
 	if(!isset($_COOKIE["q2ca2"])) {
-   		setcookie("q2ca2",$correctanwse[1],time()+60);
+   		setcookie("q2ca2",$correctanwser[1],time()+60);
 	}
 	if(!isset($_COOKIE["q2ca3"])) {
-   		setcookie("q2ca3",$correctanwse[2],time()+60);
+   		setcookie("q2ca3",$correctanwser[2],time()+60);
 	}
 	if(!isset($_COOKIE["q2ca4"])) {
-   		setcookie("q2ca4",$correctanwse[3],time()+60);
+   		setcookie("q2ca4",$correctanwser[3],time()+60);
 	}
 	if(isset($_COOKIE["q2pic1"])) {
    		$q2pic1=$_COOKIE["q2pic1"];
