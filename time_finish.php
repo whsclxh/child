@@ -1,21 +1,7 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- <style type="text/css">
-</style>
-<script src="jquery-3.3.1.min.js"></script>
-<script type="text/javascript">
-
-    function correction(){
-	document.getElementById( "aa1" ).style.display = "";
-	document.getElementById( "aa2" ).style.display = "";
-	document.getElementById( "aa3" ).style.display = "";
-	document.getElementById( "aa4" ).style.display = "";
-    document.getElementById( "aa5" ).style.display = "";
-    document.getElementById( "aa6" ).style.display = "";
-	document.getElementById( "aa7" ).style.display = "";
-	document.getElementById( "aa8" ).style.display = "";
-    }
-    
-</script> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 
 

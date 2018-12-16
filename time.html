@@ -8,8 +8,7 @@
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
-  <link rel="stylesheet" type="text/css" media="print" href="serif.css">
+
 
 
   <script type="text/javascript" src="time_1.js"></script>
@@ -382,7 +381,10 @@ index = Math.floor(Math.random() * yudan_pic.length);
   drawclock("clock7",h7,0);
   drawclock("clock8",h8,0);
 
-
+  var f0 =Math.floor(Math.random() * 3);
+  var f1 =Math.floor(Math.random() * 3);
+  var f2 =Math.floor(Math.random() * 3);
+  var f3 =Math.floor(Math.random() * 3);
 
 
 
@@ -433,7 +435,7 @@ if(f0==2){
 
 
 if(f1==0){
-  var hh6 = h6 + 1;
+  var hh1 = h6 + 1;
   var hh2 = h6 + 2;
   if(hh1>12){
     hh1-=12;
