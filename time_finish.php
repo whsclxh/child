@@ -6,7 +6,8 @@
 
 
 <?php
-$h1 = $_POST['hour1'];
+//第一題
+$h1 = $_POST['hour1'];     //把答案儲存在php變數
 $h2 = $_POST['hour2'];
 $h3 = $_POST['hour3'];
 $h4 = $_POST['hour4'];
@@ -16,40 +17,44 @@ $m2 = $_POST['minute2'];
 $m3 = $_POST['minute3'];
 $m4 = $_POST['minute4'];
 
-$anw1 = $_POST['anwser1'];
-$anw2 = $_POST['anwser2'];
-$anw3 = $_POST['anwser3'];
-$anw4 = $_POST['anwser4'];
-$anw5 = $_POST['anwser5'];
-$anw6 = $_POST['anwser6'];
-$anw7 = $_POST['anwser7'];
-$anw8 = $_POST['anwser8'];
+$q1anw1 = $_POST['q1anwser1'];
+$q1anw2 = $_POST['q1anwser2'];
+$q1anw3 = $_POST['q1anwser3'];
+$q1anw4 = $_POST['q1anwser4'];
+$q1anw5 = $_POST['q1anwser5'];
+$q1anw6 = $_POST['q1anwser6'];
+$q1anw7 = $_POST['q1anwser7'];
+$q1anw8 = $_POST['q1anwser8'];
 
 
-$score = 0;
-if(($h1)==($anw1)){
+
+$q1score = 0;
+if(($h1)==($q1anw1)){
+    $q1score=$q1score+2.5;
+}
+if(($m1)==($q1anw2)){
     $score=$score+2.5;
 }
-if(($m1)==($anw2)){
+if(($h2)==($q1anw3)){
     $score=$score+2.5;
 }
-if(($h2)==($anw3)){
+if(($m2)==($q1anw4)){
     $score=$score+2.5;
 }
-if(($m2)==($anw4)){
+if(($h3)==($q1anw5)){
     $score=$score+2.5;
 }
-if(($h3)==($anw5)){
+if(($m3)==($q1anw6)){
     $score=$score+2.5;
 }
-if(($m3)==($anw6)){
+if(($h4)==($q1anw7)){
     $score=$score+2.5;
 }
-if(($h4)==($anw7)){
+if(($m4)==($q1anw8)){
     $score=$score+2.5;
 }
-if(($m4)==($anw8)){
-    $score=$score+2.5;
-}
+
+//第三題
+$totalscore=$q1score;
 ?>
-<?php  echo "<h1>得分為:$score 分!</h1>";?>
+
