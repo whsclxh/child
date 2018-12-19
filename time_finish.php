@@ -35,21 +35,21 @@ $q1opt41 = $_POST['q1option41'];
 $q1opt42 = $_POST['q1option42'];
 
 $q1score = 0;
-if(($q1q1)==($q1anw1)&($q1q2)==($q1anw2)){
+if(($q1q1)==($q1anw1)){
     $q1score=$q1score+5;
 }
 
-if(($q1q3)==($q1anw3)&($q1q4)==($q1anw4)){
-    $q1score=$q1score+5;
-}
+// if(($q1q3)==($q1anw3)&&($q1q4)==($q1anw4)){
+//     $q1score=$q1score+5;
+// }
 
-if(($q1q5)==($q1anw5)&(($q1q6)==($q1anw6)){
-    $q1score=$q1score+5;
-}
+// if(($q1q5)==($q1anw5)&&(($q1q6)==($q1anw6)){
+//     $q1score=$q1score+5;
+// }
 
-if(($q1q7)==($q1anw7)&($q1q8)==($q1anw8)){
-    $q1score=$q1score+5;
-}
+// if(($q1q7)==($q1anw7)&&($q1q8)==($q1anw8)){
+//     $q1score=$q1score+5;
+// }
 
 
 //第三題
