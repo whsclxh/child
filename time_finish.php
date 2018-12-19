@@ -39,25 +39,25 @@ if(($q1q1)==($q1anw1)){
     $q1score=$q1score+2.5;
 }
 if(($q1q2)==($q1anw2)){
-    $score=$score+2.5;
+    $q1score=$q1score+2.5;
 }
 if(($q1q3)==($q1anw3)){
-    $score=$score+2.5;
+    $q1score=$q1score+2.5;
 }
 if(($q1q4)==($q1anw4)){
-    $score=$score+2.5;
+    $q1score=$q1score+2.5;
 }
 if(($q1q5)==($q1anw5)){
-    $score=$score+2.5;
+    $q1score=$q1score+2.5;
 }
 if(($q1q6)==($q1anw6)){
-    $score=$score+2.5;
+    $q1score=$q1score+2.5;
 }
 if(($q1q7)==($q1anw7)){
-    $score=$score+2.5;
+    $q1score=$q1score+2.5;
 }
 if(($q1q8)==($q1anw8)){
-    $score=$score+2.5;
+    $q1score=$q1score+2.5;
 }
 
 //第三題
