@@ -223,7 +223,7 @@ document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[
 <td  align=center>
 <font size="5"><?php echo"$anw1";?></font>
 </td>
-<td width="30%" align=center style="color: red">	
+<td width="50%" align=center style="color: red">	
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q1].two+"</p>");</script>
 </td>
 
@@ -236,7 +236,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q2]
 <td align=center>
 <font size="5"><?php echo"$anw2";?></font>
 </td>
-<td align=center style="color: red">
+<td  width="50%" align=center style="color: red">
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q2].two+"</p>");</script>
 </td>
 </tr>
@@ -250,7 +250,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q3]
 <td align=center >
 <font size="5"><?php echo"$anw3";?></font>
 </td>
-<td align=center style="color: red">
+<td  width="50%" align=center style="color: red">
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q3].two+"</p>");</script>
 </td>
   
@@ -263,7 +263,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q4]
 <td  align=center>
 <font size="5"><?php echo"$anw4";?></font>
 </td>
-<td align=center style="color: red">
+<td   width="50%" align=center style="color: red">
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q4].two+"</p>");</script>
 </td>
 </tr>
@@ -278,7 +278,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q5]
 <td  align=center>
 <font size="5"><?php echo"$anw5";?></font>
 </td>
-<td align=center style="color: red">
+<td  width="50%" align=center style="color: red">
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q5].two+"</p>");</script>
 </td>
 </tr>
