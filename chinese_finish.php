@@ -10,7 +10,7 @@
       margin-left: 180px;      
       display: inline-block;
       width:20%;     
-      padding: 1rem;
+      padding: 0.5rem;
       border-radius: 50px ;
       border: 2px solid red;
       color: black;
@@ -220,10 +220,10 @@ document.write('<img class="cen" src="image/'+ q1 +'.jpg"height="100" width="150
 document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q1].one+"</p>");
 </script>
 </td>
-<td align=center>
+<td  align=center>
 <font size="5"><?php echo"$anw1";?></font>
 </td>
-<td align=center style="color: red">	
+<td width="30%" align=center style="color: red">	
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q1].two+"</p>");</script>
 </td>
 
