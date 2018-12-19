@@ -1,9 +1,10 @@
 if(jQuery) (function($){
 //定义键盘代码
-var _numkeybordhtml = "<div id=\"numkeybord\">\n"
+var _numkeybordhtml = "<td align=\"center\" id=\"numkeybordp\" >\n"
+       + "<div  id=\"numkeybord\" >\n"
        + "<div id=\"keymain\">"
-       + "<li class=\"key\">ㄅ</li>"
-       + "<li class=\"key\">ㄆ</li>"
+       + "<li class=\"key\">ㄅ</li>"       
+       + "<li class=\"key\">ㄆ</li>"       
        + "<li class=\"key\">ㄇ</li>"
        + "<li class=\"key\">ㄈ</li>"
        + "<li class=\"key\">ㄉ</li>"
@@ -43,12 +44,12 @@ var _numkeybordhtml = "<div id=\"numkeybord\">\n"
        + "<li class=\"key\">ˇ</li>"
        + "<li class=\"key\">ˋ</li>"
        + "<li class=\"key\">˙</li>"
-	   + "<li id=\"esc\">鍵盤输入</li>"
+	     + "<li id=\"esc\">鍵盤输入</li>"
        + "<li id=\"back\">退格</li>"
-	   + "<li id=\"clear\">清空</li>"
+	     + "<li id=\"clear\">清空</li>"
        + "<li id=\"enter\">確定</li>"
        + "</div>\n"
-       + "</div>\n";
+       + "</td>\n";
 //定义插件
 jQuery.fn.numkeybord = function(_option){
    //键盘追加到网页中

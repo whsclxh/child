@@ -9,7 +9,7 @@ a:hover{ text-decoration:none;}
 
 .tab01-log{ width:360px; margin:20px auto;}
 .tab01-log td{ padding-bottom:12px;}
-#numkeybordp{position:relative;top:770px;left:460px;width:1000px; font-size:12px; height:0px;}
+#numkeybordp{position:absolute;top:80%;left:20%;width:1000px; font-size:12px; height:0px;}
 #numkeybord{ /*padding-top:100px; padding-left:100px; */ /*background:url(../image/bg02.png)  no-repeat;*/ width:600px; font-size:12px; height:200px; display:none;}
 #keymain{ position:absolute;width:100%; }
 #keymain li{ background:url(../image/btn.gif) no-repeat; text-align:center; margin:0 1px 10px 0px; display:inline; line-height:46px; font-size:24px; width:54px; height:46px; display:block; float:left; color:#fff; cursor:pointer;}
