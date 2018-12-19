@@ -7,14 +7,14 @@
 
 <?php
 //第一題
-@$q1q1 = $_POST['q1question11'];     //把答案儲存在php變數
-@$q1q2 = $_POST['q1question12'];
-@$q1q3 = $_POST['q1question21'];
-@$q1q4 = $_POST['q1question22'];
-@$q1q5 = $_POST['q1question31'];
-@$q1q6 = $_POST['q1question32'];
-@$q1q7 = $_POST['q1question41'];
-@$q1q8 = $_POST['q1question42'];
+@$q1q1 = $_POST['q1q11'];     //把答案儲存在php變數
+@$q1q2 = $_POST['q1q12'];
+@$q1q3 = $_POST['q1q21'];
+@$q1q4 = $_POST['q1q22'];
+@$q1q5 = $_POST['q1q31'];
+@$q1q6 = $_POST['q1q32'];
+@$q1q7 = $_POST['q1q41'];
+@$q1q8 = $_POST['q1q42'];
 
 $q1anw1 = $_POST['q1anwser1'];  //取正確答案
 $q1anw2 = $_POST['q1anwser2'];
@@ -35,36 +35,28 @@ $q1opt41 = $_POST['q1option41'];
 $q1opt42 = $_POST['q1option42'];
 
 $q1score = 0;
-if(($q1q1)==($q1anw1)){
-    $q1score=$q1score+2.5;
-}
-if(($q1q2)==($q1anw2)){
-    $q1score=$q1score+2.5;
-}
-if(($q1q3)==($q1anw3)){
-    $q1score=$q1score+2.5;
-}
-if(($q1q4)==($q1anw4)){
-    $q1score=$q1score+2.5;
-}
-if(($q1q5)==($q1anw5)){
-    $q1score=$q1score+2.5;
-}
-if(($q1q6)==($q1anw6)){
-    $q1score=$q1score+2.5;
-}
-if(($q1q7)==($q1anw7)){
-    $q1score=$q1score+2.5;
-}
-if(($q1q8)==($q1anw8)){
-    $q1score=$q1score+2.5;
+if(($q1q1)==($q1anw1)&($q1q2)==($q1anw2)){
+    $q1score=$q1score+5;
 }
 
+if(($q1q3)==($q1anw3)&($q1q4)==($q1anw4)){
+    $q1score=$q1score+5;
+}
+
+if(($q1q5)==($q1anw5)&(($q1q6)==($q1anw6)){
+    $q1score=$q1score+5;
+}
+
+if(($q1q7)==($q1anw7)&($q1q8)==($q1anw8)){
+    $q1score=$q1score+5;
+}
+
+
 //第三題
-$q3q1 = $_POST['ans0'];     //把答案儲存在php變數
-$q3q2 = $_POST['ans1'];
-$q3q3 = $_POST['ans2'];
-$q3q4 = $_POST['ans3'];
+@$q3q1 = $_POST['ans0'];     //把答案儲存在php變數
+@$q3q2 = $_POST['ans1'];
+@$q3q3 = $_POST['ans2'];
+@$q3q4 = $_POST['ans3'];
 
 $q3anw1 = $_POST['q3answer1'];
 $q3anw2 = $_POST['q3answer2'];
@@ -165,51 +157,5 @@ $totalscore=$q1score+$q2score+$q3score+$q4score+$q5score;
 		<a href="#time_anwser1" class="ui-btn" style="width: 10%;" data-transition="slide">來對答案吧!</a>
 	</div>	
 </div>
-<div data-role="page" id="time_anwser1">
-<h3 align="center" style="color: red">本大題拿了<?php echo "$q1score"; ?>/20分</h3>
-<h3 align="center">請問現在是幾點幾分? 輸入正確時間。</h3>
-  <table width="50%" align="center">
-    <tr style="height:280px">
-      <td><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-      <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-    </tr>
-    <tr style="height:40px">
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time" >你的答案</label>
-        <label><input type="number" id="q1q11" name="hour1" min="1" max="12" data-role="none" required="required"></label>時<label><input type="number" id="q1q12" name="minute1" data-role="none" min="00" max="59" step="5" required="required"></label>分</div>
-      </td>
-        
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <label><input type="number" id="q1q21" name="hour2" min="1" max="12" data-role="none" required="required"></label>時<label><input type="number" id="q1q22" name="minute2" data-role="none" min="00" max="59" step="5" required="required"></label>分</div>
-      </td>
-    </tr>
-    <tr>
-      <td>
 
-      </td>
-      <td>
-
-      </td>
-    </tr>
- 
-    <tr style="height: 280px">
-      <td>
-        <canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
-      </td>
-      <td><canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
-      </td>
-    </tr>
-    <tr style="height: 40px">
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <input type="number" id="n5" name="hour3" min="1" max="12" required="required">時<input type="number" id="n6" name="minute3" min="00" max="59" step="5" required="required">分</div>
-      </td>
-        
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <input type="number" id="n7" name="hour4" min="1" max="12" required="required">時<input type="number" id="n8" name="minute4" min="00" max="59" step="5" required="required">分</div>
-      </td>
-    </tr>
-  </table>
-  <div align="center">
-    <a href="#time2" class="ui-btn" style="width: 5%; display: inline-block" data-transition="slide">下一題</a>
-  </div>
-  </div>
 
