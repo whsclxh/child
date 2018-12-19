@@ -7,14 +7,14 @@
 
 <?php
 //第一題
-$q1q1 = $_POST['q1question11'];     //把答案儲存在php變數
-$q1q2 = $_POST['q1question12'];
-$q1q3 = $_POST['q1question21'];
-$q1q4 = $_POST['q1question22'];
-$q1q5 = $_POST['q1question31'];
-$q1q6 = $_POST['q1question32'];
-$q1q7 = $_POST['q1question41'];
-$q1q8 = $_POST['q1question42'];
+@$q1q1 = $_POST['q1question11'];     //把答案儲存在php變數
+@$q1q2 = $_POST['q1question12'];
+@$q1q3 = $_POST['q1question21'];
+@$q1q4 = $_POST['q1question22'];
+@$q1q5 = $_POST['q1question31'];
+@$q1q6 = $_POST['q1question32'];
+@$q1q7 = $_POST['q1question41'];
+@$q1q8 = $_POST['q1question42'];
 
 $q1anw1 = $_POST['q1anwser1'];  //取正確答案
 $q1anw2 = $_POST['q1anwser2'];
