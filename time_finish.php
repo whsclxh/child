@@ -165,51 +165,5 @@ $totalscore=$q1score+$q2score+$q3score+$q4score+$q5score;
 		<a href="#time_anwser1" class="ui-btn" style="width: 10%;" data-transition="slide">來對答案吧!</a>
 	</div>	
 </div>
-<div data-role="page" id="time_anwser1">
-<h3 align="center" style="color: red">本大題拿了<?php echo "$q1score"; ?>/20分</h3>
-<h3 align="center">請問現在是幾點幾分? 輸入正確時間。</h3>
-  <table width="50%" align="center">
-    <tr style="height:280px">
-      <td><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-      <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-    </tr>
-    <tr style="height:40px">
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time" >你的答案</label>
-        <label><input type="number" id="q1q11" name="hour1" min="1" max="12" data-role="none" required="required"></label>時<label><input type="number" id="q1q12" name="minute1" data-role="none" min="00" max="59" step="5" required="required"></label>分</div>
-      </td>
-        
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <label><input type="number" id="q1q21" name="hour2" min="1" max="12" data-role="none" required="required"></label>時<label><input type="number" id="q1q22" name="minute2" data-role="none" min="00" max="59" step="5" required="required"></label>分</div>
-      </td>
-    </tr>
-    <tr>
-      <td>
 
-      </td>
-      <td>
-
-      </td>
-    </tr>
- 
-    <tr style="height: 280px">
-      <td>
-        <canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
-      </td>
-      <td><canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
-      </td>
-    </tr>
-    <tr style="height: 40px">
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <input type="number" id="n5" name="hour3" min="1" max="12" required="required">時<input type="number" id="n6" name="minute3" min="00" max="59" step="5" required="required">分</div>
-      </td>
-        
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <input type="number" id="n7" name="hour4" min="1" max="12" required="required">時<input type="number" id="n8" name="minute4" min="00" max="59" step="5" required="required">分</div>
-      </td>
-    </tr>
-  </table>
-  <div align="center">
-    <a href="#time2" class="ui-btn" style="width: 5%; display: inline-block" data-transition="slide">下一題</a>
-  </div>
-  </div>
 
