@@ -16,14 +16,14 @@
 @$q1q7 = $_POST['q1q41'];
 @$q1q8 = $_POST['q1q42'];
 
-$q1anw1 = $_POST['q1anwser1'];  //取正確答案
-$q1anw2 = $_POST['q1anwser2'];
-$q1anw3 = $_POST['q1anwser3'];
-$q1anw4 = $_POST['q1anwser4'];
-$q1anw5 = $_POST['q1anwser5'];
-$q1anw6 = $_POST['q1anwser6'];
-$q1anw7 = $_POST['q1anwser7'];
-$q1anw8 = $_POST['q1anwser8'];
+$q1anw1 = $_POST['q1answer1'];  //取正確答案
+$q1anw2 = $_POST['q1answer2'];
+$q1anw3 = $_POST['q1answer3'];
+$q1anw4 = $_POST['q1answer4'];
+$q1anw5 = $_POST['q1answer5'];
+$q1anw6 = $_POST['q1answer6'];
+$q1anw7 = $_POST['q1answer7'];
+$q1anw8 = $_POST['q1answer8'];
 
 $q1opt11 = $_POST['q1option11']; //儲存選項的值
 $q1opt12 = $_POST['q1option12'];
@@ -38,18 +38,28 @@ $q1score = 0;
 if(($q1q1)==($q1anw1)){
     $q1score=$q1score+5;
 }
+if(($q1q2)==($q1anw2)){
+    $q1score=$q1score+5;
+}
+if(($q1q3)==($q1anw3){
+    $q1score=$q1score+5;
+}
+if(($q1q4)==($q1anw4){
+    $q1score=$q1score+5;
+}
+if(($q1q5)==($q1anw5){
+    $q1score=$q1score+5;
+}
+if(($q1q6)==($q1anw6){
+    $q1score=$q1score+5;
+}
+if(($q1q7)==($q1anw7){
+    $q1score=$q1score+5;
+}
+if(($q1q8)==($q1anw8){
+    $q1score=$q1score+5;
+}
 
-// if(($q1q3)==($q1anw3)&&($q1q4)==($q1anw4)){
-//     $q1score=$q1score+5;
-// }
-
-// if(($q1q5)==($q1anw5)&&(($q1q6)==($q1anw6)){
-//     $q1score=$q1score+5;
-// }
-
-// if(($q1q7)==($q1anw7)&&($q1q8)==($q1anw8)){
-//     $q1score=$q1score+5;
-// }
 
 
 //第三題
