@@ -63,71 +63,71 @@ if(($q1q8)==($q1ans8)){
 
 
 //第三題
-@$q3q1 = $_POST['ans0'];     //把答案儲存在php變數
-@$q3q2 = $_POST['ans1'];
-@$q3q3 = $_POST['ans2'];
-@$q3q4 = $_POST['ans3'];
+// @$q3q1 = $_POST['ans0'];     //把答案儲存在php變數
+// @$q3q2 = $_POST['ans1'];
+// @$q3q3 = $_POST['ans2'];
+// @$q3q4 = $_POST['ans3'];
 
-$q3ans1 = $_POST['q3answer1'];
-$q3ans2 = $_POST['q3answer2'];
-$q3ans3 = $_POST['q3answer3'];
-$q3ans4 = $_POST['q3answer4'];
+// $q3ans1 = $_POST['q3answer1'];
+// $q3ans2 = $_POST['q3answer2'];
+// $q3ans3 = $_POST['q3answer3'];
+// $q3ans4 = $_POST['q3answer4'];
 
-$q3opt11 = $_POST['q3option11'];
-$q3opt12 = $_POST['q3option12'];
-$q3opt13 = $_POST['q3option13'];
-$q3opt21 = $_POST['q3option21'];
-$q3opt22 = $_POST['q3option22'];
-$q3opt23 = $_POST['q3option23'];
-$q3opt31 = $_POST['q3option31'];
-$q3opt32 = $_POST['q3option32'];
-$q3opt33 = $_POST['q3option33'];
-$q3opt41 = $_POST['q3option41'];
-$q3opt42 = $_POST['q3option42'];
-$q3opt43 = $_POST['q3option43'];
-$q3score=0;
-if(($q3q1)==($q3ans1)){
-    $q3score=$q3score+5;
-}
-if(($q3q2)==($q3ans2)){
-    $q3score=$q3score+5;
-}
-if(($q3q3)==($q3ans3)){
-    $q3score=$q3score+5;
-}
-if(($q3q4)==($q3ans4)){
-    $q3score=$q3score+5;
-}
+// $q3opt11 = $_POST['q3option11'];
+// $q3opt12 = $_POST['q3option12'];
+// $q3opt13 = $_POST['q3option13'];
+// $q3opt21 = $_POST['q3option21'];
+// $q3opt22 = $_POST['q3option22'];
+// $q3opt23 = $_POST['q3option23'];
+// $q3opt31 = $_POST['q3option31'];
+// $q3opt32 = $_POST['q3option32'];
+// $q3opt33 = $_POST['q3option33'];
+// $q3opt41 = $_POST['q3option41'];
+// $q3opt42 = $_POST['q3option42'];
+// $q3opt43 = $_POST['q3option43'];
+// $q3score=0;
+// if(($q3q1)==($q3ans1)){
+//     $q3score=$q3score+5;
+// }
+// if(($q3q2)==($q3ans2)){
+//     $q3score=$q3score+5;
+// }
+// if(($q3q3)==($q3ans3)){
+//     $q3score=$q3score+5;
+// }
+// if(($q3q4)==($q3ans4)){
+//     $q3score=$q3score+5;
+// }
 
 //第四題
 
-// $q4q1 = $_POST['ans4'];     //把答案儲存在php變數
-// $q4q2 = $_POST['ans5'];
-// $q4q3 = $_POST['ans6'];
-// $q4q4 = $_POST['ans7'];
+$q4q1 = $_POST['ans4'];     //把答案儲存在php變數
+$q4q2 = $_POST['ans5'];
+$q4q3 = $_POST['ans6'];
+$q4q4 = $_POST['ans7'];
 
-// $q4ans1 = $_POST['q4answer1'];
-// $q4ans2 = $_POST['q4answer2'];
-// $q4ans3 = $_POST['q4answer3'];
-// $q4ans4 = $_POST['q4answer4'];
+$q4ans1 = $_POST['q4answer1'];
+$q4ans2 = $_POST['q4answer2'];
+$q4ans3 = $_POST['q4answer3'];
+$q4ans4 = $_POST['q4answer4'];
 
-// $q4opt1 = $_POST['q4option1'];
-// $q4opt2 = $_POST['q4option2'];
-// $q4opt3 = $_POST['q4option3'];
-// $q4opt4 = $_POST['q4option4'];
-// $q4score=0;
-// if(($q4q1)==($q4ans1)){
-//     $q4score=$q4score+5;
-// }
-// if(($q4q2)==($q4ans2)){
-//     $q4score=$q4score+5;
-// }
-// if(($q4q3)==($q4ans3)){
-//     $q4score=$q4score+5;
-// }
-// if(($q4q4)==($q4ans4)){
-//     $q4score=$q4score+5;
-// }
+$q4opt1 = $_POST['q4option1'];
+$q4opt2 = $_POST['q4option2'];
+$q4opt3 = $_POST['q4option3'];
+$q4opt4 = $_POST['q4option4'];
+$q4score=0;
+if(($q4q1)==($q4ans1)){
+    $q4score=$q4score+5;
+}
+if(($q4q2)==($q4ans2)){
+    $q4score=$q4score+5;
+}
+if(($q4q3)==($q4ans3)){
+    $q4score=$q4score+5;
+}
+if(($q4q4)==($q4ans4)){
+    $q4score=$q4score+5;
+}
 
 //第五題
 
