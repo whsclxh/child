@@ -26,11 +26,3 @@
 	function w(x){
 		document.write(x+1);
 	}
-	
-	function ww(x){
-		if(x==0){
-			document.write("右邊");
-		}else{
-			document.write("左邊");
-		}
-	}
