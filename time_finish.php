@@ -1,5 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" src="time_1.js"></script>
