@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+  <script type="text/javascript" src="time_1.js"></script>
+  
+  <!-- <script type="text/javascript" src="time_4.js"></script>
+  <script type="text/javascript" src="time_5.js"></script> -->
+
+
+
+  <style type="text/css">
+    table,td,th {
+      border: 1px solid black;
+    }
+
+    table {
+      height: 50%;
+      width: 40%;
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    body {
+      
+      margin: 0 auto;
+      /* background: #ff8a50; */
+      font-family: sans-serif;
+    }
+
+    .disable-select {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none;   /* Chrome/Safari/Opera */
+      -khtml-user-select: none;    /* Konqueror */
+      -moz-user-select: none;      /* Firefox */
+      -ms-user-select: none;       /* Internet Explorer/Edge */
+      user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+    }
+
+    .container {                   
+      max-width: 60em;
+    }
+
+    .problems {
+      position: relative;
+    }
+
+    .problem {
+      margin: 1em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .problem-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .clock {
+      margin-right: 1em;
+    }
+
+    .dot {
+      height: 40px;
+      width: 40px;
+      background-color: #ff5722;
+      border-radius: 50%;
+      display: inline-block;
+      transition: all 500ms ease;
+      cursor: pointer;
+    }
+
+    .dot:hover {
+      transform: scale(1.3);
+    }
+
+    .dot:active {
+      transform: scale(1.1);
+    }
+
+    .space {
+      width: 100%;
+    }
+
+    .time-text {
+      display: inline-block;
+      min-width: 3.5em;
+      margin-left: 1em;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      background: #ff5622c0;
+      color: #ffb089;
+      font-size: 2em;
+      font-weight: 900;
+    }
+
+    .line {
+      position: absolute;
+      z-index: -1;
+      height: 1em;
+      width: 1em;
+      border-radius: 1em;
+      background: teal;
+    }
+
+    .check-answer-button {
+      margin: 1rem;
+      padding: 1px;
+      font-size: 3em;
+      font-weight: 900;
+      background: #a1a1a18f;
+      border-radius: 1rem;
+      color: #666d;
+      transition: all 500ms ease;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<script>
+var cart = new Array("img/clock_img/p1.png",	"img/clock_img/p2.png", "img/clock_img/p3.png",	"img/clock_img/p4.png",);
+//打亂陣列
+function randomsort(a, b) {
+return Math.random()>.5 ? -1 : 1;
+//用Math.random()函式生成0~1之間的隨機數與0.5比較，返回-1或1
+}
+cart.sort(randomsort);
+
+
+
+  
+
+
+window.onload=function(){
+document.getElementById("q3q11");
+document.getElementById("q3q12");
+document.getElementById("q3q13");
+if(f0==0){
+  q3q11.value = h5;
+  q3q12.value = h51;
+  q3q13.value = h52;
+}
+if(f0==1){
+  q3q11.value = h51;
+  q3q12.value = h5;
+  q3q13.value = h52;
+}
+if(f0==2){
+  q3q11.value = h51;
+  q3q12.value = h52;
+  q3q13.value = h5;
+}
+
+document.getElementById("q3q21");
+document.getElementById("q3q22");
+document.getElementById("q3q23");
+if(f1==0){
+  q3q21.value = h6;
+  q3q22.value = h61;
+  q3q23.value = h62;
+}
+if(f1==1){
+  q3q21.value = h61;
+  q3q22.value = h6;
+  q3q23.value = h62;
+}
+if(f1==2){
+  q3q21.value = h61;
+  q3q22.value = h62;
+  q3q23.value = h6;
+}
+document.getElementById("q3q31");
+document.getElementById("q3q32");
+document.getElementById("q3q33");
+if(f2==0){
+  q3q31.value = h7;
+  q3q32.value = h71;
+  q3q33.value = h72;
+}
+if(f2==1){
+  q3q31.value = h71;
+  q3q32.value = h7;
+  q3q33.value = h72;
+}
+if(f2==2){
+  q3q31.value = h71;
+  q3q32.value = h72;
+  q3q33.value = h7;
+}
+document.getElementById("q3q41");
+document.getElementById("q3q42");
+document.getElementById("q3q43");
+if(f3==0){
+  q3q41.value = h8;
+  q3q42.value = h81;
+  q3q43.value = h82;
+}
+if(f3==1){
+  q3q41.value = h81;
+  q3q42.value = h8;
+  q3q43.value = h82;
+}
+if(f3==2){
+  q3q41.value = h81;
+  q3q42.value = h82;
+  q3q43.value = h8;
+}
+
+
+
+var q1ans1 = document.getElementById("q1ans1");
+q1ans1.value = h1;
+var q1ans2 = document.getElementById("q1ans2");
+q1ans2.value = m1;
+var q1ans3 = document.getElementById("q1ans3");
+q1ans3.value = h2;
+var q1ans4 = document.getElementById("q1ans4");
+q1ans4.value = m2;
+var q1ans5 = document.getElementById("q1ans5");
+q1ans5.value = h3;
+var q1ans6 = document.getElementById("q1ans6");
+q1ans6.value = m3;
+var q1ans7 = document.getElementById("q1ans7");
+q1ans7.value = h4;
+var q1ans8 = document.getElementById("q1ans8");
+q1ans8.value = m4;
+
+var q1opt11 = document.getElementById("q1opt11");
+q1opt11.value = h1;
+var q1opt12 = document.getElementById("q1opt12");
+q1opt12.value = m1;
+var q1opt21 = document.getElementById("q1opt21");
+q1opt21.value = h2;
+var q1opt22 = document.getElementById("q1opt22");
+q1opt22.value = m2;
+var q1opt31 = document.getElementById("q1opt31");
+q1opt31.value = h3;
+var q1opt32 = document.getElementById("q1opt32");
+q1opt32.value = m3;
+var q1opt41 = document.getElementById("q1opt41");
+q1opt41.value = h4;
+var q1opt42 = document.getElementById("q1opt42");
+q1opt42.value = m4;
+
+// var q3q11 = document.getElementById("q3q11");
+// var q3q12 = document.getElementById("q3q12");
+// var q3q13 = document.getElementById("q3q13");
+// if(f0==0){
+//   q3q11.value = h5;
+//   q3q12.value = h51;
+//   q3q13.value = h52;
+// }
+// if(f0==1){
+//   q3q11.value = h51;
+//   q3q12.value = h5;
+//   q3q13.value = h52;
+// }
+// if(f0==2){
+//   q3q11.value = h51;
+//   q3q12.value = h52;
+//   q3q13.value = h5;
+// }
+// var q3q21 = document.getElementById("q3q21");
+// var q3q22 = document.getElementById("q3q22");
+// var q3q23 = document.getElementById("q3q23");
+// if(f1==0){
+//   q3q21.value = h6;
+//   q3q22.value = h61;
+//   q3q23.value = h62;
+// }
+// if(f1==1){
+//   q3q21.value = h61;
+//   q3q22.value = h6;
+//   q3q23.value = h62;
+// }
+// if(f1==2){
+//   q3q21.value = h61;
+//   q3q22.value = h62;
+//   q3q23.value = h6;
+// }
+// var q3q31 = document.getElementById("q3q31");
+// var q3q32 = document.getElementById("q3q32");
+// var q3q33 = document.getElementById("q3q33");
+// if(f2==0){
+//   q3q31.value = h7;
+//   q3q32.value = h71;
+//   q3q33.value = h72;
+// }
+// if(f2==1){
+//   q3q31.value = h71;
+//   q3q32.value = h7;
+//   q3q33.value = h72;
+// }
+// if(f2==2){
+//   q3q31.value = h71;
+//   q3q32.value = h72;
+//   q3q33.value = h7;
+// }
+// var q3q41 = document.getElementById("q3q41");
+// var q3q42 = document.getElementById("q3q42");
+// var q3q43 = document.getElementById("q3q43");
+// if(f3==0){
+//   q3q41.value = h8;
+//   q3q42.value = h81;
+//   q3q43.value = h82;
+// }
+// if(f3==1){
+//   q3q41.value = h81;
+//   q3q42.value = h8;
+//   q3q43.value = h82;
+// }
+// if(f3==2){
+//   q3q41.value = h81;
+//   q3q42.value = h82;
+//   q3q43.value = h8;
+// }
+
+var q3ans1 = document.getElementById("q3ans1");
+q3ans1.value = h5;
+var q3ans2 = document.getElementById("q3ans2");
+q3ans2.value = h6;
+var q3ans3 = document.getElementById("q3ans3");
+q3ans3.value = h7;
+var q3ans4 = document.getElementById("q3ans4");
+q3ans4.value = h8;
+
+var q3opt11 = document.getElementById("q3opt11");
+var q3opt12 = document.getElementById("q3opt12");
+var q3opt13 = document.getElementById("q3opt13");
+if(f0==0){
+  q3opt11.value = h5;
+  q3opt12.value = h51;
+  q3opt13.value = h52;
+}
+if(f0==1){
+  q3opt11.value = h51;
+  q3opt12.value = h5;
+  q3opt13.value = h52;
+}
+if(f0==2){
+  q3opt11.value = h51;
+  q3opt12.value = h52;
+  q3opt13.value = h5;
+}
+
+var q3opt21 = document.getElementById("q3opt21");
+var q3opt22 = document.getElementById("q3opt22");
+var q3opt23 = document.getElementById("q3opt23");
+if(f1==0){
+  q3opt21.value = h6;
+  q3opt22.value = h61;
+  q3opt23.value = h62;
+}
+if(f1==1){
+  q3opt21.value = h61;
+  q3opt22.value = h6;
+  q3opt23.value = h62;
+}
+if(f1==2){
+  q3opt21.value = h61;
+  q3opt22.value = h62;
+  q3opt23.value = h6;
+}
+
+var q3opt31 = document.getElementById("q3opt31");
+var q3opt32 = document.getElementById("q3opt32");
+var q3opt33 = document.getElementById("q3opt33");
+if(f2==0){
+  q3opt31.value = h7;
+  q3opt32.value = h71;
+  q3opt33.value = h72;
+}
+if(f2==1){
+  q3opt31.value = h71;
+  q3opt32.value = h7;
+  q3opt33.value = h72;
+}
+if(f2==2){
+  q3opt31.value = h71;
+  q3opt32.value = h72;
+  q3opt33.value = h7;
+}
+
+var q3opt41 = document.getElementById("q3opt41");
+var q3opt42 = document.getElementById("q3opt42");
+var q3opt43 = document.getElementById("q3opt43");
+if(f3==0){
+  q3opt41.value = h8;
+  q3opt42.value = h81;
+  q3opt43.value = h82;
+}
+if(f3==1){
+  q3opt41.value = h81;
+  q3opt42.value = h8;
+  q3opt43.value = h82;
+}
+if(f3==2){
+  q3opt41.value = h81;
+  q3opt42.value = h82;
+  q3opt43.value = h8;
+}
+
+
+var q4ans1 = document.getElementById("q4ans1");
+if(m6<m5){
+  q4ans1.value = (m6+60)-m5;
+}else{
+  q4ans1.value = m6-m5;
+}
+var q4ans2 = document.getElementById("q4ans2");
+if(m7<m6){
+  q4ans2.value = (m7+60)-m6;
+}else{
+  q4ans2.value = m7-m6;
+}
+var q4ans3 = document.getElementById("q4ans3");
+if(m9<m8){
+  q4ans3.value = (m9+60)-m8;
+}else{
+  q4ans3.value = m9-m8;
+}
+var q4ans4 = document.getElementById("q4ans4");
+if(m10<m9){
+  q4ans4.value =(m10+60)-m9;
+}else{
+  q4ans4.value = m10-m9;
+}
+
+var q4opt1 = document.getElementById("q4opt1");
+if(m6<m5){
+  q4opt1.value = (m6+60)-m5;
+}else{
+  q4opt1.value = m6-m5;
+}
+var q4opt2 = document.getElementById("q4opt2");
+if(m7<m6){
+  q4opt2.value = (m7+60)-m6;
+}else{
+  q4opt2.value = m7-m6;
+}
+var q4opt3 = document.getElementById("q4opt3");
+if(m9<m8){
+  q4opt3.value = (m9+60)-m8;
+}else{
+  q4opt3.value = m9-m8;
+}
+var q4opt4 = document.getElementById("q4opt4");
+if(m10<m9){
+  q4opt4.value =(m10+60)-m9;
+}else{
+  q4opt4.value = m10-m9;
+}
+
+var q5ans1 = document.getElementById("q5ans1");
+if(cart[0]=="img/clock_img/p1.png"){
+  q5ans1.value = 1;
+}
+if(cart[0]=="img/clock_img/p2.png"){
+  q5ans1.value = 2;
+}
+if(cart[0]=="img/clock_img/p3.png"){
+  q5ans1.value = 3;
+}
+if(cart[0]=="img/clock_img/p4.png"){
+  q5ans1.value = 4;
+}
+var q5ans2 = document.getElementById("q5ans2");
+if(cart[1]=="img/clock_img/p1.png"){
+  q5ans2.value = 1;
+}
+if(cart[1]=="img/clock_img/p2.png"){
+  q5ans2.value = 2;
+}
+if(cart[1]=="img/clock_img/p3.png"){
+  q5ans2.value = 3;
+}
+if(cart[1]=="img/clock_img/p4.png"){
+  q5ans2.value = 4;
+}
+var q5ans3 = document.getElementById("q5ans3");
+if(cart[2]=="img/clock_img/p1.png"){
+  q5ans3.value = 1;
+}
+if(cart[2]=="img/clock_img/p2.png"){
+  q5ans3.value = 2;
+}
+if(cart[2]=="img/clock_img/p3.png"){
+  q5ans3.value = 3;
+}
+if(cart[2]=="img/clock_img/p4.png"){
+  q5ans3.value = 4;
+}
+var q5ans4 = document.getElementById("q5ans4");
+if(cart[3]=="img/clock_img/p1.png"){
+  q5ans4.value = 1;
+}
+if(cart[3]=="img/clock_img/p2.png"){
+  q5ans4.value = 2;
+}
+if(cart[3]=="img/clock_img/p3.png"){
+  q5ans4.value = 3;
+}
+if(cart[3]=="img/clock_img/p4.png"){
+  q5ans4.value = 4;
+}
+
+var q5opt1 = document.getElementById("q5opt1");
+if(cart[0]=="img/clock_img/p1.png"){
+  q5opt1.value = 1;
+}
+var q5opt2 = document.getElementById("q5opt2");
+if(cart[1]=="img/clock_img/p2.png"){
+  q5opt2.value = 2;
+}
+var q5opt3 = document.getElementById("q5opt3");
+if(cart[2]=="img/clock_img/p3.png"){
+  q5opt3.value = 3;
+}
+var q5opt4 = document.getElementById("q5opt4");
+if(cart[3]=="img/clock_img/p4.png"){
+  q5opt4.value = 4;
+}
+
+
+
+
+
+}
+</script>
+
+
+
+
+<body>
+  
+  <form method="post" action="time_finish.php" data-ajax="false">
+    <div data-role="page" id="time1">
+    <h3 align="center">請問現在是幾點幾分? 輸入正確時間。</h3>
+    
+  <table width="50%" align="center">
+    <tr style="height:280px">
+      <td><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+      <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+    </tr>
+    <tr style="height:40px">
+      <td><div style="text-align: center" class="form-inline"><label for="appt-time" >你的答案</label>
+        <input type="number" id="q1q11" name="q1q11" min="1" max="12" >時<input type="number" id="q1q12" name="q1q12" min="00" max="59" step="5" >分</div>
+      </td>
+        
+      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
+        <input type="number" id="q1q21" name="q1q21" min="1" max="12" >時<input type="number" id="q1q22" name="q1q22" min="00" max="59" step="5" >分</div>
+      </td>
+    </tr>
+ 
+    <tr style="height: 280px">
+      <td>
+        <canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+      </td>
+      <td><canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+      </td>
+    </tr>
+    <tr style="height: 40px">
+      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
+        <input type="number" id="q1q31" name="q1q31" min="1" max="12" >時<input type="number" id="q1q32" name="q1q32" min="00" max="59" step="5" >分</div>
+      </td>
+        
+      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
+        <input type="number" id="q1q41" name="q1q41" min="1" max="12" >時<input type="number" id="q1q42" name="q1q42" min="00" max="59" step="5" >分</div>
+      </td>
+    </tr>
+  </table>
+  <div align="center">
+    <a href="#time2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+  </div>
+  </div>
+  
+
+<div data-role="page" id="time2">
+<h3 align="center">把相同的時間連在一起。</h3>
+<div align="center">
+    <div class="container" align="center">
+      <div id="problems" class="problems disable-select">
+      </div>
+    </div>
+  </div>
+
+
+<script>
+let BreakException = {};
+
+function add_listener(element, event_name, handler) {
+  if (element.addEventListener) {
+    element.addEventListener(event_name, handler, false);
+  } else if (element.attachEvent) {
+    element.attachEvent('on' + event_name, handler);
+  } else {
+    element['on' + event_name] = handler;
+  }
+}
+
+function remove_listener(element, event_name, handler) {
+  if (element.addEventListener) {
+    element.removeEventListener(event_name, handler, false);
+  } else if (element.detachEvent) {
+    element.detachEvent('on' + event_name, handler);
+  } else {
+    element['on' + event_name] = null;
+  }
+}
+
+function random_int(max) {
+  return Math.floor(Math.random() * max);
+}
+
+(function (win) {
+  function DrawClock(options) {
+    this.canvas = options.el;
+    this.hour = options.hour;
+    this.minute = options.minute;
+    this.ctx = this.canvas.getContext('2d'); //方法返回一個用於在畫布上繪圖的環境
+    this.width = this.ctx.canvas.width;
+    this.height = this.ctx.canvas.height;
+    this.r = this.width / 2;
+    this.rem = this.width / 200;
+    this.digits = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2];
+
+    this.init();
+  }
+
+  DrawClock.prototype = {
+    init: function () {
+      var ctx = this.ctx;
+      ctx.clearRect(0, 0, this.width, this.height); //在給定的矩形內清除指定的畫素
+
+      this.drawBackground();
+      this.drawHour();
+      this.drawMinute();
+      this.drawDot();
+      ctx.restore();
+    },
+    drawBackground: function () {
+      var ctx = this.ctx;
+      var self = this;
+      ctx.save();
+      ctx.translate(this.r, this.r); //重新對映畫布上的 (0,0) 位置
+      ctx.beginPath();
+      ctx.lineWidth = 8 * this.rem;
+      ctx.arc(0, 0, this.r - ctx.lineWidth / 2, 0, 2 * Math.PI, false); //建立弧/曲線（用於建立圓形或部分圓）
+      ctx.fillStyle = "#fff";
+      ctx.fill();
+      ctx.stroke();
+      ctx.font = 16 * this.rem + "px Arial"; //設定或返回文字內容的當前字型屬性
+      ctx.textAlign = "center"; //設定或返回文字內容的當前對齊方式
+      ctx.textBaseline = "middle"; //設定或返回在繪製文字時使用的當前文字基線
+      ctx.fillStyle = "#000";
+      this.digits.forEach(function (number, i) {
+        var rad = 2 * Math.PI / 12 * i;
+        var x = Math.cos(rad) * (self.r - 33 * self.rem);
+        var y = Math.sin(rad) * (self.r - 33 * self.rem);
+        ctx.fillText(number, x, y); //在畫布上繪製"被填充的"文字
+      });
+
+      //分鐘的刻度，每分鐘轉6deg
+      for (var i = 0; i < 60; i++) {
+        ctx.save(); //儲存當前環境的狀態
+        ctx.rotate(6 * i * Math.PI / 180); //旋轉當前繪圖
+        ctx.beginPath(); //起始一條路徑，或重置當前路徑
+        ctx.moveTo(0, -82 * this.rem); //把路徑移動到畫布中的指定點，不建立線條
+        ctx.lineTo(0, -87 * this.rem); //新增一個新點，然後在畫布中建立從該點到最後指定點的線條
+        ctx.closePath(); //建立從當前點回到起始點的路徑
+        ctx.strokeStyle = '#000'; //設定或返回用於筆觸的顏色、漸變或模式
+        ctx.lineWidth = 1 * this.rem; //設定或返回當前的線條寬度
+        ctx.stroke(); //繪製已定義的路徑
+        ctx.restore(); //返回之前儲存過的路徑狀態和屬性
+      }
+      //小時的刻度，每小時轉30deg
+      for (var i = 0; i < 12; i++) {
+        ctx.save();
+        ctx.rotate(30 * i * Math.PI / 180);
+        ctx.beginPath();
+        ctx.moveTo(0, -79 * this.rem);
+        ctx.lineTo(0, -87 * this.rem);
+        ctx.closePath();
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 2 * this.rem;
+        ctx.stroke();
+        ctx.restore();
+      }
+    },
+    drawHour: function () {
+      var ctx = this.ctx;
+      ctx.save();
+      ctx.beginPath();
+      var hRad = 2 * Math.PI / 12 * this.hour;
+      var mRad = 2 * Math.PI / 12 / 60 * this.minute;
+      ctx.rotate(hRad + mRad);
+      ctx.lineWidth = 6 * this.rem;
+      ctx.lineCap = "round"; //設定或返回線條的結束端點樣式
+      ctx.moveTo(0, 10 * this.rem);
+      ctx.lineTo(0, -this.r / 2);
+      ctx.stroke();
+      ctx.restore();
+    },
+    drawMinute: function () {
+      var ctx = this.ctx;
+      ctx.save();
+      ctx.beginPath();
+      var rad = 2 * Math.PI / 60 * this.minute;
+      ctx.rotate(rad);
+      ctx.lineWidth = 3 * this.rem;
+      ctx.lineCap = "round";
+      ctx.moveTo(0, 10 * this.rem);
+      ctx.lineTo(0, -this.r + 26 * this.rem);
+      ctx.stroke();
+      ctx.restore();
+    },
+    drawDot: function (minute) {
+      var ctx = this.ctx;
+      ctx.beginPath();
+      ctx.fillStyle = "#fff";
+      ctx.arc(0, 0, 3 * this.rem, 0, 2 * Math.PI, false);
+      ctx.fill();
+    }
+  };
+
+  win.DrawClock = DrawClock;
+})(window);
+
+(function (win) {
+  function Problem(options) {
+    this.problem_element = document.createElement('div');
+    this.clock_canvas = document.createElement('canvas');
+    this.dot_clock = document.createElement('span');
+    this.dot_answer = document.createElement('span');
+    this.answer = document.createElement('span');
+    this.group_left = document.createElement('div');
+    this.group_right = document.createElement('div');
+
+    this.id = options.id;
+    this.left_onclick = options.left_onclick;
+    this.right_onclick = options.right_onclick;
+    this.clock_hour = options.clock_hour;
+    this.clock_minute = options.clock_minute;
+    this.answer_hour = options.answer_hour;
+    this.answer_minute = options.answer_minute;
+    this.get_dragging_info = options.get_dragging_info;
+    this.set_dragging_info = options.set_dragging_info;
+
+    this.group_left.classList.add('problem-group');
+    this.group_right.classList.add('problem-left');
+    this.group_left.appendChild(this.clock_canvas);
+    this.group_left.appendChild(this.dot_clock);
+    this.group_right.appendChild(this.dot_answer);
+    this.group_right.appendChild(this.answer);
+
+    this.problem_element.classList.add('problem');
+    this.problem_element.appendChild(this.group_left);
+    this.problem_element.appendChild(this.group_right);
+
+    this.clock_canvas.classList.add('clock');
+    this.clock_canvas.setAttribute('width', '200%');
+    this.clock_canvas.setAttribute('height', '200%');
+
+    this.dot_clock.classList.add('dot');
+    this.dot_answer.classList.add('dot');
+    this.answer.classList.add('time-text');
+
+    this.updateClock();
+    this.updateAnswer();
+  }
+  Problem.prototype = {
+    updateClock: function () {
+      new DrawClock({
+        el: this.clock_canvas,
+        hour: this.clock_hour,
+        minute: this.clock_minute
+      });
+    },
+    updateAnswer: function () {
+      this.answer.innerHTML = this.answer_hour + ':' +
+        (this.answer_minute < 10 ? '0' : '') + this.answer_minute;
+    },
+    set left_onclick(handler) {
+      let problem_this = this;
+      add_listener(this.dot_clock, 'mousedown', function(event) {
+        event.stopPropagation();
+        problem_this.set_dragging_info(true, true);
+        handler(problem_this.id);
+      });
+      add_listener(this.dot_clock, 'mouseup', function(event) {
+        event.stopPropagation();
+        let dragging_info = problem_this.get_dragging_info();
+        if (dragging_info.is_dragging &&
+            !dragging_info.is_left) {
+          problem_this.set_dragging_info(false);
+          handler(problem_this.id);
+        }
+      });
+    },
+    set right_onclick(handler) {
+      let problem_this = this;
+      add_listener(this.dot_answer, 'mousedown', function(event) {
+        event.stopPropagation();
+        problem_this.set_dragging_info(true, false);
+        handler(problem_this.id);
+      });
+      add_listener(this.dot_answer, 'mouseup', function(event) {
+        event.stopPropagation();
+        let dragging_info = problem_this.get_dragging_info();
+        if (dragging_info.is_dragging &&
+            dragging_info.is_left) {
+          problem_this.set_dragging_info(false);
+          handler(problem_this.id);
+        }
+      });
+    },
+    set clock_hour(hour) {
+      this.ch = hour;
+      this.updateClock();
+    },
+    get clock_hour() {
+      return this.ch;
+    },
+    set clock_minute(minute) {
+      this.cm = minute;
+      this.updateClock();
+    },
+    get clock_minute() {
+      return this.cm;
+    },
+    set answer_hour(hour) {
+      this.ah = hour;
+      this.updateAnswer();
+    },
+    get answer_hour() {
+      return this.ah;
+    },
+    set answer_minute(minute) {
+      this.am = minute;
+      this.updateAnswer();
+    },
+    get answer_minute() {
+      return this.am;
+    },
+    set dot_clock_color(color) {
+      this.dcc = color;
+      this.dot_clock.style.background = color;
+    },
+    get dot_clock_color() {
+      return this.dcc;
+    },
+    dot_clock_reset_color: function() {
+      this.dot_clock_color = "";
+    },
+    set dot_answer_color(color) {
+      this.dac = color;
+      this.dot_answer.style.background = color;
+    },
+    get dot_answer_color() {
+      return this.dac;
+    },
+    dot_answer_reset_color: function() {
+      this.dot_answer_color = "";
+    }
+  };
+  win.Problem = Problem;
+})(window);
+
+(function (win) {
+  function Line(options) {
+    this.parent = options.parent;
+    this.element = document.createElement('span');
+    this.element.classList.add('line');
+    this.height = this.element.style.height;
+  }
+  Line.prototype = {
+    set start_x(x) {
+      this.sx = x;
+      this.update();
+    },
+    set start_y(y) {
+      this.sy = y;
+      this.update();
+    },
+    set end_x(x) {
+      this.ex = x;
+      this.update();
+    },
+    set end_y(y) {
+      this.ey = y;
+      this.update();
+    },
+    set color(color) {
+      this.c = color;
+      this.element.style.background = color;
+    },
+    get color() {
+      return this.c;
+    },
+    reset_color: function() {
+      this.color = "";
+    },
+    end_xy: function(x, y) {
+      this.ex = x;
+      this.ey = y;
+      this.update();
+    },
+    on_element: function(element) {
+      this.connect_elements(element, element);
+    },
+    connect_elements: function(e1, e2) {
+      this.e1 = e1;
+      this.e2 = e2;
+      this.update_coordinate();
+    },
+    update_coordinate: function() {
+      if (this.is_displaying) {
+        if (this.e1 != undefined && this.e2 != undefined) {
+          let a = this.sy, b = this.sx, c = this.ey, d = this.ex;
+          this.sy = this.e1.offsetTop + this.e1.offsetHeight / 2;
+          this.sx = this.e1.offsetLeft + this.e1.offsetWidth / 2;
+          this.ey = this.e2.offsetTop + this.e2.offsetHeight / 2;
+          this.ex = this.e2.offsetLeft + this.e2.offsetWidth / 2;
+          if (a != this.sy || b != this.sx || c != this.ey || d != this.ex) {
+            this.update();
+          }
+        }
+      }
+    },
+    update: function() {
+      if (this.is_displaying) {
+        let opposite = this.ey - this.sy;
+        let adjacent = this.ex - this.sx;
+        let hypotenuse = Math.sqrt(opposite * opposite + adjacent * adjacent);
+        var angle = 180 / Math.PI * Math.acos(adjacent / hypotenuse);
+        if (opposite < 0) angle *= -1;
+        this.element.style.top = (this.sy + opposite / 2 -
+                                  this.element.offsetHeight / 2) + 'px';
+        this.element.style.left = (this.sx + adjacent / 2 -
+                                   hypotenuse / 2) + 'px';
+        this.element.style.width = hypotenuse + 'px';
+        this.element.style["-webkit-transform"] = 'rotate('+ angle +'deg)';
+        this.element.style["-moz-transform"] = 'rotate('+ angle +'deg)';
+        this.element.style["-ms-transform"] = 'rotate('+ angle +'deg)';
+        this.element.style["-o-transform"] = 'rotate('+ angle +'deg)';
+        this.element.style["-transform"] = 'rotate('+ angle +'deg)';
+      }
+    },
+    remove: function() {
+      this.is_displaying = false;
+      this.element.remove();
+    },
+    append_to_parent: function() {
+      this.is_displaying = true;
+      this.parent.appendChild(this.element);
+    },
+  };
+  win.Line = Line;
+})(window);
+
+(function() {
+  const color_list = new Array(
+    "#ff1744",
+    "#d500f9",
+    "#651fff",
+    "#2979ff",
+    "#00b0ff",
+    "#00e5ff",
+    "#1de9b6",
+    "#00e676",
+    "#76ff03",
+    "#c6ff00",
+    "#ffea00",
+    "#ffc400",
+    "#ff3d00",
+  );
+  let colors_used = new Array();
+  let colors_unused = color_list.slice();
+  let num_of_problems = 4;
+  let questions = new Array();
+  let answers = new Array();
+  let user_answers_lr = new Array();
+  let user_answers_rl = new Array();
+  let problems_element = document.getElementById('problems');
+  let check_answer_button = document.getElementById('check-answer-button');
+  let displays = new Array();
+  let lines = new Array();
+  let line_on_mouse = new Line({parent: problems_element});
+
+  var clicked_left = undefined;
+  var clicked_right = undefined;
+  var current_color = undefined;
+
+  var dragging_info = {};
+
+  function get_dragging_info() {
+    return dragging_info;
+  }
+
+  function set_dragging_info(is_dragging, is_left) {
+    dragging_info = {
+      is_dragging: is_dragging,
+      is_left: is_left,
+    };
+  }
+
+  line_on_mouse.parent = problems_element;
+
+  function get_color() {
+    let index = random_int(colors_unused.length);
+    let color = colors_unused[index];
+    colors_unused.splice(index, 1);
+    colors_used.push(color);
+    return color;
+  }
+
+  function put_color(color) {
+    let index = colors_used.indexOf(color);
+    if (index > -1) {
+      colors_used.splice(index, 1);
+      colors_unused.push(color);
+    }
+  }
+
+  function set_current_color(color) {
+    current_color = color;
+    line_on_mouse.color = color;
+  }
+
+  function reset_current_color() {
+    current_color = undefined;
+    line_on_mouse.color = "";
+  }
+
+  function remove_line(left) {
+    let right = user_answers_lr[left];
+    user_answers_lr[left] = undefined;
+    user_answers_rl[right] = undefined;
+    put_color(lines[left].color);
+    lines[left].remove();
+    displays[left].dot_clock_reset_color();
+    displays[right].dot_answer_reset_color();
+  }
+
+  function link_dots(left, right) {
+    user_answers_lr[left] = right;
+    user_answers_rl[right] = left;
+    clicked_left = undefined;
+    clicked_right = undefined;
+    lines[left].append_to_parent();
+    lines[left].connect_elements(displays[left].dot_clock,
+                                 displays[right].dot_answer);
+    line_on_mouse.remove();
+    lines[left].color = current_color;
+    displays[left].dot_clock_color = current_color;
+    displays[right].dot_answer_color = current_color;
+    reset_current_color();
+  }
+
+  function cancel_linking_left(id) {
+    clicked_left = undefined;
+    line_on_mouse.remove();
+    put_color(current_color);
+    reset_current_color();
+    displays[id].dot_clock_reset_color();
+  }
+
+  function cancel_linking_right(id) {
+    clicked_right = undefined;
+    line_on_mouse.remove();
+    put_color(current_color);
+    reset_current_color();
+    displays[id].dot_answer_reset_color();
+  }
+
+  function left_onclick(id) {
+    if (user_answers_lr[id] != undefined) {
+      remove_line(id);
+      check_answer();
+    }
+    if (clicked_right != undefined) {
+      link_dots(id, clicked_right);
+      check_answer();
+    } else if (clicked_left == id) {
+      cancel_linking_left(id);
+      check_answer();
+    } else {
+      if (clicked_left != undefined) {
+        displays[clicked_left].dot_clock_reset_color();
+      }
+      clicked_left = id;
+      line_on_mouse.append_to_parent();
+      line_on_mouse.on_element(displays[id].dot_clock);
+      let color = get_color();
+      set_current_color(color);
+      displays[id].dot_clock_color = color;
+    }
+  }
+
+  function right_onclick(id) {
+    if ((left = user_answers_rl[id]) != undefined) {
+      remove_line(left);
+      check_answer();
+    }
+    if ((left = clicked_left) != undefined) {
+      link_dots(clicked_left, id);
+      check_answer();
+    } else if (clicked_right == id) {
+      cancel_linking_right(id);
+      check_answer();
+    } else {
+      if (clicked_right != undefined) {
+        displays[clicked_right].dot_answer_reset_color();
+      }
+      clicked_right = id;
+      line_on_mouse.append_to_parent();
+      line_on_mouse.on_element(displays[id].dot_answer);
+      let color = get_color();
+      set_current_color(color);
+      displays[id].dot_answer_color = color;
+    }
+  }
+
+  function verify_answer() {
+    for (var i = 0; i < num_of_problems; ++i) {
+      if (answers[i] != user_answers_rl[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function set_clear() {
+    check_answer_button.innerHTML = "Clear!!";
+    check_answer_button.classList.add("check-answer-button-clear");
+  }
+
+  function unset_clear() {
+    check_answer_button.innerHTML = "Check";
+    check_answer_button.classList.remove("check-answer-button-clear");
+  }
+
+  function check_answer() {
+    if (verify_answer()) {
+      set_clear();
+    } else {
+      unset_clear();
+    }
+  }
+
+  for (var i = 0; i < num_of_problems; ++i) {
+    user_answers_lr[i] = undefined;
+    user_answers_rl[i] = undefined;
+
+    lines.push(new Line({parent: problems_element}));
+
+    var exist = false;
+    var hour = 0, minute = 0;
+    do {
+      exist = false;
+      hour = random_int(13);
+      minute = random_int(12) * 5;
+      try {
+        questions.forEach(function(element) {
+          if (element.hour === hour && element.minute === minute) {
+            exist = true;
+            throw BreakException;
+          }
+        });
+      } catch (e) { }
+    } while (exist);
+
+    questions.push({
+      hour: hour,
+      minute: minute
+    });
+    answers.push(i);
+  }
+  // answer = [0, 1, 2, 3]
+  for (var i = 0; i < num_of_problems; ++i) {
+    let j = random_int(num_of_problems);
+    let tmp = answers[i];
+    answers[i] = answers[j];
+    answers[j] = tmp;
+  }
+  // answer = [3, 1, 0, 2]
+  for (var i = 0; i < num_of_problems; ++i) {
+    displays[i] = new Problem({
+      id: i,
+      left_onclick: left_onclick,
+      right_onclick: right_onclick,
+      clock_hour: questions[i].hour,
+      clock_minute: questions[i].minute,
+      answer_hour: questions[answers[i]].hour,
+      answer_minute: questions[answers[i]].minute,
+      get_dragging_info: get_dragging_info,
+      set_dragging_info: set_dragging_info,
+    });
+    problems_element.appendChild(displays[i].problem_element);
+  }
+
+  add_listener(check_answer_button, 'click', function() {
+    if (this.last_timeout != undefined) {
+      clearTimeout(this.last_timeout);
+    }
+    if (verify_answer()) {
+      set_clear();
+    } else {
+      unset_clear();
+      check_answer_button.innerHTML = "Wrong!";
+      check_answer_button.classList.add("check-answer-button-wrong");
+      this.last_timeout = setTimeout(function() {
+        check_answer_button.classList.remove("check-answer-button-wrong");
+        if (!verify_answer()) {
+          unset_clear();
+        }
+      }, 1000);
+    }
+  });
+
+  add_listener(problems_element, 'mousemove', function(event) {
+    let x = event.clientX - problems_element.offsetLeft + (window.pageXOffset || document.documentElement.scrollLeft) - (document.documentElement.clientLeft || 0);
+    let y = event.clientY - problems_element.offsetTop + (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
+    line_on_mouse.end_xy(x, y);
+  });
+
+  add_listener(problems_element, 'mousedown', function(event) {
+    if (clicked_left != undefined) {
+      cancel_linking_left(clicked_left);
+    }
+    if (clicked_right != undefined) {
+      cancel_linking_right(clicked_right);
+    }
+  });
+
+  function update_lines() {
+    for (var i = 0; i < num_of_problems; ++i) {
+      lines[i].update_coordinate();
+    }
+  }
+
+  add_listener(window, 'resize', update_lines);
+  setInterval(update_lines, 100);
+})();
+
+</script>
+
+    
+
+<div align="center">
+  <a href="#time1" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
+  <a href="#time3" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+</div>
+</div>
+    
+
+    <div data-role="page" id="time3">
+        <h3 align="center">請問現在是幾點鐘? 請選擇正確的數字。</h3>
+
+        <table width="50%" align="center">
+            <tr style="height: 280px">
+              <th style="width: 380px" colspan="3">
+              <canvas id="clock5" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+              </th>
+              <th style="width: 380px" colspan="3">
+              <canvas id="clock6" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+              </th>
+            </tr>
+            <tr style="height:  40px">  
+            
+                
+            <th>
+                <div style="float:left;"><label><input id="q3q11" name="ans0" type="radio" data-role="none"><span id="f00"></span></label></div>
+            </th>
+            <th>
+                <div style="float:left;"><label><input id="q3q12" name="ans0" type="radio" data-role="none"><span id="f01"></span></label></div>
+            </th>
+            <th>
+                <div style="float:left;"><label><input id="q3q13" name="ans0" type="radio" data-role="none"><span id="f02"></span></label></div>
+            </th>
+           
+            <td>
+                <div style="float:left;"><label><input id="q3q21" name="ans1" type="radio" data-role="none"><span id="f03"></span></label></div>
+            </td>
+                      
+            <td>
+                <div style="float:left;"><label><input id="q3q22" name="ans1" type="radio" data-role="none"><span id="f04"></span></label></div>
+            </td>
+         
+            <td>
+                <div style="float:left;"><label><input id="q3q23" name="ans1" type="radio" data-role="none"><span id="f05"></span></label></div>
+            </td>
+            </tr>
+                
+              
+        
+            <tr style="height: 280px">
+              <th style="width: 380px" colspan="3">
+                <canvas id="clock7" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+              </th>
+        
+              <th style="width: 380px" colspan="3">
+                <canvas id="clock8" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+              </th>
+        
+            </tr>
+        
+            <tr style="height: 40px">
+                <td>
+                    <div style="float:left;"><label><input id="q3q31" name="ans2" type="radio" data-role="none"><span id="f06"></span></label></div>
+                  </td>
+              
+                <td>
+                    <div style="float:left;"><label><input id="q3q32" name="ans2" type="radio" data-role="none"><span id="f07"></span></label></div>
+                  
+                </td>
+               
+                <td>
+                    <div style="float:left;"><label><input id="q3q33" name="ans2" type="radio" data-role="none"><span id="f08"></span></label></div>
+                  
+                </td>
+             
+        
+                <td>
+                    <div style="float:left;"><label><input id="q3q41" name="ans3" type="radio" data-role="none"><span id="f09"></span></label></div>
+                  </td>
+              
+                <td>
+                    <div style="float:left;"><label><input id="q3q42" name="ans3" type="radio" data-role="none"><span id="f10"></span></label></div>
+                  </td>
+              
+                <th>
+                    <div style="float:left;"><label><input id="q3q43" name="ans3" type="radio" data-role="none"><span id="f11"></span></label></div>
+                  </td>
+              
+            </tr>
+          </table>
+          <div align="center">
+              <a href="#time2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
+              <a href="#time4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+          </div>
+    </div>
+
+    <div data-role="page" id="time4">
+        <h3 align="center">請判斷經過多少時間?</h3>
+        <table border="1" width="50%" align="center">
+            <tr style="height:280px">
+              <td><canvas id="clock9" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+              <td width="5%" style="text-align: center;">經過<input type="number" name="ans4" data-role="none" max="60" min="0" step="5">分</td>
+              <td><canvas id="clock10" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+              <td width="5%" style="text-align: center;">經過<input type="number" name="ans5" data-role="none" max="60" min="0" step="5">分</td>
+              <td><canvas id="clock11" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+
+            </tr>
+         </table>
+
+         <table border="1" width="50%" align="center">
+            <tr style="height: 280px">
+              <td><canvas id="clock12" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+              <td width="5%" style="text-align: center;">經過<input type="number" name="ans6" data-role="none" max="60" min="0" step="5">分</td>
+              <td><canvas id="clock13" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+              <td width="5%" style="text-align: center;">經過<input type="number" name="ans7" data-role="none" max="60" min="0" step="5">分</td>
+              <td><canvas id="clock14" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+            </tr>
+         </table>
+         <div align="center">
+             <a href="#time3" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
+             <a href="#time5" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+         </div>
+    </div>
+
+    <div data-role="page" id="time5">
+      <h3 align="center">請依作息判斷排序?</h3>
+
+      <table style="width:50%" align="center">
+        <tr style="height: 280px">
+            <th style="width: 380px" ><script>document.write('<img src="' +cart[0]+ '"width="280" height="280" style="display:block; margin:auto;">');</script></th>
+            <th style="width: 380px" ><script>document.write('<img src="' +cart[1]+ '"width="280" height="280" style="display:block; margin:auto;">');</script></th>
+          </tr>
+          <tr style="height:  40px">
+            
+          <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="ans8" min="1" max="4"></div></th>
+          <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="ans9" min="1" max="4"></div></th>      
+          </tr>
+              
+            
+      
+          <tr style="height: 280px">
+            <th style="width: 380px" ><script>document.write('<img src="' +cart[2]+ '"width="280" height="280" style="display:block; margin:auto;">');</script></th>
+      
+            <th style="width: 380px" ><script>document.write('<img src="' +cart[3]+ '"width="280" height="280" style="display:block; margin:auto;">');</script></th>
+      
+          </tr>
+      
+          <tr style="height: 40px">
+              <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="ans10" min="1" max="4"></div></th>
+              <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="ans11" min="1" max="4"></div></th>        
+          </tr>
+      
+    </table>
+    <div align="center">
+        <a href="#time4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
+        <button type="submit" id="button" style="width: 10%;">結束作答</button>
+    </div>
+    </div>
+
+  <input type="hidden" id="q1ans1" name="q1answer1"/>				
+  <input type="hidden" id="q1ans2" name="q1answer2"/>
+  <input type="hidden" id="q1ans3" name="q1answer3"/>
+  <input type="hidden" id="q1ans4" name="q1answer4">
+  <input type="hidden" id="q1ans5" name="q1answer5"/>				
+  <input type="hidden" id="q1ans6" name="q1answer6"/>
+  <input type="hidden" id="q1ans7" name="q1answer7"/>
+  <input type="hidden" id="q1ans8" name="q1answer8"/>
+  <input type="hidden" id="q1opt11" name="q1option11"/>
+	<input type="hidden" id="q1opt12" name="q1option12"/>
+  <input type="hidden" id="q1opt21" name="q1option21"/>
+  <input type="hidden" id="q1opt22" name="q1option22"/>
+  <input type="hidden" id="q1opt31" name="q1option31"/>
+  <input type="hidden" id="q1opt32" name="q1option32"/>
+  <input type="hidden" id="q1opt41" name="q1option41"/>
+	<input type="hidden" id="q1opt42" name="q1option42"/>  
+
+  <input type="hidden" id="q3ans1" name="q3answer1"/>	
+  <input type="hidden" id="q3ans2" name="q3answer2"/>	
+  <input type="hidden" id="q3ans3" name="q3answer3"/>	
+  <input type="hidden" id="q3ans4" name="q3answer4"/>	
+  <input type="hidden" id="q3opt11" name="q3option11"/>
+	<input type="hidden" id="q3opt12" name="q3option12"/>
+  <input type="hidden" id="q3opt13" name="q3option13"/>
+  <input type="hidden" id="q3opt21" name="q3option21"/>
+	<input type="hidden" id="q3opt22" name="q3option22"/>
+  <input type="hidden" id="q3opt23" name="q3option23"/>
+  <input type="hidden" id="q3opt31" name="q3option31"/>
+	<input type="hidden" id="q3opt32" name="q3option32"/>
+  <input type="hidden" id="q3opt33" name="q3option33"/>
+  <input type="hidden" id="q3opt41" name="q3option41"/>
+	<input type="hidden" id="q3opt42" name="q3option42"/>
+  <input type="hidden" id="q3opt43" name="q3option43"/>
+  
+  <input type="hidden" id="q4ans1" name="q4answer1"/>	
+  <input type="hidden" id="q4ans2" name="q4answer2"/>	
+  <input type="hidden" id="q4ans3" name="q4answer3"/>	
+  <input type="hidden" id="q4ans4" name="q4answer4"/>	
+  <input type="hidden" id="q4opt1" name="q4option1"/>
+	<input type="hidden" id="q4opt2" name="q4option2"/>
+  <input type="hidden" id="q4opt3" name="q4option3"/>
+  <input type="hidden" id="q4opt4" name="q4option4"/>
+
+  <input type="hidden" id="q5ans1" name="q5answer1"/>	
+  <input type="hidden" id="q5ans2" name="q5answer2"/>	
+  <input type="hidden" id="q5ans3" name="q5answer3"/>	
+  <input type="hidden" id="q5ans4" name="q5answer4"/>
+  <input type="hidden" id="q5opt1" name="q5option1"/>
+	<input type="hidden" id="q5opt2" name="q5option2"/>
+  <input type="hidden" id="q5opt3" name="q5option3"/>
+  <input type="hidden" id="q5opt4" name="q5option4"/>
+
+
+
+
+  </form>
+  <script>
+
+
+
+　
+yudan_pic = new Array(4);
+yudan_pic[0] = "img/clock_img/p1.png";
+yudan_pic[1] = "img/clock_img/p2.png";
+yudan_pic[2] = "img/clock_img/p3.png";
+yudan_pic[3] = "img/clock_img/p4.png";
+index = Math.floor(Math.random() * yudan_pic.length);
+ 
+  drawclock("clock1",h1,m1);  //第一題的時鐘            
+  drawclock("clock2",h2,m2);
+  drawclock("clock3",h3,m3);
+  drawclock("clock4",h4,m4);
+
+  drawclock("clock5",h5,0);   //第三題的時鐘         
+  drawclock("clock6",h6,0); 
+  drawclock("clock7",h7,0);
+  drawclock("clock8",h8,0);
+
+ 
+  
+  
+
+  var h9 = Math.floor(Math.random() * 12) + 1;
+  var m5 = Math.floor(Math.random() * 12) * 5;
+  var h10=h9;
+  var m6 = m5+Math.floor(Math.random() * 12) * 5;
+  if(m6>60){
+    m6-=60;
+    h10+=1;
+  }
+  if(m6==60){
+    m6=0;
+    h10+=1;
+  }
+  var h11=h10;
+  var m7 = m6+Math.floor(Math.random() * 12) * 5;
+  if(m7>60){
+    m7-=60;
+    h11+=1;
+  }
+  var h12 = Math.floor(Math.random() * 12) + 1;
+  var m8 = Math.floor(Math.random() * 12) * 5;
+  var h13=h12;
+  var m9 = m8+Math.floor(Math.random() * 12) * 5;
+  if(m9>60){
+    m9-=60;
+    h13+=1;
+  }
+  var h14=h13;
+  var m10 = m9+Math.floor(Math.random() * 12) * 5;
+  if(m10>60){
+    m10-=60;
+    h14+=1;
+  }
+
+  drawclock("clock9",h9,m5);  //第四題的時鐘           
+  drawclock("clock10",h10,m6);
+  drawclock("clock11",h11,m7);
+  drawclock("clock12",h12,m8);
+  drawclock("clock13",h13,m9);
+  drawclock("clock14",h14,m10);
+
+var f0 =Math.floor(Math.random() * 3);
+var f1 =Math.floor(Math.random() * 3);
+var f2 =Math.floor(Math.random() * 3);
+var f3 =Math.floor(Math.random() * 3);
+var h51;
+var h52;
+var h61;
+var h62;
+var h71;
+var h72;
+var h81;
+var h82;
+
+
+if(f0==0){
+  h51 = h5 + 1;
+  h52 = h5 + 2;
+  if(h51>12){
+    h51-=12;
+  }
+  if(h52>12){
+    h52-=12;
+  }
+document.getElementById('f00').innerHTML = h5;
+document.getElementById('f01').innerHTML = h51;
+document.getElementById('f02').innerHTML = h52;
+
+}
+
+if(f0==1){
+  var h51 = h5-1;
+  var h52 = h5+1;
+  if(h51<=0){
+    h51+=12;
+  }
+  if(h52>12){
+    h52-=12;
+  }
+document.getElementById('f00').innerHTML = h51;
+document.getElementById('f01').innerHTML = h5;
+document.getElementById('f02').innerHTML = h52;
+}
+
+if(f0==2){
+  var h51 = h5-2;
+  var h52 = h5-1;
+  if(h51<=0){
+    h51+=12;
+  }
+  if(h52<=0){
+    h52+=12;
+  }
+document.getElementById('f00').innerHTML = h51;
+document.getElementById('f01').innerHTML = h52;
+document.getElementById('f02').innerHTML = h5;
+}
+
+
+
+if(f1==0){
+  var h61 = h6 + 1;
+  var h62 = h6 + 2;
+  if(h61>12){
+    h61-=12;
+  }
+  if(h62>12){
+    h62-=12;
+  }
+document.getElementById('f03').innerHTML = h6;
+document.getElementById('f04').innerHTML = h61;
+document.getElementById('f05').innerHTML = h62;
+}
+if(f1==1){
+  var h61 = h6-1;
+  var h62 = h6+1;
+  if(h61<=0){
+    h61+=12;
+  }
+  if(h62>12){
+    h62-=12;
+  }
+document.getElementById('f03').innerHTML = h61;
+document.getElementById('f04').innerHTML = h6;
+document.getElementById('f05').innerHTML = h62;
+}
+if(f1==2){
+  var h61 = h6-2;
+  var h62 = h6-1;
+  if(h61<=0){
+    h61+=12;
+  }
+  if(h62<=0){
+    h62+=12;
+  }
+document.getElementById('f03').innerHTML = h61;
+document.getElementById('f04').innerHTML = h62;
+document.getElementById('f05').innerHTML = h6;
+}
+
+
+
+
+
+
+if(f2==0){
+  var h71 = h7 + 1;
+  var h72 = h7 + 2;
+  if(h71>12){
+    h71-=12;
+  }
+  if(h72>12){
+    h72-=12;
+  }
+document.getElementById('f06').innerHTML = h7;
+document.getElementById('f07').innerHTML = h71;
+document.getElementById('f08').innerHTML = h72;
+}
+if(f2==1){
+  var h71 = h7-1;
+  var h72 = h7+1;
+  if(h71<=0){
+    h71+=12;
+  }
+  if(h72>12){
+    h72-=12;
+  }
+document.getElementById('f06').innerHTML = h71;
+document.getElementById('f07').innerHTML = h7;
+document.getElementById('f08').innerHTML = h72;
+}
+if(f2==2){
+  var h71 = h7-2;
+  var h72 = h7-1;
+  if(h71<=0){
+    h71+=12;
+  }
+  if(h72<=0){
+    h72+=12;
+  }
+document.getElementById('f06').innerHTML = h71;
+document.getElementById('f07').innerHTML = h72;
+document.getElementById('f08').innerHTML = h7;
+}
+
+
+
+if(f3==0){
+  var h81 = h8 + 1;
+  var h82 = h8 + 2;
+  if(h81>12){
+    h81-=12;
+  }
+  if(h82>12){
+    h82-=12;
+  }
+document.getElementById('f09').innerHTML = h8;
+document.getElementById('f10').innerHTML = h81;
+document.getElementById('f11').innerHTML = h82;
+}
+if(f3==1){
+  var h81 = h8-1;
+  var h82 = h8+1;
+  if(h81<=0){
+    h81+=12;
+  }
+  if(h82>12){
+    h82-=12;
+  }
+document.getElementById('f09').innerHTML = h81;
+document.getElementById('f10').innerHTML = h8;
+document.getElementById('f11').innerHTML = h82;
+}
+if(f3==2){
+  var h81 = h8-2;
+  var h82 = h8-1;
+  if(h81<=0){
+    h81+=12;
+  }
+  if(h82<=0){
+    h82+=12;
+  }
+document.getElementById('f09').innerHTML = h81;
+document.getElementById('f10').innerHTML = h82;
+document.getElementById('f11').innerHTML = h8; 
+}
+
+  
+
+
+</script>
+</body>
+
+</html>

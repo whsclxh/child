@@ -1,21 +1,21 @@
-window.onload = function(){
-    var a1 = document.getElementById("anw1");
-    a1.value = h1;
-    var a2 = document.getElementById("anw2"); 
-    a2.value = m1;
-    var a3 = document.getElementById("anw3"); 
-    a3.value = h2;
-    var a4 = document.getElementById("anw4"); 
-    a4.value = m2;
-    var a5 = document.getElementById("anw5");
-    a5.value = h3; 
-    var a6 = document.getElementById("anw6"); 
-    a6.value = m3;
-    var a7 = document.getElementById("anw7"); 
-    a7.value = h4;
-    var a8 = document.getElementById("anw8");    
-    a8.value = m4;    							
-  };
+// window.onload = function(){
+//     var a1 = document.getElementById("anw1");
+//     a1.value = h1;
+//     var a2 = document.getElementById("anw2"); 
+//     a2.value = m1;
+//     var a3 = document.getElementById("anw3"); 
+//     a3.value = h2;
+//     var a4 = document.getElementById("anw4"); 
+//     a4.value = m2;
+//     var a5 = document.getElementById("anw5");
+//     a5.value = h3; 
+//     var a6 = document.getElementById("anw6"); 
+//     a6.value = m3;
+//     var a7 = document.getElementById("anw7"); 
+//     a7.value = h4;
+//     var a8 = document.getElementById("anw8");    
+//     a8.value = m4;    							
+//   };
 
   (function (win) {
     function DrawClock(options) {
@@ -161,10 +161,13 @@ win.DrawClock = DrawClock;
   var m3 = Math.floor(Math.random() * 12) * 5;
   var h4 = Math.floor(Math.random() * 12) + 1;
   var m4 = Math.floor(Math.random() * 12) * 5;
+
   var h5 = Math.floor(Math.random() * 12) + 1;
   var h6 = Math.floor(Math.random() * 12) + 1;
   var h7 = Math.floor(Math.random() * 12) + 1;
   var h8 = Math.floor(Math.random() * 12) + 1;
+  
+  
 
 
   function drawclock(clock,h,m){           //畫時鐘的function
@@ -174,6 +177,192 @@ win.DrawClock = DrawClock;
         minute: m
     });
   }
+
+
+  
+ 
+
+//   var f0 =Math.floor(Math.random() * 3);
+//   var f1 =Math.floor(Math.random() * 3);
+//   var f2 =Math.floor(Math.random() * 3);
+//   var f3 =Math.floor(Math.random() * 3);
+
+
+
+
+
+
+// if(f0==0){
+//   var hh1 = h5 + 1;
+//   var hh2 = h5 + 2;
+//   if(hh1>12){
+//     hh1-=12;
+//   }
+//   if(hh2>12){
+//     hh2-=12;
+//   }
+//   document.getElementById('f00').innerHTML = h5;
+//   document.getElementById('f01').innerHTML = hh1;
+//   document.getElementById('f02').innerHTML = hh2;
+// }
+// if(f0==1){
+//   var hh1 = h5-1;
+//   var hh2 = h5+1;
+//   if(hh1<=0){
+//     hh1+=12;
+//   }
+//   if(hh2>12){
+//     hh2-=12;
+//   }
+//   document.getElementById('f00').innerHTML = hh1;
+//   document.getElementById('f01').innerHTML = h5;
+//   document.getElementById('f02').innerHTML = hh2;
+// }
+// if(f0==2){
+//   var hh1 = h5-2;
+//   var hh2 = h5-1;
+//   if(hh1<=0){
+//     hh1+=12;
+//   }
+//   if(hh2<=0){
+//     hh2+=12;
+//   }
+//   document.getElementById('f00').innerHTML = hh1;
+//   document.getElementById('f01').innerHTML = hh2;
+//   document.getElementById('f02').innerHTML = h5;
+// }
+
+
+
+
+
+// if(f1==0){
+//   var hh1 = h6 + 1;
+//   var hh2 = h6 + 2;
+//   if(hh1>12){
+//     hh1-=12;
+//   }
+//   if(hh2>12){
+//     hh2-=12;
+//   }
+//   document.getElementById('f03').innerHTML = h6;
+//   document.getElementById('f04').innerHTML = hh1;
+//   document.getElementById('f05').innerHTML = hh2;
+// }
+// if(f1==1){
+//   var hh1 = h6-1;
+//   var hh2 = h6+1;
+//   if(hh1<=0){
+//     hh1+=12;
+//   }
+//   if(hh2>12){
+//     hh2-=12;
+//   }
+//   document.getElementById('f03').innerHTML = hh1;
+//   document.getElementById('f04').innerHTML = h6;
+//   document.getElementById('f05').innerHTML = hh2;
+// }
+// if(f1==2){
+//   var hh1 = h6-2;
+//   var hh2 = h6-1;
+//   if(hh1<=0){
+//     hh1+=12;
+//   }
+//   if(hh2<=0){
+//     hh2+=12;
+//   }
+//   document.getElementById('f03').innerHTML = hh1;
+//   document.getElementById('f04').innerHTML = hh2;
+//   document.getElementById('f05').innerHTML = h6;
+// }
+
+
+
+
+
+// if(f2==0){
+//   var hh1 = h7 + 1;
+//   var hh2 = h7 + 2;
+//   if(hh1>12){
+//     hh1-=12;
+//   }
+//   if(hh2>12){
+//     hh2-=12;
+//   }
+//   document.getElementById('f06').innerHTML = h7;
+//   document.getElementById('f07').innerHTML = hh1;
+//   document.getElementById('f08').innerHTML = hh2;
+// }
+// if(f2==1){
+//   var hh1 = h7-1;
+//   var hh2 = h7+1;
+//   if(hh1<=0){
+//     hh1+=12;
+//   }
+//   if(hh2>12){
+//     hh2-=12;
+//   }
+//   document.getElementById('f06').innerHTML = hh1;
+//   document.getElementById('f07').innerHTML = h7;
+//   document.getElementById('f08').innerHTML = hh2;
+// }
+// if(f2==2){
+//   var hh1 = h7-2;
+//   var hh2 = h7-1;
+//   if(hh1<=0){
+//     hh1+=12;
+//   }
+//   if(hh2<=0){
+//     hh2+=12;
+//   }
+//   document.getElementById('f06').innerHTML = hh1;
+//   document.getElementById('f07').innerHTML = hh2;
+//   document.getElementById('f08').innerHTML = h7;
+// }
+
+
+
+// if(f3==0){
+//   var hh1 = h8 + 1;
+//   var hh2 = h8 + 2;
+//   if(hh1>12){
+//     hh1-=12;
+//   }
+//   if(hh2>12){
+//     hh2-=12;
+//   }
+//   document.getElementById('f09').innerHTML = h8;
+//   document.getElementById('f10').innerHTML = hh1;
+//   document.getElementById('f11').innerHTML = hh2;
+// }
+// if(f3==1){
+//   var hh1 = h8-1;
+//   var hh2 = h8+1;
+//   if(hh1<=0){
+//     hh1+=12;
+//   }
+//   if(hh2>12){
+//     hh2-=12;
+//   }
+//   document.getElementById('f09').innerHTML = hh1;
+//   document.getElementById('f10').innerHTML = h8;
+//   document.getElementById('f11').innerHTML = hh2;
+// }
+// if(f3==2){
+//   var hh1 = h8-2;
+//   var hh2 = h8-1;
+//   if(hh1<=0){
+//     hh1+=12;
+//   }
+//   if(hh2<=0){
+//     hh2+=12;
+//   }
+//   document.getElementById('f09').innerHTML = hh1;
+//   document.getElementById('f10').innerHTML = hh2;
+//   document.getElementById('f11').innerHTML = h8;
+// }
+
+
 
  
 

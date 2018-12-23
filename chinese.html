@@ -15,19 +15,24 @@
   <link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
   <link rel="stylesheet" type="text/css" media="print" href="serif.css">
 	<script src="test3.js"></script>
-    
+    <!-- <script type="text/javascript">
+        window.onload=function(){
+      var aaaaa= document.getElementById("g1"); 
+          aaaaa.value="123";
+        }
+    </script> -->
 
 	<style type="text/css">
-table, th, td {
-    border: 5px solid black;
+/*table, th, td {
+    border: 1px solid black;
     border-collapse: collapse;
 
     ;
-}
-th, td {
+}*/
+/*th, td {
     padding: 10px;
     text-align:left;
-}
+}*/
   .disable-select {
       -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -95,6 +100,19 @@ th, td {
       font-size: 2em;
       font-weight: 900;
     }
+    .time-text2 {
+      text-align: center;   
+      margin-left: 180px;      
+    
+      display: inline-block;
+      width:20%;     
+      padding: 0.5rem;
+      border-radius: 50px ;
+      border: 2px solid red;
+      color: black;
+      font-size: 20px;
+      font-weight: 900;
+    }
 
     .line {
       position: absolute;
@@ -126,6 +144,12 @@ th, td {
       color: rgba(116, 0, 0, 0.867);
     }
 
+/*.cen {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}*/
 </style>
 
 	<script>
@@ -172,7 +196,6 @@ var jsonS='\
 }\
 ';
 
-
 $(function(){
 	$('.text').numkeybord();
 	$('.tjbtn').click(function(){
@@ -196,14 +219,12 @@ $(function(){
 <!-- Start of first page11111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
 <div data-role="page" id="P1">
  <form   name="myform" method="post" action="chinese_finish.php" data-ajax="false"  > 
-	<div data-role="header">
-		<h1>Page1</h1>
-		<p  style="font-size:300%;  text-align:center;">請拼出正確的注音</p>
-	</div><!-- /header -->
 
-	<div role="main" class="ui-content">
-		
-	</div><!-- /content -->
+	
+		<p  style="font-size:300%;  text-align:center;">請拼出正確的注音</p>
+	
+
+
 	
 	<script type="text/javascript">  
 var cart = JSON.parse ( jsonS ); 
@@ -220,88 +241,102 @@ var s1=rand_x[1];
 var s2=rand_x[2];
 var s3=rand_x[3];
 var s4=rand_x[4];
-window.onload=function(){
-var s6=document.getElementById("anwone");
-s6.value=cart.contents[s].two;
-var s7=document.getElementById("anwtwo");
-s7.value=cart.contents[s1].two;
-var s8=document.getElementById("anwthree");
-s8.value=cart.contents[s2].two;
-var s9=document.getElementById("anwfour");
-s9.value=cart.contents[s3].two;
-var s10=document.getElementById("anwfive");
-s10.value=cart.contents[s4].two;
-}
 
+function q1sent() {
+var s6=document.getElementById("anwone");
+s6.value=s
+var s7=document.getElementById("anwtwo");
+s7.value=s1
+var s8=document.getElementById("anwthree");
+s8.value=s2
+var s9=document.getElementById("anwfour");
+s9.value=s3
+var s10=document.getElementById("anwfive");
+s10.value=s4
+}
 </script>
 
 
 
 
 
-
-
-
-
-
-
-<table class="tab01-log">
-<div style="top:400px;left:100px;position:absolute;">
+<table  border="1" width="70%" align="center">
+  <tr  width="10%">
+    <td   align=center>
 <script>
 C=rand_x[0];
-
-document.write('<img src="image/'+C+'.jpg"height="100" width="150">')
-document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
+document.write('<img class="cen" src="image/'+C+'.jpg"height="100" width="150" >')
+document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[C].one+"</p>");
 </script>
-<input type="text" id="test" name="code" class="text" maxlength="20"></div>
-<div style="top:400px;left:500px;position:absolute;">
+</td>
+<td >
+<input type="text" id="test" name="code" class="text" maxlength="20">
+</td>
 
+
+
+    <td    align=center>
 <script>
 C=rand_x[1];
-document.write('<img src="image/'+C+'.jpg"height="100" width="150">')
-document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
+document.write('<img class="cen" src="image/'+C+'.jpg"height="100" width="150">')
+document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].one+"</p>");
 </script>
-<input type="text" id="test1" name="code1" class="text" maxlength="20"></div>
-
-<div style="top:400px;left:900px;position:absolute;">
+</td>
+<td >
+<input type="text" id="test1" name="code1" class="text" maxlength="20" >
+</tr>
+  <tr  width="10%">
+  <td align=center>
 <script>
 C=rand_x[2];
-document.write('<img src="image/'+C+'.jpg"height="100" width="150">')
-document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
+document.write('<img class="cen" src="image/'+C+'.jpg"height="100" width="150">')
+document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].one+"</p>");
 </script>
-<input type="text" id="test2" name="code2" class="text" maxlength="20"></div>
+</td>
+<td    align=center >
+<input type="text" id="test2" name="code2" class="text" maxlength="20">
+</td>
 
-<div style="top:400px;left:1300px;position:absolute;">
+  
+  <td   align=center>
 <script>
-C=rand_x[3];
-document.write('<img src="image/'+C+'.jpg"height="100" width="150">')
-document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
-</script>
-<input type="text" id="test3" name="code3" class="text" maxlength="20"></div>
 
-<div style="top:400px;left:1700px;position:absolute;">
+C=rand_x[3];
+document.write('<img class="cen" src="image/'+C+'.jpg"height="100" width="150">')
+document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].one+"</p>");
+</script>
+</td>
+<td >
+<input type="text" id="test3" name="code3" class="text" maxlength="20">
+</td>
+</tr>
+    <tr  width="10%">
+  <td   align=center>
 <script>
 C=rand_x[4];
-document.write('<img src="image/'+C+'.jpg"height="100" width="150">')
-document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
+document.write('<img class="cen" src="image/'+C+'.jpg"height="100" width="150">')
+document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].one+"</p>");
 </script>
-<input type="text" id="test4" name="code4" class="text" maxlength="20"></div>
+</td>
+<td   align=center>
+<input type="text" id="test4" name="code4" class="text" maxlength="20">
+</td>
+</tr>
 </table>
+
+
+
 
 <input type="hidden" id="anwone" name="Anwone">
 <input type="hidden" id="anwtwo" name="Anwtwo">
 <input type="hidden" id="anwthree" name="Anwthree">
 <input type="hidden" id="anwfour" name="Anwfour">
 <input type="hidden" id="anwfive" name="Anwfive">
-<!-- <div  style="top:800px;left:950px;position:absolute;"><button  type="submit" name="" value="hi">123</div> -->
 
-	
-	<!-- <div style="top:800px;left:1000px;position:absolute;" ><a href="#P2" >下一題</a></div> -->
-	
   <div   align="center">
-      <a href="#P2" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>
+      <a href="#P2" class="ui-btn" style="width: 5%;" data-transition="slide" onclick="q1sent()">下一題</a>      
     </div>
-</div><!-- /page -->
+</div>
 
 
 
@@ -325,15 +360,11 @@ document.write("<p style='font-size:200%'>"+cart.contents[C].one+"</p>");
 
 <!-- Start of second page 22222222222222222222222222222222222222222222222222222222222222222222-->
 <div data-role="page" id="P2">
-
-	<div data-role="header">
-		<h1>Page2</h1>
+	
 		<p  style="font-size:300%;  text-align:center;">請選出與圖對應的選項</p>
-	</div><!-- /header -->
+	
 
-	<div role="main" class="ui-content">
-		
-	</div><!-- /content -->
+	
 
 <script type="text/javascript">  
 var cart2 = JSON.parse (jsonS); 
@@ -365,30 +396,38 @@ for(var y=0;y<5;y++){
 }
 var rand3_=new Array(5);
 </script>
-<div style="font-size:25px;    vertical-align: top; display:inline-block; ">
+
 <script>
 for(var T=0;T<5;T++){
 C2=rand_[rand2_[T]];
 var K=T+1;
 
 
-document.write(K+"."+cart2.contents[C2].one+cart2.contents[C2].two+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;"+"&nbsp;&nbsp;");
+document.write("<p class=time-text2>"+K+"."+cart2.contents[C2].one+cart2.contents[C2].two+"</p>");
 
 
 rand3_[rand2_[T]]=T+1;
 }
 </script>
-</div>
+
 <script>
 s_2=rand3_[0];
 s1_2=rand3_[1];
 s2_2=rand3_[2];
 s3_2=rand3_[3];
 s4_2=rand3_[4];  
+p_2=rand_[0];
+p1_2=rand_[1];
+p2_2=rand_[2];
+p3_2=rand_[3];
+p4_2=rand_[4];  
+cho1=rand_[rand2_[0]];
+cho2=rand_[rand2_[1]];
+cho3=rand_[rand2_[2]];
+cho4=rand_[rand2_[3]];
+cho5=rand_[rand2_[4]];
 
-
-
-window.onload=function(){
+function q2sent(){
 var s11=document.getElementById("anwone1");
 s11.value=s_2;
 var s12=document.getElementById("anwtwo1");
@@ -399,35 +438,71 @@ var s14=document.getElementById("anwfour1");
 s14.value=s3_2;
 var s15=document.getElementById("anwfive1");
 s15.value=s4_2;
+var s16=document.getElementById("picture1");
+s16.value=p_2;
+var s17=document.getElementById("picture2");
+s17.value=p1_2;
+var s18=document.getElementById("picture3");
+s18.value=p2_2;
+var s19=document.getElementById("picture4");
+s19.value=p3_2;
+var s20=document.getElementById("picture5");
+s20.value=p4_2;
+var choo1=document.getElementById("choose1");
+choo1.value=cho1;
+var choo2=document.getElementById("choose2");
+choo2.value=cho2;
+var choo3=document.getElementById("choose3");
+choo3.value=cho3;
+var choo4=document.getElementById("choose4");
+choo4.value=cho4;
+var choo5=document.getElementById("choose5");
+choo5.value=cho5;
 }
 </script>
 
-<div style="top:400px;left:100px;position:absolute;">	
-<script>
 
-  document.write('<img src="image/'+rand_[0]+'.jpg"height="150" width="200"><br>');</script>	
-<input type="number"  id="test_2"  name="code_2"/></div>
-<div style="top:400px;left:400px;position:absolute;">
-<script>
 
-  document.write('<img src="image/'+rand_[1]+'.jpg"height="150" width="200"><br>');</script>	
-<input type="number" id="test1_2" name="code1_2"></div>
-<div style="top:400px;left:850px;position:absolute;">
-<script>
 
-  document.write('<img src="image/'+rand_[2]+'.jpg"height="150" width="200"><br>');</script>	
-<input type="number" id="test2_2" name="code2_2"></div>
-<div style="top:400px;left:1300px;position:absolute;">
-<script>
- 
-  document.write('<img src="image/'+rand_[3]+'.jpg"height="150" width="200"><br>');</script>	
-<input type="number" id="test3_2" name="code3_2"></div>
-<div style="top:400px;left:1700px;position:absolute;">
-<script>
+<table  border="1" width="70%" align="center">
+<tr>
+  <td  align=center>
+<script>document.write('<img src="image/'+rand_[0]+'.jpg"height="150" width="200"><br>')</script>	
+ </td>
+ <td>
+<input type="number"  id="test_2"  name="code_2"/>
 
-  document.write('<img src="image/'+rand_[4]+'.jpg"height="150" width="200"><br>');</script>	
-<input type="number" id="test4_2" name="code4_2"></div>
-
+</td>
+<td  align=center>
+<script>document.write('<img src="image/'+rand_[1]+'.jpg"height="150" width="200"><br>')</script>	
+   </td>
+   <td>
+<input type="number" id="test1_2" name="code1_2">
+</td>
+</tr>
+<tr>
+  <td  align=center>
+<script>document.write('<img src="image/'+rand_[2]+'.jpg"height="150" width="200"><br>')</script>	
+  </td>
+  <td>
+<input type="number" id="test2_2" name="code2_2">
+</td>
+<td  align=center>
+<script> document.write('<img src="image/'+rand_[3]+'.jpg"height="150" width="200"><br>')</script>	
+</td>
+<td  align=center>
+<input type="number" id="test3_2" name="code3_2">
+</td>
+</tr>
+<tr>
+  <td  align=center>
+<script>document.write('<img src="image/'+rand_[4]+'.jpg"height="150" width="200"><br>')</script>	
+</td>
+<td>
+<input type="number" id="test4_2" name="code4_2">
+</td>
+</tr>
+</table>
 
 <input type="hidden" id="anwone1" name="Anwone1">
 <input type="hidden" id="anwtwo1" name="Anwtwo1">
@@ -435,12 +510,24 @@ s15.value=s4_2;
 <input type="hidden" id="anwfour1" name="Anwfour1">
 <input type="hidden" id="anwfive1" name="Anwfive1">
 
+<input type="hidden" id="picture1" name="picture1_1">
+<input type="hidden" id="picture2" name="picture2_2">
+<input type="hidden" id="picture3" name="picture3_3">
+<input type="hidden" id="picture4" name="picture4_4">
+<input type="hidden" id="picture5" name="picture5_5">
 
-<!-- <div style="top:800px;left:1000px;position:absolute;" ><button><a href="#P1">上一題</a></button></div>
-<div style="top:800px;left:1100px;position:absolute;" ><button><a href="#P3">下一題</a></button></div> -->
+<input type="hidden" id="choose1" name="choose1_1">
+<input type="hidden" id="choose2" name="choose2_2">
+<input type="hidden" id="choose3" name="choose3_3">
+<input type="hidden" id="choose4" name="choose4_4">
+<input type="hidden" id="choose5" name="choose5_5">
+
+
 <div   align="center">
       <a href="#P1" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a>
-      <a href="#P3" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>
+      <a href="#P3" class="ui-btn" style="width: 5%;" data-transition="slide"  onclick="q2sent()">下一題</a>
+    
+
     </div>
 
 </div><!-- /page -->
@@ -452,10 +539,9 @@ s15.value=s4_2;
 <!-- Start of second page33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 -->
 <div data-role="page" id="P3">
 
-	<div data-role="header">
-		<h1>Page3</h1>
+	
 		<p    style="font-size:300%;  text-align:center;">請選出正確的注音</p>
-	</div><!-- /header -->
+	
 
 	<div role="main" class="ui-content">
 	</div><!-- /content -->
@@ -582,260 +668,283 @@ var x2=rand_[1];
 var x3=rand_[2];
 var x4=rand_[3];
 var x5=rand_[4];	
-var k1,k2,k3,k4,k5,k6,k7,k8,k9,k10;
+var k_1,k_2,k_3,k_4,k_5,k_6,k_7,k_8,k_9,k_10;
 //1
 rand_3[rand_2[0]]=cart3.contentss[x].one;
 rand_3[rand_2[1]]=cart3.contentss[x].three;
 rand_4[0]=rand_3[0];
 rand_4[1]=rand_3[1];
 if(rand_2[0]==0){
-k1=cart3.contentss[x].two;
-k2=cart3.contentss[x].four;
+k_1=cart3.contentss[x].two;
+k_2=cart3.contentss[x].four;
 }
 else{
-k1=cart3.contentss[x].four;
-k2=cart3.contentss[x].two;}
+k_1=cart3.contentss[x].four;
+k_2=cart3.contentss[x].two;}
 //2
 rand_6[rand_5[0]]=cart3.contentss[x2].one;
 rand_6[rand_5[1]]=cart3.contentss[x2].three;
 rand_7[0]=rand_6[0];
 rand_7[1]=rand_6[1];
 if(rand_5[0]==0){
-k3=cart3.contentss[x2].two;
-k4=cart3.contentss[x2].four;
+k_3=cart3.contentss[x2].two;
+k_4=cart3.contentss[x2].four;
 }
 else{
-k3=cart3.contentss[x2].four;
-k4=cart3.contentss[x2].two;}
+k_3=cart3.contentss[x2].four;
+k_4=cart3.contentss[x2].two;}
 //3
 rand_9[rand_8[0]]=cart3.contentss[x3].one;
 rand_9[rand_8[1]]=cart3.contentss[x3].three;
 rand_10[0]=rand_9[0];
 rand_10[1]=rand_9[1];
 if(rand_8[0]==0){
-k5=cart3.contentss[x3].two;
-k6=cart3.contentss[x3].four;
+k_5=cart3.contentss[x3].two;
+k_6=cart3.contentss[x3].four;
 }
 else{
-k5=cart3.contentss[x3].four;
-k6=cart3.contentss[x3].two;}
+k_5=cart3.contentss[x3].four;
+k_6=cart3.contentss[x3].two;}
 //4
 rand_12[rand_11[0]]=cart3.contentss[x4].one;
 rand_12[rand_11[1]]=cart3.contentss[x4].three;
 rand_13[0]=rand_12[0];
 rand_13[1]=rand_12[1];
 if(rand_11[0]==0){
-k7=cart3.contentss[x4].two;
-k8=cart3.contentss[x4].four;
+k_7=cart3.contentss[x4].two;
+k_8=cart3.contentss[x4].four;
 }
 else{
-k7=cart3.contentss[x4].four;
-k8=cart3.contentss[x4].two;}
+k_7=cart3.contentss[x4].four;
+k_8=cart3.contentss[x4].two;}
 //5
 rand_15[rand_14[0]]=cart3.contentss[x5].one;
 rand_15[rand_14[1]]=cart3.contentss[x5].three;
 rand_16[0]=rand_15[0];
 rand_16[1]=rand_15[1];
 if(rand_14[0]==0){
-k9=cart3.contentss[x5].two;
-k10=cart3.contentss[x5].four;
+k_9=cart3.contentss[x5].two;
+k_10=cart3.contentss[x5].four;
 }
 else{
-k9=cart3.contentss[x5].four;
-k10=cart3.contentss[x5].two;}
+k_9=cart3.contentss[x5].four;
+k_10=cart3.contentss[x5].two;}
 
-window.onload = function(){   
-var aa= document.getElementById("g1"); 
-aa.value=cart3.contentss[x].two;
-var bb= document.getElementById("g2"); 
-bb.value=cart3.contentss[x].four;
-var cc= document.getElementById("g3"); 
-cc.value=cart3.contentss[x].two;
-var dd= document.getElementById("g4"); 
-dd.value=cart3.contentss[x].four;
-var ee= document.getElementById("g5"); 
-ee.value=cart3.contentss[x2].two;
-var ff= document.getElementById("g6"); 
-ff.value=cart3.contentss[x2].four;
-var gg= document.getElementById("g7"); 
-gg.value=cart3.contentss[x2].two;
-var hh= document.getElementById("g8"); 
-hh.value=cart3.contentss[x2].four;
-var ii= document.getElementById("g9"); 
-ii.value=cart3.contentss[x3].two;
-var jj= document.getElementById("g10"); 
-jj.value=cart3.contentss[x3].four;
-var kk= document.getElementById("g11"); 
-kk.value=cart3.contentss[x3].two;
-var ll= document.getElementById("g12"); 
-ll.value=cart3.contentss[x3].four;
-var oo= document.getElementById("g13"); 
-oo.value=cart3.contentss[x4].two;
-var pp= document.getElementById("g14"); 
-pp.value=cart3.contentss[x4].four;
-var nn= document.getElementById("g15"); 
-nn.value=cart3.contentss[x4].two;
-var mm= document.getElementById("g16"); 
-mm.value=cart3.contentss[x4].four;
-var tt= document.getElementById("g17"); 
-tt.value=cart3.contentss[x5].two;
-var uu= document.getElementById("g18"); 
-uu.value=cart3.contentss[x5].four;
-var xx= document.getElementById("g19"); 
-xx.value=cart3.contentss[x5].two;
-var yy= document.getElementById("g20"); 
-yy.value=cart3.contentss[x5].four;
+
+
+//  $( document ).ready(function(){
+//  var aa= document.getElementById("g1"); 
+// aa.value=cart3.contents[x].two;
+// var bb= document.getElementById("g2"); 
+// bb.value=cart3.contents[x].four;
+// var cc= document.getElementById("g3"); 
+// cc.value=cart3.contents[x].two;
+// var dd= document.getElementById("g4"); 
+// dd.value=cart3.contents[x].four;
+// var ee= document.getElementById("g5"); 
+// ee.value=cart3.contents[x2].two;
+// var ff= document.getElementById("g6"); 
+// ff.value=cart3.contents[x2].four;
+// var gg= document.getElementById("g7"); 
+// gg.value=cart3.contents[x2].two;
+// var hh= document.getElementById("g8"); 
+// hh.value=cart3.contents[x2].four;
+// var ii= document.getElementById("g9"); 
+// ii.value=cart3.contents[x3].two;
+// var jj= document.getElementById("g10"); 
+// jj.value=cart3.contents[x3].four;
+// var kk= document.getElementById("g11"); 
+// kk.value=cart3.contents[x3].two;
+// var ll= document.getElementById("g12"); 
+// ll.value=cart3.contents[x3].four;
+// var oo= document.getElementById("g13"); 
+// oo.value=cart3.contents[x4].two;
+// var pp= document.getElementById("g14"); 
+// pp.value=cart3.contents[x4].four;
+// var nn= document.getElementById("g15"); 
+// nn.value=cart3.contents[x4].two;
+// var mm= document.getElementById("g16"); 
+// mm.value=cart3.contents[x4].four;
+// var tt= document.getElementById("g17"); 
+// tt.value=cart3.contents[x5].two;
+// var uu= document.getElementById("g18"); 
+// uu.value=cart3.contents[x5].four;
+// var xx= document.getElementById("g19"); 
+// xx.value=cart3.contents[x5].two;
+// var yy= document.getElementById("g20"); 
+// yy.value=cart3.contents[x5].four;
+// }
+
+
+
+
+function q3sent(){   
 var aa1=document.getElementById("anw1");
-aa1.value=k1;
+aa1.value=k_1;
 var aa2=document.getElementById("anw2");
-aa2.value=k2;
+aa2.value=k_2;
 var aa3=document.getElementById("anw3");
-aa3.value=k3;
+aa3.value=k_3;
 var aa4=document.getElementById("anw4");
-aa4.value=k4;
+aa4.value=k_4;
 var aa5=document.getElementById("anw5");
-aa5.value=k5;
+aa5.value=k_5;
 var aa6=document.getElementById("anw6");
-aa6.value=k6;
+aa6.value=k_6;
 var aa7=document.getElementById("anw7");
-aa7.value=k7;
+aa7.value=k_7;
 var aa8=document.getElementById("anw8");
-aa8.value=k8;
+aa8.value=k_8;
 var aa9=document.getElementById("anw9");
-aa9.value=k9;
+aa9.value=k_9;
 var aa10=document.getElementById("anw10");
-aa10.value=k10;
-};
+aa10.value=k_10;
+var aaa1=document.getElementById("banw1");
+aaa1.value=rand_4[0];
+var aaa2=document.getElementById("banw2");
+aaa2.value=rand_4[1];
+var aaa3=document.getElementById("banw3");
+aaa3.value=rand_7[0];
+var aaa4=document.getElementById("banw4");
+aaa4.value=rand_7[1];
+var aaa5=document.getElementById("banw5");
+aaa5.value=rand_10[0];
+var aaa6=document.getElementById("banw6");
+aaa6.value=rand_10[1];
+var aaa7=document.getElementById("banw7");
+aaa7.value=rand_13[0];
+var aaa8=document.getElementById("banw8");
+aaa8.value=rand_13[1];
+var aaa9=document.getElementById("banw9");
+aaa9.value=rand_16[0];
+var aaa10=document.getElementById("banw10");
+aaa10.value=rand_16[1];
+}
 
 </script>
 
+<table border="1" width="50%" align="center">
 
-
-<table style="width:80%">
-1.
   <tr>
-    <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_4[0])</script></font></th>
-    <th> 
+    <td  width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_4[0])</script></font></td>
+    <td align=center> 
     
-    <input name="c1" id="g1" type="radio"  style="zoom: 1.5"  ><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>
-    <input name="c1" id="g2" type="radio"  style="zoom: 1.5"  ><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
-    
-    </th>
+    <input name="c1" id="g1" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>    
+    <input name="c1" id="g2" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
+    </td>
   </tr>
 
   <tr>
-   <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_4[1])</script></font></th>
-    <th> 
+   <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_4[1])</script></font></td>
+    <td align=center> 
     
-    <input name="c2" type="radio" id="g3"  style="zoom: 1.5" ><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>
-    <input name="c2" type="radio" id="g4"  style="zoom: 1.5" ><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
+    <input name="c2" type="radio" id="g3"  style="zoom: 1.5" data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>
+    <input name="c2" type="radio" id="g4"  style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
    
-    </th>
+    </td>
   </tr>
 
 </table>
-<table style="width:80%">
-2.
+<table border="1" width="50%" align="center">
+
   <tr>
-    <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_7[0])</script></font></th>
-    <th> 
+    <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_7[0])</script></font></td>
+    <td align=center> 
    
-    <input name="c3" type="radio" id="g5" style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x2].two)</script></font>
-    <input name="c3" type="radio" id="g6"  style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x2].four)</script></font>
+    <input name="c3" type="radio" id="g5" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].two)</script></font>
+    <input name="c3" type="radio" id="g6" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].four)</script></font>
    
-    </th>
+    </td>
   </tr>
 
 
   <tr>
-   <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_7[1])</script></font></th>
-    <th> 
+   <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_7[1])</script></font></td>
+    <td align=center> 
     
-    <input name="c4" type="radio" id="g7" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x2].two)</script></font>
-    <input name="c4" type="radio" id="g8"  style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x2].four)</script></font>
+    <input name="c4" type="radio" id="g7" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].two)</script></font>
+    <input name="c4" type="radio" id="g8" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].four)</script></font>
  
-    </th>
+    </td>
   </tr>
 
 </table>
-3.
-<table style="width:80%">
+
+<table border="1" width="50%" align="center">
 
   <tr>
-    <th  Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_10[0])</script></font></th>
-    <th> 
+    <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_10[0])</script></font></td>
+    <td align=center> 
  
-    <input name="c5" type="radio" id="g9"   style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x3].two)</script></font>
-    <input name="c5" type="radio" id="g10"  style="zoom: 1.5""><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x3].four)</script></font>
+    <input name="c5" type="radio" id="g9"   style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].two)</script></font>
+    <input name="c5" type="radio" id="g10"  style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].four)</script></font>
 
-    </th>
+    </td>
   </tr>
 
 
   <tr>
-   <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_10[1])</script></font></th>
-    <th> 
+   <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_10[1])</script></font></td>
+    <td align=center> 
  
-    <input name="c6" type="radio" id="g11" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x3].two)</script></font>
-    <input name="c6" type="radio" id="g12" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x3].four)</script></font>
+    <input name="c6" type="radio" id="g11" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].two)</script></font>
+    <input name="c6" type="radio" id="g12" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].four)</script></font>
 
-    </th>
+    </td>
   </tr>
 
 </table>
-4.
 
-<table style="width:80%">
+
+<table border="1" width="50%" align="center">
 
   <tr>
-    <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_13[0])</script></font></th>
-    <th> 
+    <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_13[0])</script></font></td>
+    <td align=center> 
 
-    <input name="c7" type="radio" id="g13" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x4].two)</script></font>
-    <input name="c7" type="radio" id="g14" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x4].four)</script></font>
+    <input name="c7" type="radio" id="g13" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].two)</script></font>
+    <input name="c7" type="radio" id="g14" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].four)</script></font>
    
-    </th>
+    </td>
   </tr>
 
 
   <tr>
-   <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_13[1])</script></font></th>
-    <th> 
+   <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_13[1])</script></font></td>
+    <td align=center> 
    
-    <input name="c8" type="radio" id="g15" style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x4].two)</script></font>
-    <input name="c8" type="radio" id="g16" style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x4].four)</script></font>
+    <input name="c8" type="radio" id="g15" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].two)</script></font>
+    <input name="c8" type="radio" id="g16" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].four)</script></font>
     
-    </th>
+    </td>
   </tr>
 
 </table>
-5.
 
-<table style="width:80%">
+
+<table border="1" width="50%" align="center">
 
   <tr>
-    <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_16[0])</script></font></th>
-    <th> 
+    <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_16[0])</script></font></td>
+    <td align=center> 
 
-    <input name="c9" type="radio" id="g17" style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x5].two)</script></font>
-    <input name="c9" type="radio" id="g18" style="zoom: 1.5" "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x5].four)</script></font>
+    <input name="c9" type="radio" id="g17" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].two)</script></font>
+    <input name="c9" type="radio" id="g18" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].four)</script></font>
    
-    </th>
+    </td>
   </tr>
 
 
   <tr>
-   <th Width="250"><font size="20"  face="DFKai-sb"><script>document.write(rand_16[1])</script></font></th>
-    <th> 
+   <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_16[1])</script></font></td>
+    <td align=center> 
  
-    <input name="c10" type="radio" id="g19" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x5].two)</script></font>
-    <input name="c10" type="radio" id="g20" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(cart3.contentss[x5].four)</script></font>
+    <input name="c10" type="radio" id="g19" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].two)</script></font>
+    <input name="c10" type="radio" id="g20" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].four)</script></font>
    
-    </th>
+    </td>
   </tr>
-
 </table>
-<!-- <div  style="top:850px;left:1120px;position:absolute;"><button  type="submit" name="" value="hi">確認</div> -->
 
 	<input type="hidden" id="anw1" name="ar1"/>				
 	<input type="hidden" id="anw2" name="ar2"/>
@@ -847,21 +956,28 @@ aa10.value=k10;
   <input type="hidden" id="anw8" name="ar8"/>
   <input type="hidden" id="anw9" name="ar9"/>
   <input type="hidden" id="anw10" name="ar10"/> 	
-
+  
+  <input type="hidden" id="banw1" name="bar1"/>       
+  <input type="hidden" id="banw2" name="bar2"/>
+  <input type="hidden" id="banw3" name="bar3"/>
+  <input type="hidden" id="banw4" name="bar4"/>
+  <input type="hidden" id="banw5" name="bar5"/>
+  <input type="hidden" id="banw6" name="bar6"/>       
+  <input type="hidden" id="banw7" name="bar7"/>
+  <input type="hidden" id="banw8" name="bar8"/>
+  <input type="hidden" id="banw9" name="bar9"/>
+  <input type="hidden" id="banw10" name="bar10"/>   
 
 
 	
-		   <!--  <div style="top:1850px;left:950px;position:absolute;"  ><button><a href="#P2">上一題</a></button></div>
-        <div style="top:1850px;left:1050px;position:absolute;" ><button><a href="#P4">下一題</a></button></div> -->
+		   
 	 <div align="center">
-      <a href="#P2" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a>
-      <a href="#P4" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>
+      <a href="#P2" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse" >上一題</a>
+      <a href="#P4" class="ui-btn" style="width: 5%;" data-transition="slide" onclick="q3sent()">下一題</a>
     </div>
-</div><!-- /page -->
-
-
-
-
+     
+        </div>
+        
 
 
 
@@ -875,13 +991,12 @@ aa10.value=k10;
 
 <div data-role="page" id="P4">
 
-	<div data-role="header">
-		<h1>Page4</h1>
+	
       <p  style="font-size:300%;  text-align:center;">請選出正確的注音</p>
-	</div><!-- /header 44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444-->
+	<!-- /header 44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444-->
 
 
-  <table style="width:80%">
+  <table  border="1" style="width:65%"  align="center" >
     <script type="text/javascript">
        var iii=Math.floor((Math.random() * 39845) + 0);
        x=iii;   
@@ -1011,7 +1126,7 @@ var tit1=rand2[0];
 var tit2=rand2[1];
     </script> 
     <tr>  
-  <th  Width="1000"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){               
+  <td  Width="70%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>for(var i=0;i<5;i++){               
                 if(i==xx){
 
     //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
@@ -1029,19 +1144,16 @@ var tit2=rand2[1];
           else
         document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
             } 
-      }</script></font></th>  
+      }</script></font></td>  
 
    
       
-<script type="text/javascript">
-  document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-</script>
-  <th>    
+  <td align=center>    
 
-    <input name="cc1" id="gg11" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc1" id="gg2" type="radio"   style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>   
+    <input name="cc1" id="gg11" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="cc1" id="gg2" type="radio"   style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[1])</script></font>   
 
-    </th> 
+    </td> 
       </tr>
     <script type="text/javascript">document.write("<br>");</script>
 
@@ -1181,7 +1293,7 @@ var tit3=rand2[0];
 var tit4=rand2[1];
     </script>   
     <tr>
-  <th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+  <td   align=center><font size="5"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
                
                 if(i==xx){
 
@@ -1201,12 +1313,12 @@ var tit4=rand2[1];
           else
         document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
             } 
-      }</script></font></th>  
+      }</script></font></td>  
     
-<th>  
-    <input name="cc2" id="gg3" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc2" id="gg4" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
-    </th> 
+<td  align=center>  
+    <input name="cc2" id="gg3" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="cc2" id="gg4" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </td> 
     </tr>
     <script type="text/javascript">document.write("<br>");</script>
 
@@ -1357,7 +1469,7 @@ var tit5=rand2[0];
 var tit6=rand2[1];
     </script> 
     <tr>
-  <th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+  <td style="text-align: center;"><font size="5"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
                
                 if(i==xx){
 
@@ -1377,17 +1489,17 @@ var tit6=rand2[1];
           else
         document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
             } 
-      }</script></font></th>  
+      }</script></font></td>  
 
         
 
 <script type="text/javascript">
   document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 </script>
-<th> 
-    <input name="cc3" id="gg5" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc3" id="gg6" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
-    </th> 
+<td align=center> 
+    <input name="cc3" id="gg5" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="cc3" id="gg6" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </td> 
         </tr>
     <script type="text/javascript">document.write("<br>");</script>
 
@@ -1543,7 +1655,7 @@ var tit7=rand2[0];
 var tit8=rand2[1];
     </script> 
     <tr>
-  <th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+  <td  style="text-align: center;"><font size="5"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
                
                 if(i==xx){
 
@@ -1563,17 +1675,17 @@ var tit8=rand2[1];
           else
         document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
             } 
-      }</script></font></th>  
+      }</script></font></td>  
    
        
 
 <script type="text/javascript">
   document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 </script>
-    <th> 
-    <input name="cc4" id="gg7" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc4" id="gg8" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
-    </th> 
+    <td align=center> 
+    <input name="cc4" id="gg7" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="cc4" id="gg8" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </td> 
      </tr>
     <script type="text/javascript">document.write("<br>");</script>
 
@@ -1734,7 +1846,7 @@ var tit9=rand2[0];
 var tit10=rand2[1];
     </script> 
     <tr>
-  <th  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
+  <td  style="text-align: center;"><font size="5"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
                
                 if(i==xx){
 
@@ -1754,24 +1866,18 @@ var tit10=rand2[1];
           else
         document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
             } 
-      }</script></font></th>  
+      }</script></font></td>  
   
    
 <script type="text/javascript">
   document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 </script>
-      <th>           
-    <input name="cc5" id="gg9" type="radio"  style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc5" id="gg10" type="radio" style="zoom: 1.5"  "><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
-    </th>
+      <td align=center>           
+    <input name="cc5" id="gg9" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
+    <input name="cc5" id="gg10" type="radio" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    </td>
       </tr> 
     <script type="text/javascript">document.write("<br>");</script>
-
-
-
-
-
-
 
 
 
@@ -1783,8 +1889,8 @@ var tit10=rand2[1];
   <input type="hidden" id="anw5x" name="ar5x"/>   
   </table>
 
-<!--   <div  style="top:850px;left:1120px;position:absolute;"><button  type="submit" name="" value="hi">確認</div>  -->
-</form>
+
+
 <script>
 var k1=arr[iii][iiii][1];
 var k2=arr[xuu][yy][1];
@@ -1812,8 +1918,6 @@ var ii8= document.getElementById("gg9");
 ii8.value=tit9;
 var jj8= document.getElementById("gg10"); 
 jj8.value=tit10;
-
-
 var aa1=document.getElementById("anw1x");
 aa1.value=k1;
 var aa2=document.getElementById("anw2x");
@@ -1832,18 +1936,25 @@ aa5.value=k5;
  <div align="center">
       <a href="#P3" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a>
       <a href="#P5" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>
+      <button  type="submit" name="" value="hi"   >確認</button>
     </div>
+      
+</form>
 
-  <!--   <div data-role="footer" align="center">
-    <button><a href="#P3">上一題</a></button>
-    <button><a href="#P5">下一題</a></button>
-   
-  </div><!-- /footer --> -->
-</div><!-- /page -->
+</div>
+
+
+
+
+
+
+
+
+
 
 
 <!-- 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 -->
-<div data-role="page" id="P5">
+<div data-role="page" id="P5" >
 
   <div data-role="header">
     <h1>Page5</h1>
@@ -2554,8 +2665,6 @@ aa5.value=k5;
       setInterval(update_lines, 100);
     })();
   </script>
-
-
 
 
 
