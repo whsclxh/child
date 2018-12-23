@@ -145,7 +145,7 @@ if(($q4q4)==($q4ans4)){
 // $q5opt2 = $_POST['q5option2'];
 // $q5opt3 = $_POST['q5option3'];
 // $q5opt4 = $_POST['q5option4'];
-// $q5score=0;
+$q5score=0;
 // if(($q5q1)==($q5ans1)){
 //     $q5score=$q5score+5;
 // }
