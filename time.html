@@ -1470,6 +1470,10 @@ index = Math.floor(Math.random() * yudan_pic.length);
     m6-=60;
     h10+=1;
   }
+  if(m6==60){
+    m6=0;
+    h10+=1;
+  }
   var h11=h10;
   var m7 = m6+Math.floor(Math.random() * 12) * 5;
   if(m7>60){
