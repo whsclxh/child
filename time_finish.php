@@ -122,7 +122,7 @@ if(($q4q1)==($q4anw1)){
 if(($q4q2)==($q4anw2)){
     $q4score=$q4score+5;
 }
-if(($q4q4)==($q4anw3)){
+if(($q4q3)==($q4anw3)){
     $q4score=$q4score+5;
 }
 if(($q4q4)==($q4anw4)){
