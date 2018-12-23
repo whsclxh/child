@@ -160,7 +160,7 @@ if(($q5q4)==($q5ans4)){
 }
 $totalscore=$q1score+$q2score+$q3score+$q4score+$q5score;
 ?>
-<form name="form1" method="post">
+
 <div data-role="page" id="grade">
 	<div align="center" valign="middle">
 		<h3 align="center" style="color: red">本次作答拿了<?php echo "$totalscore"; ?>/100分</h3>
