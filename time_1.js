@@ -1,21 +1,21 @@
-window.onload = function(){
-    var a1 = document.getElementById("anw1");
-    a1.value = h1;
-    var a2 = document.getElementById("anw2"); 
-    a2.value = m1;
-    var a3 = document.getElementById("anw3"); 
-    a3.value = h2;
-    var a4 = document.getElementById("anw4"); 
-    a4.value = m2;
-    var a5 = document.getElementById("anw5");
-    a5.value = h3; 
-    var a6 = document.getElementById("anw6"); 
-    a6.value = m3;
-    var a7 = document.getElementById("anw7"); 
-    a7.value = h4;
-    var a8 = document.getElementById("anw8");    
-    a8.value = m4;    							
-  };
+// window.onload = function(){
+//     var a1 = document.getElementById("anw1");
+//     a1.value = h1;
+//     var a2 = document.getElementById("anw2"); 
+//     a2.value = m1;
+//     var a3 = document.getElementById("anw3"); 
+//     a3.value = h2;
+//     var a4 = document.getElementById("anw4"); 
+//     a4.value = m2;
+//     var a5 = document.getElementById("anw5");
+//     a5.value = h3; 
+//     var a6 = document.getElementById("anw6"); 
+//     a6.value = m3;
+//     var a7 = document.getElementById("anw7"); 
+//     a7.value = h4;
+//     var a8 = document.getElementById("anw8");    
+//     a8.value = m4;    							
+//   };
 
   (function (win) {
     function DrawClock(options) {

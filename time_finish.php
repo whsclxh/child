@@ -2,6 +2,7 @@
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="time_1.js"></script>
 
 
 
@@ -160,12 +161,54 @@ if(($q5q4)==($q5ans4)){
 }
 $totalscore=$q1score+$q3score+$q4score+$q5score;
 ?>
-
-<div data-role="page" id="grade">
+<form name="form1" method="post">
+<div data-role="page" id="time_ans">
 	<div align="center" valign="middle">
 		<h3 align="center" style="color: red">本次作答拿了<?php echo "$totalscore"; ?>/100分</h3>
-		<a href="#time_ansser1" class="ui-btn" style="width: 10%;" data-transition="slide">來對答案吧!</a>
+		<a href="#time_ans1" class="ui-btn" style="width: 10%;" data-transition="slide">來對答案吧!</a>
 	</div>	
+</div>
+
+<div data-role="page" id="time_ans1">
+<h3 align="center" style="color: red">本大題拿了<?php echo "$q1score"; ?>/20分</h3> 
+    <h3 align="center">請問現在是幾點幾分? 輸入正確時間。</h3>
+    
+    <table width="50%" align="center">
+      <tr style="height:280px">
+        <td><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+        <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+      </tr>
+      <tr style="height:40px">
+        <td><div style="text-align: center" class="form-inline"><label for="appt-time" >你的答案</label>
+          <input type="number" id="q1q11" name="q1q11" min="1" max="12" >時<input type="number" id="q1q12" name="q1q12" min="00" max="59" step="5" >分</div>
+        </td>
+          
+        <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
+          <input type="number" id="q1q21" name="q1q21" min="1" max="12" >時<input type="number" id="q1q22" name="q1q22" min="00" max="59" step="5" >分</div>
+        </td>
+      </tr>
+   
+      <tr style="height: 280px">
+        <td>
+          <canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+        </td>
+        <td><canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+        </td>
+      </tr>
+      <tr style="height: 40px">
+        <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
+          <input type="number" id="q1q31" name="q1q31" min="1" max="12" >時<input type="number" id="q1q32" name="q1q32" min="00" max="59" step="5" >分</div>
+        </td>
+          
+        <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
+          <input type="number" id="q1q41" name="q1q41" min="1" max="12" >時<input type="number" id="q1q42" name="q1q42" min="00" max="59" step="5" >分</div>
+        </td>
+      </tr>
+    </table>
+    <div align="center">
+      <a href="#time2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+    </div>
+    </div>
 </div>
 
 
