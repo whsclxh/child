@@ -3,7 +3,19 @@
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" src="time_1.js"></script>
+<style>
+    table,td,th {
+      border: 1px solid black;
+    }
+    table {
+      height: 50%;
+      width: 40%;
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
+</style>
 
 
 <?php
