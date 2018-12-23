@@ -158,7 +158,7 @@ if(($q5q3)==($q5ans3)){
 if(($q5q4)==($q5ans4)){
     $q5score=$q5score+5;
 }
-$totalscore=$q1score+$q2score+$q3score+$q4score+$q5score;
+$totalscore=$q1score+$q3score+$q4score+$q5score;
 ?>
 
 <div data-role="page" id="grade">
