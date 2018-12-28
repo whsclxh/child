@@ -1112,14 +1112,12 @@ function random_int(max) {
   function right_onclick(id) {
     if ((left = user_answers_rl[id]) != undefined) {
       remove_line(left);
-      check_answer();
     }
     if ((left = clicked_left) != undefined) {
       link_dots(clicked_left, id);
-      check_answer();
+      
     } else if (clicked_right == id) {
       cancel_linking_right(id);
-      check_answer();
     } else {
       if (clicked_right != undefined) {
         displays[clicked_right].dot_answer_reset_color();
@@ -1130,33 +1128,6 @@ function random_int(max) {
       let color = get_color();
       set_current_color(color);
       displays[id].dot_answer_color = color;
-    }
-  }
-
-  function verify_answer() {
-    for (var i = 0; i < num_of_problems; ++i) {
-      if (answers[i] != user_answers_rl[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  function set_clear() {
-    check_answer_button.innerHTML = "Clear!!";
-    check_answer_button.classList.add("check-answer-button-clear");
-  }
-
-  function unset_clear() {
-    check_answer_button.innerHTML = "Check";
-    check_answer_button.classList.remove("check-answer-button-clear");
-  }
-
-  function check_answer() {
-    if (verify_answer()) {
-      set_clear();
-    } else {
-      unset_clear();
     }
   }
 
@@ -1211,24 +1182,7 @@ function random_int(max) {
     problems_element.appendChild(displays[i].problem_element);
   }
 
-  add_listener(check_answer_button, 'click', function() {
-    if (this.last_timeout != undefined) {
-      clearTimeout(this.last_timeout);
-    }
-    if (verify_answer()) {
-      set_clear();
-    } else {
-      unset_clear();
-      check_answer_button.innerHTML = "Wrong!";
-      check_answer_button.classList.add("check-answer-button-wrong");
-      this.last_timeout = setTimeout(function() {
-        check_answer_button.classList.remove("check-answer-button-wrong");
-        if (!verify_answer()) {
-          unset_clear();
-        }
-      }, 1000);
-    }
-  });
+ 
 
   add_listener(problems_element, 'mousemove', function(event) {
     let x = event.clientX - problems_element.offsetLeft + (window.pageXOffset || document.documentElement.scrollLeft) - (document.documentElement.clientLeft || 0);
