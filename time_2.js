@@ -81,7 +81,7 @@
         //小時的刻度，每小時轉30deg
         for (var i = 0; i < 12; i++) {
           ctx.save();
-          ctx.rotate(30 * i * Math.PI / 180);
+          ctx.rotate(0 * i * Math.PI / 180);
           ctx.beginPath();
           ctx.moveTo(0, -79 * this.rem);
           ctx.lineTo(0, -87 * this.rem);
