@@ -159,30 +159,30 @@ win.DrawClock = DrawClock;
 
 
 
-  // var h15 = Math.floor(Math.random() * 12) + 1;
-  // var m15 = Math.floor(Math.random() * 12) * 5 ;
-  // var h16 = Math.floor(Math.random() * 12) + 1;
-  // var m16 = Math.floor(Math.random() * 12) * 5;
-  // var h17 = Math.floor(Math.random() * 12) + 1;
-  // var m17 = Math.floor(Math.random() * 12) * 5;
-  // var h18 = Math.floor(Math.random() * 12) + 1;
-  // var m18 = Math.floor(Math.random() * 12) * 5;
-  // var h19 = Math.floor(Math.random() * 12) + 1;
-  // var m19 = Math.floor(Math.random() * 12) * 5;
-  // var h20 = Math.floor(Math.random() * 12) + 1;
-  // var m20 = Math.floor(Math.random() * 12) * 5;
-  // var h21 = Math.floor(Math.random() * 12) + 1;
-  // var m21 = Math.floor(Math.random() * 12) * 5;
-  // var h22 = Math.floor(Math.random() * 12) + 1;
-  // var m22 = Math.floor(Math.random() * 12) * 5;
-  // var h23 = Math.floor(Math.random() * 12) + 1;
-  // var m23 = Math.floor(Math.random() * 12) * 5;
-  // var h24 = Math.floor(Math.random() * 12) + 1;
-  // var m24 = Math.floor(Math.random() * 12) * 5;
-  // var h25 = Math.floor(Math.random() * 12) + 1;
-  // var m25 = Math.floor(Math.random() * 12) * 5;
-  // var h26 = Math.floor(Math.random() * 12) + 1;
-  // var m26 = Math.floor(Math.random() * 12) * 5;
+  var h15 = Math.floor(Math.random() * 12) + 1;
+  var m15 = Math.floor(Math.random() * 12) * 5 ;
+  var h16 = Math.floor(Math.random() * 12) + 1;
+  var m16 = Math.floor(Math.random() * 12) * 5;
+  var h17 = Math.floor(Math.random() * 12) + 1;
+  var m17 = Math.floor(Math.random() * 12) * 5;
+  var h18 = Math.floor(Math.random() * 12) + 1;
+  var m18 = Math.floor(Math.random() * 12) * 5;
+  var h19 = Math.floor(Math.random() * 12) + 1;
+  var m19 = Math.floor(Math.random() * 12) * 5;
+  var h20 = Math.floor(Math.random() * 12) + 1;
+  var m20 = Math.floor(Math.random() * 12) * 5;
+  var h21 = Math.floor(Math.random() * 12) + 1;
+  var m21 = Math.floor(Math.random() * 12) * 5;
+  var h22 = Math.floor(Math.random() * 12) + 1;
+  var m22 = Math.floor(Math.random() * 12) * 5;
+  var h23 = Math.floor(Math.random() * 12) + 1;
+  var m23 = Math.floor(Math.random() * 12) * 5;
+  var h24 = Math.floor(Math.random() * 12) + 1;
+  var m24 = Math.floor(Math.random() * 12) * 5;
+  var h25 = Math.floor(Math.random() * 12) + 1;
+  var m25 = Math.floor(Math.random() * 12) * 5;
+  var h26 = Math.floor(Math.random() * 12) + 1;
+  var m26 = Math.floor(Math.random() * 12) * 5;
 
   
   
