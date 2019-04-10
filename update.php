@@ -181,7 +181,7 @@
 </script>
 <?php
 include 'mysql_connect.php';
-$link = connect_to_db();
+#$link = connect_to_db();
 if($_SESSION['username'] != null){
         //將$_SESSION['username']丟給$id
         //這樣在下SQL語法時才可以給搜尋的值
