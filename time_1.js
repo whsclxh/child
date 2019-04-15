@@ -137,7 +137,7 @@
 win.DrawClock = DrawClock;
 })(window);
 
-  var h1 = Math.floor(Math.random() * 12) + 1;
+  var h1 = Math.floor(Math.random() * 12) + 1; //第一題的時鐘
   var m1 = Math.floor(Math.random() * 12) * 5;
   var h2 = Math.floor(Math.random() * 12) + 1;
   var m2 = Math.floor(Math.random() * 12) * 5;
@@ -146,7 +146,11 @@ win.DrawClock = DrawClock;
   var h4 = Math.floor(Math.random() * 12) + 1;
   var m4 = Math.floor(Math.random() * 12) * 5;
 
-  var h5 = Math.floor(Math.random() * 12) + 1;
+
+
+
+
+  var h5 = Math.floor(Math.random() * 12) + 1; //第三題的時鐘
   var m5 = Math.floor(Math.random() * 12) * 5;
   var h6 = Math.floor(Math.random() * 12) + 1;
   var m6 = Math.floor(Math.random() * 12) * 5;
@@ -155,37 +159,6 @@ win.DrawClock = DrawClock;
   var h8 = Math.floor(Math.random() * 12) + 1;
   var m8 = Math.floor(Math.random() * 12) * 5;
 
-  
-
-
-
-  var h15 = Math.floor(Math.random() * 12) + 1;
-  var m15 = Math.floor(Math.random() * 12) * 5 ;
-  var h16 = Math.floor(Math.random() * 12) + 1;
-  var m16 = Math.floor(Math.random() * 12) * 5;
-  var h17 = Math.floor(Math.random() * 12) + 1;
-  var m17 = Math.floor(Math.random() * 12) * 5;
-  var h18 = Math.floor(Math.random() * 12) + 1;
-  var m18 = Math.floor(Math.random() * 12) * 5;
-  var h19 = Math.floor(Math.random() * 12) + 1;
-  var m19 = Math.floor(Math.random() * 12) * 5;
-  var h20 = Math.floor(Math.random() * 12) + 1;
-  var m20 = Math.floor(Math.random() * 12) * 5;
-  var h21 = Math.floor(Math.random() * 12) + 1;
-  var m21 = Math.floor(Math.random() * 12) * 5;
-  var h22 = Math.floor(Math.random() * 12) + 1;
-  var m22 = Math.floor(Math.random() * 12) * 5;
-  var h23 = Math.floor(Math.random() * 12) + 1;
-  var m23 = Math.floor(Math.random() * 12) * 5;
-  var h24 = Math.floor(Math.random() * 12) + 1;
-  var m24 = Math.floor(Math.random() * 12) * 5;
-  var h25 = Math.floor(Math.random() * 12) + 1;
-  var m25 = Math.floor(Math.random() * 12) * 5;
-  var h26 = Math.floor(Math.random() * 12) + 1;
-  var m26 = Math.floor(Math.random() * 12) * 5;
-
-  
-  
 
 
   function drawclock(clock,h,m){           //畫時鐘的function

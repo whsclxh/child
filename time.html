@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -62,6 +61,8 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+
 
 body,
 div,
@@ -222,32 +223,10 @@ body {
 
 .draw-container {
     position: relative;
-    height: 500px;
+    height: 800px;
     background: #fff;
 }
 
-.btn-group {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    padding: 0 20px;
-    text-align: right;
-}
-.btn-group a:hover{
-    color: #66b1ff;
-}
-
-.btn-group a{
-    margin-right: 15px;
-    color: #409eff;
-
-}
-a.btn-submit {
-    color: #67c23a
-}
 .draw-container ul {
     margin-top: 80px;
 }
@@ -264,27 +243,25 @@ a.btn-submit {
     right: 50px;
 }
 
-.data-list li {
+ .data-list li {
     margin: 15px;
     padding: 0 10px;
-    width: 100px;
-    height: 30px;
+    /* width: 100%;
+    height: 30%; */
     background: #ecf5ff;
     line-height: 30px;
     font-size: 16px;
-    color: #409eff;
-    border: 1px solid #b3d8ff;
+    
+    border: 1px solid #ecf5ff;
     border-radius: 10px;
     cursor: crosshair;
     text-align: center
 }
 
-.data-list li:hover,
-.data-list li.selected {
-    background: #409eff;
-    border-color: #409eff;
-    color: #fff;
-}
+
+
+
+
 
 .hover-g {
     cursor: pointer;
@@ -292,17 +269,7 @@ a.btn-submit {
     stroke-width: 4;
 }
 
-.remove-btn {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background: url('./img/delete-icon.png') no-repeat center;
-    font-size: 14px;
-    cursor: pointer;
-    display: none;
-}
+
 
 .result-container {
     padding: 20px;
@@ -324,6 +291,8 @@ return Math.random()>.5 ? -1 : 1;
 //用Math.random()函式生成0~1之間的隨機數與0.5比較，返回-1或1
 }
 cart.sort(randomsort);
+
+var que = new Array("img/clock_img/wakeup.jpg", "img/clock_img/breakfast.jpg","img/clock_img/teach.jpg","img/clock_img/sleep.jpg");
 
 
 
@@ -736,18 +705,18 @@ if(cart[3]=="img/clock_img/p4.png"){
     <div data-role="page" id="time1">
     <h3 align="center">請問現在是幾點幾分? 輸入正確時間。</h3>
     
-  <table width="50%" align="center">
+  <table width="50%" style = "text-align:center">
     <tr style="height:280px">
       <td><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
       <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
     </tr>
     <tr style="height:40px">
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time" >你的答案</label>
-        <input type="number" id="q1q11" name="q1q11" min="1" max="12" >時<input type="number" id="q1q12" name="q1q12" min="00" max="59" step="5" >分</div>
+      <td>
+        <input type="number" data-role="none" style="width:10%" id="q1q11" name="q1q11" min="1" max="12" >時<input type="number"data-role="none" style="width:10%" id="q1q12" name="q1q12" min="00" max="59" step="5" >分
       </td>
         
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <input type="number" id="q1q21" name="q1q21" min="1" max="12" >時<input type="number" id="q1q22" name="q1q22" min="00" max="59" step="5" >分</div>
+      <td>
+        <input type="number" data-role="none" style="width:10%" id="q1q21" name="q1q21" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q22" name="q1q22" min="00" max="59" step="5" >分
       </td>
     </tr>
  
@@ -755,16 +724,17 @@ if(cart[3]=="img/clock_img/p4.png"){
       <td>
         <canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
       </td>
-      <td><canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+      <td>
+        <canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
       </td>
     </tr>
     <tr style="height: 40px">
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <input type="number" id="q1q31" name="q1q31" min="1" max="12" >時<input type="number" id="q1q32" name="q1q32" min="00" max="59" step="5" >分</div>
+      <td>
+        <input type="number" data-role="none" style="width:10%" id="q1q31" name="q1q31" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q32" name="q1q32" min="00" max="59" step="5" >分
       </td>
         
-      <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-        <input type="number" id="q1q41" name="q1q41" min="1" max="12" >時<input type="number" id="q1q42" name="q1q42" min="00" max="59" step="5" >分</div>
+      <td>
+        <input type="number" data-role="none" style="width:10%" id="q1q41" name="q1q41" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q42" name="q1q42" min="00" max="59" step="5" >分
       </td>
     </tr>
   </table>
@@ -775,7 +745,7 @@ if(cart[3]=="img/clock_img/p4.png"){
   
 
 <div data-role="page" id="time2">
-<h3 align="center">請選出不正常的時鐘。</h3>
+<h3 align="center">請選出正常的作息時間。</h3>
 <div align="center">
     <div class="container" align="center">
       <div id="problems" class="problems disable-select">
@@ -786,9 +756,9 @@ if(cart[3]=="img/clock_img/p4.png"){
 		<tr>
 			<td>
         <div style="text-align:center">
-				<input type="radio" data-role="none" name="ans12"><canvas id="clock15" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
-				<input type="radio" data-role="none" name="ans12"><canvas id="clock16" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
-        <input type="radio" data-role="none" name="ans12"><canvas id="clock17" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
+            <span style="font-family:Impact; font-size: 2.2cm">AM 7:00</span><input type="radio" data-role="none" name="ans12">
+			  <script>document.write('<img src="' +que[0]+ '"width="140" height="140" style=" margin:auto;">');</script>
+        <input type="radio" data-role="none" name="ans12"><span style="font-family:Impact; font-size: 2.2cm">PM 3:00</span>
         </div>
       </td>
     </tr>
@@ -796,9 +766,9 @@ if(cart[3]=="img/clock_img/p4.png"){
 		<tr>
 			<td>
         <div style="text-align:center">
-				<input type="radio" data-role="none" name="ans13"><canvas id="clock18" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
-				<input type="radio" data-role="none" name="ans13"><canvas id="clock19" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
-        <input type="radio" data-role="none" name="ans13"><canvas id="clock20" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
+            <span style="font-family:Impact; font-size: 2.2cm">AM 7:30</span><input type="radio" data-role="none" name="ans13">
+				<script>document.write('<img src="' +que[1]+ '"width="140" height="140" style=" margin:auto;">');</script>
+        <input type="radio" data-role="none" name="ans13"><span style="font-family:Impact; font-size: 2.2cm">PM 1:00</span>
         </div>
 			</td>
     </tr>
@@ -806,9 +776,9 @@ if(cart[3]=="img/clock_img/p4.png"){
 		<tr>
 			<td>
         <div style="text-align:center">
-				<input type="radio" data-role="none" name="ans14"><canvas id="clock21" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
-				<input type="radio" data-role="none" name="ans14"><canvas id="clock22" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
-        <input type="radio" data-role="none" name="ans14"><canvas id="clock23" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
+            <span style="font-family:Impact; font-size: 2.2cm">AM 10:00</span><input type="radio" data-role="none" name="ans14">
+        <script>document.write('<img src="' +que[2]+ '"width="140" height="140" style=" margin:auto;">');</script>
+        <input type="radio" data-role="none" name="ans14"><span style="font-family:Impact; font-size: 2.2cm">PM 7:00</span>
         </div>
 			</td>
     </tr>
@@ -816,19 +786,14 @@ if(cart[3]=="img/clock_img/p4.png"){
 		<tr>
 			<td>
         <div style="text-align:center">
-				<input type="radio" data-role="none" name="ans15"><canvas id="clock24" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
-				<input type="radio" data-role="none" name="ans15"><canvas id="clock25" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
-        <input type="radio" data-role="none" name="ans15"><canvas id="clock26" width="150%" height="150%" style="display:inline-block; margin:20px;"></canvas>
+            <span style="font-family:Impact; font-size: 2.2cm">PM 10:00</span><input type="radio" data-role="none" name="ans15">
+        <script>document.write('<img src="' +que[3]+ '"width="140" height="140" style=" margin:auto;">');</script>
+        <input type="radio" data-role="none" name="ans15"><span style="font-family:Impact; font-size: 2.2cm">PM 5:00</span>
         </div>
 			</td>
 		</tr>
 	
-	</table>
-
-
-
-
-    
+  </table>
 
 <div align="center">
   <a href="#time1" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
@@ -840,30 +805,18 @@ if(cart[3]=="img/clock_img/p4.png"){
     <div data-role="page" id="time3">
         <h3 align="center">請連到正確的時間。</h3>
         <div id="draw" class="draw-container">
-          <div style="position: absolute" class="btn-group">
-             <a href="javascript:;" id="j-default" title="点击会删除已选择答案">顯示答案</a>
-              <!-- <a href="javascript:;" id="j-reset">重置</a>
-              <a href="javascript:;" id="j-submit" class="btn-submit">确定</a>  -->
-          </div>
-          <ul class="question-list data-list">
 
-          </ul>
-          <ul class="answer-list data-list">
+          <ul class="question-list data-list"></ul>
+     
 
-          </ul>
+          <ul class="answer-list data-list"></ul>
 
-          <i class="remove-btn"></i>
-      </div>
-    
-  
+        </div>
 
-
-
-
-          <div align="center">
-              <a href="#time2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-              <a href="#time4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
-          </div>
+        <div align="center">
+          <a href="#time2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
+          <a href="#time4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+        </div>
     </div>
     
 <script type="text/javascript">
@@ -876,6 +829,8 @@ if(cart[3]=="img/clock_img/p4.png"){
         this.createList(answerObj)
         this.bindBtnEvent()
         this.bindParentsEvent()
+        
+        
     },
     /* 创建列表 */
     createList: function (obj, callback) {
@@ -885,14 +840,18 @@ if(cart[3]=="img/clock_img/p4.png"){
         if (type == 'question') {
             $('.question-list').empty()
             data.forEach(element => {
-                let item = '<li class="question-li" data-question=' + element.question + ' data-answer=' + element.answer + '>' + element.question + '</li>',
+                let item = $('<li class="question-li" data-question=' + element.questionKey + ' data-answer=' + element.answer + '></li>'),
                     obj = {};
-                obj.beginValue = element.question;
+                item.append(element.question);
+                obj.beginValue = element.questionKey;
                 obj.line = this.createLine();
                 this.lineArr.push(obj)
                 content.push(item);
             });
-            $('.question-list').html(content)
+            // $('.question-list').html(content)
+            content.forEach(e => {
+              $('.question-list').append(e);
+            });
         } else {
             $('.answer-list').empty()
             data.forEach(element => {
@@ -916,8 +875,8 @@ if(cart[3]=="img/clock_img/p4.png"){
             });
             current.begin = {};
             current.beginElement = this;
-            current.begin.y = $(this).offset().top - parentPosition.top -5 ;
-            current.begin.x = $(this).offset().left - parentPosition.left  +100;
+            current.begin.y = $(this).offset().top - parentPosition.top +55 ;
+            current.begin.x = $(this).offset().left - parentPosition.left  +150;
             current.line.show();
             current.line.stroke({
                 color: "#67C23A",
@@ -1081,8 +1040,8 @@ if(cart[3]=="img/clock_img/p4.png"){
                 obj = self.lineArr.find(el => el.beginValue == beginValue);
                 obj.beginElement = this;
                 obj.begin = {};
-                obj.begin.y = _this.offset().top - parentPosition.top + 15;
-                obj.begin.x = _this.offset().left - parentPosition.left + 110;
+                obj.begin.y = _this.offset().top - parentPosition.top - 200;
+                obj.begin.x = _this.offset().left - parentPosition.left - 100;
                 $(this).attr('data-selected', '');
                 $('.result-display').html('')
                 // obj.line.plot(obj.begin.x, obj.begin.y, obj.begin.x, obj.begin.y)
@@ -1092,7 +1051,7 @@ if(cart[3]=="img/clock_img/p4.png"){
                         if ($(this).html() == endValue) {
                             obj.end = {};
 
-                            obj.end.y = $(this).offset().top - parentPosition.top + 15;
+                            obj.end.y = $(this).offset().top - parentPosition.top + 30;
                             obj.end.x = $(this).offset().left - parentPosition.left - 20;
                             obj.endElement = this;
                             obj.endValue = endValue;
@@ -1131,24 +1090,41 @@ if(cart[3]=="img/clock_img/p4.png"){
         };
     },
 }
+var e = $('<p>test</p>');
 const question = [{
-            question: '1+1',
+            question: $('<canvas id="clock5" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
+            questionKey: '123',
             answer: 2
         },
         {
-            question: '2+2',
+            question: $('<canvas id="clock6" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
+            questionKey: '2+2',
             answer: 4
         },
         {
-            question: '3+3',
+            question: $('<canvas id="clock7" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
+            questionKey: '3+3',
             answer: 5
         },
         {
-            question: '4+4',
+            question: $('<canvas id="clock8" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
+            questionKey: '4+4',
             answer: 1
         }
     ],
-    answer = [1, 2, 3, 4,5];
+    time1 = h5 + '點' + m5 + '分';
+    time2 = h6 + '點' + m6 + '分';
+    time3 = h7 + '點' + m7 + '分';
+    time4 = h8 + '點' + m8 + '分';
+
+    var answer = new Array(time1,time2,time3,time4);
+    function randomsort(a, b) {
+    return Math.random()>.5 ? -1 : 1;
+    }
+    answer.sort(randomsort);
+    
+     
+  
 let questionObj = {
         data: question,
         type: 'question'
@@ -1283,26 +1259,12 @@ index = Math.floor(Math.random() * yudan_pic.length);
   drawclock("clock3",h3,m3);
   drawclock("clock4",h4,m4);
 
-  // drawclock("clock5",h5,m5);  //第三題的時鐘            
-  // drawclock("clock6",h6,m6);
-  // drawclock("clock7",h7,m7);
-  // drawclock("clock8",h8,m8);
+  drawclock("clock5",h5,m5);  //第三題的時鐘            
+  drawclock("clock6",h6,m6);
+  drawclock("clock7",h7,m7);
+  drawclock("clock8",h8,m8);
 
-  drawclock("clock15",h15,m15);  //第二題的時鐘            
-  drawclock("clock16",h16,m16);
-  drawclock("clock17",h17,m17);
 
-  drawclock("clock18",h18,m18);
-  drawclock("clock19",h19,m19);             
-  drawclock("clock20",h20,m20);
-
-  drawclock("clock21",h21,m21);
-  drawclock("clock22",h22,m22);
-  drawclock("clock23",h23,m23); 
-
-  drawclock("clock24",h24,m24);
-  drawclock("clock25",h25,m25);
-  drawclock("clock26",h26,m26);
 
 
 
