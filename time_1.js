@@ -146,8 +146,7 @@ win.DrawClock = DrawClock;
   var h4 = Math.floor(Math.random() * 12) + 1;
   var m4 = Math.floor(Math.random() * 12) * 5;
 
-  var h1 = temp1;
-  var m1 = temp2;
+  
 
 
 
