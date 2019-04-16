@@ -21,14 +21,14 @@
 
 <?php
 //第一題
-@$q1q1 = $_POST['q1q11'];     //把答案儲存在php變數
-@$q1q2 = $_POST['q1q12'];
-@$q1q3 = $_POST['q1q21'];
-@$q1q4 = $_POST['q1q22'];
-@$q1q5 = $_POST['q1q31'];
-@$q1q6 = $_POST['q1q32'];
-@$q1q7 = $_POST['q1q41'];
-@$q1q8 = $_POST['q1q42'];
+$q1q1=$_POST['q1anw1'];
+$q1q2=$_POST['q1anw2'];
+$q1q3=$_POST['q1anw3'];
+$q1q4=$_POST['q1anw4'];
+$q1q5=$_POST['q1anw5'];
+$q1q6=$_POST['q1anw6'];
+$q1q7=$_POST['q1anw7'];
+$q1q8=$_POST['q1anw8'];
 
 $q1ans1 = $_POST['q1answer1'];  //取正確答案
 $q1ans2 = $_POST['q1answer2'];
@@ -192,23 +192,24 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
         <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
       </tr>
       <tr style="height:40px">
-        <td>
-          <input type="number" data-role="none" style="width:10%" id="q1q11" name="q1q11" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q12" name="q1q12" min="00" max="59" step="5" >分
+        <td style="text-align: center;">
+        原作答:<?php echo "$q1q1"?>時<?php echo "$q1q2"?>分
         </td>
           
-        <td>
-          <input type="number" data-role="none" style="width:10%" id="q1q21" name="q1q21" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q22" name="q1q22" min="00" max="59" step="5" >分
+        <td style="text-align: center;">
+        原作答:<?php echo "$q1q3"?>時<?php echo "$q1q4"?>分
         </td>
       </tr>
 
       <tr style="height:40px">
-        <td>
-          <input type="number" data-role="none" style="width:10%"  min="1" max="12" >時<input type="number" data-role="none" style="width:10%"  min="00" max="59" step="5" >分
+        <td style="text-align: center; color: red;">
+        正解:<?php echo "$q1ans1"?>時<?php echo "$q1ans2"?>
         </td>
         
-        <td>
-          <input type="number" data-role="none" style="width:10%"  min="1" max="12" >時<input type="number" data-role="none" style="width:10%"  min="00" max="59" step="5" >分
-        </td>
+        <td style="text-align: center; color: red;">
+        正解:<?php echo "$q1ans3"?>時<?php echo "$q1ans4"?>
+        </td >
+
       </tr>
 
    
@@ -220,14 +221,25 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
         </td>
       </tr>
       <tr style="height: 40px">
-        <td>
-          <input type="number" data-role="none" style="width:10%" id="q1q31" name="q1q31" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q32" name="q1q32" min="00" max="59" step="5" >分
+      <td style="text-align: center;">
+        原作答:<?php echo "$q1q5"?>時<?php echo "$q1q6"?>分
         </td>
           
-        <td>
-          <input type="number" data-role="none" style="width:10%" id="q1q41" name="q1q41" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q42" name="q1q42" min="00" max="59" step="5" >分
+        <td style="text-align: center;">
+        原作答:<?php echo "$q1q7"?>時<?php echo "$q1q8"?>分
         </td>
       </tr>
+
+      <tr style="height:40px">
+        <td style="text-align: center; color: red;">
+        正解:<?php echo "$q1ans5"?>時<?php echo "$q1ans6"?>
+        </td>
+        
+        <td style="text-align: center; color: red;">
+        正解:<?php echo "$q1ans7"?>時<?php echo "$q1ans8"?>
+        </td >
+      </tr>
+
     </table>
     <div align="center">
       <a href="#time2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
