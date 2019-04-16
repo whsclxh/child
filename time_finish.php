@@ -222,7 +222,7 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
       </tr>
       <tr style="height: 40px">
       <td style="text-align: center;">
-        原作答:<?php echo "$q1q5"?>點<?php echo "$q1q6"?>分
+        原作答:<?php echo "$h1"?>點<?php echo "$q1q6"?>分
         </td>
           
         <td style="text-align: center;">
@@ -252,7 +252,7 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
   var e =<?php  echo $e ?>
   <?php $e1 = "$m1" ?>
   var e1 = <?php echo $e1 ?>
-document.write(e1);
+
 
   drawclock("clock1",e,e1);  //第一題的時鐘            
   drawclock("clock2",h2,m2);
