@@ -21,7 +21,7 @@
 
 <?php
 //第一題
-$q1q1=$_POST['q1ans1'];
+$q1q1=$_POST['q1ans1']; //取答題者答案
 $q1q2=$_POST['q1ans2'];
 $q1q3=$_POST['q1ans3'];
 $q1q4=$_POST['q1ans4'];
@@ -39,14 +39,7 @@ $q1ans6 = $_POST['q1answer6'];
 $q1ans7 = $_POST['q1answer7'];
 $q1ans8 = $_POST['q1answer8'];
 
-$q1opt11 = $_POST['q1option11']; //儲存選項的值
-$q1opt12 = $_POST['q1option12'];
-$q1opt21 = $_POST['q1option21'];
-$q1opt22 = $_POST['q1option22'];
-$q1opt31 = $_POST['q1option31'];
-$q1opt32 = $_POST['q1option32'];
-$q1opt41 = $_POST['q1option41'];
-$q1opt42 = $_POST['q1option42'];
+
 
 $q1score = 0;
 if(($q1q1)==($q1ans1)){
