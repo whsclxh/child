@@ -30,8 +30,7 @@ $q1q5=$_POST['q1ans5'];
 $q1q6=$_POST['q1ans6'];
 $q1q7=$_POST['q1ans7'];
 $q1q8=$_POST['q1ans8'];
-$h1=$_POST['h1'];
-$m1=$_POST['m1'];
+
 
 $q1ans1 = $_POST['q1answer1'];  //取正確答案
 $q1ans2 = $_POST['q1answer2'];
@@ -250,11 +249,12 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
 
 <script>
 
+var w = <?php echo $q1ans1 ?>
+var w1 = <?php echo $q1ans2 ?>
 
 
 
-
-  drawclock("clock1",h1,m1);  //第一題的時鐘            
+  drawclock("clock1",w,w1);  //第一題的時鐘            
   drawclock("clock2",h2,m2);
   drawclock("clock3",h3,m3);
   drawclock("clock4",h4,m4);

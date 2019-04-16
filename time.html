@@ -399,6 +399,7 @@ q1a8.value = m4;
 
 
 
+
 var q3ans1 = document.getElementById("q3ans1");
 q3ans1.value = h5;
 var q3ans2 = document.getElementById("q3ans2");
@@ -1124,7 +1125,8 @@ line.init(questionObj, answerObj)
 		<input type="hidden" id="q1a6" name="q1answer6">
 		<input type="hidden" id="q1a7" name="q1answer7">
     <input type="hidden" id="q1a8" name="q1answer8">
-  
+    <input type="hidden" id="h1" name="h1">
+    <input type="hidden" id="m1" name="m1">
 
       
 
@@ -1164,14 +1166,7 @@ yudan_pic[2] = "img/clock_img/p3.png";
 yudan_pic[3] = "img/clock_img/p4.png";
 index = Math.floor(Math.random() * yudan_pic.length);
 
-  var h1 = Math.floor(Math.random() * 12) + 1; //第一題的時鐘
-  var m1 = Math.floor(Math.random() * 12) * 5;
-  var h2 = Math.floor(Math.random() * 12) + 1;
-  var m2 = Math.floor(Math.random() * 12) * 5;
-  var h3 = Math.floor(Math.random() * 12) + 1;
-  var m3 = Math.floor(Math.random() * 12) * 5;
-  var h4 = Math.floor(Math.random() * 12) + 1;
-  var m4 = Math.floor(Math.random() * 12) * 5;
+
  
   drawclock("clock1",h1,m1);  //第一題的時鐘            
   drawclock("clock2",h2,m2);
