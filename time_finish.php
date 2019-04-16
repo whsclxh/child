@@ -5,8 +5,8 @@
 <script type="text/javascript" src="time_1.js"></script>
 <script>
 
-var w = <?php echo $q1ans1 ?>
-var w1 = <?php echo $q1ans2 ?>
+var w = <?php echo $q1ans1 ?>;
+var w1 = <?php echo $q1ans2 ?>;
 
 
 
@@ -204,7 +204,7 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
       </tr>
       <tr style="height:40px">
         <td style="text-align: center;">
-        原作答:<?php echo "$q1q1"?>點<?php echo "$q1q2"?>分
+        原作答:<?php echo "$q1ans1"?>點<?php echo "$q1q2"?>分
         </td>
           
         <td style="text-align: center;">
