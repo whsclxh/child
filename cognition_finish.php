@@ -3,927 +3,809 @@
 include("mysql_connect.php");
 $id = $_SESSION['username'];
 $contimes = $_SESSION['cognition_times'];
-$sql1 = "SELECT * FROM cognition1 where username = '$id' AND cognition_times = '$contimes'";
+if($_SESSION['username'] == null){
+    echo "<script>alert('您尚未登入!');</script>";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
+}
+$sql1 = "SELECT * FROM cog_count_choose_db where username = '$id' AND cardinal = '$contimes'";
 $result1 = mysqli_query($qaq,$sql1);
-$question1 = @mysqli_fetch_row($result1);
-$sql2 = "SELECT * FROM cognition2 where username = '$id' AND cognition_times = '$contimes'";
+$cog_count_choose_sql = @mysqli_fetch_row($result1);
+$sql2 = "SELECT * FROM cog_choose_shape_db where username = '$id' AND cardinal = '$contimes'";
 $result2 = mysqli_query($qaq,$sql2);
-$question2 = @mysqli_fetch_row($result2);
-$sql3 = "SELECT * FROM cognition3 where username = '$id' AND cognition_times = '$contimes'";
+$cog_choose_shape_sql = @mysqli_fetch_row($result2);
+$sql3 = "SELECT * FROM cog_choose_longer_db where username = '$id' AND cardinal = '$contimes'";
 $result3 = mysqli_query($qaq,$sql3);
-$question3 = @mysqli_fetch_row($result3);
-$sql4 = "SELECT * FROM cognition4 where username = '$id' AND cognition_times = '$contimes'";
+$cog_choose_longer_sql = @mysqli_fetch_row($result3);
+$sql4 = "SELECT * FROM cog_choose_correct_orientation_db where username = '$id' AND cardinal = '$contimes'";
 $result4 = mysqli_query($qaq,$sql4);
-$question4 = @mysqli_fetch_row($result4);
-$sql5 = "SELECT * FROM cognition5 where username = '$id' AND cognition_times = '$contimes'";
+$cog_choose_correct_orientation_sql = @mysqli_fetch_row($result4);
+$sql5 = "SELECT * FROM cog_sequence_db where username = '$id' AND cardinal = '$contimes'";
 $result5 = mysqli_query($qaq,$sql5);
-$question5 = @mysqli_fetch_row($result5); 	
+$cog_sequence_sql = @mysqli_fetch_row($result5);
+$sql6 = "SELECT * FROM cognition_score where username = '$id' AND cardinal = '$contimes'";
+$result6 = mysqli_query($qaq,$sql6);
+$cognition_score_sql = @mysqli_fetch_row($result6);   
 ?>
 <?php
-$a=[$question2[2],$question2[3],$question2[4],$question2[5],$question2[6],$question2[7],$question2[8],$question2[9],$question2[10]];
-$q211=$question2[11];$q212=$question2[12];$q213=$question2[13];$q214=$question2[14];$q219=$question2[19];$q220=$question2[20];
-$q221=$question2[21];$q222=$question2[22];$q223=$question2[23];$q224=$question2[24];$q225=$question2[25];$q226=$question2[26];
-$q227=$question2[27];$q228=$question2[28];$q229=$question2[29];$q230=$question2[30];$q231=$question2[31];$q232=$question2[32];
-$q233=$question2[33];$q234=$question2[34];
-$q4a=[$question4[2],$question4[3],$question4[4],$question4[5],$question4[6],$question4[7],$question4[8],$question4[9]];
-$q410=$question4[10];$q412=$question4[12];$q417=$question4[17];$q418=$question4[18];$q419=$question4[19];
+require "cog_choose_correct_orientation_function.php";
+require "cog_choose_longer_function.php";
+require "cog_choose_shape_function.php";
+require "cog_sequence_function.php";
+require "cog_count_choose_function.php";
 ?>
+<script type="text/javascript">
+    var all_question = {
+        "cog_count_choose":[
+        {
+            "question_number":"1",
+            "picture_info":{
+                "up": <?php echo "$cog_count_choose_pic[0]"; ?>,
+                "down": <?php echo "$cog_count_choose_pic[1]"; ?>
+            },      
+            "picture_quantity":{
+                "up": <?php echo "$cog_count_choose_num[0]"; ?>,
+                "down": <?php echo "$cog_count_choose_num[1]"; ?>
+            },
+            "correct_anwser":{
+                "up": <?php echo "$cog_count_choose_num[0]"; ?>,
+                "down": <?php echo "$cog_count_choose_num[1]"; ?>
+            }
+        },
+        {
+            "question_number":"2",
+            "picture_info":{
+                "up": <?php echo "$cog_count_choose_pic[2]"; ?>,
+                "down": <?php echo "$cog_count_choose_pic[3]"; ?>
+            },      
+            "picture_quantity":{
+                "up": <?php echo "$cog_count_choose_num[2]"; ?>,
+                "down": <?php echo "$cog_count_choose_num[3]"; ?>
+            },
+            "correct_anwser":{
+                "up": <?php echo "$cog_count_choose_num[2]"; ?>,
+                "down": <?php echo "$cog_count_choose_num[3]"; ?>
+            }
+        },
+        {
+            "question_number":"3",
+            "picture_info":{
+                "up": <?php echo "$cog_count_choose_pic[4]"; ?>,
+                "down": <?php echo "$cog_count_choose_pic[5]"; ?>
+            },      
+            "picture_quantity":{
+                "up": <?php echo "$cog_count_choose_num[4]"; ?>,
+                "down": <?php echo "$cog_count_choose_num[5]"; ?>
+            },
+            "correct_anwser":{
+                "up": <?php echo "$cog_count_choose_num[4]"; ?>,
+                "down": <?php echo "$cog_count_choose_num[5]"; ?>
+            }
+        },
+        {
+            "question_number":"4",
+            "picture_info":{
+                "up": <?php echo "$cog_count_choose_pic[6]"; ?>,
+                "down": <?php echo "$cog_count_choose_pic[7]"; ?>
+            },      
+            "picture_quantity":{
+                "up": <?php echo "$cog_count_choose_num[6]"; ?>,
+                "down": <?php echo "$cog_count_choose_num[7]"; ?>
+            },
+            "correct_anwser":{
+                "up": <?php echo "$cog_count_choose_num[6]"; ?>,
+                "down": <?php echo "$cog_count_choose_num[7]"; ?>
+            }
+        },
+        {
+            "question_number":"5",
+            "picture_info":{
+                "up": <?php echo "$cog_count_choose_pic[8]"; ?>,
+                "down": <?php echo "$cog_count_choose_pic[9]"; ?>
+            },      
+            "picture_quantity":{
+                "up": <?php echo "$cog_count_choose_num[8]"; ?>,
+                "down": <?php echo "$cog_count_choose_num[9]"; ?>
+            },
+            "correct_anwser":{
+                "up": <?php echo "$cog_count_choose_num[8]"; ?>,
+                "down": <?php echo "$cog_count_choose_num[9]"; ?>
+            }
+        }
+        ],
+        "cog_choose_longer":[
+        {
+            "question_number":"1",
+            "picture_info": <?php echo "$cog_choose_longer_pic[0]"; ?>,
+            "picture_length":{
+                "up": <?php echo "$cog_choose_longer_len[0]"; ?>,
+                "down": <?php echo "$cog_choose_longer_len[1]"; ?>
+            }
+        },
+        {
+            "question_number":"2",
+            "picture_info": <?php echo "$cog_choose_longer_pic[1]"; ?>,
+            "picture_length":{
+                "up": <?php echo "$cog_choose_longer_len[2]"; ?>,
+                "down": <?php echo "$cog_choose_longer_len[3]"; ?>
+            }
+        },
+        {
+            "question_number":"3",
+            "picture_info": <?php echo "$cog_choose_longer_pic[2]"; ?>,
+            "picture_length":{
+                "up": <?php echo "$cog_choose_longer_len[4]"; ?>,
+                "down": <?php echo "$cog_choose_longer_len[5]"; ?>
+            }
+        },
+        {
+            "question_number":"4",
+            "picture_info": <?php echo "$cog_choose_longer_pic[3]"; ?>,
+            "picture_length":{
+                "up": <?php echo "$cog_choose_longer_len[6]"; ?>,
+                "down": <?php echo "$cog_choose_longer_len[7]"; ?>
+            }
+        },
+        {
+            "question_number":"5",
+            "picture_info": <?php echo "$cog_choose_longer_pic[4]"; ?>,
+            "picture_length":{
+                "up": <?php echo "$cog_choose_longer_len[8]"; ?>,
+                "down": <?php echo "$cog_choose_longer_len[9]"; ?>
+            }
+        }
+        ],
+        "cog_choose_shape":[
+        {
+            "question_number":"1",
+            "question_shape": <?php echo "$cog_choose_shape[0]"; ?>,
+            "option_picture":{
+                "first":<?php echo "$cog_choose_shape_option1[0]"; ?>,
+                "second":<?php echo "$cog_choose_shape_option1[1]"; ?>,
+                "third":<?php echo "$cog_choose_shape_option1[2]"; ?>
+            }
+        },
+        {
+            "question_number":"2",
+            "question_shape": <?php echo "$cog_choose_shape[1]"; ?>,
+            "option_picture":{
+                "first":<?php echo "$cog_choose_shape_option2[0]"; ?>,
+                "second":<?php echo "$cog_choose_shape_option2[1]"; ?>,
+                "third":<?php echo "$cog_choose_shape_option2[2]"; ?>
+            }
+        },
+        {
+            "question_number":"3",
+            "question_shape": <?php echo "$cog_choose_shape[2]"; ?>,
+            "option_picture":{
+                "first":<?php echo "$cog_choose_shape_option3[0]"; ?>,
+                "second":<?php echo "$cog_choose_shape_option3[1]"; ?>,
+                "third":<?php echo "$cog_choose_shape_option3[2]"; ?>
+            }
+        },
+        {
+            "question_number":"4",
+            "question_shape": <?php echo "$cog_choose_shape[3]"; ?>,
+            "option_picture":{
+                "first":<?php echo "$cog_choose_shape_option4[0]"; ?>,
+                "second":<?php echo "$cog_choose_shape_option4[1]"; ?>,
+                "third":<?php echo "$cog_choose_shape_option4[2]"; ?>
+            }
+        }
+        ],
+        "cog_choose_correct_orientation":[
+            {
+            "question_picture":{
+                "row_1_column_1":<?php echo "$cog_choose_correct_orientation_pic[0]"; ?>,
+                "row_1_column_2":<?php echo "$cog_choose_correct_orientation_pic[1]"; ?>,
+                "row_1_column_3":<?php echo "$cog_choose_correct_orientation_pic[2]"; ?>,
+                "row_2_column_1":<?php echo "$cog_choose_correct_orientation_pic[3]"; ?>,
+                "row_2_column_2":<?php echo "$cog_choose_correct_orientation_pic[4]"; ?>,
+                "row_2_column_3":<?php echo "$cog_choose_correct_orientation_pic[5]"; ?>,
+                "row_3_column_1":<?php echo "$cog_choose_correct_orientation_pic[6]"; ?>,
+                "row_3_column_2":<?php echo "$cog_choose_correct_orientation_pic[7]"; ?>,
+                "row_3_column_3":<?php echo "$cog_choose_correct_orientation_pic[8]"; ?>
+                }
+            },
+            {
+                "pictures_cardinal":[
+                <?php echo "$cog_choose_correct_orientation_pic[0]"; ?>,
+                <?php echo "$cog_choose_correct_orientation_pic[1]"; ?>,
+                <?php echo "$cog_choose_correct_orientation_pic[2]"; ?>,
+                <?php echo "$cog_choose_correct_orientation_pic[3]"; ?>,
+                <?php echo "$cog_choose_correct_orientation_pic[4]"; ?>,
+                <?php echo "$cog_choose_correct_orientation_pic[5]"; ?>,
+                <?php echo "$cog_choose_correct_orientation_pic[6]"; ?>,
+                <?php echo "$cog_choose_correct_orientation_pic[7]"; ?>,
+                <?php echo "$cog_choose_correct_orientation_pic[8]"; ?>]
+            },
+            {
+                "question_number":"1",
+                "subject_pic":<?php echo "$cog_choose_correct_orientation_question_picture[0]"; ?>,
+                "subject_orientation":<?php echo "$cog_choose_correct_orientation_direction_array[0]"; ?>,
+                "option":{
+                    "first":<?php echo "$cog_choose_correct_orientation_question1_option[0]"; ?>,
+                    "second":<?php echo "$cog_choose_correct_orientation_question1_option[1]"; ?>,
+                    "third":<?php echo "$cog_choose_correct_orientation_question1_option[2]"; ?>,
+                    "fourth":<?php echo "$cog_choose_correct_orientation_question1_option[3]"; ?>
+                },
+                "correct_anwser":<?php echo "$cog_choose_correct_orientation_correct_anwser[0]"; ?>
+            },
+            {
+                "question_number":"2",
+                "subject_pic":<?php echo "$cog_choose_correct_orientation_question_picture[1]"; ?>,
+                "subject_orientation":<?php echo "$cog_choose_correct_orientation_direction_array[1]"; ?>,
+                "option":{
+                    "first":<?php echo "$cog_choose_correct_orientation_question2_option[0]"; ?>,
+                    "second":<?php echo "$cog_choose_correct_orientation_question2_option[1]"; ?>,
+                    "third":<?php echo "$cog_choose_correct_orientation_question2_option[2]"; ?>,
+                    "fourth":<?php echo "$cog_choose_correct_orientation_question2_option[3]"; ?>
+                },
+                "correct_anwser":<?php echo "$cog_choose_correct_orientation_correct_anwser[1]"; ?>
+            },
+            {
+                "question_number":"3",
+                "subject_pic":<?php echo "$cog_choose_correct_orientation_question_picture[2]"; ?>,
+                "subject_orientation":<?php echo "$cog_choose_correct_orientation_direction_array[2]"; ?>,
+                "option":{
+                    "first":<?php echo "$cog_choose_correct_orientation_question3_option[0]"; ?>,
+                    "second":<?php echo "$cog_choose_correct_orientation_question3_option[1]"; ?>,
+                    "third":<?php echo "$cog_choose_correct_orientation_question3_option[2]"; ?>,
+                    "fourth":<?php echo "$cog_choose_correct_orientation_question3_option[3]"; ?>
+                },
+                "correct_anwser":<?php echo "$cog_choose_correct_orientation_correct_anwser[2]"; ?>
+            },
+            {
+                "question_number":"4",
+                "subject_pic":<?php echo "$cog_choose_correct_orientation_question_picture[3]"; ?>,
+                "subject_orientation":<?php echo "$cog_choose_correct_orientation_direction_array[3]"; ?>,
+                "option":{
+                    "first":<?php echo "$cog_choose_correct_orientation_question4_option[0]"; ?>,
+                    "second":<?php echo "$cog_choose_correct_orientation_question4_option[1]"; ?>,
+                    "third":<?php echo "$cog_choose_correct_orientation_question4_option[2]"; ?>,
+                    "fourth":<?php echo "$cog_choose_correct_orientation_question4_option[3]"; ?>
+                },
+                "correct_anwser":<?php echo "$cog_choose_correct_orientation_correct_anwser[3]"; ?>
+            }
+            ],
+            "cog_sequence":[
+                {
+                "question_picture":{
+                    "first":<?php echo "$cog_sequence_pic[0]"; ?>,
+                    "second":<?php echo "$cog_sequence_pic[1]"; ?>,
+                    "third":<?php echo "$cog_sequence_pic[2]"; ?>,
+                    "fourth":<?php echo "$cog_sequence_pic[3]"; ?>,
+                    "fifth":<?php echo "$cog_sequence_pic[4]"; ?>,
+                    "sixth":<?php echo "$cog_sequence_pic[5]"; ?>,
+                    "seventh":<?php echo "$cog_sequence_pic[6]"; ?>,
+                    "eighth":<?php echo "$cog_sequence_pic[7]"; ?>
+                    }
+                },
+                {
+                    "pictures_cardinal":[
+                    <?php echo "$cog_sequence_pic[0]"; ?>,
+                    <?php echo "$cog_sequence_pic[1]"; ?>,
+                    <?php echo "$cog_sequence_pic[2]"; ?>,
+                    <?php echo "$cog_sequence_pic[3]"; ?>,
+                    <?php echo "$cog_sequence_pic[4]"; ?>,
+                    <?php echo "$cog_sequence_pic[5]"; ?>,
+                    <?php echo "$cog_sequence_pic[6]"; ?>,
+                    <?php echo "$cog_sequence_pic[7]"; ?>,
+                    ]
+                },
+                {
+                    "question_number":"1",
+                    "subject_pic":<?php echo "$cog_sequence_subject_pic[0]"; ?>,
+                    "subject_direction":<?php echo "$cog_sequence_subject_direction[0]"; ?>,
+                    "correct_anwser":<?php echo "$cog_sequence_subject_correct_anwser1"; ?>
+                },
+                {
+                    "question_number":"2",
+                    "subject_pic":<?php echo "$cog_sequence_subject_pic[1]"; ?>,
+                    "subject_direction":<?php echo "$cog_sequence_subject_direction[1]"; ?>,
+                    "option":{
+                        "first":<?php echo "$cog_sequence_choose_option[0]"; ?>,
+                        "second":<?php echo "$cog_sequence_choose_option[1]"; ?>,
+                        "third":<?php echo "$cog_sequence_choose_option[2]"; ?>
+                    },
+                    "correct_anwser":<?php echo "$cog_sequence_subject_correct_anwser2"; ?>
+                },
+                {
+                    "question_number":"3",
+                    "subject_pic":<?php echo "$cog_sequence_subject_pic[2]"; ?>,
+                    "subject_direction":<?php echo "$cog_sequence_subject_direction[2]"; ?>,
+                    "subject_opposite_direction":<?php echo "$cog_sequence_opposite_direction"; ?>,
+                    "correct_anwser":{
+                        "front":<?php echo "$cog_sequence_subject_correct_anwser3"; ?>,
+                        "last":<?php echo "$cog_sequence_subject_correct_anwser4"; ?>
+                    }
+                }
+            ],
+    }
+</script>
+<link rel="stylesheet" type="text/css" href="css/cognition_finish.css">
 <style type="text/css">
-	div.ui-footer.ui-bar-inherit{
-	background-color: #FFFFFF;
+.ui-page{
+    background-color: #888888 !important;
+}
+.ui-btn{
+    display: inline !important;
+}
+.ui-mobile .ui-page-active {
+   overflow-x: visible !important;
+}
+.ui-mobile, .ui-mobile body{
+    height: 100% !important;
+}
+.ui-checkbox input, .ui-radio input{
+    position: relative !important;
 }
 </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<script type="text/javascript" src="cognitionq1_finish.js"></script>
-<script type="text/javascript" src="cognitionq2_finish.js"></script>
-<script type="text/javascript" src="cognitionq3_finish.js"></script>
-<script type="text/javascript" src="cognitionq4_finish.js"></script>
-<script type="text/javascript" src="cognitionq5_finish.js"></script>
-<?php
-//q1參數
-$q1q11 = $_POST['q1question11'];
-$q1q12 = $_POST['q1question12'];
-$q1q21 = $_POST['q1question21'];
-$q1q22 = $_POST['q1question22'];
-$q1q31 = $_POST['q1question31'];
-$q1q32 = $_POST['q1question32'];
-$q1q41 = $_POST['q1question41'];
-$q1q42 = $_POST['q1question42'];
-$q1q51 = $_POST['q1question51'];
-$q1q52 = $_POST['q1question52'];
-$q1q1 = $_POST['q1question1'];
-$q1q2 = $_POST['q1question2']; 
-$q1q3 = $_POST['q1question3']; 
-$q1q4 = $_POST['q1question4']; 
-$q1q5 = $_POST['q1question5'];
-if(!isset($_COOKIE["cq1q11"])) {
-   setcookie("cq1q11",$q1q11,time()+60);
-}
-if(!isset($_COOKIE["cq1q12"])) {
-   setcookie("cq1q12",$q1q12,time()+60);
-}
-if(!isset($_COOKIE["cq1q21"])) {
-   setcookie("cq1q21",$q1q21,time()+60);
-}
-if(!isset($_COOKIE["cq1q22"])) {
-   setcookie("cq1q22",$q1q22,time()+60);
-}
-if(!isset($_COOKIE["cq1q31"])) {
-   setcookie("cq1q31",$q1q31,time()+60);
-}
-if(!isset($_COOKIE["cq1q32"])) {
-   setcookie("cq1q32",$q1q32,time()+60);
-}
-if(!isset($_COOKIE["cq1q41"])) {
-   setcookie("cq1q41",$q1q41,time()+60);
-}
-if(!isset($_COOKIE["cq1q42"])) {
-   setcookie("cq1q42",$q1q42,time()+60);
-}
-if(!isset($_COOKIE["cq1q51"])) {
-   setcookie("cq1q51",$q1q51,time()+60);
-}
-if(!isset($_COOKIE["cq1q52"])) {
-   setcookie("cq1q52",$q1q52,time()+60);
-}
-if(!isset($_COOKIE["cq1q11"])) {
-   setcookie("cq1q11",$q1q11,time()+60);
-}
-if(!isset($_COOKIE["cq1q1"])) {
-   setcookie("cq1q1",$q1q1,time()+60);
-}
-if(!isset($_COOKIE["cq1q2"])) {
-   setcookie("cq1q2",$q1q2,time()+60);
-}
-if(!isset($_COOKIE["cq1q3"])) {
-   setcookie("cq1q3",$q1q3,time()+60);
-}
-if(!isset($_COOKIE["cq1q4"])) {
-   setcookie("cq1q4",$q1q4,time()+60);
-}
-if(isset($_COOKIE["cq1q11"])) {
-   	$cq1q11=$_COOKIE["cq1q11"];
-}else{
-	$cq1q11=$q1q11;
-}
-if(isset($_COOKIE["cq1q12"])) {
-   	$cq1q12=$_COOKIE["cq1q12"];
-}else{
-	$cq1q12=$q1q12;
-}
-if(isset($_COOKIE["cq1q21"])) {
-   	$cq1q21=$_COOKIE["cq1q21"];
-}else{
-	$cq1q21=$q1q21;
-}
-if(isset($_COOKIE["cq1q22"])) {
-   	$cq1q22=$_COOKIE["cq1q22"];
-}else{
-	$cq1q22=$q1q22;
-}
-if(isset($_COOKIE["cq1q31"])) {
-   	$cq1q31=$_COOKIE["cq1q31"];
-}else{
-	$cq1q31=$q1q31;
-}
-if(isset($_COOKIE["cq1q32"])) {
-   	$cq1q32=$_COOKIE["cq1q32"];
-}else{
-	$cq1q32=$q1q32;
-}
-if(isset($_COOKIE["cq1q41"])) {
-   	$cq1q41=$_COOKIE["cq1q41"];
-}else{
-	$cq1q41=$q1q41;
-}
-if(isset($_COOKIE["cq1q42"])) {
-   	$cq1q42=$_COOKIE["cq1q42"];
-}else{
-	$cq142=$q1q42;
-}
-if(isset($_COOKIE["cq1q51"])) {
-   	$cq1q51=$_COOKIE["cq1q51"];
-}else{
-	$cq1q51=$q1q51;
-}
-if(isset($_COOKIE["cq1q52"])) {
-   	$cq1q52=$_COOKIE["cq1q52"];
-}else{
-	$cq1q52=$q1q52;
-}
-if(isset($_COOKIE["cq1q1"])) {
-   	$cq1q1=$_COOKIE["cq1q1"];
-}else{
-	$cq1q1=$q1q1;
-}
-if(isset($_COOKIE["cq1q2"])) {
-   	$cq1q2=$_COOKIE["cq1q2"];
-}else{
-	$cq1q2=$q1q2;
-}
-if(isset($_COOKIE["cq1q3"])) {
-   	$cq1q3=$_COOKIE["cq1q3"];
-}else{
-	$cq1q3=$q1q3;
-}
-if(isset($_COOKIE["cq1q4"])) {
-   	$cq1q4=$_COOKIE["cq1q4"];
-}else{
-	$cq1q4=$q1q4;
-}
-if(isset($_COOKIE["cq1q5"])) {
-   	$cq1q5=$_COOKIE["cq1q5"];
-}else{
-	$cq1q5=$q1q5;
-}
-
-
-//q1對答案
-$q1score=0;
-if(($q1q11)==($question1[2])){
-	$q1score=$q1score+1;
-}
-if(($q1q12)==($question1[3])){
-	$q1score=$q1score+1;
-}
-if(($q1q21)==($question1[4])){
-	$q1score=$q1score+1;
-}
-if(($q1q22)==($question1[5])){
-	$q1score=$q1score+1;
-}
-if(($q1q31)==($question1[6])){
-	$q1score=$q1score+1;
-}
-if(($q1q32)==($question1[7])){
-	$q1score=$q1score+1;
-}
-if(($q1q41)==($question1[8])){
-	$q1score=$q1score+1;
-}
-if(($q1q42)==($question1[9])){
-	$q1score=$q1score+1;
-}
-if(($q1q51)==($question1[10])){
-	$q1score=$q1score+1;
-}
-if(($q1q52)==($question1[11])){
-	$q1score=$q1score+1;
-}
-if(($question1[2])>($question1[3])){
-	if(($q1q1)==1){
-		$q1score=$q1score+2;
-	}
-}else{
-	if(($q1q1)==2){
-		$q1score=$q1score+2;
-	}
-}
-if(($question1[4])>($question1[5])){
-	if(($q1q2)==1){
-		$q1score=$q1score+2;
-	}
-}else{
-	if(($q1q2)==2){
-		$q1score=$q1score+2;
-	}
-}
-if(($question1[6])>($question1[7])){
-	if(($q1q3)==1){
-		$q1score=$q1score+2;
-	}
-}else{
-	if(($q1q3)==2){
-		$q1score=$q1score+2;
-	}
-}
-if(($question1[8])>($question1[9])){
-	if(($q1q4)==1){
-		$q1score=$q1score+2;
-	}
-}else{
-	if(($q1q4)==2){
-		$q1score=$q1score+2;
-	}
-}
-if(($question1[10])>($question1[11])){
-	if(($q1q5)==1){
-		$q1score=$q1score+2;
-	}
-}else{
-	if(($q1q5)==2){
-		$q1score=$q1score+2;
-	}
-}
-//q2參數
-$q2q1 = $_POST['q2question1'];   //作答者的答案
-$q2q2 = $_POST['q2question2'];
-$q2q3 = $_POST['q2question3'];
-$q2q4 = $_POST['q2question4'];
-if(!isset($_COOKIE["cq2q1"])) {
-   setcookie("cq2q1",$q2q1,time()+60);
-}
-if(!isset($_COOKIE["cq2q2"])) {
-   setcookie("cq2q2",$q2q2,time()+60);
-}
-if(!isset($_COOKIE["cq2q3"])) {
-   setcookie("cq2q3",$q2q3,time()+60);
-}
-if(!isset($_COOKIE["cq2q4"])) {
-   setcookie("cq2q4",$q2q4,time()+60);
-}
-if(isset($_COOKIE["cq2q1"])) {
-   	$cq2q1=$_COOKIE["cq2q1"];
-}else{
-	$cq2q1=$q2q1;
-}
-if(isset($_COOKIE["cq2q2"])) {
-   	$cq2q2=$_COOKIE["cq2q2"];
-}else{
-	$cq2q2=$q2q2;
-}
-if(isset($_COOKIE["cq2q3"])) {
-   	$cq2q3=$_COOKIE["cq2q3"];
-}else{
-	$cq2q3=$q2q3;
-}
-if(isset($_COOKIE["cq2q4"])) {
-   	$cq2q4=$_COOKIE["cq2q4"];
-}else{
-	$cq2q4=$q2q4;
-}
-//q2對答案
-$q2score=0;
-if(($q2q1)==($question2[35])){
-	$q2score=$q2score+5;
-}
-if(($q2q2)==($question2[36])){
-	$q2score=$q2score+5;
-}
-if(($q2q3)==($question2[37])){
-	$q2score=$q2score+5;
-}
-if(($q2q4)==($question2[38])){
-	$q2score=$q2score+5;
-}
-//q3參數
-$q3q1 = $_POST['q3question1'];
-$q3q2 = $_POST['q3question2']; 
-$q3q3 = $_POST['q3question3']; 
-$q3q4 = $_POST['q3question4']; 
-$q3q5 = $_POST['q3question5'];
-if(!isset($_COOKIE["cq3q1"])) {
-   setcookie("cq3q1",$q3q1,time()+60);
-}
-if(!isset($_COOKIE["cq3q2"])) {
-   setcookie("cq3q2",$q3q2,time()+60);
-}
-if(!isset($_COOKIE["cq3q3"])) {
-   setcookie("cq3q3",$q3q3,time()+60);
-}
-if(!isset($_COOKIE["cq3q4"])) {
-   setcookie("cq3q4",$q3q4,time()+60);
-}
-if(!isset($_COOKIE["cq3q5"])) {
-   setcookie("cq3q5",$q3q5,time()+60);
-}
-if(isset($_COOKIE["cq3q1"])) {
-   	$cq3q1=$_COOKIE["cq3q1"];
-}else{
-	$cq3q1=$q3q1;
-}
-if(isset($_COOKIE["cq3q2"])) {
-   	$cq3q2=$_COOKIE["cq3q2"];
-}else{
-	$cq3q2=$q3q2;
-}
-if(isset($_COOKIE["cq3q3"])) {
-   	$cq3q3=$_COOKIE["cq3q3"];
-}else{
-	$cq3q3=$q3q3;
-}
-if(isset($_COOKIE["cq3q4"])) {
-   	$cq3q4=$_COOKIE["cq3q4"];
-}else{
-	$cq3q4=$q3q4;
-}
-if(isset($_COOKIE["cq3q5"])) {
-   	$cq3q5=$_COOKIE["cq3q5"];
-}else{
-	$cq3q5=$q3q5;
-}
-$q3score=0;
-//q3對答案
-if($question3[7]>$question3[8]){
-	if($q3q1==$question3[7]){
-		$q3score=$q3score+4;
-	}
-}else{
-	if($q3q1==$question3[8]){
-		$q3score=$q3score+4;
-	}
-}
-if($question3[9]>$question3[10]){
-	if($q3q2==$question3[9]){
-		$q3score=$q3score+4;
-	}
-}else{
-	if($q3q2==$question3[10]){
-		$q3score=$q3score+4;
-	}
-}
-if($question3[11]>$question3[12]){
-	if($q3q3==$question3[11]){
-		$q3score=$q3score+4;
-	}
-}else{
-	if($q3q3==$question3[12]){
-		$q3score=$q3score+4;
-	}
-}
-if($question3[13]>$question3[14]){
-	if($q3q4==$question3[13]){
-		$q3score=$q3score+4;
-	}
-}else{
-	if($q3q4==$question3[14]){
-		$q3score=$q3score+4;
-	}
-}
-if($question3[15]>$question3[16]){
-	if($q3q5==$question3[15]){
-		$q3score=$q3score+4;
-	}
-}else{
-	if($q3q5==$question3[16]){
-		$q3score=$q3score+4;
-	}
-}
-//q4參數
-$anw1=$_POST['q4anwser1'];
-$anw2=$_POST['q4anwser2'];
-$anw3=$_POST['q4anwser3'];
-$anw4=$_POST['q4anwser4'];
-if(!isset($_COOKIE["canw1"])) {
-   setcookie("canw1",$anw1,time()+60);
-}
-if(!isset($_COOKIE["canw2"])) {
-   setcookie("canw2",$anw2,time()+60);
-}
-if(!isset($_COOKIE["canw3"])) {
-   setcookie("canw3",$anw3,time()+60);
-}
-if(!isset($_COOKIE["canw4"])) {
-   setcookie("canw4",$anw4,time()+60);
-}
-if(isset($_COOKIE["canw1"])) {
-   	$canw1=$_COOKIE["canw1"];
-}else{
-	$canw1=$anw1;
-}
-if(isset($_COOKIE["canw2"])) {
-   	$canw2=$_COOKIE["canw2"];
-}else{
-	$canw2=$anw2;
-}
-if(isset($_COOKIE["canw3"])) {
-   	$canw3=$_COOKIE["canw3"];
-}else{
-	$canw3=$anw3;
-}
-if(isset($_COOKIE["canw4"])) {
-   	$canw4=$_COOKIE["canw4"];
-}else{
-	$canw4=$anw4;
-}
-//q4對答案
-$q4score=0;
-if(($anw1==$question4[20])&&$anw1!=null){
-	$q4score=$q4score+5;
-}
-if(($anw2==$question4[21])&&$anw2!=null){
-	$q4score=$q4score+5;
-}
-if(($anw3==$question4[22])&&$anw3!=null){
-	$q4score=$q4score+5;
-}
-if(($anw4==$question4[23])&&$anw4!=null){
-	$q4score=$q4score+5;
-}
-
-//q5參數
-$q5anw1 = $_POST['q5question1'];
-$q5anw2 = $_POST['q5question2'];
-$q5anw3 = $_POST['q5question3'];
-$q5anw4 = $_POST['q5question4'];
-if(!isset($_COOKIE["cq5anw1"])) {
-   setcookie("cq5anw1",$q5anw1,time()+60);
-}
-if(!isset($_COOKIE["cq5anw2"])) {
-   setcookie("cq5anw2",$q5anw2,time()+60);
-}
-if(!isset($_COOKIE["cq5anw3"])) {
-   setcookie("cq5anw3",$q5anw3,time()+60);
-}
-if(!isset($_COOKIE["cq5anw4"])) {
-   setcookie("cq5anw4",$q5anw4,time()+60);
-}
-if(isset($_COOKIE["cq5anw1"])) {
-   	$cq5anw1=$_COOKIE["cq5anw1"];
-}else{
-	$cq5anw1=$q5anw1;
-}
-if(isset($_COOKIE["cq5anw2"])) {
-   	$cq5anw2=$_COOKIE["cq5anw2"];
-}else{
-	$cq5anw2=$q5anw2;
-}
-if(isset($_COOKIE["cq5anw3"])) {
-   	$cq5anw3=$_COOKIE["cq5anw3"];
-}else{
-	$cq5anw3=$q5anw3;
-}
-if(isset($_COOKIE["cq5anw4"])) {
-   	$cq5anw4=$_COOKIE["cq5anw4"];
-}else{
-	$cq5anw4=$q5anw4;
-}
-
-$q5score=0;
-//q5對答案
-if($q5anw1<10&&$q5anw1!=null)$q5score=$q5score+5;
-if($q5anw2<10&&$q5anw2!=null)$q5score=$q5score+5;
-if($q5anw3<10&&$q5anw3!=null)$q5score=$q5score+5;
-if($q5anw4<10&&$q5anw4!=null)$q5score=$q5score+5;
-//總分
-$totalscore=$q1score+$q2score+$q3score+$q4score+$q5score;
-?>
+<script type="text/javascript" src="anw_cog_count_choose.js"></script>
+<script type="text/javascript" src="anw_cog_choose_correct_orientation.js"></script>
+<script type="text/javascript" src="anw_cog_choose_longer.js"></script>
+<script type="text/javascript" src="anw_cog_sequence.js"></script>
+<script type="text/javascript" src="anw_cog_choose_shape.js"></script>
+<body>
+<script src='js/snowflakes.min.js'></script>
+<script src="js/index.js"></script>
 <form name="form1" method="post">
-	<div data-role="page" id="cognition_anwser">
-	<div align="center" valign="middle">
-		<h3 align="center" style="color: red">本次作答拿了<?php echo "$totalscore"; ?>/100分</h3>
-		<a href="#cognition_anwser1" class="ui-btn" style="width: 10%;" data-transition="slide">來對答案吧!</a>
-		</div>	
-	</div>
-	<div data-role="page" id="cognition_anwser1">
-		<h3 align="center" style="color: red">拿了<?php echo "$q1score"; ?>/20分</h3>
-		<table border="1" width="60%" align="center">
-			<tr>
-				<th style="text-align: center; width:90%" >圖</th>
-				<th style="text-align: center;" width="5%">原作答</th>
-				<th style="text-align: center;" width="5%">原作答</th>
-				<th style="text-align: center;" width="5%">正確答案</th>
-				<th style="text-align: center;" width="5%">正確答案</th>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"80%\"><script>q1pictures($question1[2],$question1[12]);</script></td>"; ?>
-				<?php echo "<td width=\"5%\" style=\"text-align: center; \"><input type=\"number\" id=\"q1q11\" name=\"q1question11\"  data-role=\"none\" value=\"$cq1q11\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qq1" name="q1question1" type="radio" value="1" data-role="none" disabled <?php if($cq1q1=="1") echo "checked=checked" ?>></td>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1qq11\" name=\"q1question11\"  data-role=\"none\" value=\"$question1[2]\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qqq1" name="q1qquestion1" type="radio" disabled data-role="none" <?php if($question1[2]>$question1[3]) echo "checked=checked" ?>></td>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q1pictures($question1[3],$question1[13]);</script></td>"; ?>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1q12\" name=\"q1question12\" data-role=\"none\" value=\"$cq1q12\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qq2" name="q1question1" type="radio" value="2" data-role="none" disabled <?php if($cq1q1=="2") echo "checked=checked" ?>></td>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1qqq12\" name=\"q1question12\"data-role=\"none\" value=\"$question1[3]\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qqq2" name="q1qquestion1" type="radio" disabled data-role="none"<?php if($question1[3]>$question1[2]) echo "checked=checked" ?>></td>
-			</tr>
-		</table>
-		<br/>
-		<table border="1" width="60%" align="center">
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q1pictures($question1[4],$question1[14]);</script></td>"; ?>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1q21\" name=\"q1question21\" data-role=\"none\" value=\"$cq1q21\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq3" name="q1question2" value="1" type="radio" disabled data-role="none" <?php if($cq1q2=="1") echo "checked=checked" ?>></td>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1qq21\" name=\"q1question21\" data-role=\"none\" value=\"$question1[4]\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qqq3" name="q1qquestion2" type="radio" disabled data-role="none" <?php if($question1[4]>$question1[5]) echo "checked=checked" ?>></td>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q1pictures($question1[5],$question1[15]);</script></td>"; ?>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1q22\" name=\"q1question22\" data-role=\"none\" value=\"$cq1q22\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qq4" name="q1question2" type="radio" value="2" disabled data-role="none" <?php if($cq1q2=="2") echo "checked=checked" ?>></td>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1qq22\" name=\"q1question22\" data-role=\"none\" value=\"$question1[5]\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qqq4" name="q1qquestion2" type="radio" disabled data-role="none" <?php if($question1[5]>$question1[4]) echo "checked=checked" ?>></td>
-			</tr>
-		</table>
-		<br/>
-		<table border="1" width="60%" align="center">
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q1pictures($question1[6],$question1[16]);</script></td>"; ?>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1q31\" name=\"q1question31\" data-role=\"none\" value=\"$cq1q31\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qq5" name="q1question3" type="radio" value="1" disabled data-role="none" <?php if($cq1q3=="1") echo "checked=checked" ?>></td>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1qq31\" name=\"q1question31\" data-role=\"none\" value=\"$question1[6]\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qqq5" name="q1qquestion3" type="radio" disabled data-role="none" <?php if($question1[6]>$question1[7]) echo "checked=checked" ?>></td>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q1pictures($question1[7],$question1[17]);</script></td>"; ?>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1q32\" name=\"q1question32\" data-role=\"none\" value=\"$cq1q32\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qq6" name="q1question3" type="radio" value="2" disabled data-role="none" <?php if($cq1q3=="2") echo "checked=checked" ?>></td>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1qq32\" name=\"q1question32\" data-role=\"none\" value=\"$question1[7]\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qqq6" name="q1qquestion3" type="radio" disabled data-role="none" <?php if($question1[7]>$question1[6]) echo "checked=checked" ?>></td>
-			</tr>
-		</table>
-		<br/>
-		<table border="1" width="60%" align="center">
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q1pictures($question1[8],$question1[18]);</script></td>"; ?>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1q41\" name=\"q1question41\" data-role=\"none\" value=\"$cq1q41\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qq7" name="q1question4" type="radio" value="1" disabled data-role="none" <?php if($cq1q4=="1") echo "checked=checked" ?>></td>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1qq41\" name=\"q1question41\" data-role=\"none\" value=\"$question1[8]\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qqq7" name="q1qquestion4" type="radio" disabled data-role="none" <?php if($question1[8]>$question1[9]) echo "checked=checked" ?>></td>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q1pictures($question1[9],$question1[19]);</script></td>"; ?>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1q42\" name=\"q1question42\" data-role=\"none\" value=\"$cq1q42\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qq8" name="q1question4" type="radio" value="2" disabled data-role="none" <?php if($cq1q4=="2") echo "checked=checked" ?>></td>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1qq42\" name=\"q1question42\" data-role=\"none\" value=\"$question1[9]\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qqq8" name="q1qquestion4" type="radio" disabled data-role="none" <?php if($question1[9]>$question1[8]) echo "checked=checked" ?>></td>
-			</tr>
-		</table>
-		<br/>
-		<table border="1" width="60%" align="center">
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q1pictures($question1[10],$question1[20]);</script></td>"; ?>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1q51\" name=\"q1question51\" data-role=\"none\" value=\"$cq1q51\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qq9" name="q1question5" type="radio" value="1" disabled data-role="none" <?php if($cq1q5=="1") echo "checked=checked" ?>></td>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1qq51\" name=\"q1question51\" data-role=\"none\" value=\"$question1[10]\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qqq9" name="q1qquestion5" type="radio" disabled data-role="none" <?php if($question1[10]>$question1[11]) echo "checked=checked" ?>></td>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q1pictures($question1[11],$question1[21]);</script></td>"; ?>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1q52\" name=\"q1question52\" data-role=\"none\" value=\"$cq1q52\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qq10" name="q1question5" type="radio" value="2" disabled data-role="none" <?php if($cq1q5=="2") echo "checked=checked" ?>></td>
-				<?php echo "<td width=\"5%\" style=\"text-align: center;\"><input type=\"number\" id=\"q1qq52\" name=\"q1question52\" data-role=\"none\" value=\"$question1[11]\" disabled></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="q1qqq10" name="q1qquestion5" type="radio" disabled data-role="none" <?php if($question1[11]>$question1[10]) echo "checked=checked" ?>></td>
-			</tr>
-		</table>
-		<div data-role="footer" style="text-align:center;">
-			<a href="Topic.php" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">回到首頁</a>
-  			<a href="#cognition_anwser2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
-		</div>
-		</div>
-		<div data-role="page" id="cognition_anwser2">
-		<h3 align="center" style="color: red">拿了<?php echo "$q2score"; ?>/20分</h3>
-		<table border="1" style="margin: auto;">
-		<tr>
-			<?php echo "<td style=\"text-align: center;\"><script>q2pictures($question2[2]);</script></td>";?>
-			<?php echo "<td style=\"text-align: center;\"><script>q2pictures($question2[3]);</script></td>";?>
-			<?php echo "<td style=\"text-align: center;\"><script>q2pictures($question2[4]);</script></td>";?>
-		</tr>
-		<tr>
-			<?php echo "<td style=\"text-align: center;\"><script>q2pictures($question2[5]);</script></td>";?>
-			<?php echo "<td style=\"text-align: center;\"><script>q2pictures($question2[6]);</script></td>";?>
-			<?php echo "<td style=\"text-align: center;\"><script>q2pictures($question2[7]);</script></td>";?>
-		</tr>
-		<tr>
-			<?php echo "<td style=\"text-align: center;\"><script>q2pictures($question2[8]);</script></td>";?>
-			<?php echo "<td style=\"text-align: center;\"><script>q2pictures($question2[9]);</script></td>";?>
-			<?php echo "<td style=\"text-align: center;\"><script>q2pictures($question2[10]);</script></td>";?>
-		</tr>
-	</table>
-	<table border="1" style="margin: auto;">
-		<tr>
-			<th style="text-align: center;">題目</th>
-			<th style="text-align: center;">原作答</th>
-			<th style="text-align: center;">正確答案</th>
-		</tr>
-		<tr>
-			<td>
-				<?php echo "1.在<script>setquestionname($a[$q211])</script>的<script>writedirection($question2[11],$question2[15])</script>是";?>
-			</td>
-			<td>
-				<div style="float: left;"><label><input type="radio" id="q1" name="question555" disabled="disabled" data-role="none" <?php if($cq2q1=="$question2[19]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q219]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q2" name="question555" disabled="disabled" data-role="none" <?php if($cq2q1=="$question2[20]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q220]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q3" name="question555" disabled="disabled" data-role="none" <?php if($cq2q1=="$question2[21]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q221]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q4" name="question555" disabled="disabled" data-role="none" <?php if($cq2q1=="$question2[22]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q222]);</script>"; ?></label></div>
-			</td>
-			<td>
-					<div style="float: left;"><label><input type="radio" id="q11" name="question1" disabled="disabled" data-role="none" <?php if($question2[35]=="$question2[19]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q219]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q12" name="question1" disabled="disabled" data-role="none" <?php if($question2[35]=="$question2[20]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q220]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q13" name="question1" disabled="disabled" data-role="none" <?php if($question2[35]=="$question2[21]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q221]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q14" name="question1" disabled="disabled" data-role="none" <?php if($question2[35]=="$question2[22]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q222]);</script>"; ?></label></div>
-				
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<?php echo "2.在<script>setquestionname($a[$q212])</script>的<script>writedirection($question2[12],$question2[16])</script>是";?>
-			</td>
-			<td>
-				<div style="float: left;"><label><input type="radio" id="q5" name="question333" disabled="disabled" data-role="none" <?php if($cq2q2=="$question2[23]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q223]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q6" name="question333" disabled="disabled" data-role="none" <?php if($cq2q2=="$question2[24]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q224]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q7" name="question333" disabled="disabled" data-role="none" <?php if($cq2q2=="$question2[25]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q225]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q8" name="question333" disabled="disabled" data-role="none" <?php if($cq2q2=="$question2[26]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q226]);</script>"; ?></label></div>
-			</td>
-			<td>				
-					<div style="float: left;"><label><input type="radio" id="q21" name="question2" disabled="disabled" data-role="none" <?php if($question2[36]=="$question2[23]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q223]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q22" name="question2" disabled="disabled" data-role="none" <?php if($question2[36]=="$question2[24]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q224]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q23" name="question2" disabled="disabled" data-role="none" <?php if($question2[36]=="$question2[25]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q225]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q24" name="question2" disabled="disabled" data-role="none" <?php if($question2[36]=="$question2[26]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q226]);</script>"; ?></label></div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<?php echo "3.在<script>setquestionname($a[$q213])</script>的<script>writedirection($question2[13],$question2[17])</script>是";?>
-			</td>
-			<td>
-				<div style="float: left;"><label><input type="radio" id="q9"  name="question222" disabled="disabled" data-role="none" <?php if($cq2q3=="$question2[27]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q227]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q10" name="question222" disabled="disabled" data-role="none" <?php if($cq2q3=="$question2[28]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q228]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q11" name="question222" disabled="disabled" data-role="none" <?php if($cq2q3=="$question2[29]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q229]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q12" name="question222" disabled="disabled" data-role="none" <?php if($cq2q3=="$question2[30]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q230]);</script>"; ?></label></div>
-			</td>
-			<td>
-					<div style="float: left;"><label><input type="radio" id="q31" name="question3" disabled="disabled" data-role="none" <?php if($question2[37]=="$question2[27]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q227]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q32" name="question3" disabled="disabled" data-role="none" <?php if($question2[37]=="$question2[28]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q228]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q33" name="question3" disabled="disabled" data-role="none" <?php if($question2[37]=="$question2[29]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q229]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q34" name="question3" disabled="disabled" data-role="none" <?php if($question2[37]=="$question2[30]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q230]);</script>"; ?></label></div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<?php echo "4.在<script>setquestionname($a[$q214])</script>的<script>writedirection($question2[14],$question2[18])</script>是";?>
-			</td>
-			<td>
-				<div style="float: left;"><label><input type="radio" id="q13" name="question44" disabled="disabled" data-role="none" <?php if($cq2q4=="$question2[31]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q231]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q14" name="question44" disabled="disabled" data-role="none" <?php if($cq2q4=="$question2[32]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q232]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q15" name="question44" disabled="disabled" data-role="none" <?php if($cq2q4=="$question2[33]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q233]);</script>"; ?></label></div>
-				<div style="float: left;"><label><input type="radio" id="q16" name="question44" disabled="disabled" data-role="none" <?php if($cq2q4=="$question2[34]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q234]);</script>"; ?></label></div>
-			</td>
-			<td>
-					<div style="float: left;"><label><input type="radio" id="q41" name="question4" disabled="disabled" data-role="none" <?php if($question2[38]=="$question2[31]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q231]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q42" name="question4" disabled="disabled" data-role="none" <?php if($question2[38]=="$question2[32]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q232]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q43" name="question4" disabled="disabled" data-role="none" <?php if($question2[38]=="$question2[33]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q233]);</script>"; ?></label></div>
-					<div style="float: left;"><label><input type="radio" id="q44" name="question4" disabled="disabled" data-role="none" <?php if($question2[38]=="$question2[34]") echo "checked=checked" ?>><?php echo "<script>q2pictures($a[$q234]);</script>"; ?></label></div>
-			</td>
-		</tr>
-	</table>
-	<div data-role="footer" style="text-align:center;">
-				<a href="#cognition_anwser1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-				<a href="Topic.php" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
-  				<a href="#cognition_anwser3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
-	</div>
+    <div data-role="page" id="cognition_anwser">
+    <div align="center" valign="middle">
+        <h3 align="center" style="color: red">本次作答拿了<?php echo "$cognition_score_sql[2]"; ?>/100分</h3>
+        <a href="#cognition_anwser1" class="ui-btn" style="width: 10%;" data-transition="slide">來對答案吧!</a>
+        </div>  
+    </div>
+    <div data-role="page" id="cognition_anwser1" align="center">
+        <h3 align="center" style="color: red">數一數,並選出比較多的那種,一格1分</h3>
+        <h3 align="center" style="color: red">拿了<?php echo "$cog_count_choose_sql[2]"; ?>/20分</h3>
+        <div class="count_sexyborder">
+        <table border="1" align="center" class="count_headertable">
+            <tr>
+                <th style="text-align: center; width:80%" >圖</th>
+                <th style="text-align: center;" width="5%">原作答</th>
+                <th style="text-align: center;" width="5%">原作答</th>
+                <th style="text-align: center;" width="5%">正確答案</th>
+                <th style="text-align: center;" width="5%">正確答案</th>
+            </tr>
+            <tr class="count_oddtr">
+                <td><script>anw_cog_count_choose_pictures(all_question.cog_count_choose[0].picture_quantity.up,all_question.cog_count_choose[0].picture_info.up);</script></td>
+                <td style="text-align: center;"><?php if($cog_count_choose_sql[3]==null) echo "未作答"; else echo "$cog_count_choose_sql[3]" ?></td>
+                <td style="text-align: center;"><input id="cog_count_choose_q1" name="cog_count_choose_q1" type="radio" value="1" data-role="none" disabled <?php if($cog_count_choose_sql[13]=="1") echo "checked=checked" ?>></td>
+                <td style="text-align: center;"><?php echo "$question1[2]"; ?></td>
+                <td style="text-align: center;"><input id="anw_cog_count_choose_q1" name="anw_cog_count_choose_q1" type="radio" disabled data-role="none" <?php if($question1[2]>$question1[3]) echo "checked=checked" ?>></td>
+            </tr>
+            <tr class="count_eventr">
+                <td><script>anw_cog_count_choose_pictures(all_question.cog_count_choose[0].picture_quantity.down,all_question.cog_count_choose[0].picture_info.down);</script></td>
+                <td style="text-align: center;"><?php if($cog_count_choose_sql[4]==null) echo "未作答"; else echo "$cog_count_choose_sql[4]" ?></td>
+                <td style="text-align: center;"><input id="cog_count_choose_q1" name="cog_count_choose_q1" type="radio" value="2" data-role="none" disabled <?php if($cog_count_choose_sql[13]=="2") echo "checked=checked" ?>></td>
+                <td style="text-align: center;"><?php echo "$question1[3]"; ?></td>
+                <td style="text-align: center;"><input id="anw_cog_count_choose_q1" name="anw_cog_count_choose_q1" type="radio" disabled data-role="none"<?php if($question1[3]>$question1[2]) echo "checked=checked" ?>></td>
+            </tr>
+        </table>
+        </div>
+            <br/>
+            <div class="count_sexyborder">
+            <table border="1" width="60%" align="center" class="count_headertable">
+            <tr class="count_oddtr">
+                <td width="80%"><script>anw_cog_count_choose_pictures(all_question.cog_count_choose[1].picture_quantity.up,all_question.cog_count_choose[1].picture_info.up);</script></td>
+                <td width="5%" style="text-align: center;"><?php if($cog_count_choose_sql[5]==null) echo "未作答"; else echo "$cog_count_choose_sql[5]" ?></td>
+                <td width="5%" style="text-align: center;"><input id="cog_count_choose_q2" name="cog_count_choose_q2" type="radio" value="1" data-role="none" disabled <?php if($cog_count_choose_sql[14]=="1") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><?php echo "$question1[4]"; ?></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_count_choose_q2" name="anw_cog_count_choose_q2" type="radio" disabled data-role="none" <?php if($question1[4]>$question1[5]) echo "checked=checked" ?>></td>
+            </tr>
+            <tr class="count_eventr">
+                <td><script>anw_cog_count_choose_pictures(all_question.cog_count_choose[1].picture_quantity.down,all_question.cog_count_choose[1].picture_info.down);</script></td>
+                <td  style="text-align: center;"><?php if($cog_count_choose_sql[6]==null) echo "未作答"; else echo "$cog_count_choose_sql[6]" ?></td>
+                <td style="text-align: center;"><input id="cog_count_choose_q2" name="cog_count_choose_q2" type="radio" value="2" data-role="none" disabled <?php if($cog_count_choose_sql[14]=="2") echo "checked=checked" ?>></td>
+                <td style="text-align: center;"><?php echo "$question1[5]"; ?></td>
+                <td style="text-align: center;"><input id="anw_cog_count_choose_q2" name="anw_cog_count_choose_q2" type="radio" disabled data-role="none"<?php if($question1[5]>$question1[4]) echo "checked=checked" ?>></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div class="count_sexyborder">
+         <table border="1" width="60%" align="center" class="count_headertable">
+            <tr class="count_oddtr">
+                <td width="80%"><script>anw_cog_count_choose_pictures(all_question.cog_count_choose[2].picture_quantity.up,all_question.cog_count_choose[2].picture_info.up);</script></td>
+                <td width="5%" style="text-align: center;"><?php if($cog_count_choose_sql[7]==null) echo "未作答"; else echo "$cog_count_choose_sql[7]" ?></td>
+                <td width="5%" style="text-align: center;"><input id="cog_count_choose_q3" name="cog_count_choose_q3" type="radio" value="1" data-role="none" disabled <?php if($cog_count_choose_sql[15]=="1") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><?php echo "$question1[6]"; ?></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_count_choose_q3" name="anw_cog_count_choose_q3" type="radio" disabled data-role="none" <?php if($question1[6]>$question1[7]) echo "checked=checked" ?>></td>
+            </tr>
+            <tr class="count_eventr">
+                <td><script>anw_cog_count_choose_pictures(all_question.cog_count_choose[2].picture_quantity.down,all_question.cog_count_choose[2].picture_info.down);</script></td>
+                <td style="text-align: center;"><?php if($cog_count_choose_sql[8]==null) echo "未作答"; else echo "$cog_count_choose_sql[8]" ?></td>
+                <td style="text-align: center;"><input id="cog_count_choose_q3" name="cog_count_choose_q3" type="radio" value="2" data-role="none" disabled <?php if($cog_count_choose_sql[15]=="2") echo "checked=checked" ?>></td>
+                <td style="text-align: center;"><?php echo "$question1[7]"; ?></td>
+                <td style="text-align: center;"><input id="anw_cog_count_choose_q3" name="anw_cog_count_choose_q3" type="radio" disabled data-role="none"<?php if($question1[7]>$question1[6]) echo "checked=checked" ?>></td>
+            </tr>
+        </table>
+    </div>
+        <br>
+        <div class="count_sexyborder">
+        <table border="1" width="60%" align="center" class="count_headertable">
+            <tr class="count_oddtr">
+                <td width="80%"><script>anw_cog_count_choose_pictures(all_question.cog_count_choose[3].picture_quantity.up,all_question.cog_count_choose[3].picture_info.up);</script></td>
+                <td width="5%" style="text-align: center;"><?php if($cog_count_choose_sql[9]==null) echo "未作答"; else echo "$cog_count_choose_sql[9]" ?></td>
+                <td width="5%" style="text-align: center;"><input id="cog_count_choose_q4" name="cog_count_choose_q4" type="radio" value="1" data-role="none" disabled <?php if($cog_count_choose_sql[16]=="1") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><?php echo "$question1[8]"; ?></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_count_choose_q4" name="anw_cog_count_choose_q4" type="radio" disabled data-role="none" <?php if($question1[8]>$question1[9]) echo "checked=checked" ?>></td>
+            </tr>
+            <tr class="count_eventr">
+                <td><script>anw_cog_count_choose_pictures(all_question.cog_count_choose[3].picture_quantity.down,all_question.cog_count_choose[3].picture_info.down);</script></td>
+                <td style="text-align: center;"><?php if($cog_count_choose_sql[10]==null) echo "未作答"; else echo "$cog_count_choose_sql[10]" ?></td>
+                <td style="text-align: center;"><input id="cog_count_choose_q4" name="cog_count_choose_q4" type="radio" value="2" data-role="none" disabled <?php if($cog_count_choose_sql[16]=="2") echo "checked=checked" ?>></td>
+                <td style="text-align: center;"><?php echo "$question1[9]"; ?></td>
+                <td style="text-align: center;"><input id="anw_cog_count_choose_q4" name="anw_cog_count_choose_q4" type="radio" disabled data-role="none"<?php if($question1[9]>$question1[8]) echo "checked=checked" ?>></td>
+            </tr>
+        </table>
+        <br>
+    </div>
+        <div class="count_sexyborder">
+        <table border="1" width="60%" align="center" class="count_headertable">
+            <tr class="count_oddtr">
+                <td width="80%"><script>anw_cog_count_choose_pictures(all_question.cog_count_choose[4].picture_quantity.up,all_question.cog_count_choose[4].picture_info.up);</script></td>
+                <td width="5%" style="text-align: center;"><?php if($cog_count_choose_sql[11]==null) echo "未作答"; else echo "$cog_count_choose_sql[11]" ?></td>
+                <td width="5%" style="text-align: center;"><input id="cog_count_choose_q5" name="cog_count_choose_q5" type="radio" value="1" data-role="none" disabled <?php if($cog_count_choose_sql[17]=="1") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><?php echo "$question1[10]"; ?></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_count_choose_q5" name="anw_cog_count_choose_q5" type="radio" disabled data-role="none" <?php if($question1[10]>$question1[11]) echo "checked=checked" ?>></td>
+            </tr>
+            <tr class="count_eventr">
+                <td><script>anw_cog_count_choose_pictures(all_question.cog_count_choose[4].picture_quantity.down,all_question.cog_count_choose[4].picture_info.down);</script></td>
+                <td style="text-align: center;"><?php if($cog_count_choose_sql[12]==null) echo "未作答"; else echo "$cog_count_choose_sql[12]" ?></td>
+                <td style="text-align: center;"><input id="cog_count_choose_q5" name="cog_count_choose_q5" type="radio" value="2" data-role="none" disabled <?php if($cog_count_choose_sql[17]=="2") echo "checked=checked" ?>></td>
+                <td style="text-align: center;"><?php echo "$question1[11]"; ?></td>
+                <td style="text-align: center;"><input id="anw_cog_count_choose_q5" name="anw_cog_count_choose_q5" type="radio" disabled data-role="none"<?php if($question1[11]>$question1[10]) echo "checked=checked" ?>></td>
+            </tr>
+        </table>
+            </div>
+            <br>
+            <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">回到首頁</a>
+            <a href="#cognition_anwser2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
+            <br><br>
+    </div>
+    <div data-role="page" id="cognition_anwser2" align="center">
+        <h3 align="center" style="color: red">請幫忙找一找,選出正確的答案,一題5分</h3>
+        <h3 align="center" style="color: red">拿了<?php echo "$cog_choose_correct_orientation_sql[2]"; ?>/20分</h3>
+        <div class="orientation_sexyborder">
+        <table border="1" style="margin: auto;" class="orientation_fancytable">
+        <tr>
+            <td class="orientation_odd" style="text-align: center;"><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[0].question_picture.row_1_column_1);</script></td>
+            <td class="orientation_even" style="text-align: center;"><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[0].question_picture.row_1_column_2);</script></td>
+            <td class="orientation_odd" style="text-align: center;"><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[0].question_picture.row_1_column_3);</script></td>
+        </tr>
+        <tr>
+            <td class="orientation_even" style="text-align: center;"><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[0].question_picture.row_2_column_1);</script></td>
+            <td class="orientation_odd" style="text-align: center;"><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[0].question_picture.row_2_column_2);</script></td>
+            <td class="orientation_even" style="text-align: center;"><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[0].question_picture.row_2_column_3);</script></td>
+        </tr>
+        <tr>
+            <td class="orientation_odd" style="text-align: center;"><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[0].question_picture.row_3_column_1);</script></td>
+            <td class="orientation_even" style="text-align: center;"><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[0].question_picture.row_3_column_2);</script></td>
+            <td class="orientation_odd" style="text-align: center;"><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[0].question_picture.row_3_column_3);</script></td>
+        </tr>
+    </table>
+    </div>
+    <br>
+    <div class="orientation_goodborder">
+    <table border="1" style="margin: auto;" class="orientation_goodtable">
+        <tr class="orientation_oddtr">
+            <th style="text-align: center;">題目</th>
+            <th style="text-align: center;">原作答</th>
+            <th style="text-align: center;">正確答案</th>
+        </tr>
+        <tr class="orientation_eventr">
+            <th>1.在<script>anw_cog_choose_correct_orientation_set_question_name(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[2].subject_pic])</script>的<script>anw_cog_choose_correct_orientation_write_direction(all_question.cog_choose_correct_orientation[2].subject_pic,all_question.cog_choose_correct_orientation[2].subject_orientation)</script>是
+            </th>
+            <td>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q1_1" name="cog_choose_correct_orientation_1" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[3]=="$question2[19]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[2].option.first]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q1_2" name="cog_choose_correct_orientation_1" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[3]=="$question2[20]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[2].option.second]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q1_3" name="cog_choose_correct_orientation_1" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[3]=="$question2[21]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[2].option.third]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q1_4" name="cog_choose_correct_orientation_1" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[3]=="$question2[22]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[2].option.fourth]);</script></label></div>
+            </td>
+            <td>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q1_1" name="anw_cog_choose_correct_orientation_1" disabled="disabled" data-role="none" <?php if($question2[35]=="$question2[19]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[2].option.first]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q1_2" name="anw_cog_choose_correct_orientation_1" disabled="disabled" data-role="none" <?php if($question2[35]=="$question2[20]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[2].option.second]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q1_3" name="anw_cog_choose_correct_orientation_1" disabled="disabled" data-role="none" <?php if($question2[35]=="$question2[21]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[2].option.third]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q1_4" name="anw_cog_choose_correct_orientation_1" disabled="disabled" data-role="none" <?php if($question2[35]=="$question2[22]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[2].option.fourth]);</script></label></div>
+            </td>
+        </tr>
+        <tr class="orientation_oddtr">
+            <th>2.在<script>anw_cog_choose_correct_orientation_set_question_name(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[3].subject_pic])</script>的<script>anw_cog_choose_correct_orientation_write_direction(all_question.cog_choose_correct_orientation[3].subject_pic,all_question.cog_choose_correct_orientation[3].subject_orientation)</script>是
+            </th>
+            <td>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q2_1" name="cog_choose_correct_orientation_2" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[4]=="$question2[23]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[3].option.first]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q2_2" name="cog_choose_correct_orientation_2" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[4]=="$question2[24]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[3].option.second]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q2_3" name="cog_choose_correct_orientation_2" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[4]=="$question2[25]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[3].option.third]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q2_4" name="cog_choose_correct_orientation_2" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[4]=="$question2[26]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[3].option.fourth]);</script></label></div>
+            </td>
+            <td>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q2_1" name="anw_cog_choose_correct_orientation_2" disabled="disabled" data-role="none" <?php if($question2[36]=="$question2[23]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[3].option.first]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q2_2" name="anw_cog_choose_correct_orientation_2" disabled="disabled" data-role="none" <?php if($question2[36]=="$question2[24]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[3].option.second]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q2_3" name="anw_cog_choose_correct_orientation_2" disabled="disabled" data-role="none" <?php if($question2[36]=="$question2[25]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[3].option.third]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q2_4" name="anw_cog_choose_correct_orientation_2" disabled="disabled" data-role="none" <?php if($question2[36]=="$question2[26]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[3].option.fourth]);</script></label></div>
+            </td>
+        </tr>
+        <tr class="orientation_eventr">
+            <th>3.在<script>anw_cog_choose_correct_orientation_set_question_name(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[4].subject_pic])</script>的<script>anw_cog_choose_correct_orientation_write_direction(all_question.cog_choose_correct_orientation[4].subject_pic,all_question.cog_choose_correct_orientation[4].subject_orientation)</script>是
+            </th>
+            <td>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q3_1" name="cog_choose_correct_orientation_3" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[5]=="$question2[27]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[4].option.first]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q3_2" name="cog_choose_correct_orientation_3" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[5]=="$question2[28]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[4].option.second]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q3_3" name="cog_choose_correct_orientation_3" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[5]=="$question2[29]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[4].option.third]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q3_4" name="cog_choose_correct_orientation_3" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[5]=="$question2[30]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[4].option.fourth]);</script></label></div>
+            </td>
+            <td>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q3_1" name="anw_cog_choose_correct_orientation_3" disabled="disabled" data-role="none" <?php if($question2[37]=="$question2[27]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[4].option.first]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q3_2" name="anw_cog_choose_correct_orientation_3" disabled="disabled" data-role="none" <?php if($question2[37]=="$question2[28]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[4].option.second]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q3_3" name="anw_cog_choose_correct_orientation_3" disabled="disabled" data-role="none" <?php if($question2[37]=="$question2[29]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[4].option.third]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q3_4" name="anw_cog_choose_correct_orientation_3" disabled="disabled" data-role="none" <?php if($question2[37]=="$question2[30]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[4].option.fourth]);</script></label></div>
+            </td>
+        </tr>
+        <tr class="orientation_oddtr">
+            <th>4.在<script>anw_cog_choose_correct_orientation_set_question_name(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[5].subject_pic])</script>的<script>anw_cog_choose_correct_orientation_write_direction(all_question.cog_choose_correct_orientation[5].subject_pic,all_question.cog_choose_correct_orientation[5].subject_orientation)</script>是
+            </th>
+            <td>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q4_1" name="cog_choose_correct_orientation_4" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[6]=="$question2[31]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[5].option.first]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q4_2" name="cog_choose_correct_orientation_4" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[6]=="$question2[32]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[5].option.second]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q4_3" name="cog_choose_correct_orientation_4" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[6]=="$question2[33]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[5].option.third]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_choose_correct_orientation_q4_4" name="cog_choose_correct_orientation_4" disabled="disabled" data-role="none" <?php if($cog_choose_correct_orientation_sql[6]=="$question2[34]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[5].option.fourth]);</script></label></div>
+            </td>
+            <td>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q4_1" name="anw_cog_choose_correct_orientation_4" disabled="disabled" data-role="none" <?php if($question2[38]=="$question2[31]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[5].option.first]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q4_2" name="anw_cog_choose_correct_orientation_4" disabled="disabled" data-role="none" <?php if($question2[38]=="$question2[32]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[5].option.second]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q4_3" name="anw_cog_choose_correct_orientation_4" disabled="disabled" data-role="none" <?php if($question2[38]=="$question2[33]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[5].option.third]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_choose_correct_orientation_q4_4" name="anw_cog_choose_correct_orientation_4" disabled="disabled" data-role="none" <?php if($question2[38]=="$question2[34]") echo "checked=checked" ?>><script>anw_cog_choose_correct_orientation_pictures(all_question.cog_choose_correct_orientation[1].pictures_cardinal[all_question.cog_choose_correct_orientation[5].option.fourth]);</script></label></div>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <br>
+        <a href="#cognition_anwser1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
+        <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+        <a href="#cognition_anwser3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
+    <br><br>
 </div>
-	<div data-role="page" id="cognition_anwser3">
-		<h3 align="center" style="color: red">拿了<?php echo "$q3score"; ?>/20分</h3>
-		<table border="1" width="60%" align="center">
-			<tr>
-				<th style="text-align: center;">圖</th>
-				<th style="text-align: center;">原作答</th>
-				<th style="text-align: center;">正確答案</th>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"60%\"><script>q3pictures($question3[2],$question3[7]);</script></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq1" name="question11" type="radio" value="1" disabled data-role="none" <?php if($cq3q1=="$question3[7]") echo "checked=checked" ?>></td>
-				<td width="5%" style="text-align: center;"><input id="qqq1" name="qquestion1" type="radio" disabled data-role="none" <?php if($question3[7]>$question3[8]) echo "checked=checked" ?>></td>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q3pictures($question3[2],$question3[8]);</script></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq2" name="question21" type="radio" value="2" disabled data-role="none" <?php if($cq3q1=="$question3[8]") echo "checked=checked" ?>></td>
-				<td width="5%" style="text-align: center;"><input id="qqq2" name="qquestion1" type="radio" disabled data-role="none" <?php if($question3[8]>$question3[7]) echo "checked=checked" ?>></td>
-			</tr>
-		</table>
-		<br/>
-		<table border="1" width="60%" align="center">
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q3pictures($question3[3],$question3[9]);</script></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq3" name="question22" value="1" type="radio" disabled data-role="none" <?php if($cq3q2=="$question3[9]") echo "checked=checked" ?>></td>
-				<td width="5%" style="text-align: center;"><input id="qqq3" name="qquestion2" type="radio" disabled data-role="none" <?php if($question3[9]>$question3[10]) echo "checked=checked" ?>></td>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q3pictures($question3[3],$question3[10]);</script></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq4" name="question22" type="radio" value="2" disabled data-role="none" <?php if($cq3q2=="$question3[10]") echo "checked=checked" ?>></td>
-				<td width="5%" style="text-align: center;"><input id="qqq4" name="qquestion2" type="radio" disabled data-role="none" <?php if($question3[10]>$question3[9]) echo "checked=checked" ?>></td>
-			</tr>
-		</table>
-		<br/>
-		<table border="1" width="60%" align="center">
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q3pictures($question3[4],$question3[11]);</script></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq5" name="question33" type="radio" value="1" disabled data-role="none" <?php if($q3q3=="$question3[11]") echo "checked=checked" ?>></td>
-				<td width="5%" style="text-align: center;"><input id="qqq5" name="qquestion3" type="radio" disabled data-role="none" <?php if($question3[11]>$question3[12]) echo "checked=checked" ?>></td>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q3pictures($question3[4],$question3[12]);</script></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq6" name="question33" type="radio" value="2" disabled data-role="none" <?php if($cq3q3=="$question3[12]") echo "checked=checked" ?>></td>
-				<td width="5%" style="text-align: center;"><input id="qqq6" name="qquestion3" type="radio" disabled data-role="none" <?php if($question3[12]>$question3[11]) echo "checked=checked" ?>></td>
-			</tr>
-		</table>
-		<br/>
-		<table border="1" width="60%" align="center">
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q3pictures($question3[5],$question3[13]);</script></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq7" name="question34" type="radio" value="1" disabled data-role="none" <?php if($cq3q4=="$question3[13]") echo "checked=checked" ?>></td>
-				<td width="5%" style="text-align: center;"><input id="qqq7" name="qquestion4" type="radio" disabled data-role="none" <?php if($question3[13]>$question3[14]) echo "checked=checked" ?>></td>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q3pictures($question3[5],$question3[14]);</script></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq8" name="question34" type="radio" value="2" disabled data-role="none" <?php if($cq3q4=="$question3[14]") echo "checked=checked" ?>></td>
-				<td width="5%" style="text-align: center;"><input id="qqq8" name="qquestion4" type="radio" disabled data-role="none" <?php if($question3[14]>$question3[13]) echo "checked=checked" ?>></td>
-			</tr>
-		</table>
-		<br/>
-		<table border="1" width="60%" align="center">
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q3pictures($question3[6],$question3[15]);</script></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq9" name="question55" type="radio" value="1" disabled data-role="none" <?php if($cq3q5=="$question3[15]") echo "checked=checked" ?>></td>
-				<td width="5%" style="text-align: center;"><input id="qqq9" name="qquestion5" type="radio" disabled data-role="none" <?php if($question3[15]>$question3[16]) echo "checked=checked" ?>></td>
-			</tr>
-			<tr>
-				<?php echo "<td width=\"90%\"><script>q3pictures($question3[6],$question3[16]);</script></td>"; ?>
-				<td width="5%" style="text-align: center;"><input id="qq10" name="question55" type="radio" value="2" disabled data-role="none" <?php if($cq3q5=="$question3[16]") echo "checked=checked" ?>></td>
-				<td width="5%" style="text-align: center;"><input id="qqq10" name="qquestion5" type="radio" disabled data-role="none" <?php if($question3[16]>$question3[15]) echo "checked=checked" ?>></td>
-			</tr>
-		</table>
-		<div data-role="footer" style="text-align:center;">
-				<a href="#cognition_anwser2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-				<a href="Topic.php" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
-  				<a href="#cognition_anwser4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
-	</div>
-	</div>
-	<div data-role="page" id="cognition_anwser4">
-		<h3 align="center" style="color: red">拿了<?php echo "$q4score"; ?>/20分</h3>
-		<div align="center">
-	<table border="1">
-		<tr>
-			<td>
-				<?php echo "<script>
-					q4pictures($question4[2]);
-					q4pictures($question4[3]);
-					q4pictures($question4[4]);
-					q4pictures($question4[5]);
-					q4pictures($question4[6]);
-					q4pictures($question4[7]);
-					q4pictures($question4[8]);
-					q4pictures($question4[9]);
-				</script>";?>
-			</td>
-		</tr>
-	</table>
+    <div data-role="page" id="cognition_anwser3" align="center">
+        <h3 align="center" style="color: red">比一比,選出比較長的那一種,一題4分</h3>
+        <h3 align="center" style="color: red">拿了<?php echo "$cog_choose_longer_sql[2]"; ?>/20分</h3>
+        <div class="long_headerborder">
+        <table border="1" width="60%" align="center" class="long_headertable">
+            <tr>
+                <th style="text-align: center;">圖</th>
+                <th style="text-align: center;">原作答</th>
+                <th style="text-align: center;">正確答案</th>
+            </tr>
+            <tr class="long_oddtr">
+                <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[0].picture_info,all_question.cog_choose_longer[0].picture_length.up);</script></td>
+                <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q1_1" name="cog_choose_longer_q1" type="radio" value="1" disabled data-role="none" <?php if($cog_choose_longer_sql[3]=="$question3[7]") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q1_1" name="anw_cog_choose_longer_q1" type="radio" disabled data-role="none" <?php if($question3[7]>$question3[8]) echo "checked=checked" ?>></td>
+            </tr>
+            <tr class="long_eventr">
+                <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[0].picture_info,all_question.cog_choose_longer[0].picture_length.down);</script></td>
+                <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q1_2" name="cog_choose_longer_q1" type="radio" value="2" disabled data-role="none" <?php if($cog_choose_longer_sql[3]=="$question3[8]") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q1_2" name="anw_cog_choose_longer_q1" type="radio" disabled data-role="none" <?php if($question3[8]>$question3[7]) echo "checked=checked" ?>></td>
+            </tr>
+        </table>
+        </div>
+        <br>
+        <div class="long_headerborder">
+        <table border="1" width="60%" align="center" class="long_headertable">
+            <tr class="long_oddtr">
+                <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[1].picture_info,all_question.cog_choose_longer[1].picture_length.up);</script></td>
+                <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q2_1" name="cog_choose_longer_q2" type="radio" value="1" disabled data-role="none" <?php if($cog_choose_longer_sql[4]=="$question3[9]") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q2_1" name="anw_cog_choose_longer_q2" type="radio" disabled data-role="none" <?php if($question3[9]>$question3[10]) echo "checked=checked" ?>></td>
+            </tr>
+            <tr class="long_eventr">
+                <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[1].picture_info,all_question.cog_choose_longer[1].picture_length.down);</script></td>
+                <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q2_2" name="cog_choose_longer_q2" type="radio" value="2" disabled data-role="none" <?php if($cog_choose_longer_sql[4]=="$question3[10]") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q2_2" name="anw_cog_choose_longer_q2" type="radio" disabled data-role="none" <?php if($question3[10]>$question3[9]) echo "checked=checked" ?>></td>
+            </tr>
+        </table>
+        </div>
+        <br>
+        <div class="long_headerborder">
+        <table border="1" width="60%" align="center" class="long_headertable">
+            <tr class="long_oddtr">
+                <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[2].picture_info,all_question.cog_choose_longer[2].picture_length.up);</script></td>
+                <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q3_1" name="cog_choose_longer_q3" type="radio" value="1" disabled data-role="none" <?php if($cog_choose_longer_sql[5]=="$question3[11]") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q3_1" name="anw_cog_choose_longer_q3" type="radio" disabled data-role="none" <?php if($question3[11]>$question3[12]) echo "checked=checked" ?>></td>
+            </tr>
+            <tr class="long_eventr">
+                <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[2].picture_info,all_question.cog_choose_longer[2].picture_length.down);</script></td>
+                <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q3_2" name="cog_choose_longer_q3" type="radio" value="2" disabled data-role="none" <?php if($cog_choose_longer_sql[5]=="$question3[12]") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q3_2" name="anw_cog_choose_longer_q3" type="radio" disabled data-role="none" <?php if($question3[12]>$question3[11]) echo "checked=checked" ?>></td>
+            </tr>
+        </table>
+        </div>
+        <br>
+        <div class="long_headerborder">
+        <table border="1" width="60%" align="center" class="long_headertable">
+            <tr class="long_oddtr">
+                <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[3].picture_info,all_question.cog_choose_longer[3].picture_length.up);</script></td>
+                <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q4_1" name="cog_choose_longer_q4" type="radio" value="1" disabled data-role="none" <?php if($cog_choose_longer_sql[6]=="$question3[13]") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q4_1" name="anw_cog_choose_longer_q4" type="radio" disabled data-role="none" <?php if($question3[13]>$question3[14]) echo "checked=checked" ?>></td>
+            </tr>
+            <tr class="long_eventr">
+                <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[3].picture_info,all_question.cog_choose_longer[3].picture_length.down);</script></td>
+                <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q4_2" name="cog_choose_longer_q4" type="radio" value="2" disabled data-role="none" <?php if($cog_choose_longer_sql[6]=="$question3[14]") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q4_2" name="anw_cog_choose_longer_q4" type="radio" disabled data-role="none" <?php if($question3[14]>$question3[13]) echo "checked=checked" ?>></td>
+            </tr>
+        </table>
+            </div>
+        <br>
+            <div class="long_headerborder">
+            <table border="1" width="60%" align="center" class="long_headertable">
+            <tr class="long_oddtr">
+                <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[4].picture_info,all_question.cog_choose_longer[4].picture_length.up);</script></td>
+                <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q5_1" name="cog_choose_longer_q5" type="radio" value="1" disabled data-role="none" <?php if($cog_choose_longer_sql[7]=="$question3[15]") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q5_1" name="anw_cog_choose_longer_q5" type="radio" disabled data-role="none" <?php if($question3[16]>$question3[15]) echo "checked=checked" ?>></td>
+            </tr>
+            <tr class="long_eventr">
+                <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[4].picture_info,all_question.cog_choose_longer[4].picture_length.down);</script></td>
+                <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q5_2" name="cog_choose_longer_q5" type="radio" value="2" disabled data-role="none" <?php if($cog_choose_longer_sql[7]=="$question3[16]") echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q5_2" name="anw_cog_choose_longer_q5" type="radio" disabled data-role="none" <?php if($question3[15]>$question3[16]) echo "checked=checked" ?>></td>
+            </tr>
+        </table>
+    </div>
+       <br>
+            <a href="#cognition_anwser2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
+            <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+            <a href="#cognition_anwser4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
+        <br><br>
+    </div>
+    <div data-role="page" id="cognition_anwser4" align="center">
+        <h3 align="center" style="color: red">請幫忙找一找,填入正確的答案,一題5分</h3>
+        <h3 align="center" style="color: red">拿了<?php echo "$cog_sequence_sql[2]"; ?>/20分</h3>
+        <div align="center" class="sequence_headerborder">
+    <table border="0">
+        <tr>
+            <td>
+                <script>
+                    anw_cog_sequence_pictures(all_question.cog_sequence[0].question_picture.first);
+                    anw_cog_sequence_pictures(all_question.cog_sequence[0].question_picture.second);
+                    anw_cog_sequence_pictures(all_question.cog_sequence[0].question_picture.third);
+                    anw_cog_sequence_pictures(all_question.cog_sequence[0].question_picture.fourth);
+                    anw_cog_sequence_pictures(all_question.cog_sequence[0].question_picture.fifth);
+                    anw_cog_sequence_pictures(all_question.cog_sequence[0].question_picture.sixth);
+                    anw_cog_sequence_pictures(all_question.cog_sequence[0].question_picture.seventh);
+                    anw_cog_sequence_pictures(all_question.cog_sequence[0].question_picture.eighth);
+                </script>
+            </td>
+        </tr>
+    </table>
 </div>
-<div align="center">
-	<table border="1" width="70%">
-		<tr>
-			<th width="50%">原作答</th>
-			<th width="50%">正解</th>
-		</tr>
-	</table>
-	<table border="1" width="70%">
-		<tr>
-			<td colspan="2">
-				(1)從<?php echo "<script>direction($question4[13]);</script>";?>數起,<?php echo "<script>q4pictures($q4a[$q410]);</script>";?>排在第
-						<input type="number" id="aa1" name="aanwser1" style="width: 50px; height: 50px; font-size: 30px;" disabled data-role="none" <?php echo "value='$canw1'";?>>個。
-			</td>
-			<td colspan="2">
-				(1)從<?php echo "<script>direction($question4[13]);</script>";?>數起,<?php echo "<script>q4pictures($q4a[$q410]);</script>";?>排在第
-						<input type="number" id="aa1" name="aanwser1" style="width: 50px; height: 50px; font-size: 30px;" disabled data-role="none" <?php echo "value='$question4[20]'";?>>個。
-			</td>
-		</tr>
-		<tr>
-			<td>
-				(2)從<?php echo "<script>direction($question4[14]);</script>";?>數起,第<?php echo "<script>w($question4[11]);</script>";?>個是
-			</td>
-			<td>
-				<div style="float: left;"><label><input type="radio" id="aa21" name="aaanwser2" disabled data-role="none" <?php if($canw2=="$question4[17]") echo "checked=checked" ?>><?php echo "<script>q4pictures($q4a[$q417]);</script>";?></label></div>
-				<div style="float: left;"><label><input type="radio" id="aa22" name="aaanwser2" disabled data-role="none" <?php if($canw2=="$question4[18]") echo "checked=checked" ?>><?php echo "<script>q4pictures($q4a[$q418]);</script>";?></label></div>
-				<div style="float: left;"><label><input type="radio" id="aa23" name="aaanwser2" disabled data-role="none" <?php if($canw2=="$question4[19]") echo "checked=checked" ?>><?php echo "<script>q4pictures($q4a[$q419]);</script>";?></label></div>。
-			</td>
-			<td>
-				(2)從<?php echo "<script>direction($question4[14]);</script>";?>數起,第<?php echo "<script>w($question4[11]);</script>";?>個是
-			</td>
-			<td>
-				<div style="float: left;"><label><input type="radio" id="aa21" name="aanwser2" disabled data-role="none" <?php if($question4[21]=="$question4[17]") echo "checked=checked" ?>><?php echo "<script>q4pictures($q4a[$q417]);</script>";?></label></div>
-				<div style="float: left;"><label><input type="radio" id="aa22" name="aanwser2" disabled data-role="none" <?php if($question4[21]=="$question4[18]") echo "checked=checked" ?>><?php echo "<script>q4pictures($q4a[$q418]);</script>";?></label></div>
-				<div style="float: left;"><label><input type="radio" id="aa23" name="aanwser2" disabled data-role="none" <?php if($question4[21]=="$question4[19]") echo "checked=checked" ?>><?php echo "<script>q4pictures($q4a[$q419]);</script>";?></label></div>。
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				(3)從<?php echo "<script>direction($question4[15]);</script>";?>數起,<?php echo "<script>q4pictures($q4a[$q412]);</script>";?>排在第
-				<input type="number" id="aa3" name="aanwser3" style="width: 50px; height: 50px; font-size: 30px;" disabled data-role="none" <?php echo "value='$canw3'";?>>個,也可說是從<?php echo "<script>direction($question4[16]);</script>";?>數起第
-				<input type="number" id="aa4" name="aanwser4" style="width: 50px; height: 50px; font-size: 30px;" disabled data-role="none" <?php echo "value='$canw4'";?>>個。
-			</td>
-			<td colspan="2">
-				(3)從<?php echo "<script>direction($question4[15]);</script>";?>數起,<?php echo "<script>q4pictures($q4a[$q412]);</script>";?>排在第
-				<input type="number" id="aa3" name="aanwser3" style="width: 50px; height: 50px; font-size: 30px;" disabled data-role="none" <?php echo "value='$question4[22]'";?>>個,也可說是從<?php echo "<script>direction($question4[16]);</script>";?>數起第
-				<input type="number" id="aa4" name="aanwser4" style="width: 50px; height: 50px; font-size: 30px;" disabled data-role="none" <?php echo "value='$question4[23]'";?>>個。
-			</td>
-		</tr>
-	</table>
-</div>
-	<div data-role="footer" style="text-align:center;">
-			<a href="#cognition_anwser3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-			<a href="Topic.php" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
-  			<a href="#cognition_anwser5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
-	</div>
-	</div>
-	<div data-role="page" id="cognition_anwser5">
-	<h3 align="center" style="color: red">拿了<?php echo "$q5score"; ?>/20分</h3>
-	<table border="1" align="center">
-	<tr>
-		<th>題目</th>
-		<th>原作答</th>
-		<th>正確答案</th>
-	</tr>
-	<tr>
-		<?php echo "<td><script>questionpictures($question5[2]);</script></td>";?>
-		<td>
-			<div style="float: left;"><label><input type="radio" id="q11" name="qquestion12" disabled data-role="none" <?php echo "value=\"$question5[6]\"";?><?php if($cq5anw1=="$question5[6]") echo "checked=checked";?>><?php echo "<script>insertp1($question5[2],1,$question5[6]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q12" name="qquestion12" disabled data-role="none" <?php echo "value=\"$question5[7]\"";?><?php if($cq5anw1=="$question5[7]") echo "checked=checked";?>><?php echo "<script>insertp1($question5[2],2,$question5[7]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q13" name="qquestion12" disabled data-role="none" <?php echo "value=\"$question5[8]\"";?><?php if($cq5anw1=="$question5[8]") echo "checked=checked";?>><?php echo "<script>insertp1($question5[2],3,$question5[8]);</script>"; ?></label></div>
-		</td>
-		<td>
-			<div style="float: left;"><label><input type="radio" id="q11" name="qquestion11" disabled data-role="none" <?php echo "value=\"$question5[6]\"";?><?php if($question5[6]<10) echo "checked=checked";?>><?php echo "<script>insertp1($question5[2],1,$question5[6]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q12" name="qquestion11" disabled data-role="none" <?php echo "value=\"$question5[7]\"";?><?php if($question5[7]<10) echo "checked=checked";?>><?php echo "<script>insertp1($question5[2],2,$question5[7]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q13" name="qquestion11" disabled data-role="none" <?php echo "value=\"$question5[8]\"";?><?php if($question5[8]<10) echo "checked=checked";?>><?php echo "<script>insertp1($question5[2],3,$question5[8]);</script>"; ?></label></div>
-		</td>	
-	</tr>
-	<tr>
-		<?php echo "<td><script>questionpictures($question5[3]);</script></td>";?>
-		<td>
-			<div style="float: left;"><label><input type="radio" id="q21" name="qquestion21" disabled data-role="none" <?php echo "value=\"$question5[9]\"";?><?php if($cq5anw2=="$question5[9]") echo "checked=checked";?>><?php echo "<script>insertp2($question5[3],1,$question5[9]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q22" name="qquestion21" disabled data-role="none" <?php echo "value=\"$question5[10]\"";?><?php if($cq5anw2=="$question5[10]") echo "checked=checked";?>><?php echo "<script>insertp2($question5[3],2,$question5[10]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q23" name="qquestion21" disabled data-role="none" <?php echo "value=\"$question5[11]\"";?><?php if($cq5anw2=="$question5[11]") echo "checked=checked";?>><?php echo "<script>insertp2($question5[3],3,$question5[11]);</script>"; ?></label></div>
-		</td>
-		<td>
-			<div style="float: left;"><label><input type="radio" id="q21" name="qquestion22" disabled data-role="none" <?php echo "value=\"$question5[9]\"";?><?php if($question5[9]<10) echo "checked=checked";?>><?php echo "<script>insertp2($question5[3],1,$question5[9]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q22" name="qquestion22" disabled data-role="none" <?php echo "value=\"$question5[10]\"";?><?php if($question5[10]<10) echo "checked=checked";?>><?php echo "<script>insertp2($question5[3],2,$question5[10]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q23" name="qquestion22" disabled data-role="none" <?php echo "value=\"$question5[11]\"";?><?php if($question5[11]<10) echo "checked=checked";?>><?php echo "<script>insertp2($question5[3],3,$question5[11]);</script>"; ?></label></div>
-		</td>	
-	</tr>
-	<tr>
-		<?php echo "<td><script>questionpictures($question5[4]);</script></td>";?>
-		<td>
-			<div style="float: left;"><label><input type="radio" id="q31" name="qquestion31" disabled data-role="none" <?php echo "value=\"$question5[12]\"";?><?php if($cq5anw3=="$question5[12]") echo "checked=checked";?>><?php echo "<script>insertp3($question5[4],1,$question5[12]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q32" name="qquestion31" disabled data-role="none" <?php echo "value=\"$question5[13]\"";?><?php if($cq5anw3=="$question5[13]") echo "checked=checked";?>><?php echo "<script>insertp3($question5[4],2,$question5[13]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q33" name="qquestion31" disabled data-role="none" <?php echo "value=\"$question5[14]\"";?><?php if($cq5anw3=="$question5[14]") echo "checked=checked";?>><?php echo "<script>insertp3($question5[4],3,$question5[14]);</script>"; ?></label></div>
-		</td>
-		<td>
-			<div style="float: left;"><label><input type="radio" id="q31" name="qquestion33" disabled data-role="none" <?php echo "value=\"$question5[12]\"";?><?php if($question5[12]<10) echo "checked=checked";?>><?php echo "<script>insertp3($question5[4],1,$question5[12]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q32" name="qquestion33" disabled data-role="none" <?php echo "value=\"$question5[13]\"";?><?php if($question5[13]<10) echo "checked=checked";?>><?php echo "<script>insertp3($question5[4],2,$question5[13]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q33" name="qquestion33" disabled data-role="none" <?php echo "value=\"$question5[14]\"";?><?php if($question5[14]<10) echo "checked=checked";?>><?php echo "<script>insertp3($question5[4],3,$question5[14]);</script>"; ?></label></div>
-		</td>	
-	</tr>
-	<tr>
-		<?php echo "<td><script>questionpictures($question5[5]);</script></td>";?>
-		<td>
-			<div style="float: left;"><label><input type="radio" id="q41" name="qquestion41" disabled data-role="none" <?php echo "value=\"$question5[15]\"";?><?php if($cq5anw4=="$question5[15]") echo "checked=checked";?>><?php echo "<script>insertp4($question5[5],1,$question5[15]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q42" name="qquestion41" disabled data-role="none" <?php echo "value=\"$question5[16]\"";?><?php if($cq5anw4=="$question5[16]") echo "checked=checked";?>><?php echo "<script>insertp4($question5[5],2,$question5[16]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q43" name="qquestion41" disabled data-role="none" <?php echo "value=\"$question5[17]\"";?><?php if($cq5anw4=="$question5[17]") echo "checked=checked";?>><?php echo "<script>insertp4($question5[5],3,$question5[17]);</script>"; ?></label></div>
-		</td>
-		<td>
-			<div style="float: left;"><label><input type="radio" id="q41" name="qquestion44" disabled data-role="none" <?php echo "value=\"$question5[15]\"";?><?php if($question5[15]<10) echo "checked=checked";?>><?php echo "<script>insertp4($question5[5],1,$question5[15]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q42" name="qquestion44" disabled data-role="none" <?php echo "value=\"$question5[16]\"";?><?php if($question5[16]<10) echo "checked=checked";?>><?php echo "<script>insertp4($question5[5],2,$question5[16]);</script>"; ?></label></div>
-			<div style="float: left;"><label><input type="radio" id="q43" name="qquestion44" disabled data-role="none" <?php echo "value=\"$question5[17]\"";?><?php if($question5[17]<10) echo "checked=checked";?>><?php echo "<script>insertp4($question5[5],3,$question5[17]);</script>"; ?></label></div>
-		</td>	
-	</tr>
-	</table>
-		<div data-role="footer" style="text-align:center;">
-			<a href="#cognition_anwser4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-			<a href="Topic.php" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
-	</div>
-	</div>
-	</form>
+<div align="center" class="sequence_border">
+    <table border="1" width="100%" class="sequence_table">
+        <tr>
+            <th width="50%">原作答</th>
+            <th width="50%">正解</th>
+        </tr>
+    </table>
+    <table border="1" class="sequence_table">
+        <tr class="sequence_oddtr">
+            <td colspan="2">
+                <span>(1)從<script>anw_cog_sequence_direction(all_question.cog_sequence[2].subject_direction);</script>數起,<script>anw_cog_sequence_pictures(all_question.cog_sequence[1].pictures_cardinal[all_question.cog_sequence[2].subject_pic]);</script>排在第<input type="number" id="cog_sequence_q1" name="cog_sequence_q1" disabled <?php echo "value=\"$cog_sequence_sql[3]\""; ?> data-role="none" style="height:50px;width:50px;line-height:30px;border:1px solid #999;vertical-align:middle"></span>個。
+            </td>
+            <td colspan="2">
+                <span>(1)從<script>anw_cog_sequence_direction(all_question.cog_sequence[2].subject_direction);</script>數起,<script>anw_cog_sequence_pictures(all_question.cog_sequence[1].pictures_cardinal[all_question.cog_sequence[2].subject_pic]);</script>排在第<input type="number" id="anw_cog_sequence_q1" name="anw_cog_sequence_q1" disabled <?php echo "value=\"$question4[20]\""; ?> data-role="none" style="height:50px;width:50px;line-height:30px;border:1px solid #999;vertical-align:middle"></span>個。
+            </td>
+        </tr>
+        <tr class="sequence_eventr">
+            <td>
+                <span style="float: left; vertical-align:middle">(2)從<script>anw_cog_sequence_direction(all_question.cog_sequence[3].subject_direction);</script>數起,第<script>anw_cog_sequence_write(all_question.cog_sequence[3].subject_pic)</script>個是:</span>
+            </td>
+            <td>
+                <div style="float: left;"><label><input type="radio" id="cog_sequence_q2_1" name="cog_sequence_q2" disabled data-role="none" <?php if($cog_sequence_sql[4]=="$question4[17]") echo "checked=checked" ?>><script>anw_cog_sequence_pictures(all_question.cog_sequence[1].pictures_cardinal[all_question.cog_sequence[3].option.first]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_sequence_q2_2" name="cog_sequence_q2" disabled data-role="none" <?php if($cog_sequence_sql[4]=="$question4[18]") echo "checked=checked" ?>><script>anw_cog_sequence_pictures(all_question.cog_sequence[1].pictures_cardinal[all_question.cog_sequence[3].option.second]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="cog_sequence_q2_3" name="cog_sequence_q2" disabled data-role="none" <?php if($cog_sequence_sql[4]=="$question4[19]") echo "checked=checked" ?>><script>anw_cog_sequence_pictures(all_question.cog_sequence[1].pictures_cardinal[all_question.cog_sequence[3].option.third]);</script></label></div>。
+            </td>
+            <td>
+                <span style="float: left; vertical-align:middle">(2)從<script>anw_cog_sequence_direction(all_question.cog_sequence[3].subject_direction);</script>數起,第<script>anw_cog_sequence_write(all_question.cog_sequence[3].subject_pic)</script>個是:</span>
+            </td>
+            <td>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_sequence_q2_1" name="anw_cog_sequence_q2" disabled data-role="none" <?php if($question4[21]=="$question4[17]") echo "checked=checked" ?>><script>anw_cog_sequence_pictures(all_question.cog_sequence[1].pictures_cardinal[all_question.cog_sequence[3].option.first]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_sequence_q2_2" name="anw_cog_sequence_q2" disabled data-role="none" <?php if($question4[21]=="$question4[18]") echo "checked=checked" ?>><script>anw_cog_sequence_pictures(all_question.cog_sequence[1].pictures_cardinal[all_question.cog_sequence[3].option.second]);</script></label></div>
+                <div style="float: left;"><label><input type="radio" id="anw_cog_sequence_q2_3" name="anw_cog_sequence_q2" disabled data-role="none" <?php if($question4[21]=="$question4[19]") echo "checked=checked" ?>><script>anw_cog_sequence_pictures(all_question.cog_sequence[1].pictures_cardinal[all_question.cog_sequence[3].option.third]);</script></label></div>。
+            </td>
+        </tr>
+        <tr class="sequence_oddtr">
+            <td colspan="2">
+                <span>(3)從<script>anw_cog_sequence_direction(all_question.cog_sequence[4].subject_direction);</script>數起,<script>anw_cog_sequence_pictures(all_question.cog_sequence[1].pictures_cardinal[all_question.cog_sequence[4].subject_pic]);</script>排在第</span>
+                <input type="number" id="cog_sequence_q3" name="cog_sequence_q3" style="width: 50px; height: 50px; font-size: 30px;" disabled data-role="none" <?php echo "value='$cog_sequence_sql[5]'";?>>個,也可說是從<script>anw_cog_sequence_direction(all_question.cog_sequence[4].subject_opposite_direction);</script>數起第
+                <input type="number" id="cog_sequence_q4" name="cog_sequence_q4" style="width: 50px; height: 50px; font-size: 30px;" disabled data-role="none" <?php echo "value='$cog_sequence_sql[6]'";?>>個。
+            </td>
+            <td colspan="2">
+                <span>(3)從<script>anw_cog_sequence_direction(all_question.cog_sequence[4].subject_direction);</script>數起,<script>anw_cog_sequence_pictures(all_question.cog_sequence[1].pictures_cardinal[all_question.cog_sequence[4].subject_pic]);</script>排在第</span>
+                <input type="number" id="anw_cog_sequence_q3" name="anw_cog_sequence_q3" style="width: 50px; height: 50px; font-size: 30px;" disabled data-role="none" <?php echo "value='$question4[22]'";?>>個,也可說是從<script>anw_cog_sequence_direction(all_question.cog_sequence[4].subject_opposite_direction);</script>數起第
+                <input type="number" id="anw_cog_sequence_q4" name="anw_cog_sequence_q4" style="width: 50px; height: 50px; font-size: 30px;" disabled data-role="none" <?php echo "value='$question4[23]'";?>>個。
+            </td>
+        </tr>
+    </table>
+    </div>
+    <br>
+            <a href="#cognition_anwser3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
+            <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+            <a href="#cognition_anwser5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
+        </div>
+    <div data-role="page" id="cognition_anwser5" align="center">
+        <h3 align="center" style="color: red">把跟前面形狀相似的選出來,一題5分</h3>
+        <h3 align="center" style="color: red">拿了<?php echo "$choose_shape_sql[2]"; ?>/20分</h3>
+        <div align="center" class="shape_border">
+        <table border="1" class="shape_table">
+        <tr class="shape_one">
+            <th>題目</th>
+            <th>原作答</th>
+            <th>正確答案</th>
+        </tr>
+    <tr>
+        <td class="shape_td"><script>anw_cog_choose_shape_get(all_question.cog_choose_shape[0].question_shape);</script></td>
+        <td class="shape_oddtd">
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q11" name="cog_choose_shape_q1" disabled data-role="none" <?php echo "value=\"$question5[6]\"";?><?php if($cog_choose_shape_sql[3]=="$question5[6]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_1($question5[2],1,$question5[6]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q12" name="cog_choose_shape_q1" disabled data-role="none" <?php echo "value=\"$question5[7]\"";?><?php if($cog_choose_shape_sql[3]=="$question5[7]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_1($question5[2],2,$question5[7]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q13" name="cog_choose_shape_q1" disabled data-role="none" <?php echo "value=\"$question5[8]\"";?><?php if($cog_choose_shape_sql[3]=="$question5[8]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_1($question5[2],3,$question5[8]);</script>"; ?></label></div>
+        </td>
+        <td class="shape_eventd">
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q11" name="anw_cog_choose_shape_1" disabled data-role="none" <?php echo "value=\"$question5[6]\"";?><?php if($question5[6]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_1($question5[2],1,$question5[6]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q12" name="anw_cog_choose_shape_1" disabled data-role="none" <?php echo "value=\"$question5[7]\"";?><?php if($question5[7]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_1($question5[2],2,$question5[7]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q13" name="anw_cog_choose_shape_1" disabled data-role="none" <?php echo "value=\"$question5[8]\"";?><?php if($question5[8]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_1($question5[2],3,$question5[8]);</script>"; ?></label></div>
+        </td>   
+    </tr>
+    <tr>
+       <td class="shape_td"><script>anw_cog_choose_shape_get(all_question.cog_choose_shape[1].question_shape);</script></td>
+        <td class="shape_oddtd">
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q21" name="cog_choose_shape_q2" disabled data-role="none" <?php echo "value=\"$question5[9]\"";?><?php if($cog_choose_shape_sql[4]=="$question5[9]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_2($question5[3],1,$question5[9]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q22" name="cog_choose_shape_q2" disabled data-role="none" <?php echo "value=\"$question5[10]\"";?><?php if($cog_choose_shape_sql[4]=="$question5[10]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_2($question5[3],2,$question5[10]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q23" name="cog_choose_shape_q2" disabled data-role="none" <?php echo "value=\"$question5[11]\"";?><?php if($cog_choose_shape_sql[4]=="$question5[11]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_2($question5[3],3,$question5[11]);</script>"; ?></label></div>
+        </td>
+        <td class="shape_eventd">
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q21" name="anw_cog_choose_shape_2" disabled data-role="none" <?php echo "value=\"$question5[9]\"";?><?php if($question5[9]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_2($question5[3],1,$question5[9]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q22" name="anw_cog_choose_shape_2" disabled data-role="none" <?php echo "value=\"$question5[10]\"";?><?php if($question5[10]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_2($question5[3],2,$question5[10]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q23" name="anw_cog_choose_shape_2" disabled data-role="none" <?php echo "value=\"$question5[11]\"";?><?php if($question5[11]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_2($question5[3],3,$question5[11]);</script>"; ?></label></div>
+        </td>   
+    </tr>
+    <tr>
+        <td class="shape_td"><script>anw_cog_choose_shape_get(all_question.cog_choose_shape[2].question_shape);</script></td>
+        <td class="shape_oddtd">
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q31" name="cog_choose_shape_q3" disabled data-role="none" <?php echo "value=\"$question5[12]\"";?><?php if($cog_choose_shape_sql[5]=="$question5[12]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_3($question5[4],1,$question5[12]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q32" name="cog_choose_shape_q3" disabled data-role="none" <?php echo "value=\"$question5[13]\"";?><?php if($cog_choose_shape_sql[5]=="$question5[13]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_3($question5[4],2,$question5[13]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q33" name="cog_choose_shape_q3" disabled data-role="none" <?php echo "value=\"$question5[14]\"";?><?php if($cog_choose_shape_sql[5]=="$question5[14]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_3($question5[4],3,$question5[14]);</script>"; ?></label></div>
+        </td>
+        <td class="shape_eventd">
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q31" name="anw_cog_choose_shape_3" disabled data-role="none" <?php echo "value=\"$question5[12]\"";?><?php if($question5[12]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_3($question5[4],1,$question5[12]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q32" name="anw_cog_choose_shape_3" disabled data-role="none" <?php echo "value=\"$question5[13]\"";?><?php if($question5[13]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_3($question5[4],2,$question5[13]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q33" name="anw_cog_choose_shape_3" disabled data-role="none" <?php echo "value=\"$question5[14]\"";?><?php if($question5[14]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_3($question5[4],3,$question5[14]);</script>"; ?></label></div>
+        </td>   
+    </tr>
+    <tr>
+        <td class="shape_td"><script>anw_cog_choose_shape_get(all_question.cog_choose_shape[3].question_shape);</script></td>
+        <td class="shape_oddtd">
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q41" name="cog_choose_shape_q4" disabled data-role="none" <?php echo "value=\"$question5[15]\"";?><?php if($cog_choose_shape_sql[6]=="$question5[15]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_4($question5[5],1,$question5[15]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q42" name="cog_choose_shape_q4" disabled data-role="none" <?php echo "value=\"$question5[16]\"";?><?php if($cog_choose_shape_sql[6]=="$question5[16]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_4($question5[5],2,$question5[16]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="cog_choose_shape_q43" name="cog_choose_shape_q4" disabled data-role="none" <?php echo "value=\"$question5[17]\"";?><?php if($cog_choose_shape_sql[6]=="$question5[17]") echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_4($question5[5],3,$question5[17]);</script>"; ?></label></div>
+        </td>
+        <td class="shape_eventd">
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q41" name="anw_cog_choose_shape_4" disabled data-role="none" <?php echo "value=\"$question5[15]\"";?><?php if($question5[15]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_4($question5[5],1,$question5[15]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q42" name="anw_cog_choose_shape_4" disabled data-role="none" <?php echo "value=\"$question5[16]\"";?><?php if($question5[16]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_4($question5[5],2,$question5[16]);</script>"; ?></label></div>
+            <div style="float: left;"><label><input type="radio" id="anw_cog_choose_shape_q43" name="anw_cog_choose_shape_4" disabled data-role="none" <?php echo "value=\"$question5[17]\"";?><?php if($question5[17]<10) echo "checked=checked";?>><?php echo "<script>anw_cog_choose_shape_insert_picture_4($question5[5],3,$question5[17]);</script>"; ?></label></div>
+        </td>   
+    </tr>
+        </table>
+        </div>
+        <br>
+                <a href="#cognition_anwser4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
+                <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+        </div>
+ </form>
+</body>
+ </html>   

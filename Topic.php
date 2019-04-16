@@ -1,4 +1,12 @@
 <?php session_start(); ?>
+<?php 
+include("mysql_connect.php");
+$id = $_SESSION['username'];
+if($_SESSION['username'] == null){
+    echo "<script>alert('您尚未登入!');</script>";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php 
@@ -246,6 +254,60 @@ include("mysql_connect.php");
 	} 
 }
 </style>
+<?php
+$cog_sql = "SELECT * FROM users where username = '$id'";
+$cog_result = mysqli_query($qaq,$cog_sql);
+$cog_q_row = @mysqli_fetch_row($cog_result);
+$cog_a=$cog_q_row[7];
+$cog_sq2 = "SELECT * FROM cognition_score where username = '$id' and cardinal='$cog_q_row[7]'";
+@$cog_result2 = mysqli_query($qaq,$cog_sq2);
+$cog_a_row = @mysqli_fetch_row($cog_result2);
+$math_sql = "SELECT * FROM users where username = '$id'";
+$math_result = mysqli_query($qaq,$math_sql);
+$math_q_row = @mysqli_fetch_row($math_result);
+$math_a=$math_q_row[5];
+$math_sq2 = "SELECT * FROM math_score where username = '$id' and cardinal='$math_q_row[5]'";
+@$math_result2 = mysqli_query($qaq,$math_sq2);
+$math_a_row = @mysqli_fetch_row($math_result2);
+?>
+<script type="text/javascript">
+	function go_cognition(){
+<?php if($cog_a_row[1]!=$cog_a){ ?>
+	if (confirm('要繼續作答上次未提交的題目嗎?')) {
+		<?php $_SESSION['cognition_times'] = $cog_a;?>
+        document.location.href="cognition.php";
+} else {
+    if (confirm('重新作答會使上次未送出資料以0分計算,您確定嗎?')) {
+    	<?php $_SESSION['cognition_times'] = $cog_a;?>
+        document.location.href="cognition_quit.php";
+        //還要拔上次的紀錄歸零
+    } else {
+        document.location.href="Topic.php";
+    }
+}
+<?php }else{ ?>
+	document.location.href="cognitioncounter.php";
+<?php } ?>	
+}
+function go_math(){
+<?php if($math_a_row[1]!=$math_a){ ?>
+	if (confirm('要繼續作答上次未提交的題目嗎?')) {
+		<?php $_SESSION['math_times'] = $math_a;?>
+        document.location.href="cognition.php";
+} else {
+    if (confirm('重新作答會使上次未送出資料以0分計算,您確定嗎?')) {
+    	<?php $_SESSION['math_times'] = $math_a;?>
+        document.location.href="math_quit.php";
+        //還要拔上次的紀錄歸零
+    } else {
+        document.location.href="Topic.php";
+    }
+}
+<?php }else{ ?>
+	document.location.href="mathcounter.php";
+<?php } ?>	
+}
+</script>
 <body>
 	<div class="container">
 	<div class="left">
@@ -253,7 +315,9 @@ include("mysql_connect.php");
   	</div>
   	<div class="right">
   	<ul>
-  	<li><a href="成就.php">成就 </a></li>
+  	<li><a href="rank.php">排行榜 </a></li>
+  	|
+  	<li><a href="record.php">紀錄 </a></li>
   	|
     <li><a href="update.php">設定 </a></li>
     |
@@ -263,10 +327,10 @@ include("mysql_connect.php");
     </div>
     <br/><br/><br/>
 	<div style="text-align: center;" class="XX">
-		<input type="image" src="img/123.png" onClick="javascript:location.href='math.html'" width="20%;" height="20%;">
-		<input type="image" src="img/chinese.png" onClick="javascript:location.href='chinese.html'" width="20%;" height="20%;">
-		<input type="image" src="img/cognition.png" onClick="javascript:location.href='cognitioncounter.php'" width="20%;" height="20%;">
-		<input type="image" src="img/clock.png" onClick="javascript:location.href='time.html'" width="20%;" height="20%;">
+		<input type="image" src="img/123.png" onClick="go_math()" width="20%;" height="20%;">
+		<input type="image" src="img/chinese.png" onClick="javascript:location.href='chinesecounter.php'" width="20%;" height="20%;">
+		<input type="image" src="img/cognition.png" onClick="go_cognition()" width="20%;" height="20%;">
+		<input type="image" src="img/clock.png" onClick="javascript:location.href='qu.php'" width="20%;" height="20%;">
 	</div>
 	<div class="im"><img src="img/illustration.png"><div>
 </body>

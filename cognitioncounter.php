@@ -3,12 +3,16 @@
 <?php
 include("mysql_connect.php");
 $id = $_SESSION['username'];
-$sql = "SELECT * FROM list where username = '$id'";
+if($_SESSION['username'] == null){
+    echo "<script>alert('您尚未登入!');</script>";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
+}
+$sql = "SELECT * FROM users where username = '$id'";
 $result = mysqli_query($qaq,$sql);
 $row = @mysqli_fetch_row($result);
 $a=$row[7]+1;
 $_SESSION['cognition_times'] = $a;
-$sql2 = "update list set cognition_times='$a' where username='$id'";
+$sql2 = "update users set cognition_times='$a' where username='$id'";
 //q1函式
 function getRandomArray($minNum,$maxNum,$n){
 	mt_srand((double)microtime()*1000000);
@@ -337,7 +341,6 @@ $q5r = "insert into cognition5 (username,cognition_times,q5qpic1,q5qpic2,q5qpic3
 
 	if(mysqli_query($qaq,$sql2)){
 		if(mysqli_query($qaq,$q1r)&&mysqli_query($qaq,$q2r)&&mysqli_query($qaq,$q3r)&&mysqli_query($qaq,$q4r)&&mysqli_query($qaq,$q5r)){
-    		echo "<script>alert('這是你第'+$a+'次練習本大題');</script>";
     		header("REFRESH:1;url=cognition.php");
     	}else{
     		echo "<script>alert('題目產生失敗,請洽服務人員!');</script>";
