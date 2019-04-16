@@ -181,8 +181,12 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
     
     <table width="50%" style ="text-align:center">
       <tr style="height:280px">
-        <td><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-        <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+        <td>
+          <canvas id ="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+        </td>
+        <td>
+          <canvas id ="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+        </td>
       </tr>
       <tr style="height:40px">
         <td style="text-align: center;">
@@ -208,9 +212,10 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
    
       <tr style="height: 280px">
         <td>
-          <canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+          <canvas id ="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
         </td>
-        <td><canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+        <td>
+          <canvas id ="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
         </td>
       </tr>
       <tr style="height: 40px">
@@ -241,11 +246,12 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
 </div>
 
 <script>
-
-  drawclock("clock1",<?php $_GET['h1']?>,<?php $_GET['m1']?>);  //第一題答案的時鐘            
-  drawclock("clock2",h22,m22);
-  drawclock("clock3",h33,m33);
-  drawclock("clock4",h44,m44); 
+  drawclock("clock1",<?php $_GET['h1'] ?>,<?php $_GET['m1'] ?>);  //第一題的時鐘            
+  drawclock("clock2",h2,m2);
+  drawclock("clock3",h3,m3);
+  drawclock("clock4",h4,m4);
 </script>
+
+
 
 

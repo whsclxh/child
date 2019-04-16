@@ -145,6 +145,9 @@ win.DrawClock = DrawClock;
   var m3 = Math.floor(Math.random() * 12) * 5;
   var h4 = Math.floor(Math.random() * 12) + 1;
   var m4 = Math.floor(Math.random() * 12) * 5;
+  location.href="time_finish.php?value=" +h1;
+  location.href="time_finish.php?value=" +m1;
+
 
 
 
