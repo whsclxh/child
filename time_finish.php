@@ -21,14 +21,14 @@
 
 <?php
 //第一題
-$q1q1=$_POST['q1anw1'];
-$q1q2=$_POST['q1anw2'];
-$q1q3=$_POST['q1anw3'];
-$q1q4=$_POST['q1anw4'];
-$q1q5=$_POST['q1anw5'];
-$q1q6=$_POST['q1anw6'];
-$q1q7=$_POST['q1anw7'];
-$q1q8=$_POST['q1anw8'];
+$q1q1=$_POST['q1ans1'];
+$q1q2=$_POST['q1ans2'];
+$q1q3=$_POST['q1ans3'];
+$q1q4=$_POST['q1ans4'];
+$q1q5=$_POST['q1ans5'];
+$q1q6=$_POST['q1ans6'];
+$q1q7=$_POST['q1ans7'];
+$q1q8=$_POST['q1ans8'];
 
 $q1ans1 = $_POST['q1answer1'];  //取正確答案
 $q1ans2 = $_POST['q1answer2'];
