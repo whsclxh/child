@@ -1112,7 +1112,7 @@ line.init(questionObj, answerObj)
     </table>
     <div align="center">
         <a href="#time4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-        <button type="submit" id="button" style="width: 10%;" onclick='location.href="time_finish.php?h1"'>結束作答</button>
+        <button type="submit" id="button" style="width: 10%;">結束作答</button>
     </div>
     </div>
 
@@ -1163,6 +1163,15 @@ yudan_pic[1] = "img/clock_img/p2.png";
 yudan_pic[2] = "img/clock_img/p3.png";
 yudan_pic[3] = "img/clock_img/p4.png";
 index = Math.floor(Math.random() * yudan_pic.length);
+
+  var h1 = Math.floor(Math.random() * 12) + 1; //第一題的時鐘
+  var m1 = Math.floor(Math.random() * 12) * 5;
+  var h2 = Math.floor(Math.random() * 12) + 1;
+  var m2 = Math.floor(Math.random() * 12) * 5;
+  var h3 = Math.floor(Math.random() * 12) + 1;
+  var m3 = Math.floor(Math.random() * 12) * 5;
+  var h4 = Math.floor(Math.random() * 12) + 1;
+  var m4 = Math.floor(Math.random() * 12) * 5;
  
   drawclock("clock1",h1,m1);  //第一題的時鐘            
   drawclock("clock2",h2,m2);
