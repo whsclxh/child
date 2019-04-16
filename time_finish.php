@@ -200,6 +200,17 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
           <input type="number" data-role="none" style="width:10%" id="q1q21" name="q1q21" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q22" name="q1q22" min="00" max="59" step="5" >分
         </td>
       </tr>
+
+      <tr style="height:40px">
+        <td>
+          <input type="number" data-role="none" style="width:10%"  min="1" max="12" >時<input type="number" data-role="none" style="width:10%"  min="00" max="59" step="5" >分
+        </td>
+        
+        <td>
+          <input type="number" data-role="none" style="width:10%"  min="1" max="12" >時<input type="number" data-role="none" style="width:10%"  min="00" max="59" step="5" >分
+        </td>
+      </tr>
+
    
       <tr style="height: 280px">
         <td>
