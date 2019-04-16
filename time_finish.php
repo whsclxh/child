@@ -252,6 +252,7 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
   var e =<?php  echo $e ?>
   <?php $e1 = "$m1" ?>
   var e1 = <?php echo $e1 ?>
+document.write(e1);
 
   drawclock("clock1",e,e1);  //第一題的時鐘            
   drawclock("clock2",h2,m2);
