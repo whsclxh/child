@@ -1,6 +1,4 @@
-
-
-  (function (win) {
+(function (win) {
     function DrawClock(options) {
       this.hour = options.hour;
       this.minute = options.minute;
@@ -83,7 +81,7 @@
         //小時的刻度，每小時轉30deg
         for (var i = 0; i < 12; i++) {
           ctx.save();
-          ctx.rotate(30 * i * Math.PI / 180);
+          ctx.rotate(0 * i * Math.PI / 180);
           ctx.beginPath();
           ctx.moveTo(0, -79 * this.rem);
           ctx.lineTo(0, -87 * this.rem);
@@ -137,58 +135,35 @@
 win.DrawClock = DrawClock;
 })(window);
 
-  var temp1 = Math.floor(Math.random() * 12) + 1; //第一題的時鐘
-  var temp2 = Math.floor(Math.random() * 12) * 5;
-  var h2 = Math.floor(Math.random() * 12) + 1;
-  var m2 = Math.floor(Math.random() * 12) * 5;
-  var h3 = Math.floor(Math.random() * 12) + 1;
-  var m3 = Math.floor(Math.random() * 12) * 5;
-  var h4 = Math.floor(Math.random() * 12) + 1;
-  var m4 = Math.floor(Math.random() * 12) * 5;
+var h15 = Math.floor(Math.random() * 12) + 1;
+var m15 = Math.floor(Math.random() * 12) * 5 ;
+var h16 = Math.floor(Math.random() * 12) + 1;
+var m16 = Math.floor(Math.random() * 12) * 5;
+var h17 = Math.floor(Math.random() * 12) + 1;
+var m17 = Math.floor(Math.random() * 12) * 5;
+var h18 = Math.floor(Math.random() * 12) + 1;
+var m18 = Math.floor(Math.random() * 12) * 5;
+var h19 = Math.floor(Math.random() * 12) + 1;
+var m19 = Math.floor(Math.random() * 12) * 5;
+var h20 = Math.floor(Math.random() * 12) + 1;
+var m20 = Math.floor(Math.random() * 12) * 5;
+var h21 = Math.floor(Math.random() * 12) + 1;
+var m21 = Math.floor(Math.random() * 12) * 5;
+var h22 = Math.floor(Math.random() * 12) + 1;
+var m22 = Math.floor(Math.random() * 12) * 5;
+var h23 = Math.floor(Math.random() * 12) + 1;
+var m23 = Math.floor(Math.random() * 12) * 5;
+var h24 = Math.floor(Math.random() * 12) + 1;
+var m24 = Math.floor(Math.random() * 12) * 5;
+var h25 = Math.floor(Math.random() * 12) + 1;
+var m25 = Math.floor(Math.random() * 12) * 5;
+var h26 = Math.floor(Math.random() * 12) + 1;
+var m26 = Math.floor(Math.random() * 12) * 5;
 
-  
-
-
-
-
-
-
-
-
-
-
-
-  var h5 = Math.floor(Math.random() * 12) + 1; //第三題的時鐘
-  var m5 = Math.floor(Math.random() * 12) * 5;
-  var h6 = Math.floor(Math.random() * 12) + 1;
-  var m6 = Math.floor(Math.random() * 12) * 5;
-  var h7 = Math.floor(Math.random() * 12) + 1;
-  var m7 = Math.floor(Math.random() * 12) * 5;
-  var h8 = Math.floor(Math.random() * 12) + 1;
-  var m8 = Math.floor(Math.random() * 12) * 5;
-
-
-
-  function drawclock(clock,h,m){           //畫時鐘的function
+function drawclock(clock,h,m){           //畫時鐘的function
     new DrawClock({
     el: document.getElementById(clock),
         hour: h,
         minute: m
     });
   }
-
-
-  
- 
-
-
-
-
- 
-
-
-
- 
-
-  
-  

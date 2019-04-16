@@ -2,7 +2,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 include 'mysql_connect.php';
-$link = connect_to_db();
+//$link = connect_to_db();
 
 $id = $_SESSION['username'];
 $pw = $_POST['pw'];

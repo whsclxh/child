@@ -21,14 +21,16 @@
 
 <?php
 //第一題
-@$q1q1 = $_POST['q1q11'];     //把答案儲存在php變數
-@$q1q2 = $_POST['q1q12'];
-@$q1q3 = $_POST['q1q21'];
-@$q1q4 = $_POST['q1q22'];
-@$q1q5 = $_POST['q1q31'];
-@$q1q6 = $_POST['q1q32'];
-@$q1q7 = $_POST['q1q41'];
-@$q1q8 = $_POST['q1q42'];
+$q1q1=$_POST['q1ans1']; //取答題者答案
+$q1q2=$_POST['q1ans2'];
+$q1q3=$_POST['q1ans3'];
+$q1q4=$_POST['q1ans4'];
+$q1q5=$_POST['q1ans5'];
+$q1q6=$_POST['q1ans6'];
+$q1q7=$_POST['q1ans7'];
+$q1q8=$_POST['q1ans8'];
+$h1=$_POST['h1'];
+$m1=$_POST['m1'];
 
 $q1ans1 = $_POST['q1answer1'];  //取正確答案
 $q1ans2 = $_POST['q1answer2'];
@@ -39,14 +41,7 @@ $q1ans6 = $_POST['q1answer6'];
 $q1ans7 = $_POST['q1answer7'];
 $q1ans8 = $_POST['q1answer8'];
 
-$q1opt11 = $_POST['q1option11']; //儲存選項的值
-$q1opt12 = $_POST['q1option12'];
-$q1opt21 = $_POST['q1option21'];
-$q1opt22 = $_POST['q1option22'];
-$q1opt31 = $_POST['q1option31'];
-$q1opt32 = $_POST['q1option32'];
-$q1opt41 = $_POST['q1option41'];
-$q1opt42 = $_POST['q1option42'];
+
 
 $q1score = 0;
 if(($q1q1)==($q1ans1)){
@@ -186,42 +181,80 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
 <h3 align="center" style="color: red">本大題拿了<?php echo "$q1score"; ?>/20分</h3> 
     <h3 align="center">請問現在是幾點幾分? 輸入正確時間。</h3>
     
-    <table width="50%" align="center">
+    <table width="50%" style ="text-align:center">
       <tr style="height:280px">
-        <td><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-        <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
+        <td>
+          <canvas id ="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+        </td>
+        <td>
+          <canvas id ="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+        </td>
       </tr>
       <tr style="height:40px">
-        <td><div style="text-align: center" class="form-inline"><label for="appt-time" >你的答案</label>
-          <input type="number" id="q1q11" name="q1q11" min="1" max="12" >時<input type="number" id="q1q12" name="q1q12" min="00" max="59" step="5" >分</div>
+        <td style="text-align: center;">
+        原作答:<?php echo "$q1q1"?>點<?php echo "$q1q2"?>分
         </td>
           
-        <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-          <input type="number" id="q1q21" name="q1q21" min="1" max="12" >時<input type="number" id="q1q22" name="q1q22" min="00" max="59" step="5" >分</div>
+        <td style="text-align: center;">
+        原作答:<?php echo "$q1q3"?>點<?php echo "$q1q4"?>分
         </td>
       </tr>
+
+      <tr style="height:40px">
+        <td style="text-align: center; color: red;">
+        正解:<?php echo "$q1ans1"?>點<?php echo "$q1ans2"?>分
+        </td>
+        
+        <td style="text-align: center; color: red;">
+        正解:<?php echo "$q1ans3"?>點<?php echo "$q1ans4"?>分
+        </td >
+
+      </tr>
+
    
       <tr style="height: 280px">
         <td>
-          <canvas id="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+          <canvas id ="clock3" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
         </td>
-        <td><canvas id="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
+        <td>
+          <canvas id ="clock4" width="200%" height="200%" style="display:block; margin:auto;"></canvas>
         </td>
       </tr>
       <tr style="height: 40px">
-        <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-          <input type="number" id="q1q31" name="q1q31" min="1" max="12" >時<input type="number" id="q1q32" name="q1q32" min="00" max="59" step="5" >分</div>
+      <td style="text-align: center;">
+        原作答:<?php echo "$q1q5"?>點<?php echo "$q1q6"?>分
         </td>
           
-        <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-          <input type="number" id="q1q41" name="q1q41" min="1" max="12" >時<input type="number" id="q1q42" name="q1q42" min="00" max="59" step="5" >分</div>
+        <td style="text-align: center;">
+        原作答:<?php echo "$q1q7"?>點<?php echo "$q1q8"?>分
         </td>
       </tr>
+
+      <tr style="height:40px">
+        <td style="text-align: center; color: red;">
+        正解:<?php echo "$q1ans5"?>點<?php echo "$q1ans6"?>分   
+        </td>
+        
+        <td style="text-align: center; color: red;">
+        正解:<?php echo "$q1ans7"?>點<?php echo "$q1ans8"?>分
+        </td >
+      </tr>
+
     </table>
     <div align="center">
       <a href="#time2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
     </div>
     </div>
 </div>
+
+<script>
+  
+  drawclock("clock1",<?php  $h1 ?>,<?php  $m1 ?>);  //第一題的時鐘            
+  drawclock("clock2",h2,m2);
+  drawclock("clock3",h3,m3);
+  drawclock("clock4",h4,m4);
+</script>
+
+
 
 

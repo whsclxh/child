@@ -5,10 +5,10 @@
 //連接資料庫
 //只要此頁面上有用到連接MySQL就要include它
 include 'mysql_connect.php';
+
 $id = $_POST['id'];
 $pw = $_POST['pw'];
 
-$link = connect_to_db();
 //搜尋資料庫資料
 $sql = "SELECT * FROM users where username = '$id'";
 $result = mysqli_query($link, $sql);

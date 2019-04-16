@@ -3,7 +3,7 @@
 <?php
 include 'mysql_connect.php';
 
-$link = connect_to_db();
+//$link = connect_to_db();
 
 $id = $_POST['id'];
 $pw = $_POST['pw'];
