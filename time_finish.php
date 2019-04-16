@@ -186,7 +186,7 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
 <h3 align="center" style="color: red">本大題拿了<?php echo "$q1score"; ?>/20分</h3> 
     <h3 align="center">請問現在是幾點幾分? 輸入正確時間。</h3>
     
-    <table width="50%" align="center">
+    <table width="50%" style ="text-align:center">
       <tr style="height:280px">
         <td><canvas id="clock1" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
         <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
