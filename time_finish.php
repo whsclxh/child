@@ -193,21 +193,21 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
       </tr>
       <tr style="height:40px">
         <td style="text-align: center;">
-        原作答:<?php echo "$q1q1"?>時<?php echo "$q1q2"?>分
+        原作答:<?php echo "$q1q1"?>點<?php echo "$q1q2"?>分
         </td>
           
         <td style="text-align: center;">
-        原作答:<?php echo "$q1q3"?>時<?php echo "$q1q4"?>分
+        原作答:<?php echo "$q1q3"?>點<?php echo "$q1q4"?>分
         </td>
       </tr>
 
       <tr style="height:40px">
         <td style="text-align: center; color: red;">
-        正解:<?php echo "$q1ans1"?>時<?php echo "$q1ans2"?>
+        正解:<?php echo "$q1ans1"?>點<?php echo "$q1ans2"?>分
         </td>
         
         <td style="text-align: center; color: red;">
-        正解:<?php echo "$q1ans3"?>時<?php echo "$q1ans4"?>
+        正解:<?php echo "$q1ans3"?>點<?php echo "$q1ans4"?>分
         </td >
 
       </tr>
@@ -222,21 +222,21 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
       </tr>
       <tr style="height: 40px">
       <td style="text-align: center;">
-        原作答:<?php echo "$q1q5"?>時<?php echo "$q1q6"?>分
+        原作答:<?php echo "$q1q5"?>點<?php echo "$q1q6"?>分
         </td>
           
         <td style="text-align: center;">
-        原作答:<?php echo "$q1q7"?>時<?php echo "$q1q8"?>分
+        原作答:<?php echo "$q1q7"?>點<?php echo "$q1q8"?>分
         </td>
       </tr>
 
       <tr style="height:40px">
         <td style="text-align: center; color: red;">
-        正解:<?php echo "$q1ans5"?>時<?php echo "$q1ans6"?>
+        正解:<?php echo "$q1ans5"?>點<?php echo "$q1ans6"?>分   
         </td>
         
         <td style="text-align: center; color: red;">
-        正解:<?php echo "$q1ans7"?>時<?php echo "$q1ans8"?>
+        正解:<?php echo "$q1ans7"?>點<?php echo "$q1ans8"?>分
         </td >
       </tr>
 
