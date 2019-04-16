@@ -393,10 +393,7 @@ q1a7.value = h4;
 var q1a8 = document.getElementById("q1a8");
 q1a8.value = m4;
 
-var temp1 = document.getElementById("h1");
-temp1.value = h1;
-var temp2 = document.getElementById("m1");
-temp2.value = m1;
+
 
 
 
@@ -1115,7 +1112,7 @@ line.init(questionObj, answerObj)
     </table>
     <div align="center">
         <a href="#time4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-        <button type="submit" id="button" style="width: 10%;">結束作答</button>
+        <button type="submit" id="button" style="width: 10%;" onclick='location.href="time_finish.php?h1"'>結束作答</button>
     </div>
     </div>
 
@@ -1127,8 +1124,7 @@ line.init(questionObj, answerObj)
 		<input type="hidden" id="q1a6" name="q1answer6">
 		<input type="hidden" id="q1a7" name="q1answer7">
     <input type="hidden" id="q1a8" name="q1answer8">
-    <input type="hidden" id="h1" name="h1">
-    <input type="hidden" id="m1" name="m1">
+  
 
       
 
