@@ -246,7 +246,7 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
 </div>
 
 <script>
-  drawclock("clock1",<?php $_GET['h1'] ?>,<?php $_GET['m1'] ?>);  //第一題的時鐘            
+  drawclock("clock1",h1,m1);  //第一題的時鐘            
   drawclock("clock2",h2,m2);
   drawclock("clock3",h3,m3);
   drawclock("clock4",h4,m4);
