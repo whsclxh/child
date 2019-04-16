@@ -3,6 +3,18 @@
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" src="time_1.js"></script>
+<script>
+
+var w = <?php echo $q1ans1 ?>
+var w1 = <?php echo $q1ans2 ?>
+
+
+
+  drawclock("clock1",w,w1);  //第一題的時鐘            
+  drawclock("clock2",h2,m2);
+  drawclock("clock3",h3,m3);
+  drawclock("clock4",h4,m4);
+</script>
 
 <style>
     table,td,th {
@@ -247,18 +259,7 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
     </div>
 </div>
 
-<script>
 
-var w = <?php echo $q1ans1 ?>
-var w1 = <?php echo $q1ans2 ?>
-
-
-
-  drawclock("clock1",w,w1);  //第一題的時鐘            
-  drawclock("clock2",h2,m2);
-  drawclock("clock3",h3,m3);
-  drawclock("clock4",h4,m4);
-</script>
 
 
 
