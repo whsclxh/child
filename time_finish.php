@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" src="time_1.js"></script>
-<?php include("time.html"); ?>
+
 <style>
     table,td,th {
       border: 1px solid black;
