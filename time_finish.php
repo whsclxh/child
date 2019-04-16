@@ -240,4 +240,19 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
     </div>
 </div>
 
+<script>
+  var h11 = h1;
+  var h22 = h2;
+  var h33 = h3;
+  var h44 = h4;
+  var m11 = m1;
+  var m22 = m2;
+  var m33 = m3;
+  var m44 = m4;
+  drawclock("clock1",h11,m11);  //第一題答案的時鐘            
+  drawclock("clock2",h22,m22);
+  drawclock("clock3",h33,m33);
+  drawclock("clock4",h44,m44); 
+</script>
+
 
