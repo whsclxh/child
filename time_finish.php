@@ -192,12 +192,12 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
         <td><canvas id="clock2" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
       </tr>
       <tr style="height:40px">
-        <td><div style="text-align: center" class="form-inline"><label for="appt-time" >你的答案</label>
-          <input type="number" id="q1q11" name="q1q11" min="1" max="12" >時<input type="number" id="q1q12" name="q1q12" min="00" max="59" step="5" >分</div>
+        <td>
+          <input type="number" data-role="none" style="width:10%" id="q1q11" name="q1q11" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q12" name="q1q12" min="00" max="59" step="5" >分
         </td>
           
-        <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-          <input type="number" id="q1q21" name="q1q21" min="1" max="12" >時<input type="number" id="q1q22" name="q1q22" min="00" max="59" step="5" >分</div>
+        <td>
+          <input type="number" data-role="none" style="width:10%" id="q1q21" name="q1q21" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q22" name="q1q22" min="00" max="59" step="5" >分
         </td>
       </tr>
    
@@ -209,12 +209,12 @@ $totalscore=$q1score+$q3score+$q4score+$q5score;
         </td>
       </tr>
       <tr style="height: 40px">
-        <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-          <input type="number" id="q1q31" name="q1q31" min="1" max="12" >時<input type="number" id="q1q32" name="q1q32" min="00" max="59" step="5" >分</div>
+        <td>
+          <input type="number" data-role="none" style="width:10%" id="q1q31" name="q1q31" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q32" name="q1q32" min="00" max="59" step="5" >分
         </td>
           
-        <td><div style="text-align: center" class="form-inline"><label for="appt-time">你的答案</label>
-          <input type="number" id="q1q41" name="q1q41" min="1" max="12" >時<input type="number" id="q1q42" name="q1q42" min="00" max="59" step="5" >分</div>
+        <td>
+          <input type="number" data-role="none" style="width:10%" id="q1q41" name="q1q41" min="1" max="12" >時<input type="number" data-role="none" style="width:10%" id="q1q42" name="q1q42" min="00" max="59" step="5" >分
         </td>
       </tr>
     </table>
