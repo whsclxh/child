@@ -33,6 +33,5 @@ else {
         echo '<meta http-equiv=REFRESH CONTENT=2;url=Topic.php>';
 }
 
-mysqli_close($link);
 
 ?>
