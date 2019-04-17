@@ -13,7 +13,6 @@ $pw = $_POST['pw'];
 $sql = "SELECT * FROM users where username = '$id'";
 $result = mysqli_query($link, $sql);
 $row = @mysqli_fetch_row($result);
-mysqli_close($link);
 
 //判斷帳號與密碼是否為空白
 //以及MySQL資料庫裡是否有這個會員
