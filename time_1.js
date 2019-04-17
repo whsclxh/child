@@ -137,25 +137,14 @@
 win.DrawClock = DrawClock;
 })(window);
 
-  var temp1 = Math.floor(Math.random() * 12) + 1; //第一題的時鐘
-  var temp2 = Math.floor(Math.random() * 12) * 5;
+  var h1 = Math.floor(Math.random() * 12) + 1; //第一題的時鐘
+  var m1 = Math.floor(Math.random() * 12) * 5;
   var h2 = Math.floor(Math.random() * 12) + 1;
   var m2 = Math.floor(Math.random() * 12) * 5;
   var h3 = Math.floor(Math.random() * 12) + 1;
   var m3 = Math.floor(Math.random() * 12) * 5;
   var h4 = Math.floor(Math.random() * 12) + 1;
   var m4 = Math.floor(Math.random() * 12) * 5;
-
-  
-
-
-
-
-
-
-
-
-
 
 
   var h5 = Math.floor(Math.random() * 12) + 1; //第三題的時鐘
