@@ -325,7 +325,7 @@ require "cog_count_choose_function.php";
 <link rel="stylesheet" type="text/css" href="css/cognition_finish.css">
 <style type="text/css">
 .ui-page{
-    background: #ffeda9 url(img/lively.jpg) no-repeat !important;
+    background: url(img/lively2.jpg) no-repeat !important;
     background-size: cover !important;
 }
 .ui-btn{
