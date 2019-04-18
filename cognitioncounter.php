@@ -8,7 +8,7 @@ if($_SESSION['username'] == null){
     echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
 }
 $sql = "SELECT * FROM users where username = '$id'";
-$result = mysqli_query($qaq,$sql);
+$result = mysqli_query($link,$sql);
 $row = @mysqli_fetch_row($result);
 $a=$row[7]+1;
 $_SESSION['cognition_times'] = $a;
@@ -339,8 +339,8 @@ $q4r = "insert into cognition4 (username,cognition_times,q4pic1,q4pic2,q4pic3,q4
 
 $q5r = "insert into cognition5 (username,cognition_times,q5qpic1,q5qpic2,q5qpic3,q5qpic4,q5q1opt1,q5q1opt2,q5q1opt3,q5q2opt1,q5q2opt2,q5q2opt3,q5q3opt1,q5q3opt2,q5q3opt3,q5q4opt1,q5q4opt2,q5q4opt3) values('$id','$a','$shape[0]','$shape[1]','$shape[2]','$shape[3]','$question1[0]','$question1[1]','$question1[2]','$question2[0]','$question2[1]','$question2[2]','$question3[0]','$question3[1]','$question3[2]','$question4[0]','$question4[1]','$question4[2]')";
 
-	if(mysqli_query($qaq,$sql2)){
-		if(mysqli_query($qaq,$q1r)&&mysqli_query($qaq,$q2r)&&mysqli_query($qaq,$q3r)&&mysqli_query($qaq,$q4r)&&mysqli_query($qaq,$q5r)){
+	if(mysqli_query($link,$sql2)){
+		if(mysqli_query($link,$q1r)&&mysqli_query($link,$q2r)&&mysqli_query($link,$q3r)&&mysqli_query($link,$q4r)&&mysqli_query($link,$q5r)){
     		header("REFRESH:1;url=cognition.php");
     	}else{
     		echo "<script>alert('題目產生失敗,請洽服務人員!');</script>";

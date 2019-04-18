@@ -256,18 +256,18 @@ include("mysql_connect.php");
 </style>
 <?php
 $cog_sql = "SELECT * FROM users where username = '$id'";
-$cog_result = mysqli_query($qaq,$cog_sql);
+$cog_result = mysqli_query($link,$cog_sql);
 $cog_q_row = @mysqli_fetch_row($cog_result);
 $cog_a=$cog_q_row[7];
 $cog_sq2 = "SELECT * FROM cognition_score where username = '$id' and cardinal='$cog_q_row[7]'";
-@$cog_result2 = mysqli_query($qaq,$cog_sq2);
+@$cog_result2 = mysqli_query($link,$cog_sq2);
 $cog_a_row = @mysqli_fetch_row($cog_result2);
 $math_sql = "SELECT * FROM users where username = '$id'";
-$math_result = mysqli_query($qaq,$math_sql);
+$math_result = mysqli_query($link,$math_sql);
 $math_q_row = @mysqli_fetch_row($math_result);
 $math_a=$math_q_row[5];
 $math_sq2 = "SELECT * FROM math_score where username = '$id' and cardinal='$math_q_row[5]'";
-@$math_result2 = mysqli_query($qaq,$math_sq2);
+@$math_result2 = mysqli_query($link,$math_sq2);
 $math_a_row = @mysqli_fetch_row($math_result2);
 ?>
 <script type="text/javascript">

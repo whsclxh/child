@@ -8,22 +8,22 @@ if($_SESSION['username'] == null){
     echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
 }
 $sql1 = "SELECT * FROM cog_count_choose_db where username = '$id' AND cardinal = '$contimes'";
-$result1 = mysqli_query($qaq,$sql1);
+$result1 = mysqli_query($link,$sql1);
 $cog_count_choose_sql = @mysqli_fetch_row($result1);
 $sql2 = "SELECT * FROM cog_choose_shape_db where username = '$id' AND cardinal = '$contimes'";
-$result2 = mysqli_query($qaq,$sql2);
+$result2 = mysqli_query($link,$sql2);
 $cog_choose_shape_sql = @mysqli_fetch_row($result2);
 $sql3 = "SELECT * FROM cog_choose_longer_db where username = '$id' AND cardinal = '$contimes'";
-$result3 = mysqli_query($qaq,$sql3);
+$result3 = mysqli_query($link,$sql3);
 $cog_choose_longer_sql = @mysqli_fetch_row($result3);
 $sql4 = "SELECT * FROM cog_choose_correct_orientation_db where username = '$id' AND cardinal = '$contimes'";
-$result4 = mysqli_query($qaq,$sql4);
+$result4 = mysqli_query($link,$sql4);
 $cog_choose_correct_orientation_sql = @mysqli_fetch_row($result4);
 $sql5 = "SELECT * FROM cog_sequence_db where username = '$id' AND cardinal = '$contimes'";
-$result5 = mysqli_query($qaq,$sql5);
+$result5 = mysqli_query($link,$sql5);
 $cog_sequence_sql = @mysqli_fetch_row($result5);
 $sql6 = "SELECT * FROM cognition_score where username = '$id' AND cardinal = '$contimes'";
-$result6 = mysqli_query($qaq,$sql6);
+$result6 = mysqli_query($link,$sql6);
 $cognition_score_sql = @mysqli_fetch_row($result6);   
 ?>
 <?php

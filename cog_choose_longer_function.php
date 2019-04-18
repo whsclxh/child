@@ -4,7 +4,7 @@ include("mysql_connect.php");
 $id = $_SESSION['username'];
 $contimes = $_SESSION['cognition_times'];
 $sql3 = "SELECT * FROM cognition3 where username = '$id' AND cognition_times = '$contimes'";
-$result3 = mysqli_query($qaq,$sql3);
+$result3 = mysqli_query($link,$sql3);
 $question3 = @mysqli_fetch_row($result3);
 ?>
 <?php

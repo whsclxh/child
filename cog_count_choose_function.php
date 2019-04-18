@@ -4,7 +4,7 @@ include("mysql_connect.php");
 $id = $_SESSION['username'];
 $contimes = $_SESSION['cognition_times'];
 $sql1 = "SELECT * FROM cognition1 where username = '$id' AND cognition_times = '$contimes'";
-$result1 = mysqli_query($qaq,$sql1);
+$result1 = mysqli_query($link,$sql1);
 $question1 = @mysqli_fetch_row($result1);
 //cog_count_choose變數
 $cog_count_choose_num=array();

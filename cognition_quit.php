@@ -8,19 +8,19 @@ if($_SESSION['username'] == null){
     echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
 }
 $sql1 = "SELECT * FROM cognition1 where username = '$id' AND cognition_times = '$contimes'";
-$result1 = mysqli_query($qaq,$sql1);
+$result1 = mysqli_query($link,$sql1);
 $question1 = @mysqli_fetch_row($result1);
 $sql2 = "SELECT * FROM cognition2 where username = '$id' AND cognition_times = '$contimes'";
-$result2 = mysqli_query($qaq,$sql2);
+$result2 = mysqli_query($link,$sql2);
 $question2 = @mysqli_fetch_row($result2);
 $sql3 = "SELECT * FROM cognition3 where username = '$id' AND cognition_times = '$contimes'";
-$result3 = mysqli_query($qaq,$sql3);
+$result3 = mysqli_query($link,$sql3);
 $question3 = @mysqli_fetch_row($result3);
 $sql4 = "SELECT * FROM cognition4 where username = '$id' AND cognition_times = '$contimes'";
-$result4 = mysqli_query($qaq,$sql4);
+$result4 = mysqli_query($link,$sql4);
 $question4 = @mysqli_fetch_row($result4);
 $sql5 = "SELECT * FROM cognition5 where username = '$id' AND cognition_times = '$contimes'";
-$result5 = mysqli_query($qaq,$sql5);
+$result5 = mysqli_query($link,$sql5);
 $question5 = @mysqli_fetch_row($result5); 	
 ?>
 <?php

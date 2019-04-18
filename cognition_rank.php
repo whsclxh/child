@@ -7,10 +7,10 @@ if($_SESSION['username'] == null){
 }
 $id = $_SESSION['username'];
 $sql4 = "SELECT * FROM users where cognition_times>5 ORDER BY cognition_average+0 DESC";
-$result4 = mysqli_query($qaq,$sql4);
+$result4 = mysqli_query($link,$sql4);
 $num_rows = mysqli_num_rows($result4);
 $sql5 = "SELECT * FROM users where cognition_times>5 ORDER BY cognition_times+0 DESC";
-$result5 = mysqli_query($qaq,$sql5);
+$result5 = mysqli_query($link,$sql5);
 $num_rows2 = mysqli_num_rows($result5);
 ?>
 <!DOCTYPE html>

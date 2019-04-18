@@ -10,7 +10,7 @@ if($_SESSION['username'] == null){
 $id = $_SESSION['username'];
 $contimes = $_SESSION['cognition_times'];
 $sq2 = "SELECT * FROM cognition_score where username = '$id' and cardinal='$contimes'";
-$result2 = mysqli_query($qaq,$sq2);
+$result2 = mysqli_query($link,$sq2);
 $a_row = @mysqli_fetch_row($result2);
 if($a_row[1]==$contimes){
     echo "<script>alert('此次作答已經提交過囉!!');</script>";
