@@ -23,7 +23,7 @@ if($row[0] == $id){
 }
 else if($id != null && $pw != null){
         //新增資料進資料庫語法
-        $sql = "insert into users (username, password, nickname, sex, age) values ('$id', '$pw', '$nickname', '$sex', '$age')";
+        $sql = "insert into users (username, password, nickname, sex, age, math_times, chinese_times, cognition_times, clock_times, total_times, math_average, chinese_average, cognition_average, clock_average ,total_average) values ('$id', '$pw', '$nickname', '$sex', '$age', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0')";
         if(mysqli_query($link,$sql)){
                 echo "<script>alert('新增成功,請登入!');</script>";
                 echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
