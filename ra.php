@@ -1,4 +1,6 @@
+<?php session_start(); ?>
 <?php
+include("mysql_connect.php");
 function getRandomArray($minNum,$maxNum,$n){
 	mt_srand((double)microtime()*1000000);
 	$num = Array();
