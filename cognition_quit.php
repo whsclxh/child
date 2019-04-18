@@ -64,7 +64,7 @@ $score_time="insert into cognition_score (
 username,cardinal,total_score,now_time) 
 values('$id','$contimes','0','$the_time')";
 
-		if(mysqli_query($qaq,$cog_count_choose_sql)&&mysqli_query($qaq,$cog_choose_shape_sql)&&mysqli_query($qaq,$cog_choose_longer_sql)&&mysqli_query($qaq,$cog_choose_correct_orientation_sql)&&mysqli_query($qaq,$cog_sequence_sql)&&mysqli_query($qaq,$score_time)){
+		if(mysqli_query($link,$cog_count_choose_sql)&&mysqli_query($link,$cog_choose_shape_sql)&&mysqli_query($link,$cog_choose_longer_sql)&&mysqli_query($link,$cog_choose_correct_orientation_sql)&&mysqli_query($link,$cog_sequence_sql)&&mysqli_query($link,$score_time)){
     		header("REFRESH:1;url=cognitioncounter.php");
     	}else{
     		echo "<script>alert('系統異常,請洽服務人員!');</script>";

@@ -7,7 +7,7 @@ if($_SESSION['username'] == null){
 }
 $id = $_SESSION['username'];
 $sql10 = "SELECT * FROM users where username = '$id'";
-$result10 = mysqli_query($qaq,$sql10);
+$result10 = mysqli_query($link,$sql10);
 $d3_use= @mysqli_fetch_row($result10);
 ?>
 <!DOCTYPE html>

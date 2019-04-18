@@ -6,12 +6,18 @@ if($_SESSION['username'] == null){
     echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
 }
 $id = $_SESSION['username'];
-$sql1 = "SELECT * FROM users where username = '$id'";
-$result1 = mysqli_query($link,$sql1);
-$list = @mysqli_fetch_row($result1);
+$sql4 = "SELECT * FROM users where math_times>5 ORDER BY math_average+0 DESC";
+$result4 = mysqli_query($link,$sql4);
+$num_rows = mysqli_num_rows($result4);
+$sql55 = "SELECT * FROM users where math_times>5 ORDER BY math_times+0 DESC";
+$result55 = mysqli_query($link,$sql55);
+$num_rows25 = mysqli_num_rows($result55);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <head>
     <meta charset="UTF-8">
     <title></title><style type="text/css">
@@ -109,13 +115,7 @@ $list = @mysqli_fetch_row($result1);
 </style>
 <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="pagination.js"></script>
-    <script type="text/javascript">
-        function go(v){
-        var a = document.getElementById("cog_data");                                     //設置input value
-        a.value = v;
-        document.form1.submit();
-        }
-    </script>
+    <script type="text/javascript" src="pagination2.js"></script>
     <script type="text/javascript">
         //全局变量
         var numCount;       //数据总数量
@@ -133,6 +133,20 @@ $list = @mysqli_fetch_row($result1);
         var pageNumSpan;
         var currPageSpan;
 
+        var numCount2;       //数据总数量
+        var columnsCounts2;  //数据列数量
+        var pageCount2;      //每页显示的数量
+        var pageNum2;        //总页数
+        var currPageNum2 ;   //当前页数
+
+        //页面标签变量
+        var blockTable2;
+        var preSpan2;
+        var firstSpan2;
+        var nextSpan2;
+        var lastSpan2;
+        var pageNumSpan2;
+        var currPageSpan2;
 
 
         window.onload=function(){
@@ -141,42 +155,34 @@ $list = @mysqli_fetch_row($result1);
             tableNode.setAttribute("id","table");
             tableNode.setAttribute("cellspacing","0");
             tableNode.setAttribute("class","table table-striped");
-            <?php $a=0;?>
-            
             //上面确定了 现在开始创建
-
-            <?php for($x=$list[7];$x> 0;$x--){ ?>
-            <?php
-            $sql = "SELECT * FROM cognition_score where username = '$id' AND cardinal = '$x'";
-            $result = mysqli_query($link,$sql);
-            $cog_score_sql = @mysqli_fetch_row($result);
-            ?>
+            <?php for($x=1;$x<= $num_rows;$x++){ ?>
+            <?php $row = mysqli_fetch_array($result4);?>
+            <?php if($row[0]==$id){ ?>
+                document.getElementById("you").innerHTML='<?php echo "你的排名為<font color=\"red\">$x</font>/$num_rows" ?>';
+            <?php } ?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
-            tdNode1.innerHTML="認知";
+            tdNode1.innerHTML='<?php echo "$x"; ?>';
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<?php echo "$cog_score_sql[1]"; ?>';
+            tdNode2.innerHTML='<?php echo "$row[2]" ?>';
             var tdNode3=trNode.insertCell();
-            tdNode3.innerHTML='<?php echo "$cog_score_sql[2]"; ?>';
+            tdNode3.innerHTML='<?php echo "$row[10]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<?php echo "$cog_score_sql[3]"; ?>';
-            var tdNode5=trNode.insertCell();
-            tdNode5.innerHTML="<a href='#' <?php echo "onclick='go($x)'";  ?>>進入!</a>";
+            tdNode4.innerHTML='<?php echo "$row[5]"; ?>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
             var header = table.createTHead();
             var row = header.insertRow(0);
             var cell0 = row.insertCell(0);
-            cell0.innerHTML = "<b>科目</b>";
+            cell0.innerHTML = "<b>排名</b>";
             var cell1 = row.insertCell(1);
-            cell1.innerHTML = "<b>次數</b>";
+            cell1.innerHTML = "<b>暱稱</b>";
             var cell2 = row.insertCell(2);            
-            cell2.innerHTML = "<b>分數</b>";
+            cell2.innerHTML = "<b>平均分數</b>";
             var cell3 = row.insertCell(3);
-            cell3.innerHTML = "<b>日期</b>";
-            var cell4 = row.insertCell(4);
-            cell4.innerHTML = "<input type='hidden' name='cog_data' id='cog_data'><b></b>";
+            cell3.innerHTML = "<b>作答次數</b>";
             blockTable = document.getElementById("table");
             preSpan = document.getElementById("spanPre");
             firstSpan = document.getElementById("spanFirst");
@@ -196,23 +202,82 @@ $list = @mysqli_fetch_row($result1);
             firstPage();
             $(function() {
         /* For zebra striping */
-            $("table tr:nth-child(odd)").addClass("odd-row");
+        $("table tr:nth-child(odd)").addClass("odd-row");
         /* For cell text alignment */
         $("table td:first-child, table th:first-child").addClass("first");
         /* For removing the last border */
         $("table td:last-child, table th:last-child").addClass("last");
-});
-        };
+         });
+
+            tableNode2=document.createElement("table");//获得对象
+            tableNode2.setAttribute("id","table2");
+            tableNode2.setAttribute("cellspacing","0");
+            tableNode2.setAttribute("class","table table-striped");
+            //上面确定了 现在开始创建
+            <?php for($u=1;$u<= $num_rows25;$u++){ ?>
+            <?php $rowy = mysqli_fetch_array($result55);?>
+            <?php if($rowy[0]==$id){ ?>
+                document.getElementById("you2").innerHTML='<?php echo "你的排名為<font color=\"red\">$u</font>/$num_rows25" ?>';
+            <?php } ?>
+            var trNode2=tableNode2.insertRow();
+            var tdNode12=trNode2.insertCell();
+            tdNode12.innerHTML='<?php echo "$u"; ?>';
+            var tdNode22=trNode2.insertCell();
+            tdNode22.innerHTML='<?php echo "$rowy[2]" ?>';
+            var tdNode32=trNode2.insertCell();
+            tdNode32.innerHTML='<?php echo "$rowy[10]"; ?>';
+            var tdNode42=trNode2.insertCell();
+            tdNode42.innerHTML='<?php echo "$rowy[5]"; ?>';
+            <?php } ?>
+            document.getElementById("div2").appendChild(tableNode2);//添加到那个位置
+            var table2 = document.getElementById("table2");
+            var header2 = table2.createTHead();
+            var row2 = header2.insertRow(0);
+            var cell02 = row2.insertCell(0);
+            cell02.innerHTML = "<b>排名</b>";
+            var cell12 = row2.insertCell(1);
+            cell12.innerHTML = "<b>暱稱</b>";
+            var cell22 = row2.insertCell(2);            
+            cell22.innerHTML = "<b>平均分數</b>";
+            var cell32 = row2.insertCell(3);
+            cell32.innerHTML = "<b>作答次數</b>";
+            blockTable2 = document.getElementById("table2");
+            preSpan2 = document.getElementById("spanPre2");
+            firstSpan2 = document.getElementById("spanFirst2");
+            nextSpan2 = document.getElementById("spanNext2");
+            lastSpan2 = document.getElementById("spanLast2");
+            pageNumSpan2 = document.getElementById("spanTotalPage2");
+            currPageSpan2 = document.getElementById("spanPageNum2");
+
+            numCount2 = document.getElementById("table2").rows.length - 1;       //取table的行数作为数据总数量（减去标题行1）
+            columnsCounts2 = blockTable2.rows[0].cells.length;
+            pageCount2 = 10;
+            pageNum2 = parseInt(numCount2/pageCount2);
+            if(0 != numCount2%pageCount2){
+                pageNum2 += 1;
+            }
+
+            firstPage2();
+            $(function() {
+        /* For zebra striping */
+        $("table tr:nth-child(odd)").addClass("odd-row");
+        /* For cell text alignment */
+        $("table td:first-child, table th:first-child").addClass("first");
+        /* For removing the last border */
+        $("table td:last-child, table th:last-child").addClass("last");
+         });
+    };
     </script>
 </head>
 <body align="center">
-    
+<div data-role="page" id="one">
 <div style="width:100%;">
-        <span style="float: right;"><a href="Topic.php">回到首頁</a></span>
+        <span style="float: right;"><a href="Topic.php" data-ajax="false">回到首頁</a></span>
 </div>
-<div class="container" align="center" >
-    <h2 style="margin-top: 2%">作答紀錄</h2>
-<form action="cog_before_past_record.php" method="post" name="form1" data-ajax="false">
+<div class="container" align="center">
+    <h2 style="margin-top: 2%">平均分數排行榜</h2>
+    <h3 id="you"></h3>
+<form action="past_record.php" method="post" name="form1" data-ajax="false">
 <div id="div1">
 </div>
 </form>
@@ -223,7 +288,30 @@ $list = @mysqli_fetch_row($result1);
         <span id="spanLast">最後一頁</span>  
         第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
 </div>
-
+<a href="#two">按照作答次數排名</a>
+</div>
+</div>
+<div data-role="page" id="two">
+<div style="width:100%;">
+        <span style="float: right;"><a href="Topic.php" data-ajax="false">回到首頁</a></span>
+</div>
+<div class="container" align="center">
+    <h2 style="margin-top: 2%">作答次數排行榜</h2>
+    <h3 id="you2"></h3>
+<form action="past_record.php" method="post" name="form1" data-ajax="false">
+<div id="div2">
+</div>
+</form>
+<div id="pagiDiv" align="center" style="width:40%">
+        <span id="spanFirst2">第一頁</span>  
+        <span id="spanPre2">上一頁</span>  
+        <span id="spanNext2">下一頁</span>  
+        <span id="spanLast2">最後一頁</span>  
+        第 <span id="spanPageNum2"></span> 頁/共 <span id="spanTotalPage2"></span> 頁
+</div>
+<a href="#one">按照平均分數排名</a>
+<b style=""></b>
+</div>
 </div>
 </body>
 </html>

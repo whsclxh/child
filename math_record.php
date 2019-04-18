@@ -111,9 +111,9 @@ $list = @mysqli_fetch_row($result1);
     <script type="text/javascript" src="pagination.js"></script>
     <script type="text/javascript">
         function go(v){
-        var a = document.getElementById("cog_data");                                     //設置input value
-        a.value = v;
-        document.form1.submit();
+            var a = document.getElementById("math_data");                                         //設置input value
+            a.value = v;
+            document.form1.submit();
         }
     </script>
     <script type="text/javascript">
@@ -145,21 +145,21 @@ $list = @mysqli_fetch_row($result1);
             
             //上面确定了 现在开始创建
 
-            <?php for($x=$list[7];$x> 0;$x--){ ?>
+            <?php for($x=$list[5];$x> 0;$x--){ ?>
             <?php
-            $sql = "SELECT * FROM cognition_score where username = '$id' AND cardinal = '$x'";
+            $sql = "SELECT * FROM math_score where username = '$id' AND cardinal = '$x'";
             $result = mysqli_query($link,$sql);
-            $cog_score_sql = @mysqli_fetch_row($result);
+            $score_sql = @mysqli_fetch_row($result);
             ?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
-            tdNode1.innerHTML="認知";
+            tdNode1.innerHTML="數學";
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<?php echo "$cog_score_sql[1]"; ?>';
+            tdNode2.innerHTML='<?php echo "$score_sql[1]"; ?>';
             var tdNode3=trNode.insertCell();
-            tdNode3.innerHTML='<?php echo "$cog_score_sql[2]"; ?>';
+            tdNode3.innerHTML='<?php echo "$score_sql[2]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<?php echo "$cog_score_sql[3]"; ?>';
+            tdNode4.innerHTML='<?php echo "$score_sql[3]"; ?>';
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML="<a href='#' <?php echo "onclick='go($x)'";  ?>>進入!</a>";
             <?php } ?>
@@ -176,7 +176,7 @@ $list = @mysqli_fetch_row($result1);
             var cell3 = row.insertCell(3);
             cell3.innerHTML = "<b>日期</b>";
             var cell4 = row.insertCell(4);
-            cell4.innerHTML = "<input type='hidden' name='cog_data' id='cog_data'><b></b>";
+            cell4.innerHTML = "<input type='hidden' name='math_data' id='math_data'><b></b>";
             blockTable = document.getElementById("table");
             preSpan = document.getElementById("spanPre");
             firstSpan = document.getElementById("spanFirst");
@@ -206,13 +206,12 @@ $list = @mysqli_fetch_row($result1);
     </script>
 </head>
 <body align="center">
-    
 <div style="width:100%;">
         <span style="float: right;"><a href="Topic.php">回到首頁</a></span>
 </div>
 <div class="container" align="center" >
     <h2 style="margin-top: 2%">作答紀錄</h2>
-<form action="cog_before_past_record.php" method="post" name="form1" data-ajax="false">
+<form action="math_before_past_record.php" method="post" name="form1" data-ajax="false">
 <div id="div1">
 </div>
 </form>
