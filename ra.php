@@ -59,7 +59,8 @@ $test10=getRandomArray(0,100,8);
 $test10[8]=$test10[0]+$test10[1]+$test10[2]+$test10[3];
 $test10[9]=($test10[4]*$test10[0]+$test10[5]*$test10[1]+$test10[6]*$test10[2]+$test10[7]*$test10[3])/$test10[8];
 $sql10 = "insert into users (username, password, nickname, sex, age, math_times, chinese_times, cognition_times, clock_times, total_times, math_average, chinese_average, cognition_average, clock_average ,total_average) values ('test10@test10.com', 'test10test10', 'test10', 'male', '7','test10[0]', 'test10[1]', 'test10[2]', 'test10[3]', 'test10[8]', 'test10[4]', 'test10[5]', 'test10[6]', 'test10[7]', 'test10[9]')";
-		if(mysqli_query($link,$sq1)&&mysqli_query($link,$sq2)&&mysqli_query($link,$sq3)&&mysqli_query($link,$sq4)&&mysqli_query($link,$sq5)&&mysqli_query($link,$sq6)&&mysqli_query($link,$sq7)&&mysqli_query($link,$sq8)&&mysqli_query($link,$sq9)&&mysqli_query($link,$sq10)){
+		if(mysqli_query($link,$sql1)&&mysqli_query($link,$sql2)&&mysqli_query($link,$sql3)&&mysqli_query($link,$sql4)&&mysqli_query($link,$sql5)
+		&&mysqli_query($link,$sql6)&&mysqli_query($link,$sql7)&&mysqli_query($link,$sql8)&&mysqli_query($link,$sql9)&&mysqli_query($link,$sql10)){
     		header("REFRESH:1;url=math.php");
     	}else{
     		echo "<script>alert('題目產生失敗,請洽服務人員!');</script>";
