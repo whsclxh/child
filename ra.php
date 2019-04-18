@@ -18,7 +18,6 @@ function getRandom($minNum,$maxNum){
 	mt_srand((double)microtime()*1000000);
 	return mt_rand($minNum,$maxNum);
 }
-$name=randtext();
 $test1=getRandomArray(0,100,8);
 $test1[8]=$test1[0]+$test1[1]+$test1[2]+$test1[3];
 $test1[9]=($test1[4]*$test1[0]+$test1[5]*$test1[1]+$test1[6]*$test1[2]+$test1[7]*$test1[3])/$test1[8];

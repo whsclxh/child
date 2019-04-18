@@ -695,10 +695,9 @@ require "math_triple_add_function.php";
 		</tr>
 		</table>
 		</div>	
-		<div data-role="footer" style="text-align:center;">
 		<a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
-  		<a href="#math2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
- 		</div>
+  		<a href="#math2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 5%;" data-transition="slide">下一題</a>
+        <br><br>
 		</div>
 		<div data-role="page" id="math2">
 			<h3 align="center">數一數,填入正確的答案,一格1分</h3>
@@ -761,11 +760,11 @@ require "math_triple_add_function.php";
 			</tr>			
 		</table>
 		</div>
-		<div data-role="footer" style="text-align:center;">
-			<a href="#math1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-			<a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
-  			<a href="#math3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
- 		 </div>
+		<br>
+				<a href="#math1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
+				<a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+  				<a href="#math3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
+                <br><br>
 		</div>
 		<div data-role="page" id="math3">
 			<h3 align="center">請選出最小的數字</h3>
@@ -895,11 +894,11 @@ require "math_triple_add_function.php";
   			</tr>
   		</table>
   		</div>
-  		<div data-role="footer" style="text-align:center;">
-			<a href="#math3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-			<a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
-  			<a href="#math5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
- 		 </div>
+  		<br>
+				<a href="#math3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
+				<a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+  				<a href="#math5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
+                <br><br>
 		</div>
 		<div data-role="page" id="math5">
 			<h3 align="center">請你加加看有多少?</h3>
@@ -1009,10 +1008,9 @@ require "math_triple_add_function.php";
 			</tr>
 		</table>
 		</div>
-		<div data-role="footer" style="text-align:center;">
-			<a href="#math4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-			<a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
- 		 </div>
+		<br>
+				<a href="#math4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
+				<a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
 		</div>
 	</form>
 </body>
