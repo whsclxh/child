@@ -1,0 +1,69 @@
+.choose_border{
+     margin: auto;
+     width: 75%;
+     border:1px solid; padding:5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-style: dashed;
+     border-width: 3px;
+     border-color: #FFCCCC;
+}
+.choose_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
+.choose_oddtr{background-color: #c8fded;}
+.choose_eventr{background-color: #e7fd6d;}
+.sub_border{
+     margin: auto;
+     width: 83%;
+     border:1px solid; padding:5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-style: dashed;
+     border-width: 3px;
+     border-color: #FFCCCC;
+}
+.sub_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
+.sub_oddtr{background-color: #FFE4E1;}
+.sub_eventr{background-color: #E6E6FA}
+.big_border{
+     margin: auto;
+     width: 33%;
+     border:1px solid; padding:5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-style: dashed;
+     border-width: 3px;
+     border-color: #FFCCCC;
+}
+.big_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
+.big_oddtd{background-color: #fffff0;}
+.big_eventd{background-color: #f0fff0;}
+.multistage_border{
+     margin: auto;
+     width: 32%;
+     border:1px solid; padding:5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-style: dashed;
+     border-width: 3px;
+     border-color: #FFCCCC;
+}
+.multistage_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
+.add_border{
+     margin: auto;
+     width: 80%;
+     border:1px solid; padding:5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-style: dashed;
+     border-width: 3px;
+     border-color: #FFCCCC;
+}
+.add_table_odd{border:1px solid #669999; width: 100%; border-collapse:collapse; background-color: #c8fded;}
+.add_table_even{border:1px solid #669999; width: 100%; border-collapse:collapse; background-color: #e7fd6d;}
+.add_table_space{width: 2%;}
+.add_table_picture{width: 20%;}
