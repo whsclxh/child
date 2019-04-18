@@ -399,8 +399,21 @@ require "math_triple_add_function.php";
 </script>
 <link rel="stylesheet" type="text/css" href="css/math_finish.css">
 <style type="text/css">
-	div.ui-footer.ui-bar-inherit{
-		background-color: #FFFFFF;
+.ui-page{
+    background: #ffeda9 url(img/blue.jpg) no-repeat !important;
+    background-size: cover !important;
+}
+.ui-btn{
+    display: inline !important;
+}
+.ui-mobile .ui-page-active {
+   overflow-x: visible !important;
+}
+.ui-mobile, .ui-mobile body{
+    height: 100% !important;
+}
+.ui-checkbox input, .ui-radio input{
+    position: relative !important;
 }
 </style>
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
@@ -484,7 +497,7 @@ require "math_triple_add_function.php";
 </table>
 </div>
 <br>
-	<a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+	<a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
   	<a href="#math_anwser2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 5%;" data-transition="slide">下一題</a>
     <br><br>
 </div>
@@ -604,7 +617,7 @@ require "math_triple_add_function.php";
 </div>
 <br>
 		<a href="#math_anwser1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-		<a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+		<a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
   		<a href="#math_anwser3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
         <br><br>
 	</div>
@@ -691,7 +704,7 @@ require "math_triple_add_function.php";
 	</div>
 	<br>
 		<a href="#math_anwser2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-		<a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+		<a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
   		<a href="#math_anwser4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
 	</div>
 	<div data-role="page" id="math_anwser4" align="center">
@@ -972,7 +985,7 @@ require "math_triple_add_function.php";
 			</tr>
 		</table>
 		</div>
-		<<br>
+		<br>
         <a href="#math_anwser4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
         <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
 	</div>
