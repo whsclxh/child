@@ -620,7 +620,7 @@ require "math_triple_add_function.php";
 <link rel="stylesheet" type="text/css" href="css/math.css">
 <style type="text/css">
 .ui-page{
-    background: url(img/lively3.jpg) no-repeat !important;
+    background: url(img/pure.png) no-repeat !important;
     background-size: cover !important;
 }
 .ui-btn{
