@@ -1,0 +1,14 @@
+.choose_border{
+     margin: auto;
+     width: 70%;
+     border:1px solid; padding:5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-style: dashed;
+     border-width: 3px;
+     border-color: #FFCCCC;
+}
+.choose_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
+.choose_oddtr{background-color: #c8fded;}
+.choose_eventr{background-color: #e7fd6d;}
