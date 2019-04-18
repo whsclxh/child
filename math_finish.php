@@ -394,8 +394,21 @@ require "math_triple_add_function.php";
 	}
 </script>
 <style type="text/css">
-	div.ui-footer.ui-bar-inherit{
-		background-color: #FFFFFF;
+.ui-page{
+    background: #ffeda9 url(img/blue.jpg) no-repeat !important;
+    background-size: cover !important;
+}
+.ui-btn{
+    display: inline !important;
+}
+.ui-mobile .ui-page-active {
+   overflow-x: visible !important;
+}
+.ui-mobile, .ui-mobile body{
+    height: 100% !important;
+}
+.ui-checkbox input, .ui-radio input{
+    position: relative !important;
 }
 </style>
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
@@ -412,7 +425,7 @@ require "math_triple_add_function.php";
 		<a href="#math_anwser1" class="ui-btn" style="width: 10%;" data-transition="slide">來對答案吧!</a>
 	</div>	
 </div>
-<div data-role="page" id="math_anwser1">
+<div data-role="page" id="math_anwser1" align="center">
 <h3 align="center" style="color: red">本大題拿了<?php echo "$math_choose_sql[2]"; ?>/20分</h3>
 <h3 align="center">請選擇正確的數量</h3>
 <div class="choose_border">
@@ -479,12 +492,12 @@ require "math_triple_add_function.php";
 </tr>	
 </table>
 </div>
-<div data-role="footer" style="text-align:center;">
-            <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">回到首頁</a>
-            <a href="#math_anwser2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
-        </div>
+	<br>
+	<a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+  	<a href="#math_anwser2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 5%;" data-transition="slide">下一題</a>
+    <br><br>		
 </div>
-	<div data-role="page" id="math_anwser2">
+	<div data-role="page" id="math_anwser2" align="center">
 	<h3 align="center" style="color: red">本大題拿了<?php echo "$math_add_sub_sql[2]"; ?>/20分</h3>
 	<h3 align="center">數一數,填入正確的答案,一格1分</h3>
 	<div class="sub_border">
@@ -598,13 +611,13 @@ require "math_triple_add_function.php";
 	</tr>
 </table>
 </div>
-<div data-role="footer" style="text-align:center;">
-        <a href="#math_anwser1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-        <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
-        <a href="#math_anwser3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
- </div>
+ <br>
+		<a href="#math_anwser1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
+		<a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+  		<a href="#math_anwser3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
+        <br><br>
 	</div>
-	<div data-role="page" id="math_anwser3">
+	<div data-role="page" id="math_anwser3" align="center">
 		<h3 align="center" style="color: red">本大題拿了<?php echo "$math_big_small_sql[2]"; ?>/20分</h3>
 		<h3 align="center">請選出最小的數字</h3>
 		<div class="big_border">
@@ -685,13 +698,12 @@ require "math_triple_add_function.php";
 		</tr>
 	</table>
 	</div>
-	<div data-role="footer" style="text-align:center;">
-        <a href="#math_anwser2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
-        <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
-        <a href="#math_anwser4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
- </div>
+	<br>
+		<a href="#math_anwser2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
+		<a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+  		<a href="#math_anwser4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
 	</div>
-	<div data-role="page" id="math_anwser4">
+	<div data-role="page" id="math_anwser4" align="center">
 	<h3 align="center" style="color: red">本大題拿了<?php echo "$math_multistage[2]"; ?>/20分</h3>
 	<h3 align="center">算一算,空格裡的數字是多少,一格1分</h3>
 	<div class="multistage_border">
@@ -792,11 +804,11 @@ require "math_triple_add_function.php";
 	</tr>
 </table>
 </div>
-<div data-role="footer" style="text-align:center;">
+<br>
         <a href="#math_anwser3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
         <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
         <a href="#math_anwser5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
- </div>
+
 	</div>
 	<div data-role="page" id="math_anwser5">
 		<h3 align="center" style="color: red">本大題拿了<?php echo "$math_triple_add_sql[2]"; ?>/20分</h3>
@@ -970,9 +982,8 @@ require "math_triple_add_function.php";
 			</tr>
 		</table>
 		</div>
-		<div data-role="footer" style="text-align:center;">
+		<br>
         <a href="#math_anwser4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 3%;" data-transition="slide" data-direction="reverse">上一題</a>
         <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
- </div>
 	</div>
 	</form>
