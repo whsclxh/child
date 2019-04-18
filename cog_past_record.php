@@ -329,7 +329,7 @@ require "cog_count_choose_function.php";
 <link rel="stylesheet" type="text/css" href="css/cognition_finish.css">
 <style type="text/css">
 .ui-page{
-    background: url(img/gray.jpg) no-repeat !important;
+    background: url(img/gray.png) no-repeat !important;
     background-size: cover !important;
 }
 .ui-btn{
