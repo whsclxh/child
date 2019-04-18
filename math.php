@@ -619,8 +619,21 @@ require "math_triple_add_function.php";
 </script>
 <link rel="stylesheet" type="text/css" href="css/math.css">
 <style type="text/css">
-	div.ui-footer.ui-bar-inherit{
-		background-color: #FFFFFF;
+.ui-page{
+    background: #ffeda9 url(img/blue.jpg) no-repeat !important;
+    background-size: cover !important;
+}
+.ui-btn{
+    display: inline !important;
+}
+.ui-mobile .ui-page-active {
+   overflow-x: visible !important;
+}
+.ui-mobile, .ui-mobile body{
+    height: 100% !important;
+}
+.ui-checkbox input, .ui-radio input{
+    position: relative !important;
 }
 </style>
 <!DOCTYPE html>
