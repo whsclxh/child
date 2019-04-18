@@ -315,7 +315,7 @@ require "cog_count_choose_function.php";
 </script>
 <style type="text/css">
 .ui-page{
-	background:  url(img/gray.png) no-repeat !important;
+	background:  url(img/pure.png) no-repeat !important;
 	background-size: cover !important;
 }
 .ui-btn{
