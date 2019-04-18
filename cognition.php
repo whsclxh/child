@@ -316,7 +316,6 @@ require "cog_count_choose_function.php";
 <style type="text/css">
 .ui-page{
     background: #ffeda9 url(img/lively.jpg) no-repeat !important;
-    background-size: cover !important;
 }
 .ui-btn{
     display: inline !important;
