@@ -639,7 +639,7 @@ require "math_triple_add_function.php";
 <script type="text/javascript" src="./math_js/math_triple_add.js"></script>
 <body>
 	<form method="post" action="math_before_finish.php" data-ajax="false" name="form1">
-		<div data-role="page" id="math1">
+		<div data-role="page" id="math1" align="center">
 		<h3 align="center">數一數,選出正確的數量,一題4分</h3>
 		<div class="choose_border">
 		<table border="5" align="center" class="choose_table">	
@@ -699,7 +699,7 @@ require "math_triple_add_function.php";
   		<a href="#math2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 5%;" data-transition="slide">下一題</a>
         <br><br>
 		</div>
-		<div data-role="page" id="math2">
+		<div data-role="page" id="math2" align="center">
 			<h3 align="center">數一數,填入正確的答案,一格1分</h3>
 			<div class="sub_border">
 			<table border="1" align="center" class="sub_table">
@@ -766,7 +766,7 @@ require "math_triple_add_function.php";
   				<a href="#math3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
                 <br><br>
 		</div>
-		<div data-role="page" id="math3">
+		<div data-role="page" id="math3" align="center">
 			<h3 align="center">請選出最小的數字</h3>
 			<div class="big_border">
 	<table border="1" align="center" class="big_table">
@@ -838,7 +838,7 @@ require "math_triple_add_function.php";
   			<a href="#math4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
  		 </div>
 		</div>
-		<div data-role="page" id="math4">
+		<div data-role="page" id="math4" align="center">
 			<h3 align="center">算一算,空格裡的數字是多少,一格1分</h3>
 			<div class="multistage_border">
 			<table border="1" style="margin: auto;" class="multistage_table">
@@ -900,7 +900,7 @@ require "math_triple_add_function.php";
   				<a href="#math5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
                 <br><br>
 		</div>
-		<div data-role="page" id="math5">
+		<div data-role="page" id="math5" align="center">
 			<h3 align="center">請你加加看有多少?</h3>
 		<div class="add_border">
 		<table border="1" align="center" class="add_table_odd" rules="rows">
