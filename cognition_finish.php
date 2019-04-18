@@ -325,7 +325,7 @@ require "cog_count_choose_function.php";
 <link rel="stylesheet" type="text/css" href="css/cognition_finish.css">
 <style type="text/css">
 .ui-page{
-    background: #ffeda9 url(img/blue.jpg) no-repeat !important;
+    background: #ffeda9 url(img/lively.jpg) no-repeat !important;
     background-size: cover !important;
 }
 .ui-btn{
@@ -450,8 +450,8 @@ require "cog_count_choose_function.php";
                 <td style="text-align: center;"><input id="anw_cog_count_choose_q4" name="anw_cog_count_choose_q4" type="radio" disabled data-role="none"<?php if($question1[9]>$question1[8]) echo "checked=checked" ?>></td>
             </tr>
         </table>
-        <br>
     </div>
+    <br>
         <div class="count_sexyborder">
         <table border="1" width="60%" align="center" class="count_headertable">
             <tr class="count_oddtr">

@@ -10,8 +10,8 @@
      border-color: #FFCCCC;
 }
 .choose_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
-.choose_oddtr{background-color: #c8fded;}
-.choose_eventr{background-color: #e7fd6d;}
+.choose_oddtr{background-color: #fffaf0;}
+.choose_eventr{background-color: #f5f5f5;}
 .sub_border{
      margin: auto;
      width: 83%;
@@ -24,8 +24,8 @@
      border-color: #FFCCCC;
 }
 .sub_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
-.sub_oddtr{background-color: #FFE4E1;}
-.sub_eventr{background-color: #E6E6FA}
+.sub_oddtr{background-color: #f5fffa;}
+.sub_eventr{background-color: #faf0e6;}
 .big_border{
      margin: auto;
      width: 33%;
@@ -39,7 +39,7 @@
 }
 .big_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
 .big_oddtd{background-color: #fffff0;}
-.big_eventd{background-color: #f0fff0;}
+.big_eventd{background-color: #E8FFFF;}
 .multistage_border{
      margin: auto;
      width: 32%;
@@ -63,7 +63,7 @@
      border-width: 3px;
      border-color: #FFCCCC;
 }
-.add_table_odd{border:1px solid #669999; width: 100%; border-collapse:collapse; background-color: #c8fded;}
-.add_table_even{border:1px solid #669999; width: 100%; border-collapse:collapse; background-color: #e7fd6d;}
+.add_table_odd{border:1px solid #669999; width: 100%; border-collapse:collapse; background-color: #F2FFFF;}
+.add_table_even{border:1px solid #669999; width: 100%; border-collapse:collapse; background-color: #FFF7E8;}
 .add_table_space{width: 2%;}
 .add_table_picture{width: 20%;}
