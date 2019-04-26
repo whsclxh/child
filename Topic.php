@@ -271,7 +271,7 @@ $math_sq2 = "SELECT * FROM math_score where username = '$id' and cardinal='$math
 $math_a_row = @mysqli_fetch_row($math_result2);
 ?>
 <script type="text/javascript">
-<?php alert($cog_a) ?>
+<?php alert($cog_a); ?>
 	function go_cognition(){
 <?php if($cog_a=='0'){ ?>
 	document.location.href="cognitioncounter.php";
