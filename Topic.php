@@ -273,7 +273,10 @@ $math_a_row = @mysqli_fetch_row($math_result2);
 <script type="text/javascript">
 	function go_cognition(){
 <?php if($cog_a_row[1]!=$cog_a){ ?>
-	if (confirm('要繼續作答上次未提交的題目嗎?')) {
+<?php if($cog_a_row[1]!='0'){ ?>
+	document.location.href="Topic.php";
+<? } ?>
+	else (confirm('要繼續作答上次未提交的題目嗎?')) {
 		<?php $_SESSION['cognition_times'] = $cog_a;?>
         document.location.href="cognition.php";
 } else {
@@ -293,7 +296,7 @@ function go_math(){
 <?php if($math_a_row[1]!=$math_a){ ?>
 	if (confirm('要繼續作答上次未提交的題目嗎?')) {
 		<?php $_SESSION['math_times'] = $math_a;?>
-        document.location.href="cognition.php";
+        document.location.href="math.php";
 } else {
     if (confirm('重新作答會使上次未送出資料以0分計算,您確定嗎?')) {
     	<?php $_SESSION['math_times'] = $math_a;?>
