@@ -271,8 +271,9 @@ $math_sq2 = "SELECT * FROM math_score where username = '$id' and cardinal='$math
 $math_a_row = @mysqli_fetch_row($math_result2);
 ?>
 <script type="text/javascript">
+<?php alert($cog_a) ?>
 	function go_cognition(){
-<?php if($cog_a_row[1]=='0'){ ?>
+<?php if($cog_a=='0'){ ?>
 	document.location.href="cognitioncounter.php";
 <?php }else if($cog_a_row[1]!=$cog_a){ ?>
 	if (confirm('要繼續作答上次未提交的題目嗎?')) {
@@ -292,7 +293,7 @@ $math_a_row = @mysqli_fetch_row($math_result2);
 <?php } ?>	
 }
 function go_math(){
-<?php if($math_a_row[1]=='0'){ ?>
+<?php if($math_a=='0'){ ?>
 	document.location.href="mathcounter.php";
 <?php }else if($math_a_row[1]!=$math_a){ ?>
 	if (confirm('要繼續作答上次未提交的題目嗎?')) {
