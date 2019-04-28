@@ -858,7 +858,7 @@ require "math_triple_add_function.php";
 			<h3 align="center">算一算,空格裡的數字是多少,一格1分</h3>
 			<div class="multistage_border">
 			<table border="1" style="margin: auto;" class="multistage_table">
-			<tr>
+			<tr class="multistage">
 				<td class="multistage">
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage1_1" id="multistage1_1" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage1_2" id="multistage1_2" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
@@ -868,7 +868,7 @@ require "math_triple_add_function.php";
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage1_6" id="multistage1_6" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   				</td>
   			</tr>
-  			<tr>
+  			<tr class="multistage">
   				<td class="multistage">
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage2_1" id="multistage2_1" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage2_2" id="multistage2_2" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
@@ -878,7 +878,7 @@ require "math_triple_add_function.php";
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage2_6" id="multistage2_6" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   				</td>
   			</tr>
-  			<tr>
+  			<tr class="multistage">
   				<td class="multistage">
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage3_1" id="multistage3_1" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage3_2" id="multistage3_2" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
@@ -888,7 +888,7 @@ require "math_triple_add_function.php";
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage3_6" id="multistage3_6" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   				</td>
   			</tr>
-  			<tr>
+  			<tr class="multistage">
   				<td class="multistage">
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage4_1" id="multistage4_1" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage4_2" id="multistage4_2" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
@@ -898,7 +898,7 @@ require "math_triple_add_function.php";
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage4_6" id="multistage4_6" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   				</td>
   			</tr>
-  			<tr>
+  			<tr class="multistage">
   				<td class="multistage">
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage5_1" id="multistage5_1" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage5_2" id="multistage5_2" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
