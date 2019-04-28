@@ -1,0 +1,22 @@
+@media screen and (min-width:576px) { /*Small devices*/
+   
+}
+@media screen and (min-width:768px) { /*Medium devices*/
+    
+}
+@media screen and (min-width:992px) { /*Large devices*/
+    .choose_border{
+        width: auto;
+    }
+    .choose{
+        font-size: 20px;
+    }
+}
+@media screen and (min-width:1200px) { /*Extra large devices*/
+    .choose_border{
+        width: 85%;
+    }
+    .choose{
+        font-size: 30px;
+    }
+}
