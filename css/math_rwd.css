@@ -27,6 +27,9 @@
     .multistage{
         margin: auto;
     }
+    .add_border{
+        width: 90%;
+    }
 }
 @media screen and (min-width:1200px) { /*Extra large devices*/
     .choose_border{
@@ -49,5 +52,8 @@
     }
     .multistage{
         margin: auto;
+    }
+    .add_border{
+        width: 80%;
     } 
 }
