@@ -654,7 +654,7 @@ require "math_triple_add_function.php";
 <body>
 	<form method="post" action="math_before_finish.php" data-ajax="false" name="form1">
 		<div data-role="page" id="math1" align="center">
-		<h3 align="center">數一數,選出正確的數量,一題4分</h3>
+		<div class="choose_header"><h3 align="center">數一數,選出正確的數量,一題4分</h3></div>
 		<div class="choose_border">
 		<table border="5" align="center" class="choose_table">	
 		<tr class="choose_oddtr">

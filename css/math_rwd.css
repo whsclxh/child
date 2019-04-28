@@ -5,14 +5,23 @@
     
 }
 @media screen and (min-width:992px) { /*Large devices*/
+    .choose_header{
+        margin-top:5%;
+        font-size: 35px;
+    }
     .choose_border{
         width: auto;
+        margin-top: 10%;
     }
     .choose{
        font-size: 20px !important;
     }
 }
 @media screen and (min-width:1200px) { /*Extra large devices*/
+    .choose_header{
+        margin-top:8%;
+        font-size: 40px;
+    }
     .choose_border{
         width: 75%;
     }
