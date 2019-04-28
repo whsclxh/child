@@ -14,7 +14,7 @@ function choose_pictures(x,y){
     	'img/fruit/tomato.png',
 	];
 		for(var i=1;i<=y;i++){
-			document.write('<img src="'+imgurl[x]+'" width=65px; height=65px;>');
+			document.write('<img class="im" src="'+imgurl[x]+'" width=65px; height=65px;>');
 		}
 	}
 function choose_write(x){
