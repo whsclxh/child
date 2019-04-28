@@ -25,7 +25,6 @@ include("mysql_connect.php");
 }
 .right {
     float: right;
-    width: 30%;
     text-align: right;
     font-size: 3vmin;
     padding-right: 2%;
