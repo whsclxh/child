@@ -432,9 +432,9 @@ require "math_triple_add_function.php";
 <div class="choose_border">
 <table border="1" align="center" class="choose_table">		
 <tr class="choose_one">	
-<th style="text-align:center">圖</th>		
-<th style="text-align:center">原作答</th>
-<th>正確答案</th>	
+<th class="choose1" style="text-align:center">圖</th>		
+<th class="choose2" style="text-align:center">原作答</th>
+<th class="choose3">正確答案</th>	
 </tr>	
 <tr class="choose_oddtr">
 <td class="choose1"><script>anw_math_choose_pictures(all_question.math_choose[0].question_picture,all_question.math_choose[0].question_quantity);</script></td>
