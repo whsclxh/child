@@ -21,6 +21,12 @@
     .big_border{
         width:50%;
     }
+    .multistage_border{
+        width: 48%;
+    }
+    .multistage{
+        margin: auto;
+    }
 }
 @media screen and (min-width:1200px) { /*Extra large devices*/
     .choose_border{
@@ -37,5 +43,11 @@
     }
     .big_border{
         width:34.5%;
+    }
+    .multistage_border{
+        width: 35.5%;
+    }
+    .multistage{
+        margin: auto;
     } 
 }
