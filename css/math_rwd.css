@@ -31,5 +31,11 @@
     }
     .choose{
        font-size: 30px !important;
+    }
+    .sub_border{
+        width: 83%;
+    }
+    .sub_pic{
+        width:60% !important;
     } 
 }
