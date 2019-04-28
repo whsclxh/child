@@ -18,6 +18,9 @@
     .sub_pic{
         width:50% !important;
     }
+    .big_border{
+        width:50%;
+    }
 }
 @media screen and (min-width:1200px) { /*Extra large devices*/
     .choose_border{
@@ -31,5 +34,8 @@
     }
     .sub_pic{
         width:60% !important;
+    }
+    .big_border{
+        width:34.5%;
     } 
 }
