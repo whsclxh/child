@@ -1,14 +1,16 @@
 @media screen and (min-width:576px) { /*Small devices*/
-    .img{
-        width:35px; 
-        height:35px;
-    }
+   
 }
 @media screen and (min-width:768px) { /*Medium devices*/
     
 }
 @media screen and (min-width:992px) { /*Large devices*/
-    
+    .choose_border{
+        width: auto;
+    }
+    .choose{
+       font-size: 20%;
+    }
 }
 @media screen and (min-width:1200px) { /*Extra large devices*/
     
