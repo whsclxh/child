@@ -721,7 +721,7 @@ require "math_triple_add_function.php";
 			<div class="sub_border">
 			<table border="1" align="center" class="sub_table">
 			<tr class="sub_oddtr">
-				<td><script>add_sub_question_pictures(all_question.math_add_sub[0].question_quantity_info.front,all_question.math_add_sub[0].question_picture_info.front,all_question.math_add_sub[0].question_quantity_info.behind,all_question.math_add_sub[0].question_picture_info.behind);</script></td>
+				<td class="sub_pic"><script>add_sub_question_pictures(all_question.math_add_sub[0].question_quantity_info.front,all_question.math_add_sub[0].question_picture_info.front,all_question.math_add_sub[0].question_quantity_info.behind,all_question.math_add_sub[0].question_picture_info.behind);</script></td>
 				<td valign="middle"><script>add_sub_pictures(all_question.math_add_sub[0].question_picture_info.front);</script> 和 <script>add_sub_pictures(all_question.math_add_sub[0].question_picture_info.behind);add_sub_word(all_question.math_add_sub[0].question_sign)</script>
 					<input id="add_sub_option1_1" name="add_sub_option1_1" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
 				<td><input id="add_sub_option1_2" name="add_sub_option1_2" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
@@ -732,7 +732,7 @@ require "math_triple_add_function.php";
 				</td>
 			</tr>
 			<tr class="sub_eventr">
-				<td><script>add_sub_question_pictures(all_question.math_add_sub[1].question_quantity_info.front,all_question.math_add_sub[1].question_picture_info.front,all_question.math_add_sub[1].question_quantity_info.behind,all_question.math_add_sub[1].question_picture_info.behind);</script></td>
+				<td class="sub_pic"><script>add_sub_question_pictures(all_question.math_add_sub[1].question_quantity_info.front,all_question.math_add_sub[1].question_picture_info.front,all_question.math_add_sub[1].question_quantity_info.behind,all_question.math_add_sub[1].question_picture_info.behind);</script></td>
 				<td valign="middle"><script>add_sub_pictures(all_question.math_add_sub[1].question_picture_info.front);</script> 和 <script>add_sub_pictures(all_question.math_add_sub[1].question_picture_info.behind);add_sub_word(all_question.math_add_sub[1].question_sign)</script>
 					<input id="add_sub_option2_1" name="add_sub_option2_1" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
 				<td><input id="add_sub_option2_2" name="add_sub_option2_2" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
@@ -743,7 +743,7 @@ require "math_triple_add_function.php";
 				</td>
 			</tr>
 			<tr class="sub_oddtr">
-				<td><script>add_sub_question_pictures(all_question.math_add_sub[2].question_quantity_info.front,all_question.math_add_sub[2].question_picture_info.front,all_question.math_add_sub[2].question_quantity_info.behind,all_question.math_add_sub[2].question_picture_info.behind);</script></td>
+				<td class="sub_pic"><script>add_sub_question_pictures(all_question.math_add_sub[2].question_quantity_info.front,all_question.math_add_sub[2].question_picture_info.front,all_question.math_add_sub[2].question_quantity_info.behind,all_question.math_add_sub[2].question_picture_info.behind);</script></td>
 				<td valign="middle"><script>add_sub_pictures(all_question.math_add_sub[2].question_picture_info.front);</script> 和 <script>add_sub_pictures(all_question.math_add_sub[2].question_picture_info.behind);add_sub_word(all_question.math_add_sub[2].question_sign)</script>
 					<input id="add_sub_option3_1" name="add_sub_option3_1" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
 				<td><input id="add_sub_option3_2" name="add_sub_option3_2" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
@@ -754,7 +754,7 @@ require "math_triple_add_function.php";
 				</td>
 			</tr>
 			<tr class="sub_eventr">
-				<td><script>add_sub_question_pictures(all_question.math_add_sub[3].question_quantity_info.front,all_question.math_add_sub[3].question_picture_info.front,all_question.math_add_sub[3].question_quantity_info.behind,all_question.math_add_sub[3].question_picture_info.behind);</script></td>
+				<td class="sub_pic"><script>add_sub_question_pictures(all_question.math_add_sub[3].question_quantity_info.front,all_question.math_add_sub[3].question_picture_info.front,all_question.math_add_sub[3].question_quantity_info.behind,all_question.math_add_sub[3].question_picture_info.behind);</script></td>
 				<td valign="middle"><script>add_sub_pictures(all_question.math_add_sub[3].question_picture_info.front);</script> 和 <script>add_sub_pictures(all_question.math_add_sub[3].question_picture_info.behind);add_sub_word(all_question.math_add_sub[3].question_sign)</script>
 					<input id="add_sub_option4_1" name="add_sub_option4_1" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size:25px;">個</td>
 				<td><input id="add_sub_option4_2" name="add_sub_option4_2" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
@@ -765,7 +765,7 @@ require "math_triple_add_function.php";
 				</td>
 			</tr>
 			<tr class="sub_oddtr">
-				<td><script>add_sub_question_pictures(all_question.math_add_sub[4].question_quantity_info.front,all_question.math_add_sub[4].question_picture_info.front,all_question.math_add_sub[4].question_quantity_info.behind,all_question.math_add_sub[4].question_picture_info.behind);</script></td>
+				<td class="sub_pic"><script>add_sub_question_pictures(all_question.math_add_sub[4].question_quantity_info.front,all_question.math_add_sub[4].question_picture_info.front,all_question.math_add_sub[4].question_quantity_info.behind,all_question.math_add_sub[4].question_picture_info.behind);</script></td>
 				<td valign="middle"><script>add_sub_pictures(all_question.math_add_sub[4].question_picture_info.front);</script> 和 <script>add_sub_pictures(all_question.math_add_sub[4].question_picture_info.behind);add_sub_word(all_question.math_add_sub[4].question_sign)</script>
 					<input id="add_sub_option5_1" name="add_sub_option5_1" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
 				<td><input id="add_sub_option5_2" name="add_sub_option5_2" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
