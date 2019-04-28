@@ -13,5 +13,10 @@
     }
 }
 @media screen and (min-width:1200px) { /*Extra large devices*/
-    
+    .choose_border{
+        width: 75%;
+    }
+    .choose{
+       font-size: 30px !important;
+    } 
 }
