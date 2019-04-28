@@ -4,12 +4,21 @@
 @media screen and (min-width:768px) { /*Medium devices*/
     
 }
-@media screen and (min-width:992px) { /*Large devices*/
+@media screen and (min-width:992px) and (max-width: 1199px)  { /*Large devices*/
     .choose_border{
         width: auto;
     }
     .choose{
         font-size: 15px !important;
+    }
+    .choose1{
+        width: 70%;
+    }
+    .choose2{
+        width: 25%;
+    }
+    .choose3{
+        width: 5%;
     }
 }
 @media screen and (min-width:1200px) { /*Extra large devices*/
