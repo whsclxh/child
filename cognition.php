@@ -332,6 +332,7 @@ require "cog_count_choose_function.php";
 }
 </style>
 <link rel=stylesheet type="text/css" href="css/cognition.css">
+<link rel=stylesheet type="text/css" href="css/cognition_rwd.css">
 <!DOCTYPE html>
 <html lang="en">
 <body>
