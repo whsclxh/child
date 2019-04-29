@@ -413,6 +413,7 @@ require "math_triple_add_function.php";
 </style>
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <link rel="stylesheet" type="text/css" href="css/math_finish.css">
+<link rel="stylesheet" type="text/css" href="css/math_finish_rwd.css">
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" src="math_js/anw_math_choose.js"></script>
@@ -431,64 +432,64 @@ require "math_triple_add_function.php";
 <div class="choose_border">
 <table border="1" align="center" class="choose_table">		
 <tr class="choose_one">	
-<th style="text-align:center">圖</th>		
-<th style="text-align:center">原作答</th>
-<th>正確答案</th>	
+<th class="choose1" style="text-align:center">圖</th>		
+<th class="choose2" style="text-align:center">原作答</th>
+<th class="choose3">正確答案</th>	
 </tr>	
 <tr class="choose_oddtr">
-<td><script>anw_math_choose_pictures(all_question.math_choose[0].question_picture,all_question.math_choose[0].question_quantity);</script></td>
-<td>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option1_1" name="choose1" type="radio" disabled <?php if($math_choose_sql[3]==$math_choose[12]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[0].question_option.first);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option1_2" name="choose1" type="radio" disabled <?php if($math_choose_sql[3]==$math_choose[13]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[0].question_option.second);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option1_3" name="choose1" type="radio" disabled <?php if($math_choose_sql[3]==$math_choose[14]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[0].question_option.third);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option1_4" name="choose1" type="radio" disabled <?php if($math_choose_sql[3]==$math_choose[15]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[0].question_option.fourth);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option1_5" name="choose1" type="radio" disabled <?php if($math_choose_sql[3]==$math_choose[16]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[0].question_option.fifth);</script></label></div>
+<td class="choose1"><script>anw_math_choose_pictures(all_question.math_choose[0].question_picture,all_question.math_choose[0].question_quantity);</script></td>
+<td class="choose2">
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option1_1" name="choose1" type="radio" disabled <?php if($math_choose_sql[3]==$math_choose[12]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[0].question_option.first);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option1_2" name="choose1" type="radio" disabled <?php if($math_choose_sql[36]==$math_choose[13]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[0].question_option.second);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option1_3" name="choose1" type="radio" disabled <?php if($math_choose_sql[3]==$math_choose[14]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[0].question_option.third);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option1_4" name="choose1" type="radio" disabled <?php if($math_choose_sql[3]==$math_choose[15]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[0].question_option.fourth);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option1_5" name="choose1" type="radio" disabled <?php if($math_choose_sql[3]==$math_choose[16]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[0].question_option.fifth);</script></label></div>
 </td>
-<td align="center" style="color: red;"><script type="text/javascript">anw_math_choose_write(all_question.math_choose[0].question_quantity);</script></td>		
+<td class="choose3" align="center" style="color: red;"><script type="text/javascript">anw_math_choose_write(all_question.math_choose[0].question_quantity);</script></td>		
 </tr>
 <tr class="choose_eventr">
-<td><script>anw_math_choose_pictures(all_question.math_choose[1].question_picture,all_question.math_choose[1].question_quantity);</script></td>
-<td>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option2_1" name="choose2" type="radio" disabled <?php if($math_choose_sql[4]==$math_choose[17]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[1].question_option.first);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option2_2" name="choose2" type="radio" disabled <?php if($math_choose_sql[4]==$math_choose[18]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[1].question_option.second);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option2_3" name="choose2" type="radio" disabled <?php if($math_choose_sql[4]==$math_choose[19]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[1].question_option.third);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option2_4" name="choose2" type="radio" disabled <?php if($math_choose_sql[4]==$math_choose[20]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[1].question_option.fourth);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option2_5" name="choose2" type="radio" disabled <?php if($math_choose_sql[4]==$math_choose[21]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[1].question_option.fifth);</script></label></div>
+<td class="choose1"><script>anw_math_choose_pictures(all_question.math_choose[1].question_picture,all_question.math_choose[1].question_quantity);</script></td>
+<td class="choose2">
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option2_1" name="choose2" type="radio" disabled <?php if($math_choose_sql[4]==$math_choose[17]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[1].question_option.first);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option2_2" name="choose2" type="radio" disabled <?php if($math_choose_sql[4]==$math_choose[18]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[1].question_option.second);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option2_3" name="choose2" type="radio" disabled <?php if($math_choose_sql[4]==$math_choose[19]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[1].question_option.third);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option2_4" name="choose2" type="radio" disabled <?php if($math_choose_sql[4]==$math_choose[20]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[1].question_option.fourth);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option2_5" name="choose2" type="radio" disabled <?php if($math_choose_sql[4]==$math_choose[21]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[1].question_option.fifth);</script></label></div>
 </td>
-<td align="center" style="color: red;"><script type="text/javascript">anw_math_choose_write(all_question.math_choose[1].question_quantity);</script></td>		
+<td class="choose3" align="center" style="color: red;"><script type="text/javascript">anw_math_choose_write(all_question.math_choose[1].question_quantity);</script></td>		
 </tr>		
 <tr class="choose_oddtr">
-<td><script>anw_math_choose_pictures(all_question.math_choose[2].question_picture,all_question.math_choose[2].question_quantity);</script></td>
-<td>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option3_1" name="choose3" type="radio" disabled <?php if($math_choose_sql[5]==$math_choose[22]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[2].question_option.first);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option3_2" name="choose3" type="radio" disabled <?php if($math_choose_sql[5]==$math_choose[23]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[2].question_option.second);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option3_3" name="choose3" type="radio" disabled <?php if($math_choose_sql[5]==$math_choose[24]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[2].question_option.third);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option3_4" name="choose3" type="radio" disabled <?php if($math_choose_sql[5]==$math_choose[25]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[2].question_option.fourth);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option3_5" name="choose3" type="radio" disabled <?php if($math_choose_sql[5]==$math_choose[26]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[2].question_option.fifth);</script></label></div>
+<td class="choose1"><script>anw_math_choose_pictures(all_question.math_choose[2].question_picture,all_question.math_choose[2].question_quantity);</script></td>
+<td class="choose2">
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option3_1" name="choose3" type="radio" disabled <?php if($math_choose_sql[5]==$math_choose[22]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[2].question_option.first);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option3_2" name="choose3" type="radio" disabled <?php if($math_choose_sql[5]==$math_choose[23]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[2].question_option.second);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option3_3" name="choose3" type="radio" disabled <?php if($math_choose_sql[5]==$math_choose[24]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[2].question_option.third);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option3_4" name="choose3" type="radio" disabled <?php if($math_choose_sql[5]==$math_choose[25]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[2].question_option.fourth);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option3_5" name="choose3" type="radio" disabled <?php if($math_choose_sql[5]==$math_choose[26]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[2].question_option.fifth);</script></label></div>
 </td>
-<td align="center" style="color: red;"><script type="text/javascript">anw_math_choose_write(all_question.math_choose[2].question_quantity);</script></td>		
+<td class="choose3" align="center" style="color: red;"><script type="text/javascript">anw_math_choose_write(all_question.math_choose[2].question_quantity);</script></td>		
 </tr>		
 <tr class="choose_eventr">
-<td><script>anw_math_choose_pictures(all_question.math_choose[3].question_picture,all_question.math_choose[3].question_quantity);</script></td>
-<td>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option4_1" name="choose4" type="radio" disabled <?php if($math_choose_sql[6]==$math_choose[27]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[3].question_option.first);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option4_2" name="choose4" type="radio" disabled <?php if($math_choose_sql[6]==$math_choose[28]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[3].question_option.second);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option4_3" name="choose4" type="radio" disabled <?php if($math_choose_sql[6]==$math_choose[29]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[3].question_option.third);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option4_4" name="choose4" type="radio" disabled <?php if($math_choose_sql[6]==$math_choose[30]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[3].question_option.fourth);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option4_5" name="choose4" type="radio" disabled <?php if($math_choose_sql[6]==$math_choose[31]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[3].question_option.fifth);</script></label></div>
+<td class="choose1"><script>anw_math_choose_pictures(all_question.math_choose[3].question_picture,all_question.math_choose[3].question_quantity);</script></td>
+<td class="choose2">
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option4_1" name="choose4" type="radio" disabled <?php if($math_choose_sql[6]==$math_choose[27]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[3].question_option.first);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option4_2" name="choose4" type="radio" disabled <?php if($math_choose_sql[6]==$math_choose[28]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[3].question_option.second);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option4_3" name="choose4" type="radio" disabled <?php if($math_choose_sql[6]==$math_choose[29]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[3].question_option.third);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option4_4" name="choose4" type="radio" disabled <?php if($math_choose_sql[6]==$math_choose[30]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[3].question_option.fourth);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option4_5" name="choose4" type="radio" disabled <?php if($math_choose_sql[6]==$math_choose[31]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[3].question_option.fifth);</script></label></div>
 </td>
-<td align="center" style="color: red;"><script type="text/javascript">anw_math_choose_write(all_question.math_choose[3].question_quantity);</script></td>		
+<td class="choose3" align="center" style="color: red;"><script type="text/javascript">anw_math_choose_write(all_question.math_choose[3].question_quantity);</script></td>		
 </tr>		
 <tr class="choose_oddtr">	
-<td><script>anw_math_choose_pictures(all_question.math_choose[4].question_picture,all_question.math_choose[4].question_quantity);</script></td>
-<td>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option5_1" name="choose5" type="radio" disabled <?php if($math_choose_sql[7]==$math_choose[32]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[4].question_option.first);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option5_2" name="choose5" type="radio" disabled <?php if($math_choose_sql[7]==$math_choose[33]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[4].question_option.second);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option5_3" name="choose5" type="radio" disabled <?php if($math_choose_sql[7]==$math_choose[34]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[4].question_option.third);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option5_4" name="choose5" type="radio" disabled <?php if($math_choose_sql[7]==$math_choose[35]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[4].question_option.fourth);</script></label></div>
-<div style="float: left; width: 20%;"><label style="font-size: 30px"><input data-role="none" id="choose_option5_5" name="choose5" type="radio" disabled <?php if($math_choose_sql[7]==$math_choose[36]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[4].question_option.fifth);</script></label></div>
+<td class="choose1"><script>anw_math_choose_pictures(all_question.math_choose[4].question_picture,all_question.math_choose[4].question_quantity);</script></td>
+<td class="choose2">
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option5_1" name="choose5" type="radio" disabled <?php if($math_choose_sql[7]==$math_choose[32]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[4].question_option.first);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option5_2" name="choose5" type="radio" disabled <?php if($math_choose_sql[7]==$math_choose[33]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[4].question_option.second);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option5_3" name="choose5" type="radio" disabled <?php if($math_choose_sql[7]==$math_choose[34]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[4].question_option.third);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option5_4" name="choose5" type="radio" disabled <?php if($math_choose_sql[7]==$math_choose[35]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[4].question_option.fourth);</script></label></div>
+<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input data-role="none" id="choose_option5_5" name="choose5" type="radio" disabled <?php if($math_choose_sql[7]==$math_choose[36]) echo "checked=checked"  ?>/><script>anw_math_choose_write(all_question.math_choose[4].question_option.fifth);</script></label></div>
 </td>
-<td align="center" style="color: red;"><script type="text/javascript">anw_math_choose_write(all_question.math_choose[4].question_quantity);</script></td>	
+<td class="choose3" align="center" style="color: red;"><script type="text/javascript">anw_math_choose_write(all_question.math_choose[4].question_quantity);</script></td>	
 </tr>	
 </table>
 </div>
@@ -503,26 +504,26 @@ require "math_triple_add_function.php";
 	<div class="sub_border">
 	<table border="1" align="center" class="sub_table">
 	<tr class="sub_one">
-		<th>圖</th>
-		<th>原比較</th>
-		<th>原作答</th>
-		<th>正確比較</th>
-		<th>正確答案</th>
+		<th class="add_sub1">圖</th>
+		<th class="add_sub2">原比較</th>
+		<th class="add_sub3">原作答</th>
+		<th class="add_sub4">正確比較</th>
+		<th class="add_sub5">正確答案</th>
 	</tr>
 	<tr class="sub_oddtr">
-		<td><script>anw_math_add_sub_question_pictures(all_question.math_add_sub[0].question_quantity_info.front,all_question.math_add_sub[0].question_quantity_info.behind,all_question.math_add_sub[0].question_picture_info.front,all_question.math_add_sub[0].question_picture_info.behind);</script></td>
-		<td valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[0].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[0].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[0].question_sign)</script>
+		<td class="add_sub1"><script>anw_math_add_sub_question_pictures(all_question.math_add_sub[0].question_quantity_info.front,all_question.math_add_sub[0].question_quantity_info.behind,all_question.math_add_sub[0].question_picture_info.front,all_question.math_add_sub[0].question_picture_info.behind);</script></td>
+		<td class="add_sub2" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[0].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[0].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[0].question_sign)</script>
 		<input id="add_sub_option1_1" name="add_sub_option1_1" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[3]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">個
 		</td>
-		<td><input id="add_sub_option1_2" name="add_sub_option1_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[4]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
+		<td class="add_sub3"><input id="add_sub_option1_2" name="add_sub_option1_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[4]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option1_3" name="add_sub_option1_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[5]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="add_sub_option1_4" name="add_sub_option1_4" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[6]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option1_5" name="add_sub_option1_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[7]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
-		<td valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[0].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[0].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[0].question_sign)</script>
+		<td class="add_sub4" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[0].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[0].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[0].question_sign)</script>
 		<input id="anw_add_sub_option1_1" name="anw_add_sub_option1_1" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[27]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">個
 		</td>
-		<td>
+		<td class="add_sub5">
 			<input id="anw_add_sub_option1_2" name="anw_add_sub_option1_2" align="center"  type="text"  data-role="none" disabled <?php  if($math_add_sub[12]>$math_add_sub[13]){echo "value='$math_add_sub[12]'"; } else{ echo "value='$math_add_sub[13]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="anw_add_sub_option1_3" name="anw_add_sub_option1_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[28]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="anw_add_sub_option1_4" name="anw_add_sub_option1_4" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[12]>$math_add_sub[13]){ echo "value='$math_add_sub[13]'"; } else{  echo "value='$math_add_sub[12]'";} ?>; style="width: 50px; height: 50px; font-size: 25px;">
@@ -530,19 +531,19 @@ require "math_triple_add_function.php";
 		</td>
 	</tr>
 	<tr class="sub_eventr">
-		<td><script>anw_math_add_sub_question_pictures(all_question.math_add_sub[1].question_quantity_info.front,all_question.math_add_sub[1].question_quantity_info.behind,all_question.math_add_sub[1].question_picture_info.front,all_question.math_add_sub[1].question_picture_info.behind);</script></td>
-		<td valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[1].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[1].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[1].question_sign)</script>
+		<td class="add_sub1"><script>anw_math_add_sub_question_pictures(all_question.math_add_sub[1].question_quantity_info.front,all_question.math_add_sub[1].question_quantity_info.behind,all_question.math_add_sub[1].question_picture_info.front,all_question.math_add_sub[1].question_picture_info.behind);</script></td>
+		<td class="add_sub2" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[1].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[1].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[1].question_sign)</script>
 		<input id="add_sub_option2_1" name="add_sub_option2_1" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[8]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">個
 		</td>
-		<td><input id="add_sub_option2_2" name="add_sub_option2_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[9]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
+		<td class="add_sub3"><input id="add_sub_option2_2" name="add_sub_option2_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[9]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option2_3" name="add_sub_option2_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[10]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="add_sub_option2_4" name="add_sub_option2_4" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[11]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option2_5" name="add_sub_option2_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[12]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
-		<td valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[1].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[1].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[1].question_sign)</script>
+		<td class="add_sub4" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[1].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[1].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[1].question_sign)</script>
 		<input id="anw_add_sub_option2_1" name="anw_add_sub_option2_1" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[29]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">個
 		</td>
-		<td>
+		<td class="add_sub5">
 			<input id="anw_add_sub_option2_2" name="anw_add_sub_option2_2" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[14]>$math_add_sub[15]){ echo "value='$math_add_sub[14]'"; } else{  echo "value='$math_add_sub[15]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="anw_add_sub_option2_3" name="anw_add_sub_option2_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[30]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="anw_add_sub_option2_4" name="anw_add_sub_option2_4" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[14]>$math_add_sub[15]){ echo "value='$math_add_sub[15]'"; } else{  echo "value='$math_add_sub[14]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
@@ -550,19 +551,19 @@ require "math_triple_add_function.php";
 		</td>
 	</tr>
 	<tr class="sub_oddtr">
-		<td><script>anw_math_add_sub_question_pictures(all_question.math_add_sub[2].question_quantity_info.front,all_question.math_add_sub[2].question_quantity_info.behind,all_question.math_add_sub[2].question_picture_info.front,all_question.math_add_sub[2].question_picture_info.behind);</script></td>
-		<td valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[2].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[2].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[2].question_sign)</script>
+		<td class="add_sub1"><script>anw_math_add_sub_question_pictures(all_question.math_add_sub[2].question_quantity_info.front,all_question.math_add_sub[2].question_quantity_info.behind,all_question.math_add_sub[2].question_picture_info.front,all_question.math_add_sub[2].question_picture_info.behind);</script></td>
+		<td class="add_sub2" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[2].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[2].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[2].question_sign)</script>
 		<input id="add_sub_option3_1" name="add_sub_option3_1" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[13]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">個
 		</td>
-		<td><input id="add_sub_option3_2" name="add_sub_option3_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[14]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
+		<td class="add_sub3"><input id="add_sub_option3_2" name="add_sub_option3_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[14]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option3_3" name="add_sub_option3_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[15]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="add_sub_option3_4" name="add_sub_option3_4" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[16]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option3_5" name="add_sub_option3_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[17]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
-		<td valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[2].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[2].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[2].question_sign)</script>
+		<td class="add_sub4" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[2].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[2].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[2].question_sign)</script>
 		<input id="anw_add_sub_option3_1" name="anw_add_sub_option3_1" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[31]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">個
 		</td>
-		<td>
+		<td class="add_sub5">
 			<input id="anw_add_sub_option3_2" name="anw_add_sub_option3_2" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[16]>$math_add_sub[17]){ echo "value='$math_add_sub[16]'"; } else{  echo "value='$math_add_sub[17]'";} ?>style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="anw_add_sub_option3_3" name="anw_add_sub_option3_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[32]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="anw_add_sub_option3_4" name="anw_add_sub_option3_4" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[16]>$math_add_sub[17]){ echo "value='$math_add_sub[17]'"; } else{  echo "value='$math_add_sub[16]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
@@ -570,19 +571,19 @@ require "math_triple_add_function.php";
 		</td>
 	</tr>
 	<tr class="sub_eventr">
-		<td><script>anw_math_add_sub_question_pictures(all_question.math_add_sub[3].question_quantity_info.front,all_question.math_add_sub[3].question_quantity_info.behind,all_question.math_add_sub[3].question_picture_info.front,all_question.math_add_sub[3].question_picture_info.behind);</script></td>
-		<td valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[3].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[3].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[3].question_sign)</script>
+		<td class="add_sub1"><script>anw_math_add_sub_question_pictures(all_question.math_add_sub[3].question_quantity_info.front,all_question.math_add_sub[3].question_quantity_info.behind,all_question.math_add_sub[3].question_picture_info.front,all_question.math_add_sub[3].question_picture_info.behind);</script></td>
+		<td class="add_sub2" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[3].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[3].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[3].question_sign)</script>
 		<input id="add_sub_option4_1" name="add_sub_option1_1" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[18]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">個
 		</td>
-		<td><input id="add_sub_option4_2" name="add_sub_option4_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[19]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
+		<td class="add_sub3"><input id="add_sub_option4_2" name="add_sub_option4_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[19]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option4_3" name="add_sub_option4_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[20]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="add_sub_option4_4" name="add_sub_option4_4" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[21]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option4_5" name="add_sub_option4_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[22]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
-		<td valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[3].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[3].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[3].question_sign)</script>
+		<td class="add_sub4" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[3].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[3].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[3].question_sign)</script>
 		<input id="anw_add_sub_option4_1" name="anw_add_sub_option4_1" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[33]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">個
 		</td>
-		<td>
+		<td class="add_sub5">
 			<input id="anw_add_sub_option4_2" name="anw_add_sub_option4_2" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[18]>$math_add_sub[19]){ echo "value='$math_add_sub[18]'"; } else{  echo "value='$math_add_sub[19]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="anw_add_sub_option4_3" name="anw_add_sub_option4_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[34]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="anw_add_sub_option4_4" name="anw_add_sub_option4_4" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[18]>$math_add_sub[19]){ echo "value='$math_add_sub[19]'"; } else{  echo "value='$math_add_sub[18]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
@@ -590,19 +591,19 @@ require "math_triple_add_function.php";
 		</td>
 	</tr>
 	<tr class="sub_oddtr">
-		<td><script>anw_math_add_sub_question_pictures(all_question.math_add_sub[4].question_quantity_info.front,all_question.math_add_sub[4].question_quantity_info.behind,all_question.math_add_sub[4].question_picture_info.front,all_question.math_add_sub[4].question_picture_info.behind);</script></td>
-		<td valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[4].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[4].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[4].question_sign)</script>
+		<td class="add_sub1"><script>anw_math_add_sub_question_pictures(all_question.math_add_sub[4].question_quantity_info.front,all_question.math_add_sub[4].question_quantity_info.behind,all_question.math_add_sub[4].question_picture_info.front,all_question.math_add_sub[4].question_picture_info.behind);</script></td>
+		<td class="add_sub2" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[4].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[4].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[4].question_sign)</script>
 		<input id="add_sub_option5_1" name="add_sub_option5_1" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[23]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">個
 		</td>
-		<td><input id="add_sub_optio51_2" name="add_sub_option5_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[24]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
+		<td class="add_sub3"><input id="add_sub_optio51_2" name="add_sub_option5_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[24]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option5_3" name="add_sub_option5_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[25]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="add_sub_option5_4" name="add_sub_option5_4" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[26]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option5_5" name="add_sub_option5_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[27]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
-		<td valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[4].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[4].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[4].question_sign)</script>
+		<td class="add_sub4" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[4].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[4].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[4].question_sign)</script>
 		<input id="anw_add_sub_option5_1" name="anw_add_sub_option5_1" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[35]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">個
 		</td>
-		<td>
+		<td class="add_sub5">
 			<input id="anw_add_sub_option5_2" name="anw_add_sub_option5_2" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[20]>$math_add_sub[21]){ echo "value='$math_add_sub[20]'"; } else{  echo "value='$math_add_sub[21]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="anw_add_sub_option5_3" name="anw_add_sub_option5_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[36]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="anw_add_sub_option5_4" name="anw_add_sub_option5_4" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[20]>$math_add_sub[21]){ echo "value='$math_add_sub[21]'"; } else{  echo "value='$math_add_sub[20]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">

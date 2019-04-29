@@ -644,6 +644,7 @@ require "math_triple_add_function.php";
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="./css/math_rwd.css">
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" src="./math_js/math_add_sub.js"></script>
@@ -653,72 +654,74 @@ require "math_triple_add_function.php";
 <body>
 	<form method="post" action="math_before_finish.php" data-ajax="false" name="form1">
 		<div data-role="page" id="math1" align="center">
-		<h3 align="center">數一數,選出正確的數量,一題4分</h3>
+		<div class="choose_header"><h3 align="center">數一數,選出正確的數量,一題4分</h3></div>
 		<div class="choose_border">
 		<table border="5" align="center" class="choose_table">	
 		<tr class="choose_oddtr">
 		<td><script>choose_pictures(all_question.math_choose[0].question_picture,all_question.math_choose[0].question_quantity);</script></td>
 		<td>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option1_1" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.first);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option1_2" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.second);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option1_3" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.third);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option1_4" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.fourth);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option1_5" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.fifth);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option1_1" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.first);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option1_2" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.second);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option1_3" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.third);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option1_4" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.fourth);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option1_5" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.fifth);</script></label></div>
 		</td>
 		</tr>
 		<tr class="choose_eventr">
 		<td><script>choose_pictures(all_question.math_choose[1].question_picture,all_question.math_choose[1].question_quantity);</script></td>
 		<td>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option2_1" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.first);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option2_2" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.second);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option2_3" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.third);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option2_4" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.fourth);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option2_5" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.fifth);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option2_1" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.first);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option2_2" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.second);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option2_3" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.third);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option2_4" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.fourth);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option2_5" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.fifth);</script></label></div>
 		</td>
 		</tr>
 		<tr class="choose_oddtr">
 		<td><script>choose_pictures(all_question.math_choose[2].question_picture,all_question.math_choose[2].question_quantity);</script></td>
 		<td>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option3_1" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.first);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option3_2" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.second);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option3_3" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.third);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option3_4" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.fourth);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option3_5" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.fifth);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option3_1" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.first);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option3_2" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.second);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option3_3" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.third);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option3_4" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.fourth);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option3_5" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.fifth);</script></label></div>
 		</td>
 		</tr>
 		<tr class="choose_eventr">
 		<td><script>choose_pictures(all_question.math_choose[3].question_picture,all_question.math_choose[3].question_quantity);</script></td>
 		<td>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option4_1" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.first);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option4_2" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.second);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option4_3" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.third);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option4_4" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.fourth);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option4_5" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.fifth);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option4_1" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.first);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option4_2" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.second);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option4_3" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.third);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option4_4" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.fourth);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option4_5" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.fifth);</script></label></div>
 		</td>
 		</tr>
 		<tr class="choose_oddtr">
 		<td><script>choose_pictures(all_question.math_choose[4].question_picture,all_question.math_choose[4].question_quantity);</script></td>
 		<td>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option5_1" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.first);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option5_2" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.second);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option5_3" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.third);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option5_4" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.fourth);</script></label></div>
-			<div style="float: left; width: 20%;"><label style="font-size: 30px"><input id="choose_option5_5" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.fifth);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option5_1" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.first);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option5_2" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.second);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option5_3" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.third);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option5_4" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.fourth);</script></label></div>
+			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option5_5" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.fifth);</script></label></div>
 		</td>
 		</tr>
 		</table>
 		</div>	
 		<br>
+		<div class="choose_bottom">
 		<a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
   		<a href="#math2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 5%;" data-transition="slide">下一題</a>
-        <br><br>
+        </div>
+	    <br><br>
 		</div>
 		<div data-role="page" id="math2" align="center">
 			<h3 align="center">數一數,填入正確的答案,一格1分</h3>
 			<div class="sub_border">
 			<table border="1" align="center" class="sub_table">
 			<tr class="sub_oddtr">
-				<td><script>add_sub_question_pictures(all_question.math_add_sub[0].question_quantity_info.front,all_question.math_add_sub[0].question_picture_info.front,all_question.math_add_sub[0].question_quantity_info.behind,all_question.math_add_sub[0].question_picture_info.behind);</script></td>
+				<td class="sub_pic"><script>add_sub_question_pictures(all_question.math_add_sub[0].question_quantity_info.front,all_question.math_add_sub[0].question_picture_info.front,all_question.math_add_sub[0].question_quantity_info.behind,all_question.math_add_sub[0].question_picture_info.behind);</script></td>
 				<td valign="middle"><script>add_sub_pictures(all_question.math_add_sub[0].question_picture_info.front);</script> 和 <script>add_sub_pictures(all_question.math_add_sub[0].question_picture_info.behind);add_sub_word(all_question.math_add_sub[0].question_sign)</script>
 					<input id="add_sub_option1_1" name="add_sub_option1_1" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
 				<td><input id="add_sub_option1_2" name="add_sub_option1_2" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
@@ -729,7 +732,7 @@ require "math_triple_add_function.php";
 				</td>
 			</tr>
 			<tr class="sub_eventr">
-				<td><script>add_sub_question_pictures(all_question.math_add_sub[1].question_quantity_info.front,all_question.math_add_sub[1].question_picture_info.front,all_question.math_add_sub[1].question_quantity_info.behind,all_question.math_add_sub[1].question_picture_info.behind);</script></td>
+				<td class="sub_pic"><script>add_sub_question_pictures(all_question.math_add_sub[1].question_quantity_info.front,all_question.math_add_sub[1].question_picture_info.front,all_question.math_add_sub[1].question_quantity_info.behind,all_question.math_add_sub[1].question_picture_info.behind);</script></td>
 				<td valign="middle"><script>add_sub_pictures(all_question.math_add_sub[1].question_picture_info.front);</script> 和 <script>add_sub_pictures(all_question.math_add_sub[1].question_picture_info.behind);add_sub_word(all_question.math_add_sub[1].question_sign)</script>
 					<input id="add_sub_option2_1" name="add_sub_option2_1" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
 				<td><input id="add_sub_option2_2" name="add_sub_option2_2" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
@@ -740,7 +743,7 @@ require "math_triple_add_function.php";
 				</td>
 			</tr>
 			<tr class="sub_oddtr">
-				<td><script>add_sub_question_pictures(all_question.math_add_sub[2].question_quantity_info.front,all_question.math_add_sub[2].question_picture_info.front,all_question.math_add_sub[2].question_quantity_info.behind,all_question.math_add_sub[2].question_picture_info.behind);</script></td>
+				<td class="sub_pic"><script>add_sub_question_pictures(all_question.math_add_sub[2].question_quantity_info.front,all_question.math_add_sub[2].question_picture_info.front,all_question.math_add_sub[2].question_quantity_info.behind,all_question.math_add_sub[2].question_picture_info.behind);</script></td>
 				<td valign="middle"><script>add_sub_pictures(all_question.math_add_sub[2].question_picture_info.front);</script> 和 <script>add_sub_pictures(all_question.math_add_sub[2].question_picture_info.behind);add_sub_word(all_question.math_add_sub[2].question_sign)</script>
 					<input id="add_sub_option3_1" name="add_sub_option3_1" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
 				<td><input id="add_sub_option3_2" name="add_sub_option3_2" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
@@ -751,7 +754,7 @@ require "math_triple_add_function.php";
 				</td>
 			</tr>
 			<tr class="sub_eventr">
-				<td><script>add_sub_question_pictures(all_question.math_add_sub[3].question_quantity_info.front,all_question.math_add_sub[3].question_picture_info.front,all_question.math_add_sub[3].question_quantity_info.behind,all_question.math_add_sub[3].question_picture_info.behind);</script></td>
+				<td class="sub_pic"><script>add_sub_question_pictures(all_question.math_add_sub[3].question_quantity_info.front,all_question.math_add_sub[3].question_picture_info.front,all_question.math_add_sub[3].question_quantity_info.behind,all_question.math_add_sub[3].question_picture_info.behind);</script></td>
 				<td valign="middle"><script>add_sub_pictures(all_question.math_add_sub[3].question_picture_info.front);</script> 和 <script>add_sub_pictures(all_question.math_add_sub[3].question_picture_info.behind);add_sub_word(all_question.math_add_sub[3].question_sign)</script>
 					<input id="add_sub_option4_1" name="add_sub_option4_1" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size:25px;">個</td>
 				<td><input id="add_sub_option4_2" name="add_sub_option4_2" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
@@ -762,7 +765,7 @@ require "math_triple_add_function.php";
 				</td>
 			</tr>
 			<tr class="sub_oddtr">
-				<td><script>add_sub_question_pictures(all_question.math_add_sub[4].question_quantity_info.front,all_question.math_add_sub[4].question_picture_info.front,all_question.math_add_sub[4].question_quantity_info.behind,all_question.math_add_sub[4].question_picture_info.behind);</script></td>
+				<td class="sub_pic"><script>add_sub_question_pictures(all_question.math_add_sub[4].question_quantity_info.front,all_question.math_add_sub[4].question_picture_info.front,all_question.math_add_sub[4].question_quantity_info.behind,all_question.math_add_sub[4].question_picture_info.behind);</script></td>
 				<td valign="middle"><script>add_sub_pictures(all_question.math_add_sub[4].question_picture_info.front);</script> 和 <script>add_sub_pictures(all_question.math_add_sub[4].question_picture_info.behind);add_sub_word(all_question.math_add_sub[4].question_sign)</script>
 					<input id="add_sub_option5_1" name="add_sub_option5_1" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">個</td>
 				<td><input id="add_sub_option5_2" name="add_sub_option5_2" align="center"  type="text"  data-role="none" style="width: 50px; height: 50px; font-size: 25px;">
@@ -857,53 +860,63 @@ require "math_triple_add_function.php";
 			<table border="1" style="margin: auto;" class="multistage_table">
 			<tr>
 				<td>
+					<div class="multistage">
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage1_1" id="multistage1_1" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage1_2" id="multistage1_2" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage1_3" id="multistage1_3" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage1_4" id="multistage1_4" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage1_5" id="multistage1_5" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage1_6" id="multistage1_6" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
-  				</td>
+                    </div> 
+				</td>
   			</tr>
   			<tr>
   				<td>
+				  <div class="multistage">
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage2_1" id="multistage2_1" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage2_2" id="multistage2_2" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage2_3" id="multistage2_3" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage2_4" id="multistage2_4" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage2_5" id="multistage2_5" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage2_6" id="multistage2_6" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
-  				</td>
+					  </div>  
+				</td>
   			</tr>
   			<tr>
   				<td>
+				  <div class="multistage">
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage3_1" id="multistage3_1" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage3_2" id="multistage3_2" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage3_3" id="multistage3_3" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage3_4" id="multistage3_4" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage3_5" id="multistage3_5" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage3_6" id="multistage3_6" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
-  				</td>
+					  </div>  
+				</td>
   			</tr>
   			<tr>
   				<td>
+				  <div class="multistage">
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage4_1" id="multistage4_1" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage4_2" id="multistage4_2" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage4_3" id="multistage4_3" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage4_4" id="multistage4_4" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage4_5" id="multistage4_5" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage4_6" id="multistage4_6" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
-  				</td>
+					  </div>  
+				</td>
   			</tr>
   			<tr>
   				<td>
+				  <div class="multistage">
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage5_1" id="multistage5_1" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage5_2" id="multistage5_2" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage5_3" id="multistage5_3" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage5_4" id="multistage5_4" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage5_5" id="multistage5_5" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
   					<div style="float: left;"><label><input type="text" data-role="none" name="multistage5_6" id="multistage5_6" style="height: 80px; width: 80px; font-size: 60px; text-align: center;"></label></div>
-  				</td>
+					  </div>  
+				</td>
   			</tr>
   		</table>
   		</div>
