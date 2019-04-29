@@ -137,24 +137,7 @@
 win.DrawClock = DrawClock;
 })(window);
 
-  var h1 = Math.floor(Math.random() * 12) + 1; //第一題的時鐘
-  var m1 = Math.floor(Math.random() * 12) * 5;
-  var h2 = Math.floor(Math.random() * 12) + 1;
-  var m2 = Math.floor(Math.random() * 12) * 5;
-  var h3 = Math.floor(Math.random() * 12) + 1;
-  var m3 = Math.floor(Math.random() * 12) * 5;
-  var h4 = Math.floor(Math.random() * 12) + 1;
-  var m4 = Math.floor(Math.random() * 12) * 5;
 
-
-  var h5 = Math.floor(Math.random() * 12) + 1; //第三題的時鐘
-  var m5 = Math.floor(Math.random() * 12) * 5;
-  var h6 = Math.floor(Math.random() * 12) + 1;
-  var m6 = Math.floor(Math.random() * 12) * 5;
-  var h7 = Math.floor(Math.random() * 12) + 1;
-  var m7 = Math.floor(Math.random() * 12) * 5;
-  var h8 = Math.floor(Math.random() * 12) + 1;
-  var m8 = Math.floor(Math.random() * 12) * 5;
 
 
 
