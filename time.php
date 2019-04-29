@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<?php session_start(); ?>
+<html>
 <head>
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +26,7 @@
 
     table {
       height: 50%;
-      width: 40%;
+      width: 60%;
       margin-top: 100px;
       margin-left: auto;
       margin-right: auto;
@@ -101,13 +100,13 @@ body {
   font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
 }
 
-td,
+/* td,
 th,
 caption {
   font-size: 14px;
-}
+} */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -115,9 +114,9 @@ h5,
 h6 {
   font-weight: normal;
   font-size: 100%;
-}
+} */
 
-address,
+/* address,
 caption,
 cite,
 code,
@@ -128,22 +127,22 @@ th,
 var {
   font-style: normal;
   font-weight: normal;
-}
+} */
 
-a {
+/* a {
   color: #555;
   text-decoration: none;
-}
+} */
 
-a:link, a:visited,a:hover ,a:active{
+/* a:link, a:visited,a:hover ,a:active{
   text-decoration: none;
 
-}
+} */
 
-img {
+/* img {
   border: none;
   vertical-align: middle;
-}
+} */
 
 ol,
 ul,
@@ -181,7 +180,7 @@ html {
 
 /*公共类*/
 
-.fl {
+/* .fl {
   float: left
 }
 
@@ -199,7 +198,7 @@ html {
 
 .ar {
   text-align: right
-}
+} */
 
 .hide {
   display: none
@@ -241,6 +240,7 @@ body {
 
 .answer-list {
     right: 50px;
+    top:25%;
 }
 
  .data-list li {
@@ -262,358 +262,62 @@ body {
 
 
 
-
+/* 
 .hover-g {
     cursor: pointer;
     opacity: 1;
     stroke-width: 4;
-}
+} */
 
 
 
-.result-container {
+/* .result-container {
     padding: 20px;
     border-top: 1px solid #333;
-}
-.result-container li{
+} */
+/* .result-container li{
     font-size: 16px;
     line-height: 35px;
-}
+} */
   
   </style>
 </head>
-
-<script>
-var cart = new Array("img/clock_img/p1.png",	"img/clock_img/p2.png", "img/clock_img/p3.png",	"img/clock_img/p4.png",);
-//打亂陣列
-function randomsort(a, b) {
-return Math.random()>.5 ? -1 : 1;
-//用Math.random()函式生成0~1之間的隨機數與0.5比較，返回-1或1
-}
-cart.sort(randomsort);
-
-var que = new Array("img/clock_img/wakeup.jpg", "img/clock_img/breakfast.jpg","img/clock_img/teach.jpg","img/clock_img/sleep.jpg");
-
-
-
-  
-
-
-window.onload=function(){
-document.getElementById("q3q11");
-document.getElementById("q3q12");
-document.getElementById("q3q13");
-if(f0==0){
-  q3q11.value = h5;
-  q3q12.value = h51;
-  q3q13.value = h52;
-}
-if(f0==1){
-  q3q11.value = h51;
-  q3q12.value = h5;
-  q3q13.value = h52;
-}
-if(f0==2){
-  q3q11.value = h51;
-  q3q12.value = h52;
-  q3q13.value = h5;
-}
-
-document.getElementById("q3q21");
-document.getElementById("q3q22");
-document.getElementById("q3q23");
-if(f1==0){
-  q3q21.value = h6;
-  q3q22.value = h61;
-  q3q23.value = h62;
-}
-if(f1==1){
-  q3q21.value = h61;
-  q3q22.value = h6;
-  q3q23.value = h62;
-}
-if(f1==2){
-  q3q21.value = h61;
-  q3q22.value = h62;
-  q3q23.value = h6;
-}
-document.getElementById("q3q31");
-document.getElementById("q3q32");
-document.getElementById("q3q33");
-if(f2==0){
-  q3q31.value = h7;
-  q3q32.value = h71;
-  q3q33.value = h72;
-}
-if(f2==1){
-  q3q31.value = h71;
-  q3q32.value = h7;
-  q3q33.value = h72;
-}
-if(f2==2){
-  q3q31.value = h71;
-  q3q32.value = h72;
-  q3q33.value = h7;
-}
-document.getElementById("q3q41");
-document.getElementById("q3q42");
-document.getElementById("q3q43");
-if(f3==0){
-  q3q41.value = h8;
-  q3q42.value = h81;
-  q3q43.value = h82;
-}
-if(f3==1){
-  q3q41.value = h81;
-  q3q42.value = h8;
-  q3q43.value = h82;
-}
-if(f3==2){
-  q3q41.value = h81;
-  q3q42.value = h82;
-  q3q43.value = h8;
-}
-
-
-
-var q1a1 = document.getElementById("q1a1");
-q1a1.value = h1;
-var q1a2 = document.getElementById("q1a2");
-q1a2.value = m1;
-var q1a3 = document.getElementById("q1a3");
-q1a3.value = h2;
-var q1a4 = document.getElementById("q1a4");
-q1a4.value = m2;
-var q1a5 = document.getElementById("q1a5");
-q1a5.value = h3;
-var q1a6 = document.getElementById("q1a6");
-q1a6.value = m3;
-var q1a7 = document.getElementById("q1a7");
-q1a7.value = h4;
-var q1a8 = document.getElementById("q1a8");
-q1a8.value = m4;
+<?php
+$cart = array("img/clock_img/p1.png", "img/clock_img/p2.png", "img/clock_img/p3.png",	"img/clock_img/p4.png"); 
+shuffle($cart);
+$_SESSION['q5pic0'] = $cart[0];
+$_SESSION['q5pic1'] = $cart[1];
+$_SESSION['q5pic2'] = $cart[2];
+$_SESSION['q5pic3'] = $cart[3];
 
 
 
 
 
 
-
-
-var q3ans1 = document.getElementById("q3ans1");
-q3ans1.value = h5;
-var q3ans2 = document.getElementById("q3ans2");
-q3ans2.value = h6;
-var q3ans3 = document.getElementById("q3ans3");
-q3ans3.value = h7;
-var q3ans4 = document.getElementById("q3ans4");
-q3ans4.value = h8;
-
-var q3opt11 = document.getElementById("q3opt11");
-var q3opt12 = document.getElementById("q3opt12");
-var q3opt13 = document.getElementById("q3opt13");
-if(f0==0){
-  q3opt11.value = h5;
-  q3opt12.value = h51;
-  q3opt13.value = h52;
-}
-if(f0==1){
-  q3opt11.value = h51;
-  q3opt12.value = h5;
-  q3opt13.value = h52;
-}
-if(f0==2){
-  q3opt11.value = h51;
-  q3opt12.value = h52;
-  q3opt13.value = h5;
-}
-
-var q3opt21 = document.getElementById("q3opt21");
-var q3opt22 = document.getElementById("q3opt22");
-var q3opt23 = document.getElementById("q3opt23");
-if(f1==0){
-  q3opt21.value = h6;
-  q3opt22.value = h61;
-  q3opt23.value = h62;
-}
-if(f1==1){
-  q3opt21.value = h61;
-  q3opt22.value = h6;
-  q3opt23.value = h62;
-}
-if(f1==2){
-  q3opt21.value = h61;
-  q3opt22.value = h62;
-  q3opt23.value = h6;
-}
-
-var q3opt31 = document.getElementById("q3opt31");
-var q3opt32 = document.getElementById("q3opt32");
-var q3opt33 = document.getElementById("q3opt33");
-if(f2==0){
-  q3opt31.value = h7;
-  q3opt32.value = h71;
-  q3opt33.value = h72;
-}
-if(f2==1){
-  q3opt31.value = h71;
-  q3opt32.value = h7;
-  q3opt33.value = h72;
-}
-if(f2==2){
-  q3opt31.value = h71;
-  q3opt32.value = h72;
-  q3opt33.value = h7;
-}
-
-var q3opt41 = document.getElementById("q3opt41");
-var q3opt42 = document.getElementById("q3opt42");
-var q3opt43 = document.getElementById("q3opt43");
-if(f3==0){
-  q3opt41.value = h8;
-  q3opt42.value = h81;
-  q3opt43.value = h82;
-}
-if(f3==1){
-  q3opt41.value = h81;
-  q3opt42.value = h8;
-  q3opt43.value = h82;
-}
-if(f3==2){
-  q3opt41.value = h81;
-  q3opt42.value = h82;
-  q3opt43.value = h8;
-}
-
-
-var q4ans1 = document.getElementById("q4ans1");
-if(m6<m5){
-  q4ans1.value = (m6+60)-m5;
-}else{
-  q4ans1.value = m6-m5;
-}
-var q4ans2 = document.getElementById("q4ans2");
-if(m7<m6){
-  q4ans2.value = (m7+60)-m6;
-}else{
-  q4ans2.value = m7-m6;
-}
-var q4ans3 = document.getElementById("q4ans3");
-if(m9<m8){
-  q4ans3.value = (m9+60)-m8;
-}else{
-  q4ans3.value = m9-m8;
-}
-var q4ans4 = document.getElementById("q4ans4");
-if(m10<m9){
-  q4ans4.value =(m10+60)-m9;
-}else{
-  q4ans4.value = m10-m9;
-}
-
-var q4opt1 = document.getElementById("q4opt1");
-if(m6<m5){
-  q4opt1.value = (m6+60)-m5;
-}else{
-  q4opt1.value = m6-m5;
-}
-var q4opt2 = document.getElementById("q4opt2");
-if(m7<m6){
-  q4opt2.value = (m7+60)-m6;
-}else{
-  q4opt2.value = m7-m6;
-}
-var q4opt3 = document.getElementById("q4opt3");
-if(m9<m8){
-  q4opt3.value = (m9+60)-m8;
-}else{
-  q4opt3.value = m9-m8;
-}
-var q4opt4 = document.getElementById("q4opt4");
-if(m10<m9){
-  q4opt4.value =(m10+60)-m9;
-}else{
-  q4opt4.value = m10-m9;
-}
-
-var q5ans1 = document.getElementById("q5ans1");
-if(cart[0]=="img/clock_img/p1.png"){
-  q5ans1.value = 1;
-}
-if(cart[0]=="img/clock_img/p2.png"){
-  q5ans1.value = 2;
-}
-if(cart[0]=="img/clock_img/p3.png"){
-  q5ans1.value = 3;
-}
-if(cart[0]=="img/clock_img/p4.png"){
-  q5ans1.value = 4;
-}
-var q5ans2 = document.getElementById("q5ans2");
-if(cart[1]=="img/clock_img/p1.png"){
-  q5ans2.value = 1;
-}
-if(cart[1]=="img/clock_img/p2.png"){
-  q5ans2.value = 2;
-}
-if(cart[1]=="img/clock_img/p3.png"){
-  q5ans2.value = 3;
-}
-if(cart[1]=="img/clock_img/p4.png"){
-  q5ans2.value = 4;
-}
-var q5ans3 = document.getElementById("q5ans3");
-if(cart[2]=="img/clock_img/p1.png"){
-  q5ans3.value = 1;
-}
-if(cart[2]=="img/clock_img/p2.png"){
-  q5ans3.value = 2;
-}
-if(cart[2]=="img/clock_img/p3.png"){
-  q5ans3.value = 3;
-}
-if(cart[2]=="img/clock_img/p4.png"){
-  q5ans3.value = 4;
-}
-var q5ans4 = document.getElementById("q5ans4");
-if(cart[3]=="img/clock_img/p1.png"){
-  q5ans4.value = 1;
-}
-if(cart[3]=="img/clock_img/p2.png"){
-  q5ans4.value = 2;
-}
-if(cart[3]=="img/clock_img/p3.png"){
-  q5ans4.value = 3;
-}
-if(cart[3]=="img/clock_img/p4.png"){
-  q5ans4.value = 4;
-}
-
-var q5opt1 = document.getElementById("q5opt1");
-if(cart[0]=="img/clock_img/p1.png"){
-  q5opt1.value = 1;
-}
-var q5opt2 = document.getElementById("q5opt2");
-if(cart[1]=="img/clock_img/p2.png"){
-  q5opt2.value = 2;
-}
-var q5opt3 = document.getElementById("q5opt3");
-if(cart[2]=="img/clock_img/p3.png"){
-  q5opt3.value = 3;
-}
-var q5opt4 = document.getElementById("q5opt4");
-if(cart[3]=="img/clock_img/p4.png"){
-  q5opt4.value = 4;
-}
+$que = array("img/clock_img/wakeup.jpg", "img/clock_img/breakfast.jpg","img/clock_img/teach.jpg","img/clock_img/sleep.jpg");
+$_SESSION['q2pic0'] = $que[0];
+$_SESSION['q2pic1'] = $que[1];
+$_SESSION['q2pic2'] = $que[2];
+$_SESSION['q2pic3'] = $que[3];
 
 
 
+$h21 = rand(1,12); //第二題的選項
+$h22 = rand(1,12);
+$h23 = rand(1,12);
+$h24 = rand(1,12);
+$_SESSION['h2opt1'] = $h21;
+$_SESSION['h2opt2'] = $h22;
+$_SESSION['h2opt3'] = $h23;
+$_SESSION['h2opt4'] = $h24;
 
 
-}
-</script>
+ 
 
 
+
+ ?>
 
 
 <body>
@@ -659,7 +363,7 @@ if(cart[3]=="img/clock_img/p4.png"){
     <a href="#time2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
   </div>
   </div>
-  
+
 
 <div data-role="page" id="time2">
 <h3 align="center">請選出正常的作息時間。</h3>
@@ -669,13 +373,13 @@ if(cart[3]=="img/clock_img/p4.png"){
       </div>
     </div>
   </div>
-  <table border="1" align="center">
+  <table border="1" align="center" >
 		<tr>
 			<td>
         <div style="text-align:center">
-            <span style="font-family:Impact; font-size: 2.2cm">AM 7:00</span><input type="radio" data-role="none" name="ans12">
-			  <script>document.write('<img src="' +que[0]+ '"width="140" height="140" style=" margin:auto;">');</script>
-        <input type="radio" data-role="none" name="ans12"><span style="font-family:Impact; font-size: 2.2cm">PM 3:00</span>
+            <span style="font-family:Impact; font-size: 2.2cm">AM 7:00</span><input type="radio" value="correct" style="width:30px;height:30px" data-role="none" name="q2ans12">
+			  <script>document.write('<img src="<?php echo $que[0] ?>" width="140" height="140" style=" margin:auto;">');</script>
+        <input type="radio" value="wrong" style="width:30px;height:30px" data-role="none" name="q2ans12"><span style="font-family:Impact; font-size: 2.2cm">PM <?php echo $h21 ?>:00</span>
         </div>
       </td>
     </tr>
@@ -683,9 +387,9 @@ if(cart[3]=="img/clock_img/p4.png"){
 		<tr>
 			<td>
         <div style="text-align:center">
-            <span style="font-family:Impact; font-size: 2.2cm">AM 7:30</span><input type="radio" data-role="none" name="ans13">
-				<script>document.write('<img src="' +que[1]+ '"width="140" height="140" style=" margin:auto;">');</script>
-        <input type="radio" data-role="none" name="ans13"><span style="font-family:Impact; font-size: 2.2cm">PM 1:00</span>
+            <span style="font-family:Impact; font-size: 2.2cm">PM <?php echo $h22 ?>:30</span><input type="radio" value="wrong" style="width:30px;height:30px" data-role="none" name="q2ans13">
+				<script>document.write('<img src="<?php echo $que[1] ?>" width="140" height="140" style=" margin:auto;">');</script>
+        <input type="radio" value="correct" style="width:30px;height:30px" data-role="none" name="q2ans13"><span style="font-family:Impact; font-size: 2.2cm">AM 7:30</span>
         </div>
 			</td>
     </tr>
@@ -693,9 +397,9 @@ if(cart[3]=="img/clock_img/p4.png"){
 		<tr>
 			<td>
         <div style="text-align:center">
-            <span style="font-family:Impact; font-size: 2.2cm">AM 10:00</span><input type="radio" data-role="none" name="ans14">
-        <script>document.write('<img src="' +que[2]+ '"width="140" height="140" style=" margin:auto;">');</script>
-        <input type="radio" data-role="none" name="ans14"><span style="font-family:Impact; font-size: 2.2cm">PM 7:00</span>
+            <span style="font-family:Impact; font-size: 2.2cm">AM 10:00</span><input type="radio" value="correct" style="width:30px;height:30px" data-role="none" name="q2ans14">
+        <script>document.write('<img src="<?php echo $que[2] ?>" width="140" height="140" style=" margin:auto;">');</script>
+        <input type="radio" value="wrong" style="width:30px;height:30px" data-role="none" name="q2ans14"><span style="font-family:Impact; font-size: 2.2cm">PM <?php echo $h23 ?>:00</span>
         </div>
 			</td>
     </tr>
@@ -703,9 +407,9 @@ if(cart[3]=="img/clock_img/p4.png"){
 		<tr>
 			<td>
         <div style="text-align:center">
-            <span style="font-family:Impact; font-size: 2.2cm">PM 10:00</span><input type="radio" data-role="none" name="ans15">
-        <script>document.write('<img src="' +que[3]+ '"width="140" height="140" style=" margin:auto;">');</script>
-        <input type="radio" data-role="none" name="ans15"><span style="font-family:Impact; font-size: 2.2cm">PM 5:00</span>
+            <span style="font-family:Impact; font-size: 2.2cm">AM <?php echo $h24 ?>:00</span><input type="radio" value="wrong" style="width:30px;height:30px" data-role="none" name="q2ans15">
+        <script>document.write('<img src="<?php echo $que[3] ?>" width="140" height="140" style=" margin:auto;">');</script>
+        <input type="radio" value="correct" style="width:30px;height:30px" data-role="none" name="q2ans15"><span style="font-family:Impact; font-size: 2.2cm">PM 10:00</span>
         </div>
 			</td>
 		</tr>
@@ -737,6 +441,41 @@ if(cart[3]=="img/clock_img/p4.png"){
     </div>
     
 <script type="text/javascript">
+<?php 
+
+ //php產生第三題的hour跟min
+
+$h5 = rand(1,12);
+$h6 = rand(1,12);
+$h7 = rand(1,12);
+$h8 = rand(1,12);
+ 
+$m5 = rand(1,11)*5;
+$m6 = rand(1,11)*5;
+$m7 = rand(1,11)*5;
+$m8 = rand(1,11)*5;
+
+$_SESSION['q3hour1'] = $h5;
+$_SESSION['q3hour2'] = $h6;
+$_SESSION['q3hour3'] = $h7;
+$_SESSION['q3hour4'] = $h8;
+$_SESSION['q3min1'] = $m5;
+$_SESSION['q3min2'] = $m6;
+$_SESSION['q3min3'] = $m7;
+$_SESSION['q3min4'] = $m8;
+
+
+ ?>
+var h5 = <?php echo $h5 ?>;
+var h6 = <?php echo $h6 ?>;
+var h7 = <?php echo $h7 ?>;
+var h8 = <?php echo $h8 ?>;
+var m5 = <?php echo $m5 ?>;
+var m6 = <?php echo $m6 ?>;
+var m7 = <?php echo $m7 ?>;
+var m8 = <?php echo $m8 ?>;
+
+
   const line = {
     init: function (questionObj, answerObj) {
         this.draw = SVG('draw').size("100%", "100%");
@@ -1039,6 +778,8 @@ const question = [{
     return Math.random()>.5 ? -1 : 1;
     }
     answer.sort(randomsort);
+
+    
     
      
   
@@ -1051,6 +792,14 @@ let questionObj = {
         type: 'answer'
     }
 line.init(questionObj, answerObj)
+
+
+
+
+drawclock("clock5",h5,m5);  //第三題的時鐘            
+drawclock("clock6",h6,m6);
+drawclock("clock7",h7,m7);
+drawclock("clock8",h8,m8);
 </script>
 
 
@@ -1059,9 +808,9 @@ line.init(questionObj, answerObj)
         <table border="1" width="50%" align="center">
             <tr style="height:280px">
               <td><canvas id="clock9" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-              <td width="5%" style="text-align: center;">經過<input type="number" name="ans4" data-role="none" max="60" min="0" step="5">分</td>
+              <td width="10%" style="text-align: center;">經過<input type="number" name="q4ans1" data-role="none" max="60" min="0" step="5">分</td>
               <td><canvas id="clock10" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-              <td width="5%" style="text-align: center;">經過<input type="number" name="ans5" data-role="none" max="60" min="0" step="5">分</td>
+              <td width="10%" style="text-align: center;">經過<input type="number" name="q4ans2" data-role="none" max="60" min="0" step="5">分</td>
               <td><canvas id="clock11" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
 
             </tr>
@@ -1070,9 +819,9 @@ line.init(questionObj, answerObj)
          <table border="1" width="50%" align="center">
             <tr style="height: 280px">
               <td><canvas id="clock12" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-              <td width="5%" style="text-align: center;">經過<input type="number" name="ans6" data-role="none" max="60" min="0" step="5">分</td>
+              <td width="10%" style="text-align: center;">經過<input type="number" name="q4ans3" data-role="none" max="60" min="0" step="5">分</td>
               <td><canvas id="clock13" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
-              <td width="5%" style="text-align: center;">經過<input type="number" name="ans7" data-role="none" max="60" min="0" step="5">分</td>
+              <td width="10%" style="text-align: center;">經過<input type="number" name="q4ans4" data-role="none" max="60" min="0" step="5">分</td>
               <td><canvas id="clock14" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
             </tr>
          </table>
@@ -1087,27 +836,27 @@ line.init(questionObj, answerObj)
 
       <table style="width:50%" align="center">
         <tr style="height: 280px">
-            <th style="width: 380px" ><script>document.write('<img src="' +cart[0]+ '"width="280" height="280" style="display:block; margin:auto;">');</script></th>
-            <th style="width: 380px" ><script>document.write('<img src="' +cart[1]+ '"width="280" height="280" style="display:block; margin:auto;">');</script></th>
+            <th style="width: 380px" ><script>document.write('<img src="<?php echo $cart[0] ?>"width="280" height="280" style="display:block; margin:auto;">');</script></th>
+            <th style="width: 380px" ><script>document.write('<img src="<?php echo $cart[1] ?>"width="280" height="280" style="display:block; margin:auto;">');</script></th>
           </tr>
           <tr style="height:  40px">
             
-          <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="ans8" min="1" max="4"></div></th>
-          <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="ans9" min="1" max="4"></div></th>      
+          <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="q5ans1" min="1" max="4"></div></th>
+          <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="q5ans2" min="1" max="4"></div></th>      
           </tr>
               
             
       
           <tr style="height: 280px">
-            <th style="width: 380px" ><script>document.write('<img src="' +cart[2]+ '"width="280" height="280" style="display:block; margin:auto;">');</script></th>
+            <th style="width: 380px" ><script>document.write('<img src="<?php echo $cart[2] ?>"width="280" height="280" style="display:block; margin:auto;">');</script></th>
       
-            <th style="width: 380px" ><script>document.write('<img src="' +cart[3]+ '"width="280" height="280" style="display:block; margin:auto;">');</script></th>
+            <th style="width: 380px" ><script>document.write('<img src="<?php echo $cart[3] ?>"width="280" height="280" style="display:block; margin:auto;">');</script></th>
       
           </tr>
       
           <tr style="height: 40px">
-              <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="ans10" min="1" max="4"></div></th>
-              <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="ans11" min="1" max="4"></div></th>        
+              <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="q5ans3" min="1" max="4"></div></th>
+              <th><div style="margin: 0px auto; width: 90px;"><input type="number"  name="q5ans4" min="1" max="4"></div></th>        
           </tr>
       
     </table>
@@ -1118,298 +867,152 @@ line.init(questionObj, answerObj)
     </div>
 
 
-  
-
-      
-
-
-  
-  <input type="hidden" id="q4ans1" name="q4answer1"/>	
-  <input type="hidden" id="q4ans2" name="q4answer2"/>	
-  <input type="hidden" id="q4ans3" name="q4answer3"/>	
-  <input type="hidden" id="q4ans4" name="q4answer4"/>	
-  <input type="hidden" id="q4opt1" name="q4option1"/>
-	<input type="hidden" id="q4opt2" name="q4option2"/>
-  <input type="hidden" id="q4opt3" name="q4option3"/>
-  <input type="hidden" id="q4opt4" name="q4option4"/>
-
-  <input type="hidden" id="q5ans1" name="q5answer1"/>	
-  <input type="hidden" id="q5ans2" name="q5answer2"/>	
-  <input type="hidden" id="q5ans3" name="q5answer3"/>	
-  <input type="hidden" id="q5ans4" name="q5answer4"/>
-  <input type="hidden" id="q5opt1" name="q5option1"/>
-	<input type="hidden" id="q5opt2" name="q5option2"/>
-  <input type="hidden" id="q5opt3" name="q5option3"/>
-  <input type="hidden" id="q5opt4" name="q5option4"/>
-
-
-
-
   </form>
+  
   <script>
 
 
 
 　
-yudan_pic = new Array(4);
-yudan_pic[0] = "img/clock_img/p1.png";
-yudan_pic[1] = "img/clock_img/p2.png";
-yudan_pic[2] = "img/clock_img/p3.png";
-yudan_pic[3] = "img/clock_img/p4.png";
-index = Math.floor(Math.random() * yudan_pic.length);
+// yudan_pic = new Array(4);
+// yudan_pic[0] = "img/clock_img/p1.png";
+// yudan_pic[1] = "img/clock_img/p2.png";
+// yudan_pic[2] = "img/clock_img/p3.png";
+// yudan_pic[3] = "img/clock_img/p4.png";
+// index = Math.floor(Math.random() * yudan_pic.length);
+
+<?php
 
 
+$h1 = rand(1,12);
+$h2 = rand(1,12);
+$h3 = rand(1,12);
+$h4 = rand(1,12);
  
-  drawclock("clock1",h1,m1);  //第一題的時鐘            
-  drawclock("clock2",h2,m2);
-  drawclock("clock3",h3,m3);
-  drawclock("clock4",h4,m4);
+$m1 = rand(1,11)*5;
+$m2 = rand(1,11)*5;
+$m3 = rand(1,11)*5;
+$m4 = rand(1,11)*5;
+
+$_SESSION['q1ans1'] = $h1;
+$_SESSION['q1ans2'] = $m1;
+$_SESSION['q1ans3'] = $h2;
+$_SESSION['q1ans4'] = $m2;
+$_SESSION['q1ans5'] = $h3;
+$_SESSION['q1ans6'] = $m3;
+$_SESSION['q1ans7'] = $h4;
+$_SESSION['q1ans8'] = $m4;
 
 
 
 
-  drawclock("clock5",h5,m5);  //第三題的時鐘            
-  drawclock("clock6",h6,m6);
-  drawclock("clock7",h7,m7);
-  drawclock("clock8",h8,m8);
 
 
-
-
-
-
-
- 
-  
-  
-
-  var h9 = Math.floor(Math.random() * 12) + 1;
-  var m5 = Math.floor(Math.random() * 12) * 5;
-  var h10=h9;
-  var m6 = m5+Math.floor(Math.random() * 12) * 5;
-  if(m6>60){
-    m6-=60;
-    h10+=1;
-  }
-  if(m6==60){
-    m6=0;
-    h10+=1;
-  }
-  var h11=h10;
-  var m7 = m6+Math.floor(Math.random() * 12) * 5;
-  if(m7>60){
-    m7-=60;
-    h11+=1;
-  }
-  var h12 = Math.floor(Math.random() * 12) + 1;
-  var m8 = Math.floor(Math.random() * 12) * 5;
-  var h13=h12;
-  var m9 = m8+Math.floor(Math.random() * 12) * 5;
-  if(m9>60){
-    m9-=60;
-    h13+=1;
-  }
-  var h14=h13;
-  var m10 = m9+Math.floor(Math.random() * 12) * 5;
-  if(m10>60){
-    m10-=60;
-    h14+=1;
-  }
-
-  drawclock("clock9",h9,m5);  //第四題的時鐘           
-  drawclock("clock10",h10,m6);
-  drawclock("clock11",h11,m7);
-  drawclock("clock12",h12,m8);
-  drawclock("clock13",h13,m9);
-  drawclock("clock14",h14,m10);
-
-var f0 =Math.floor(Math.random() * 3);
-var f1 =Math.floor(Math.random() * 3);
-var f2 =Math.floor(Math.random() * 3);
-var f3 =Math.floor(Math.random() * 3);
-var h51;
-var h52;
-var h61;
-var h62;
-var h71;
-var h72;
-var h81;
-var h82;
-
-
-if(f0==0){
-  h51 = h5 + 1;
-  h52 = h5 + 2;
-  if(h51>12){
-    h51-=12;
-  }
-  if(h52>12){
-    h52-=12;
-  }
-document.getElementById('f00').innerHTML = h5;
-document.getElementById('f01').innerHTML = h51;
-document.getElementById('f02').innerHTML = h52;
-
+$h9 = rand(1,12);  
+$m9 = rand(1,11)*5;  
+$h10 = $h9;
+$m10 = $m9 + rand(1,11)*5; 
+if($m10>60){
+  $m10 -= 60;
+  $h10 += 1;
+}
+if($m10==60){
+  $m10 = 0;
+  $h10 += 1;
+}
+$h11 = $h10;
+$m11 = $m10 + rand(1,11)*5;
+if($m11>60){
+  $m11 -= 60;
+  $h11 += 1;
+}
+if($m11==60){
+  $m11 = 0;
+  $h11 += 1;
 }
 
-if(f0==1){
-  var h51 = h5-1;
-  var h52 = h5+1;
-  if(h51<=0){
-    h51+=12;
-  }
-  if(h52>12){
-    h52-=12;
-  }
-document.getElementById('f00').innerHTML = h51;
-document.getElementById('f01').innerHTML = h5;
-document.getElementById('f02').innerHTML = h52;
+$h12 = rand(1,12);
+$m12 = rand(1,11)*5;
+$h13 = $h12;
+$m13 = $m12 + rand(1,11)*5;
+if($m13>60){
+  $m13 -= 60;
+  $h13 += 1;
+}
+if($m13==60){
+  $m13 = 0;
+  $h13 += 1;
+}
+$h14 = $h13;
+$m14 = $m13 + rand(1,11)*5;
+if($m14>60){
+  $m14 -= 60;
+  $h14 += 1;
+}
+if($m14==60){
+  $m14  =0;
+  $h14 += 1;
 }
 
-if(f0==2){
-  var h51 = h5-2;
-  var h52 = h5-1;
-  if(h51<=0){
-    h51+=12;
-  }
-  if(h52<=0){
-    h52+=12;
-  }
-document.getElementById('f00').innerHTML = h51;
-document.getElementById('f01').innerHTML = h52;
-document.getElementById('f02').innerHTML = h5;
-}
+$_SESSION['q4hour1'] = $h9;
+$_SESSION['q4hour2'] = $h10;
+$_SESSION['q4hour3'] = $h11;
+$_SESSION['q4hour4'] = $h12;
+$_SESSION['q4hour5'] = $h13;
+$_SESSION['q4hour6'] = $h14;
+$_SESSION['q4min1'] = $m9;
+$_SESSION['q4min2'] = $m10;
+$_SESSION['q4min3'] = $m11;
+$_SESSION['q4min4'] = $m12;
+$_SESSION['q4min5'] = $m13;
+$_SESSION['q4min6'] = $m14;
 
 
+?>
 
-if(f1==0){
-  var h61 = h6 + 1;
-  var h62 = h6 + 2;
-  if(h61>12){
-    h61-=12;
-  }
-  if(h62>12){
-    h62-=12;
-  }
-document.getElementById('f03').innerHTML = h6;
-document.getElementById('f04').innerHTML = h61;
-document.getElementById('f05').innerHTML = h62;
-}
-if(f1==1){
-  var h61 = h6-1;
-  var h62 = h6+1;
-  if(h61<=0){
-    h61+=12;
-  }
-  if(h62>12){
-    h62-=12;
-  }
-document.getElementById('f03').innerHTML = h61;
-document.getElementById('f04').innerHTML = h6;
-document.getElementById('f05').innerHTML = h62;
-}
-if(f1==2){
-  var h61 = h6-2;
-  var h62 = h6-1;
-  if(h61<=0){
-    h61+=12;
-  }
-  if(h62<=0){
-    h62+=12;
-  }
-document.getElementById('f03').innerHTML = h61;
-document.getElementById('f04').innerHTML = h62;
-document.getElementById('f05').innerHTML = h6;
-}
+var h1 = <?php echo $h1 ?>;
+var h2 = <?php echo $h2 ?>;
+var h3 = <?php echo $h3 ?>;
+var h4 = <?php echo $h4 ?>;
+var m1 = <?php echo $m1 ?>;
+var m2 = <?php echo $m2 ?>;
+var m3 = <?php echo $m3 ?>;
+var m4 = <?php echo $m4 ?>;
+
+
+drawclock("clock1",h1,m1);  //第一題的時鐘            
+drawclock("clock2",h2,m2);
+drawclock("clock3",h3,m3);
+drawclock("clock4",h4,m4);
 
 
 
 
-
-
-if(f2==0){
-  var h71 = h7 + 1;
-  var h72 = h7 + 2;
-  if(h71>12){
-    h71-=12;
-  }
-  if(h72>12){
-    h72-=12;
-  }
-document.getElementById('f06').innerHTML = h7;
-document.getElementById('f07').innerHTML = h71;
-document.getElementById('f08').innerHTML = h72;
-}
-if(f2==1){
-  var h71 = h7-1;
-  var h72 = h7+1;
-  if(h71<=0){
-    h71+=12;
-  }
-  if(h72>12){
-    h72-=12;
-  }
-document.getElementById('f06').innerHTML = h71;
-document.getElementById('f07').innerHTML = h7;
-document.getElementById('f08').innerHTML = h72;
-}
-if(f2==2){
-  var h71 = h7-2;
-  var h72 = h7-1;
-  if(h71<=0){
-    h71+=12;
-  }
-  if(h72<=0){
-    h72+=12;
-  }
-document.getElementById('f06').innerHTML = h71;
-document.getElementById('f07').innerHTML = h72;
-document.getElementById('f08').innerHTML = h7;
-}
+var h9 = <?php echo $h9 ?>;
+var h10 = <?php echo $h10 ?>;
+var h11 = <?php echo $h11 ?>;
+var h12 = <?php echo $h12 ?>;
+var h13 = <?php echo $h13 ?>;
+var h14 = <?php echo $h14 ?>;
+var m9 = <?php echo $m9 ?>;
+var m10 = <?php echo $m10 ?>;
+var m11 = <?php echo $m11 ?>;
+var m12 = <?php echo $m12 ?>;
+var m13 = <?php echo $m13 ?>;
+var m14 = <?php echo $m14 ?>;
 
 
 
-if(f3==0){
-  var h81 = h8 + 1;
-  var h82 = h8 + 2;
-  if(h81>12){
-    h81-=12;
-  }
-  if(h82>12){
-    h82-=12;
-  }
-document.getElementById('f09').innerHTML = h8;
-document.getElementById('f10').innerHTML = h81;
-document.getElementById('f11').innerHTML = h82;
-}
-if(f3==1){
-  var h81 = h8-1;
-  var h82 = h8+1;
-  if(h81<=0){
-    h81+=12;
-  }
-  if(h82>12){
-    h82-=12;
-  }
-document.getElementById('f09').innerHTML = h81;
-document.getElementById('f10').innerHTML = h8;
-document.getElementById('f11').innerHTML = h82;
-}
-if(f3==2){
-  var h81 = h8-2;
-  var h82 = h8-1;
-  if(h81<=0){
-    h81+=12;
-  }
-  if(h82<=0){
-    h82+=12;
-  }
-document.getElementById('f09').innerHTML = h81;
-document.getElementById('f10').innerHTML = h82;
-document.getElementById('f11').innerHTML = h8; 
-}
+
+  drawclock("clock9",h9,m9);  //第四題的時鐘           
+  drawclock("clock10",h10,m10);
+  drawclock("clock11",h11,m11);
+  drawclock("clock12",h12,m12);
+  drawclock("clock13",h13,m13);
+  drawclock("clock14",h14,m14);
 
 </script>
+
 </body>
 
 </html>
