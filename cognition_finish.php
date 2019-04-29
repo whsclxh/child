@@ -650,12 +650,12 @@ require "cog_count_choose_function.php";
             <tr class="long_oddtr">
                 <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[4].picture_info,all_question.cog_choose_longer[4].picture_length.up);</script></td>
                 <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q5_1" name="cog_choose_longer_q5" type="radio" value="1" disabled data-role="none" <?php if($cog_choose_longer_sql[7]=="$question3[15]") echo "checked=checked" ?>></td>
-                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q5_1" name="anw_cog_choose_longer_q5" type="radio" disabled data-role="none" <?php if($question3[16]>$question3[15]) echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q5_1" name="anw_cog_choose_longer_q5" type="radio" disabled data-role="none" <?php if($question3[15]>$question3[16]) echo "checked=checked" ?>></td>
             </tr>
             <tr class="long_eventr">
                 <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[4].picture_info,all_question.cog_choose_longer[4].picture_length.down);</script></td>
                 <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q5_2" name="cog_choose_longer_q5" type="radio" value="2" disabled data-role="none" <?php if($cog_choose_longer_sql[7]=="$question3[16]") echo "checked=checked" ?>></td>
-                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q5_2" name="anw_cog_choose_longer_q5" type="radio" disabled data-role="none" <?php if($question3[15]>$question3[16]) echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q5_2" name="anw_cog_choose_longer_q5" type="radio" disabled data-role="none" <?php if($question3[16]>$question3[15]) echo "checked=checked" ?>></td>
             </tr>
         </table>
     </div>

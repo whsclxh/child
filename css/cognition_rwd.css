@@ -1,0 +1,34 @@
+@media screen and (min-width:576px) { /*Small devices*/
+   
+}
+@media screen and (min-width:768px) { /*Medium devices*/
+    
+}
+@media screen and (min-width:992px) and (max-width: 1199px)  { /*Large devices*/
+    .orientation_goodborder{
+        width: 55%;
+    }
+    .long_headerborder{
+        width: 70%;
+    }
+    .sequence_headerborder{
+        width: 80%;
+    }
+    .sequence_border{
+        width: 55%;
+    }
+    .shape_border{
+        width: 47%;
+    }
+}
+@media screen and (min-width:1200px) { /*Extra large devices*/
+    .orientation_goodborder{
+        width: 42%;
+    }
+    .sequence_border{
+        width: 43%;
+    }
+    .shape_border{
+        width: 35%;
+    }
+}

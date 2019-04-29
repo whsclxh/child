@@ -20,12 +20,54 @@
     .choose3{
         width: 5%;
     }
+    .add_sub1{
+        width: 60%;
+    }
+    .add_sub1{
+        width: 10%;
+    }
+    .add_sub3{
+        width: 10%;
+    }
+    .add_sub4{
+        width: 10%;
+    }
+    .add_sub5{
+        width: 10%;
+    }
+    .big_border{
+        width: 60%;
+    }
+    .multistage_table_odd{
+      width: 95%;  
+    }
 }
 @media screen and (min-width:1200px) { /*Extra large devices*/
     .choose_border{
-        width: 85%;
+        width: 95%;
     }
     .choose{
         font-size: 30px;
+    }
+    .add_sub1{
+        width: 60%;
+    }
+    .add_sub1{
+        width: 10%;
+    }
+    .add_sub3{
+        width: 10%;
+    }
+    .add_sub4{
+        width: 10%;
+    }
+    .add_sub5{
+        width: 10%;
+    }
+    .big_border{
+        width: 45%;
+    }
+    .multistage_table_odd{
+        width: 72%;  
     }
 }

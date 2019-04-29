@@ -2,7 +2,7 @@
 <?php
 include("mysql_connect.php");
 $id = $_SESSION['username'];
-$cardinal= $_SESSION['cog_times'];
+$cardinal= $_SESSION['cognition_times'];
 $sql1 = "SELECT * FROM cog_count_choose_db where username = '$id' AND cardinal = '$cardinal'";
 $result1 = mysqli_query($link,$sql1);
 $cog_count_choose_sql = @mysqli_fetch_row($result1);
@@ -25,7 +25,7 @@ if($_SESSION['username'] == null){
     echo "<script>alert('您尚未登入!');</script>";
     echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
 }
-if($_SESSION['cog_times'] == null){
+if($_SESSION['cognition_times'] == null){
     echo "<script>alert('請重新選擇!');</script>";
     echo '<meta http-equiv=REFRESH CONTENT=0;url=Topic.php>';
 }
@@ -654,12 +654,12 @@ require "cog_count_choose_function.php";
             <tr class="long_oddtr">
                 <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[4].picture_info,all_question.cog_choose_longer[4].picture_length.up);</script></td>
                 <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q5_1" name="cog_choose_longer_q5" type="radio" value="1" disabled data-role="none" <?php if($cog_choose_longer_sql[7]=="$question3[15]") echo "checked=checked" ?>></td>
-                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q5_1" name="anw_cog_choose_longer_q5" type="radio" disabled data-role="none" <?php if($question3[16]>$question3[15]) echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q5_1" name="anw_cog_choose_longer_q5" type="radio" disabled data-role="none" <?php if($question3[15]>$question3[16]) echo "checked=checked" ?>></td>
             </tr>
             <tr class="long_eventr">
                 <td width="90%"><script>anw_cog_choose_longer_pictures(all_question.cog_choose_longer[4].picture_info,all_question.cog_choose_longer[4].picture_length.down);</script></td>
                 <td width="5%" style="text-align: center;"><input id="cog_choose_longer_q5_2" name="cog_choose_longer_q5" type="radio" value="2" disabled data-role="none" <?php if($cog_choose_longer_sql[7]=="$question3[16]") echo "checked=checked" ?>></td>
-                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q5_2" name="anw_cog_choose_longer_q5" type="radio" disabled data-role="none" <?php if($question3[15]>$question3[16]) echo "checked=checked" ?>></td>
+                <td width="5%" style="text-align: center;"><input id="anw_cog_choose_longer_q5_2" name="anw_cog_choose_longer_q5" type="radio" disabled data-role="none" <?php if($question3[16]>$question3[15]) echo "checked=checked" ?>></td>
             </tr>
         </table>
     </div>
