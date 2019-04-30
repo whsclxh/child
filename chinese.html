@@ -112,7 +112,7 @@ body {
 
 .container {
     margin: 0 auto;
-    max-width: 960px;
+    max-width:1500px;
     height: 100%;
     background: #fff;
 }
@@ -2030,6 +2030,7 @@ var k5=arr[ku][ap][1];
         <div id="draw" class="draw-container">
             <div style="position: absolute" class="btn-group">
                 <a href="javascript:;" id="j-reset">重置</a>
+
                 <!-- <a href="javascript:;" id="j-submit" class="btn-submit">确定</a> -->
             </div>
             <ul class="question-list data-list">
@@ -2116,7 +2117,7 @@ var k5=arr[ku][ap][1];
             current.begin = {};
             current.beginElement = this;
             current.begin.y = $(this).offset().top - parentPosition.top -115 ;
-            current.begin.x = $(this).offset().left - parentPosition.left  -240;
+            current.begin.x = $(this).offset().left - parentPosition.left  +10;
             current.line.show();
             current.line.stroke({
                 color: "#67C23A",
@@ -2139,7 +2140,7 @@ var k5=arr[ku][ap][1];
             });
 
             current.end.y = $(this).offset().top - parentPosition.top -115;
-            current.end.x = $(this).offset().left - parentPosition.left - 470;
+            current.end.x = $(this).offset().left - parentPosition.left -50;
             current.endElement = this;
             current.endValue = $(this).attr('data-answer');
             
