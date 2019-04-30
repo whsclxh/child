@@ -1,6 +1,6 @@
-var jsonString = '\
+var json= '\
 {\
-  "contents": [\
+  "contentss": [\
        {"one": "效率()","two": "ㄌㄩˋ","three": "率()先","four": "ㄕㄨㄞˋ"},\{"one": "方便()","two": "ㄅ一ㄢˋ","three": "便()宜","four": "ㄆㄧㄢˊ"},\
        {"one": "跌倒()","two": "ㄉㄠˇ","three": "倒()退","four": "ㄉㄠˋ"},\{"one":  "假()髮","two":"ㄐㄧㄚˇ","three": "暑假()","four": "ㄐㄧㄚˋ"},\
        {"one": "依山傍()水","two": "ㄅㄤˋ","three": "傍()晚","four": "ㄅㄤ"},\{"one": "不切()實際 ","two": "ㄑㄧㄝˋ","three": "切()斷","four": "ㄑㄧㄝ"},\

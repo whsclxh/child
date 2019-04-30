@@ -3,11 +3,21 @@
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="test3.js"></script>
-<style type="text/css">
+	<style type="text/css">
+  .disable-select {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none;   /* Chrome/Safari/Opera */
+      -khtml-user-select: none;    /* Konqueror */
+      -moz-user-select: none;      /* Firefox */
+      -ms-user-select: none;       /* Internet Explorer/Edge */
+      user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+    }
 
-	    .time-text2 {
+   
+    .time-text2 {
       text-align: center;   
       margin-left: 180px;      
+    
       display: inline-block;
       width:20%;     
       padding: 0.5rem;
@@ -17,7 +27,172 @@
       font-size: 20px;
       font-weight: 900;
     }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: inline-block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/*公共类*/
+
+.fl {
+  float: left
+}
+
+.fr {
+  float: right
+}
+
+.al {
+  text-align: left
+}
+
+.ac {
+  text-align: center
+}
+
+.ar {
+  text-align: right
+}
+
+.hide {
+  display: none
+}
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    background: #f5f5f5;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+    height: 100%;
+    background: #fff;
+}
+
+.draw-container {
+    position: relative;
+    height: 500px;
+    background: #fff;
+}
+
+.btn-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    text-align: right;
+}
+.btn-group a:hover{
+    color: #66b1ff;
+}
+
+.btn-group a{
+    margin-right: 15px;
+    color: #409eff;
+
+}
+a.btn-submit {
+    color: #67c23a
+}
+.draw-container ul {
+    margin-top: 80px;
+}
+
+.data-list {
+    position: absolute;
+}
+
+.question-list {
+    left: 50px;
+}
+
+.answer-list {
+    right: 50px;
+}
+
+.data-list li {
+    margin: 15px;
+    padding: 0 10px;
+    width: 205px;
+    height: 30px;
+    background: #ecf5ff;
+    line-height: 30px;
+    font-size: 16px;
+    color: #409eff;
+    border: 1px solid #b3d8ff;
+    border-radius: 10px;
+    cursor: crosshair;
+    text-align: center
+}
+
+.data-list li:hover,
+.data-list li.selected {
+    background: #409eff;
+    border-color: #409eff;
+    color: #fff;
+}
+
+.hover-g {
+    cursor: pointer;
+    opacity: 1;
+    stroke-width: 4;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: url('./img/delete-icon.png') no-repeat center;
+    font-size: 14px;
+    cursor: pointer;
+    display: none;
+}
+
+.result-container {
+    padding: 20px;
+    border-top: 1px solid #333;
+}
+.result-container li{
+    font-size: 16px;
+    line-height: 35px;
+}
+
+
 </style>
+<script src="library/jquery.min.js"></script>
+<script src="library/svg.min.js"></script>
 	<script>
 var json= '\
 {\
@@ -76,7 +251,14 @@ $s2=$_POST['Anwtwo'];
 $s3=$_POST['Anwthree'];
 $s4=$_POST['Anwfour'];
 $s5=$_POST['Anwfive'];
+$s11=$_POST['Anwone2'];
+$s21=$_POST['Anwtwo2'];
+$s31=$_POST['Anwthree2'];
+$s41=$_POST['Anwfour2'];
+$s51=$_POST['Anwfive2'];
+
 // 222222
+
 $anw1_2=$_POST['code_2'];
 $anw2_2=$_POST['code1_2'];
 $anw3_2=$_POST['code2_2'];
@@ -134,10 +316,50 @@ $bw8=$_POST['bar8'];
 $bw9=$_POST['bar9'];
 $bw10=$_POST['bar10'];
 ////444444444444444444444444444444444444444444444444
+$qQ1_4=$_POST['cc1'];
+$qQ2_4=$_POST['cc2'];
+$qQ3_4=$_POST['cc3'];
+$qQ4_4=$_POST['cc4'];
+$qQ5_4=$_POST['cc5'];
 
+$anw1_4=$_POST['ar1x'];
+$anw2_4=$_POST['ar2x'];
+$anw3_4=$_POST['ar3x'];
+$anw4_4=$_POST['ar4x'];
+$anw5_4=$_POST['ar5x'];
 
+$qqQ1_4=$_POST['qq4_1'];
+$qqQ2_4=$_POST['qq4_2'];
+$qqQ3_4=$_POST['qq4_3'];
+$qqQ4_4=$_POST['qq4_4'];
+$qqQ5_4=$_POST['qq4_5'];
+/////////55555555555555555555555
+$qqQ1_5=$_POST['qq5_1'];
+$qqQ2_5=$_POST['qq5_2'];
+$qqQ3_5=$_POST['qq5_3'];
+$qqQ4_5=$_POST['qq5_4'];
+$qqQ5_5=$_POST['qq5_5'];
+$qqQ6_5=$_POST['qq5_6'];
+$qqQ7_5=$_POST['qq5_7'];
+$qqQ8_5=$_POST['qq5_8'];
+$qqQ9_5=$_POST['qq5_9'];
+$qqQ10_5=$_POST['qq5_10'];
+///5555右邊選項
+$rqqQ1_5=$_POST['rqq5_1'];
+$rqqQ2_5=$_POST['rqq5_2'];
+$rqqQ3_5=$_POST['rqq5_3'];
+$rqqQ4_5=$_POST['rqq5_4'];
+$rqqQ5_5=$_POST['rqq5_5'];
+///555 使用者
+$rqxqQ1_5=$_POST['rqxq5_1'];
+$rqxqQ2_5=$_POST['rqxq5_2'];
+$rqxqQ3_5=$_POST['rqxq5_3'];
+$rqxqQ4_5=$_POST['rqxq5_4'];
+$rqxqQ5_5=$_POST['rqxq5_5'];
 ?>
+
 <div data-role="page" id="ch_finish1">
+
 <script>
 var cart = JSON.parse ( jsonS ); 
 <?php
@@ -181,28 +403,32 @@ var a4="<?php echo $a4; ?>";
 $a5="$anw5";
 ?>
 var a5="<?php echo $a5; ?>";
-var q1score=0;
-if(a1==cart.contents[q1].two)
-q1score=q1score+4;
-if(a2==cart.contents[q2].two)
-q1score=q1score+4;
-if(a3==cart.contents[q3].two)
-q1score=q1score+4;
-if(a4==cart.contents[q4].two)
-q1score=q1score+4;
-if(a5==cart.contents[q5].two)
-q1score=q1score+4;
 </script>
 
 
-<h3 align="center" style="color: red">本大題拿了<script>document.write(q1score)</script>/20分</h3>
+<?php
+$q1score=0;
+if( $anw1==$s11)
+$q1score=$q1score+4;
+if( $anw2==$s21)
+$q1score=$q1score+4;
+if( $anw3==$s31)
+$q1score=$q1score+4;
+if( $anw4==$s41)
+$q1score=$q1score+4;
+if( $anw5==$s51)
+$q1score=$q1score+4;
+?>
+
+
+<h3 align="center" style="color: red">本大題拿了<?php echo $q1score ?>/20分</h3>
 <h3 align="center">請拼出正確的注音</h3>
 	<div data-role="header">
 	</div>
 
 
 
-<table  border="1" width="50%" align="center">
+<table  border="1" width="60%" align="center">
 <tr>	
 <th style="text-align:center">圖</th>		
 <th style="text-align:center">原作答</th>
@@ -221,9 +447,9 @@ document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[
 </script>
 </td>
 <td  align=center>
-<font size="5"><?php echo"$anw1";?></font>
+<font size="5"  Width="200"><?php echo"$anw1";?></font>
 </td>
-<td width="50%" align=center style="color: red">	
+<td width="20%" align=center style="color: red">	
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q1].two+"</p>");</script>
 </td>
 
@@ -236,7 +462,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q2]
 <td align=center>
 <font size="5"><?php echo"$anw2";?></font>
 </td>
-<td  width="50%" align=center style="color: red">
+<td  width="20%" align=center style="color: red">
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q2].two+"</p>");</script>
 </td>
 </tr>
@@ -250,7 +476,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q3]
 <td align=center >
 <font size="5"><?php echo"$anw3";?></font>
 </td>
-<td  width="50%" align=center style="color: red">
+<td  width="20%" align=center style="color: red">
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q3].two+"</p>");</script>
 </td>
   
@@ -263,7 +489,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q4]
 <td  align=center>
 <font size="5"><?php echo"$anw4";?></font>
 </td>
-<td   width="50%" align=center style="color: red">
+<td   width="20%" align=center style="color: red">
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q4].two+"</p>");</script>
 </td>
 </tr>
@@ -278,7 +504,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q5]
 <td  align=center>
 <font size="5"><?php echo"$anw5";?></font>
 </td>
-<td  width="50%" align=center style="color: red">
+<td  width="20%" align=center style="color: red">
 	<script>document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[q5].two+"</p>");</script>
 </td>
 </tr>
@@ -296,7 +522,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q5]
 
 
 
-<!-- Start of second page -->
+<!-- Start of second page22222222222222222222222222222222222222222222222222222222222222222222222222222222222222 -->
 <script>
 var cart2= JSON.parse ( jsonS ); 
 <?php
@@ -387,20 +613,26 @@ $choo5="$cho5";
 ?>
 var choo5="<?php echo $choo5; ?>";
 
-var q2score=0;
-if(a1_2==cart.contents[q1].two)
-q2score=q2score+4;
-if(a2_2==cart.contents[q2_2].two)
-q2score=q2score+4;
-if(a3_2==cart.contents[q3_2].two)
-q2score=q2score+4;
-if(a4_2==cart.contents[q4_2].two)
-q2score=q2score+4;
-if(a5_2==cart.contents[q5_2].two)
-q2score=q2score+4;
 </script>
+<?php 
+$q2score=0;
+if($anw1_2==$s1_2)
+$q2score=$q2score+4;
+if($anw2_2==$s2_2)
+$q2score=$q2score+4;
+if($anw3_2==$s3_2)
+$q2score=$q2score+4;
+if($anw4_2==$s4_2)
+$q2score=$q2score+4;
+if($anw5_2==$s5_2)
+$q2score=$q2score+4;
+?>
+
+
+
 <div data-role="page" id="ch_finish2">
-<h3 align="center" style="color: red">本大題拿了<script>document.write(q2score)</script>/20分</h3>
+
+<h3 align="center" style="color: red">本大題拿了<?php echo $q2score ?>/20分</h3>
 <h3 align="center" >請選出與圖對應的選項</h3>
 	<script type="text/javascript">
 		document.write("<p class=time-text2>"+"1"+"."+cart2.contents[choo1].one+cart2.contents[choo1].two+"</p>");
@@ -432,7 +664,7 @@ q2score=q2score+4;
 <script>document.write('<img src="image/'+p2_2+'.jpg"height="150" width="200"><br>')</script>	
    </td>
    <td  align=center>
-
+   	<script>document.write(a2_2)</script>
 </td>
 <td align=center style="color: red"> <font size="5"><?php echo"$q2_2";?></font> </td>
 </tr>
@@ -441,14 +673,14 @@ q2score=q2score+4;
 <script>document.write('<img src="image/'+p3_2+'.jpg"height="150" width="200"><br>')</script>	
   </td>
   <td  align=center>
-
+  	<script>document.write(a3_2)</script>
 </td>
 <td align=center style="color: red"> <font size="5"><?php echo"$q3_2";?></font> </td>
 <td  align=center>
 <script> document.write('<img src="image/'+p4_2+'.jpg"height="150" width="200"><br>')</script>	
 </td>
 <td  align=center>
-
+	<script>document.write(a4_2)</script>
 </td>
 <td align=center style="color: red"> <font size="5"><?php echo"$q4_2";?></font> </td>
 </tr>
@@ -457,23 +689,23 @@ q2score=q2score+4;
 <script>document.write('<img src="image/'+p5_2+'.jpg"height="150" width="200"><br>')</script>	
 </td>
 <td  align=center>
-
+  <script>document.write(a5_2)</script>
 </td>
 <td align=center style="color: red"><font size="5"><?php echo"$q5_2";?></font> </td>
 </tr>
 </table>
 
 
-
 	<div   align="center">
       <a href="#ch_finish1" class="ui-btn" style="width: 5%;" data-transition="slide">上一題</a> 
       <a href="#ch_finish3" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>       
     </div>
-
 </div>
 
 
+
 <!-- Start of second page 3333333333333333333333333333333333333333333333333333333333333333333-->
+<script>
 <?php
 $q_1="$qQ1";
 ?>
@@ -561,11 +793,55 @@ var ww9="<?php echo $ww9; ?>";
 $ww10="$w10";
 ?>
 var ww10="<?php echo $ww10; ?>";
+var q3score=0;
+if(ww1==q_1)
+q3score=q3score+2;
+if(ww2==q_2)
+q3score=q3score+2;
+if(ww3==q_3)
+q3score=q3score+2;
+if(ww4==q_4)
+q3score=q3score+2;
+if(ww5==q_5)
+q3score=q3score+2;
+if(ww6==q_6)
+q3score=q3score+2;
+if(ww7==q_7)
+q3score=q3score+2;
+if(ww8==q_8)
+q3score=q3score+2;
+if(ww9==q_9)
+q3score=q3score+2;
+if(ww10==q_10)
+q3score=q3score+2;
+</script>
+<?php
+$q3score=0;
+if($w1==$qQ1)
+$q3score=$q3score+2;
+if($w2==$qQ2)
+$q3score=$q3score+2;
+if($w3==$qQ3)
+$q3score=$q3score+2;
+if($w4==$qQ4)
+$q3score=$q3score+2;
+if($w5==$qQ5)
+$q3score=$q3score+2;
+if($w6==$qQ6)
+$q3score=$q3score+2;
+if($w7==$qQ7)
+$q3score=$q3score+2;
+if($w8==$qQ8)
+$q3score=$q3score+2;
+if($w9==$qQ9)
+$q3score=$q3score+2;
+if($w10==$qQ10)
+$q3score=$q3score+2;
+?>
 
 <div data-role="page" id="ch_finish3">
-<h3 align="center" style="color: red">本大題拿了<script>document.write(q3score)</script>/20分</h3>
-<h3 align="center">請選出正確的選項</h3>
-	
+<h3 align="center" style="color: red">本大題拿了<?php echo $q3score ?>/20分</h3>
+<h3 align="center">請選出正確的選項</h3>	
 
 <table border="1" width="50%" align="center">
 <th style="text-align:center">題目</th>
@@ -573,28 +849,31 @@ var ww10="<?php echo $ww10; ?>";
 <th style="text-align:center">正確答案</th>
   <tr>
      <td align=center><font size="5"><?php echo"$bw1";?></font> </td>
-    <td> 
-    
-    <script type="text/javascript">document.write(qQ1);</script>
+    <td align=center> 
+  <font size="5">
+    <script>document.write(q_1)</script>
+    </font>
     </td>
     <td align=center style="color: red"><font size="5"><?php echo"$w1";?></font> </td>
   </tr>
 
   <tr>
   <td align=center><font size="5"><?php echo"$bw2";?></font> </td>
-    <td> 
-    
+    <td align=center> 
+    	<font size="5">
+    <script>document.write(q_2)</script>
+</font>
     </td>
    <td align=center style="color: red"><font size="5"><?php echo"$w2";?></font> </td>
   </tr>
 
 
-
   <tr>
    <td align=center><font size="5"><?php echo"$bw3";?></font> </td>
-    <td> 
-   
-   
+    <td align=center> 
+    	<font size="5">
+   <script>document.write(q_3)</script>
+   </font>
     </td>
     <td align=center style="color: red"><font size="5"><?php echo"$w3";?></font> </td>
   </tr>
@@ -602,10 +881,10 @@ var ww10="<?php echo $ww10; ?>";
 
   <tr>
     <td align=center><font size="5"><?php echo"$bw4";?></font> </td>
-    <td> 
-    
-   
- 
+    <td align=center> 
+    <font size="5">
+   <script>document.write(q_4)</script>
+ </font>
     </td>
     <td align=center style="color: red"><font size="5"><?php echo"$w4";?></font> </td>
   </tr>
@@ -615,10 +894,10 @@ var ww10="<?php echo $ww10; ?>";
 
   <tr>
      <td align=center><font size="5"><?php echo"$bw5";?></font> </td>
-    <td> 
- 
-    
-
+    <td align=center> 
+ <font size="5">
+    <script>document.write(q_5)</script>
+</font>
     </td>
     <td align=center style="color: red"><font size="5"><?php echo"$w5";?></font> </td>
   </tr>
@@ -626,9 +905,10 @@ var ww10="<?php echo $ww10; ?>";
 
   <tr>
     <td align=center><font size="5"><?php echo"$bw6";?></font> </td>
-    <td> 
- 
-
+    <td align=center> 
+    	<font size="5">
+ <script>document.write(q_6)</script>
+</font>
     </td>
     <td align=center style="color: red"><font size="5"><?php echo"$w6";?></font> </td>
   </tr>
@@ -639,9 +919,10 @@ var ww10="<?php echo $ww10; ?>";
 
   <tr>
     <td align=center><font size="5"><?php echo"$bw7";?></font> </td>
-    <td> 
-
-   
+    <td align=center> 
+<font size="5">
+   <script>document.write(q_7)</script>
+</font>
     </td>
     <td align=center style="color: red"><font size="5"><?php echo"$w7";?></font> </td>
   </tr>
@@ -649,9 +930,10 @@ var ww10="<?php echo $ww10; ?>";
 
   <tr>
     <td align=center><font size="5"><?php echo"$bw8";?></font> </td>
-    <td> 
-   
-  
+    <td align=center> 
+    	<font size="5">
+   <script>document.write(q_8)</script>
+  </font>
     </td>
     <td align=center style="color: red"><font size="5"><?php echo"$w8";?></font> </td>
   </tr>
@@ -660,9 +942,10 @@ var ww10="<?php echo $ww10; ?>";
 
   <tr>
      <td align=center><font size="5"><?php echo"$bw9";?></font> </td>
-    <td> 
-
- 
+    <td align=center> 
+<font size="5">
+ <script>document.write(q_9)</script>
+</font>
     </td>
     <td align=center style="color: red"><font size="5"><?php echo"$w9";?></font> </td>
   </tr>
@@ -670,10 +953,10 @@ var ww10="<?php echo $ww10; ?>";
 
   <tr>
   <td align=center><font size="5"><?php echo"$bw10";?></font> </td>
-    <td> 
- 
-
-   
+    <td align=center> 
+ <font size="5">
+   <script>document.write(q_10)</script>
+</font>
     </td>
 <td align=center style="color: red"><font size="5"><?php echo"$w10";?></font> </td>
   </tr>
@@ -692,12 +975,23 @@ var ww10="<?php echo $ww10; ?>";
 
 
 <!-- 444444444444444444444444444444444444444444444444444444444444 -->
-
-
+<?php
+$q4score=0;
+if ($qQ1_4==$anw1_4) 
+  $q4score=$q4score+4;
+if ($qQ2_4==$anw2_4) 
+  $q4score=$q4score+4;
+if ($qQ3_4==$anw3_4) 
+  $q4score=$q4score+4;
+if ($qQ4_4==$anw4_4) 
+  $q4score=$q4score+4;
+if ($qQ5_4==$anw5_4) 
+  $q4score=$q4score+4;
+?>
 
 
 <div data-role="page" id="ch_finish4">
-<h3 align="center" style="color: red">本大題拿了<script>document.write(q4score)</script>/20分</h3>
+<h3 align="center" style="color: red">本大題拿了<?php echo"$q4score"; ?>/20分</h3>
 <h3 align="center">請選出正確的選項</h3>
 	
 <table  border="1" style="width:50%" align="center" >
@@ -706,132 +1000,53 @@ var ww10="<?php echo $ww10; ?>";
 <th style="text-align:center">正確答案</th>
     <tr>  
 
-  <td  style="width:30%"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){               
-                if(i==xx){
-        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
-        }
-        else{
-          if(arr[x][i][0]==null){
-          }
-          else
-        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
-            } 
-      }</script></font></td>  
+  <td align=center style="width:60%"><font size="5" face="DFKai-sb"><?php echo"$qqQ1_4"; ?></font></td>  
 
    
       
 <script type="text/javascript">
   document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 </script>
-  <td >    
+  <td  align=center><font size="5">    
 
-    <input name="cc1" id="gg11" type="radio"  style="zoom: 1.5"  data-role="none"><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc1" id="gg2" type="radio"   style="zoom: 1.5"  data-role="none"><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>   
+   <?php echo"$qQ1_4"; ?>  
 
-    </td> 
-    <td></td>
+   </font> </td> 
+    <td  align=center style="color: red"><font size="5"> <?php echo"$anw1_4"; ?></font></td>
       </tr>
     <tr>
-  <td  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
-               
-                if(i==xx){
-
-    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
-    //              var q=arr[x][i][1].indexOf("ㄕ");
-        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
-        // }
-
-        // else{
-        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
-        // }
-        }
-
-        else{
-          if(arr[x][i][0]==null){
-          }
-          else
-        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
-            } 
-      }</script></font></td>  
+  <td align=center><font size="5"  face="DFKai-sb"><?php echo"$qqQ2_4"; ?></td>  
     
-<td>  
-    <input name="cc2" id="gg3" type="radio"  style="zoom: 1.5"  data-role="none"><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc2" id="gg4" type="radio"  style="zoom: 1.5"  data-role="none"><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
-    </td> 
-    <td></td>
+<td align=center> <font size="5"> 
+   <?php echo"$qQ2_4"; ?>  
+   </font> </td> 
+    <td  align=center style="color: red"><font size="5"> <?php echo"$anw2_4"; ?></font></td>
     </tr>
    
     <tr>
-  <td  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
-               
-                if(i==xx){
-
-
-        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
-     
-        }
-
-        else{
-          if(arr[x][i][0]==null){
-          }
-          else
-        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
-            } 
-      }</script></font></td>  
-<td> 
-    <input name="cc3" id="gg5" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc3" id="gg6" type="radio"  style="zoom: 1.5"  data-role="none"><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
-    </td> 
-    <td></td>
+  <td  align=center><font size="5"  face="DFKai-sb"><?php echo"$qqQ3_4"; ?></font></td>  
+<td align=center> <font size="5">
+    <?php echo"$qQ3_4"; ?> 
+   </font> </td> 
+    <td  align=center style="color: red"><font size="5"> <?php echo"$anw3_4"; ?></font></td>
         </tr>
  
     <tr>
-  <td  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
-               
-                if(i==xx){
-        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
-        }
-
-        else{
-          if(arr[x][i][0]==null){
-          }
-          else
-        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
-            } 
-      }</script></font></td>  
-    <td> 
-    <input name="cc4" id="gg7" type="radio"  style="zoom: 1.5"  data-role="none"><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc4" id="gg8" type="radio"  style="zoom: 1.5"  data-role="none"><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
-    </td> 
-    <td></td>
+  <td  align=center><font size="5"  face="DFKai-sb"><?php echo"$qqQ4_4"; ?></font></td>  
+    <td align=center> <font size="5">
+   <?php echo"$qQ4_4"; ?>    
+   </font> </td> 
+    <td  align=center style="color: red"><font size="5"> <?php echo"$anw4_4"; ?></font></td>
      </tr>
     <script type="text/javascript">document.write("<br>");</script>
 
-
-
     <tr>
-  <td  Width="250"><font size="20"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
-               
-                if(i==xx){
-
+  <td  align=center><font size="5"  face="DFKai-sb"><?php echo"$qqQ5_4"; ?></font></td>  
   
-        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
-
-        }
-
-        else{
-          if(arr[x][i][0]==null){
-          }
-          else
-        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
-            } 
-      }</script></font></td>  
-  
-      <td>           
-    <input name="cc5" id="gg9" type="radio"  style="zoom: 1.5"  data-role="none"><font size="20" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc5" id="gg10" type="radio" style="zoom: 1.5"  data-role="none"><font size="20" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
-    </td>
-    <td></td>
+      <td align=center><font size="5">           
+      <?php echo"$qQ5_4"; ?>
+   </font> </td>
+    <td  align=center style="color: red"><font size="5">   <?php echo"$anw5_4"; ?></font></td>
       </tr> 
   </table>
 
@@ -844,9 +1059,458 @@ var ww10="<?php echo $ww10; ?>";
       <a href="#ch_finish3" class="ui-btn" style="width: 5%;" data-transition="slide">上一題</a> 
       <a href="#ch_finish5" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>       
     </div>
-	
 
 </div>
 
 
+<!-- 555555555555 -->
+<script>
+<?php
+////左邊5個
+$q1_5="$qqQ1_5";
+?>
+var q1_5="<?php echo $q1_5; ?>";
+<?php
+$q2_5="$qqQ2_5";
+?>
+var q2_5="<?php echo $q2_5; ?>";
+<?php
+$q3_5="$qqQ3_5";
+?>
+var q3_5="<?php echo $q3_5; ?>";
+<?php
+$q4_5="$qqQ4_5";
+?>
+var q4_5="<?php echo $q4_5; ?>";
+<?php
+$q5_5="$qqQ5_5";
+?>
+var q5_5="<?php echo $q5_5; ?>";
+////右邊5個
+<?php
+$rq1_5="$rqqQ1_5";
+?>
+var rq1_5="<?php echo $rq1_5; ?>";
+<?php
+$rq2_5="$rqqQ2_5";
+?>
+var rq2_5="<?php echo $rq2_5; ?>";
+<?php
+$rq3_5="$rqqQ3_5";
+?>
+var rq3_5="<?php echo $rq3_5; ?>";
+<?php
+$rq4_5="$rqqQ4_5";
+?>
+var rq4_5="<?php echo $rq4_5; ?>";
+<?php
+$rq5_5="$rqqQ5_5";
+?>
+var rq5_5="<?php echo $rq5_5; ?>";
+<?php
+////正確答案
+$q6_5="$qqQ6_5";
+?>
+var q6_5="<?php echo $q6_5; ?>";
+<?php
+$q7_5="$qqQ7_5";
+?>
+var q7_5="<?php echo $q7_5; ?>";
+<?php
+$q8_5="$qqQ8_5";
+?>
+var q8_5="<?php echo $q8_5; ?>";
+<?php
+$q9_5="$qqQ9_5";
+?>
+var q9_5="<?php echo $q9_5; ?>";
+<?php
+$q10_5="$qqQ10_5";
+?>
+var q10_5="<?php echo $q10_5; ?>";
+</script>
+
+
+<div data-role="page" id="ch_finish5">
+	<?php
+;
+ $q5score=0;
+if ($rqxqQ1_5==($qqQ1_5.""."="."".$qqQ6_5)) 
+  $q5score=$q5score+4;
+if ($rqxqQ2_5==($qqQ2_5.""."="."".$qqQ7_5)) 
+  $q5score=$q5score+4;
+if ($rqxqQ3_5==($qqQ3_5.""."="."".$qqQ8_5)) 
+  $q5score=$q5score+4;
+if ($rqxqQ4_5==($qqQ4_5.""."="."".$qqQ9_5)) 
+  $q5score=$q5score+4;
+if ($rqxqQ5_5==($qqQ5_5.""."="."".$qqQ10_5)) 
+  $q5score=$q5score+4;
+$total=$q1score+$q2score+$q3score+$q4score+$q5score;
+?>
+<h3 align="center" style="color: red">本大題拿了<?php echo"$q5score"; ?>/20分</h3>
+<h3 align="center">請選出正確的選項</h3>
+  <div role="main" class="ui-content">
+   <div class="container">
+        <div id="draw" class="draw-container">
+            <div style="position: absolute" class="btn-group">
+                <a href="javascript:;" id="j-default" title="">顯示答案</a>
+            </div>
+            <ul class="question-list data-list">
+
+            </ul>
+            <ul class="answer-list data-list">
+
+            </ul>
+
+            <i class="remove-btn"></i>
+        </div>
+        <div class="result-container">
+            <h3>您的答案是：</h3>
+            <?php if($rqxqQ1_5!=undefined) echo($rqxqQ1_5) ;
+                  echo '<br>';
+                  if($rqxqQ2_5!=undefined) echo($rqxqQ2_5) ;
+                  echo '<br>';
+                  if($rqxqQ3_5!=undefined) echo($rqxqQ3_5) ;
+                  echo '<br>';
+                  if($rqxqQ4_5!=undefined) echo($rqxqQ4_5) ;
+                  echo '<br>';
+                  if($rqxqQ5_5!=undefined) echo($rqxqQ5_5) ;
+             ?>
+            <ul class="result-display"></ul>
+        </div>
+    </div>
+    <div   align="center">
+      <a href="#ch_finish4" class="ui-btn" style="width: 5%;" data-transition="slide">上一題</a> 
+             
+    </div>
+  </div><!-- /content -->
+
+<script type="text/javascript">
+  const line = {
+    init: function (questionObj, answerObj) {
+        this.draw = SVG('draw').size("100%", "100%");
+        this.lineArr = [];
+        this.currentInfo = {};
+        this.createList(questionObj)
+        this.createList(answerObj)
+        this.bindBtnEvent()
+        this.bindParentsEvent()
+    },
+    /* 创建列表 */
+    createList: function (obj, callback) {
+        let type = obj.type,
+            data = obj.data,
+            content = [];
+        if (type == 'question') {
+            $('.question-list').empty()
+            data.forEach(element => {
+                let item = '<li class="question-li" data-question=' + element.question + ' data-answer=' + element.answer + '>' + element.question + '</li>',
+                    obj = {};
+                obj.beginValue = element.question;
+                obj.line = this.createLine();
+                this.lineArr.push(obj)
+                content.push(item);
+            });
+            $('.question-list').html(content)
+        } else {
+            $('.answer-list').empty()
+            data.forEach(element => {
+                let item = '<li class="answer-li" data-answer=' + element + '>' + element + '</li>';
+                content.push(item);
+            });
+            $('.answer-list').html(content);
+
+        }
+        // this.itemForEach(true)
+    },
+    /* 绑定按钮事件 */
+    bindBtnEvent: function () {
+        let self = this,
+            parentPosition = $('#draw').offset();
+        /* 鼠标按下question-list列，调整线条开始位置 */
+        $('.question-list').on('mousedown', 'li', function (e) {
+
+            let current = self.lineArr.find(el => {
+                return el.beginValue == $(this).attr('data-question');
+            });
+            current.begin = {};
+            current.beginElement = this;
+            current.begin.y = $(this).offset().top - parentPosition.top -2 ;
+            current.begin.x = $(this).offset().left - parentPosition.left  -372;
+            current.line.show();
+            current.line.stroke({
+                color: "#67C23A",
+            });
+            current.line.plot(current.begin.x, current.begin.y, current.begin.x, current.begin.y);
+            current.end = {};
+            /* 如果存在结束位置，删除 */
+            if (current.endElement) {
+                $(current.endElement).removeClass('selected')
+                $(this).removeClass('selected')
+            }
+            current.endElement = '';
+            current.endValue = '';
+            self.currentInfo = current;
+        })
+        /* 鼠标按下answer-list列，调整线条结束位置 */
+        $('.answer-list').on('mouseup', 'li', function (e) {
+            let current = self.lineArr.find(el => {
+                return el.beginValue == self.currentInfo.beginValue;
+            });
+
+            current.end.y = $(this).offset().top - parentPosition.top ;
+            current.end.x = $(this).offset().left - parentPosition.left - 555;
+            current.endElement = this;
+            current.endValue = $(this).attr('data-answer');
+            
+            current.line.plot(current.begin.x, current.begin.y, current.end.x, current.end.y);
+            $(current.beginElement).addClass('selected')
+            $(current.beginElement).attr('data-selected', current.endValue)
+            $(this).addClass('selected')
+
+            self.currentInfo = '';
+        })
+        /* 默认答案 */
+        $('#j-default').click(function (e) {
+            self.itemForEach()
+        })
+        /* 重置 */
+        $('#j-reset').click(function (e) {
+            self.lineArr.forEach(el => {
+                $(el.beginElement).removeClass("selected");
+                $(el.beginElement).attr('data-selected', '')
+                $(el.endElement).removeClass("selected");
+                el.line.hide()
+            })
+            $('.result-display').html('')
+        })
+        /* 确认答案 */
+        $('#j-submit').click(function (e) {
+            let result = [];
+            $('.question-list li').each(function (el) {
+                let question = $(this).attr('data-question'),
+                    userSelectd = $(this).attr('data-selected');
+                if (userSelectd) {
+                    let item = `<li>${question} = ${userSelectd}</li>`;
+                    result.push(item)
+                }
+
+            })
+            result.length ? $('.result-display').html(result) : alert('您还未选择！')
+        })
+    },
+    /* 绑定父亲事件事件 */
+    bindParentsEvent: function (params) {
+        let self = this;
+
+        $(document).mouseup(function (e) {
+            if (!$(e.target).is(".answer-li") && self.currentInfo.line) {
+                self.currentInfo.line.hide();
+                $("#draw")
+                    .find(".question-li")
+                    .removeClass("display-block-hover");
+            }
+        })
+        $('#draw').mousemove(function (e) {
+            e.preventDefault();
+            if (Object.keys(self.currentInfo).length != 0) {
+                let end = {}
+                end.x = self.getMousePos(event).x - $("#draw").offset().left;
+                end.y = self.getMousePos(event).y - $("#draw").offset().top;
+                self.currentInfo.line.plot(self.currentInfo.begin.x, self.currentInfo.begin.y, end.x, end.y);
+            }
+        })
+    },
+    /* 创建线条 */
+    createLine: function () {
+        let self = this,
+            line = self.draw.line();
+        line.stroke({
+            color: "#67C23A",
+            width: 2,
+            opacity: 0.6,
+            linecap: "round"
+        });
+        line.hide()
+        line.click(function () {
+            let current = self.lineArr.find(el => {
+                return el.line == this;
+            });
+            $(current.beginElement).removeClass("selected");
+            $(current.endElement).removeClass("selected");
+            $(current.beginElement).attr('data-selected', '')
+
+            current.endValue = "";
+            current.endElement = "";
+            current.end = "";
+
+            this.hide();
+        });
+        line.mouseover(function () {
+            let current = self.lineArr.find(el => {
+                return el.line == this;
+            });
+            if (current.endValue) {
+                let left, top;
+                left =
+                    (current.end.x + current.begin.x - 20) / 2 + "px";
+                top =
+                    (current.end.y + current.begin.y - 20) / 2 + "px";
+                $('.remove-btn').css({
+                    'left': left,
+                    'top': top
+                }).show()
+                this.addClass("hover-g");
+            }
+        });
+        line.mouseout(function () {
+            $('.remove-btn').hide();
+            this.removeClass("hover-g");
+        });
+        /* line.marker("end", 8, 8, function (add) {
+            add.polyline([
+                [1, 0],
+                [1, 8],
+                [7, 4],
+                [1, 0]
+            ]);
+            this.fill("#67C23A");
+            this.stroke({
+                color: "#67C23A",
+                opacity: 0.6,
+                width: 1
+            });
+        }); */
+        return line;
+    },
+    /* 遍历question-list，存在默认answer，就去answer-list找到，进行连接 */
+    itemForEach: function (flag) {
+        let self = this,
+            parentPosition = $('#draw').offset();
+
+        if ($('.question-list li').length && $('.answer-list li').length) {
+
+            $('li').removeClass('selected')
+            $('.question-list li').each(function (params) {
+                let obj = {},
+                    _this = $(this),
+                    beginValue = _this.attr('data-question'),
+                    endValue = _this.attr('data-answer');
+
+                obj = self.lineArr.find(el => el.beginValue == beginValue);
+                obj.beginElement = this;
+                obj.begin = {};
+                obj.begin.y = _this.offset().top - parentPosition.top + 15;
+                obj.begin.x = _this.offset().left - parentPosition.left +200;
+                $(this).attr('data-selected', '');
+                $('.result-display').html('')
+                // obj.line.plot(obj.begin.x, obj.begin.y, obj.begin.x, obj.begin.y)
+                //判断是否存在初始答案
+                if (endValue && !flag) {
+                    $('.answer-list li').each(function (params) {
+                        if ($(this).html() == endValue) {
+                            obj.end = {};
+
+                            obj.end.y = $(this).offset().top - parentPosition.top + 15;
+                            obj.end.x = $(this).offset().left - parentPosition.left +10;
+                            obj.endElement = this;
+                            obj.endValue = endValue;
+                            obj.line.stroke({
+                                color: "#E6A23C",
+                            });
+                            obj.line.plot(obj.begin.x, obj.begin.y, obj.end.x, obj.end.y);
+                            obj.line.show()
+                            $(this).addClass("selected")
+                            _this.addClass("selected")
+                        }
+                    })
+
+
+                }
+
+
+
+
+            })
+        }
+    },
+    /* 获取鼠标的坐标 */
+    getMousePos: function (event) {
+        var e = event || window.event;
+        var scrollX =
+            document.documentElement.scrollLeft || document.body.scrollLeft;
+        var scrollY =
+            document.documentElement.scrollTop || document.body.scrollTop;
+        var x = e.pageX || e.clientX + scrollX  ;
+        var y = e.pageY || e.clientY + scrollY;
+        //alert('x: ' + x + '\ny: ' + y);
+        return {
+            x: x,
+            y: y
+        };
+    },
+}
+    
+const question = [{
+            question: '1+1',
+            answer: 2
+        },
+        {
+            question: '2+2',
+            answer: 4
+        },
+        {
+            question: '3+3',
+            answer: 5
+        },
+        {
+            question: '4+4',
+            answer: 3
+        },
+        {
+            question: '5+5',
+            answer: 1
+        }
+    ],
+
+    answer = [1,2,3,4,5];
+question[0].question=q1_5;
+question[1].question=q2_5;
+question[2].question=q3_5;
+question[3].question=q4_5;
+question[4].question=q5_5;
+question[0].answer=q6_5;
+question[1].answer=q7_5;
+question[2].answer=q8_5;
+question[3].answer=q9_5;
+question[4].answer=q10_5;
+answer[0]=rq1_5;
+answer[1]=rq2_5;
+answer[2]=rq3_5;
+answer[3]=rq4_5;
+answer[4]=rq5_5;
+let questionObj = {
+        data: question,
+        type: 'question'
+    },
+    answerObj = {
+        data: answer,
+        type: 'answer'
+    }
+line.init(questionObj, answerObj)
+
+</script>
+
+<!-- echo $total;
+$link = mysqli_connect("localhost", "root", "roger1998", "chinese");
+if (!$link) die('failed to connect to database');
+$sql = "INSERT INTO question1(answer)
+  VALUES
+     ('$total')";
+$result = mysqli_query($link, $sql);
+   -->
 </body>
+
+
+
+

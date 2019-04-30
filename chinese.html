@@ -9,30 +9,16 @@
 	<script src="jss/jquery-1.11.3.min.js"></script>
 	<script src="jss/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js "></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="jss/ablanxue.js"></script>
 	<link href="csss/ablanxue.css" rel="stylesheet" type="text/css">
   <meta name="viewport" content="width=device-width; initial-scale=1;maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
   <link rel="stylesheet" type="text/css" media="print" href="serif.css">
 	<script src="test3.js"></script>
-    <!-- <script type="text/javascript">
-        window.onload=function(){
-      var aaaaa= document.getElementById("g1"); 
-          aaaaa.value="123";
-        }
-    </script> -->
+   
 
 	<style type="text/css">
-/*table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-
-    ;
-}*/
-/*th, td {
-    padding: 10px;
-    text-align:left;
-}*/
   .disable-select {
       -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -41,65 +27,12 @@
       -ms-user-select: none;       /* Internet Explorer/Edge */
       user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
     }
-
-    .container {                   
-      max-width: 80em;
-    }
-
-    .problems {
-      position: relative;
-    }
-
-    .problem {
-      margin: 1em;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .problem-group {
-      display: flex;
-      align-items: center;
-    }
-
-    .clock {
-      margin-right: 1em;
-    }
-
-    .dot {
-      height: 50px;
-      width: 50px;
-      background-color: #ff5722;
-      border-radius: 50%;
-      display: inline-block;
-      transition: all 500ms ease;
-      cursor: pointer;
-    }
-
-    .dot:hover {
-      transform: scale(1.3);
-    }
-
-    .dot:active {
-      transform: scale(1.1);
-    }
-
-    .space {
-      width: 100%;
-    }
-
-    .time-text {
-      display: inline-block;
-      min-width: 3.5em;
-      margin-left: 1em;
-      padding: 1rem;
-      border-radius: 0.8rem;
-      background: #ff5622c0;
-      color: black;
-      font-size: 2em;
-      font-weight: 900;
-    }
+.box1{  
+}
+.a,.b,.c{
+   display: inline-block
+}
+   
     .time-text2 {
       text-align: center;   
       margin-left: 180px;      
@@ -113,45 +46,174 @@
       font-size: 20px;
       font-weight: 900;
     }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-    .line {
-      position: absolute;
-      z-index: -1;
-      height: 1em;
-      width: 1em;
-      border-radius: 1em;
-      background: teal;
-    }
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-    .check-answer-button {
-      margin: 1rem;
-      padding: 2rem;
-      font-size: 3em;
-      font-weight: 900;
-      background: #a1a1a18f;
-      border-radius: 1rem;
-      color: #666d;
-      transition: all 500ms ease;
-      cursor: pointer;
-    }
-    .check-answer-button-clear {
-      background: #51ff68da;
-      color: rgba(19, 116, 0, 0.867);
-    }
 
-    .check-answer-button-wrong {
-      background: #ff5151da;
-      color: rgba(116, 0, 0, 0.867);
-    }
 
-/*.cen {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 15%;
-}*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: inline-block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/*公共类*/
+
+.fl {
+  float: left
+}
+
+.fr {
+  float: right
+}
+
+.al {
+  text-align: left
+}
+
+.ac {
+  text-align: center
+}
+
+.ar {
+  text-align: right
+}
+
+.hide {
+  display: none
+}
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    background: #f5f5f5;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+    height: 100%;
+    background: #fff;
+}
+
+.draw-container {
+    position: relative;
+    height: 500px;
+    background: #fff;
+}
+
+.btn-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    text-align: right;
+}
+.btn-group a:hover{
+    color: #66b1ff;
+}
+
+.btn-group a{
+    margin-right: 15px;
+    color: #409eff;
+
+}
+a.btn-submit {
+    color: #67c23a
+}
+.draw-container ul {
+    margin-top: 80px;
+}
+
+.data-list {
+    position: absolute;
+}
+
+.question-list {
+    left: 50px;
+}
+
+.answer-list {
+    right: 50px;
+}
+
+.data-list li {
+    margin: 15px;
+    padding: 0 10px;
+    width: 250px;
+    height: 30px;
+    background: #ecf5ff;
+    line-height: 30px;
+    font-size: 16px;
+    color: #409eff;
+    border: 1px solid #b3d8ff;
+    border-radius: 10px;
+    cursor: crosshair;
+    text-align: center
+}
+
+.data-list li:hover,
+.data-list li.selected {
+    background: #409eff;
+    border-color: #409eff;
+    color: #fff;
+}
+
+.hover-g {
+    cursor: pointer;
+    opacity: 1;
+    stroke-width: 4;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: url('./img/delete-icon.png') no-repeat center;
+    font-size: 14px;
+    cursor: pointer;
+    display: none;
+}
+
+.result-container {
+    padding: 20px;
+    border-top: 1px solid #333;
+}
+.result-container li{
+    font-size: 16px;
+    line-height: 35px;
+}
+
+
 </style>
-
+<script src="library/jquery.min.js"></script>
+<script src="library/svg.min.js"></script>
 	<script>
 var json= '\
 {\
@@ -213,12 +275,12 @@ $(function(){
 
 
 
-
+<form   name="myform" method="post" action="chinese_finish.php" data-ajax="false"  > 
 
 
 <!-- Start of first page11111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
 <div data-role="page" id="P1">
- <form   name="myform" method="post" action="chinese_finish.php" data-ajax="false"  > 
+ 
 
 	
 		<p  style="font-size:300%;  text-align:center;">請拼出正確的注音</p>
@@ -230,30 +292,36 @@ $(function(){
 var cart = JSON.parse ( jsonS ); 
 var rand_x=new Array(5);
 var C;
+var qq1="";
+var qq2="";
+var qq3="";
+var qq4="";
+var qq5="";
 for(var p=0;p<5;p++){
     var x_2 = Math.floor((Math.random() * 60) + 0);
     if(rand_x.indexOf(x_2)>=0)
     p--;
     else
     rand_x[p]=x_2;}
+
 var s=rand_x[0];
 var s1=rand_x[1];
 var s2=rand_x[2];
 var s3=rand_x[3];
 var s4=rand_x[4];
+// function q1sent() {
+// var s6=document.getElementById("anwone");
+// s6.value=s
+// var s7=document.getElementById("anwtwo");
+// s7.value=s1
+// var s8=document.getElementById("anwthree");
+// s8.value=s2
+// var s9=document.getElementById("anwfour");
+// s9.value=s3
+// var s10=document.getElementById("anwfive");
+// s10.value=s4
+// }
 
-function q1sent() {
-var s6=document.getElementById("anwone");
-s6.value=s
-var s7=document.getElementById("anwtwo");
-s7.value=s1
-var s8=document.getElementById("anwthree");
-s8.value=s2
-var s9=document.getElementById("anwfour");
-s9.value=s3
-var s10=document.getElementById("anwfive");
-s10.value=s4
-}
 </script>
 
 
@@ -270,7 +338,7 @@ document.write("<p ; style='font-size:200%; text-align:center;'>"+cart.contents[
 </script>
 </td>
 <td >
-<input type="text" id="test" name="code" class="text" maxlength="20">
+<input type="text" id="test" name="code" class="text" maxlength="20"  style="text-align:center;">
 </td>
 
 
@@ -283,7 +351,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].
 </script>
 </td>
 <td >
-<input type="text" id="test1" name="code1" class="text" maxlength="20" >
+<input type="text" id="test1" name="code1" class="text" maxlength="20" style="text-align:center;" >
 </tr>
   <tr  width="10%">
   <td align=center>
@@ -294,7 +362,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].
 </script>
 </td>
 <td    align=center >
-<input type="text" id="test2" name="code2" class="text" maxlength="20">
+<input type="text" id="test2" name="code2" class="text" maxlength="20" style="text-align:center;">
 </td>
 
   
@@ -307,7 +375,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].
 </script>
 </td>
 <td >
-<input type="text" id="test3" name="code3" class="text" maxlength="20">
+<input type="text" id="test3" name="code3" class="text" maxlength="20" style="text-align:center;">
 </td>
 </tr>
     <tr  width="10%">
@@ -319,7 +387,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].
 </script>
 </td>
 <td   align=center>
-<input type="text" id="test4" name="code4" class="text" maxlength="20">
+<input type="text" id="test4" name="code4" class="text" maxlength="20" style="text-align:center;">
 </td>
 </tr>
 </table>
@@ -332,9 +400,15 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].
 <input type="hidden" id="anwthree" name="Anwthree">
 <input type="hidden" id="anwfour" name="Anwfour">
 <input type="hidden" id="anwfive" name="Anwfive">
+<input type="hidden" id="anwone2" name="Anwone2">
+<input type="hidden" id="anwtwo2" name="Anwtwo2">
+<input type="hidden" id="anwthree2" name="Anwthree2">
+<input type="hidden" id="anwfour2" name="Anwfour2">
+<input type="hidden" id="anwfive2" name="Anwfive2">
 
-  <div   align="center">
-      <a href="#P2" class="ui-btn" style="width: 5%;" data-transition="slide" onclick="q1sent()">下一題</a>      
+  <div   class="box1" align="center">   
+       <a href="#"  style="width: 6%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>   
+       <a href="#P2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide" >下一題</a>
     </div>
 </div>
 
@@ -346,20 +420,8 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Start of second page 22222222222222222222222222222222222222222222222222222222222222222222-->
-<div data-role="page" id="P2">
+<div data-role="page" id="P2"  data-ajax="false">
 	
 		<p  style="font-size:300%;  text-align:center;">請選出與圖對應的選項</p>
 	
@@ -427,57 +489,58 @@ cho3=rand_[rand2_[2]];
 cho4=rand_[rand2_[3]];
 cho5=rand_[rand2_[4]];
 
-function q2sent(){
-var s11=document.getElementById("anwone1");
-s11.value=s_2;
-var s12=document.getElementById("anwtwo1");
-s12.value=s1_2;
-var s13=document.getElementById("anwthree1");
-s13.value=s2_2;
-var s14=document.getElementById("anwfour1");
-s14.value=s3_2;
-var s15=document.getElementById("anwfive1");
-s15.value=s4_2;
-var s16=document.getElementById("picture1");
-s16.value=p_2;
-var s17=document.getElementById("picture2");
-s17.value=p1_2;
-var s18=document.getElementById("picture3");
-s18.value=p2_2;
-var s19=document.getElementById("picture4");
-s19.value=p3_2;
-var s20=document.getElementById("picture5");
-s20.value=p4_2;
-var choo1=document.getElementById("choose1");
-choo1.value=cho1;
-var choo2=document.getElementById("choose2");
-choo2.value=cho2;
-var choo3=document.getElementById("choose3");
-choo3.value=cho3;
-var choo4=document.getElementById("choose4");
-choo4.value=cho4;
-var choo5=document.getElementById("choose5");
-choo5.value=cho5;
-}
+//   function q2sent(){
+// var s11=document.getElementById("anwone1");
+// s11.value=s_2;
+// var s12=document.getElementById("anwtwo1");
+// s12.value=s1_2;
+// var s13=document.getElementById("anwthree1");
+// s13.value=s2_2;
+// var s14=document.getElementById("anwfour1");
+// s14.value=s3_2;
+// var s15=document.getElementById("anwfive1");
+// s15.value=s4_2;
+// var s16=document.getElementById("picture1");
+// s16.value=p_2;
+// var s17=document.getElementById("picture2");
+// s17.value=p1_2;
+// var s18=document.getElementById("picture3");
+// s18.value=p2_2;
+// var s19=document.getElementById("picture4");
+// s19.value=p3_2;
+// var s20=document.getElementById("picture5");
+// s20.value=p4_2;
+// var choo1=document.getElementById("choose1");
+// choo1.value=cho1;
+// var choo2=document.getElementById("choose2");
+// choo2.value=cho2;
+// var choo3=document.getElementById("choose3");
+// choo3.value=cho3;
+// var choo4=document.getElementById("choose4");
+// choo4.value=cho4;
+// var choo5=document.getElementById("choose5");
+// choo5.value=cho5;
+// }
+
 </script>
 
 
 
 
-<table  border="1" width="70%" align="center">
+<table  border="1" width="70%" align="center" >
 <tr>
   <td  align=center>
 <script>document.write('<img src="image/'+rand_[0]+'.jpg"height="150" width="200"><br>')</script>	
  </td>
  <td>
-<input type="number"  id="test_2"  name="code_2"/>
+<input type="number"  id="test_2"  name="code_2"/ style="text-align:center;" max="5" min="1" > 
 
 </td>
 <td  align=center>
 <script>document.write('<img src="image/'+rand_[1]+'.jpg"height="150" width="200"><br>')</script>	
    </td>
    <td>
-<input type="number" id="test1_2" name="code1_2">
+<input type="number" id="test1_2" name="code1_2" style="text-align:center;" max="5" min="1">
 </td>
 </tr>
 <tr>
@@ -485,13 +548,13 @@ choo5.value=cho5;
 <script>document.write('<img src="image/'+rand_[2]+'.jpg"height="150" width="200"><br>')</script>	
   </td>
   <td>
-<input type="number" id="test2_2" name="code2_2">
+<input type="number" id="test2_2" name="code2_2" style="text-align:center;" max="5" min="1">
 </td>
 <td  align=center>
 <script> document.write('<img src="image/'+rand_[3]+'.jpg"height="150" width="200"><br>')</script>	
 </td>
 <td  align=center>
-<input type="number" id="test3_2" name="code3_2">
+<input type="number" id="test3_2" name="code3_2" style="text-align:center;" max="5" min="1">
 </td>
 </tr>
 <tr>
@@ -499,7 +562,7 @@ choo5.value=cho5;
 <script>document.write('<img src="image/'+rand_[4]+'.jpg"height="150" width="200"><br>')</script>	
 </td>
 <td>
-<input type="number" id="test4_2" name="code4_2">
+<input type="number" id="test4_2" name="code4_2" style="text-align:center;"  max="5" min="1" >
 </td>
 </tr>
 </table>
@@ -524,10 +587,9 @@ choo5.value=cho5;
 
 
 <div   align="center">
-      <a href="#P1" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a>
-      <a href="#P3" class="ui-btn" style="width: 5%;" data-transition="slide"  onclick="q2sent()">下一題</a>
-    
-
+      <a href="#P1" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide" data-direction="reverse" >上一題</a>
+      <a href="#"   style="width: 6%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+      <a href="#P3" class="c ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide" >下一題</a>
     </div>
 
 </div><!-- /page -->
@@ -537,7 +599,7 @@ choo5.value=cho5;
 
 
 <!-- Start of second page33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 -->
-<div data-role="page" id="P3">
+<div data-role="page" id="P3" data-ajax="false">
 
 	
 		<p    style="font-size:300%;  text-align:center;">請選出正確的注音</p>
@@ -778,49 +840,48 @@ k_10=cart3.contentss[x5].two;}
 
 
 
-function q3sent(){   
-var aa1=document.getElementById("anw1");
-aa1.value=k_1;
-var aa2=document.getElementById("anw2");
-aa2.value=k_2;
-var aa3=document.getElementById("anw3");
-aa3.value=k_3;
-var aa4=document.getElementById("anw4");
-aa4.value=k_4;
-var aa5=document.getElementById("anw5");
-aa5.value=k_5;
-var aa6=document.getElementById("anw6");
-aa6.value=k_6;
-var aa7=document.getElementById("anw7");
-aa7.value=k_7;
-var aa8=document.getElementById("anw8");
-aa8.value=k_8;
-var aa9=document.getElementById("anw9");
-aa9.value=k_9;
-var aa10=document.getElementById("anw10");
-aa10.value=k_10;
-var aaa1=document.getElementById("banw1");
-aaa1.value=rand_4[0];
-var aaa2=document.getElementById("banw2");
-aaa2.value=rand_4[1];
-var aaa3=document.getElementById("banw3");
-aaa3.value=rand_7[0];
-var aaa4=document.getElementById("banw4");
-aaa4.value=rand_7[1];
-var aaa5=document.getElementById("banw5");
-aaa5.value=rand_10[0];
-var aaa6=document.getElementById("banw6");
-aaa6.value=rand_10[1];
-var aaa7=document.getElementById("banw7");
-aaa7.value=rand_13[0];
-var aaa8=document.getElementById("banw8");
-aaa8.value=rand_13[1];
-var aaa9=document.getElementById("banw9");
-aaa9.value=rand_16[0];
-var aaa10=document.getElementById("banw10");
-aaa10.value=rand_16[1];
-}
-
+// function q3sent(){   
+// var aa1=document.getElementById("anw1");
+// aa1.value=k_1;
+// var aa2=document.getElementById("anw2");
+// aa2.value=k_2;
+// var aa3=document.getElementById("anw3");
+// aa3.value=k_3;
+// var aa4=document.getElementById("anw4");
+// aa4.value=k_4;
+// var aa5=document.getElementById("anw5");
+// aa5.value=k_5;
+// var aa6=document.getElementById("anw6");
+// aa6.value=k_6;
+// var aa7=document.getElementById("anw7");
+// aa7.value=k_7;
+// var aa8=document.getElementById("anw8");
+// aa8.value=k_8;
+// var aa9=document.getElementById("anw9");
+// aa9.value=k_9;
+// var aa10=document.getElementById("anw10");
+// aa10.value=k_10;
+// var aaa1=document.getElementById("banw1");
+// aaa1.value=rand_4[0];
+// var aaa2=document.getElementById("banw2");
+// aaa2.value=rand_4[1];
+// var aaa3=document.getElementById("banw3");
+// aaa3.value=rand_7[0];
+// var aaa4=document.getElementById("banw4");
+// aaa4.value=rand_7[1];
+// var aaa5=document.getElementById("banw5");
+// aaa5.value=rand_10[0];
+// var aaa6=document.getElementById("banw6");
+// aaa6.value=rand_10[1];
+// var aaa7=document.getElementById("banw7");
+// aaa7.value=rand_13[0];
+// var aaa8=document.getElementById("banw8");
+// aaa8.value=rand_13[1];
+// var aaa9=document.getElementById("banw9");
+// aaa9.value=rand_16[0];
+// var aaa10=document.getElementById("banw10");
+// aaa10.value=rand_16[1];
+// }
 </script>
 
 <table border="1" width="50%" align="center">
@@ -828,8 +889,7 @@ aaa10.value=rand_16[1];
   <tr>
     <td  width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_4[0])</script></font></td>
     <td align=center> 
-    
-    <input name="c1" id="g1" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>    
+    <input name="c1" id="g1" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>  
     <input name="c1" id="g2" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
     </td>
   </tr>
@@ -945,7 +1005,48 @@ aaa10.value=rand_16[1];
     </td>
   </tr>
 </table>
-
+    <script type="text/javascript">
+         var g1v = cart3.contentss[x].two;
+      document.getElementById("g1").value =g1v;
+         var g2v = cart3.contentss[x].four;
+      document.getElementById("g2").value = g2v;
+         var g3v = cart3.contentss[x].two;
+      document.getElementById("g3").value = g3v;
+         var g4v = cart3.contentss[x].four;
+      document.getElementById("g4").value = g4v;
+         var g5v = cart3.contentss[x2].two;
+      document.getElementById("g5").value = g5v;
+         var g6v = cart3.contentss[x2].four;
+      document.getElementById("g6").value = g6v;
+         var g7v = cart3.contentss[x2].two;
+      document.getElementById("g7").value = g7v;
+         var g8v = cart3.contentss[x2].four;
+      document.getElementById("g8").value = g8v;
+         var g9v = cart3.contentss[x3].two;
+      document.getElementById("g9").value = g9v;
+         var g10v = cart3.contentss[x3].four;
+      document.getElementById("g10").value =g10v;
+         var g11v = cart3.contentss[x3].two;
+      document.getElementById("g11").value =g11v;
+         var g12v = cart3.contentss[x3].four;
+      document.getElementById("g12").value =g12v;
+         var g13v = cart3.contentss[x4].two;
+      document.getElementById("g13").value =g13v;
+         var g14v = cart3.contentss[x4].four;
+      document.getElementById("g14").value =g14v;
+         var g15v = cart3.contentss[x4].two;
+      document.getElementById("g15").value =g15v;
+         var g16v = cart3.contentss[x4].four;
+      document.getElementById("g16").value =g16v;
+         var g17v = cart3.contentss[x5].two;
+      document.getElementById("g17").value =g17v;
+         var g18v = cart3.contentss[x5].four;
+      document.getElementById("g18").value =g18v;
+         var g19v = cart3.contentss[x5].two;
+      document.getElementById("g19").value =g19v;
+         var g20v = cart3.contentss[x5].four;
+      document.getElementById("g20").value =g20v;
+    </script>
 	<input type="hidden" id="anw1" name="ar1"/>				
 	<input type="hidden" id="anw2" name="ar2"/>
 	<input type="hidden" id="anw3" name="ar3"/>
@@ -969,11 +1070,12 @@ aaa10.value=rand_16[1];
   <input type="hidden" id="banw10" name="bar10"/>   
 
 
-	
+
 		   
 	 <div align="center">
-      <a href="#P2" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse" >上一題</a>
-      <a href="#P4" class="ui-btn" style="width: 5%;" data-transition="slide" onclick="q3sent()">下一題</a>
+      <a href="#P2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide" data-direction="reverse" >上一題</a>
+      <a href="#"   style="width: 6%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+      <a href="#P4" class="c ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide" >下一題</a>
     </div>
      
         </div>
@@ -989,7 +1091,7 @@ aaa10.value=rand_16[1];
 
 
 
-<div data-role="page" id="P4">
+<div data-role="page" id="P5" data-ajax="false">
 
 	
       <p  style="font-size:300%;  text-align:center;">請選出正確的注音</p>
@@ -1128,21 +1230,15 @@ var tit2=rand2[1];
     <tr>  
   <td  Width="70%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>for(var i=0;i<5;i++){               
                 if(i==xx){
-
-    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
-    //              var q=arr[x][i][1].indexOf("ㄕ");
-        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
-        // }
-
-        // else{
         document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
-        // }
+    qq1=qq1+arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)"
         }
         else{
           if(arr[x][i][0]==null){
           }
           else
         document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
+      qq1=qq1+arr[x][i][0]+"("+arr[x][i][1]+")"
             } 
       }</script></font></td>  
 
@@ -1150,8 +1246,8 @@ var tit2=rand2[1];
       
   <td align=center>    
 
-    <input name="cc1" id="gg11" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc1" id="gg2" type="radio"   style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[1])</script></font>   
+    <input name="cc1" id="gg11" type="radio"  style="zoom: 1.5"  data-role="none" value=""><font size="5" face="DFKai-sb"><script>document.write(tit1)</script></font>
+    <input name="cc1" id="gg2" type="radio"   style="zoom: 1.5"  data-role="none" value=""><font size="5" face="DFKai-sb"><script>document.write(tit2)</script></font>   
 
     </td> 
       </tr>
@@ -1296,15 +1392,8 @@ var tit4=rand2[1];
   <td   align=center><font size="5"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
                
                 if(i==xx){
-
-    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
-    //              var q=arr[x][i][1].indexOf("ㄕ");
-        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
-        // }
-
-        // else{
         document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
-        // }
+   qq2=qq2+arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)"
         }
 
         else{
@@ -1312,12 +1401,13 @@ var tit4=rand2[1];
           }
           else
         document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
+      qq2=qq2+arr[x][i][0]+"("+arr[x][i][1]+")"
             } 
       }</script></font></td>  
     
 <td  align=center>  
-    <input name="cc2" id="gg3" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc2" id="gg4" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    <input name="cc2" id="gg3" type="radio"  style="zoom: 1.5"  data-role="none" value=""><font size="5" face="DFKai-sb"><script>document.write(tit3)</script></font>
+    <input name="cc2" id="gg4" type="radio"  style="zoom: 1.5"  data-role="none" value=""><font size="5" face="DFKai-sb"><script>document.write(tit4)</script></font>    
     </td> 
     </tr>
     <script type="text/javascript">document.write("<br>");</script>
@@ -1472,15 +1562,8 @@ var tit6=rand2[1];
   <td style="text-align: center;"><font size="5"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
                
                 if(i==xx){
-
-    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
-    //              var q=arr[x][i][1].indexOf("ㄕ");
-        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
-        // }
-
-        // else{
         document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
-        // }
+       qq3=qq3+arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)"
         }
 
         else{
@@ -1488,6 +1571,7 @@ var tit6=rand2[1];
           }
           else
         document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
+      qq3=qq3+arr[x][i][0]+"("+arr[x][i][1]+")"
             } 
       }</script></font></td>  
 
@@ -1497,8 +1581,8 @@ var tit6=rand2[1];
   document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 </script>
 <td align=center> 
-    <input name="cc3" id="gg5" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc3" id="gg6" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    <input name="cc3" id="gg5" type="radio"  style="zoom: 1.5"  data-role="none" value="" ><font size="5" face="DFKai-sb"><script>document.write(tit5)</script></font>
+    <input name="cc3" id="gg6" type="radio"  style="zoom: 1.5"  data-role="none" value=""><font size="5" face="DFKai-sb"><script>document.write(tit6)</script></font>    
     </td> 
         </tr>
     <script type="text/javascript">document.write("<br>");</script>
@@ -1658,15 +1742,8 @@ var tit8=rand2[1];
   <td  style="text-align: center;"><font size="5"  face="DFKai-sb"><script>for(var i=0;i<5;i++){
                
                 if(i==xx){
-
-    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
-    //              var q=arr[x][i][1].indexOf("ㄕ");
-        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
-        // }
-
-        // else{
         document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
-        // }
+       qq4=qq4+arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)"
         }
 
         else{
@@ -1674,17 +1751,19 @@ var tit8=rand2[1];
           }
           else
         document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
+      qq4=qq4+arr[x][i][0]+"("+arr[x][i][1]+")"
             } 
       }</script></font></td>  
    
        
 
 <script type="text/javascript">
+  
   document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 </script>
     <td align=center> 
-    <input name="cc4" id="gg7" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc4" id="gg8" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    <input name="cc4" id="gg7" type="radio"  style="zoom: 1.5"  data-role="none" value=""><font size="5" face="DFKai-sb"><script>document.write(tit7)</script></font>
+    <input name="cc4" id="gg8" type="radio"  style="zoom: 1.5"  data-role="none" value=""><font size="5" face="DFKai-sb"><script>document.write(tit8)</script></font>    
     </td> 
      </tr>
     <script type="text/javascript">document.write("<br>");</script>
@@ -1850,31 +1929,25 @@ var tit10=rand2[1];
                
                 if(i==xx){
 
-    //             if(arr[x][i][1].indexOf("ㄕ")!=-1){
-    //              var q=arr[x][i][1].indexOf("ㄕ");
-        //   document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");
-        // }
-
-        // else{
-        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)");                     
-        // }
+        document.write(arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)"); 
+         qq5=qq5+arr[x][i][0]+"(&nbsp;&nbsp;&nbsp;&nbsp;)";                    
+       
         }
 
         else{
           if(arr[x][i][0]==null){
           }
           else
-        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");    
+        document.write(arr[x][i][0]+"("+arr[x][i][1]+")");
+         qq5=qq5+arr[x][i][0]+"("+arr[x][i][1]+")"; 
             } 
       }</script></font></td>  
   
    
-<script type="text/javascript">
-  document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-</script>
+
       <td align=center>           
-    <input name="cc5" id="gg9" type="radio"  style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[0])</script></font>
-    <input name="cc5" id="gg10" type="radio" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(rand2[1])</script></font>    
+    <input name="cc5" id="gg9"  type="radio" style="zoom: 1.5"  data-role="none" value=""><font size="5" face="DFKai-sb"><script>document.write(tit9)</script></font>
+    <input name="cc5" id="gg10" type="radio" style="zoom: 1.5"  data-role="none" value=""><font size="5" face="DFKai-sb"><script>document.write(tit10)</script></font>    
     </td>
       </tr> 
     <script type="text/javascript">document.write("<br>");</script>
@@ -1887,37 +1960,550 @@ var tit10=rand2[1];
   <input type="hidden" id="anw3x" name="ar3x"/>
   <input type="hidden" id="anw4x" name="ar4x"/>
   <input type="hidden" id="anw5x" name="ar5x"/>   
+   <!--444題目     -->
+  <input type="hidden" id="q4_1" name="qq4_1"/>       
+  <input type="hidden" id="q4_2" name="qq4_2"/>
+  <input type="hidden" id="q4_3" name="qq4_3"/>
+  <input type="hidden" id="q4_4" name="qq4_4"/>
+  <input type="hidden" id="q4_5" name="qq4_5"/>
   </table>
 
 
 
 <script>
+       var gg11v = tit1;
+      document.getElementById("gg11").value  =gg11v;
+       var gg2v = tit2;
+      document.getElementById("gg2").value =gg2v; 
+       var gg3v = tit3;
+      document.getElementById("gg3").value  =gg3v;
+       var gg4v = tit4;
+      document.getElementById("gg4").value =gg4v; 
+       var gg5v = tit5;
+      document.getElementById("gg5").value  =gg5v;
+       var gg6v = tit6;
+      document.getElementById("gg6").value =gg6v; 
+       var gg7v = tit7;
+      document.getElementById("gg7").value  =gg7v;
+       var gg8v = tit8;
+      document.getElementById("gg8").value =gg8v; 
+       var gg9v = tit9;
+      document.getElementById("gg9").value  =gg9v;
+       var gg10v = tit10;
+      document.getElementById("gg10").value =gg10v; 
+
 var k1=arr[iii][iiii][1];
 var k2=arr[xuu][yy][1];
 var k3=arr[xu][gg][1];
 var k4=arr[xo][gk][1];
 var k5=arr[ku][ap][1];
-  window.onload = function(){ 
-var aa8= document.getElementById("gg11"); 
-aa8.value=tit1;
-var bb8= document.getElementById("gg2"); 
-bb8.value=tit2;
-var cc8= document.getElementById("gg3"); 
-cc8.value=tit3;
-var dd8= document.getElementById("gg4"); 
-dd8.value=tit4;
-var ee8= document.getElementById("gg5"); 
-ee8.value=tit5;
-var ff8= document.getElementById("gg6"); 
-ff8.value=tit6;
-var gg8= document.getElementById("gg7"); 
-gg8.value=tit7;
-var hh8= document.getElementById("gg8"); 
-hh8.value=tit8;
-var ii8= document.getElementById("gg9"); 
-ii8.value=tit9;
-var jj8= document.getElementById("gg10"); 
-jj8.value=tit10;
+
+</script>
+
+	<div role="main" class="ui-content">		
+	</div><!-- /content -->
+ 
+<div align="center" >
+  <!-- <a href="#P4" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a> -->
+      <button  style="width:120px;height:40px;" type="submit" name="" value="hi" onclick="sent()"   >確認</button>
+  <a href="#P4" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide" data-direction="reverse" >上一題</a>
+  <a style="width: 6%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left" type="submit" name="" value="hi" onclick="sent()" >結束作答</a>
+  
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 -->
+!-- Start of first page -->
+<div data-role="page" id="P4">
+
+ <p  style="font-size:300%;  text-align:center;">請選出正確的注音</p>
+
+  <div role="main" class="ui-content">
+   <div class="container">
+        <div id="draw" class="draw-container">
+            <div style="position: absolute" class="btn-group">
+      
+                <a href="javascript:;" id="j-reset">重置</a>
+                <!-- <a href="javascript:;" id="j-submit" class="btn-submit">确定</a> -->
+            </div>
+            <ul class="question-list data-list">
+
+            </ul>
+            <ul class="answer-list data-list">
+
+            </ul>
+
+            <i class="remove-btn"></i>
+        </div>
+        <div class="result-container">
+            
+            <ul class="result-display"></ul>
+        </div>
+    </div>
+  </div><!-- /content -->
+  
+    
+    <div align="center">           
+      <a href="#P3" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide" data-direction="reverse" >上一題</a>
+      <a href="#"   style="width: 6%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+      <a href="#P5" id="j-submit" class="c ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide" >下一題</a>
+    </div>
+</div><!-- /page -->
+
+
+
+<script src="library/svg.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+  var result1 =new Array(5);
+  var qxq=0;
+  const line = {
+    init: function (questionObj, answerObj) {
+        this.draw = SVG('draw').size("100%", "100%");
+        this.lineArr = [];
+        this.currentInfo = {};
+        this.createList(questionObj)
+        this.createList(answerObj)
+        this.bindBtnEvent()
+        this.bindParentsEvent()
+    },
+    /* 创建列表 */
+    createList: function (obj, callback) {
+        let type = obj.type,
+            data = obj.data,
+            content = [];
+        if (type == 'question') {
+            $('.question-list').empty()
+            data.forEach(element => {
+                let item = '<li class="question-li" data-question=' + element.question + ' data-answer=' + element.answer + '>' + element.question + '</li>',
+                    obj = {};
+                obj.beginValue = element.question;
+                obj.line = this.createLine();
+                this.lineArr.push(obj)
+                content.push(item);
+            });
+            $('.question-list').html(content)
+        } else {
+            $('.answer-list').empty()
+            data.forEach(element => {
+                let item = '<li class="answer-li" data-answer=' + element + '>' + element + '</li>';
+                content.push(item);
+            });
+            $('.answer-list').html(content);
+
+        }
+        // this.itemForEach(true)
+    },
+    /* 绑定按钮事件 */
+    bindBtnEvent: function () {
+        let self = this,
+            parentPosition = $('#draw').offset();
+        /* 鼠标按下question-list列，调整线条开始位置 */
+        $('.question-list').on('mousedown', 'li', function (e) {
+
+            let current = self.lineArr.find(el => {
+                return el.beginValue == $(this).attr('data-question');
+            });
+            current.begin = {};
+            current.beginElement = this;
+            current.begin.y = $(this).offset().top - parentPosition.top -115 ;
+            current.begin.x = $(this).offset().left - parentPosition.left  -240;
+            current.line.show();
+            current.line.stroke({
+                color: "#67C23A",
+            });
+            current.line.plot(current.begin.x, current.begin.y, current.begin.x, current.begin.y);
+            current.end = {};
+            /* 如果存在结束位置，删除 */
+            if (current.endElement) {
+                $(current.endElement).removeClass('selected')
+                $(this).removeClass('selected')
+            }
+            current.endElement = '';
+            current.endValue = '';
+            self.currentInfo = current;
+        })
+        /* 鼠标按下answer-list列，调整线条结束位置 */
+        $('.answer-list').on('mouseup', 'li', function (e) {
+            let current = self.lineArr.find(el => {
+                return el.beginValue == self.currentInfo.beginValue;
+            });
+
+            current.end.y = $(this).offset().top - parentPosition.top -115;
+            current.end.x = $(this).offset().left - parentPosition.left - 470;
+            current.endElement = this;
+            current.endValue = $(this).attr('data-answer');
+            
+            current.line.plot(current.begin.x, current.begin.y, current.end.x, current.end.y);
+            $(current.beginElement).addClass('selected')
+            $(current.beginElement).attr('data-selected', current.endValue)
+            $(this).addClass('selected')
+
+            self.currentInfo = '';
+        })
+        /* 默认答案 */
+        $('#j-default').click(function (e) {
+            self.itemForEach()
+        })
+        /* 重置 */
+        $('#j-reset').click(function (e) {
+            self.lineArr.forEach(el => {
+                $(el.beginElement).removeClass("selected");
+                $(el.beginElement).attr('data-selected', '')
+                $(el.endElement).removeClass("selected");
+                el.line.hide()
+            })
+            $('.result-display').html('')
+        })
+        /* 确认答案 */
+        $('#j-submit').click(function (e) {
+            let result = [];
+            $('.question-list li').each(function (el) {
+                let question = $(this).attr('data-question'),
+                    userSelectd = $(this).attr('data-selected');
+                if (userSelectd) {
+                    let item = `${question}=${userSelectd}`;
+                    result.push(item)
+                    result1[qxq]=item;
+                    qxq++;
+                }
+
+            })
+            
+        })
+    },
+    /* 绑定父亲事件事件 */
+    bindParentsEvent: function (params) {
+        let self = this;
+
+        $(document).mouseup(function (e) {
+            if (!$(e.target).is(".answer-li") && self.currentInfo.line) {
+                self.currentInfo.line.hide();
+                $("#draw")
+                    .find(".question-li")
+                    .removeClass("display-block-hover");
+            }
+        })
+        $('#draw').mousemove(function (e) {
+            e.preventDefault();
+            if (Object.keys(self.currentInfo).length != 0) {
+                let end = {}
+                end.x = self.getMousePos(event).x - $("#draw").offset().left;
+                end.y = self.getMousePos(event).y - $("#draw").offset().top;
+                self.currentInfo.line.plot(self.currentInfo.begin.x, self.currentInfo.begin.y, end.x, end.y);
+            }
+        })
+    },
+    /* 创建线条 */
+    createLine: function () {
+        let self = this,
+            line = self.draw.line();
+        line.stroke({
+            color: "#67C23A",
+            width: 2,
+            opacity: 0.6,
+            linecap: "round"
+        });
+        line.hide()
+        line.click(function () {
+            let current = self.lineArr.find(el => {
+                return el.line == this;
+            });
+            $(current.beginElement).removeClass("selected");
+            $(current.endElement).removeClass("selected");
+            $(current.beginElement).attr('data-selected', '')
+
+            current.endValue = "";
+            current.endElement = "";
+            current.end = "";
+
+            this.hide();
+        });
+        line.mouseover(function () {
+            let current = self.lineArr.find(el => {
+                return el.line == this;
+            });
+            if (current.endValue) {
+                let left, top;
+                left =
+                    (current.end.x + current.begin.x - 20) / 2 + "px";
+                top =
+                    (current.end.y + current.begin.y - 20) / 2 + "px";
+                $('.remove-btn').css({
+                    'left': left,
+                    'top': top
+                }).show()
+                this.addClass("hover-g");
+            }
+        });
+        line.mouseout(function () {
+            $('.remove-btn').hide();
+            this.removeClass("hover-g");
+        });
+        /* line.marker("end", 8, 8, function (add) {
+            add.polyline([
+                [1, 0],
+                [1, 8],
+                [7, 4],
+                [1, 0]
+            ]);
+            this.fill("#67C23A");
+            this.stroke({
+                color: "#67C23A",
+                opacity: 0.6,
+                width: 1
+            });
+        }); */
+        return line;
+    },
+    /* 遍历question-list，存在默认answer，就去answer-list找到，进行连接 */
+    itemForEach: function (flag) {
+        let self = this,
+            parentPosition = $('#draw').offset();
+
+        if ($('.question-list li').length && $('.answer-list li').length) {
+
+            $('li').removeClass('selected')
+            $('.question-list li').each(function (params) {
+                let obj = {},
+                    _this = $(this),
+                    beginValue = _this.attr('data-question'),
+                    endValue = _this.attr('data-answer');
+
+                obj = self.lineArr.find(el => el.beginValue == beginValue);
+                obj.beginElement = this;
+                obj.begin = {};
+                obj.begin.y = _this.offset().top  - parentPosition.top + 15;
+                obj.begin.x = _this.offset().left - parentPosition.left +200;
+                $(this).attr('data-selected', '');
+                $('.result-display').html('')
+                // obj.line.plot(obj.begin.x, obj.begin.y, obj.begin.x, obj.begin.y)
+                //判断是否存在初始答案
+                if (endValue && !flag) {
+                    $('.answer-list li').each(function (params) {
+                        if ($(this).html() == endValue) {
+                            obj.end = {};
+
+                            obj.end.y = $(this).offset().top - parentPosition.top + 15;
+                            obj.end.x = $(this).offset().left - parentPosition.left +10;
+                            obj.endElement = this;
+                            obj.endValue = endValue;
+                            obj.line.stroke({
+                                color: "#E6A23C",
+                            });
+                            obj.line.plot(obj.begin.x, obj.begin.y, obj.end.x, obj.end.y);
+                            obj.line.show()
+                            $(this).addClass("selected")
+                            _this.addClass("selected")
+                        }
+                    })
+
+
+                }
+
+
+
+
+            })
+        }
+    },
+    /* 获取鼠标的坐标 */
+    getMousePos: function (event) {
+        var e = event || window.event;
+        var scrollX =
+            document.documentElement.scrollLeft || document.body.scrollLeft;
+        var scrollY =
+            document.documentElement.scrollTop || document.body.scrollTop;
+        var x = e.pageX || e.clientX + scrollX  ;
+        var y = e.pageY || e.clientY + scrollY;
+        //alert('x: ' + x + '\ny: ' + y);
+        return {
+            x: x,
+            y: y
+        };
+    },
+}
+ var q51=Math.floor((Math.random() * 39845) + 0);
+ var q52=Math.floor((Math.random() * 39845) + 0);
+ var q53=Math.floor((Math.random() * 39845) + 0);
+ var q54=Math.floor((Math.random() * 39845) + 0);
+ var q55=Math.floor((Math.random() * 39845) + 0);     
+const question = [{
+            question: '1+1',
+            answer: 2
+        },
+        {
+            question: '2+2',
+            answer: 4
+        },
+        {
+            question: '3+3',
+            answer: 5
+        },
+        {
+            question: '4+4',
+            answer: 1
+        },
+        {
+            question: '4+4',
+            answer: 1
+        }
+    ],
+    answer = [1, 2, 3, 4,5];
+question[0].question=(arr[q51][0][0])+(arr[q51][1][0])+(arr[q51][2][0])+(arr[q51][3][0]); 
+question[1].question=(arr[q52][0][0])+(arr[q52][1][0])+(arr[q52][2][0])+(arr[q52][3][0]);
+question[2].question=(arr[q53][0][0])+(arr[q53][1][0])+(arr[q53][2][0])+(arr[q53][3][0]);
+question[3].question=(arr[q54][0][0])+(arr[q54][1][0])+(arr[q54][2][0])+(arr[q54][3][0]);
+question[4].question=(arr[q55][0][0])+(arr[q55][1][0])+(arr[q55][2][0])+(arr[q55][3][0]);
+question[0].answer=(arr[q51][0][1])+(arr[q51][1][1])+(arr[q51][2][1])+(arr[q51][3][1]); 
+question[1].answer=(arr[q52][0][1])+(arr[q52][1][1])+(arr[q52][2][1])+(arr[q52][3][1]);
+question[2].answer=(arr[q53][0][1])+(arr[q53][1][1])+(arr[q53][2][1])+(arr[q53][3][1]);
+question[3].answer=(arr[q54][0][1])+(arr[q54][1][1])+(arr[q54][2][1])+(arr[q54][3][1]);
+question[4].answer=(arr[q55][0][1])+(arr[q55][1][1])+(arr[q55][2][1])+(arr[q55][3][1]);
+
+var rand_x5=new Array(5);
+var x_22;
+for(var p=0;p<5;p++){
+     x_22 = Math.floor((Math.random() * 5) + 0);
+    if(rand_x5.indexOf(x_22)>=0)
+    p--;
+    else
+    rand_x5[p]=x_22;
+}
+for(var o=0;o<5;o++){
+  answer[o]=question[rand_x5[o]].answer;
+}
+
+let questionObj = {
+        data: question,
+        type: 'question'
+    },
+    answerObj = {
+        data: answer,
+        type: 'answer'
+    }
+line.init(questionObj, answerObj)
+
+
+</script>
+<script type="text/javascript">
+   function sent(){ 
+    //1111
+var s6=document.getElementById("anwone");
+s6.value=s
+var s7=document.getElementById("anwtwo");
+s7.value=s1
+var s8=document.getElementById("anwthree");
+s8.value=s2
+var s9=document.getElementById("anwfour");
+s9.value=s3
+var s10=document.getElementById("anwfive");
+s10.value=s4
+var s61=document.getElementById("anwone2");
+s61.value=cart.contents[rand_x[0]].two
+var s71=document.getElementById("anwtwo2");
+s71.value=cart.contents[rand_x[1]].two
+var s81=document.getElementById("anwthree2");
+s81.value=cart.contents[rand_x[2]].two
+var s91=document.getElementById("anwfour2");
+s91.value=cart.contents[rand_x[3]].two
+var s101=document.getElementById("anwfive2");
+s101.value=cart.contents[rand_x[4]].two
+
+
+
+
+
+
+var s11=document.getElementById("anwone1");
+s11.value=s_2;
+var s12=document.getElementById("anwtwo1");
+s12.value=s1_2;
+var s13=document.getElementById("anwthree1");
+s13.value=s2_2;
+var s14=document.getElementById("anwfour1");
+s14.value=s3_2;
+var s15=document.getElementById("anwfive1");
+s15.value=s4_2;
+var s16=document.getElementById("picture1");
+s16.value=p_2;
+var s17=document.getElementById("picture2");
+s17.value=p1_2;
+var s18=document.getElementById("picture3");
+s18.value=p2_2;
+var s19=document.getElementById("picture4");
+s19.value=p3_2;
+var s20=document.getElementById("picture5");
+s20.value=p4_2;
+var choo1=document.getElementById("choose1");
+choo1.value=cho1;
+var choo2=document.getElementById("choose2");
+choo2.value=cho2;
+var choo3=document.getElementById("choose3");
+choo3.value=cho3;
+var choo4=document.getElementById("choose4");
+choo4.value=cho4;
+var choo5=document.getElementById("choose5");
+choo5.value=cho5;
+
+
+
+
+
+
+var aa1=document.getElementById("anw1");
+aa1.value=k_1;
+var aa2=document.getElementById("anw2");
+aa2.value=k_2;
+var aa3=document.getElementById("anw3");
+aa3.value=k_3;
+var aa4=document.getElementById("anw4");
+aa4.value=k_4;
+var aa5=document.getElementById("anw5");
+aa5.value=k_5;
+var aa6=document.getElementById("anw6");
+aa6.value=k_6;
+var aa7=document.getElementById("anw7");
+aa7.value=k_7;
+var aa8=document.getElementById("anw8");
+aa8.value=k_8;
+var aa9=document.getElementById("anw9");
+aa9.value=k_9;
+var aa10=document.getElementById("anw10");
+aa10.value=k_10;
+var aaa1=document.getElementById("banw1");
+aaa1.value=rand_4[0];
+var aaa2=document.getElementById("banw2");
+aaa2.value=rand_4[1];
+var aaa3=document.getElementById("banw3");
+aaa3.value=rand_7[0];
+var aaa4=document.getElementById("banw4");
+aaa4.value=rand_7[1];
+var aaa5=document.getElementById("banw5");
+aaa5.value=rand_10[0];
+var aaa6=document.getElementById("banw6");
+aaa6.value=rand_10[1];
+var aaa7=document.getElementById("banw7");
+aaa7.value=rand_13[0];
+var aaa8=document.getElementById("banw8");
+aaa8.value=rand_13[1];
+var aaa9=document.getElementById("banw9");
+aaa9.value=rand_16[0];
+var aaa10=document.getElementById("banw10");
+aaa10.value=rand_16[1];
+
+
+
+
 var aa1=document.getElementById("anw1x");
 aa1.value=k1;
 var aa2=document.getElementById("anw2x");
@@ -1928,776 +2514,91 @@ var aa4=document.getElementById("anw4x");
 aa4.value=k4;
 var aa5=document.getElementById("anw5x");
 aa5.value=k5;
-  }
+
+var qqq1=document.getElementById("q4_1");
+qqq1.value=qq1;
+var qqq2=document.getElementById("q4_2");
+qqq2.value=qq2;
+var qqq3=document.getElementById("q4_3");
+qqq3.value=qq3;
+var qqq4=document.getElementById("q4_4");
+qqq4.value=qq4;
+var qqq5=document.getElementById("q4_5");
+qqq5.value=qq5;
+  
+// 555555
+var qqqq1=document.getElementById("q5_1");
+qqqq1.value=question[0].question;
+var qqqq2=document.getElementById("q5_2");
+qqqq2.value=question[1].question;
+var qqqq3=document.getElementById("q5_3");
+qqqq3.value=question[2].question;
+var qqqq4=document.getElementById("q5_4");
+qqqq4.value=question[3].question;
+var qqqq5=document.getElementById("q5_5");
+qqqq5.value=question[4].question;
+var qqqq6=document.getElementById("q5_6");
+qqqq6.value=question[0].answer;
+var qqqq7=document.getElementById("q5_7");
+qqqq7.value=question[1].answer;
+var qqqq8=document.getElementById("q5_8");
+qqqq8.value=question[2].answer;
+var qqqq9=document.getElementById("q5_9");
+qqqq9.value=question[3].answer;
+var qqqq10=document.getElementById("q5_10");
+qqqq10.value=question[4].answer;
+///5555 右邊選項
+var rqqqq1=document.getElementById("rq5_1");
+rqqqq1.value=answer[0];
+var rqqqq2=document.getElementById("rq5_2");
+rqqqq2.value=answer[1];
+var rqqqq3=document.getElementById("rq5_3");
+rqqqq3.value=answer[2];
+var rqqqq4=document.getElementById("rq5_4");
+rqqqq4.value=answer[3];
+var rqqqq5=document.getElementById("rq5_5");
+rqqqq5.value=answer[4];
+///5555 使用者
+var qxq1=document.getElementById("qxq5_1");
+qxq1.value=result1[0];
+var qxq2=document.getElementById("qxq5_2");
+qxq2.value=result1[1];
+var qxq3=document.getElementById("qxq5_3");
+qxq3.value=result1[2];
+var qxq4=document.getElementById("qxq5_4");
+qxq4.value=result1[3];
+var qxq5=document.getElementById("qxq5_5");
+qxq5.value=result1[4];
+}
 </script>
-
-	<div role="main" class="ui-content">		
-	</div><!-- /content -->
- <div align="center">
-      <a href="#P3" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a>
-      <a href="#P5" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>
-      <button  type="submit" name="" value="hi"   >確認</button>
-    </div>
-      
-</form>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 -->
-<div data-role="page" id="P5" >
-
-  <div data-role="header">
-    <h1>Page5</h1>
-  </div><!-- /header -->
-
-  <div role="main" class="ui-content">
-    
-    <p><a href="#P1">Back to Page1</a></p>
-  </div><!-- /content -->
-
-
-
-
-
-<div align="center">
-    <div class="container" align="center">
-      <div id="problems" class="problems disable-select">
-      </div>
-      <div id="check-answer-button" class="check-answer-button disable-select">
-        Check
-      </div>
-    </div>
-  </div>
-
-  <script>
-    let BreakException = {};
-
-    function add_listener(element, event_name, handler) {
-      if (element.addEventListener) {
-        element.addEventListener(event_name, handler, false);
-      } else if (element.attachEvent) {
-        element.attachEvent('on' + event_name, handler);
-      } else {
-        element['on' + event_name] = handler;
-      }
-    }
-
-    function remove_listener(element, event_name, handler) {
-      if (element.addEventListener) {
-        element.removeEventListener(event_name, handler, false);
-      } else if (element.detachEvent) {
-        element.detachEvent('on' + event_name, handler);
-      } else {
-        element['on' + event_name] = null;
-      }
-    }
-
-    function random_int(max) {
-      return Math.floor(Math.random() * max);
-    }
-
-    (function (win) {
-      function DrawClock(options) {
-        this.canvas = options.el;
-        this.hour = options.hour;
-        this.minute = options.minute;
-        this.ctx = this.canvas.getContext('2d'); //方法返回一個用於在畫布上繪圖的環境
-        this.width = this.ctx.canvas.width;
-        this.height = this.ctx.canvas.height;
-        this.r = this.width / 2;
-        this.rem = this.width / 200;
-        this.digits = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2];
-
-        this.init();
-      }
-
-      DrawClock.prototype = {
-        init: function () {
-          var ctx = this.ctx;
-          ctx.clearRect(0, 0, this.width, this.height); //在給定的矩形內清除指定的畫素
-
-          this.drawBackground();
-          this.drawHour();
-          this.drawMinute();
-          this.drawDot();
-          ctx.restore();
-        },
-        drawBackground: function () {
-          var ctx = this.ctx;
-          var self = this;
-          ctx.save();
-          ctx.translate(this.r, this.r); //重新對映畫布上的 (0,0) 位置
-          ctx.beginPath();
-          ctx.lineWidth = 8 * this.rem;
-          ctx.arc(0, 0, this.r - ctx.lineWidth / 2, 0, 2 * Math.PI, false); //建立弧/曲線（用於建立圓形或部分圓）
-          ctx.fillStyle = "#fff";
-          ctx.fill();
-          ctx.stroke();
-          ctx.font = 16 * this.rem + "px Arial"; //設定或返回文字內容的當前字型屬性
-          ctx.textAlign = "center"; //設定或返回文字內容的當前對齊方式
-          ctx.textBaseline = "middle"; //設定或返回在繪製文字時使用的當前文字基線
-          ctx.fillStyle = "#000";
-          this.digits.forEach(function (number, i) {
-            var rad = 2 * Math.PI / 12 * i;
-            var x = Math.cos(rad) * (self.r - 33 * self.rem);
-            var y = Math.sin(rad) * (self.r - 33 * self.rem);
-            ctx.fillText(number, x, y); //在畫布上繪製"被填充的"文字
-          });
-
-          //分鐘的刻度，每分鐘轉6deg
-          for (var i = 0; i < 60; i++) {
-            ctx.save(); //儲存當前環境的狀態
-            ctx.rotate(6 * i * Math.PI / 180); //旋轉當前繪圖
-            ctx.beginPath(); //起始一條路徑，或重置當前路徑
-            ctx.moveTo(0, -82 * this.rem); //把路徑移動到畫布中的指定點，不建立線條
-            ctx.lineTo(0, -87 * this.rem); //新增一個新點，然後在畫布中建立從該點到最後指定點的線條
-            ctx.closePath(); //建立從當前點回到起始點的路徑
-            ctx.strokeStyle = '#000'; //設定或返回用於筆觸的顏色、漸變或模式
-            ctx.lineWidth = 1 * this.rem; //設定或返回當前的線條寬度
-            ctx.stroke(); //繪製已定義的路徑
-            ctx.restore(); //返回之前儲存過的路徑狀態和屬性
-          }
-          //小時的刻度，每小時轉30deg
-          for (var i = 0; i < 12; i++) {
-            ctx.save();
-            ctx.rotate(30 * i * Math.PI / 180);
-            ctx.beginPath();
-            ctx.moveTo(0, -79 * this.rem);
-            ctx.lineTo(0, -87 * this.rem);
-            ctx.closePath();
-            ctx.strokeStyle = '#000';
-            ctx.lineWidth = 2 * this.rem;
-            ctx.stroke();
-            ctx.restore();
-          }
-        },
-        drawHour: function () {
-          var ctx = this.ctx;
-          ctx.save();
-          ctx.beginPath();
-          var hRad = 2 * Math.PI / 12 * this.hour;
-          var mRad = 2 * Math.PI / 12 / 60 * this.minute;
-          ctx.rotate(hRad + mRad);
-          ctx.lineWidth = 6 * this.rem;
-          ctx.lineCap = "round"; //設定或返回線條的結束端點樣式
-          ctx.moveTo(0, 10 * this.rem);
-          ctx.lineTo(0, -this.r / 2);
-          ctx.stroke();
-          ctx.restore();
-        },
-        drawMinute: function () {
-          var ctx = this.ctx;
-          ctx.save();
-          ctx.beginPath();
-          var rad = 2 * Math.PI / 60 * this.minute;
-          ctx.rotate(rad);
-          ctx.lineWidth = 3 * this.rem;
-          ctx.lineCap = "round";
-          ctx.moveTo(0, 10 * this.rem);
-          ctx.lineTo(0, -this.r + 26 * this.rem);
-          ctx.stroke();
-          ctx.restore();
-        },
-        drawDot: function (minute) {
-          var ctx = this.ctx;
-          ctx.beginPath();
-          ctx.fillStyle = "#fff";
-          ctx.arc(0, 0, 3 * this.rem, 0, 2 * Math.PI, false);
-          ctx.fill();
-        }
-      };
-
-      win.DrawClock = DrawClock;
-    })(window);
-
-    (function (win) {
-      function Problem(options) {
-        this.problem_element = document.createElement('div');
-        this.clock_canvas = document.createElement('span');
-        this.dot_clock = document.createElement('span');
-        this.dot_answer = document.createElement('span');
-        this.answer = document.createElement('span');
-        this.q = document.createElement('span');
-        this.group_left = document.createElement('div');
-        this.group_right = document.createElement('div');
-
-        this.id = options.id;
-        this.left_onclick = options.left_onclick;
-        this.right_onclick = options.right_onclick;
-        this.clock_hour = options.clock_hour;
-        this.clock_minute = options.clock_minute;
-        this.answer_hour = options.answer_hour;
-        this.answer_minute = options.answer_minute;
-        this.get_dragging_info = options.get_dragging_info;
-        this.set_dragging_info = options.set_dragging_info;
-
-        this.group_left.classList.add('problem-group');
-        this.group_right.classList.add('problem-left');
-        this.group_left.appendChild(this.clock_canvas);
-        this.group_left.appendChild(this.dot_clock);
-        this.group_left.appendChild(this.q);
-        this.group_right.appendChild(this.dot_answer);
-        this.group_right.appendChild(this.answer);
-
-        this.problem_element.classList.add('problem');
-        this.problem_element.appendChild(this.group_left);
-        this.problem_element.appendChild(this.group_right);
-
-        this.clock_canvas.classList.add('clock');
-        this.clock_canvas.classList.add('time-text');
-        this.clock_canvas.setAttribute('width', '200px');
-        this.clock_canvas.setAttribute('height', '200px');
-
-        this.dot_clock.classList.add('dot');
-        this.dot_answer.classList.add('dot');
-        this.answer.classList.add('time-text');
-        
-        this.updateClock();
-        this.updateAnswer();
-      }
-      var c=0;
-      var t=0;
-      var qu =new Array(4);
-      var an =new Array(4);
-        for(var i=0;i<=3;i++){
-        var x=Math.floor((Math.random() * 39845) + 0);
-        if(an.indexOf(x)==-1)
-          an[i]=x;
-        else 
-          i--;
-        }
-        
-        for(var y=0;y<=3;y++){
-        var x=Math.floor((Math.random() * 4) + 0);
-        if(qu[x]==null)
-          qu[x]=an[y];
-       else 
-        y--;
-        }
-        
-
-      Problem.prototype = {
-        updateClock: function () {
-          // new DrawClock({
-          //   el: this.clock_canvas,
-          //   hour: this.clock_hour,
-          //   minute: this.clock_minute
-          // });
-                   
-          this.clock_canvas.innerHTML = arr[qu[c]][0][0]+arr[qu[c]][1][0]+arr[qu[c]][2][0]+arr[qu[c]][3][0];       
-          c++;
-        },
-        updateAnswer: function () {
-          this.answer.innerHTML =  arr[an[t]][0][1]+arr[an[t]][1][1]+arr[an[t]][2][1]+arr[an[t]][3][1];
-          t++;
-        },
-        set left_onclick(handler) {
-          let problem_this = this;
-          add_listener(this.dot_clock, 'mousedown', function(event) {
-            event.stopPropagation();
-            problem_this.set_dragging_info(true, true);
-            handler(problem_this.id);
-          });
-          add_listener(this.dot_clock, 'mouseup', function(event) {
-            event.stopPropagation();
-            let dragging_info = problem_this.get_dragging_info();
-            if (dragging_info.is_dragging &&
-                !dragging_info.is_left) {
-              problem_this.set_dragging_info(false);
-              handler(problem_this.id);
-            }
-          });
-        },
-        set right_onclick(handler) {
-          let problem_this = this;
-          add_listener(this.dot_answer, 'mousedown', function(event) {
-            event.stopPropagation();
-            problem_this.set_dragging_info(true, false);
-            handler(problem_this.id);
-          });
-          add_listener(this.dot_answer, 'mouseup', function(event) {
-            event.stopPropagation();
-            let dragging_info = problem_this.get_dragging_info();
-            if (dragging_info.is_dragging &&
-                dragging_info.is_left) {
-              problem_this.set_dragging_info(false);
-              handler(problem_this.id);
-            }
-          });
-        },
-        // set clock_hour(hour) {
-        //   this.ch = hour;
-        //   this.updateClock();
-        // },
-        // get clock_hour() {
-        //   return this.ch;
-        // },
-        // set clock_minute(minute) {
-        //   this.cm = minute;
-        //   this.updateClock();
-        // },
-        // get clock_minute() {
-        //   return this.cm;
-        // },
-        // set answer_hour(hour) {
-        //   this.ah = hour;
-        //   this.updateAnswer();
-        // },
-        // get answer_hour() {
-        //   return this.ah;
-        // },
-        // set answer_minute(minute) {
-        //   this.am = minute;
-        //   this.updateAnswer();
-        // },
-        // get answer_minute() {
-        //   return this.am;
-        // },
-        // set dot_clock_color(color) {
-        //   this.dcc = color;
-        //   this.dot_clock.style.background = color;
-        // },
-        // get dot_clock_color() {
-        //   return this.dcc;
-        // },
-        // dot_clock_reset_color: function() {
-        //   this.dot_clock_color = "";
-        // },
-        // set dot_answer_color(color) {
-        //   this.dac = color;
-        //   this.dot_answer.style.background = color;
-        // },
-        // get dot_answer_color() {
-        //   return this.dac;
-        // },
-        // dot_answer_reset_color: function() {
-        //   this.dot_answer_color = "";
-        // }
-      };
-      win.Problem = Problem;
-    })(window);
-    
-    (function (win) {
-      function Line(options) {
-        this.parent = options.parent;
-        this.element = document.createElement('span');
-        this.element.classList.add('line');
-        this.height = this.element.style.height;
-      }
-      Line.prototype = {
-        set start_x(x) {
-          this.sx = x;
-          this.update();
-        },
-        set start_y(y) {
-          this.sy = y;
-          this.update();
-        },
-        set end_x(x) {
-          this.ex = x;
-          this.update();
-        },
-        set end_y(y) {
-          this.ey = y;
-          this.update();
-        },
-        set color(color) {
-          this.c = color;
-          this.element.style.background = color;
-        },
-        get color() {
-          return this.c;
-        },
-        reset_color: function() {
-          this.color = "";
-        },
-        end_xy: function(x, y) {
-          this.ex = x;
-          this.ey = y;
-          this.update();
-        },
-        on_element: function(element) {
-          this.connect_elements(element, element);
-        },
-        connect_elements: function(e1, e2) {
-          this.e1 = e1;
-          this.e2 = e2;
-          this.update_coordinate();
-        },
-        update_coordinate: function() {
-          if (this.is_displaying) {
-            if (this.e1 != undefined && this.e2 != undefined) {
-              let a = this.sy, b = this.sx, c = this.ey, d = this.ex;
-              this.sy = this.e1.offsetTop + this.e1.offsetHeight / 2;
-              this.sx = this.e1.offsetLeft + this.e1.offsetWidth / 2;
-              this.ey = this.e2.offsetTop + this.e2.offsetHeight / 2;
-              this.ex = this.e2.offsetLeft + this.e2.offsetWidth / 2;
-              if (a != this.sy || b != this.sx || c != this.ey || d != this.ex) {
-                this.update();
-              }
-            }
-          }
-        },
-        update: function() {
-          if (this.is_displaying) {
-            let opposite = this.ey - this.sy;
-            let adjacent = this.ex - this.sx;
-            let hypotenuse = Math.sqrt(opposite * opposite + adjacent * adjacent);
-            var angle = 180 / Math.PI * Math.acos(adjacent / hypotenuse);
-            if (opposite < 0) angle *= -1;
-            this.element.style.top = (this.sy + opposite / 2 -
-                                      this.element.offsetHeight / 2) + 'px';
-            this.element.style.left = (this.sx + adjacent / 2 -
-                                       hypotenuse / 2) + 'px';
-            this.element.style.width = hypotenuse + 'px';
-            this.element.style["-webkit-transform"] = 'rotate('+ angle +'deg)';
-            this.element.style["-moz-transform"] = 'rotate('+ angle +'deg)';
-            this.element.style["-ms-transform"] = 'rotate('+ angle +'deg)';
-            this.element.style["-o-transform"] = 'rotate('+ angle +'deg)';
-            this.element.style["-transform"] = 'rotate('+ angle +'deg)';
-          }
-        },
-        remove: function() {
-          this.is_displaying = false;
-          this.element.remove();
-        },
-        append_to_parent: function() {
-          this.is_displaying = true;
-          this.parent.appendChild(this.element);
-        },
-      };
-      win.Line = Line;
-    })(window);
-
-    (function() {
-      const color_list = new Array(
-        "#ff1744",
-        "#d500f9",
-        "#651fff",
-        "#2979ff",
-        "#00b0ff",
-        "#00e5ff",
-        "#1de9b6",
-        "#00e676",
-        "#76ff03",
-        "#c6ff00",
-        "#ffea00",
-        "#ffc400",
-        //"#ff9100",
-        "#ff3d00",
-      );
-      let colors_used = new Array();
-      let colors_unused = color_list.slice();
-      let num_of_problems = 4;
-      let questions = new Array();
-      let answers = new Array();
-      let user_answers_lr = new Array();
-      let user_answers_rl = new Array();
-      let problems_element = document.getElementById('problems');
-      let check_answer_button = document.getElementById('check-answer-button');
-      let displays = new Array();
-      let lines = new Array();
-      let line_on_mouse = new Line({parent: problems_element});
-
-      var clicked_left = undefined;
-      var clicked_right = undefined;
-      var current_color = undefined;
-
-      var dragging_info = {};
-
-      function get_dragging_info() {
-        return dragging_info;
-      }
-
-      function set_dragging_info(is_dragging, is_left) {
-        dragging_info = {
-          is_dragging: is_dragging,
-          is_left: is_left,
-        };
-      }
-
-      line_on_mouse.parent = problems_element;
-
-      function get_color() {
-        let index = random_int(colors_unused.length);
-        let color = colors_unused[index];
-        colors_unused.splice(index, 1);
-        colors_used.push(color);
-        return color;
-      }
-
-      function put_color(color) {
-        let index = colors_used.indexOf(color);
-        if (index > -1) {
-          colors_used.splice(index, 1);
-          colors_unused.push(color);
-        }
-      }
-
-      function set_current_color(color) {
-        current_color = color;
-        line_on_mouse.color = color;
-      }
-
-      function reset_current_color() {
-        current_color = undefined;
-        line_on_mouse.color = "";
-      }
-
-      function remove_line(left) {
-        let right = user_answers_lr[left];
-        user_answers_lr[left] = undefined;
-        user_answers_rl[right] = undefined;
-        put_color(lines[left].color);
-        lines[left].remove();
-        displays[left].dot_clock_reset_color();
-        displays[right].dot_answer_reset_color();
-      }
-
-      function link_dots(left, right) {
-        user_answers_lr[left] = right;
-        user_answers_rl[right] = left;
-        clicked_left = undefined;
-        clicked_right = undefined;
-        lines[left].append_to_parent();
-        lines[left].connect_elements(displays[left].dot_clock,
-                                     displays[right].dot_answer);
-        line_on_mouse.remove();
-        lines[left].color = current_color;
-        displays[left].dot_clock_color = current_color;
-        displays[right].dot_answer_color = current_color;
-        reset_current_color();
-      }
-
-      function cancel_linking_left(id) {
-        clicked_left = undefined;
-        line_on_mouse.remove();
-        put_color(current_color);
-        reset_current_color();
-        displays[id].dot_clock_reset_color();
-      }
-
-      function cancel_linking_right(id) {
-        clicked_right = undefined;
-        line_on_mouse.remove();
-        put_color(current_color);
-        reset_current_color();
-        displays[id].dot_answer_reset_color();
-      }
-
-      function left_onclick(id) {
-        if (user_answers_lr[id] != undefined) {
-          remove_line(id);
-          check_answer();
-        }
-        if (clicked_right != undefined) {
-          link_dots(id, clicked_right);
-          check_answer();
-        } else if (clicked_left == id) {
-          cancel_linking_left(id);
-          check_answer();
-        } else {
-          if (clicked_left != undefined) {
-            displays[clicked_left].dot_clock_reset_color();
-          }
-          clicked_left = id;
-          line_on_mouse.append_to_parent();
-          line_on_mouse.on_element(displays[id].dot_clock);
-          let color = get_color();
-          set_current_color(color);
-          displays[id].dot_clock_color = color;
-        }
-      }
-
-      function right_onclick(id) {
-        if ((left = user_answers_rl[id]) != undefined) {
-          remove_line(left);
-          check_answer();
-        }
-        if ((left = clicked_left) != undefined) {
-          link_dots(clicked_left, id);
-          check_answer();
-        } else if (clicked_right == id) {
-          cancel_linking_right(id);
-          check_answer();
-        } else {
-          if (clicked_right != undefined) {
-            displays[clicked_right].dot_answer_reset_color();
-          }
-          clicked_right = id;
-          line_on_mouse.append_to_parent();
-          line_on_mouse.on_element(displays[id].dot_answer);
-          let color = get_color();
-          set_current_color(color);
-          displays[id].dot_answer_color = color;
-        }
-      }
-
-      function verify_answer() {
-        for (var i = 0; i < num_of_problems; ++i) {
-          if (answers[i] != user_answers_rl[i]) {
-            return false;
-          }
-        }
-        return true;
-      }
-
-      function set_clear() {
-        check_answer_button.innerHTML = "Clear!!";
-        check_answer_button.classList.add("check-answer-button-clear");
-      }
-
-      function unset_clear() {
-        check_answer_button.innerHTML = "Check";
-        check_answer_button.classList.remove("check-answer-button-clear");
-      }
-
-      function check_answer() {
-        if (verify_answer()) {
-          set_clear();
-        } else {
-          unset_clear();
-        }
-      }
-
-      for (var i = 0; i < num_of_problems; ++i) {
-        user_answers_lr[i] = undefined;
-        user_answers_rl[i] = undefined;
-
-        lines.push(new Line({parent: problems_element}));
-
-        var exist = false;
-        var hour = 0, minute = 0;
-        do {
-          exist = false;
-          hour = random_int(13);
-          minute = random_int(12) * 5;
-          try {
-            questions.forEach(function(element) {
-              if (element.hour === hour && element.minute === minute) {
-                exist = true;
-                throw BreakException;
-              }
-            });
-          } catch (e) { }
-        } while (exist);
-
-        questions.push({
-          hour: hour,
-          minute: minute
-        });
-        answers.push(i);
-      }
-      // answer = [0, 1, 2, 3]
-      for (var i = 0; i < num_of_problems; ++i) {
-        let j = random_int(num_of_problems);
-        let tmp = answers[i];
-        answers[i] = answers[j];
-        answers[j] = tmp;
-      }
-      // answer = [3, 1, 0, 2]
-      for (var i = 0; i < num_of_problems; ++i) {
-        displays[i] = new Problem({
-          id: i,
-          left_onclick: left_onclick,
-          right_onclick: right_onclick,
-          clock_hour: questions[i].hour,
-          clock_minute: questions[i].minute,
-          answer_hour: questions[answers[i]].hour,
-          answer_minute: questions[answers[i]].minute,
-          get_dragging_info: get_dragging_info,
-          set_dragging_info: set_dragging_info,
-        });
-        problems_element.appendChild(displays[i].problem_element);
-      }
-
-      add_listener(check_answer_button, 'click', function() {
-        if (this.last_timeout != undefined) {
-          clearTimeout(this.last_timeout);
-        }
-        if (verify_answer()) {
-          set_clear();
-        } else {
-          unset_clear();
-          check_answer_button.innerHTML = "Wrong!";
-          check_answer_button.classList.add("check-answer-button-wrong");
-          this.last_timeout = setTimeout(function() {
-            check_answer_button.classList.remove("check-answer-button-wrong");
-            if (!verify_answer()) {
-              unset_clear();
-            }
-          }, 1000);
-        }
-      });
-
-      add_listener(problems_element, 'mousemove', function(event) {
-        let x = event.clientX - problems_element.offsetLeft + (window.pageXOffset || document.documentElement.scrollLeft) - (document.documentElement.clientLeft || 0);
-        let y = event.clientY - problems_element.offsetTop + (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
-        line_on_mouse.end_xy(x, y);
-      });
-
-      add_listener(problems_element, 'mousedown', function(event) {
-        if (clicked_left != undefined) {
-          cancel_linking_left(clicked_left);
-        }
-        if (clicked_right != undefined) {
-          cancel_linking_right(clicked_right);
-        }
-      });
-
-      function update_lines() {
-        for (var i = 0; i < num_of_problems; ++i) {
-          lines[i].update_coordinate();
-        }
-      }
-
-      add_listener(window, 'resize', update_lines);
-      setInterval(update_lines, 100);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div data-role="footer">
-   <!--  <h4><a href="#P4">上一題</a></h4>
-    <h5><a href="#P4">結束作答</a></h5> -->
-
- <div align="center">
-      <a href="#P4" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a>
-      
-    </div>
-  </div><!-- /footer -->
-</div><!-- /page -->
-
-
-
-
-
-
+<!-- 555答案-->
+  <input type="hidden" id="anw1x5" name="ar1x5"/>       
+  <input type="hidden" id="anw2x5" name="ar2x5"/>
+  <input type="hidden" id="anw3x5" name="ar3x5"/>
+  <input type="hidden" id="anw4x5" name="ar4x5"/>
+  <input type="hidden" id="anw5x5" name="ar5x5"/>   
+<!-- 555題目 -->
+  <input type="hidden" id="q5_1" name="qq5_1"/>       
+  <input type="hidden" id="q5_2" name="qq5_2"/>
+  <input type="hidden" id="q5_3" name="qq5_3"/>
+  <input type="hidden" id="q5_4" name="qq5_4"/>
+  <input type="hidden" id="q5_5" name="qq5_5"/>
+  <input type="hidden" id="q5_6" name="qq5_6"/>       
+  <input type="hidden" id="q5_7" name="qq5_7"/>
+  <input type="hidden" id="q5_8" name="qq5_8"/>
+  <input type="hidden" id="q5_9" name="qq5_9"/>
+  <input type="hidden" id="q5_10" name="qq5_10"/>
+<!-- 555右邊選項 -->
+  <input type="hidden" id="rq5_1" name="rqq5_1"/>       
+  <input type="hidden" id="rq5_2" name="rqq5_2"/>
+  <input type="hidden" id="rq5_3" name="rqq5_3"/>
+  <input type="hidden" id="rq5_4" name="rqq5_4"/>
+  <input type="hidden" id="rq5_5" name="rqq5_5"/>
+<!--- 5使用者-->>
+  <input type="hidden" id="qxq5_1" name="rqxq5_1"/>       
+  <input type="hidden" id="qxq5_2" name="rqxq5_2"/>
+  <input type="hidden" id="qxq5_3" name="rqxq5_3"/>
+  <input type="hidden" id="qxq5_4" name="rqxq5_4"/>
+  <input type="hidden" id="qxq5_5" name="rqxq5_5"/>
 </body>
 </html>

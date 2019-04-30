@@ -331,7 +331,7 @@ function go_math(){
     <br/><br/><br/>
 	<div style="text-align: center;" class="XX">
 		<input type="image" src="img/123.png" onClick="go_math()" width="20%;" height="20%;">
-		<input type="image" src="img/chinese.png" onClick="javascript:location.href='chinesecounter.php'" width="20%;" height="20%;">
+		<input type="image" src="img/chinese.png" onClick="javascript:location.href='chinese.html'" width="20%;" height="20%;">
 		<input type="image" src="img/cognition.png" onClick="go_cognition()" width="20%;" height="20%;">
 		<input type="image" src="img/clock.png" onClick="javascript:location.href='time.php'" width="20%;" height="20%;">
 	</div>
