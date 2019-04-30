@@ -1,8 +1,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<script src="test3.js"></script>
+  <link rel="stylesheet" href="csss/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="csss/jquery.mobile.icons.min.css" />
+  <script src="jss/jquery-1.11.3.min.js"></script>
+  <script src="jss/jquery.mobile-1.4.5.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js "></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="jss/ablanxue.js"></script>
+  <link href="csss/ablanxue.css" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width; initial-scale=1;maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
+  <link rel="stylesheet" type="text/css" media="print" href="serif.css">
+  <script src="test3.js"></script>
 	<style type="text/css">
   .disable-select {
       -webkit-touch-callout: none; /* iOS Safari */
@@ -13,7 +21,11 @@
       user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
     }
 
-   
+   .box1{  
+}
+.a,.b,.c{
+   display: inline-block
+}
     .time-text2 {
       text-align: center;   
       margin-left: 180px;      
@@ -512,7 +524,8 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q5]
 
 
 	<div   align="center">
-      <a href="#ch_finish2" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>        
+      <a href="#ch_finish2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide">下一題</a>  
+
     </div>
 
 </div>
@@ -697,8 +710,8 @@ $q2score=$q2score+4;
 
 
 	<div   align="center">
-      <a href="#ch_finish1" class="ui-btn" style="width: 5%;" data-transition="slide">上一題</a> 
-      <a href="#ch_finish3" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>       
+      <a href="#ch_finish1" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide">上一題</a> 
+      <a href="#ch_finish3" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide">下一題</a>       
     </div>
 </div>
 
@@ -965,8 +978,8 @@ $q3score=$q3score+2;
 
 
 	<div   align="center">
-      <a href="#ch_finish2" class="ui-btn" style="width: 5%;" data-transition="slide">上一題</a> 
-      <a href="#ch_finish4" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>       
+      <a href="#ch_finish2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide">上一題</a> 
+      <a href="#ch_finish4" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide">下一題</a>       
     </div>
 </div>
 
@@ -1056,8 +1069,8 @@ if ($qQ5_4==$anw5_4)
 
 
 <div   align="center">
-      <a href="#ch_finish3" class="ui-btn" style="width: 5%;" data-transition="slide">上一題</a> 
-      <a href="#ch_finish5" class="ui-btn" style="width: 5%;" data-transition="slide">下一題</a>       
+      <a href="#ch_finish3" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide">上一題</a> 
+      <a href="#ch_finish5" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide">下一題</a>       
     </div>
 
 </div>
@@ -1151,9 +1164,10 @@ $total=$q1score+$q2score+$q3score+$q4score+$q5score;
 <h3 align="center">請選出正確的選項</h3>
   <div role="main" class="ui-content">
    <div class="container">
-        <div id="draw" class="draw-container">
+    <a href="javascript:;" id="j-default" title="">顯示答案</a>
+        <div id="draw" class="draw-container" style="pointer-events: none;">
             <div style="position: absolute" class="btn-group">
-                <a href="javascript:;" id="j-default" title="">顯示答案</a>
+                
             </div>
             <ul class="question-list data-list">
 
@@ -1180,8 +1194,9 @@ $total=$q1score+$q2score+$q3score+$q4score+$q5score;
         </div>
     </div>
     <div   align="center">
-      <a href="#ch_finish4" class="ui-btn" style="width: 5%;" data-transition="slide">上一題</a> 
-             
+      
+      <a href="#ch_finish4" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide">上一題</a> 
+      <a href="Topic.php"   data-ajax="false" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 7%;" data-transition="slide">回到首頁</a>        
     </div>
   </div><!-- /content -->
 
@@ -1253,7 +1268,7 @@ $total=$q1score+$q2score+$q3score+$q4score+$q5score;
             self.currentInfo = current;
         })
         /* 鼠标按下answer-list列，调整线条结束位置 */
-        $('.answer-list').on('mouseup', 'li', function (e) {
+        if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/))$('.answer-list').on('mouseup', 'li', function (e) {
             let current = self.lineArr.find(el => {
                 return el.beginValue == self.currentInfo.beginValue;
             });
@@ -1303,7 +1318,7 @@ $total=$q1score+$q2score+$q3score+$q4score+$q5score;
     bindParentsEvent: function (params) {
         let self = this;
 
-        $(document).mouseup(function (e) {
+        if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/))$(document).mouseup(function (e) {
             if (!$(e.target).is(".answer-li") && self.currentInfo.line) {
                 self.currentInfo.line.hide();
                 $("#draw")
@@ -1311,7 +1326,7 @@ $total=$q1score+$q2score+$q3score+$q4score+$q5score;
                     .removeClass("display-block-hover");
             }
         })
-        $('#draw').mousemove(function (e) {
+       if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) $('#draw').mousemove(function (e) {
             e.preventDefault();
             if (Object.keys(self.currentInfo).length != 0) {
                 let end = {}
@@ -1332,7 +1347,7 @@ $total=$q1score+$q2score+$q3score+$q4score+$q5score;
             linecap: "round"
         });
         line.hide()
-        line.click(function () {
+       if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) line.click(function () {
             let current = self.lineArr.find(el => {
                 return el.line == this;
             });
@@ -1346,7 +1361,7 @@ $total=$q1score+$q2score+$q3score+$q4score+$q5score;
 
             this.hide();
         });
-        line.mouseover(function () {
+       if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) line.mouseover(function () {
             let current = self.lineArr.find(el => {
                 return el.line == this;
             });
@@ -1363,7 +1378,7 @@ $total=$q1score+$q2score+$q3score+$q4score+$q5score;
                 this.addClass("hover-g");
             }
         });
-        line.mouseout(function () {
+        if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/))line.mouseout(function () {
             $('.remove-btn').hide();
             this.removeClass("hover-g");
         });
