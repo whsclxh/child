@@ -2109,7 +2109,7 @@ var k5=arr[ku][ap][1];
         let self = this,
             parentPosition = $('#draw').offset();
         /* 鼠标按下question-list列，调整线条开始位置 */
-        if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/))$('.question-list').on('mousedown', 'li', function (e) {
+        $('.question-list').on('mousedown', 'li', function (e) {
 
             let current = self.lineArr.find(el => {
                 return el.beginValue == $(this).attr('data-question');
@@ -2134,13 +2134,13 @@ var k5=arr[ku][ap][1];
             self.currentInfo = current;
         })
         /* 鼠标按下answer-list列，调整线条结束位置 */
-        if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/))$('.answer-list').on('mouseup', 'li', function (e) {
+        $('.answer-list').on('mouseup', 'li', function (e) {
             let current = self.lineArr.find(el => {
                 return el.beginValue == self.currentInfo.beginValue;
             });
 
             current.end.y = $(this).offset().top - parentPosition.top -115;
-            current.end.x = $(this).offset().left - parentPosition.left -200;
+            current.end.x = $(this).offset().left - parentPosition.left -50;
             current.endElement = this;
             current.endValue = $(this).attr('data-answer');
             
@@ -2215,7 +2215,7 @@ var k5=arr[ku][ap][1];
             linecap: "round"
         });
         line.hide()
-        if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/))line.click(function () {
+        line.click(function () {
             let current = self.lineArr.find(el => {
                 return el.line == this;
             });
@@ -2229,7 +2229,7 @@ var k5=arr[ku][ap][1];
 
             this.hide();
         });
-       if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) line.mouseover(function () {
+        line.mouseover(function () {
             let current = self.lineArr.find(el => {
                 return el.line == this;
             });
@@ -2246,7 +2246,7 @@ var k5=arr[ku][ap][1];
                 this.addClass("hover-g");
             }
         });
-       if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) line.mouseout(function () {
+        line.mouseout(function () {
             $('.remove-btn').hide();
             this.removeClass("hover-g");
         });
