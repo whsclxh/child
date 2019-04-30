@@ -1113,7 +1113,7 @@ drawclock("clock8",h8,m8);
     </table>
     <div align="center">
         <a href="#time_ans4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-        <a href="#Topic.php" class="ui-btn" style="width: 10%; display: inline-block" >回到首頁</a>
+        <a href="http://whsclxh.ddns.net/Topic.php" class="ui-btn" style="width: 10%; display: inline-block" >回到首頁</a>
         <!-- <button type="submit" id="button" style="width: 10%;">結束作答</button> -->
     </div>
     </div>
