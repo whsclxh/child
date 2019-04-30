@@ -49,6 +49,9 @@
 .big_one{
 	background-color: #fffded;
 }
+.multistage_border{
+     margin: auto;
+}
 .multistage_table_odd{border:1px solid transparent; width: 100%; border-collapse:collapse;}
 .add_border{
      margin: auto;

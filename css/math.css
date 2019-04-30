@@ -52,6 +52,9 @@
      border-width: 3px;
      border-color: #FFCCCC;
 }
+.multistage_border{
+     margin: auto;
+}
 .add_table_odd{border:1px solid #669999; width: 100%; border-collapse:collapse; background-color: #F2FFFF;}
 .add_table_even{border:1px solid #669999; width: 100%; border-collapse:collapse; background-color: #FFF7E8;}
 .add_table_space{width: 2%;}
