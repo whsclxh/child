@@ -946,8 +946,8 @@ const line = {
                 obj = self.lineArr.find(el => el.beginValue == beginValue);
                 obj.beginElement = this;
                 obj.begin = {};
-                obj.begin.y = _this.offset().top - parentPosition.top - 200;
-                obj.begin.x = _this.offset().left - parentPosition.left - 100;
+                obj.begin.y = _this.offset().top - parentPosition.top + 15;
+                obj.begin.x = _this.offset().left - parentPosition.left + 200;
                 $(this).attr('data-selected', '');
                 $('.result-display').html('')
                 // obj.line.plot(obj.begin.x, obj.begin.y, obj.begin.x, obj.begin.y)
@@ -1113,6 +1113,7 @@ drawclock("clock8",h8,m8);
     </table>
     <div align="center">
         <a href="#time_ans4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
+        <a href="#Topic.php" class="ui-btn" style="width: 10%; display: inline-block" >回到首頁</a>
         <!-- <button type="submit" id="button" style="width: 10%;">結束作答</button> -->
     </div>
     </div>
