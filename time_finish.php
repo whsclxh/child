@@ -698,14 +698,17 @@ var m4 = <?php echo $q1cans8 ?>;
 <h3 align="center" style="color: red">本大題拿了<?php echo "$q3score"; ?>/20分</h3> 
         <h3 align="center">請連到正確的時間。</h3>
         <div id="draw" class="draw-container">
+        <div style="position: absolute" class="btn-group">
+          <a href="javascript:;" id="j-default" title="">顯示答案</a>
+        </div>
 
           <ul class="question-list data-list"></ul>
      
 
           <ul class="answer-list data-list"></ul>
-
+          <i class="remove-btn"></i>
         </div>
-
+      
         <div align="center">
           <a href="#time_ans2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
           <a href="#time_ans4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
