@@ -518,6 +518,7 @@ require "math_triple_add_function.php";
 		<td class="add_sub3"><input id="add_sub_option1_2" name="add_sub_option1_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[4]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option1_3" name="add_sub_option1_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[5]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="add_sub_option1_4" name="add_sub_option1_4" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[6]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
+			=
 			<input id="add_sub_option1_5" name="add_sub_option1_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[7]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
 		<td class="add_sub4" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[0].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[0].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[0].question_sign)</script>
@@ -527,6 +528,7 @@ require "math_triple_add_function.php";
 			<input id="anw_add_sub_option1_2" name="anw_add_sub_option1_2" align="center"  type="text"  data-role="none" disabled <?php  if($math_add_sub[12]>$math_add_sub[13]){echo "value='$math_add_sub[12]'"; } else{ echo "value='$math_add_sub[13]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="anw_add_sub_option1_3" name="anw_add_sub_option1_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[28]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="anw_add_sub_option1_4" name="anw_add_sub_option1_4" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[12]>$math_add_sub[13]){ echo "value='$math_add_sub[13]'"; } else{  echo "value='$math_add_sub[12]'";} ?>; style="width: 50px; height: 50px; font-size: 25px;">
+			=
 			<input id="anw_add_sub_option1_5" name="anw_add_sub_option1_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[27]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
 	</tr>
@@ -538,6 +540,7 @@ require "math_triple_add_function.php";
 		<td class="add_sub3"><input id="add_sub_option2_2" name="add_sub_option2_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[9]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option2_3" name="add_sub_option2_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[10]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="add_sub_option2_4" name="add_sub_option2_4" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[11]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
+			=
 			<input id="add_sub_option2_5" name="add_sub_option2_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[12]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
 		<td class="add_sub4" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[1].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[1].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[1].question_sign)</script>
@@ -547,6 +550,7 @@ require "math_triple_add_function.php";
 			<input id="anw_add_sub_option2_2" name="anw_add_sub_option2_2" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[14]>$math_add_sub[15]){ echo "value='$math_add_sub[14]'"; } else{  echo "value='$math_add_sub[15]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="anw_add_sub_option2_3" name="anw_add_sub_option2_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[30]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="anw_add_sub_option2_4" name="anw_add_sub_option2_4" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[14]>$math_add_sub[15]){ echo "value='$math_add_sub[15]'"; } else{  echo "value='$math_add_sub[14]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
+			=
 			<input id="anw_add_sub_option2_5" name="anw_add_sub_option2_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[29]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
 	</tr>
@@ -558,6 +562,7 @@ require "math_triple_add_function.php";
 		<td class="add_sub3"><input id="add_sub_option3_2" name="add_sub_option3_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[14]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option3_3" name="add_sub_option3_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[15]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="add_sub_option3_4" name="add_sub_option3_4" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[16]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
+			=
 			<input id="add_sub_option3_5" name="add_sub_option3_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[17]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
 		<td class="add_sub4" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[2].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[2].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[2].question_sign)</script>
@@ -567,6 +572,7 @@ require "math_triple_add_function.php";
 			<input id="anw_add_sub_option3_2" name="anw_add_sub_option3_2" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[16]>$math_add_sub[17]){ echo "value='$math_add_sub[16]'"; } else{  echo "value='$math_add_sub[17]'";} ?>style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="anw_add_sub_option3_3" name="anw_add_sub_option3_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[32]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="anw_add_sub_option3_4" name="anw_add_sub_option3_4" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[16]>$math_add_sub[17]){ echo "value='$math_add_sub[17]'"; } else{  echo "value='$math_add_sub[16]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
+			=
 			<input id="anw_add_sub_option3_5" name="anw_add_sub_option3_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[31]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
 	</tr>
@@ -578,6 +584,7 @@ require "math_triple_add_function.php";
 		<td class="add_sub3"><input id="add_sub_option4_2" name="add_sub_option4_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[19]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option4_3" name="add_sub_option4_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[20]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="add_sub_option4_4" name="add_sub_option4_4" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[21]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
+			=
 			<input id="add_sub_option4_5" name="add_sub_option4_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[22]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
 		<td class="add_sub4" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[3].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[3].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[3].question_sign)</script>
@@ -587,6 +594,7 @@ require "math_triple_add_function.php";
 			<input id="anw_add_sub_option4_2" name="anw_add_sub_option4_2" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[18]>$math_add_sub[19]){ echo "value='$math_add_sub[18]'"; } else{  echo "value='$math_add_sub[19]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="anw_add_sub_option4_3" name="anw_add_sub_option4_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[34]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="anw_add_sub_option4_4" name="anw_add_sub_option4_4" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[18]>$math_add_sub[19]){ echo "value='$math_add_sub[19]'"; } else{  echo "value='$math_add_sub[18]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
+			=
 			<input id="anw_add_sub_option4_5" name="anw_add_sub_option4_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[33]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
 	</tr>
@@ -598,6 +606,7 @@ require "math_triple_add_function.php";
 		<td class="add_sub3"><input id="add_sub_optio51_2" name="add_sub_option5_2" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[24]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="add_sub_option5_3" name="add_sub_option5_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[25]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="add_sub_option5_4" name="add_sub_option5_4" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[26]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
+			=
 			<input id="add_sub_option5_5" name="add_sub_option5_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub_sql[27]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
 		<td class="add_sub4" valign="middle"><script>anw_math_add_sub_pictures(all_question.math_add_sub[4].question_picture_info.front);</script> 和 <script>anw_math_add_sub_pictures(all_question.math_add_sub[4].question_picture_info.behind);anw_math_add_sub_sign(all_question.math_add_sub[4].question_sign)</script>
@@ -607,6 +616,7 @@ require "math_triple_add_function.php";
 			<input id="anw_add_sub_option5_2" name="anw_add_sub_option5_2" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[20]>$math_add_sub[21]){ echo "value='$math_add_sub[20]'"; } else{  echo "value='$math_add_sub[21]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
 			<input id="anw_add_sub_option5_3" name="anw_add_sub_option5_3" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[36]'"; ?> style="width: 15px; height: 10px; font-size: 20px;">
 			<input id="anw_add_sub_option5_4" name="anw_add_sub_option5_4" align="center"  type="text"  data-role="none" disabled <?php if($math_add_sub[20]>$math_add_sub[21]){ echo "value='$math_add_sub[21]'"; } else{  echo "value='$math_add_sub[20]'";} ?> style="width: 50px; height: 50px; font-size: 25px;">
+			=
 			<input id="anw_add_sub_option5_5" name="anw_add_sub_option5_5" align="center"  type="text"  data-role="none" disabled <?php echo "value='$math_add_sub[35]'"; ?> style="width: 50px; height: 50px; font-size: 25px;">
 		</td>
 	</tr>
