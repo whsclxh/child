@@ -112,7 +112,7 @@ body {
 
 .container {
     margin: 0 auto;
-    max-width: 960px;
+    max-width:1500px;
     height: 100%;
     background: #fff;
 }
@@ -2030,6 +2030,7 @@ var k5=arr[ku][ap][1];
         <div id="draw" class="draw-container">
             <div style="position: absolute" class="btn-group">
                 <a href="javascript:;" id="j-reset">重置</a>
+
                 <!-- <a href="javascript:;" id="j-submit" class="btn-submit">确定</a> -->
             </div>
             <ul class="question-list data-list">
@@ -2108,7 +2109,7 @@ var k5=arr[ku][ap][1];
         let self = this,
             parentPosition = $('#draw').offset();
         /* 鼠标按下question-list列，调整线条开始位置 */
-        $('.question-list').on('mousedown', 'li', function (e) {
+        if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/))$('.question-list').on('mousedown', 'li', function (e) {
 
             let current = self.lineArr.find(el => {
                 return el.beginValue == $(this).attr('data-question');
@@ -2116,7 +2117,7 @@ var k5=arr[ku][ap][1];
             current.begin = {};
             current.beginElement = this;
             current.begin.y = $(this).offset().top - parentPosition.top -115 ;
-            current.begin.x = $(this).offset().left - parentPosition.left  -240;
+            current.begin.x = $(this).offset().left - parentPosition.left  +10;
             current.line.show();
             current.line.stroke({
                 color: "#67C23A",
@@ -2133,13 +2134,13 @@ var k5=arr[ku][ap][1];
             self.currentInfo = current;
         })
         /* 鼠标按下answer-list列，调整线条结束位置 */
-        $('.answer-list').on('mouseup', 'li', function (e) {
+        if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/))$('.answer-list').on('mouseup', 'li', function (e) {
             let current = self.lineArr.find(el => {
                 return el.beginValue == self.currentInfo.beginValue;
             });
 
             current.end.y = $(this).offset().top - parentPosition.top -115;
-            current.end.x = $(this).offset().left - parentPosition.left - 470;
+            current.end.x = $(this).offset().left - parentPosition.left -200;
             current.endElement = this;
             current.endValue = $(this).attr('data-answer');
             
@@ -2214,7 +2215,7 @@ var k5=arr[ku][ap][1];
             linecap: "round"
         });
         line.hide()
-        line.click(function () {
+        if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/))line.click(function () {
             let current = self.lineArr.find(el => {
                 return el.line == this;
             });
@@ -2228,7 +2229,7 @@ var k5=arr[ku][ap][1];
 
             this.hide();
         });
-        line.mouseover(function () {
+       if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) line.mouseover(function () {
             let current = self.lineArr.find(el => {
                 return el.line == this;
             });
@@ -2245,7 +2246,7 @@ var k5=arr[ku][ap][1];
                 this.addClass("hover-g");
             }
         });
-        line.mouseout(function () {
+       if(!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) line.mouseout(function () {
             $('.remove-btn').hide();
             this.removeClass("hover-g");
         });
