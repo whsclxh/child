@@ -408,7 +408,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[C].
 
   <div   class="box1" align="center">   
        <!-- <a href="#"  style="width: 6%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a> --> 
-       <a href="#P2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide" >下一題</a>
+       <a href="#P2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide" >下一題</a>
     </div>
 </div>
 
@@ -587,9 +587,9 @@ cho5=rand_[rand2_[4]];
 
 
 <div   align="center">
-      <a href="#P1" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide" data-direction="reverse" >上一題</a>
+      <a href="#P1" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 8%;" data-transition="slide" data-direction="reverse" >上一題</a>
      <!--  <a href="#"   style="width: 6%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a> -->
-      <a href="#P3" class="c ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide" >下一題</a>
+      <a href="#P3" class="c ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide" >下一題</a>
     </div>
 
 </div><!-- /page -->
@@ -1073,9 +1073,9 @@ k_10=cart3.contentss[x5].two;}
 
 		   
 	 <div align="center">
-      <a href="#P2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide" data-direction="reverse" >上一題</a>
+      <a href="#P2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 8%;" data-transition="slide" data-direction="reverse" >上一題</a>
       <!-- <a href="#"   style="width: 6%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a> -->
-      <a href="#P4" class="c ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide" >下一題</a>
+      <a href="#P4" class="c ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide" >下一題</a>
     </div>
      
         </div>
@@ -2006,9 +2006,9 @@ var k5=arr[ku][ap][1];
 <div align="center" >
   <!-- <a href="#P4" class="ui-btn" style="width: 5%;" data-transition="slide" data-direction="reverse">上一題</a> -->
       <!-- <button  style="width:120px;height:40px;" type="submit" name="" value="hi" onclick="sent()"   ></button> -->
-  <a href="#P4" class=" a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%; " data-transition="slide" data-direction="reverse" >上一題</a>
+  <a href="#P4" class=" a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 8%; " data-transition="slide" data-direction="reverse" >上一題</a>
   
-  <button style="width: 6%;  margin-top:-45px;"  class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left" type="submit" name="" value="hi" onclick="sent()" >結束作答</button>
+  <button style="width: 8%;  margin-top:-45px;"  class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left" type="submit" name="" value="hi" onclick="sent()" >結束作答</button>
   
 
 </div>
@@ -2051,9 +2051,9 @@ var k5=arr[ku][ap][1];
   
     
     <div align="center">           
-      <a href="#P3" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 6%;" data-transition="slide" data-direction="reverse" >上一題</a>
+      <a href="#P3" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 8%;" data-transition="slide" data-direction="reverse" >上一題</a>
       <!-- <a href="#"   style="width: 6%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a> -->
-      <a href="#P5" id="j-submit" class="c ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 6%;" data-transition="slide" >下一題</a>
+      <a href="#P5" id="j-submit" class="c ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide" >下一題</a>
     </div>
 </div><!-- /page -->
 
@@ -2109,7 +2109,7 @@ var k5=arr[ku][ap][1];
         let self = this,
             parentPosition = $('#draw').offset();
         /* 鼠标按下question-list列，调整线条开始位置 */
-        $('.question-list').on('mousedown', 'li', function (e) {
+        $('.question-list').on('mousedown touchstart', 'li', function (e) {
 
             let current = self.lineArr.find(el => {
                 return el.beginValue == $(this).attr('data-question');
@@ -2134,13 +2134,13 @@ var k5=arr[ku][ap][1];
             self.currentInfo = current;
         })
         /* 鼠标按下answer-list列，调整线条结束位置 */
-        $('.answer-list').on('mouseup', 'li', function (e) {
+        $('.answer-list').on('mouseup touchend', 'li', function (e) {
             let current = self.lineArr.find(el => {
                 return el.beginValue == self.currentInfo.beginValue;
             });
 
             current.end.y = $(this).offset().top - parentPosition.top -115;
-            current.end.x = $(this).offset().left - parentPosition.left -50;
+            current.end.x = $(this).offset().left - parentPosition.left -30;
             current.endElement = this;
             current.endValue = $(this).attr('data-answer');
             
