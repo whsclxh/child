@@ -658,8 +658,8 @@ require "math_triple_add_function.php";
 		<div class="choose_border">
 		<table border="5" align="center" class="choose_table">	
 		<tr class="choose_oddtr">
-		<td><script>choose_pictures(all_question.math_choose[0].question_picture,all_question.math_choose[0].question_quantity);</script></td>
-		<td>
+		<td class="choose1"><script>choose_pictures(all_question.math_choose[0].question_picture,all_question.math_choose[0].question_quantity);</script></td>
+		<td class="choose2">
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option1_1" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.first);</script></label></div>
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option1_2" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.second);</script></label></div>
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option1_3" name="choose1" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[0].question_option.third);</script></label></div>
@@ -668,8 +668,8 @@ require "math_triple_add_function.php";
 		</td>
 		</tr>
 		<tr class="choose_eventr">
-		<td><script>choose_pictures(all_question.math_choose[1].question_picture,all_question.math_choose[1].question_quantity);</script></td>
-		<td>
+		<td class="choose1"><script>choose_pictures(all_question.math_choose[1].question_picture,all_question.math_choose[1].question_quantity);</script></td>
+		<td class="choose2">
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option2_1" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.first);</script></label></div>
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option2_2" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.second);</script></label></div>
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option2_3" name="choose2" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[1].question_option.third);</script></label></div>
@@ -678,8 +678,8 @@ require "math_triple_add_function.php";
 		</td>
 		</tr>
 		<tr class="choose_oddtr">
-		<td><script>choose_pictures(all_question.math_choose[2].question_picture,all_question.math_choose[2].question_quantity);</script></td>
-		<td>
+		<td class="choose1"><script>choose_pictures(all_question.math_choose[2].question_picture,all_question.math_choose[2].question_quantity);</script></td>
+		<td class="choose2">
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option3_1" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.first);</script></label></div>
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option3_2" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.second);</script></label></div>
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option3_3" name="choose3" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[2].question_option.third);</script></label></div>
@@ -688,8 +688,8 @@ require "math_triple_add_function.php";
 		</td>
 		</tr>
 		<tr class="choose_eventr">
-		<td><script>choose_pictures(all_question.math_choose[3].question_picture,all_question.math_choose[3].question_quantity);</script></td>
-		<td>
+		<td class="choose1"><script>choose_pictures(all_question.math_choose[3].question_picture,all_question.math_choose[3].question_quantity);</script></td>
+		<td class="choose2">
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option4_1" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.first);</script></label></div>
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option4_2" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.second);</script></label></div>
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option4_3" name="choose4" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[3].question_option.third);</script></label></div>
@@ -698,8 +698,8 @@ require "math_triple_add_function.php";
 		</td>
 		</tr>
 		<tr class="choose_oddtr">
-		<td><script>choose_pictures(all_question.math_choose[4].question_picture,all_question.math_choose[4].question_quantity);</script></td>
-		<td>
+		<td class="choose1"><script>choose_pictures(all_question.math_choose[4].question_picture,all_question.math_choose[4].question_quantity);</script></td>
+		<td class="choose2">
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option5_1" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.first);</script></label></div>
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option5_2" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.second);</script></label></div>
 			<div style="float: left; width: 20%;"><label class="choose" style="font-size: 30px"><input id="choose_option5_3" name="choose5" data-role="none" type="radio"/><script>choose_write(all_question.math_choose[4].question_option.third);</script></label></div>

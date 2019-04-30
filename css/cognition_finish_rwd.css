@@ -6,7 +6,7 @@
 }
 @media screen and (min-width:992px) and (max-width: 1199px)  { /*Large devices*/
     .count_sexyborder{
-        width: 80%;
+        width: 95%;
     }
     .orientation_goodborder{
         width: 95%;
@@ -23,7 +23,7 @@
 }
 @media screen and (min-width:1200px) { /*Extra large devices*/
     .orientation_goodborder{
-        width: 70%;
+        width: 75%;
     }
     .long_headerborder{
         width: 60%;

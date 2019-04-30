@@ -5,7 +5,12 @@
     
 }
 @media screen and (min-width:992px) { /*Large devices*/
-    
+    .choose1{
+        width: 75%;
+    }
+    .choose2{
+        width: 25%;
+    }
     .choose_border{
         width: auto;
     }
