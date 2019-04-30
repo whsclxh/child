@@ -1,7 +1,7 @@
 if(jQuery) (function($){
 //定义键盘代码
-var _numkeybordhtml = "<td align=\"center\" id=\"numkeybordp\" >\n"
-       + "<div  id=\"numkeybord\" >\n"
+var _numkeybordhtml =
+        "<div  id=\"numkeybord\" >\n"
        + "<div id=\"keymain\">"
        + "<li class=\"key\">ㄅ</li>"       
        + "<li class=\"key\">ㄆ</li>"       
@@ -49,7 +49,7 @@ var _numkeybordhtml = "<td align=\"center\" id=\"numkeybordp\" >\n"
 	     + "<li id=\"clear\">清空</li>"
        + "<li id=\"enter\">確定</li>"
        + "</div>\n"
-       + "</td>\n";
+       + "</div>\n";
 //定义插件
 jQuery.fn.numkeybord = function(_option){
    //键盘追加到网页中
@@ -92,8 +92,8 @@ jQuery.fn.numkeybord = function(_option){
 function _show(_input){
    $(_input).attr('readonly','readonly');
    var _offset    = $(_input).offset();
-   var _left    = _offset.left;
-   var _top    = _offset.top + $(_input).height() + ($.browser.msie ? 5 : 6);  
+   var _left    = _offset.left+ 50;
+   var _top    = _offset.top + $(_input).height() + ($.support.msie ? 5 : 6);  
    $("#numkeybord").attr("target",_input.id).css({left:_left + "px",top:_top + "px",display:'block'});
    $('#esc').click(function(){
 		$(_input).focus();
