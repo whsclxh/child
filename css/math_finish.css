@@ -49,17 +49,6 @@
 .big_one{
 	background-color: #fffded;
 }
-.multistage_border{
-     margin: auto;
-     width: 64%;
-     border:1px solid; padding:5px;
-     -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-     border-radius: 5px;
-     border-style: dashed;
-     border-width: 3px;
-     border-color: #FFCCCC;
-}
 .multistage_table_odd{border:1px solid transparent; width: 100%; border-collapse:collapse;}
 .add_border{
      margin: auto;
