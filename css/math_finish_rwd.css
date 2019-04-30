@@ -23,7 +23,7 @@
     .add_sub1{
         width: 60%;
     }
-    .add_sub1{
+    .add_sub2{
         width: 10%;
     }
     .add_sub3{
@@ -38,9 +38,6 @@
     .big_border{
         width: 60%;
     }
-    .multistage_table_odd{
-      width: 95%;  
-    }
 }
 @media screen and (min-width:1200px) { /*Extra large devices*/
     .choose_border{
@@ -52,7 +49,7 @@
     .add_sub1{
         width: 60%;
     }
-    .add_sub1{
+    .add_sub2{
         width: 10%;
     }
     .add_sub3{
@@ -66,8 +63,5 @@
     }
     .big_border{
         width: 45%;
-    }
-    .multistage_table_odd{
-        width: 72%;  
     }
 }
