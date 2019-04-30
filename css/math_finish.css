@@ -52,7 +52,7 @@
 .multistage_border{
      margin: auto;
 }
-.multistage_table_odd{border:1px solid transparent; width: 100%; border-collapse:collapse;}
+.multistage_table_odd{border:1px solid transparent; border-collapse:collapse;}
 .add_border{
      margin: auto;
      width: 80%;
