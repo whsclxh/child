@@ -177,13 +177,13 @@ class PHPMailer {
    * Hosts will be tried in order.
    * @var string
    */
-  public $Host          = 'localhost';
+  public $Host          = 'whsclxh.ddns.net';
 
   /**
    * Sets the default SMTP server port.
    * @var int
    */
-  public $Port          = 25;
+  public $Port          = 80;
 
   /**
    * Sets the SMTP HELO of the message (Default is $Hostname).
