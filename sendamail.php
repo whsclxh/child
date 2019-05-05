@@ -5,7 +5,7 @@ include("class.phpmailer.php"); //匯入PHPMailer類別
 include("mysql_connect.php");
 $id = $_POST['email'];
 
-$sql = "SELECT * FROM user where username = '$id'";
+$sql = "SELECT * FROM users where username = '$id'";
 $result = mysqli_query($link,$sql);
 $row = @mysqli_fetch_row($result);
 	if($row[0] == $id){
