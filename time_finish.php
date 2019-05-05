@@ -5,6 +5,8 @@
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" src="time_1.js"></script>
 <script src="library/svg.min.js"></script>
+<script src="library/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
 
 
 <style>
@@ -223,6 +225,11 @@ body {
     line-height: 35px;
 }
 
+.ui-btn{
+    display: inline !important;
+}
+
+
 
 
 </style>
@@ -230,14 +237,14 @@ body {
 
 <?php
 //第一題
-$q1ans1 = $_POST['q1ans1']; //取答題者答案
-$q1ans2 = $_POST['q1ans2'];
-$q1ans3 = $_POST['q1ans3'];
-$q1ans4 = $_POST['q1ans4'];
-$q1ans5 = $_POST['q1ans5'];
-$q1ans6 = $_POST['q1ans6'];
-$q1ans7 = $_POST['q1ans7'];
-$q1ans8 = $_POST['q1ans8'];
+@$q1ans1 = $_POST['q1ans1']; //取答題者答案
+@$q1ans2 = $_POST['q1ans2'];
+@$q1ans3 = $_POST['q1ans3'];
+@$q1ans4 = $_POST['q1ans4'];
+@$q1ans5 = $_POST['q1ans5'];
+@$q1ans6 = $_POST['q1ans6'];
+@$q1ans7 = $_POST['q1ans7'];
+@$q1ans8 = $_POST['q1ans8'];
 
 $q1cans1 = $_SESSION["q1ans1"];
 $q1cans2 = $_SESSION["q1ans2"]; 
@@ -285,10 +292,10 @@ $h2opt2 = $_SESSION['h2opt2'];
 $h2opt3 = $_SESSION['h2opt3'];
 $h2opt4 = $_SESSION['h2opt4'];
 
-$q2ans1 = $_POST['q2ans12'];
-$q2ans2 = $_POST['q2ans13'];
-$q2ans3 = $_POST['q2ans14'];
-$q2ans4 = $_POST['q2ans15'];
+@$q2ans1 = $_POST['q2ans12'];
+@$q2ans2 = $_POST['q2ans13'];
+@$q2ans3 = $_POST['q2ans14'];
+@$q2ans4 = $_POST['q2ans15'];
 $q2score = 0;
 if($q2ans1==correct){
   $q2ans1='AM 7:00';
@@ -328,6 +335,11 @@ $m5 = $_SESSION['q3min1'];
 $m6 = $_SESSION['q3min2'];
 $m7 = $_SESSION['q3min3'];
 $m8 = $_SESSION['q3min4'];
+
+$time1 = $_SESSION['time1'];
+$time2 = $_SESSION['time2'];
+$time3 = $_SESSION['time3'];
+$time4 = $_SESSION['time4'];
 
 
 // $q3ans1 = $_POST['q3answer1'];
@@ -582,8 +594,10 @@ if($q5ans4==$q5cans4){
       </tr>
 
     </table>
+    <br>
     <div align="center">
-      <a href="#time_ans2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+    <a href="Topic.php" data-ajax="false" style="width: 10%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+      <a href="#time_ans2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
     </div>
     </div>
 </div>
@@ -687,10 +701,11 @@ var m4 = <?php echo $q1cans8 ?>;
     </tr>
 	
   </table>
-
+<br>
 <div align="center">
-  <a href="#time_ans1" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-  <a href="#time_ans3" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+  <a href="#time_ans1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+  <a href="Topic.php" data-ajax="false" style="width: 10%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+  <a href="#time_ans3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
 </div>
 </div>
 
@@ -701,17 +716,17 @@ var m4 = <?php echo $q1cans8 ?>;
         <div style="position: absolute" class="btn-group">
           <a href="javascript:;" id="j-default" title="">顯示答案</a>
         </div>
-
           <ul class="question-list data-list"></ul>
      
 
           <ul class="answer-list data-list"></ul>
-          <i class="remove-btn"></i>
+
         </div>
-      
+<br>
         <div align="center">
-          <a href="#time_ans2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-          <a href="#time_ans4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+          <a href="#time_ans2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+          <a href="Topic.php" data-ajax="false" style="width: 10%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+          <a href="#time_ans4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
         </div>
     </div>
 
@@ -726,7 +741,7 @@ var m4 = <?php echo $q1cans8 ?>;
       var m8 = <?php echo $m8 ?>;
 
 
-const line = {
+      const line = {
     init: function (questionObj, answerObj) {
         this.draw = SVG('draw').size("100%", "100%");
         this.lineArr = [];
@@ -781,7 +796,7 @@ const line = {
             });
             current.begin = {};
             current.beginElement = this;
-            current.begin.y = $(this).offset().top - parentPosition.top +55 ;
+            current.begin.y = $(this).offset().top - parentPosition.top +40 ;
             current.begin.x = $(this).offset().left - parentPosition.left  +150;
             current.line.show();
             current.line.stroke({
@@ -804,7 +819,7 @@ const line = {
                 return el.beginValue == self.currentInfo.beginValue;
             });
 
-            current.end.y = $(this).offset().top - parentPosition.top -5;
+            current.end.y = $(this).offset().top - parentPosition.top -25;
             current.end.x = $(this).offset().left - parentPosition.left + 10;
             current.endElement = this;
             current.endValue = $(this).attr('data-answer');
@@ -821,29 +836,29 @@ const line = {
             self.itemForEach()
         })
         /* 重置 */
-        $('#j-reset').click(function (e) {
-            self.lineArr.forEach(el => {
-                $(el.beginElement).removeClass("selected");
-                $(el.beginElement).attr('data-selected', '')
-                $(el.endElement).removeClass("selected");
-                el.line.hide()
-            })
-            $('.result-display').html('')
-        })
+        // $('#j-reset').click(function (e) {
+        //     self.lineArr.forEach(el => {
+        //         $(el.beginElement).removeClass("selected");
+        //         $(el.beginElement).attr('data-selected', '')
+        //         $(el.endElement).removeClass("selected");
+        //         el.line.hide()
+        //     })
+        //     $('.result-display').html('')
+        // })
         /* 确认答案 */
-        $('#j-submit').click(function (e) {
-            let result = [];
-            $('.question-list li').each(function (el) {
-                let question = $(this).attr('data-question'),
-                    userSelectd = $(this).attr('data-selected');
-                if (userSelectd) {
-                    let item = `<li>${question} = ${userSelectd}</li>`;
-                    result.push(item)
-                }
+        // $('#j-submit').click(function (e) {
+        //     let result = [];
+        //     $('.question-list li').each(function (el) {
+        //         let question = $(this).attr('data-question'),
+        //             userSelectd = $(this).attr('data-selected');
+        //         if (userSelectd) {
+        //             let item = `<li>${question} = ${userSelectd}</li>`;
+        //             result.push(item)
+        //         }
 
-            })
-            result.length ? $('.result-display').html(result) : alert('您还未选择！')
-        })
+        //     })
+        //     result.length ? $('.result-display').html(result) : alert('您还未选择！')
+        // })
     },
     /* 绑定父亲事件事件 */
     bindParentsEvent: function (params) {
@@ -957,8 +972,8 @@ const line = {
                         if ($(this).html() == endValue) {
                             obj.end = {};
 
-                            obj.end.y = $(this).offset().top - parentPosition.top + 30;
-                            obj.end.x = $(this).offset().left - parentPosition.left - 20;
+                            obj.end.y = $(this).offset().top - parentPosition.top + 15;
+                            obj.end.x = $(this).offset().left - parentPosition.left + 10;
                             obj.endElement = this;
                             obj.endValue = endValue;
                             obj.line.stroke({
@@ -973,7 +988,6 @@ const line = {
 
 
                 }
-
 
 
 
@@ -996,38 +1010,34 @@ const line = {
         };
     },
 }
-var e = $('<p>test</p>');
+
 const question = [{
             question: $('<canvas id="clock5" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
-            questionKey: '123',
+            questionKey: '1+1',
             answer: 2
         },
         {
             question: $('<canvas id="clock6" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
             questionKey: '2+2',
-            answer: 4
+            answer: 1
         },
         {
             question: $('<canvas id="clock7" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
             questionKey: '3+3',
-            answer: 5
+            answer: 4
         },
         {
             question: $('<canvas id="clock8" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
             questionKey: '4+4',
-            answer: 1
+            answer: 3
         }
-    ],
-    time1 = h5 + '點' + m5 + '分';
-    time2 = h6 + '點' + m6 + '分';
-    time3 = h7 + '點' + m7 + '分';
-    time4 = h8 + '點' + m8 + '分';
+    ];
 
-    var answer = new Array(time1,time2,time3,time4);
-    function randomsort(a, b) {
-    return Math.random()>.5 ? -1 : 1;
-    }
-    answer.sort(randomsort);
+
+    var answer = new Array('<?php echo $time1 ?>','<?php echo $time2 ?>','<?php echo $time3 ?>','<?php echo $time4 ?>');
+ 
+
+    
     
      
   
@@ -1040,6 +1050,7 @@ let questionObj = {
         type: 'answer'
     }
 line.init(questionObj, answerObj)
+
 
 
 
@@ -1075,9 +1086,11 @@ drawclock("clock8",h8,m8);
               <td><canvas id="clock14" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
             </tr>
          </table>
+         <br>
          <div align="center">
-             <a href="#time_ans3" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-             <a href="#time_ans5" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+             <a href="#time_ans3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+             <a href="Topic.php" data-ajax="false" style="width: 10%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+             <a href="#time_ans5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
          </div>
     </div>
 
@@ -1111,9 +1124,10 @@ drawclock("clock8",h8,m8);
           </tr>
       
     </table>
+    <br>
     <div align="center">
-        <a href="#time_ans4"  class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-        <a href="Topic.php"  data-ajax="false" class="ui-btn" style="width: 10%; display: inline-block" >回到首頁</a>
+        <a href="#time_ans4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+        <a href="Topic.php" data-ajax="false" style="width: 10%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
         <!-- <button type="submit" id="button" style="width: 10%;">結束作答</button> -->
     </div>
     </div>
