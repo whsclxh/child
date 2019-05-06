@@ -1,4 +1,23 @@
 <?php session_start(); ?>
+<?php
+/*
+include("mysql_connect.php"); 
+if($_SESSION['username'] == null){
+    echo "<script>alert('您尚未登入!');</script>";
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=Home.php>';
+}
+?>
+<?php
+$id = $_SESSION['username'];
+$contimes = $_SESSION['cognition_times'];
+$sq2 = "SELECT * FROM cognition_score where username = '$id' and cardinal='$contimes'";
+$result2 = mysqli_query($link,$sq2);
+$a_row = @mysqli_fetch_row($result2);
+if($a_row[1]==$contimes){
+    echo "<script>alert('此次作答已經提交過囉!!');</script>";
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=cognition_finish.php>';
+}*/
+?> 
 <html>
 <head>
     <meta charset="UTF-8">
@@ -258,6 +277,10 @@ body {
     text-align: center
 }
 
+.ui-btn{
+    display: inline !important;
+}
+
 
 
 
@@ -322,7 +345,7 @@ $_SESSION['h2opt4'] = $h24;
 
 <body>
   
-  <form method="post" action="time_finish.php" data-ajax="false">
+  <form method="post" action="time_finish.php" data-ajax="false" name = "form1">
     <div data-role="page" id="time1">
     <h3 align="center">請問現在是幾點幾分? 輸入正確時間。</h3>
     
@@ -333,11 +356,11 @@ $_SESSION['h2opt4'] = $h24;
     </tr>
     <tr style="height:40px">
       <td>
-        <input type="number" data-role="none" style="width:10%"  name="q1ans1" min="1" max="12" >時<input type="number" data-role="none" style="width:10%"  name="q1ans2" min="00" max="59" step="5" >分
+        <input type="number" data-role="none" style="width:15%"  name="q1ans1" min="1" max="12" >時<input type="number" data-role="none" style="width:15%"  name="q1ans2" min="00" max="59" step="5" >分
       </td>
         
       <td>
-        <input type="number" data-role="none" style="width:10%"  name="q1ans3" min="1" max="12" >時<input type="number" data-role="none" style="width:10%"  name="q1ans4" min="00" max="59" step="5" >分
+        <input type="number" data-role="none" style="width:15%"  name="q1ans3" min="1" max="12" >時<input type="number" data-role="none" style="width:15%"  name="q1ans4" min="00" max="59" step="5" >分
       </td>
     </tr>
  
@@ -351,16 +374,18 @@ $_SESSION['h2opt4'] = $h24;
     </tr>
     <tr style="height: 40px">
       <td>
-        <input type="number" data-role="none" style="width:10%"  name="q1ans5" min="1" max="12" >時<input type="number" data-role="none" style="width:10%"  name="q1ans6" min="00" max="59" step="5" >分
+        <input type="number" data-role="none" style="width:15%"  name="q1ans5" min="1" max="12" >時<input type="number" data-role="none" style="width:15%"  name="q1ans6" min="00" max="59" step="5" >分
       </td>
         
       <td>
-        <input type="number" data-role="none" style="width:10%"  name="q1ans7" min="1" max="12" >時<input type="number" data-role="none" style="width:10%"  name="q1ans8" min="00" max="59" step="5" >分
+        <input type="number" data-role="none" style="width:15%"  name="q1ans7" min="1" max="12" >時<input type="number" data-role="none" style="width:15%"  name="q1ans8" min="00" max="59" step="5" >分
       </td>
     </tr>
   </table>
+  <br>
   <div align="center">
-    <a href="#time2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+    <a href="#" onclick="document.form1.submit();" style="width: 10%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+    <a href="#time2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
   </div>
   </div>
 
@@ -415,10 +440,11 @@ $_SESSION['h2opt4'] = $h24;
 		</tr>
 	
   </table>
-
+<br>
 <div align="center">
-  <a href="#time1" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-  <a href="#time3" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+  <a href="#time1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+  <a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+  <a href="#time3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
 </div>
 </div>
     
@@ -433,10 +459,11 @@ $_SESSION['h2opt4'] = $h24;
           <ul class="answer-list data-list"></ul>
 
         </div>
-
+<br>
         <div align="center">
-          <a href="#time2" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-          <a href="#time4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+          <a href="#time2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+          <a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+          <a href="#time4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
         </div>
     </div>
     
@@ -455,6 +482,16 @@ $m6 = rand(1,11)*5;
 $m7 = rand(1,11)*5;
 $m8 = rand(1,11)*5;
 
+$h = '點';
+$m = '分';
+
+$time1 = $h5.$h.$m5.$m;
+$time2 = $h6.$h.$m6.$m;
+$time3 = $h7.$h.$m7.$m;
+$time4 = $h8.$h.$m8.$m;
+$answer = array("$time1","$time2","$time3","$time4");
+shuffle($answer);
+
 $_SESSION['q3hour1'] = $h5;
 $_SESSION['q3hour2'] = $h6;
 $_SESSION['q3hour3'] = $h7;
@@ -463,6 +500,11 @@ $_SESSION['q3min1'] = $m5;
 $_SESSION['q3min2'] = $m6;
 $_SESSION['q3min3'] = $m7;
 $_SESSION['q3min4'] = $m8;
+
+$_SESSION['time1'] = $answer[0];
+$_SESSION['time2'] = $answer[1];
+$_SESSION['time3'] = $answer[2];
+$_SESSION['time4'] = $answer[3];
 
 
  ?>
@@ -474,6 +516,10 @@ var m5 = <?php echo $m5 ?>;
 var m6 = <?php echo $m6 ?>;
 var m7 = <?php echo $m7 ?>;
 var m8 = <?php echo $m8 ?>;
+
+
+
+
 
 
   const line = {
@@ -699,7 +745,7 @@ var m8 = <?php echo $m8 ?>;
                 obj.begin.y = _this.offset().top - parentPosition.top - 200;
                 obj.begin.x = _this.offset().left - parentPosition.left - 100;
                 $(this).attr('data-selected', '');
-                $('.result-display').html('')
+                $('.result-display').html('');
                 // obj.line.plot(obj.begin.x, obj.begin.y, obj.begin.x, obj.begin.y)
                 //判断是否存在初始答案
                 if (endValue && !flag) {
@@ -746,7 +792,7 @@ var m8 = <?php echo $m8 ?>;
         };
     },
 }
-var e = $('<p>test</p>');
+
 const question = [{
             question: $('<canvas id="clock5" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
             questionKey: '123',
@@ -767,17 +813,11 @@ const question = [{
             questionKey: '4+4',
             answer: 1
         }
-    ],
-    time1 = h5 + '點' + m5 + '分';
-    time2 = h6 + '點' + m6 + '分';
-    time3 = h7 + '點' + m7 + '分';
-    time4 = h8 + '點' + m8 + '分';
+    ];
+    
+    var answer = new Array('<?php echo $answer[0] ?>','<?php echo $answer[1] ?>','<?php echo $answer[2] ?>','<?php echo $answer[3] ?>');
 
-    var answer = new Array(time1,time2,time3,time4);
-    function randomsort(a, b) {
-    return Math.random()>.5 ? -1 : 1;
-    }
-    answer.sort(randomsort);
+    
 
     
     
@@ -825,9 +865,11 @@ drawclock("clock8",h8,m8);
               <td><canvas id="clock14" width="200%" height="200%" style="display:block; margin:auto;"></canvas></td>
             </tr>
          </table>
+         <br>
          <div align="center">
-             <a href="#time3" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-             <a href="#time5" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide">下一題</a>
+             <a href="#time3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+             <a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
+             <a href="#time5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
          </div>
     </div>
 
@@ -860,9 +902,10 @@ drawclock("clock8",h8,m8);
           </tr>
       
     </table>
+    <br>
     <div align="center">
-        <a href="#time4" class="ui-btn" style="width: 10%; display: inline-block" data-transition="slide" data-direction="reverse">上一題</a>
-        <button type="submit" id="button" style="width: 10%;">結束作答</button>
+        <a href="#time4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+        <a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
     </div>
     </div>
 
@@ -871,18 +914,7 @@ drawclock("clock8",h8,m8);
   
   <script>
 
-
-
-　
-// yudan_pic = new Array(4);
-// yudan_pic[0] = "img/clock_img/p1.png";
-// yudan_pic[1] = "img/clock_img/p2.png";
-// yudan_pic[2] = "img/clock_img/p3.png";
-// yudan_pic[3] = "img/clock_img/p4.png";
-// index = Math.floor(Math.random() * yudan_pic.length);
-
 <?php
-
 
 $h1 = rand(1,12);
 $h2 = rand(1,12);
