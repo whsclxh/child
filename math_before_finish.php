@@ -123,7 +123,7 @@ if($add_sub[23]==0){
 		if(((int)$math_add_sub_q25==(int)$add_sub[15]-(int)$add_sub[14])&&((int)$math_add_sub_q25!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
 }
-if()$add_sub[24]==0){
+if($add_sub[24]==0){
 	if(((int)$math_add_sub_q31==(int)$add_sub[16]+(int)$add_sub[17])&&((int)$math_add_sub_q31!=null))$math_add_sub_score=$math_add_sub_score+1;
 	if(((int)$math_add_sub_q32==(int)$add_sub[16])&&((int)$math_add_sub_q32!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
