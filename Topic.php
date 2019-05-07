@@ -222,6 +222,31 @@ include("mysql_connect.php");
     text-align: right;
 	} 
 }
+
+@media only screen and (min-width:451px) and (max-width: 742px) and (max-height:500px) { /*asus*/
+    .im img{
+     	display: none;
+	}
+	.left img{
+		text-align: center;
+		height: 150px;
+		padding-left: 35%;
+		margin-top: 8%;
+	}
+	.XX{
+		margin-top: 12%;
+	}
+	.XX input{
+		width: 20%;
+		height: 20%;
+	}
+	.right {
+    float: right;
+    width: 30%;
+    font-size: 20px;
+    text-align: right;
+	} 
+}
 @media only screen and (max-width: 480px) and (min-height:500px) and (max-height:750px) {/*i5/SE/6/7/8/6+/7+/8+/Pixel2/Glaxay S5 直*/
      .im img{
      	display: none;

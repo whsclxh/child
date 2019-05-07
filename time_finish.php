@@ -173,14 +173,14 @@ body {
 
 <?php
 //第一題
-@$q1ans1 = $_POST['q1ans1']; //取答題者答案
-@$q1ans2 = $_POST['q1ans2'];
-@$q1ans3 = $_POST['q1ans3'];
-@$q1ans4 = $_POST['q1ans4'];
-@$q1ans5 = $_POST['q1ans5'];
-@$q1ans6 = $_POST['q1ans6'];
-@$q1ans7 = $_POST['q1ans7'];
-@$q1ans8 = $_POST['q1ans8'];
+$q1ans1 = $_POST['q1ans1']; //取答題者答案
+$q1ans2 = $_POST['q1ans2'];
+$q1ans3 = $_POST['q1ans3'];
+$q1ans4 = $_POST['q1ans4'];
+$q1ans5 = $_POST['q1ans5'];
+$q1ans6 = $_POST['q1ans6'];
+$q1ans7 = $_POST['q1ans7'];
+$q1ans8 = $_POST['q1ans8'];
 
 $q1cans1 = $_SESSION["q1ans1"];
 $q1cans2 = $_SESSION["q1ans2"]; 
@@ -657,17 +657,7 @@ var m4 = <?php echo $q1cans8 ?>;
         </tr>
 
 
-        </table>
-
-
-
-        
-        
-          
-        
-
-
-        
+        </table>    
 <br>
         <div align="center">
           <a href="#time_ans2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
