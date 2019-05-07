@@ -37,6 +37,10 @@
      
     }
 
+    #table2{
+      width:80%;
+    }
+
     body {
       
       margin: 0 auto;
