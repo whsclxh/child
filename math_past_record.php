@@ -719,7 +719,7 @@ require "math_triple_add_function.php";
   		<a href="#math_anwser4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
 	</div>
 	<div data-role="page" id="math_anwser4" align="center">
-	<h3 align="center" style="color: red">本大題拿了<?php echo "$math_multistage[2]"; ?>/20分</h3>
+	<h3 align="center" style="color: red">本大題拿了<?php echo "$math_multistage_sql[2]"; ?>/20分</h3>
 	<h3 align="center">算一算,空格裡的數字是多少,一格1分</h3>
 	<div class="multistage_border">
 		<table border="1" style="margin: auto;" class="multistage_table_odd">
