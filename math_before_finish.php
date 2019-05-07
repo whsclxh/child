@@ -67,144 +67,144 @@ $math_add_sub_q53=$_POST['add_sub_option5_3'];
 $math_add_sub_q54=$_POST['add_sub_option5_4'];
 $math_add_sub_q55=$_POST['add_sub_option5_5'];
 $math_add_sub_score=0;
-if('$add_sub[22]'==0){
-	if(($math_add_sub_q11=='$add_sub[12]'+'$add_sub[13]')&&($math_add_sub_q11!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if(($math_add_sub_q12=='$add_sub[12]')&&($math_add_sub_q12!=null)){
+if((int)$add_sub[22]==0){
+	if(((int)$math_add_sub_q11==(int)$add_sub[12]+(int)$add_sub[13])&&((int)$math_add_sub_q11!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(((int)$math_add_sub_q12==(int)$add_sub[12])&&((int)$math_add_sub_q12!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q14=='$add_sub[13]')&&($math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
-	}else if(($math_add_sub_q12=='$add_sub[13]')&&($math_add_sub_q12!=null)){
+		if(((int)$math_add_sub_q14==(int)$add_sub[13])&&((int)$math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
+	}else if(((int)$math_add_sub_q12==(int)$add_sub[13])&&((int)$math_add_sub_q12!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q14=='$add_sub[12]')&&($math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
-	}else if($math_add_sub_q12==null){
-		if(($math_add_sub_q14=='$add_sub[13]')&&($math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q14)&&($math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q14==(int)$add_sub[12])&&((int)$math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
+	}else if((int)$math_add_sub_q12==null){
+		if(((int)$math_add_sub_q14==(int)$add_sub[13])&&((int)$math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q14)&&((int)$math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
-	if(($math_add_sub_q13=='+')&&($math_add_sub_q13!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if(($math_add_sub_q15=='$add_sub[12]'+'$add_sub[13]')&&($math_add_sub_q15!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(($math_add_sub_q13=='+')&&((int)$math_add_sub_q13!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(((int)$math_add_sub_q15==(int)$add_sub[12]+(int)$add_sub[13])&&((int)$math_add_sub_q15!=null))$math_add_sub_score=$math_add_sub_score+1;
 }else{
-	if(($math_add_sub_q13=='-')&&($math_add_sub_q13!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if('$add_sub[12]'>'$add_sub[13]'){
-		if(($math_add_sub_q11=='$add_sub[12]'-'$add_sub[13]')&&($math_add_sub_q11!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q12=='$add_sub[12]')&&($math_add_sub_q12!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q14=='$add_sub[13]')&&($math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q15=='$add_sub[12]'-'$add_sub[13]')&&($math_add_sub_q15!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(($math_add_sub_q13=='-')&&((int)$math_add_sub_q13!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if((int)$add_sub[12]>(int)$add_sub[13]){
+		if(((int)$math_add_sub_q11==(int)$add_sub[12]-(int)$add_sub[13])&&((int)$math_add_sub_q11!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q12==(int)$add_sub[12])&&((int)$math_add_sub_q12!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q14==(int)$add_sub[13])&&((int)$math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q15==(int)$add_sub[12]-(int)$add_sub[13])&&((int)$math_add_sub_q15!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}else{
-		if(($math_add_sub_q11=='$add_sub[13]'-'$add_sub[12]')&&($math_add_sub_q11!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q12=='$add_sub[13]')&&($math_add_sub_q12!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q14=='$add_sub[12]')&&($math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q15=='$add_sub[13]'-'$add_sub[12]')&&($math_add_sub_q15!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q11==(int)$add_sub[13]-(int)$add_sub[12])&&((int)$math_add_sub_q11!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q12==(int)$add_sub[13])&&((int)$math_add_sub_q12!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q14==(int)$add_sub[12])&&((int)$math_add_sub_q14!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q15==(int)$add_sub[13]-(int)$add_sub[12])&&((int)$math_add_sub_q15!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
 }
-if('$add_sub[23]'==0){
-	if(($math_add_sub_q21=='$add_sub[14]'+'$add_sub[15]')&&($math_add_sub_q21!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if(($math_add_sub_q22=='$add_sub[14]')&&($math_add_sub_q22!=null)){
+if((int)$add_sub[23]==0){
+	if(((int)$math_add_sub_q21==(int)$add_sub[14]+(int)$add_sub[15])&&((int)$math_add_sub_q21!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(((int)$math_add_sub_q22==(int)$add_sub[14])&&((int)$math_add_sub_q22!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q24=='$add_sub[15]')&&($math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
-	}else if(($math_add_sub_q22=='$add_sub[15]')&&($math_add_sub_q22!=null)){
+		if(((int)$math_add_sub_q24==(int)$add_sub[15])&&((int)$math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
+	}else if(((int)$math_add_sub_q22==(int)$add_sub[15])&&((int)$math_add_sub_q22!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q24=='$add_sub[14]')&&($math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
-	}else if($math_add_sub_q22==null){
-		if(($math_add_sub_q24=='$add_sub[15]')&&($math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q24)&&($math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q24==(int)$add_sub[14])&&((int)$math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
+	}else if((int)$math_add_sub_q22==null){
+		if(((int)$math_add_sub_q24==(int)$add_sub[15])&&((int)$math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q24)&&((int)$math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
-	if(($math_add_sub_q23=='+')&&($math_add_sub_q23!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if(($math_add_sub_q25=='$add_sub[14]'+'$add_sub[15]')&&($math_add_sub_q25!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(($math_add_sub_q23=='+')&&((int)$math_add_sub_q23!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(((int)$math_add_sub_q25==(int)$add_sub[14]+(int)$add_sub[15])&&((int)$math_add_sub_q25!=null))$math_add_sub_score=$math_add_sub_score+1;
 }else{
-	if(($math_add_sub_q23=='-')&&($math_add_sub_q23!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if('$add_sub[14]'>'$add_sub[15]'){
-		if(($math_add_sub_q21=='$add_sub[14]'-'$add_sub[15]')&&($math_add_sub_q21!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q22=='$add_sub[14]')&&($math_add_sub_q22!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q24=='$add_sub[15]')&&($math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q25=='$add_sub[14]'-'$add_sub[15]')&&($math_add_sub_q25!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(($math_add_sub_q23=='-')&&((int)$math_add_sub_q23!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if((int)$add_sub[14]>(int)$add_sub[15]){
+		if(((int)$math_add_sub_q21==(int)$add_sub[14]-(int)$add_sub[15])&&((int)$math_add_sub_q21!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q22==(int)$add_sub[14])&&((int)$math_add_sub_q22!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q24==(int)$add_sub[15])&&((int)$math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q25==(int)$add_sub[14]-(int)$add_sub[15])&&((int)$math_add_sub_q25!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}else{
-		if(($math_add_sub_q21=='$add_sub[15]'-'$add_sub[14]')&&($math_add_sub_q21!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q22=='$add_sub[15]')&&($math_add_sub_q22!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q24=='$add_sub[14]')&&($math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q25=='$add_sub[15]'-'$add_sub[14]')&&($math_add_sub_q25!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q21==(int)$add_sub[15]-(int)$add_sub[14])&&((int)$math_add_sub_q21!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q22==(int)$add_sub[15])&&((int)$math_add_sub_q22!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q24==(int)$add_sub[14])&&((int)$math_add_sub_q24!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q25==(int)$add_sub[15]-(int)$add_sub[14])&&((int)$math_add_sub_q25!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
 }
-if('$add_sub[24]'==0){
-	if(($math_add_sub_q31=='$add_sub[16]'+'$add_sub[17]')&&($math_add_sub_q31!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if(($math_add_sub_q32=='$add_sub[16]')&&($math_add_sub_q32!=null)){
+if((int)$add_sub[24]==0){
+	if(((int)$math_add_sub_q31==(int)$add_sub[16]+(int)$add_sub[17])&&((int)$math_add_sub_q31!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(((int)$math_add_sub_q32==(int)$add_sub[16])&&((int)$math_add_sub_q32!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q34=='$add_sub[17]')&&($math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
-	}else if(($math_add_sub_q32=='$add_sub[17]')&&($math_add_sub_q32!=null)){
+		if(((int)$math_add_sub_q34==(int)$add_sub[17])&&((int)$math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
+	}else if(((int)$math_add_sub_q32==(int)$add_sub[17])&&((int)$math_add_sub_q32!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q34=='$add_sub[16]')&&($math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
-	}else if($math_add_sub_q32==null){
-		if(($math_add_sub_q34=='$add_sub[17]')&&($math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q34)&&($math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q34==(int)$add_sub[16])&&((int)$math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
+	}else if((int)$math_add_sub_q32==null){
+		if(((int)$math_add_sub_q34==(int)$add_sub[17])&&((int)$math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q34)&&((int)$math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
-	if(($math_add_sub_q33=='+')&&($math_add_sub_q33!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if(($math_add_sub_q35=='$add_sub[16]'+'$add_sub[17]')&&($math_add_sub_q35!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(($math_add_sub_q33=='+')&&((int)$math_add_sub_q33!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(((int)$math_add_sub_q35==(int)$add_sub[16]+(int)$add_sub[17])&&((int)$math_add_sub_q35!=null))$math_add_sub_score=$math_add_sub_score+1;
 }else{
-	if(($math_add_sub_q33=='-')&&($math_add_sub_q33!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if('$add_sub[16]'>'$add_sub[17]'){
-		if(($math_add_sub_q31=='$add_sub[16]'-'$add_sub[17]')&&($math_add_sub_q31!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q32=='$add_sub[16]')&&($math_add_sub_q32!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q34=='$add_sub[17]')&&($math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q35=='$add_sub[16]'-'$add_sub[17]')&&($math_add_sub_q35!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(($math_add_sub_q33=='-')&&((int)$math_add_sub_q33!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if((int)$add_sub[16]>(int)$add_sub[17]){
+		if(((int)$math_add_sub_q31==(int)$add_sub[16]-(int)$add_sub[17])&&((int)$math_add_sub_q31!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q32==(int)$add_sub[16])&&((int)$math_add_sub_q32!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q34==(int)$add_sub[17])&&((int)$math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q35==(int)$add_sub[16]-(int)$add_sub[17])&&((int)$math_add_sub_q35!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}else{
-		if(($math_add_sub_q31=='$add_sub[17]'-'$add_sub[16]')&&($math_add_sub_q31!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q32=='$add_sub[17]')&&($math_add_sub_q32!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q34=='$add_sub[16]')&&($math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q35=='$add_sub[17]'-'$add_sub[16]')&&($math_add_sub_q35!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q31==(int)$add_sub[17]-(int)$add_sub[16])&&((int)$math_add_sub_q31!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q32==(int)$add_sub[17])&&((int)$math_add_sub_q32!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q34==(int)$add_sub[16])&&((int)$math_add_sub_q34!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q35==(int)$add_sub[17]-(int)$add_sub[16])&&((int)$math_add_sub_q35!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
 }
-if('$add_sub[25]'==0){
-	if(($math_add_sub_q41=='$add_sub[18]'+'$add_sub[19]')&&($math_add_sub_q41!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if(($math_add_sub_q42=='$add_sub[18]')&&($math_add_sub_q42!=null)){
+if((int)$add_sub[25]==0){
+	if(((int)$math_add_sub_q41==(int)$add_sub[18]+(int)$add_sub[19])&&((int)$math_add_sub_q41!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(((int)$math_add_sub_q42==(int)$add_sub[18])&&((int)$math_add_sub_q42!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q44=='$add_sub[19]')&&($math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
-	}else if(($math_add_sub_q42=='$add_sub[19]')&&($math_add_sub_q42!=null)){
+		if(((int)$math_add_sub_q44==(int)$add_sub[19])&&((int)$math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
+	}else if(((int)$math_add_sub_q42==(int)$add_sub[19])&&((int)$math_add_sub_q42!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q44=='$add_sub[18]')&&($math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
-	}else if($math_add_sub_q42==null){
-		if(($math_add_sub_q44=='$add_sub[19]')&&($math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q44)&&($math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q44==(int)$add_sub[18])&&((int)$math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
+	}else if((int)$math_add_sub_q42==null){
+		if(((int)$math_add_sub_q44==(int)$add_sub[19])&&((int)$math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q44)&&((int)$math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
-	if(($math_add_sub_q43=='+')&&($math_add_sub_q43!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if(($math_add_sub_q45=='$add_sub[18]'+'$add_sub[19]')&&($math_add_sub_q45!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(($math_add_sub_q43=='+')&&((int)$math_add_sub_q43!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(((int)$math_add_sub_q45==(int)$add_sub[18]+(int)$add_sub[19])&&((int)$math_add_sub_q45!=null))$math_add_sub_score=$math_add_sub_score+1;
 }else{
-	if(($math_add_sub_q43=='-')&&($math_add_sub_q43!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if('$add_sub[18]'>'$add_sub[19]'){
-		if(($math_add_sub_q41=='$add_sub[18]'-'$add_sub[19]')&&($math_add_sub_q41!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q42=='$add_sub[18]')&&($math_add_sub_q42!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q44=='$add_sub[19]')&&($math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q45=='$add_sub[18]'-'$add_sub[19]')&&($math_add_sub_q45!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(($math_add_sub_q43=='-')&&((int)$math_add_sub_q43!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if((int)$add_sub[18]>(int)$add_sub[19]){
+		if(((int)$math_add_sub_q41==(int)$add_sub[18]-(int)$add_sub[19])&&((int)$math_add_sub_q41!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q42==(int)$add_sub[18])&&((int)$math_add_sub_q42!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q44==(int)$add_sub[19])&&((int)$math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q45==(int)$add_sub[18]-(int)$add_sub[19])&&((int)$math_add_sub_q45!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}else{
-		if(($math_add_sub_q41=='$add_sub[19]'-'$add_sub[18]')&&($math_add_sub_q41!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q42=='$add_sub[19]')&&($math_add_sub_q42!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q44=='$add_sub[18]')&&($math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q45=='$add_sub[19]'-'$add_sub[18]')&&($math_add_sub_q45!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q41==(int)$add_sub[19]-(int)$add_sub[18])&&((int)$math_add_sub_q41!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q42==(int)$add_sub[19])&&((int)$math_add_sub_q42!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q44==(int)$add_sub[18])&&((int)$math_add_sub_q44!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q45==(int)$add_sub[19]-(int)$add_sub[18])&&((int)$math_add_sub_q45!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
 }
-if('$add_sub[25]'==0){
-	if(($math_add_sub_q51=='$add_sub[20]'+'$add_sub[21]')&&($math_add_sub_q51!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if(($math_add_sub_q52=='$add_sub[20]')&&($math_add_sub_q52!=null)){
+if((int)$add_sub[25]==0){
+	if(((int)$math_add_sub_q51==(int)$add_sub[20]+(int)$add_sub[21])&&((int)$math_add_sub_q51!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(((int)$math_add_sub_q52==(int)$add_sub[20])&&((int)$math_add_sub_q52!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q54=='$add_sub[21]')&&($math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
-	}else if(($math_add_sub_q52=='$add_sub[21]')&&($math_add_sub_q52!=null)){
+		if(((int)$math_add_sub_q54==(int)$add_sub[21])&&((int)$math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
+	}else if(((int)$math_add_sub_q52==(int)$add_sub[21])&&((int)$math_add_sub_q52!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q54=='$add_sub[20]')&&($math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
-	}else if($math_add_sub_q52==null){
-		if(($math_add_sub_q54=='$add_sub[21]')&&($math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q54)&&($math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q54==(int)$add_sub[20])&&((int)$math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
+	}else if((int)$math_add_sub_q52==null){
+		if(((int)$math_add_sub_q54==(int)$add_sub[21])&&((int)$math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q54)&&((int)$math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
-	if(($math_add_sub_q53=='+')&&($math_add_sub_q53!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if(($math_add_sub_q55=='$add_sub[20]'+'$add_sub[21]')&&($math_add_sub_q55!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(($math_add_sub_q53=='+')&&((int)$math_add_sub_q53!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(((int)$math_add_sub_q55==(int)$add_sub[20]+(int)$add_sub[21])&&((int)$math_add_sub_q55!=null))$math_add_sub_score=$math_add_sub_score+1;
 }else{
-	if(($math_add_sub_q53=='-')&&($math_add_sub_q53!=null))$math_add_sub_score=$math_add_sub_score+1;
-	if('$add_sub[20]'>'$add_sub[21]'){
-		if(($math_add_sub_q51=='$add_sub[20]'-'$add_sub[21]')&&($math_add_sub_q51!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q52=='$add_sub[20]')&&($math_add_sub_q52!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q54=='$add_sub[21]')&&($math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q55=='$add_sub[20]'-'$add_sub[21]')&&($math_add_sub_q55!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if(($math_add_sub_q53=='-')&&((int)$math_add_sub_q53!=null))$math_add_sub_score=$math_add_sub_score+1;
+	if((int)$add_sub[20]>(int)$add_sub[21]){
+		if(((int)$math_add_sub_q51==(int)$add_sub[20]-(int)$add_sub[21])&&((int)$math_add_sub_q51!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q52==(int)$add_sub[20])&&((int)$math_add_sub_q52!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q54==(int)$add_sub[21])&&((int)$math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q55==(int)$add_sub[20]-(int)$add_sub[21])&&((int)$math_add_sub_q55!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}else{
-		if(($math_add_sub_q51=='$add_sub[21]'-'$add_sub[20]')&&($math_add_sub_q51!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q52=='$add_sub[21]')&&($math_add_sub_q52!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q54=='$add_sub[20]')&&($math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
-		if(($math_add_sub_q55=='$add_sub[21]'-'$add_sub[20]')&&($math_add_sub_q55!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q51==(int)$add_sub[21]-(int)$add_sub[20])&&((int)$math_add_sub_q51!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q52==(int)$add_sub[21])&&((int)$math_add_sub_q52!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q54==(int)$add_sub[20])&&((int)$math_add_sub_q54!=null))$math_add_sub_score=$math_add_sub_score+1;
+		if(((int)$math_add_sub_q55==(int)$add_sub[21]-(int)$add_sub[20])&&((int)$math_add_sub_q55!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
 }
 $math_big_small_q1=$_POST['big_small1'];
