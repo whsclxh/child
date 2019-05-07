@@ -278,7 +278,7 @@ $math_multistage_q53=$_POST['multistage5_3'];
 $math_multistage_q54=$_POST['multistage5_4'];
 $math_multistage_q55=$_POST['multistage5_5'];
 $math_multistage_q56=$_POST['multistage5_6'];
-$math_multistage_score=-10;
+$math_multistage_score=0;
 if((int)$math_multistage_q11==(int)$multistage[12])$math_multistage_score=$math_multistage_score+1;
 if((int)$math_multistage_q12==(int)$multistage[12]+1)$math_multistage_score=$math_multistage_score+1;
 if((int)$math_multistage_q13==(int)$multistage[12]+2)$math_multistage_score=$math_multistage_score+1;
@@ -414,9 +414,9 @@ $math_score_sql="insert into math_score (
 username,cardinal,totalscore,nowtime) 
 values('$id','$mathtimes','$total_score','$the_time')";
 if(mysqli_query($link,$math_choose_sql)&&mysqli_query($link,$math_add_sub_sql)&&mysqli_query($link,$math_big_small_sql)&&mysqli_query($link,$math_multistage_sql)&&mysqli_query($link,$math_triple_add_sql)&&mysqli_query($link,$math_score_sql)){
-    		//header("REFRESH:1;url=math_finish.php");
+    		header("REFRESH:1;url=math_finish.php");
     	}else{
     		echo "<script>alert('答案送出失敗,請洽服務人員!');</script>";
-    		//header("REFRESH:1;url=Topic.php");
+    		header("REFRESH:1;url=Topic.php");
     	}
 ?>
