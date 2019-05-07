@@ -3,7 +3,7 @@
 include("mysql_connect.php");
 $id = $_SESSION['username'];
 $mathtimes = $_SESSION['math_times'];
-$math_add_sub_db = "SELECT * FROM math_add_sub where username = '$id' AND math_times = '$mathntimes'";
+$math_add_sub_db = "SELECT * FROM math_add_sub where username = '$id' AND math_times = '$mathtimes'";
 $result1 = mysqli_query($link,$math_add_sub_db);
 $add_sub = @mysqli_fetch_row($result1);
 $math_big_small_db = "SELECT * FROM math_big_small where username = '$id' AND math_times = '$mathtimes'";
