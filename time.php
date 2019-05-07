@@ -1,6 +1,5 @@
 <?php session_start(); ?>
 <?php
-/*
 include("mysql_connect.php"); 
 if($_SESSION['username'] == null){
     echo "<script>alert('您尚未登入!');</script>";
@@ -9,14 +8,17 @@ if($_SESSION['username'] == null){
 ?>
 <?php
 $id = $_SESSION['username'];
-$contimes = $_SESSION['cognition_times'];
-$sq2 = "SELECT * FROM cognition_score where username = '$id' and cardinal='$contimes'";
+$contimes = $_SESSION['clock_times'];
+$sq2 = "SELECT * FROM clock_score where username = '$id' and cardinal='$contimes'";
+$a=$row[7]+1;
+$_SESSION['clock_times'] = $a;
+$sql2 = "update users set cognition_times='$a' where username='$id'";
 $result2 = mysqli_query($link,$sq2);
 $a_row = @mysqli_fetch_row($result2);
 if($a_row[1]==$contimes){
     echo "<script>alert('此次作答已經提交過囉!!');</script>";
-    echo '<meta http-equiv=REFRESH CONTENT=0;url=cognition_finish.php>';
-}*/
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=time_finish.php>';
+}
 ?> 
 <html>
 <head>
@@ -1048,3 +1050,21 @@ var m14 = <?php echo $m14 ?>;
 </body>
 
 </html>
+<?php
+$q1r = "insert into clock_1 (username,clock_times,q1hour1,q1hour2,q1hour3,q1hour4,q1min1,qimin2,q1min3,q1min4)";
+$q2r = "insert into clock_2 (username,clock_times,q2hour1,q2hour2,q2hour3,q2hour4,q2pic1,q2pic2,q2pic3,q2pic4)";
+$q4r = "insert into clock_3 (username,clock_times,q4hour1,q4hour2,q4hour3,q4hour4,q4hour5,q4hour6,q4min1,q4min2,q4min3,q4min4,q4min5,q4min6,)";
+$q5r = "insert into clock_4 (username,clock_times,q5pic1,q5pic2,q5pic3,q5pic4,)";
+
+if(mysqli_query($link,$sql2)){
+  if(mysqli_query($link,$q1r)&&mysqli_query($link,$q2r)&&mysqli_query($link,$q3r)&&mysqli_query($link,$q4r)&&mysqli_query($link,$q5r)){
+      header("REFRESH:1;url=time.php");
+    }else{
+      echo "<script>alert('題目產生失敗,請洽服務人員!');</script>";
+      header("REFRESH:1;url=time.php");
+    }
+  }else{   
+    echo "<script>alert('技術上失誤,請洽服務人員!');</script>";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=Topic.php>';
+  }
+ ?>
