@@ -742,7 +742,7 @@ require "cog_count_choose_function.php";
         </div>
     <div data-role="page" id="cognition_anwser5" align="center">
         <h3 align="center" style="color: red">把跟前面形狀相似的選出來,一題5分</h3>
-        <h3 align="center" style="color: red">拿了<?php echo "$choose_shape_sql[2]"; ?>/20分</h3>
+        <h3 align="center" style="color: red">拿了<?php echo "$cog_choose_shape_sql[2]"; ?>/20分</h3>
         <div align="center" class="shape_border">
         <table border="1" class="shape_table">
         <tr class="shape_one">

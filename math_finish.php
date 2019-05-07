@@ -681,15 +681,15 @@ require "math_triple_add_function.php";
 			<td class="big_eventd" align="center" style="color: red"><?php $a=min($math_big_small[17],$math_big_small[18],$math_big_small[19]); echo "$a"; ?></td>
 		</tr><tr>
 			<td class="big_eventd">
-				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small1" id="big_small7_1" disabled <?php if($math_big_small_sql[9]=="$math_big_small[20]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[6].question_option.first)</script></label></div>
-				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small1" id="big_small7_2" disabled <?php if($math_big_small_sql[9]=="$math_big_small[21]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[6].question_option.second)</script></label></div>
-				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small1" id="big_small7_3" disabled <?php if($math_big_small_sql[9]=="$math_big_small[22]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[6].question_option.third)</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small7" id="big_small7_1" disabled <?php if($math_big_small_sql[9]=="$math_big_small[20]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[6].question_option.first)</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small7" id="big_small7_2" disabled <?php if($math_big_small_sql[9]=="$math_big_small[21]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[6].question_option.second)</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small7" id="big_small7_3" disabled <?php if($math_big_small_sql[9]=="$math_big_small[22]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[6].question_option.third)</script></label></div>
 			</td>
 			<td class="big_eventd" align="center" style="color: red"><?php $a=min($math_big_small[20],$math_big_small[21],$math_big_small[22]); echo "$a"; ?></td>
 			<td class="big_oddtd">
-				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small2" id="big_small8_1" disabled <?php if($math_big_small_sql[10]=="$math_big_small[23]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[7].question_option.first)</script></label></div>
-				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small2" id="big_small8_2" disabled <?php if($math_big_small_sql[10]=="$math_big_small[24]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[7].question_option.second)</script></label></div>
-				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small2" id="big_small8_3" disabled <?php if($math_big_small_sql[10]=="$math_big_small[25]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[7].question_option.third)</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small8" id="big_small8_1" disabled <?php if($math_big_small_sql[10]=="$math_big_small[23]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[7].question_option.first)</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small8" id="big_small8_2" disabled <?php if($math_big_small_sql[10]=="$math_big_small[24]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[7].question_option.second)</script></label></div>
+				<div style="float: left;"><label style="font-size: 50px;"><input type="radio" data-role="none" name="big_small8" id="big_small8_3" disabled <?php if($math_big_small_sql[10]=="$math_big_small[25]") echo "checked=checked";?>><script>anw_math_choose_write(all_question.math_big_small[7].question_option.third)</script></label></div>
 			</td>
 			<td class="big_oddtd" align="center" style="color: red"><?php $a=min($math_big_small[23],$math_big_small[24],$math_big_small[25]); echo "$a"; ?></td>
 		</tr>
@@ -838,13 +838,13 @@ require "math_triple_add_function.php";
 			</tr>
 			<tr>
 				<th class="add_table_info">原作答</th>
-				<td style="text-align: center;"><?php echo "$math_triple_add[3]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[3]"?></td>
 				<td>+</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[4]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[4]"?></td>
 				<td>+</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[5]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[5]"?></td>
 				<td>=</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[6]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[6]"?></td>
 			</tr>
 			<tr>
 				<th class="add_table_info">正解</th>
@@ -871,13 +871,13 @@ require "math_triple_add_function.php";
 			</tr>
 			<tr>
 				<th class="add_table_info">原作答</th>
-				<td style="text-align: center;"><?php echo "$math_triple_add[7]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[7]"?></td>
 				<td>+</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[8]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[8]"?></td>
 				<td>+</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[9]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[9]"?></td>
 				<td>=</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[10]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[10]"?></td>
 			</tr>
 			<tr>
 				<th class="add_table_info">正解</th>
@@ -905,13 +905,13 @@ require "math_triple_add_function.php";
 			</tr>
 			<tr>
 				<th class="add_table_info">原作答</th>
-				<td style="text-align: center;"><?php echo "$math_triple_add[11]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[11]"?></td>
 				<td>+</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[12]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[12]"?></td>
 				<td>+</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[13]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[13]"?></td>
 				<td>=</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[14]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[14]"?></td>
 			</tr>
 			<tr>
 				<th class="add_table_info">正解</th>
@@ -939,13 +939,13 @@ require "math_triple_add_function.php";
 			</tr>
 			<tr>
 				<th class="add_table_info">原作答</th>
-				<td style="text-align: center;"><?php echo "$math_triple_add[15]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[15]"?></td>
 				<td>+</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[16]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[16]"?></td>
 				<td>+</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[17]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[17]"?></td>
 				<td>=</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[18]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[18]"?></td>
 			</tr>
 			<tr>
 				<th class="add_table_info">正解</th>
@@ -973,13 +973,13 @@ require "math_triple_add_function.php";
 			</tr>
 			<tr>
 				<th class="add_table_info">原作答</th>
-				<td style="text-align: center;"><?php echo "$math_triple_add[19]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[19]"?></td>
 				<td>+</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[20]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[20]"?></td>
 				<td>+</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[21]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[21]"?></td>
 				<td>=</td>
-				<td style="text-align: center;"><?php echo "$math_triple_add[22]"?></td>
+				<td style="text-align: center;"><?php echo "$math_triple_add_sql[22]"?></td>
 			</tr>
 			<tr>
 				<th class="add_table_info">正解</th>

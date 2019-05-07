@@ -353,7 +353,7 @@ require "cog_count_choose_function.php";
 <script type="text/javascript" src="cog_choose_shape.js"></script>
 	<form method="post" action="cognition_before_finish.php" data-ajax="false" name="form1">
 		<div data-role="page" id="cognition1" align="center">
-  		<h3 align="center" style="color: gold">數一數,並選出比較多的那種,一格1分</h3>
+  		<h3 align="center">數一數,並選出比較多的那種,一格1分</h3>
         <div class="count_sexyborder">
 		<table border="1" width="70%" align="center" class="count_fancytable">
 			<tr class="count_fancyheader">
@@ -439,7 +439,7 @@ require "cog_count_choose_function.php";
         <br><br>
     </div>
 		<div data-role="page" id="cognition2" align="center">
-  		<h3 align="center" style="color: gold">請幫忙找一找,選出正確的答案,一題5分</h3>
+  		<h3 align="center">請幫忙找一找,選出正確的答案,一題5分</h3>
             <div class="orientation_sexyborder">
 			<table border="1" style="margin: auto;" class="orientation_fancytable">
 					<tr>
@@ -511,7 +511,7 @@ require "cog_count_choose_function.php";
                 <br><br>
 			</div>
 			<div data-role="page" id="cognition3" align="center">
-				<h3 align="center" style="color: gold">比一比,選出比較長的那一種,一題4分</h3>
+				<h3 align="center">比一比,選出比較長的那一種,一題4分</h3>
             <div class="long_headerborder">
 			<table class="long_headertable" border="1" width="60%" align="center">
 			<tr>
@@ -587,7 +587,7 @@ require "cog_count_choose_function.php";
                 <br><br>
 	</div>
 	<div data-role="page" id="cognition4" align="center">
-		<h3 align="center" style="color: gold">請幫忙找一找,填入正確的答案,一題5分</h3>
+		<h3 align="center">請幫忙找一找,填入正確的答案,一題5分</h3>
 		<div align="center" class="sequence_headerborder">
 			<table border="0">
 				<tr>
@@ -646,7 +646,7 @@ require "cog_count_choose_function.php";
   				<a href="#cognition5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 3%;" data-transition="slide">下一題</a>
  		</div>
  		 <div data-role="page" id="cognition5" align="center">
-		<h3 align="center" style="color: gold">把跟前面形狀相似的選出來,一題5分</h3>
+		<h3 align="center">把跟前面形狀相似的選出來,一題5分</h3>
 		<div align="center" class="shape_border">
 		<table border="1" class="shape_table">
 			<tr class="shape_oddtr">
