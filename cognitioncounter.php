@@ -124,9 +124,9 @@ function getanwser($x,$y){
 		if($y==0){
 			$anw=$x+3;
 		}else if($x==1){
-			$anw=$x-1;
-		}else{
 			$anw=$x+1;
+		}else{
+			$anw=$x-1;
 		}
 	}else if($x==2){
 		if($y==0){
