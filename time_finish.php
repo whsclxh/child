@@ -525,7 +525,8 @@ if($q5ans4==$q5cans4){
 <form name="form1" method="post">
 <div data-role="page" id="time_ans">
 	<div align="center" valign="middle">
-		<h3 align="center" style="color: red">本次作答拿了<?php echo "$totalscore"; ?>/100分</h3>
+    <h3 align="center" style="color: red">本次作答拿了<?php echo "$totalscore"; ?>/100分</h3>
+    <br>
 		<a href="#time_ans1" class="ui-btn" style="width: 10%;" data-transition="slide">來對答案吧!</a>
 	</div>	
 </div>
