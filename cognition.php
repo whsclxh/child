@@ -523,7 +523,7 @@ require "cog_count_choose_function.php";
 				<td width="5%" style="text-align: center;"><input id="q3qq1" name="q3question1" type="radio" <?php echo "value=\"$question3[7]\""; ?>></td>
 			</tr>
 			<tr class="long_eventr">
-				<td width="90%"><script>cog_choose_longer_pictures(all_question.cog_choose_longer[0].picture_info,all_question.cog_choose_longer[2].picture_length.down);</script></td>
+				<td width="90%"><script>cog_choose_longer_pictures(all_question.cog_choose_longer[0].picture_info,all_question.cog_choose_longer[0].picture_length.down);</script></td>
 				<td width="5%" style="text-align: center;"><input id="q3qq2" name="q3question1" type="radio" <?php echo "value=\"$question3[8]\""; ?>></td>
 			</tr>
 		</table>
