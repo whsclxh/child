@@ -67,7 +67,7 @@ $math_add_sub_q53=$_POST['add_sub_option5_3'];
 $math_add_sub_q54=$_POST['add_sub_option5_4'];
 $math_add_sub_q55=$_POST['add_sub_option5_5'];
 $math_add_sub_score=0;
-if((int)$add_sub[22]==0){
+if($add_sub[22]==0){
 	if(((int)$math_add_sub_q11==(int)$add_sub[12]+(int)$add_sub[13])&&((int)$math_add_sub_q11!=null))$math_add_sub_score=$math_add_sub_score+1;
 	if(((int)$math_add_sub_q12==(int)$add_sub[12])&&((int)$math_add_sub_q12!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
@@ -95,7 +95,7 @@ if((int)$add_sub[22]==0){
 		if(((int)$math_add_sub_q15==(int)$add_sub[13]-(int)$add_sub[12])&&((int)$math_add_sub_q15!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
 }
-if((int)$add_sub[23]==0){
+if($add_sub[23]==0){
 	if(((int)$math_add_sub_q21==(int)$add_sub[14]+(int)$add_sub[15])&&((int)$math_add_sub_q21!=null))$math_add_sub_score=$math_add_sub_score+1;
 	if(((int)$math_add_sub_q22==(int)$add_sub[14])&&((int)$math_add_sub_q22!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
@@ -123,7 +123,7 @@ if((int)$add_sub[23]==0){
 		if(((int)$math_add_sub_q25==(int)$add_sub[15]-(int)$add_sub[14])&&((int)$math_add_sub_q25!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
 }
-if((int)$add_sub[24]==0){
+if()$add_sub[24]==0){
 	if(((int)$math_add_sub_q31==(int)$add_sub[16]+(int)$add_sub[17])&&((int)$math_add_sub_q31!=null))$math_add_sub_score=$math_add_sub_score+1;
 	if(((int)$math_add_sub_q32==(int)$add_sub[16])&&((int)$math_add_sub_q32!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
@@ -151,7 +151,7 @@ if((int)$add_sub[24]==0){
 		if(((int)$math_add_sub_q35==(int)$add_sub[17]-(int)$add_sub[16])&&((int)$math_add_sub_q35!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
 }
-if((int)$add_sub[25]==0){
+if($add_sub[25]==0){
 	if(((int)$math_add_sub_q41==(int)$add_sub[18]+(int)$add_sub[19])&&((int)$math_add_sub_q41!=null))$math_add_sub_score=$math_add_sub_score+1;
 	if(((int)$math_add_sub_q42==(int)$add_sub[18])&&((int)$math_add_sub_q42!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
@@ -179,7 +179,7 @@ if((int)$add_sub[25]==0){
 		if(((int)$math_add_sub_q45==(int)$add_sub[19]-(int)$add_sub[18])&&((int)$math_add_sub_q45!=null))$math_add_sub_score=$math_add_sub_score+1;
 	}
 }
-if((int)$add_sub[25]==0){
+if($add_sub[26]==0){
 	if(((int)$math_add_sub_q51==(int)$add_sub[20]+(int)$add_sub[21])&&((int)$math_add_sub_q51!=null))$math_add_sub_score=$math_add_sub_score+1;
 	if(((int)$math_add_sub_q52==(int)$add_sub[20])&&((int)$math_add_sub_q52!=null)){
 		$math_add_sub_score=$math_add_sub_score+1;
