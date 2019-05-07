@@ -1,25 +1,3 @@
-<?php session_start(); ?>
-<?php
-include("mysql_connect.php"); 
-if($_SESSION['username'] == null){
-    echo "<script>alert('您尚未登入!');</script>";
-    echo '<meta http-equiv=REFRESH CONTENT=0;url=Home.php>';
-}
-?>
-<?php
-$id = $_SESSION['username'];
-$contimes = $_SESSION['clock_times'];
-$sq2 = "SELECT * FROM clock_score where username = '$id' and cardinal='$contimes'";
-$a=$row[7]+1;
-$_SESSION['clock_times'] = $a;
-$sql2 = "update users set cognition_times='$a' where username='$id'";
-$result2 = mysqli_query($link,$sq2);
-$a_row = @mysqli_fetch_row($result2);
-if($a_row[1]==$contimes){
-    echo "<script>alert('此次作答已經提交過囉!!');</script>";
-    echo '<meta http-equiv=REFRESH CONTENT=0;url=time_finish.php>';
-}
-?> 
 <html>
 <head>
     <meta charset="UTF-8">
@@ -51,6 +29,11 @@ if($a_row[1]==$contimes){
       margin-top: 100px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    #table1{
+      width:30%;
+     
     }
 
     body {
@@ -121,49 +104,7 @@ body {
   font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
 }
 
-/* td,
-th,
-caption {
-  font-size: 14px;
-} */
 
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal;
-  font-size: 100%;
-} */
-
-/* address,
-caption,
-cite,
-code,
-dfn,
-em,
-strong,
-th,
-var {
-  font-style: normal;
-  font-weight: normal;
-} */
-
-/* a {
-  color: #555;
-  text-decoration: none;
-} */
-
-/* a:link, a:visited,a:hover ,a:active{
-  text-decoration: none;
-
-} */
-
-/* img {
-  border: none;
-  vertical-align: middle;
-} */
 
 ol,
 ul,
@@ -199,27 +140,6 @@ html {
   *zoom: 1;
 }
 
-/*公共类*/
-
-/* .fl {
-  float: left
-}
-
-.fr {
-  float: right
-}
-
-.al {
-  text-align: left
-}
-
-.ac {
-  text-align: center
-}
-
-.ar {
-  text-align: right
-} */
 
 .hide {
   display: none
@@ -234,50 +154,10 @@ body {
     background: #f5f5f5;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 960px;
-    height: 100%;
-    background: #fff;
-}
 
-.draw-container {
-    position: relative;
-    height: 800px;
-    background: #fff;
-}
 
-.draw-container ul {
-    margin-top: 80px;
-}
 
-.data-list {
-    position: absolute;
-}
 
-.question-list {
-    left: 50px;
-}
-
-.answer-list {
-    right: 50px;
-    top:25%;
-}
-
- .data-list li {
-    margin: 15px;
-    padding: 0 10px;
-    /* width: 100%;
-    height: 30%; */
-    background: #ecf5ff;
-    line-height: 30px;
-    font-size: 16px;
-    
-    border: 1px solid #ecf5ff;
-    border-radius: 10px;
-    cursor: crosshair;
-    text-align: center
-}
 
 .ui-btn{
     display: inline !important;
@@ -287,23 +167,7 @@ body {
 
 
 
-/* 
-.hover-g {
-    cursor: pointer;
-    opacity: 1;
-    stroke-width: 4;
-} */
 
-
-
-/* .result-container {
-    padding: 20px;
-    border-top: 1px solid #333;
-} */
-/* .result-container li{
-    font-size: 16px;
-    line-height: 35px;
-} */
   
   </style>
 </head>
@@ -336,6 +200,9 @@ $_SESSION['h2opt1'] = $h21;
 $_SESSION['h2opt2'] = $h22;
 $_SESSION['h2opt3'] = $h23;
 $_SESSION['h2opt4'] = $h24;
+
+
+
 
 
  
@@ -444,407 +311,52 @@ $_SESSION['h2opt4'] = $h24;
   </table>
 <br>
 <div align="center">
-  <a href="#time1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+  <a href="#time1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
   <a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
   <a href="#time3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
 </div>
 </div>
     
-
     <div data-role="page" id="time3">
-        <h3 align="center">請連到正確的時間。</h3>
-        <div id="draw" class="draw-container">
+        <h3 align="center">請看圖回答問題。</h3>
+        
+        <img src="img/clock_img/clock.jpg" width="400" height="400" style="display:block; margin:auto;">
+        <table border="1" align="center"  id="table1">
+        <tr >
+        <th >
+        睡覺花了<input type="number" data-role="none" style="width:15%"  name="q3ans1" min="1" max="12" >小時
+        </th>
+        </tr>
 
-          <ul class="question-list data-list"></ul>
-     
+        <tr>
+        <th>
+        上午上課是<input type="number" data-role="none" style="width:15%"  name="q3ans2" min="1" max="12" >點開始
+        </th>
+        </tr>
 
-          <ul class="answer-list data-list"></ul>
+        <tr>
+        <th>
+        下午上課花了<input type="number" data-role="none" style="width:15%"  name="q3ans3" min="1" max="12" >小時
+        </th>
+        </tr>
+        <tr>
+        <th>
+        <input type="number" data-role="none" style="width:15%"  name="q3ans4" min="1" max="12" >點上床睡覺
+        </th>
+        </tr>
 
-        </div>
+
+        </table>
+
+    
 <br>
         <div align="center">
-          <a href="#time2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+          <a href="#time2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
           <a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
           <a href="#time4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
         </div>
     </div>
     
-<script type="text/javascript">
-<?php 
-
- //php產生第三題的hour跟min
-
-$h5 = rand(1,12);
-$h6 = rand(1,12);
-$h7 = rand(1,12);
-$h8 = rand(1,12);
- 
-$m5 = rand(1,11)*5;
-$m6 = rand(1,11)*5;
-$m7 = rand(1,11)*5;
-$m8 = rand(1,11)*5;
-
-$h = '點';
-$m = '分';
-
-$time1 = $h5.$h.$m5.$m;
-$time2 = $h6.$h.$m6.$m;
-$time3 = $h7.$h.$m7.$m;
-$time4 = $h8.$h.$m8.$m;
-$answer = array("$time1","$time2","$time3","$time4");
-shuffle($answer);
-
-$_SESSION['q3hour1'] = $h5;
-$_SESSION['q3hour2'] = $h6;
-$_SESSION['q3hour3'] = $h7;
-$_SESSION['q3hour4'] = $h8;
-$_SESSION['q3min1'] = $m5;
-$_SESSION['q3min2'] = $m6;
-$_SESSION['q3min3'] = $m7;
-$_SESSION['q3min4'] = $m8;
-
-$_SESSION['time1'] = $answer[0];
-$_SESSION['time2'] = $answer[1];
-$_SESSION['time3'] = $answer[2];
-$_SESSION['time4'] = $answer[3];
-
-
- ?>
-var h5 = <?php echo $h5 ?>;
-var h6 = <?php echo $h6 ?>;
-var h7 = <?php echo $h7 ?>;
-var h8 = <?php echo $h8 ?>;
-var m5 = <?php echo $m5 ?>;
-var m6 = <?php echo $m6 ?>;
-var m7 = <?php echo $m7 ?>;
-var m8 = <?php echo $m8 ?>;
-
-
-
-
-
-
-  const line = {
-    init: function (questionObj, answerObj) {
-        this.draw = SVG('draw').size("100%", "100%");
-        this.lineArr = [];
-        this.currentInfo = {};
-        this.createList(questionObj)
-        this.createList(answerObj)
-        this.bindBtnEvent()
-        this.bindParentsEvent()
-        
-        
-    },
-    /* 创建列表 */
-    createList: function (obj, callback) {
-        let type = obj.type,
-            data = obj.data,
-            content = [];
-        if (type == 'question') {
-            $('.question-list').empty()
-            data.forEach(element => {
-                let item = $('<li class="question-li" data-question=' + element.questionKey + ' data-answer=' + element.answer + '></li>'),
-                    obj = {};
-                item.append(element.question);
-                obj.beginValue = element.questionKey;
-                obj.line = this.createLine();
-                this.lineArr.push(obj)
-                content.push(item);
-            });
-            // $('.question-list').html(content)
-            content.forEach(e => {
-              $('.question-list').append(e);
-            });
-        } else {
-            $('.answer-list').empty()
-            data.forEach(element => {
-                let item = '<li class="answer-li" data-answer=' + element + '>' + element + '</li>';
-                content.push(item);
-            });
-            $('.answer-list').html(content);
-
-        }
-        // this.itemForEach(true)
-    },
-    /* 绑定按钮事件 */
-    bindBtnEvent: function () {
-        let self = this,
-            parentPosition = $('#draw').offset();
-        /* 鼠标按下question-list列，调整线条开始位置 */
-        $('.question-list').on('mousedown', 'li', function (e) {
-
-            let current = self.lineArr.find(el => {
-                return el.beginValue == $(this).attr('data-question');
-            });
-            current.begin = {};
-            current.beginElement = this;
-            current.begin.y = $(this).offset().top - parentPosition.top +55 ;
-            current.begin.x = $(this).offset().left - parentPosition.left  +150;
-            current.line.show();
-            current.line.stroke({
-                color: "#67C23A",
-            });
-            current.line.plot(current.begin.x, current.begin.y, current.begin.x, current.begin.y);
-            current.end = {};
-            /* 如果存在结束位置，删除 */
-            if (current.endElement) {
-                $(current.endElement).removeClass('selected')
-                $(this).removeClass('selected')
-            }
-            current.endElement = '';
-            current.endValue = '';
-            self.currentInfo = current;
-        })
-        /* 鼠标按下answer-list列，调整线条结束位置 */
-        $('.answer-list').on('mouseup', 'li', function (e) {
-            let current = self.lineArr.find(el => {
-                return el.beginValue == self.currentInfo.beginValue;
-            });
-
-            current.end.y = $(this).offset().top - parentPosition.top -5;
-            current.end.x = $(this).offset().left - parentPosition.left + 10;
-            current.endElement = this;
-            current.endValue = $(this).attr('data-answer');
-            
-            current.line.plot(current.begin.x, current.begin.y, current.end.x, current.end.y);
-            $(current.beginElement).addClass('selected')
-            $(current.beginElement).attr('data-selected', current.endValue)
-            $(this).addClass('selected')
-
-            self.currentInfo = '';
-        })
-        /* 默认答案 */
-        $('#j-default').click(function (e) {
-            self.itemForEach()
-        })
-        /* 重置 */
-        $('#j-reset').click(function (e) {
-            self.lineArr.forEach(el => {
-                $(el.beginElement).removeClass("selected");
-                $(el.beginElement).attr('data-selected', '')
-                $(el.endElement).removeClass("selected");
-                el.line.hide()
-            })
-            $('.result-display').html('')
-        })
-        /* 确认答案 */
-        $('#j-submit').click(function (e) {
-            let result = [];
-            $('.question-list li').each(function (el) {
-                let question = $(this).attr('data-question'),
-                    userSelectd = $(this).attr('data-selected');
-                if (userSelectd) {
-                    let item = `<li>${question} = ${userSelectd}</li>`;
-                    result.push(item)
-                }
-
-            })
-            result.length ? $('.result-display').html(result) : alert('您还未选择！')
-        })
-    },
-    /* 绑定父亲事件事件 */
-    bindParentsEvent: function (params) {
-        let self = this;
-
-        $(document).mouseup(function (e) {
-            if (!$(e.target).is(".answer-li") && self.currentInfo.line) {
-                self.currentInfo.line.hide();
-                $("#draw")
-                    .find(".question-li")
-                    .removeClass("display-block-hover");
-            }
-        })
-        $('#draw').mousemove(function (e) {
-            e.preventDefault();
-            if (Object.keys(self.currentInfo).length != 0) {
-                let end = {}
-                end.x = self.getMousePos(event).x - $("#draw").offset().left;
-                end.y = self.getMousePos(event).y - $("#draw").offset().top;
-                self.currentInfo.line.plot(self.currentInfo.begin.x, self.currentInfo.begin.y, end.x, end.y);
-            }
-        })
-    },
-    /* 创建线条 */
-    createLine: function () {
-        let self = this,
-            line = self.draw.line();
-        line.stroke({
-            color: "#67C23A",
-            width: 2,
-            opacity: 0.6,
-            linecap: "round"
-        });
-        line.hide()
-        line.click(function () {
-            let current = self.lineArr.find(el => {
-                return el.line == this;
-            });
-            $(current.beginElement).removeClass("selected");
-            $(current.endElement).removeClass("selected");
-            $(current.beginElement).attr('data-selected', '')
-
-            current.endValue = "";
-            current.endElement = "";
-            current.end = "";
-
-            this.hide();
-        });
-        line.mouseover(function () {
-            let current = self.lineArr.find(el => {
-                return el.line == this;
-            });
-            if (current.endValue) {
-                let left, top;
-                left =
-                    (current.end.x + current.begin.x - 20) / 2 + "px";
-                top =
-                    (current.end.y + current.begin.y - 20) / 2 + "px";
-                $('.remove-btn').css({
-                    'left': left,
-                    'top': top
-                }).show()
-                this.addClass("hover-g");
-            }
-        });
-        line.mouseout(function () {
-            $('.remove-btn').hide();
-            this.removeClass("hover-g");
-        });
-        /* line.marker("end", 8, 8, function (add) {
-            add.polyline([
-                [1, 0],
-                [1, 8],
-                [7, 4],
-                [1, 0]
-            ]);
-            this.fill("#67C23A");
-            this.stroke({
-                color: "#67C23A",
-                opacity: 0.6,
-                width: 1
-            });
-        }); */
-        return line;
-    },
-    /* 遍历question-list，存在默认answer，就去answer-list找到，进行连接 */
-    itemForEach: function (flag) {
-        let self = this,
-            parentPosition = $('#draw').offset();
-
-        if ($('.question-list li').length && $('.answer-list li').length) {
-
-            $('li').removeClass('selected')
-            $('.question-list li').each(function (params) {
-                let obj = {},
-                    _this = $(this),
-                    beginValue = _this.attr('data-question'),
-                    endValue = _this.attr('data-answer');
-
-                obj = self.lineArr.find(el => el.beginValue == beginValue);
-                obj.beginElement = this;
-                obj.begin = {};
-                obj.begin.y = _this.offset().top - parentPosition.top - 200;
-                obj.begin.x = _this.offset().left - parentPosition.left - 100;
-                $(this).attr('data-selected', '');
-                $('.result-display').html('');
-                // obj.line.plot(obj.begin.x, obj.begin.y, obj.begin.x, obj.begin.y)
-                //判断是否存在初始答案
-                if (endValue && !flag) {
-                    $('.answer-list li').each(function (params) {
-                        if ($(this).html() == endValue) {
-                            obj.end = {};
-
-                            obj.end.y = $(this).offset().top - parentPosition.top + 30;
-                            obj.end.x = $(this).offset().left - parentPosition.left - 20;
-                            obj.endElement = this;
-                            obj.endValue = endValue;
-                            obj.line.stroke({
-                                color: "#E6A23C",
-                            });
-                            obj.line.plot(obj.begin.x, obj.begin.y, obj.end.x, obj.end.y);
-                            obj.line.show()
-                            $(this).addClass("selected")
-                            _this.addClass("selected")
-                        }
-                    })
-
-
-                }
-
-
-
-
-            })
-        }
-    },
-    /* 获取鼠标的坐标 */
-    getMousePos: function (event) {
-        var e = event || window.event;
-        var scrollX =
-            document.documentElement.scrollLeft || document.body.scrollLeft;
-        var scrollY =
-            document.documentElement.scrollTop || document.body.scrollTop;
-        var x = e.pageX || e.clientX + scrollX  ;
-        var y = e.pageY || e.clientY + scrollY;
-        //alert('x: ' + x + '\ny: ' + y);
-        return {
-            x: x,
-            y: y
-        };
-    },
-}
-
-const question = [{
-            question: $('<canvas id="clock5" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
-            questionKey: '123',
-            answer: 2
-        },
-        {
-            question: $('<canvas id="clock6" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
-            questionKey: '2+2',
-            answer: 4
-        },
-        {
-            question: $('<canvas id="clock7" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
-            questionKey: '3+3',
-            answer: 5
-        },
-        {
-            question: $('<canvas id="clock8" width="150%" height="150%" style="display:block; margin:auto;"></canvas>'),
-            questionKey: '4+4',
-            answer: 1
-        }
-    ];
-    
-    var answer = new Array('<?php echo $answer[0] ?>','<?php echo $answer[1] ?>','<?php echo $answer[2] ?>','<?php echo $answer[3] ?>');
-
-    
-
-    
-    
-     
-  
-let questionObj = {
-        data: question,
-        type: 'question'
-    },
-    answerObj = {
-        data: answer,
-        type: 'answer'
-    }
-line.init(questionObj, answerObj)
-
-
-
-
-drawclock("clock5",h5,m5);  //第三題的時鐘            
-drawclock("clock6",h6,m6);
-drawclock("clock7",h7,m7);
-drawclock("clock8",h8,m8);
-</script>
-
-
     <div data-role="page" id="time4">
         <h3 align="center">請判斷經過多少時間?</h3>
         <table border="1" width="50%" align="center">
@@ -869,7 +381,7 @@ drawclock("clock8",h8,m8);
          </table>
          <br>
          <div align="center">
-             <a href="#time3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+             <a href="#time3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
              <a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
              <a href="#time5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
          </div>
@@ -906,7 +418,7 @@ drawclock("clock8",h8,m8);
     </table>
     <br>
     <div align="center">
-        <a href="#time4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
+        <a href="#time4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
         <a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
     </div>
     </div>
@@ -1050,21 +562,3 @@ var m14 = <?php echo $m14 ?>;
 </body>
 
 </html>
-<?php
-$q1r = "insert into clock_1 (username,clock_times,q1hour1,q1hour2,q1hour3,q1hour4,q1min1,qimin2,q1min3,q1min4)";
-$q2r = "insert into clock_2 (username,clock_times,q2hour1,q2hour2,q2hour3,q2hour4,q2pic1,q2pic2,q2pic3,q2pic4)";
-$q4r = "insert into clock_3 (username,clock_times,q4hour1,q4hour2,q4hour3,q4hour4,q4hour5,q4hour6,q4min1,q4min2,q4min3,q4min4,q4min5,q4min6,)";
-$q5r = "insert into clock_4 (username,clock_times,q5pic1,q5pic2,q5pic3,q5pic4,)";
-
-if(mysqli_query($link,$sql2)){
-  if(mysqli_query($link,$q1r)&&mysqli_query($link,$q2r)&&mysqli_query($link,$q3r)&&mysqli_query($link,$q4r)&&mysqli_query($link,$q5r)){
-      header("REFRESH:1;url=time.php");
-    }else{
-      echo "<script>alert('題目產生失敗,請洽服務人員!');</script>";
-      header("REFRESH:1;url=time.php");
-    }
-  }else{   
-    echo "<script>alert('技術上失誤,請洽服務人員!');</script>";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=Topic.php>';
-  }
- ?>
