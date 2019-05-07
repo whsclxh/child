@@ -37,6 +37,10 @@
      
     }
 
+    #table2{
+      width:80%;
+    }
+
     body {
       
       margin: 0 auto;
@@ -268,7 +272,7 @@ $_SESSION['h2opt4'] = $h24;
       </div>
     </div>
   </div>
-  <table border="1" align="center" >
+  <table border="1" align="center" id="table2">
 		<tr>
 			<td>
         <div style="text-align:center">

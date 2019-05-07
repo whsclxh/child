@@ -22,6 +22,10 @@
       margin-right: auto;
     }
 
+    #table2{
+      width:80%;
+    }
+
     body {
       
       margin: 0 auto;
@@ -544,7 +548,7 @@ var m4 = <?php echo $q1cans8 ?>;
       </div>
     </div>
   </div>
-  <table border="1" align="center" >
+  <table border="1" align="center" id="table2">
 		<tr>
 			<td rowspan="2">
         <div style="text-align:center">
