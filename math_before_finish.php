@@ -354,7 +354,7 @@ if($math_triple_add_q51==$triple_add[14])$math_triple_add_score=$math_triple_add
 if($math_triple_add_q52==$triple_add[15])$math_triple_add_score=$math_triple_add_score+1;
 if($math_triple_add_q53==$triple_add[16])$math_triple_add_score=$math_triple_add_score+1;
 if($math_triple_add_q54==$triple_add[14]+$triple_add[15]+$triple_add[16])$math_triple_add_score=$math_triple_add_score+1;
-$total_score=$math_triple_add_score+$math_choose_score+$math_triple_add_score+$math_big_small_score+$math_add_sub_score;
+$total_score=$math_triple_add_score+$math_choose_score+$math_multistage_score+$math_big_small_score+$math_add_sub_score;
 date_default_timezone_set('Asia/Taipei');
 $the_time=date("Y-m-d H:i:s");
 
