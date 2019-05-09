@@ -1532,7 +1532,7 @@ $result = mysqli_query($link,$sql);
 $row = @mysqli_fetch_row($result);
 $a=$row[6]+1;
 $chinese_sql = "update users set chinese_times='$a' where username='$id'";
-
+mysqli_query($link,$chinese_sql);                                              ///////////////////chinese time +1
 $chinese_score_sql="insert into chinese_score (
 username,cardinal,total_score,now_time) 
 values('$id','$a','$total','$the_time')";
