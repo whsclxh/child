@@ -1531,7 +1531,7 @@ $sql = "SELECT * FROM users where username = '$id'";
 $result = mysqli_query($link,$sql);
 $row = @mysqli_fetch_row($result);
 $a=$row[6]+1;
-
+$chinese_sql = "update users set chinese_times='$a' where username='$id'";
 
 $chinese_score_sql="insert into chinese_score (
 username,cardinal,total_score,now_time) 
