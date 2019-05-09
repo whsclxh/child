@@ -524,7 +524,7 @@ document.write("<p style='font-size:200%;text-align:center;'>"+cart.contents[q5]
 
 
 	<div   align="center">
-      <a href="#ch_finish2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 15%;" data-transition="slide">下一題</a>  
+      <a href="#ch_finish2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide">下一題</a>  
 
     </div>
 
@@ -710,8 +710,8 @@ $q2score=$q2score+4;
 
 
 	<div   align="center">
-      <a href="#ch_finish1" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 15%;" data-transition="slide">上一題</a> 
-      <a href="#ch_finish3" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 15%;" data-transition="slide">下一題</a>       
+      <a href="#ch_finish1" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 8%;" data-transition="slide">上一題</a> 
+      <a href="#ch_finish3" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide">下一題</a>       
     </div>
 </div>
 
@@ -978,8 +978,8 @@ $q3score=$q3score+2;
 
 
 	<div   align="center">
-      <a href="#ch_finish2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 15%;" data-transition="slide">上一題</a> 
-      <a href="#ch_finish4" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 15%;" data-transition="slide">下一題</a>       
+      <a href="#ch_finish2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 8%;" data-transition="slide">上一題</a> 
+      <a href="#ch_finish4" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide">下一題</a>       
     </div>
 </div>
 
@@ -1069,8 +1069,8 @@ if ($qQ5_4==$anw5_4)
 
 
 <div   align="center">
-      <a href="#ch_finish3" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 15%;" data-transition="slide">上一題</a> 
-      <a href="#ch_finish5" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 15%;" data-transition="slide">下一題</a>       
+      <a href="#ch_finish3" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 8%;" data-transition="slide">上一題</a> 
+      <a href="#ch_finish5" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide">下一題</a>       
     </div>
 
 </div>
@@ -1195,8 +1195,8 @@ $total=$q1score+$q2score+$q3score+$q4score+$q5score;
     </div>
     <div   align="center">
       
-      <a href="#ch_finish4" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 15%;" data-transition="slide">上一題</a> 
-      <a href="Topic.php"   data-ajax="false" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 15%;" data-transition="slide">回到首頁</a>        
+      <a href="#ch_finish4" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 8%;" data-transition="slide">上一題</a> 
+      <a href="Topic.php"   data-ajax="false" class="b ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide">回到首頁</a>        
     </div>
   </div><!-- /content -->
 
@@ -1513,17 +1513,23 @@ let questionObj = {
         type: 'answer'
     }
 line.init(questionObj, answerObj)
-
 </script>
-<?php
- 
-include("mysql_connect.php");
-$sql = "INSERT INTO chinese_score(total_score)
-  VALUES
-     ('$total')";
-$result = mysqli_query($link, $sql);
-  ?>
 
+
+
+<?php session_start(); ?>
+<?php
+date_default_timezone_set('Asia/Taipei');
+$the_time=date("Y-m-d H:i:s");
+
+include("mysql_connect.php");
+$id = $_SESSION['username'];
+
+$chinese_score_sql="insert into chinese_score (
+username,total_score,now_time) 
+values('$id','$total','$the_time')";
+mysqli_query($link,$chinese_score_sql);
+?>
 
 
 </body>
