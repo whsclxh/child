@@ -258,7 +258,7 @@ $_SESSION['h2opt4'] = $h24;
   </table>
   <br>
   <div align="center">
-    <a href="Topic.php"  style="width: 10%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+    <a href="Topic.php" data-ajax="false" style="width: 10%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
     <a href="#time2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
   </div>
   </div>
@@ -317,7 +317,7 @@ $_SESSION['h2opt4'] = $h24;
 <br>
 <div align="center">
   <a href="#time1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
-  <a href="Topic.php" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+  <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
   <a href="#time3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
 </div>
 </div>
@@ -357,7 +357,7 @@ $_SESSION['h2opt4'] = $h24;
 <br>
         <div align="center">
           <a href="#time2" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
-          <a href="Topic.php" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+          <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
           <a href="#time4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
         </div>
     </div>
@@ -387,7 +387,7 @@ $_SESSION['h2opt4'] = $h24;
          <br>
          <div align="center">
              <a href="#time3" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
-             <a href="Topic.php" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+             <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
              <a href="#time5" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 10%;" data-transition="slide">下一題</a>
          </div>
     </div>
@@ -424,7 +424,7 @@ $_SESSION['h2opt4'] = $h24;
     <br>
     <div align="center">
         <a href="#time4" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-left" style="width: 10%;" data-transition="slide" data-direction="reverse">上一題</a>
-        <a href="Topic.php" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
+        <a href="Topic.php" data-ajax="false" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a>
         <a href="#" onclick="document.form1.submit();" style="width: 5%;" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">結束作答</a>
     </div>
     </div>
