@@ -1528,8 +1528,8 @@ include("mysql_connect.php");
 $id = $_SESSION['username'];
 
 $chinese_score_sql="insert into chinese_score (
-username,total_score,now_time) 
-values('$id','$total','$the_time')";
+username,cardinal,total_score,now_time) 
+values('$id','$total','$total','$the_time')";
 if(mysqli_query($link,$chinese_score_sql))
    echo "<script>console.log('nice');</script>" ;
  else
