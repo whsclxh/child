@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="csss/jquery.mobile-1.4.5.min.css">
   <link rel="stylesheet" href="csss/jquery.mobile.icons.min.css" />
@@ -1517,7 +1518,7 @@ line.init(questionObj, answerObj)
 
 
 
-<?php session_start(); ?>
+
 
 
 <?php
