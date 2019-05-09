@@ -1524,13 +1524,18 @@ line.init(questionObj, answerObj)
 <?php
 date_default_timezone_set('Asia/Taipei');
 $the_time=date("Y-m-d H:i:s");
-
 include("mysql_connect.php");
 $id = $_SESSION['username'];
 
+$sql = "SELECT * FROM users where username = '$id'";
+$result = mysqli_query($link,$sql);
+$row = @mysqli_fetch_row($result);
+$a=$row[6]+1;
+
+
 $chinese_score_sql="insert into chinese_score (
 username,cardinal,total_score,now_time) 
-values('$id','$total','$total','$the_time')";
+values('$id','$a','$total','$the_time')";
 if(mysqli_query($link,$chinese_score_sql))
    echo "<script>console.log('nice');</script>" ;
  else
