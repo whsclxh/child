@@ -1518,6 +1518,8 @@ line.init(questionObj, answerObj)
 
 
 <?php session_start(); ?>
+
+
 <?php
 date_default_timezone_set('Asia/Taipei');
 $the_time=date("Y-m-d H:i:s");
@@ -1528,7 +1530,10 @@ $id = $_SESSION['username'];
 $chinese_score_sql="insert into chinese_score (
 username,total_score,now_time) 
 values('$id','$total','$the_time')";
-mysqli_query($link,$chinese_score_sql);
+if(mysqli_query($link,$chinese_score_sql))
+   echo "<script>console.log('nice');</script>" ;
+ else
+  echo "<script>console.log( 'fail' );</script>" ;
 ?>
 
 
