@@ -145,7 +145,7 @@ $list = @mysqli_fetch_row($result1);
             
             //上面确定了 现在开始创建
 
-            <?php for($x=$list[5];$x> 0;$x--){ ?>
+            <?php for($x=$list[6];$x> 0;$x--){ ?>
             <?php
             $sql = "SELECT * FROM chinese_score where username = '$id' AND cardinal = '$x'";
             $result = mysqli_query($link,$sql);
