@@ -43,8 +43,52 @@ if(!(mysqli_query($link,$sql6))){
     echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
 }
 ?>
-<a href="math_rank.php">數學</a>
-<a href="chinese_rank.php">國語</a>
-<a href="cognition_rank.php">認知</a>
-<a href="clock_rank.php">時鐘</a>
-<a href="total_rank.php">總</a>
+<style type="text/css">
+	body{
+		background: url(img/blue.png) no-repeat;
+		background-size: cover;
+	}
+    .all{
+    	width: 60%;
+    	height: 60%;
+        position: absolute;
+        bottom: 0px;
+        right: 20%;
+    	background: url(img/book.png) no-repeat;
+    	background-size: cover;
+    }
+    .math{
+        position: absolute;
+        bottom: 00px;
+        left: 0px;
+    }
+    .chinese{
+        position: absolute;
+       bottom: 350px;
+        left: 200px;
+    }
+    .cognition{
+        position: absolute;
+        bottom: 350px;
+        right: 200px;
+    }
+    .time{
+        position: absolute;
+       bottom: 0px;
+        right: 0px;
+    }
+    .allc{
+        position: absolute;
+        bottom: 500px;
+        left: 50%;
+        margin-left: -150px; 
+    }
+</style>
+<div class="all">
+
+</div>
+<div class="math"><input type="image" src="img/123cloud.png" onClick="javascript:location.href='math_rank.php'" width="300px" height="300px"></div>
+<div class="chinese"><input type="image" src="img/chinesecloud.png" onClick="javascript:location.href='chinese_rank.php'" width="300px" height="300px"></div>
+<div class="cognition"><input type="image" src="img/cognitioncloud.png" onClick="javascript:location.href='cognition_rank.php'" width="300px" height="300px"></div>
+<div class="time"><input type="image" src="img/timecloud.png" onClick="javascript:location.href='time_rank.php'" width="300px" height="300px"></div>
+<div class="allc"><input type="image" src="img/allcloud.png" onClick="javascript:location.href='total_rank.php'" width="300px" height="300px"></div>
