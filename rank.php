@@ -61,15 +61,6 @@ if(!(mysqli_query($link,$sql6))){
 	echo "<script>alert('技術上失誤,請洽服務人員!');</script>";
     echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
 }
-
-
-
-
-
-
-
-
-
 ?>
 <style type="text/css">
 	body{
