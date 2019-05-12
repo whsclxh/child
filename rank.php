@@ -32,6 +32,25 @@ if(!(mysqli_query($link,$sql4))){
 	echo "<script>alert('技術上失誤,請洽服務人員!');</script>";
     echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
 }
+
+
+
+$sql7 = "SELECT SUM(total_score) AS value_sum FROM chinese_score WHERE username = '$id'";        //////////////////////chinese
+$result6 = mysqli_query($link,$sql7); 
+$row = mysqli_fetch_assoc($result6); 
+$ch_sum = $row['value_sum'];
+$sql8 = "SELECT * FROM users where username = '$id'";
+$result7 = mysqli_query($link,$sql8);
+$ch_cardinal= @mysqli_fetch_row($result7);
+$ch_average=round($ch_sum/$ch_cardinal[6],2);
+$sql8 = "update users set chinese_average='$ch_average' where username='$id'";
+if(!(mysqli_query($link,$sql8))){
+	echo "<script>console.log('fail');</script>";
+}
+
+
+
+
 $sql5 = "SELECT * FROM users where username = '$id'";
 $result5 = mysqli_query($link,$sql5);
 $times = @mysqli_fetch_row($result5);
@@ -42,6 +61,15 @@ if(!(mysqli_query($link,$sql6))){
 	echo "<script>alert('技術上失誤,請洽服務人員!');</script>";
     echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
 }
+
+
+
+
+
+
+
+
+
 ?>
 <style type="text/css">
 	body{

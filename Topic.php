@@ -223,28 +223,24 @@ include("mysql_connect.php");
 	} 
 }
 
-@media only screen and (min-width:451px) and (max-width: 742px) and (max-height:500px) { /*asus*/
-    .im img{
-     	display: none;
+@media only screen and (min-width:430px) and (max-width: 460px) and (min-height:700px) and (max-height:750px) { /*asus*/
+	.im img{
+     	height: 20%;
+     	width: 20%;
+		margin-top: 5%;
 	}
 	.left img{
 		text-align: center;
-		height: 150px;
-		padding-left: 35%;
-		margin-top: 8%;
+		height: 200px;
+		padding-left: 15%;
+		margin-top: 5%;
 	}
 	.XX{
-		margin-top: 12%;
+		margin-top: 10%;
 	}
 	.XX input{
 		width: 20%;
 		height: 20%;
-	}
-	.right {
-    float: right;
-    width: 30%;
-    font-size: 20px;
-    text-align: right;
 	} 
 }
 @media only screen and (max-width: 480px) and (min-height:500px) and (max-height:750px) {/*i5/SE/6/7/8/6+/7+/8+/Pixel2/Glaxay S5 直*/
