@@ -70,7 +70,7 @@ if($_SESSION['username'] == null){
 <div class="note"><img src="img/b-note.png" width="210px" height="350px"></div>
 <div class="pencil"><img src="img/b-pencil.png"></div>
 <div class="math"><input type="image" src="img/chalk123.png" onClick="javascript:location.href='math_record.php'" width="240px" height="150px;"></div>
-<div class="chinese"><input type="image" src="img/chalkchinese.png" onClick="javascript:location.href='math_record.php'" width="350px" height="150px;"></div>
-<div class="cognition"><input type="image" src="img/chalkcog.png" onClick="javascript:location.href='math_record.php'" width="315px" height="150px;"></div>
-<div class="time"><input type="image" src="img/chalktime.png" onClick="javascript:location.href='math_record.php'" width="300px" height="150px;"></div>
+<div class="chinese"><input type="image" src="img/chalkchinese.png" onClick="javascript:location.href='chinese_record.php'" width="350px" height="150px;"></div>
+<div class="cognition"><input type="image" src="img/chalkcog.png" onClick="javascript:location.href='cognition_record.php'" width="315px" height="150px;"></div>
+<div class="time"><input type="image" src="img/chalktime.png" onClick="javascript:location.href='time_record.php'" width="300px" height="150px;"></div>
 </div>

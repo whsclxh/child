@@ -10,6 +10,12 @@ $sql1 = "SELECT * FROM users where username = '$id'";
 $result1 = mysqli_query($link,$sql1);
 $list = @mysqli_fetch_row($result1);
 ?>
+<style>
+body{
+		background: url(img/blackbored.png) no-repeat !important;
+		background-size: cover;
+	}
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
