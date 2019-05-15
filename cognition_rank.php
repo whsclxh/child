@@ -393,15 +393,7 @@ $(document).ready(function() {
 }
 </style>
 <div data-role="page" id="one">
-<div style="width:100%;" style="display:inline">
-<div class="right" style="float:right; text-align:center; display:inline" >
-  	<ul>
-  	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
-  	|
-  	<li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
-    </ul>
-    </div>
-</div>
+
 <div class="container" align="center">
     <h2 style="margin-top: 2%">平均分數排行榜</h2>
     <h3 id="you"></h3>
@@ -416,11 +408,7 @@ $(document).ready(function() {
         <span id="spanLast">最後一頁</span>  
         第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
 </div>
-
-</div>
-</div>
-<div data-role="page" id="two">
-<div style="width:100%;">
+<div style="width:100%;" style="display:inline">
 <div class="right" style="float:right; text-align:center; display:inline" >
   	<ul>
   	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
@@ -429,6 +417,10 @@ $(document).ready(function() {
     </ul>
     </div>
 </div>
+</div>
+</div>
+<div data-role="page" id="two">
+
 <div class="container" align="center">
     <h2 style="margin-top: 2%">作答次數排行榜</h2>
     <h3 id="you2"></h3>
@@ -442,6 +434,15 @@ $(document).ready(function() {
         <span id="spanNext2">下一頁</span>  
         <span id="spanLast2">最後一頁</span>  
         第 <span id="spanPageNum2"></span> 頁/共 <span id="spanTotalPage2"></span> 頁
+</div>
+<div style="width:100%;" style="display:inline">
+<div class="right" style="float:right; text-align:center; display:inline" >
+  	<ul>
+  	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
+  	|
+  	<li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
+    </ul>
+    </div>
 </div>
 </div>
 </div>

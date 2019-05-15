@@ -276,15 +276,7 @@ $num_rows25 = mysqli_num_rows($result55);
 </style>
 <body align="center">
 <div data-role="page" id="one">
-<div style="width:100%;" style="display:inline">
-<div class="right" style="float:right; text-align:center; display:inline" >
-  	<ul>
-  	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
-  	|
-  	<li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
-    </ul>
-    </div>
-</div>
+
 <div class="container" align="center">
     <h2 style="margin-top: 2%">平均分數排行榜</h2>
     <h3 id="you"></h3>
@@ -301,9 +293,7 @@ $num_rows25 = mysqli_num_rows($result55);
 </div>
 <a href="#two">按照作答次數排名</a>
 </div>
-</div>
-<div data-role="page" id="two">
-<div style="width:100%;">
+<div style="width:100%;" style="display:inline">
 <div class="right" style="float:right; text-align:center; display:inline" >
   	<ul>
   	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
@@ -312,6 +302,8 @@ $num_rows25 = mysqli_num_rows($result55);
     </ul>
     </div>
 </div>
+</div>
+<div data-role="page" id="two">
 <div class="container" align="center">
     <h2 style="margin-top: 2%">作答次數排行榜</h2>
     <h3 id="you2"></h3>
@@ -327,7 +319,15 @@ $num_rows25 = mysqli_num_rows($result55);
         第 <span id="spanPageNum2"></span> 頁/共 <span id="spanTotalPage2"></span> 頁
 </div>
 <a href="#one">按照平均分數排名</a>
-<b style=""></b>
+</div>
+<div style="width:100%;" style="display:inline">
+<div class="right" style="float:right; text-align:center; display:inline" >
+  	<ul>
+  	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
+  	|
+  	<li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
+    </ul>
+    </div>
 </div>
 </div>
 </body>
