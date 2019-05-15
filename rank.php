@@ -103,7 +103,6 @@ if(!(mysqli_query($link,$sql6))){
         margin-left: -150px; 
     }
 </style>
-<div class="all">
 <div style="width:100%;" style="display:inline">
 <div class="right" style="float:right; text-align:center; display:inline" >
   	<ul>
@@ -113,6 +112,7 @@ if(!(mysqli_query($link,$sql6))){
     </ul>
     </div>
 </div>
+<div class="all">
 </div>
 <div class="math"><input type="image" src="img/123cloud.png" onClick="javascript:location.href='math_rank.php'" width="300px" height="300px"></div>
 <div class="chinese"><input type="image" src="img/chinesecloud.png" onClick="javascript:location.href='chinese_rank.php'" width="300px" height="300px"></div>
