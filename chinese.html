@@ -277,6 +277,493 @@ $(function(){
 
 <form   name="myform" method="post" action="chinese_finish.php" data-ajax="false"  > 
 
+<!-- Start of second page33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 -->
+<div data-role="page" id="P1" data-ajax="false">
+
+	
+  <p    style="font-size:300%;  text-align:center;">請判斷正確的讀音</p>
+
+
+<div role="main" class="ui-content">
+</div><!-- /content -->
+
+
+
+
+
+<script type="text/javascript">
+var cart3 = JSON.parse (json); 
+var rand_=new  Array(5);
+var rand_2=new Array(2);
+var rand_3=new Array(2);
+var rand_4=new Array(2);
+//2
+var rand_5=new Array(2);
+var rand_6=new Array(2);
+var rand_7=new Array(2);
+//3
+var rand_8=new Array(2);
+var rand_9=new Array(2);
+var rand_10=new Array(2);
+//4
+var rand_11=new Array(2);
+var rand_12=new Array(2);
+var rand_13=new Array(2);
+//5
+var rand_14=new Array(2);
+var rand_15=new Array(2);
+var rand_16=new Array(2);
+
+
+//1
+for(var i3=0;i3<2;i3++){
+var j2=Math.floor((Math.random() * 2) + 0);
+ if(rand_2.indexOf(j2)>=0)
+  i3--;
+else
+  rand_2[i3]=j2;
+}
+for(var i4=0;i4<2;i4++){
+var j3=Math.floor((Math.random() * 2) + 0);
+ if(rand_4.indexOf(j3)>=0)
+  i4--;
+else
+  rand_4[i4]=j3;
+}
+//2
+for(var i5=0;i5<2;i5++){
+var j4=Math.floor((Math.random() * 2) + 0);
+ if(rand_5.indexOf(j4)>=0)
+  i5--;
+else
+  rand_5[i5]=j4;
+}
+for(var i6=0;i6<2;i6++){
+var j5=Math.floor((Math.random() * 2) + 0);
+ if(rand_7.indexOf(j5)>=0)
+  i6--;
+else
+  rand_7[i6]=j5;
+}
+//3
+for(var i7=0;i7<2;i7++){
+var j6=Math.floor((Math.random() * 2) + 0);
+ if(rand_8.indexOf(j6)>=0)
+  i7--;
+else
+  rand_8[i7]=j6;
+}
+for(var i8=0;i8<2;i8++){
+var j7=Math.floor((Math.random() * 2) + 0);
+ if(rand_10.indexOf(j7)>=0)
+  i8--;
+else
+  rand_10[i8]=j7;
+}
+//4
+for(var i9=0;i9<2;i9++){
+var j8=Math.floor((Math.random() * 2) + 0);
+ if(rand_11.indexOf(j8)>=0)
+  i9--;
+else
+  rand_11[i9]=j8;
+}
+for(var i10=0;i10<2;i10++){
+var j9=Math.floor((Math.random() * 2) + 0);
+ if(rand_13.indexOf(j9)>=0)
+  i10--;
+else
+  rand_13[i10]=j9;
+}
+
+//5
+for(var i11=0;i11<2;i11++){
+var j10=Math.floor((Math.random() * 2) + 0);
+ if(rand_14.indexOf(j10)>=0)
+  i11--;
+else
+  rand_14[i11]=j10;
+}
+for(var i12=0;i12<2;i12++){
+var j11=Math.floor((Math.random() * 2) + 0);
+ if(rand_16.indexOf(j11)>=0)
+  i12--;
+else
+  rand_16[i12]=j11;
+}
+
+
+
+
+
+
+for(var i=0;i<5;i++){
+var x=Math.floor((Math.random() * 20) + 0);
+ if(rand_.indexOf(x)>=0)
+  i--;
+  else
+  rand_[i]=x;
+}
+var x=rand_[0];
+var x2=rand_[1];
+var x3=rand_[2];
+var x4=rand_[3];
+var x5=rand_[4];	
+var k_1,k_2,k_3,k_4,k_5,k_6,k_7,k_8,k_9,k_10;
+//1
+rand_3[rand_2[0]]=cart3.contentss[x].one;
+rand_3[rand_2[1]]=cart3.contentss[x].three;
+rand_4[0]=rand_3[0];
+rand_4[1]=rand_3[1];
+if(rand_2[0]==0){
+k_1=cart3.contentss[x].two;
+k_2=cart3.contentss[x].four;
+}
+else{
+k_1=cart3.contentss[x].four;
+k_2=cart3.contentss[x].two;}
+//2
+rand_6[rand_5[0]]=cart3.contentss[x2].one;
+rand_6[rand_5[1]]=cart3.contentss[x2].three;
+rand_7[0]=rand_6[0];
+rand_7[1]=rand_6[1];
+if(rand_5[0]==0){
+k_3=cart3.contentss[x2].two;
+k_4=cart3.contentss[x2].four;
+}
+else{
+k_3=cart3.contentss[x2].four;
+k_4=cart3.contentss[x2].two;}
+//3
+rand_9[rand_8[0]]=cart3.contentss[x3].one;
+rand_9[rand_8[1]]=cart3.contentss[x3].three;
+rand_10[0]=rand_9[0];
+rand_10[1]=rand_9[1];
+if(rand_8[0]==0){
+k_5=cart3.contentss[x3].two;
+k_6=cart3.contentss[x3].four;
+}
+else{
+k_5=cart3.contentss[x3].four;
+k_6=cart3.contentss[x3].two;}
+//4
+rand_12[rand_11[0]]=cart3.contentss[x4].one;
+rand_12[rand_11[1]]=cart3.contentss[x4].three;
+rand_13[0]=rand_12[0];
+rand_13[1]=rand_12[1];
+if(rand_11[0]==0){
+k_7=cart3.contentss[x4].two;
+k_8=cart3.contentss[x4].four;
+}
+else{
+k_7=cart3.contentss[x4].four;
+k_8=cart3.contentss[x4].two;}
+//5
+rand_15[rand_14[0]]=cart3.contentss[x5].one;
+rand_15[rand_14[1]]=cart3.contentss[x5].three;
+rand_16[0]=rand_15[0];
+rand_16[1]=rand_15[1];
+if(rand_14[0]==0){
+k_9=cart3.contentss[x5].two;
+k_10=cart3.contentss[x5].four;
+}
+else{
+k_9=cart3.contentss[x5].four;
+k_10=cart3.contentss[x5].two;}
+
+
+
+//  $( document ).ready(function(){
+//  var aa= document.getElementById("g1"); 
+// aa.value=cart3.contents[x].two;
+// var bb= document.getElementById("g2"); 
+// bb.value=cart3.contents[x].four;
+// var cc= document.getElementById("g3"); 
+// cc.value=cart3.contents[x].two;
+// var dd= document.getElementById("g4"); 
+// dd.value=cart3.contents[x].four;
+// var ee= document.getElementById("g5"); 
+// ee.value=cart3.contents[x2].two;
+// var ff= document.getElementById("g6"); 
+// ff.value=cart3.contents[x2].four;
+// var gg= document.getElementById("g7"); 
+// gg.value=cart3.contents[x2].two;
+// var hh= document.getElementById("g8"); 
+// hh.value=cart3.contents[x2].four;
+// var ii= document.getElementById("g9"); 
+// ii.value=cart3.contents[x3].two;
+// var jj= document.getElementById("g10"); 
+// jj.value=cart3.contents[x3].four;
+// var kk= document.getElementById("g11"); 
+// kk.value=cart3.contents[x3].two;
+// var ll= document.getElementById("g12"); 
+// ll.value=cart3.contents[x3].four;
+// var oo= document.getElementById("g13"); 
+// oo.value=cart3.contents[x4].two;
+// var pp= document.getElementById("g14"); 
+// pp.value=cart3.contents[x4].four;
+// var nn= document.getElementById("g15"); 
+// nn.value=cart3.contents[x4].two;
+// var mm= document.getElementById("g16"); 
+// mm.value=cart3.contents[x4].four;
+// var tt= document.getElementById("g17"); 
+// tt.value=cart3.contents[x5].two;
+// var uu= document.getElementById("g18"); 
+// uu.value=cart3.contents[x5].four;
+// var xx= document.getElementById("g19"); 
+// xx.value=cart3.contents[x5].two;
+// var yy= document.getElementById("g20"); 
+// yy.value=cart3.contents[x5].four;
+// }
+
+
+
+
+// function q3sent(){   
+// var aa1=document.getElementById("anw1");
+// aa1.value=k_1;
+// var aa2=document.getElementById("anw2");
+// aa2.value=k_2;
+// var aa3=document.getElementById("anw3");
+// aa3.value=k_3;
+// var aa4=document.getElementById("anw4");
+// aa4.value=k_4;
+// var aa5=document.getElementById("anw5");
+// aa5.value=k_5;
+// var aa6=document.getElementById("anw6");
+// aa6.value=k_6;
+// var aa7=document.getElementById("anw7");
+// aa7.value=k_7;
+// var aa8=document.getElementById("anw8");
+// aa8.value=k_8;
+// var aa9=document.getElementById("anw9");
+// aa9.value=k_9;
+// var aa10=document.getElementById("anw10");
+// aa10.value=k_10;
+// var aaa1=document.getElementById("banw1");
+// aaa1.value=rand_4[0];
+// var aaa2=document.getElementById("banw2");
+// aaa2.value=rand_4[1];
+// var aaa3=document.getElementById("banw3");
+// aaa3.value=rand_7[0];
+// var aaa4=document.getElementById("banw4");
+// aaa4.value=rand_7[1];
+// var aaa5=document.getElementById("banw5");
+// aaa5.value=rand_10[0];
+// var aaa6=document.getElementById("banw6");
+// aaa6.value=rand_10[1];
+// var aaa7=document.getElementById("banw7");
+// aaa7.value=rand_13[0];
+// var aaa8=document.getElementById("banw8");
+// aaa8.value=rand_13[1];
+// var aaa9=document.getElementById("banw9");
+// aaa9.value=rand_16[0];
+// var aaa10=document.getElementById("banw10");
+// aaa10.value=rand_16[1];
+// }
+</script>
+
+<table border="1" width="50%" align="center">
+
+<tr>
+  <td  width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_4[0])</script></font></td>
+  <td align=center> 
+  <input name="c1" id="g1" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>  
+  <input name="c1" id="g2" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
+  </td>
+</tr>
+
+<tr>
+ <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_4[1])</script></font></td>
+  <td align=center> 
+  
+  <input name="c2" type="radio" id="g3"  style="zoom: 1.5" data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>
+  <input name="c2" type="radio" id="g4"  style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
+ 
+  </td>
+</tr>
+
+</table>
+<table border="1" width="50%" align="center">
+
+<tr>
+  <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_7[0])</script></font></td>
+  <td align=center> 
+ 
+  <input name="c3" type="radio" id="g5" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].two)</script></font>
+  <input name="c3" type="radio" id="g6" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].four)</script></font>
+ 
+  </td>
+</tr>
+
+
+<tr>
+ <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_7[1])</script></font></td>
+  <td align=center> 
+  
+  <input name="c4" type="radio" id="g7" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].two)</script></font>
+  <input name="c4" type="radio" id="g8" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].four)</script></font>
+
+  </td>
+</tr>
+
+</table>
+
+<table border="1" width="50%" align="center">
+
+<tr>
+  <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_10[0])</script></font></td>
+  <td align=center> 
+
+  <input name="c5" type="radio" id="g9"   style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].two)</script></font>
+  <input name="c5" type="radio" id="g10"  style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].four)</script></font>
+
+  </td>
+</tr>
+
+
+<tr>
+ <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_10[1])</script></font></td>
+  <td align=center> 
+
+  <input name="c6" type="radio" id="g11" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].two)</script></font>
+  <input name="c6" type="radio" id="g12" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].four)</script></font>
+
+  </td>
+</tr>
+
+</table>
+
+
+<table border="1" width="50%" align="center">
+
+<tr>
+  <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_13[0])</script></font></td>
+  <td align=center> 
+
+  <input name="c7" type="radio" id="g13" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].two)</script></font>
+  <input name="c7" type="radio" id="g14" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].four)</script></font>
+ 
+  </td>
+</tr>
+
+
+<tr>
+ <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_13[1])</script></font></td>
+  <td align=center> 
+ 
+  <input name="c8" type="radio" id="g15" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].two)</script></font>
+  <input name="c8" type="radio" id="g16" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].four)</script></font>
+  
+  </td>
+</tr>
+
+</table>
+
+
+<table border="1" width="50%" align="center">
+
+<tr>
+  <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_16[0])</script></font></td>
+  <td align=center> 
+
+  <input name="c9" type="radio" id="g17" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].two)</script></font>
+  <input name="c9" type="radio" id="g18" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].four)</script></font>
+ 
+  </td>
+</tr>
+
+
+<tr>
+ <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_16[1])</script></font></td>
+  <td align=center> 
+
+  <input name="c10" type="radio" id="g19" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].two)</script></font>
+  <input name="c10" type="radio" id="g20" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].four)</script></font>
+ 
+  </td>
+</tr>
+</table>
+  <script type="text/javascript">
+       var g1v = cart3.contentss[x].two;
+    document.getElementById("g1").value =g1v;
+       var g2v = cart3.contentss[x].four;
+    document.getElementById("g2").value = g2v;
+       var g3v = cart3.contentss[x].two;
+    document.getElementById("g3").value = g3v;
+       var g4v = cart3.contentss[x].four;
+    document.getElementById("g4").value = g4v;
+       var g5v = cart3.contentss[x2].two;
+    document.getElementById("g5").value = g5v;
+       var g6v = cart3.contentss[x2].four;
+    document.getElementById("g6").value = g6v;
+       var g7v = cart3.contentss[x2].two;
+    document.getElementById("g7").value = g7v;
+       var g8v = cart3.contentss[x2].four;
+    document.getElementById("g8").value = g8v;
+       var g9v = cart3.contentss[x3].two;
+    document.getElementById("g9").value = g9v;
+       var g10v = cart3.contentss[x3].four;
+    document.getElementById("g10").value =g10v;
+       var g11v = cart3.contentss[x3].two;
+    document.getElementById("g11").value =g11v;
+       var g12v = cart3.contentss[x3].four;
+    document.getElementById("g12").value =g12v;
+       var g13v = cart3.contentss[x4].two;
+    document.getElementById("g13").value =g13v;
+       var g14v = cart3.contentss[x4].four;
+    document.getElementById("g14").value =g14v;
+       var g15v = cart3.contentss[x4].two;
+    document.getElementById("g15").value =g15v;
+       var g16v = cart3.contentss[x4].four;
+    document.getElementById("g16").value =g16v;
+       var g17v = cart3.contentss[x5].two;
+    document.getElementById("g17").value =g17v;
+       var g18v = cart3.contentss[x5].four;
+    document.getElementById("g18").value =g18v;
+       var g19v = cart3.contentss[x5].two;
+    document.getElementById("g19").value =g19v;
+       var g20v = cart3.contentss[x5].four;
+    document.getElementById("g20").value =g20v;
+  </script>
+<input type="hidden" id="anw1" name="ar1"/>				
+<input type="hidden" id="anw2" name="ar2"/>
+<input type="hidden" id="anw3" name="ar3"/>
+<input type="hidden" id="anw4" name="ar4"/>
+<input type="hidden" id="anw5" name="ar5"/>
+<input type="hidden" id="anw6" name="ar6"/>       
+<input type="hidden" id="anw7" name="ar7"/>
+<input type="hidden" id="anw8" name="ar8"/>
+<input type="hidden" id="anw9" name="ar9"/>
+<input type="hidden" id="anw10" name="ar10"/> 	
+
+<input type="hidden" id="banw1" name="bar1"/>       
+<input type="hidden" id="banw2" name="bar2"/>
+<input type="hidden" id="banw3" name="bar3"/>
+<input type="hidden" id="banw4" name="bar4"/>
+<input type="hidden" id="banw5" name="bar5"/>
+<input type="hidden" id="banw6" name="bar6"/>       
+<input type="hidden" id="banw7" name="bar7"/>
+<input type="hidden" id="banw8" name="bar8"/>
+<input type="hidden" id="banw9" name="bar9"/>
+<input type="hidden" id="banw10" name="bar10"/>   
+
+
+
+     
+ <div align="center">
+   
+  
+    <a href="Topic.php" data-ajax="false"  style="width: 8%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a> 
+    <a href="#P2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide" >下一題</a>
+  
+  
+  </div>
+   
+      </div>
+      
+
+
 
 <!-- Start of first page11111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
 <div data-role="page" id="P3">
@@ -597,493 +1084,6 @@ cho5=rand_[rand2_[4]];
 
 
 
-
-
-<!-- Start of second page33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 -->
-<div data-role="page" id="P1" data-ajax="false">
-
-	
-		<p    style="font-size:300%;  text-align:center;">請判斷正確的讀音</p>
-	
-
-	<div role="main" class="ui-content">
-	</div><!-- /content -->
-
-
-
-
-
-<script type="text/javascript">
-var cart3 = JSON.parse (json); 
-var rand_=new  Array(5);
-var rand_2=new Array(2);
-var rand_3=new Array(2);
-var rand_4=new Array(2);
-//2
-var rand_5=new Array(2);
-var rand_6=new Array(2);
-var rand_7=new Array(2);
-//3
-var rand_8=new Array(2);
-var rand_9=new Array(2);
-var rand_10=new Array(2);
-//4
-var rand_11=new Array(2);
-var rand_12=new Array(2);
-var rand_13=new Array(2);
-//5
-var rand_14=new Array(2);
-var rand_15=new Array(2);
-var rand_16=new Array(2);
-
-
-//1
-for(var i3=0;i3<2;i3++){
-  var j2=Math.floor((Math.random() * 2) + 0);
-   if(rand_2.indexOf(j2)>=0)
-    i3--;
-  else
-    rand_2[i3]=j2;
-}
-for(var i4=0;i4<2;i4++){
-  var j3=Math.floor((Math.random() * 2) + 0);
-   if(rand_4.indexOf(j3)>=0)
-    i4--;
-  else
-    rand_4[i4]=j3;
-}
-//2
-for(var i5=0;i5<2;i5++){
-  var j4=Math.floor((Math.random() * 2) + 0);
-   if(rand_5.indexOf(j4)>=0)
-    i5--;
-  else
-    rand_5[i5]=j4;
-}
-for(var i6=0;i6<2;i6++){
-  var j5=Math.floor((Math.random() * 2) + 0);
-   if(rand_7.indexOf(j5)>=0)
-    i6--;
-  else
-    rand_7[i6]=j5;
-}
-//3
-for(var i7=0;i7<2;i7++){
-  var j6=Math.floor((Math.random() * 2) + 0);
-   if(rand_8.indexOf(j6)>=0)
-    i7--;
-  else
-    rand_8[i7]=j6;
-}
-for(var i8=0;i8<2;i8++){
-  var j7=Math.floor((Math.random() * 2) + 0);
-   if(rand_10.indexOf(j7)>=0)
-    i8--;
-  else
-    rand_10[i8]=j7;
-}
-//4
-for(var i9=0;i9<2;i9++){
-  var j8=Math.floor((Math.random() * 2) + 0);
-   if(rand_11.indexOf(j8)>=0)
-    i9--;
-  else
-    rand_11[i9]=j8;
-}
-for(var i10=0;i10<2;i10++){
-  var j9=Math.floor((Math.random() * 2) + 0);
-   if(rand_13.indexOf(j9)>=0)
-    i10--;
-  else
-    rand_13[i10]=j9;
-}
-
-//5
-for(var i11=0;i11<2;i11++){
-  var j10=Math.floor((Math.random() * 2) + 0);
-   if(rand_14.indexOf(j10)>=0)
-    i11--;
-  else
-    rand_14[i11]=j10;
-}
-for(var i12=0;i12<2;i12++){
-  var j11=Math.floor((Math.random() * 2) + 0);
-   if(rand_16.indexOf(j11)>=0)
-    i12--;
-  else
-    rand_16[i12]=j11;
-}
-
-
-
-
-
-
-for(var i=0;i<5;i++){
-	var x=Math.floor((Math.random() * 20) + 0);
-	 if(rand_.indexOf(x)>=0)
-    i--;
-    else
-    rand_[i]=x;
-}
-var x=rand_[0];
-var x2=rand_[1];
-var x3=rand_[2];
-var x4=rand_[3];
-var x5=rand_[4];	
-var k_1,k_2,k_3,k_4,k_5,k_6,k_7,k_8,k_9,k_10;
-//1
-rand_3[rand_2[0]]=cart3.contentss[x].one;
-rand_3[rand_2[1]]=cart3.contentss[x].three;
-rand_4[0]=rand_3[0];
-rand_4[1]=rand_3[1];
-if(rand_2[0]==0){
-k_1=cart3.contentss[x].two;
-k_2=cart3.contentss[x].four;
-}
-else{
-k_1=cart3.contentss[x].four;
-k_2=cart3.contentss[x].two;}
-//2
-rand_6[rand_5[0]]=cart3.contentss[x2].one;
-rand_6[rand_5[1]]=cart3.contentss[x2].three;
-rand_7[0]=rand_6[0];
-rand_7[1]=rand_6[1];
-if(rand_5[0]==0){
-k_3=cart3.contentss[x2].two;
-k_4=cart3.contentss[x2].four;
-}
-else{
-k_3=cart3.contentss[x2].four;
-k_4=cart3.contentss[x2].two;}
-//3
-rand_9[rand_8[0]]=cart3.contentss[x3].one;
-rand_9[rand_8[1]]=cart3.contentss[x3].three;
-rand_10[0]=rand_9[0];
-rand_10[1]=rand_9[1];
-if(rand_8[0]==0){
-k_5=cart3.contentss[x3].two;
-k_6=cart3.contentss[x3].four;
-}
-else{
-k_5=cart3.contentss[x3].four;
-k_6=cart3.contentss[x3].two;}
-//4
-rand_12[rand_11[0]]=cart3.contentss[x4].one;
-rand_12[rand_11[1]]=cart3.contentss[x4].three;
-rand_13[0]=rand_12[0];
-rand_13[1]=rand_12[1];
-if(rand_11[0]==0){
-k_7=cart3.contentss[x4].two;
-k_8=cart3.contentss[x4].four;
-}
-else{
-k_7=cart3.contentss[x4].four;
-k_8=cart3.contentss[x4].two;}
-//5
-rand_15[rand_14[0]]=cart3.contentss[x5].one;
-rand_15[rand_14[1]]=cart3.contentss[x5].three;
-rand_16[0]=rand_15[0];
-rand_16[1]=rand_15[1];
-if(rand_14[0]==0){
-k_9=cart3.contentss[x5].two;
-k_10=cart3.contentss[x5].four;
-}
-else{
-k_9=cart3.contentss[x5].four;
-k_10=cart3.contentss[x5].two;}
-
-
-
-//  $( document ).ready(function(){
-//  var aa= document.getElementById("g1"); 
-// aa.value=cart3.contents[x].two;
-// var bb= document.getElementById("g2"); 
-// bb.value=cart3.contents[x].four;
-// var cc= document.getElementById("g3"); 
-// cc.value=cart3.contents[x].two;
-// var dd= document.getElementById("g4"); 
-// dd.value=cart3.contents[x].four;
-// var ee= document.getElementById("g5"); 
-// ee.value=cart3.contents[x2].two;
-// var ff= document.getElementById("g6"); 
-// ff.value=cart3.contents[x2].four;
-// var gg= document.getElementById("g7"); 
-// gg.value=cart3.contents[x2].two;
-// var hh= document.getElementById("g8"); 
-// hh.value=cart3.contents[x2].four;
-// var ii= document.getElementById("g9"); 
-// ii.value=cart3.contents[x3].two;
-// var jj= document.getElementById("g10"); 
-// jj.value=cart3.contents[x3].four;
-// var kk= document.getElementById("g11"); 
-// kk.value=cart3.contents[x3].two;
-// var ll= document.getElementById("g12"); 
-// ll.value=cart3.contents[x3].four;
-// var oo= document.getElementById("g13"); 
-// oo.value=cart3.contents[x4].two;
-// var pp= document.getElementById("g14"); 
-// pp.value=cart3.contents[x4].four;
-// var nn= document.getElementById("g15"); 
-// nn.value=cart3.contents[x4].two;
-// var mm= document.getElementById("g16"); 
-// mm.value=cart3.contents[x4].four;
-// var tt= document.getElementById("g17"); 
-// tt.value=cart3.contents[x5].two;
-// var uu= document.getElementById("g18"); 
-// uu.value=cart3.contents[x5].four;
-// var xx= document.getElementById("g19"); 
-// xx.value=cart3.contents[x5].two;
-// var yy= document.getElementById("g20"); 
-// yy.value=cart3.contents[x5].four;
-// }
-
-
-
-
-// function q3sent(){   
-// var aa1=document.getElementById("anw1");
-// aa1.value=k_1;
-// var aa2=document.getElementById("anw2");
-// aa2.value=k_2;
-// var aa3=document.getElementById("anw3");
-// aa3.value=k_3;
-// var aa4=document.getElementById("anw4");
-// aa4.value=k_4;
-// var aa5=document.getElementById("anw5");
-// aa5.value=k_5;
-// var aa6=document.getElementById("anw6");
-// aa6.value=k_6;
-// var aa7=document.getElementById("anw7");
-// aa7.value=k_7;
-// var aa8=document.getElementById("anw8");
-// aa8.value=k_8;
-// var aa9=document.getElementById("anw9");
-// aa9.value=k_9;
-// var aa10=document.getElementById("anw10");
-// aa10.value=k_10;
-// var aaa1=document.getElementById("banw1");
-// aaa1.value=rand_4[0];
-// var aaa2=document.getElementById("banw2");
-// aaa2.value=rand_4[1];
-// var aaa3=document.getElementById("banw3");
-// aaa3.value=rand_7[0];
-// var aaa4=document.getElementById("banw4");
-// aaa4.value=rand_7[1];
-// var aaa5=document.getElementById("banw5");
-// aaa5.value=rand_10[0];
-// var aaa6=document.getElementById("banw6");
-// aaa6.value=rand_10[1];
-// var aaa7=document.getElementById("banw7");
-// aaa7.value=rand_13[0];
-// var aaa8=document.getElementById("banw8");
-// aaa8.value=rand_13[1];
-// var aaa9=document.getElementById("banw9");
-// aaa9.value=rand_16[0];
-// var aaa10=document.getElementById("banw10");
-// aaa10.value=rand_16[1];
-// }
-</script>
-
-<table border="1" width="50%" align="center">
-
-  <tr>
-    <td  width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_4[0])</script></font></td>
-    <td align=center> 
-    <input name="c1" id="g1" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>  
-    <input name="c1" id="g2" type="radio"  style="zoom: 1.5"  data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
-    </td>
-  </tr>
-
-  <tr>
-   <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_4[1])</script></font></td>
-    <td align=center> 
-    
-    <input name="c2" type="radio" id="g3"  style="zoom: 1.5" data-role="none" ><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].two)</script></font>
-    <input name="c2" type="radio" id="g4"  style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x].four)</script></font>
-   
-    </td>
-  </tr>
-
-</table>
-<table border="1" width="50%" align="center">
-
-  <tr>
-    <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_7[0])</script></font></td>
-    <td align=center> 
-   
-    <input name="c3" type="radio" id="g5" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].two)</script></font>
-    <input name="c3" type="radio" id="g6" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].four)</script></font>
-   
-    </td>
-  </tr>
-
-
-  <tr>
-   <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_7[1])</script></font></td>
-    <td align=center> 
-    
-    <input name="c4" type="radio" id="g7" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].two)</script></font>
-    <input name="c4" type="radio" id="g8" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x2].four)</script></font>
- 
-    </td>
-  </tr>
-
-</table>
-
-<table border="1" width="50%" align="center">
-
-  <tr>
-    <td  Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_10[0])</script></font></td>
-    <td align=center> 
- 
-    <input name="c5" type="radio" id="g9"   style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].two)</script></font>
-    <input name="c5" type="radio" id="g10"  style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].four)</script></font>
-
-    </td>
-  </tr>
-
-
-  <tr>
-   <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_10[1])</script></font></td>
-    <td align=center> 
- 
-    <input name="c6" type="radio" id="g11" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].two)</script></font>
-    <input name="c6" type="radio" id="g12" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x3].four)</script></font>
-
-    </td>
-  </tr>
-
-</table>
-
-
-<table border="1" width="50%" align="center">
-
-  <tr>
-    <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_13[0])</script></font></td>
-    <td align=center> 
-
-    <input name="c7" type="radio" id="g13" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].two)</script></font>
-    <input name="c7" type="radio" id="g14" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].four)</script></font>
-   
-    </td>
-  </tr>
-
-
-  <tr>
-   <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_13[1])</script></font></td>
-    <td align=center> 
-   
-    <input name="c8" type="radio" id="g15" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].two)</script></font>
-    <input name="c8" type="radio" id="g16" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x4].four)</script></font>
-    
-    </td>
-  </tr>
-
-</table>
-
-
-<table border="1" width="50%" align="center">
-
-  <tr>
-    <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_16[0])</script></font></td>
-    <td align=center> 
-
-    <input name="c9" type="radio" id="g17" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].two)</script></font>
-    <input name="c9" type="radio" id="g18" style="zoom: 1.5" data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].four)</script></font>
-   
-    </td>
-  </tr>
-
-
-  <tr>
-   <td Width="35%" style="text-align: center;"><font size="5"  face="DFKai-sb"><script>document.write(rand_16[1])</script></font></td>
-    <td align=center> 
- 
-    <input name="c10" type="radio" id="g19" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].two)</script></font>
-    <input name="c10" type="radio" id="g20" style="zoom: 1.5"  data-role="none"><font size="5" face="DFKai-sb"><script>document.write(cart3.contentss[x5].four)</script></font>
-   
-    </td>
-  </tr>
-</table>
-    <script type="text/javascript">
-         var g1v = cart3.contentss[x].two;
-      document.getElementById("g1").value =g1v;
-         var g2v = cart3.contentss[x].four;
-      document.getElementById("g2").value = g2v;
-         var g3v = cart3.contentss[x].two;
-      document.getElementById("g3").value = g3v;
-         var g4v = cart3.contentss[x].four;
-      document.getElementById("g4").value = g4v;
-         var g5v = cart3.contentss[x2].two;
-      document.getElementById("g5").value = g5v;
-         var g6v = cart3.contentss[x2].four;
-      document.getElementById("g6").value = g6v;
-         var g7v = cart3.contentss[x2].two;
-      document.getElementById("g7").value = g7v;
-         var g8v = cart3.contentss[x2].four;
-      document.getElementById("g8").value = g8v;
-         var g9v = cart3.contentss[x3].two;
-      document.getElementById("g9").value = g9v;
-         var g10v = cart3.contentss[x3].four;
-      document.getElementById("g10").value =g10v;
-         var g11v = cart3.contentss[x3].two;
-      document.getElementById("g11").value =g11v;
-         var g12v = cart3.contentss[x3].four;
-      document.getElementById("g12").value =g12v;
-         var g13v = cart3.contentss[x4].two;
-      document.getElementById("g13").value =g13v;
-         var g14v = cart3.contentss[x4].four;
-      document.getElementById("g14").value =g14v;
-         var g15v = cart3.contentss[x4].two;
-      document.getElementById("g15").value =g15v;
-         var g16v = cart3.contentss[x4].four;
-      document.getElementById("g16").value =g16v;
-         var g17v = cart3.contentss[x5].two;
-      document.getElementById("g17").value =g17v;
-         var g18v = cart3.contentss[x5].four;
-      document.getElementById("g18").value =g18v;
-         var g19v = cart3.contentss[x5].two;
-      document.getElementById("g19").value =g19v;
-         var g20v = cart3.contentss[x5].four;
-      document.getElementById("g20").value =g20v;
-    </script>
-	<input type="hidden" id="anw1" name="ar1"/>				
-	<input type="hidden" id="anw2" name="ar2"/>
-	<input type="hidden" id="anw3" name="ar3"/>
-	<input type="hidden" id="anw4" name="ar4"/>
-	<input type="hidden" id="anw5" name="ar5"/>
-  <input type="hidden" id="anw6" name="ar6"/>       
-  <input type="hidden" id="anw7" name="ar7"/>
-  <input type="hidden" id="anw8" name="ar8"/>
-  <input type="hidden" id="anw9" name="ar9"/>
-  <input type="hidden" id="anw10" name="ar10"/> 	
-  
-  <input type="hidden" id="banw1" name="bar1"/>       
-  <input type="hidden" id="banw2" name="bar2"/>
-  <input type="hidden" id="banw3" name="bar3"/>
-  <input type="hidden" id="banw4" name="bar4"/>
-  <input type="hidden" id="banw5" name="bar5"/>
-  <input type="hidden" id="banw6" name="bar6"/>       
-  <input type="hidden" id="banw7" name="bar7"/>
-  <input type="hidden" id="banw8" name="bar8"/>
-  <input type="hidden" id="banw9" name="bar9"/>
-  <input type="hidden" id="banw10" name="bar10"/>   
-
-
-
-		   
-	 <div align="center">
-     
-    
-      <a href="Topic.php" data-ajax="false"  style="width: 8%;" data-transition="slide" class="b ui-btn ui-corner-all ui-shadow ui-icon-action ui-btn-icon-left">回到首頁</a> 
-      <a href="#P2" class="a ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-right" style="width: 8%;" data-transition="slide" >下一題</a>
-    
-    
-    </div>
-     
-        </div>
-        
 
 
 
