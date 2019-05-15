@@ -272,9 +272,13 @@ $num_rows25 = mysqli_num_rows($result55);
 <body align="center">
 <div data-role="page" id="one">
 <div style="width:100%;" style="display:inline">
-    <span style="float: right;"><a href="rank".php" data-ajax="false">回到排行榜</a></span>
-    <span>|</span>
-    <span style="float: right;"><a href="Topic.php" data-ajax="false">回到首頁</a></span>
+<div class="right">
+  	<ul>
+  	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
+  	|
+  	<li><a href="Topic.php" data-ajax="false">紀錄 </a></li>
+    </ul>
+    </div>
 </div>
 <div class="container" align="center">
     <h2 style="margin-top: 2%">平均分數排行榜</h2>
