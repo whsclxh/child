@@ -103,11 +103,14 @@ if(!(mysqli_query($link,$sql6))){
         margin-left: -150px; 
     }
 </style>
+<style>
+    .right ul li {
+    display:inline;
+}
+</style>
 <div style="width:100%;" style="display:inline">
 <div class="right" style="float:right; text-align:center; display:inline" >
   	<ul>
-  	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
-  	|
   	<li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
     </ul>
     </div>

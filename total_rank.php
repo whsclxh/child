@@ -269,6 +269,11 @@ $total_25 = mysqli_num_rows($result8);
     };
     </script>
 </head>
+<style>
+    .right ul li {
+    display:inline;
+}
+</style>
 <body align="center">
 <div data-role="page" id="one">
 
