@@ -104,7 +104,9 @@ if(!(mysqli_query($link,$sql6))){
     }
 </style>
 <div class="all">
-
+<div style="width:100%;" style="display:inline">
+    <span style="float: right;"><a href="Topic.php" data-ajax="false">回到首頁</a></span>
+</div>
 </div>
 <div class="math"><input type="image" src="img/123cloud.png" onClick="javascript:location.href='math_rank.php'" width="300px" height="300px"></div>
 <div class="chinese"><input type="image" src="img/chinesecloud.png" onClick="javascript:location.href='chinese_rank.php'" width="300px" height="300px"></div>
