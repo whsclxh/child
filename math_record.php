@@ -205,9 +205,20 @@ $list = @mysqli_fetch_row($result1);
         };
     </script>
 </head>
+<style>
+    .right ul li {
+    display:inline;
+}
+</style>
 <body align="center">
-<div style="width:100%;">
-        <span style="float: right;"><a href="Topic.php">回到首頁</a></span>
+<div style="width:100%;" style="display:inline">
+<div class="right" style="float:right; text-align:center; display:inline" >
+  	<ul>
+      <li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
+      |
+      <li><a href="record".php" data-ajax="false">回到紀錄 </a></li>
+    </ul>
+    </div>
 </div>
 <div class="container" align="center" >
     <h2 style="margin-top: 2%">作答紀錄</h2>

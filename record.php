@@ -63,6 +63,18 @@ if($_SESSION['username'] == null){
     	right: 300px;
     }
 </style>
+<style>
+    .right ul li {
+    display:inline;
+}
+</style>
+<div style="width:100%;" style="display:inline">
+<div class="right" style="float:right; text-align:center; display:inline" >
+  	<ul>
+  	<li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
+    </ul>
+    </div>
+</div>
 <div class="all">
 <div class="pen"><img src="img/b-pen.png" width="200px" height="200px"></div>
 <div class="ruler"><img src="img/b-ruler.png" width="200px" height="200px"></div>
