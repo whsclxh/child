@@ -269,6 +269,11 @@ $num_rows25 = mysqli_num_rows($result55);
     };
     </script>
 </head>
+<style>
+    .right ul li {
+    display:inline;
+}
+</style>
 <body align="center">
 <div data-role="page" id="one">
 <div style="width:100%;" style="display:inline">
