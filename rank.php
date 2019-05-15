@@ -105,7 +105,13 @@ if(!(mysqli_query($link,$sql6))){
 </style>
 <div class="all">
 <div style="width:100%;" style="display:inline">
-    <span style="float: right;"><a href="Topic.php" data-ajax="false">回到首頁</a></span>
+<div class="right" style="float:right; text-align:center; display:inline" >
+  	<ul>
+  	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
+  	|
+  	<li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
+    </ul>
+    </div>
 </div>
 </div>
 <div class="math"><input type="image" src="img/123cloud.png" onClick="javascript:location.href='math_rank.php'" width="300px" height="300px"></div>
