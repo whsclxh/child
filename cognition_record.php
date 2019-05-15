@@ -211,15 +211,7 @@ $list = @mysqli_fetch_row($result1);
 }
 </style>
 <body align="center">
-<div style="width:100%;" style="display:inline">
-<div class="right" style="float:right; text-align:center; display:inline" >
-  	<ul>
-      <li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
-      |
-      <li><a href="record".php" data-ajax="false">回到紀錄 </a></li>
-    </ul>
-    </div>
-</div>
+
 <div class="container" align="center" >
     <h2 style="margin-top: 2%">作答紀錄</h2>
 <form action="cog_before_past_record.php" method="post" name="form1" data-ajax="false">
@@ -233,7 +225,15 @@ $list = @mysqli_fetch_row($result1);
         <span id="spanLast">最後一頁</span>  
         第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
 </div>
-
+<div style="width:100%;" style="display:inline">
+<div class="right" style="float:right; text-align:center; display:inline" >
+  	<ul>
+      <li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
+      |
+      <li><a href="record".php" data-ajax="false">回到紀錄 </a></li>
+    </ul>
+    </div>
+</div>
 </div>
 </body>
 </html>
