@@ -272,7 +272,7 @@ $num_rows25 = mysqli_num_rows($result55);
 <body align="center">
 <div data-role="page" id="one">
 <div style="width:100%;" style="display:inline">
-<div class="right">
+<div class="right" style="float:right; text-align:center;" >
   	<ul>
   	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
   	|
