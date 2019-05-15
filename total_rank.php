@@ -275,7 +275,7 @@ $total_25 = mysqli_num_rows($result8);
         <span style="float: right;"><a href="Topic.php" data-ajax="false">回到首頁</a></span>
 </div>
 <div class="container" align="center">
-    <h2 style="margin-top: 2%">平均分數排行榜</h2>
+    <h2 style="margin-top: 2%">作答次數排行榜</h2>
     <h3 id="you"></h3>
 <form action="past_record.php" method="post" name="form1" data-ajax="false">
 <div id="div1">
@@ -288,7 +288,7 @@ $total_25 = mysqli_num_rows($result8);
         <span id="spanLast">最後一頁</span>  
         第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
 </div>
-<a href="#two">按照作答次數排名</a>
+<a href="#two">按照平均分數排名</a>
 </div>
 </div>
 <div data-role="page" id="two">
@@ -296,7 +296,7 @@ $total_25 = mysqli_num_rows($result8);
         <span style="float: right;"><a href="Topic.php" data-ajax="false">回到首頁</a></span>
 </div>
 <div class="container" align="center">
-    <h2 style="margin-top: 2%">作答次數排行榜</h2>
+    <h2 style="margin-top: 2%">平均分數排行榜</h2>
     <h3 id="you2"></h3>
 <form action="past_record.php" method="post" name="form1" data-ajax="false">
 <div id="div2">
@@ -309,7 +309,7 @@ $total_25 = mysqli_num_rows($result8);
         <span id="spanLast2">最後一頁</span>  
         第 <span id="spanPageNum2"></span> 頁/共 <span id="spanTotalPage2"></span> 頁
 </div>
-<a href="#one">按照平均分數排名</a>
+<a href="#one">按照作答次數排名</a>
 <b style=""></b>
 </div>
 </div>
