@@ -61,7 +61,60 @@ if($_SESSION['username'] == null){
     	position: absolute;
     	bottom: 150px;
     	right: 300px;
+	}
+	@media screen and (min-width:992px) and (max-width: 1199px)  { /*Large devices*/
+		.all{
+    	width: 100%;
+    	height: 100%;
+    	background: url(img/b-frame.png) no-repeat;
+    	background-size: cover;
     }
+    .pen{
+    	position: absolute;
+    	bottom: 400px;
+    	right: 0px;
+    }
+    .ruler{
+    	position: absolute;
+    	top: 34px;
+    	right: 40px;    	
+    }
+    .book{
+    	position: absolute;
+    	top: 33px;
+    	left: 40px;
+    }
+    .note{
+    	position: absolute;
+    	bottom: 50px;
+    	right: 0px;
+    }
+    .pencil{
+    	position: absolute;
+    	bottom: 0px;
+    	left: 37px;
+    }
+    .math{
+    	position: absolute;
+    	top: 300px;
+    	right: 400px;
+    }
+    .chinese{
+    	position: absolute;
+    	top: 200px;
+    	left: 350px;
+    }
+    .cognition{
+    	position: absolute;
+    	bottom: 300px;
+    	left: 500px;
+    }
+    .time{
+    	position: absolute;
+    	bottom: 150px;
+    	right: 300px;
+	}
+	}
 </style>
 <style>
     .right ul li {
