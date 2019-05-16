@@ -62,7 +62,7 @@ if($_SESSION['username'] == null){
     	bottom: 150px;
     	right: 300px;
 	}
-	@media screen and (min-width:992px) and (max-width: 1199px)  { /*Large devices*/
+	@media screen and (min-width:1200px)  { /*Large devices*/
 		.all{
     	width: 100%;
     	height: 100%;
@@ -70,11 +70,13 @@ if($_SESSION['username'] == null){
     	background-size: cover;
     }
     .pen{
+		display:none;
     	position: absolute;
     	bottom: 400px;
     	right: 0px;
     }
     .ruler{
+		display:none;
     	position: absolute;
     	top: 34px;
     	right: 40px;    	
@@ -85,6 +87,7 @@ if($_SESSION['username'] == null){
     	left: 40px;
     }
     .note{
+		display:none;
     	position: absolute;
     	bottom: 50px;
     	right: 0px;
