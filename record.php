@@ -62,7 +62,7 @@ if($_SESSION['username'] == null){
     	bottom: 150px;
     	right: 300px;
 	}
-	@media screen and (min-width:1200px)  { /*Large devices*/
+	@media screen and (min-width:1200px) and (max-width: 1367px) { /*Large devices*/
 		.all{
     	width: 100%;
     	height: 100%;
