@@ -60,13 +60,11 @@ else{
 
 #hor-minimalist-a
 {
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
 	background: #fff;
 	margin: 45px;
-	width: 480px;
 	border-collapse: collapse;
-	text-align: left;
+	text-align: center;
 }
 #hor-minimalist-a th
 {
@@ -94,7 +92,7 @@ else{
 </head>
 <body>
     <div style="border: 0 auto" align="center">
-    <table border="1" id="hor-minimalist-a" summary="Employee Pay Sheet">
+    <table id="hor-minimalist-a">
         <thead>
     	<tr>
             <th scope="col">中文</th>
