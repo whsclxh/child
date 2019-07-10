@@ -14,6 +14,15 @@ $obj->Send['MerchantTradeNo'] = $_POST['MerchantTradeNo'];
 $obj->Send['ReturnURL'] = $_POST['ReturnURL'];
 $obj->Send['TimeStamp'] = $_POST['TimeStamp'];
 $obj->Send['OrderResultURL'] = $_POST['ReturnURL'];
+$obj->Send['MerchantTradeDate'] = $_POST['MerchantTradeDate'];
+$obj->Send['PaymentType'] = $_POST['PaymentType'];
+$obj->Send['TotalAmount'] = (int)$_POST['TotalAmount'];
+$obj->Send['TradeDesc'] = $_POST['TradeDesc'];
+$obj->Send['ChoosePayment'] = $_POST['ChoosePayment'];
+$obj->Send['CreditInstallment'] = $_POST['CreditInstallment'];
+$obj->Send['ClientBackURL'] = $_POST['ClientBackURL'];
+$obj->Send['ClientRedirectURL'] = $_POST['ClientRedirectURL'];
+$obj->Send['PaymentInfoURL'] = $_POST['PaymentInfoURL'];
 //訂單的商品資料
  
 //產生訂單(auto submit至ECPay)
