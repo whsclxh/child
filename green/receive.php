@@ -52,6 +52,40 @@ else{
 // 接收到資訊回應綠界
 
 ?>
+<style type="text/css">
+	body
+{
+	line-height: 1.6em;
+}
+
+#hor-minimalist-a
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	background: #fff;
+	margin: 45px;
+	width: 480px;
+	border-collapse: collapse;
+	text-align: left;
+}
+#hor-minimalist-a th
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: #039;
+	padding: 10px 8px;
+	border-bottom: 2px solid #6678b1;
+}
+#hor-minimalist-a td
+{
+	color: #669;
+	padding: 9px 8px 0px 8px;
+}
+#hor-minimalist-a tbody tr:hover td
+{
+	color: #009;
+}
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,8 +93,13 @@ else{
     <title>Document</title>
 </head>
 <body>
-    <div style="border: 0 auto">
-    <table border="1">
+    <div style="border: 0 auto" align="center">
+    <table border="1" id="hor-minimalist-a">
+    	<th>
+    		<td>中文</td>
+    		<td>回傳名稱</td>
+    		<td>值</td>
+    	</th>
         <tr>
         	<td>檢查碼</td>
             <td>CheckMacValue</td>
