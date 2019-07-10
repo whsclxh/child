@@ -98,7 +98,10 @@
     <button type="submit">綠界線上支付</button>
 </form>
  <h2>查詢訂單</h2>
-    <form id="idFormQueryTradeInfo">
+    <form id="idFormQueryTradeInfo" method="post" accept="E.php">
+        <label>MerchantID<input type="hidden" name="MerchantID" value="2000132" class="form-control"/></label>
+        <label>HashKey<input type="hidden" name="HashKey" value="5294y06JbISpM5x9" class="form-control"/></label>
+        <label>HashIV<input type="hidden" name="HashIV" value="v77hoKGq4kWxNNIS" class="form-control"/></label>
         <div class="row">
             <div class="col-xs-12">
                 <label class="col-xs-12">動作 (Action):
@@ -117,7 +120,7 @@
             </div>
             <div class="col-xs-12">
                 <label class="col-xs-12">回傳網址 (ReturnURL):
-                    <input type="text" name="ReturnURL" value="http://tn.sly-ha.com.tw/demo/kidabc_X/ECPay.php" class="form-control">
+                    <input type="text" name="ReturnURL" value="http://whsclxh.ddns.net/green/query.php" class="form-control">
                 </label>
             </div>
         </div>
@@ -135,18 +138,9 @@
             
             $('#idReturnQueryTradeInfo').html('');
 
-            $.ajax({
-                url: 'query.php',
-                type: 'post',
-                async: false,
-                data: $('#idFormQueryTradeInfo').serialize() +'&API_URL='+ $('#API_URL').val() +'&MerchantID='+ $('#MerchantID').val() +'&HashKey='+ $('#HashKey').val() +'&HashIV='+ $('#HashIV').val(),
-                success: function(J){
-                    var Json = JSON.parse(J);
-                    $('#idReturnQueryTradeInfo').html( Json['data'] );
-                    $('#__ecpayForm').attr('target', '_blank').submit();
-//                    document.getElementById("__ecpayForm");
-                }
-            })
+        
+            document.getElementById("idFormQueryTradeInfo");
+                
         }
     </script>
 </body>
