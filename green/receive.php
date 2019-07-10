@@ -1,7 +1,6 @@
 <?php
-file_put_contents( '/tmp/ECPay_'.uniqid(”, true) .'.txt', print_r( $_POST, true ) );
 require_once 'ECPay.Payment.Integration.php';
- 
+include("mysql_connect.php");
 define( 'ECPay_MerchantID', '2000132' );
 define( 'ECPay_HashKey', '5294y06JbISpM5x9' );
 define( 'ECPay_HashIV', 'v77hoKGq4kWxNNIS' );
@@ -44,7 +43,12 @@ $CheckMacValue = ECPay_CheckMacValue::generate( $arParameters, ECPay_HashKey, EC
  
 // 必須要支付成功並且驗證碼正確
 if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
-    
+    $update = "insert into paylist(CheckMacValue, CustomField1, CustomField2, CustomField3, CustomField4, MerchantID, MerchantTradeNo, PaymentDate, PaymentType, PaymentTypeChargeFee, RtnCode, RtnMsg, SimulatePaid, StoreID, TradeAmt, TradeDate, TradeNo) values('$CheckMacValue','$CustomField1','$CustomField2','$CustomField3','$CustomField4','$MerchantID','$MerchantTradeNo','$PaymentDate','$PaymentType','$PaymentTypeChargeFee','$RtnCode','$RtnMsg','$SimulatePaid','$StoreID','$TradeAmt','$TradeDate','$TradeNo')";
+    if(mysqli_query($link,$update)){
+        echo "<script>alert('資料儲存成功!');</script>";
+    }else{
+        echo "<script>alert('資料儲存失敗!');</script>";
+    }
 }
 else{
 	echo "not match ";
