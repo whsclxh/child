@@ -51,6 +51,7 @@ $TradeAmt=$_POST['TradeAmt'];
 $TradeDate=$_POST['TradeDate'];
 $TradeNo=$_POST['TradeNo'];
 // 接收到資訊回應綠界
+echo '1|OK';
 ?>
 <!DOCTYPE html>
 <html lang="en">
