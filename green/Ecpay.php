@@ -24,7 +24,9 @@ $obj->Send['ReturnURL'] = $_POST['ReturnURL'];
 $obj->Send['ChoosePayment'] = $_POST['ChoosePayment'];
 $obj->Send['CreditInstallment'] = $_POST['CreditInstallment'];
 $obj->Send['ClientBackURL'] = $_POST['ClientBackURL'];
- 
+$obj->Send['ClientRedirectURL'] = $_POST['ClientRedirectURL'];
+$obj->Send['PaymentInfoURL'] = $_POST['PaymentInfoURL'];
+$obj->Send['OrderResultURL'] = $_POST['ReturnURL'];
 //訂單的商品資料
 array_push($obj->Send['Items'], array(
         'Name' => 'aaa',
