@@ -139,7 +139,7 @@
                 data: $('#idFormQueryTradeInfo').serialize() +'&API_URL='+ $('#API_URL').val() +'&MerchantID='+ $('#MerchantID').val() +'&HashKey='+ $('#HashKey').val() +'&HashIV='+ $('#HashIV').val(),
                 success: function(J){
                     var Json = JSON.parse(J);
-                    $('#idReturnQueryTradeInfo').html( Json['Data'] );
+                    $('#idReturnQueryTradeInfo').html( Json['data'] );
                     $('#__ecpayForm').attr('target', '_blank').submit();
 //                    document.getElementById("__ecpayForm");
                 }
