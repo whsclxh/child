@@ -1,5 +1,5 @@
 <?php
-file_put_contents( ' '.uniqid(”, true) .'.txt', print_r( $_POST, true ) );
+file_put_contents( '/tmp/ECPay_'.uniqid(”, true) .'.txt', print_r( $_POST, true ) );
 require_once 'ECPay.Payment.Integration.php';
  
 define( 'ECPay_MerchantID', '2000132' );
