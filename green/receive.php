@@ -95,10 +95,13 @@ else{
 <body>
     <div style="border: 0 auto" align="center">
     <table border="1" id="hor-minimalist-a" summary="Employee Pay Sheet">
+        <thead>
     	<th>
     		<td scope="col">回傳名稱</td>
     		<td scope="col">值</td>
     	</th>
+        </thead>
+        <tbody>
         <tr>
         	<td>檢查碼</td>
             <td>CheckMacValue</td>
@@ -184,10 +187,8 @@ else{
             <td>TradeNo</td>
             <td><?php echo "$TradeNo"; ?></td>
         </tr>
+        </tbody>
     </table>
     </div>
 </body>
 </html>
-<?php
-echo '1|OK';
-?>
