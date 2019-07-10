@@ -23,9 +23,7 @@ $obj->Send['TradeDesc'] = $_POST['TradeDesc'];
 $obj->Send['ReturnURL'] = $_POST['ReturnURL'];
 $obj->Send['ChoosePayment'] = $_POST['ChoosePayment'];
 $obj->Send['CreditInstallment'] = $_POST['CreditInstallment'];
-$obj->Send['ClientbackURL'] = $_POST['ClientbackURL'];
-$obj->Send['PaymentInfoURL'] = $_POST['PaymentInfoURL'];
-$obj->Send['ClientRedirectURL'] = $_POST['ClientRedirectURL'];
+$obj->Send['ClientBackURL'] = $_POST['ClientBackURL'];
  
 //訂單的商品資料
 array_push($obj->Send['Items'], array(
