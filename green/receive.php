@@ -94,10 +94,10 @@ else{
 </head>
 <body>
     <div style="border: 0 auto" align="center">
-    <table border="1" id="hor-minimalist-a">
+    <table border="1" id="hor-minimalist-a" summary="Employee Pay Sheet">
     	<th>
-    		<td>回傳名稱</td>
-    		<td>值</td>
+    		<td scope="col">回傳名稱</td>
+    		<td scope="col">值</td>
     	</th>
         <tr>
         	<td>檢查碼</td>
