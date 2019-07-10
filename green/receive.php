@@ -34,7 +34,9 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
     // 
     echo "666";
 }
- 
+else{
+	echo "not match ";
+} 
 // 接收到資訊回應綠界
 echo '1|OK';
 ?>
