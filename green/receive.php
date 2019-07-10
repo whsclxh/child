@@ -96,7 +96,6 @@ else{
     <div style="border: 0 auto" align="center">
     <table border="1" id="hor-minimalist-a">
     	<th>
-    		<td>中文</td>
     		<td>回傳名稱</td>
     		<td>值</td>
     	</th>
