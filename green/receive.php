@@ -4,7 +4,7 @@ require_once 'ECPay.Payment.Integration.php';
 define( 'ECPay_MerchantID', '2000132' );
 define( 'ECPay_HashKey', '5294y06JbISpM5x9' );
 define( 'ECPay_HashIV', 'v77hoKGq4kWxNNIS' );
- 
+file_put_contents( ‘/tmp/ECPay_’.uniqid(”, true) .’.txt’, print_r( $_POST, true ) );
 // 重新整理回傳參數。
 $arParameters = $_POST;
 foreach ($arParameters as $keys => $value) {
