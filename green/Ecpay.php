@@ -1,6 +1,5 @@
 <?php
 require_once 'ECPay.Payment.Integration.php';
-include("mysql_connect.php");
 
 
 
