@@ -53,7 +53,7 @@ $TradeNo=$_POST['TradeNo'];
 // 接收到資訊回應綠界
 echo '1|OK';
 ?>
-<!DOCTYPE html>
+<!---<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
