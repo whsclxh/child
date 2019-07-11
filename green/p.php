@@ -179,6 +179,7 @@ $num_rows = mysqli_num_rows($result);
         /* For removing the last border */
         $("table td:last-child, table th:last-child").addClass("last");
          });
+        }
     </script>
 </head>
 <style>
