@@ -4,8 +4,6 @@ include("mysql_connect.php");
 $PL = "SELECT * FROM product_list";
 $result = mysqli_query($link,$PL);
 $num_rows = mysqli_num_rows($result);
-$row = mysqli_fetch_array($result);
-
 $obj = new \ECPay_AllInOne();
  
 //服務參數
@@ -19,6 +17,7 @@ $obj->Send['MerchantTradeNo'] = $_POST['MerchantTradeNo'];
 $obj->Send['MerchantTradeDate'] = $_POST['MerchantTradeDate'];
 $obj->Send['PaymentType'] = $_POST['PaymentType'];
 for($i=1;$i<$num_rows;$i++){
+    $row = mysqli_fetch_array($result);
     if($_POST['ItemName']=='$row[0]'){
         $obj->Send['TotalAmount']=$row[1];
         $TotalAmount=$row[1];
