@@ -104,9 +104,8 @@ $num_rows = mysqli_num_rows($result);
         background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
     }
 </style>
-<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="pagination.js"></script>
-    <script type="text/javascript" src="pagination2.js"></script>
     <script type="text/javascript">
         //全局变量
         var numCount;       //数据总数量
@@ -191,7 +190,7 @@ $num_rows = mysqli_num_rows($result);
 <div data-role="page" id="one">
 
 <div class="container" align="center">
-    <h2 style="margin-top: 2%">平均分數排行榜</h2>
+    <h2 style="margin-top: 2%">商品列表</h2>
     <h3 id="you"></h3>
 <form action="past_record.php" method="post" name="form1" data-ajax="false">
 <div id="div1">
@@ -207,40 +206,7 @@ $num_rows = mysqli_num_rows($result);
 <a href="#two">按照作答次數排名</a>
 </div>
 <div style="width:100%;" style="display:inline">
-<div class="right" style="float:right; text-align:center; display:inline" >
-  	<ul>
-  	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
-  	|
-  	<li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
-    </ul>
-    </div>
-</div>
-</div>
-<div data-role="page" id="two">
-<div class="container" align="center">
-    <h2 style="margin-top: 2%">作答次數排行榜</h2>
-    <h3 id="you2"></h3>
-<form action="past_record.php" method="post" name="form1" data-ajax="false">
-<div id="div2">
-</div>
-</form>
-<div id="pagiDiv" align="center" style="width:40%">
-        <span id="spanFirst2">第一頁</span>  
-        <span id="spanPre2">上一頁</span>  
-        <span id="spanNext2">下一頁</span>  
-        <span id="spanLast2">最後一頁</span>  
-        第 <span id="spanPageNum2"></span> 頁/共 <span id="spanTotalPage2"></span> 頁
-</div>
-<a href="#one">按照平均分數排名</a>
-</div>
-<div style="width:100%;" style="display:inline">
-<div class="right" style="float:right; text-align:center; display:inline" >
-  	<ul>
-  	<li><a href="rank.php" data-ajax="false">回到排行榜 </a></li>
-  	|
-  	<li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
-    </ul>
-    </div>
+
 </div>
 </div>
 </body>
