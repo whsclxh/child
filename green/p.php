@@ -6,9 +6,7 @@ $num_rows = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <head>
     <meta charset="UTF-8">
     <title></title><style type="text/css">
