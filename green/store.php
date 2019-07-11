@@ -45,13 +45,6 @@ array_push($obj->Send['Items'], array(
         'Quantity' => (int)"1"
     )
 );
-array_push($obj->Send['Items'], array(
-        'Name' => $_POST['ItemName'],
-        'Price' => $obj->Send['TotalAmount'],
-        'Currency' => "元",
-        'Quantity' => (int)"5"
-    )
-);
 $HashKey=$_POST['HashKey'];
 $HashIV=$_POST['HashIV'];
 $MerchantID=$_POST['MerchantID'];
