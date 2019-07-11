@@ -97,51 +97,5 @@
  
     <button type="submit">綠界線上支付</button>
 </form>
- <h2>查詢訂單</h2>
-    <form id="idFormQueryTradeInfo" method="post" action="Ecpay.php">
-        <input type="hidden" name="MerchantID" value="2000132" class="form-control"/>
-        <input type="hidden" name="HashKey" value="5294y06JbISpM5x9" class="form-control"/>
-        <input type="hidden" name="HashIV" value="v77hoKGq4kWxNNIS" class="form-control"/>
-        <div class="row">
-            <div class="col-xs-12">
-                <label class="col-xs-12">動作 (Action):
-                    <input type="text" name="ActionURL" value="/Cashier/QueryTradeInfo/V5" class="form-control">
-                </label>
-            </div>
-            <div class="col-xs-12">
-                <label class="col-xs-12">編號 (MerchantTradeNo):
-                    <input type="text" name="MerchantTradeNo" value="oikidA0000001" class="form-control">
-                </label>
-            </div>
-            <div class="col-xs-12">
-                <label class="col-xs-12">UnixTimeStamp (TimeStamp):
-                    <input type="text" id="idTimeStamp" name="TimeStamp" value="" class="form-control">
-                </label>
-            </div>
-            <div class="col-xs-12">
-                <label class="col-xs-12">回傳網址 (ReturnURL):
-                    <input type="text" name="ReturnURL" value="http://whsclxh.ddns.net/green/query.php" class="form-control">
-                </label>
-            </div>
-        </div>
-        <button type="button" onclick="submitQueryTradeInfo()" class="btn btn-default">查詢</button>
-    </form>
-    <div id="idReturnQueryTradeInfo"></div>
-
-    <script>
-        function submitQueryTradeInfo(){
-            
-            //
-            const dateTime = Date.now();
-            const timestamp = Math.floor(dateTime / 1000);
-            $('#idTimeStamp').val(timestamp);
-            
-            $('#idReturnQueryTradeInfo').html('');
-
-            var from1 = document.getElementById("idFormQueryTradeInfo");
-            from1.submit();
-                
-        }
-    </script>
 </body>
 </html>
