@@ -211,7 +211,7 @@ $num_rows = mysqli_num_rows($result);
 <form action="info.php" method="post" name="form1">
 <div id="div1">
 </div>
-<input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw" class="form-control"/>
+    <input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw" class="form-control"/>
     <input type="hidden" name="MerchantID" value="2000132" class="form-control"/>
     <input type="hidden" name="HashKey" value="5294y06JbISpM5x9" class="form-control"/>
     <input type="hidden" name="HashIV" value="v77hoKGq4kWxNNIS" class="form-control"/>
