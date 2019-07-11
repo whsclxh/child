@@ -18,7 +18,7 @@ $obj->Send['MerchantTradeDate'] = $_POST['MerchantTradeDate'];
 $obj->Send['PaymentType'] = $_POST['PaymentType'];
 for($i=0;$i<$num_rows-1;$i++){
     $row = mysqli_fetch_array($result);
-    if($row[0]==$ItemName){
+    if((String)$row[0]==(String)$ItemName){
         $obj->Send['TotalAmount']=(int)"$row[1]";
         $TotalAmount=(int)"$row[1]";
     }else{
