@@ -16,6 +16,7 @@ $obj->MerchantID  = $_POST['MerchantID'];
 $obj->Send['MerchantTradeNo'] = $_POST['MerchantTradeNo'];
 $obj->Send['MerchantTradeDate'] = $_POST['MerchantTradeDate'];
 $obj->Send['PaymentType'] = $_POST['PaymentType'];
+echo "<script>alert($ItemName);</script>";
 for($i=1;$i<$num_rows;$i++){
     $row = mysqli_fetch_array($result);
     if($_POST['ItemName']=='$row[0]'){
