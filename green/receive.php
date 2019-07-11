@@ -47,10 +47,13 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
     if(mysqli_query($link,$update)){
         $greturn="update front set pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
         if(mysqli_query($link,$greturn)){            
-            echo "<script>alert('資料回傳成功!');</script>";
+            
         }
     }else{
-        echo "<script>alert('資料儲存失敗!');</script>";
+        $greturn="update front set pay='failed' where MerchantTradeNo='$MerchantTradeNo'";
+        if(mysqli_query($link,$greturn)){            
+            
+        }
     }
 }
 else{
