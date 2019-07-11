@@ -19,9 +19,12 @@ $obj->Send['MerchantTradeNo'] = $_POST['MerchantTradeNo'];
 $obj->Send['MerchantTradeDate'] = $_POST['MerchantTradeDate'];
 $obj->Send['PaymentType'] = $_POST['PaymentType'];
 for($i=1;$i<$num_rows;$i++){
-    if($_POST['ItemName']=='$row[0]'){
-        $obj->Send['TotalAmount']='$row[1]';
-        $TotalAmount='$row[1]';
+    if($_POST['ItemName']==$row[0]){
+        $obj->Send['TotalAmount']=$row[1];
+        $TotalAmount=$row[1];
+    }else{
+        $obj->Send['TotalAmount']='4';
+        $TotalAmount='87';
     }
 }
 
