@@ -1,6 +1,10 @@
 <?php
 require_once 'ECPay.Payment.Integration.php';
 include("mysql_connect.php");
+$PL = "SELECT * FROM product_list";
+$result = mysqli_query($link,$PL);
+$num_rows = mysqli_num_rows($result);
+$row = mysqli_fetch_array($result);
 
 $obj = new \ECPay_AllInOne();
  
@@ -14,18 +18,11 @@ $obj->MerchantID  = $_POST['MerchantID'];
 $obj->Send['MerchantTradeNo'] = $_POST['MerchantTradeNo'];
 $obj->Send['MerchantTradeDate'] = $_POST['MerchantTradeDate'];
 $obj->Send['PaymentType'] = $_POST['PaymentType'];
-if($_POST['ItemName']=='A'){
-    $obj->Send['TotalAmount']='100';
-    $TotalAmount='100';
-}else if($_POST['ItemName']=='B'){
-    $obj->Send['TotalAmount']='200';
-    $TotalAmount='200';
-}else if($_POST['ItemName']=='C'){
-    $obj->Send['TotalAmount']='300';
-    $TotalAmount='300';
-}else if($_POST['ItemName']=='D'){
-    $obj->Send['TotalAmount']='400';
-    $TotalAmount='400';
+for($i=1;$i<$num_rows;$i++){
+    if($_POST['ItemName']=='$row[0]'){
+        $obj->Send['TotalAmount']='$row[1]';
+        $TotalAmount='$row[1]';
+    }
 }
 
 //$obj->Send['TotalAmount'] = (int)$_POST['TotalAmount'];
