@@ -16,7 +16,6 @@ $obj->MerchantID  = $_POST['MerchantID'];
 $obj->Send['MerchantTradeNo'] = $_POST['MerchantTradeNo'];
 $obj->Send['MerchantTradeDate'] = $_POST['MerchantTradeDate'];
 $obj->Send['PaymentType'] = $_POST['PaymentType'];
-echo "<script>alert($ItemName);</script>";
 for($i=1;$i<$num_rows;$i++){
     $row = mysqli_fetch_array($result);
     if($_POST['ItemName']=='$row[0]'){
@@ -54,7 +53,7 @@ $PaymentType=$_POST['PaymentType'];
 $ItemName=$_POST['ItemName'];
 $TradeDesc=$_POST['TradeDesc'];
 $ChoosePayment=$_POST['ChoosePayment'];
-
+$echo "$ItemName";
 $update = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay) 
            values('$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemName','$TotalAmount','$TradeDesc','$ChoosePayment','0')";
     if(mysqli_query($link,$update)){

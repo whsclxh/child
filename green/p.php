@@ -156,7 +156,7 @@ $num_rows = mysqli_num_rows($result);
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$row[1]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<td><input type=\"radio\" name=\"ItemName\" <?php echo"value=\"$row[0]\""; ?>></td>';
+            tdNode4.innerHTML='<td><input type=\"radio\" name=\"ItemName\" <?php echo"value=\"$row[0]\""; ?></td>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
