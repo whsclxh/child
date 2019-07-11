@@ -45,8 +45,8 @@ $row_num = mysqli_num_rows($result);
 
 
         window.onload=function(){
-            var tradeno=document.getElementById('MerchantTradeNo');
-            tradeno.value=a;
+            //var tradeno=document.getElementById('MerchantTradeNo');
+            //tradeno.value=a;
             //页面标签变量
             tableNode=document.createElement("table");//获得对象
             tableNode.setAttribute("id","table");
