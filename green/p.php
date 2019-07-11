@@ -208,7 +208,7 @@ $num_rows = mysqli_num_rows($result);
 <div class="container" align="center">
     <h2 style="margin-top: 2%">商品列表</h2>
     <h3 id="you"></h3>
-<form action="store.php" method="post" name="form1">
+<form action="info.php" method="post" name="form1">
 <div id="div1">
 </div>
 <input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw" class="form-control"/>
