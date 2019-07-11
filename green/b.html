@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+    <link rel="stylesheet" href="bootstrap/css/sb-admin-2.css" crossorigin="anonymous">
+    <style type="text/css">
+        #hor-zebra
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 45px;
+    width: 480px;
+    text-align: left;
+    border-collapse: collapse;
+}
+#hor-zebra th
+{
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px 8px;
+    color: #039;
+}
+#hor-zebra td
+{
+    padding: 8px;
+    color: #669;
+}
+#hor-zebra .odd
+{
+    background: #e8edff; 
+}
+    </style>
+    <script type="text/javascript">
+        
+    function getRandom(){
+        return Math.floor(Math.random()*15)+5;
+    };
+    var chars = ['0','1','2','3','4','5','6','7','8','9',
+                'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+                'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+    function generateMixed() {
+        var res = "";
+        for(var i = 0; i < getRandom() ; i++ ) {
+            var id = Math.ceil(Math.random()*61);
+            res += chars[id];
+        }
+        return res;
+    }    
+    var a=generateMixed();
+    window.onload=function(){
+        var tradeno=document.getElementById('MerchantTradeNo');
+        tradeno.value=a;
+    };
+    </script>
+    <script src="jquery-3.4.1.min.js"></script>
+    <style>
+        label{
+            display: block;
+            color: #F73678;
+        }
+        form{
+            width: 40%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<form id="idFormAioCheckOut" method="post" action="store.php" >
+    <table id="hor-zebra">
+        <thead>
+            <tr>
+                <th>商品</th>
+                <th>價錢</th>
+                <th>選擇</th>
+            </tr>            
+        </thead>
+        <tbody>
+            <tr class="odd">
+                <td><label>A</label></td>
+                <td><label>100</label></td>
+                <td width="10%"><input type="radio" name="ItemName" value="A" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><label>B</label></td>
+                <td><label>200</label></td>
+                <td><input type="radio" name="ItemName" value="B" class="form-control"></td>
+            </tr>
+            <tr class="odd">
+                <td><label>C</label></td>
+                <td><label>300</label></td>
+                <td><input type="radio" name="ItemName" value="C" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><label>D</label></td>
+                <td><label>400</label></td>
+                <td><input type="radio" name="ItemName" value="D" class="form-control"></td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw" class="form-control"/>
+    <input type="hidden" name="MerchantID" value="2000132" class="form-control"/>
+    <input type="hidden" name="HashKey" value="5294y06JbISpM5x9" class="form-control"/>
+    <input type="hidden" name="HashIV" value="v77hoKGq4kWxNNIS" class="form-control"/>
+    <input type="hidden" name="ServiceURL" value="https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5" class="form-control"/>
+    <input type="hidden" name="MerchantTradeNo" id="MerchantTradeNo" class="form-control"/>
+    <input type="hidden" name="MerchantTradeDate" value="2019/08/30 12:34:56" class="form-control"/>
+    <input type="hidden" name="PaymentType" value="aio" class="form-control"/>
+    <input type="hidden" name="TotalAmount" value="999" class="form-control"/>
+    <input type="hidden" name="TradeDesc" value="Desc" class="form-control"/>
+    <input type="hidden" name="ReturnURL" value="http://whsclxh.ddns.net/green/receive.php" class="form-control"/>
+    <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/receive.php" class="form-control"/>
+    <input type="hidden" name="ClientBackURL" value="http://whsclxh.ddns.net/green/payEcpay.php" class="form-control"/>
+    <input type="hidden" name="PaymentInfoURL" value="http://whsclxh.ddns.net/green/receivepayment.php" class="form-control"/>
+    <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/clientredirect.php" class="form-control"/>
+    <input type="hidden" name="ChoosePayment" value="Credit">
+    <input type="hidden" name="CreditInstallment" value="12,24" class="form-control"/> 
+    <button type="submit">綠界線上支付</button>
+</form>
+</body>
+</html>
