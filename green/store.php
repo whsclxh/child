@@ -21,6 +21,9 @@ for($i=0;$i<$num_rows-1;$i++){
     if($row[0]=='$ItemName'){
         $obj->Send['TotalAmount']=(int)"$row[1]";
         $TotalAmount=(int)"$row[1]";
+    }else{
+        $obj->Send['TotalAmount']=(int)"5";
+        $TotalAmount=(int)"5";
     }
 }
 
