@@ -67,7 +67,7 @@ $update = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantT
 //產生訂單(auto submit至ECPay)
 //$obj->CheckOut();
 $Response = (string)$obj->CheckOutString();
-echo $Response;
+
  
 // 自動將表單送出
 echo '<script>document.getElementById("__ecpayForm").submit();</script>';
