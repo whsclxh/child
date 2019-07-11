@@ -130,7 +130,7 @@ $num_rows = mysqli_num_rows($result);
             tableNode.setAttribute("cellspacing","0");
             tableNode.setAttribute("class","table table-striped");
             //上面确定了 现在开始创建
-            <?php for($x=1;$x<= $num_rows;$x++){ ?>
+            <?php for($x=1;$x< $num_rows;$x++){ ?>
             <?php $row = mysqli_fetch_array($result);?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
@@ -195,7 +195,26 @@ $num_rows = mysqli_num_rows($result);
 <form action="past_record.php" method="post" name="form1" data-ajax="false">
 <div id="div1">
 </div>
+<input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw" class="form-control"/>
+    <input type="hidden" name="MerchantID" value="2000132" class="form-control"/>
+    <input type="hidden" name="HashKey" value="5294y06JbISpM5x9" class="form-control"/>
+    <input type="hidden" name="HashIV" value="v77hoKGq4kWxNNIS" class="form-control"/>
+    <input type="hidden" name="ServiceURL" value="https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5" class="form-control"/>
+    <input type="hidden" name="MerchantTradeNo" id="MerchantTradeNo" class="form-control"/>
+    <input type="hidden" name="MerchantTradeDate" value="2019/08/30 12:34:56" class="form-control"/>
+    <input type="hidden" name="PaymentType" value="aio" class="form-control"/>
+    <input type="hidden" name="TotalAmount" value="999" class="form-control"/>
+    <input type="hidden" name="TradeDesc" value="Desc" class="form-control"/>
+    <input type="hidden" name="ReturnURL" value="http://whsclxh.ddns.net/green/receive.php" class="form-control"/>
+    <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/receive.php" class="form-control"/>
+    <input type="hidden" name="ClientBackURL" value="http://whsclxh.ddns.net/green/payEcpay.php" class="form-control"/>
+    <input type="hidden" name="PaymentInfoURL" value="http://whsclxh.ddns.net/green/receivepayment.php" class="form-control"/>
+    <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/clientredirect.php" class="form-control"/>
+    <input type="hidden" name="ChoosePayment" value="Credit">
+    <input type="hidden" name="CreditInstallment" value="12,24" class="form-control"/>
+    <div align="center"><button type="submit">綠界線上支付</button></div>
 </form>
+<br>
 <div id="pagiDiv" align="center" style="width:40%">
         <span id="spanFirst">第一頁</span>  
         <span id="spanPre">上一頁</span>  
