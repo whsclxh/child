@@ -105,6 +105,22 @@ $num_rows = mysqli_num_rows($result);
 <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="pagination.js"></script>
     <script type="text/javascript">
+        function getRandom(){
+        return Math.floor(Math.random()*15)+5;
+    };
+    var chars = ['0','1','2','3','4','5','6','7','8','9',
+                'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+                'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+    function generateMixed() {
+        var res = "";
+        for(var i = 0; i < getRandom() ; i++ ) {
+            var id = Math.ceil(Math.random()*61);
+            res += chars[id];
+        }
+        return res;
+    }    
+    var a=generateMixed();
         //全局变量
         var numCount;       //数据总数量
         var columnsCounts;  //数据列数量
@@ -123,6 +139,8 @@ $num_rows = mysqli_num_rows($result);
 
         window.onload=function(){
             //页面标签变量
+            var tradeno=document.getElementById('MerchantTradeNo');
+            tradeno.value=a;
             tableNode=document.createElement("table");//获得对象
             tableNode.setAttribute("id","table");
             tableNode.setAttribute("cellspacing","0");
@@ -178,29 +196,6 @@ $num_rows = mysqli_num_rows($result);
         $("table td:last-child, table th:last-child").addClass("last");
          });
         }
-    </script>
-    <script type="text/javascript">
-        
-    function getRandom(){
-        return Math.floor(Math.random()*15)+5;
-    };
-    var chars = ['0','1','2','3','4','5','6','7','8','9',
-                'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
-                'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-
-    function generateMixed() {
-        var res = "";
-        for(var i = 0; i < getRandom() ; i++ ) {
-            var id = Math.ceil(Math.random()*61);
-            res += chars[id];
-        }
-        return res;
-    }    
-    var a=generateMixed();
-    window.onload=function(){
-        var tradeno=document.getElementById('MerchantTradeNo');
-        tradeno.value=a;
-    };
     </script>
 </head>
 <style>
