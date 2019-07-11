@@ -15,17 +15,17 @@ $obj->Send['MerchantTradeNo'] = $_POST['MerchantTradeNo'];
 $obj->Send['MerchantTradeDate'] = $_POST['MerchantTradeDate'];
 $obj->Send['PaymentType'] = $_POST['PaymentType'];
 if($_POST['ItemName']=='A'){
-	$obj->Send['TotalAmount']='100';
-	$TotalAmount='100';
+    $obj->Send['TotalAmount']='100';
+    $TotalAmount='100';
 }else if($_POST['ItemName']=='B'){
-	$obj->Send['TotalAmount']='200';
-	$TotalAmount='200';
+    $obj->Send['TotalAmount']='200';
+    $TotalAmount='200';
 }else if($_POST['ItemName']=='C'){
-	$obj->Send['TotalAmount']='300';
-	$TotalAmount='300';
+    $obj->Send['TotalAmount']='300';
+    $TotalAmount='300';
 }else if($_POST['ItemName']=='D'){
-	$obj->Send['TotalAmount']='400';
-	$TotalAmount='400';
+    $obj->Send['TotalAmount']='400';
+    $TotalAmount='400';
 }
 
 //$obj->Send['TotalAmount'] = (int)$_POST['TotalAmount'];
@@ -45,6 +45,13 @@ array_push($obj->Send['Items'], array(
         'Quantity' => (int)"1"
     )
 );
+array_push($obj->Send['Items'], array(
+        'Name' => $_POST['ItemName'],
+        'Price' => $obj->Send['TotalAmount'],
+        'Currency' => "元",
+        'Quantity' => (int)"5"
+    )
+);
 $HashKey=$_POST['HashKey'];
 $HashIV=$_POST['HashIV'];
 $MerchantID=$_POST['MerchantID'];
@@ -56,9 +63,9 @@ $TradeDesc=$_POST['TradeDesc'];
 $ChoosePayment=$_POST['ChoosePayment'];
 
 $update = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay) 
-		   values('$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemName','$TotalAmount','$TradeDesc;','$ChoosePayment','0')";
+           values('$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemName','$TotalAmount','$TradeDesc','$ChoosePayment','0')";
     if(mysqli_query($link,$update)){
-        echo "<script>alert('資料儲存成功!');</script>";
+
     }else{
         echo "<script>alert('資料儲存失敗!');</script>";
     }
