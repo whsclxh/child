@@ -1,6 +1,6 @@
 <?php
 include("mysql_connect.php");
-$PL = "SELECT * FROM product_list  ORDER BY cost DESC";
+$PL = "SELECT * FROM product_list  ORDER BY cost DESC+0";
 $result = mysqli_query($link,$PL);
 $row_num = mysqli_num_rows($result);
 ?>
@@ -10,6 +10,7 @@ $row_num = mysqli_num_rows($result);
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="pagination.js"></script>
     <script type="text/javascript">
         //全局变量
         var numCount;       //数据总数量
@@ -206,7 +207,7 @@ $row_num = mysqli_num_rows($result);
         background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
     }
 </style>
-    <script src="pagination.js"></script>
+    
     <script type="text/javascript">
         
     function getRandom(){
@@ -246,7 +247,6 @@ $row_num = mysqli_num_rows($result);
 <form id="idFormAioCheckOut" method="post" action="store.php" >    
     <div class="container" align="center">
     <h2 style="margin-top: 2%">商品列表</h2>
-    <form action="store.php" method="post" name="form1">
 <div id="div1"></div>
 <div id="pagiDiv" align="center" style="width:40%">
         <span id="spanFirst">第一頁</span>  
