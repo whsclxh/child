@@ -2,7 +2,7 @@
 include("mysql_connect.php");
 $PL = "SELECT * FROM product_list  ORDER BY cost DESC";
 $result = mysqli_query($link,$PL);
-$row = mysqli_num_rows($result);
+$row_num = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,8 @@ $row = mysqli_num_rows($result);
             tableNode.setAttribute("cellspacing","0");
             tableNode.setAttribute("class","table table-striped");
             //上面确定了 现在开始创建
-            <?php for($x=1;$x<= $row;$x++){ ?>
+            <?php for($x=1;$x< $row_num;$x++){ ?>
+            <?php $row = mysqli_fetch_array($result);?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
             tdNode1.innerHTML='<?php echo "$x"; ?>';
@@ -247,7 +248,6 @@ $row = mysqli_num_rows($result);
     <h2 style="margin-top: 2%">商品列表</h2>
     <form action="store.php" method="post" name="form1">
 <div id="div1"></div>
-</form>
 <div id="pagiDiv" align="center" style="width:40%">
         <span id="spanFirst">第一頁</span>  
         <span id="spanPre">上一頁</span>  
@@ -256,7 +256,6 @@ $row = mysqli_num_rows($result);
         第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
 </div>
 </div>
-</form>
     <input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw" class="form-control"/>
     <input type="hidden" name="MerchantID" value="2000132" class="form-control"/>
     <input type="hidden" name="HashKey" value="5294y06JbISpM5x9" class="form-control"/>
