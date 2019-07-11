@@ -1,7 +1,7 @@
 <?php
 require_once 'ECPay.Payment.Integration.php';
 include("mysql_connect.php");
-$PL = "SELECT * FROM product_list";
+$PL = "SELECT * FROM product_list ORDER BY cost+0 DESC";
 $result = mysqli_query($link,$PL);
 $num_rows = mysqli_num_rows($result);
 $obj = new \ECPay_AllInOne();
