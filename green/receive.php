@@ -45,7 +45,7 @@ $CheckMacValue = ECPay_CheckMacValue::generate( $arParameters, ECPay_HashKey, EC
 if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
     $update = "insert into paylist(CheckMacValue, CustomField1, CustomField2, CustomField3, CustomField4, MerchantID, MerchantTradeNo, PaymentDate, PaymentType, PaymentTypeChargeFee, RtnCode, RtnMsg, SimulatePaid, StoreID, TradeAmt, TradeDate, TradeNo) values('$CheckMacValue','$CustomField1','$CustomField2','$CustomField3','$CustomField4','$MerchantID','$MerchantTradeNo','$PaymentDate','$PaymentType','$PaymentTypeChargeFee','$RtnCode','$RtnMsg','$SimulatePaid','$StoreID','$TradeAmt','$TradeDate','$TradeNo')";
     if(mysqli_query($link,$update)){
-        $greturn="update front set pay='succeeded'";
+        $greturn="update front set pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
         if(mysqli_query($link,$greturn)){            
             echo "<script>alert('資料回傳成功!');</script>";
         }
