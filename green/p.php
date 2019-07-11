@@ -1,6 +1,6 @@
 <?php 
 include("mysql_connect.php");
-$PL = "SELECT * FROM product_list  ORDER BY math_average+0 DESC";
+$PL = "SELECT * FROM product_list  ORDER BY cost+0 DESC";
 $result = mysqli_query($link,$PL);
 $num_rows = mysqli_num_rows($result);
 ?>
@@ -188,7 +188,6 @@ $num_rows = mysqli_num_rows($result);
 }
 </style>
 <body align="center">
-<div data-role="page" id="one">
 
 <div class="container" align="center">
     <h2 style="margin-top: 2%">商品列表</h2>
@@ -204,11 +203,7 @@ $num_rows = mysqli_num_rows($result);
         <span id="spanLast">最後一頁</span>  
         第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
 </div>
-<a href="#two">按照作答次數排名</a>
 </div>
-<div style="width:100%;" style="display:inline">
 
-</div>
-</div>
 </body>
 </html>
