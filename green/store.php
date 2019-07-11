@@ -68,7 +68,7 @@ $update = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantT
 //$obj->CheckOut();
 $Response = (string)$obj->CheckOutString();
 
-echo "<div style=\"display=none\">$Response</div>"; 
+echo "<div style=\"display:none\">$Response</div>"; 
 // 自動將表單送出
 echo '<script>document.getElementById("__ecpayForm").submit();</script>';
 ?>
