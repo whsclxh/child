@@ -240,7 +240,7 @@ $num_rows = mysqli_num_rows($result);
     <input type="hidden" name="ChoosePayment" value="Credit">
     <input type="hidden" name="CreditInstallment" value="12,24" class="form-control"/>
     <br><br>
-    <div align="center"><button type="submit" name="button">綠界線上支付</button></div>
+    <div align="center"><button type="submit" name="button" id="button">綠界線上支付</button></div>
 </form>
 <br>
 <div id="pagiDiv" align="center" style="width:40%">
