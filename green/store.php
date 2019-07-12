@@ -44,27 +44,25 @@ $PaymentType=$_POST['PaymentType'];
 $ItemName=$_POST['ItemName'];
 $TradeDesc=$_POST['TradeDesc'];
 $ChoosePayment=$_POST['ChoosePayment'];
+$CName=$_POST['CName'];
+$Cellphone=$_POST['Cellphone'];
+$Address=$_POST['Address'];
+$Note=$_POST['Note'];
 $merchandise = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay) 
            values('$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemName','$TotalAmount','$TradeDesc','$ChoosePayment','0')";
     if(!(mysqli_query($link,$merchandise))){
         echo "<script>alert('merchandise資料儲存失敗!');</script>";
     }
-
-$CName=$_POST['CName'];
-$Cellphone=$_POST['Cellphone'];
-$Address=$_POST['Address'];
-$Note=$_POST['Note'];
-print_r($_POST);
-/*$customer = "insert into Customer_info(MerchantID,CName,Cellphone,Address,Note) 
+$customer = "insert into Customer_info(MerchantID,CName,Cellphone,Address,Note) 
            values('$MerchantID','$CName','$Cellphone','$Address','$Note')";
     if(!(mysqli_query($link,$customer))){
         echo "<script>alert('customer資料儲存失敗!');</script>";
-    } */
+    }
 //產生訂單(auto submit至ECPay)
 //$obj->CheckOut();
 $Response = (string)$obj->CheckOutString();
 
 echo "<div style=\"display:none\">$Response</div>"; 
 // 自動將表單送出
-/*echo '<script>document.getElementById("__ecpayForm").submit();</script>';*/
+echo '<script>document.getElementById("__ecpayForm").submit();</script>';
 ?>
