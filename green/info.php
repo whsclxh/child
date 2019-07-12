@@ -99,7 +99,7 @@ $TotalAmount=$row[1];
     <h2>備註</h2>
     <div style="border-style:solid; padding:5px; border-width: 1px;">
     <label>備註</label>
-    <textarea style="width :100%;"></textarea>
+    <textarea style="width :100%;" name="Note"></textarea>
 	</div>
 	<input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw"/>
     <input type="hidden" name="MerchantID" value="2000132"/>

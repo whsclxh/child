@@ -16,18 +16,9 @@ $obj->MerchantID  = $_POST['MerchantID'];
 $obj->Send['MerchantTradeNo'] = $_POST['MerchantTradeNo'];
 $obj->Send['MerchantTradeDate'] = $_POST['MerchantTradeDate'];
 $obj->Send['PaymentType'] = $_POST['PaymentType'];
-for($i=0;$i<$num_rows-1;$i++){
-    $row = mysqli_fetch_array($result);
-    if((String)$row[0]==(String)$ItemName){
-        $obj->Send['TotalAmount']=(int)"$row[1]";
-        $TotalAmount=(int)"$row[1]";
-    }else{
-        $obj->Send['TotalAmount']=(int)"5";
-        $TotalAmount=(int)"5";
-    }
-}
 
-//$obj->Send['TotalAmount'] = (int)$_POST['TotalAmount'];
+
+$obj->Send['TotalAmount'] = (int)$_POST['TotalAmount'];
 $obj->Send['TradeDesc'] = $_POST['TradeDesc'];
 $obj->Send['ReturnURL'] = $_POST['ReturnURL'];
 $obj->Send['ChoosePayment'] = $_POST['ChoosePayment'];
@@ -53,15 +44,21 @@ $PaymentType=$_POST['PaymentType'];
 $ItemName=$_POST['ItemName'];
 $TradeDesc=$_POST['TradeDesc'];
 $ChoosePayment=$_POST['ChoosePayment'];
-$update = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay) 
+$merchandise = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay) 
            values('$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemName','$TotalAmount','$TradeDesc','$ChoosePayment','0')";
-    if(mysqli_query($link,$update)){
-
-    }else{
-        echo "<script>alert('資料儲存失敗!');</script>";
+    if(!(mysqli_query($link,$merchandise))){
+        echo "<script>alert('merchandise資料儲存失敗!');</script>";
     }
 
- 
+$CName=$_POST['CName'];
+$Cellphone=$_POST['Cellphone'];
+$Address=$_POST['Address'];
+$Note=$_POST['Note'];
+$customer = "insert into Customer_info(MerchantID,CName,Cellphone,Address,Note) 
+           values('$MerchantID','$CName','$Cellphone','$Address','$Note')";
+    if(!(mysqli_query($link,$customer))){
+        echo "<script>alert('customer資料儲存失敗!');</script>";
+    } 
 //產生訂單(auto submit至ECPay)
 //$obj->CheckOut();
 $Response = (string)$obj->CheckOutString();
