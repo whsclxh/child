@@ -7,6 +7,12 @@ $row = mysqli_fetch_array($result);
 $TotalAmount=$row[1];
 ?>
 <link rel="stylesheet" href="bootstrap/css/sb-admin-2.css" crossorigin="anonymous">
+<style type="text/css">
+	label{
+            display: block;
+            color: #F73678;
+        }
+</style>
 <script type="text/javascript">
 	function getRandom(){
         return Math.floor(Math.random()*15)+5;
@@ -39,6 +45,7 @@ $TotalAmount=$row[1];
 	<label>姓名<input type="text" name="CName" class="form-control"/></label>
     <label>電話<input type="text" name="Cellphone" class="form-control"/></label>
     <label>地址<input type="text" name="Address" class="form-control"/></label>
+    <label>備註<textarea data-val="true" cols="80" data-val-length-max="100"></textarea></label>
 	<input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw"/>
     <input type="hidden" name="MerchantID" value="2000132"/>
     <input type="hidden" name="HashKey" value="5294y06JbISpM5x9"/>
