@@ -66,5 +66,5 @@ $Response = (string)$obj->CheckOutString();
 
 echo "<div style=\"display:none\">$Response</div>"; 
 // 自動將表單送出
-echo '<script>document.getElementById("__ecpayForm").submit();</script>';
+/*echo '<script>document.getElementById("__ecpayForm").submit();</script>';*/
 ?>
