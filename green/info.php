@@ -64,7 +64,7 @@ $TotalAmount=$row[1];
     }
 </script>
 <h3 align="center">寄送填寫資料頁</h3>
-<div style="width: 40%;" align="center">
+<div style="width: 40%; margin: 0 auto;">
 <h2 style="float: left;">訂單資訊</h2>
 <div align="center">
 <table id="hor-minimalist-b">
