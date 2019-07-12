@@ -63,7 +63,7 @@ $TotalAmount=$row[1];
         tradeno.value=a;
     }
 </script>
-<body align="center">
+<div align="center">
 <table id="hor-minimalist-b">
 	<thead>
 		<tr>
@@ -80,6 +80,7 @@ $TotalAmount=$row[1];
 	</tr>
 	</tbody>
 </table>
+</div>
 <form action="store.php" method="POST">
 	<label><span style="color: red;">*</span>姓名</label>
 	<input type="text" name="CName" required="required" class="form-control"/>
@@ -110,4 +111,3 @@ $TotalAmount=$row[1];
     <input type="hidden" name="TotalAmount" <?php echo "value=\"$TotalAmount\""; ?>>
     <button type="submit">前往付款頁面</button>
 </form>
-</body>
