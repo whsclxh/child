@@ -46,11 +46,11 @@ $TotalAmount=$row[1];
 	</tr>
 </table>
 <form action="store.php" method="POST">
-	<label><p style="color: red;">*</p>姓名</label>
+	<label><span style="color: red;">*</span>姓名</label>
 	<input type="text" name="CName" required="required" class="form-control"/>
-    <label><p style="color: red;">*</p>手機</label>
+    <label><span style="color: red;">*</span>手機</label>
     <input type="text" name="Cellphone" required="required" pattern="\d{4}[-]\d{6}" class="form-control"/>
-    <label><p style="color: red;">*</p>地址</label>
+    <label><span style="color: red;">*</span>地址</label>
     <input type="text" name="Address" required="required" class="form-control"/>
     <label>備註</label>
     <textarea cols="100"></textarea>
