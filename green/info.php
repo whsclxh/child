@@ -21,6 +21,7 @@ $TotalAmount=$row[1];
 		font-size: 12px;
 		background: #fff;
 		margin: 45px;
+		margin-left: 0px;
 		width: 100%;
 		border-collapse: collapse;
 		text-align: left;
