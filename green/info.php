@@ -1,6 +1,7 @@
 <?php
 include("mysql_connect.php");
 $ItemName=$_POST['ItemName'];
+$MerchantID=$_POST['MerchantID'];
 $PL = "SELECT * FROM product_list where product='$ItemName'";
 $result = mysqli_query($link,$PL);
 $row = mysqli_fetch_array($result);
@@ -39,10 +40,20 @@ $TotalAmount=$row[1];
     }
 </script>
 <table border="1">
+	<thead>
+		<tr>
+			<th>訂單編號</th>
+			<th>商品</th>
+			<th>價錢</th>
+		</tr>
+	</thead>
+	<tbody>
 	<tr>
+		<td><?php echo "$MerchantID"; ?></td>
 		<td><?php echo "$ItemName"; ?></td>
 		<td><?php echo "$TotalAmount"; ?></td>
 	</tr>
+	</tbody>
 </table>
 <form action="store.php" method="POST">
 	<label><span style="color: red;">*</span>姓名</label>
