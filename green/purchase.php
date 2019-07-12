@@ -104,6 +104,10 @@ $num_rows = mysqli_num_rows($result);
 </style>
 <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="pagination.js"></script>
+    <script>
+    if ( $("input[name='ItemName[]']:checked").length == 0 ) {
+        alert('必須擇一商品');
+    }
     <script type="text/javascript">
         function getRandom(){
         return Math.floor(Math.random()*15)+5;
