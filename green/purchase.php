@@ -105,9 +105,15 @@ $num_rows = mysqli_num_rows($result);
 <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="pagination.js"></script>
     <script>
-    if ( $("input[name='ItemName[]']:checked").length == 0 ) {
-        alert('必須擇一商品');
-    }
+    $("#button").click(function(){
+            var check=$("input[name='ItemName[]']:checked").length;//判斷有多少個方框被勾選
+            if(check==0){
+                alert("您尚未勾選任何項目");
+                return false;//不要提交表單
+            }else{
+                return true;//提交表單
+            }
+        })
     </script>
     <script type="text/javascript">
         function getRandom(){
