@@ -66,7 +66,6 @@ $TotalAmount=$row[1];
 <h3 align="center">寄送填寫資料頁</h3>
 <div style="width: 40%; margin: 0 auto;">
 <h2 style="float: left;">訂單資訊</h2>
-<div align="center">
 <table id="hor-minimalist-b">
 	<thead>
 		<tr>
@@ -84,7 +83,6 @@ $TotalAmount=$row[1];
 	</tbody>
 </table>
 </div>
-</div>
 <form action="store.php" method="POST">
 	<h2>付款人資訊</h2>
 	<div style="border-style:solid; padding:5px; border-width: 1px;">
@@ -99,7 +97,7 @@ $TotalAmount=$row[1];
     <h2>備註</h2>
     <div style="border-style:solid; padding:5px; border-width: 1px;">
     <label>備註</label>
-    <textarea cols="90"></textarea>
+    <textarea style="width :100%;"></textarea>
 	</div>
 	<input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw"/>
     <input type="hidden" name="MerchantID" value="2000132"/>
@@ -120,5 +118,6 @@ $TotalAmount=$row[1];
     <input type="hidden" name="CreditInstallment" value="12,24"/>
     <input type="hidden" name="ItemName" <?php echo "value=\"$ItemName\""; ?>>
     <input type="hidden" name="TotalAmount" <?php echo "value=\"$TotalAmount\""; ?>>
+    <br>
     <button type="submit">前往付款頁面</button>
 </form>
