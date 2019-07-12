@@ -21,7 +21,7 @@ $TotalAmount=$row[1];
 		font-size: 12px;
 		background: #fff;
 		margin: 45px;
-		width: 40%;
+		width: 100%;
 		border-collapse: collapse;
 		text-align: left;
 	}
@@ -63,6 +63,9 @@ $TotalAmount=$row[1];
         tradeno.value=a;
     }
 </script>
+<h2>寄送填寫資料頁</h2>
+<div style="float: left; width: 40%;" >
+<h2>訂單資訊</h2>
 <div align="center">
 <table id="hor-minimalist-b">
 	<thead>
@@ -80,6 +83,7 @@ $TotalAmount=$row[1];
 	</tr>
 	</tbody>
 </table>
+</div>
 </div>
 <form action="store.php" method="POST">
 	<h2>付款人資訊</h2>
