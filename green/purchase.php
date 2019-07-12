@@ -228,6 +228,7 @@ $num_rows = mysqli_num_rows($result);
     <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/clientredirect.php" class="form-control"/>
     <input type="hidden" name="ChoosePayment" value="Credit">
     <input type="hidden" name="CreditInstallment" value="12,24" class="form-control"/>
+    <br><br>
     <div align="center"><button type="submit">綠界線上支付</button></div>
 </form>
 <br>
