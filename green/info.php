@@ -10,12 +10,36 @@ $TotalAmount=$row[1];
 <link rel="stylesheet" href="bootstrap/css/sb-admin-2.css" crossorigin="anonymous">
 <style type="text/css">
 	label{
-            display: block;
-        }
+		display: block;
+    }
     form{
-            width: 40%;
-            margin: 0 auto;
-        }
+        width: 40%;
+        margin: 0 auto;
+    }
+    #hor-minimalist-b{
+		font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+		font-size: 12px;
+		background: #fff;
+		margin: 45px;
+		width: 480px;
+		border-collapse: collapse;
+		text-align: left;
+	}
+	#hor-minimalist-b th{
+		font-size: 14px;
+		font-weight: normal;
+		color: #039;
+		padding: 10px 8px;
+		border-bottom: 2px solid #6678b1;
+	}
+	#hor-minimalist-b td{
+		border-bottom: 1px solid #ccc;
+		color: #669;
+		padding: 6px 8px;
+	}
+	#hor-minimalist-b tbody tr:hover td{
+		color: #009;
+	}
 </style>
 <script type="text/javascript">
 	function getRandom(){
@@ -39,7 +63,7 @@ $TotalAmount=$row[1];
         tradeno.value=a;
     }
 </script>
-<table border="1">
+<table id="hor-minimalist-b">
 	<thead>
 		<tr>
 			<th>訂單編號</th>
