@@ -83,7 +83,7 @@ $TotalAmount=$row[1];
 </div>
 <form action="store.php" method="POST">
 	<h2>付款人資訊</h2>
-	<div style="border-style:solid; padding:5px;">
+	<div style="border-style:solid; padding:5px; border-width: 1px;">
 	<label><span style="color: red;">*</span>姓名</label>
 	<input type="text" name="CName" required="required" class="form-control"/>
     <label><span style="color: red;">*</span>手機</label>
@@ -91,8 +91,9 @@ $TotalAmount=$row[1];
     <label><span style="color: red;">*</span>地址</label>
     <input type="text" name="Address" required="required" class="form-control"/>
     </div>
+    <br><br>
     <h2>備註</h2>
-    <div style="border-style:solid; padding:5px;">
+    <div style="border-style:solid; padding:5px; border-width: 1px;">
     <label>備註</label>
     <textarea cols="90"></textarea>
 	</div>
