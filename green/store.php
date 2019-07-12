@@ -54,11 +54,12 @@ $CName=$_POST['CName'];
 $Cellphone=$_POST['Cellphone'];
 $Address=$_POST['Address'];
 $Note=$_POST['Note'];
-$customer = "insert into Customer_info(MerchantID,CName,Cellphone,Address,Note) 
+print_r($_POST);
+/*$customer = "insert into Customer_info(MerchantID,CName,Cellphone,Address,Note) 
            values('$MerchantID','$CName','$Cellphone','$Address','$Note')";
     if(!(mysqli_query($link,$customer))){
         echo "<script>alert('customer資料儲存失敗!');</script>";
-    } 
+    } */
 //產生訂單(auto submit至ECPay)
 //$obj->CheckOut();
 $Response = (string)$obj->CheckOutString();
