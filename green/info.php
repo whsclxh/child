@@ -1,6 +1,8 @@
 <?php
 include("mysql_connect.php");
 $ItemName=$_POST['ItemName'];
+echo "ItemName[0]";
+echo "ItemName[1]";
 $MerchantID=$_POST['MerchantID'];
 $PL = "SELECT * FROM product_list where product='$ItemName'";
 $result = mysqli_query($link,$PL);
