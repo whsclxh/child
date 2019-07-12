@@ -28,28 +28,35 @@ $obj->Send['ClientRedirectURL'] = $_POST['ClientRedirectURL'];
 $obj->Send['PaymentInfoURL'] = $_POST['PaymentInfoURL'];
 $obj->Send['OrderResultURL'] = $_POST['ReturnURL'];
 //訂單的商品資料
-array_push($obj->Send['Items'], array(
-        'Name' => $_POST['ItemName'],
-        'Price' => $obj->Send['TotalAmount'],
-        'Currency' => "元",
-        'Quantity' => (int)"1"
-    )
-);
+
 $HashKey=$_POST['HashKey'];
 $HashIV=$_POST['HashIV'];
 $MerchantID=$_POST['MerchantID'];
 $MerchantTradeNo=$_POST['MerchantTradeNo'];
 $MerchantTradeDate=$_POST['MerchantTradeDate'];
 $PaymentType=$_POST['PaymentType'];
-$ItemName=$_POST['ItemName'];
 $TradeDesc=$_POST['TradeDesc'];
 $ChoosePayment=$_POST['ChoosePayment'];
 $CName=$_POST['CName'];
 $Cellphone=$_POST['Cellphone'];
 $Address=$_POST['Address'];
 $Note=$_POST['Note'];
+$Product_number=$_POST['Product_number'];
+for ($i=0; $i <$Product_number ; $i++) {
+    $ItemName[$i]=$_POST['ItemName'.$i];
+    $Price[$i]=$_POST['ItemName_cost'.$i];
+    array_push($obj->Send['Items'], array(
+        'Name' => $ItemName[$i],
+        'Price' => $Price[$i],
+        'Currency' => "元",
+        'Quantity' => (int)"1"
+    )
+);
+$ItemNames .=$ItemName[$i].'#';
+}
+
 $merchandise = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay) 
-           values('$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemName','$TotalAmount','$TradeDesc','$ChoosePayment','0')";
+           values('$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemNames','$TotalAmount','$TradeDesc','$ChoosePayment','0')";
     if(!(mysqli_query($link,$merchandise))){
         echo "<script>alert('merchandise資料儲存失敗!');</script>";
     }
