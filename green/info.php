@@ -12,6 +12,10 @@ $TotalAmount=$row[1];
             display: block;
             color: #F73678;
         }
+    form{
+            width: 40%;
+            margin: 0 auto;
+        }
 </style>
 <script type="text/javascript">
 	function getRandom(){
@@ -45,7 +49,7 @@ $TotalAmount=$row[1];
 	<label>姓名<input type="text" name="CName" class="form-control"/></label>
     <label>電話<input type="text" name="Cellphone" class="form-control"/></label>
     <label>地址<input type="text" name="Address" class="form-control"/></label>
-    <label>備註<textarea data-val="true" cols="80" data-val-length-max="100"></textarea></label>
+    <label>備註<textarea cols="80"></textarea></label>
 	<input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw"/>
     <input type="hidden" name="MerchantID" value="2000132"/>
     <input type="hidden" name="HashKey" value="5294y06JbISpM5x9"/>
