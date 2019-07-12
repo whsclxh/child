@@ -52,7 +52,7 @@ $TotalAmount=$row[1];
     <label><span style="color: red;">*</span>地址</label>
     <input type="text" name="Address" required="required" class="form-control"/>
     <label>備註</label>
-    <textarea cols="100"></textarea>
+    <textarea cols="90"></textarea>
 	<input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw"/>
     <input type="hidden" name="MerchantID" value="2000132"/>
     <input type="hidden" name="HashKey" value="5294y06JbISpM5x9"/>
@@ -72,4 +72,5 @@ $TotalAmount=$row[1];
     <input type="hidden" name="CreditInstallment" value="12,24"/>
     <input type="hidden" name="ItemName" <?php echo "value=\"$ItemName\""; ?>>
     <input type="hidden" name="TotalAmount" <?php echo "value=\"$TotalAmount\""; ?>>
+    <button type="submit">前往付款頁面</button>
 </form>
