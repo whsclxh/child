@@ -82,14 +82,20 @@ $TotalAmount=$row[1];
 </table>
 </div>
 <form action="store.php" method="POST">
+	<h2>付款人資訊</h2>
+	<div style="border-style:solid; padding:5px;">
 	<label><span style="color: red;">*</span>姓名</label>
 	<input type="text" name="CName" required="required" class="form-control"/>
     <label><span style="color: red;">*</span>手機</label>
     <input type="text" name="Cellphone" required="required" pattern="\d{4}[-]\d{6}" class="form-control"/>
     <label><span style="color: red;">*</span>地址</label>
     <input type="text" name="Address" required="required" class="form-control"/>
+    </div>
+    <h2>備註</h2>
+    <div style="border-style:solid; padding:5px;">
     <label>備註</label>
     <textarea cols="90"></textarea>
+	</div>
 	<input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw"/>
     <input type="hidden" name="MerchantID" value="2000132"/>
     <input type="hidden" name="HashKey" value="5294y06JbISpM5x9"/>
