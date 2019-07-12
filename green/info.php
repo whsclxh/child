@@ -64,7 +64,8 @@ $TotalAmount=$row[1];
         tradeno.value=a;
     }
 </script>
-<h3 align="center">寄送填寫資料頁</h3>
+<h3 align="center" style="margin-top: 40px;">寄送填寫資料頁</h3>
+<br><br>
 <div style="width: 40%; margin: 0 auto;">
 <h2 style="float: left;">訂單資訊</h2>
 <table id="hor-minimalist-b">
