@@ -10,7 +10,6 @@ $TotalAmount=$row[1];
 <style type="text/css">
 	label{
             display: block;
-            color: #F73678;
         }
     form{
             width: 40%;
