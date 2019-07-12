@@ -63,7 +63,7 @@ $TotalAmount=$row[1];
         tradeno.value=a;
     }
 </script>
-<body align=center>
+<body align="center">
 <table id="hor-minimalist-b">
 	<thead>
 		<tr>
