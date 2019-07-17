@@ -6,106 +6,23 @@ $num_rows = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <head>
     <meta charset="UTF-8">
-    <title></title><style type="text/css">
-    body{
-    }
-    table .table-striped{
-    }
-    table thead tr{
-        text-align: center;
-        height: 30px;
-        background: #deeeee;
-        padding: 5px;
-        margin: 0;
-        border: 0px;
-    }
-    table tbody td{
-        text-align: center;
-        height:30px;
-        margin: 0;
-        padding: 5px;
-        border:0px;
-    }
-    table tbody tr{
-        background-color: #FFFACD;
-    }
-    .span6{
-        /*width:500px;*/
-        float:inherit;
-        margin:10px;
-    }
-    #pagiDiv span{
-        background:#FFFAF0;
-        border-radius: .2em;
-        padding:5px;
-    }
-    table {
-        overflow:hidden;
-        border:1px solid #d3d3d3;
-        background:#fefefe;
-        width:40%;
-        margin:5% auto 0;
-        margin-top: 3%;
-        -moz-border-radius:5px; /* FF1+ */
-        -webkit-border-radius:5px; /* Saf3-4 */
-        border-radius:5px;
-        -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-        -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    }
-    
-    th, td {padding:18px 28px 18px; text-align:center; }
-    
-    th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
-    
-    td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
-    
-    tr.odd-row td {background:#f6f6f6;}
-    table tbody tr  :hover{background:  #FFDD55;}
-    
-    td.first, th.first {text-align:center;}
-    
-    td.last {border-right:none;}
-    tr:first-child th.first {
-        -moz-border-radius-topleft:5px;
-        -webkit-border-top-left-radius:5px; /* Saf3-4 */
-    }
-    
-    tr:first-child th.last {
-        -moz-border-radius-topright:5px;
-        -webkit-border-top-right-radius:5px; /* Saf3-4 */
-    }
-    
-    tr:last-child td.first {
-        -moz-border-radius-bottomleft:5px;
-        -webkit-border-bottom-left-radius:5px; /* Saf3-4 */
-    }
-    
-    tr:last-child td.last {
-        -moz-border-radius-bottomright:5px;
-        -webkit-border-bottom-right-radius:5px; /* Saf3-4 */
-    }
-    td {
-        background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
-        background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
-    }
-    
-    tr.odd-row td {
-        background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
-        background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
-    }
-    
-    th {
-        background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
-        background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
-    }
-</style>
-<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="pagination.js"></script>
-    <script type="text/javascript">
-        function getRandom(){
+    <link rel="stylesheet" href="css/purchase.css" crossorigin="anonymous">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/pagination.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#button").click(function(){
+            if ( $("input[name='ItemName[]']:checked").length == 0 ) {
+                alert('必須擇一商品');
+                return false;
+            }else{
+            document.form1.submit();
+        }
+        })
+    })
+    function getRandom(){
         return Math.floor(Math.random()*15)+5;
     };
     var chars = ['0','1','2','3','4','5','6','7','8','9',
@@ -156,7 +73,7 @@ $num_rows = mysqli_num_rows($result);
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$row[1]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<td><input type=\"checkbox\" name=\"ItemName[]\" data-rule=\"checked\" <?php echo"value=\"$row[0]\""; ?>></td>';
+            tdNode4.innerHTML='<td><input type=\"checkbox\" name=\"ItemName[]\" id=\"ItemName" <?php echo"value=\"$row[0]\""; ?>></td>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
@@ -198,17 +115,12 @@ $num_rows = mysqli_num_rows($result);
         }
     </script>
 </head>
-<style>
-    .right ul li {
-    display:inline;
-}
-</style>
 <body align="center">
 
 <div class="container" align="center">
     <h2 style="margin-top: 2%">商品列表</h2>
     <h3 id="you"></h3>
-<form action="info.php" method="post" name="form1">
+<form action="info.php" method="post" name="form1" id="form1">
 <div id="div1">
 </div>
     <input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw" class="form-control"/>

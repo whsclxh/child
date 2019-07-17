@@ -1,5 +1,13 @@
+<?php session_start(); ?>
+<?php
+if($_SESSION['Account'] == null){
+    echo "<script>alert('您尚未登入!');</script>";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.html>';
+}
+?>
 <?php
 include("mysql_connect.php");
+$Account=$_SESSION['Account'];
 $ItemName=$_POST['ItemName'];
 $Product_number=count($ItemName);
 $MerchantID=$_POST['MerchantID'];
@@ -12,43 +20,13 @@ for($x=0;$x<$Product_number;$x++){
     $cost[$x]=$row[1];
     $TotalAmount+=$cost[$x];
 }
+$sql = "SELECT * FROM user where Account = '$Account'";
+$result = mysqli_query($link,$sql);
+$row = @mysqli_fetch_row($result);
 ?>
-<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" href="bootstrap/css/sb-admin-2.css" crossorigin="anonymous">
-<style type="text/css">
-	label{
-		display: block;
-    }
-    form{
-        width: 40%;
-        margin: 0 auto;
-    }
-    #hor-minimalist-b{
-		font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-		font-size: 12px;
-		background: #fff;
-		margin: 45px;
-		margin-left: 0px;
-		width: 100%;
-		border-collapse: collapse;
-		text-align: left;
-	}
-	#hor-minimalist-b th{
-		font-size: 14px;
-		font-weight: normal;
-		color: #039;
-		padding: 10px 8px;
-		border-bottom: 2px solid #6678b1;
-	}
-	#hor-minimalist-b td{
-		border-bottom: 1px solid #ccc;
-		color: #669;
-		padding: 6px 8px;
-	}
-	#hor-minimalist-b tbody tr:hover td{
-		color: #009;
-	}
-</style>
+<link rel="stylesheet" href="css/info.css" crossorigin="anonymous">
 <script type="text/javascript">
     function get_pruduct_name(x){
         var a='ItemName';
@@ -117,6 +95,54 @@ for($x=0;$x<$Product_number;$x++){
             <?php } ?>            
             };
     </script>
+    <script>
+        $(function(){
+        $(document).ready(function(){
+            $("#PeriodType").change(function(){
+                var PeriodType = $(this).val();
+                if(PeriodType == 'D'){
+                    $("#div3").show().addClass("show");
+                    $("#Frequency").attr("maxlength","3");
+                    $("#Frequency").attr("max","365");
+                    $("#Frequency").attr("placeholder","至少要大於等於1次以上,最多可設365次");
+                    $("#ExecTimes").attr("maxlength","3");
+                    $("#ExecTimes").attr("max","999");
+                    $("#ExecTimes").attr("placeholder","至少要大於等於1次以上,最多可設999次");
+                }else if(PeriodType == 'M'){
+                    $("#div3").show().addClass("show");
+                    $("#Frequency").attr("maxlength","2");
+                    $("#Frequency").attr("max","12");
+                    $("#Frequency").attr("placeholder","至少要大於等於1次以上,最多可設12次");
+                    $("#ExecTimes").attr("maxlength","2");
+                    $("#ExecTimes").attr("max","99");
+                    $("#ExecTimes").attr("placeholder","至少要大於等於1次以上,最多可設99次");
+                }else if(PeriodType == 'Y'){
+                    $("#div3").show().addClass("show");
+                    $("#Frequency").attr("maxlength","1");
+                    $("#Frequency").attr("max","1");
+                    $("#Frequency").attr("placeholder","最多可設1次");
+                    $("#ExecTimes").attr("maxlength","1");
+                    $("#ExecTimes").attr("max","9");
+                    $("#ExecTimes").attr("placeholder","至少要大於等於1次以上,最多可設9次");
+                }else{
+                    $("#div3").hide().removeClass("show");
+                }
+            });
+            $("#Regular_quota").change(function(){
+                if($("input#Regular_quota").prop('checked')){
+                    $("#div2").show().addClass("show");
+                }else {
+                    $("#div2").hide().removeClass("show");
+                    $("#PeriodType").attr("value","0");
+                    $("#Frequency").attr("value","0");
+                    $("#ExecTimes").attr("value","0");
+                    document.getElementById('Frequency').removeAttribute("required");
+                    document.getElementById('ExecTimes').removeAttribute("required");
+                }
+            });
+        });
+        });
+    </script>
 <h3 align="center" style="margin-top: 40px;">寄送填寫資料頁</h3>
 <br><br>
 <div style="width: 40%; margin: 0 auto;">
@@ -127,14 +153,34 @@ for($x=0;$x<$Product_number;$x++){
 <form action="store.php" method="POST">
 	<h2>付款人資訊</h2>
 	<div style="border-style:solid; padding:5px; border-width: 1px;">
-	<label><span style="color: red;">*</span>姓名</label>
-	<input type="text" name="CName" required="required" class="form-control"/>
+    <label><span style="color: red;">*</span>姓名</label>
+    <input type="text" name="CName" required="required" class="form-control" <?php echo "value='$row[4]'";?>/>
     <label><span style="color: red;">*</span>手機</label>
-    <input type="text" name="Cellphone" required="required" pattern="\d{4}[-]\d{6}" class="form-control"/>
+    <input type="text" name="Cellphone" required="required" pattern="\d{4}[-]\d{6}" class="form-control" <?php echo "value='$row[3]'";?>/>
     <label><span style="color: red;">*</span>地址</label>
-    <input type="text" name="Address" required="required" class="form-control"/>
+    <input type="text" name="Address" required="required" class="form-control" <?php echo "value='$row[6]'";?>/>
     </div>
     <br><br>
+    <input type="checkbox" value="1" name="Regular_quota" id="Regular_quota">定期定額
+    <div id="div2" style="display: none;">
+    <h2>定期定額</h2>
+    <div style="border-style:solid; padding:5px; border-width: 1px;">
+    <label><span style="color: red;">*</span>週期種類</label>
+    <select name="PeriodType" id="PeriodType" class="form-control">
+        <option value="0">請選擇</option>
+        <option value="D">天</option>
+        <option value="M">月</option>
+        <option value="Y">年</option>
+    </select>
+    <div id="div3" style="display: none;">
+    <label><span style="color: red;">*</span>執行頻率</label>
+    <input type="number" name="Frequency" id="Frequency" class="form-control" required="required" maxlength="3" min="0" max="365" value="0" />
+    <label><span style="color: red;">*</span>執行次數</label>
+    <input type="number" name="ExecTimes" id="ExecTimes" required="required" class="form-control" maxlength="3" min="0" max="999" value="0" />
+    </div>
+    </div>
+    <br><br>
+    </div>
     <h2>備註</h2>
     <div style="border-style:solid; padding:5px; border-width: 1px;">
     <label>備註</label>
@@ -156,7 +202,7 @@ for($x=0;$x<$Product_number;$x++){
     <input type="hidden" name="ClientBackURL" value="http://whsclxh.ddns.net/green/payEcpay.php"/>
     <input type="hidden" name="PaymentInfoURL" value="http://whsclxh.ddns.net/green/receivepayment.php"/>
     <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/clientredirect.php"/>
-    <input type="hidden" name="ChoosePayment" value="Credit">
+    <input type="hidden" name="ChoosePayment" id="ChoosePayment" value="Credit">
     <input type="hidden" name="CreditInstallment" value="12,24"/>
     <input type="hidden" name="ItemName" <?php echo "value=\"$ItemName\""; ?>>
     <input type="hidden" name="TotalAmount" <?php echo "value=\"$TotalAmount\""; ?>>

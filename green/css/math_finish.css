@@ -1,0 +1,71 @@
+.choose_border{
+     margin: auto;
+     width: 85%;
+     border:1px solid; padding:5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-style: dashed;
+     border-width: 3px;
+     border-color: #FFCCCC;
+}
+.choose_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
+.choose_oddtr{background-color: #fffaf0;}
+.choose_eventr{background-color: #f5f5f5;}
+.choose_one{
+	background-color: #fffded;
+}
+.sub_border{
+     margin: auto;
+     width: 98%;
+     border:1px solid; padding:5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-style: dashed;
+     border-width: 3px;
+     border-color: #FFCCCC;
+}
+.sub_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
+.sub_oddtr{background-color: #f5fffa;}
+.sub_eventr{background-color: #faf0e6;}
+.sub_one{
+	background-color: #fffded;
+}
+.big_border{
+     margin: auto;
+     width: 40%;
+     border:1px solid; padding:5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-style: dashed;
+     border-width: 3px;
+     border-color: #FFCCCC;
+}
+.big_table{border:1px solid #669999; width: 100%; border-collapse:collapse;}
+.big_oddtd{background-color: #fffff0;}
+.big_eventd{background-color: #E8FFFF;}
+.big_one{
+	background-color: #fffded;
+}
+.multistage_border{
+     margin: auto;
+}
+.multistage_table_odd{border:1px solid transparent; border-collapse:collapse;}
+.add_border{
+     margin: auto;
+     width: 80%;
+     border:1px solid; padding:5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border-style: dashed;
+     border-width: 3px;
+     border-color: #FFCCCC;
+}
+.add_table_odd{border:1px solid #669999; width: 100%; border-collapse:collapse; background-color: #F2FFFF;}
+.add_table_even{border:1px solid #669999; width: 100%; border-collapse:collapse; background-color: #FFF7E8;}
+.add_table_space{width: 2%;}
+.add_table_picture{width: 20%;}
+.add_table_info{width: 5%;}

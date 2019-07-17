@@ -5,29 +5,35 @@ $PL = "SELECT * FROM product_list ORDER BY cost+0 ASC";
 $result = mysqli_query($link,$PL);
 $num_rows = mysqli_num_rows($result);
 $obj = new \ECPay_AllInOne();
- 
 //服務參數
 $obj->ServiceURL  = $_POST['ServiceURL'];
 $obj->HashKey     = $_POST['HashKey'];
 $obj->HashIV      = $_POST['HashIV'];
 $obj->MerchantID  = $_POST['MerchantID'];
- 
 //
 $obj->Send['MerchantTradeNo'] = $_POST['MerchantTradeNo'];
 $obj->Send['MerchantTradeDate'] = $_POST['MerchantTradeDate'];
 $obj->Send['PaymentType'] = $_POST['PaymentType'];
-
-
 $obj->Send['TotalAmount'] = (int)$_POST['TotalAmount'];
 $obj->Send['TradeDesc'] = $_POST['TradeDesc'];
 $obj->Send['ReturnURL'] = $_POST['ReturnURL'];
 $obj->Send['ChoosePayment'] = $_POST['ChoosePayment'];
-$obj->Send['CreditInstallment'] = $_POST['CreditInstallment'];
+//$obj->Send['CreditInstallment'] = $_POST['CreditInstallment'];
 $obj->Send['ClientBackURL'] = $_POST['ClientBackURL'];
 $obj->Send['ClientRedirectURL'] = $_POST['ClientRedirectURL'];
 $obj->Send['PaymentInfoURL'] = $_POST['PaymentInfoURL'];
 $obj->Send['OrderResultURL'] = $_POST['ReturnURL'];
+$obj->Send['PeriodAmount'] = $_POST['TotalAmount'];
+$obj->Send['PeriodType'] = $_POST['PeriodType'];
+$obj->Send['Frequency'] = $_POST['Frequency'];
+$obj->Send['ExecTimes'] = $_POST['ExecTimes'];
 //訂單的商品資料
+$arPayMentExtend = new \ECPay_Credit();
+$arPayMentExtend->arPayMentExtend['CreditInstallment'] = $_POST['CreditInstallment'];
+$arPayMentExtend->arPayMentExtend['PeriodAmount'] = $_POST['TotalAmount'];
+$arPayMentExtend->arPayMentExtend['PeriodType'] = $_POST['PeriodType'];
+$arPayMentExtend->arPayMentExtend['Frequency'] = $_POST['Frequency'];
+$arPayMentExtend->arPayMentExtend['ExecTimes'] = $_POST['ExecTimes']; 
 
 $HashKey=$_POST['HashKey'];
 $HashIV=$_POST['HashIV'];
@@ -42,6 +48,10 @@ $Cellphone=$_POST['Cellphone'];
 $Address=$_POST['Address'];
 $Note=$_POST['Note'];
 $Product_number=$_POST['Product_number'];
+$PeriodAmount = (int)$_POST['TotalAmount'];
+$PeriodType = (string)$_POST['PeriodType'];
+$Frequency = (int)$_POST['Frequency'];
+$ExecTimes = (int)$_POST['ExecTimes'];
 for ($i=0; $i <$Product_number ; $i++) {
     $ItemName[$i]=$_POST['ItemName'.$i];
     $Price[$i]=$_POST['ItemName_cost'.$i];
@@ -54,9 +64,8 @@ for ($i=0; $i <$Product_number ; $i++) {
 );
 $ItemNames .=$ItemName[$i].'#';
 }
-
-$merchandise = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay) 
-           values('$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemNames','$TotalAmount','$TradeDesc','$ChoosePayment','0')";
+$merchandise = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay,PeriodAmount,PeriodType,Frequency,ExecTimes) 
+           values('$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemNames','$TotalAmount','$TradeDesc','$ChoosePayment','0','$PeriodAmount','$PeriodType','$Frequency','$ExecTimes')";
     if(!(mysqli_query($link,$merchandise))){
         echo "<script>alert('merchandise資料儲存失敗!');</script>";
     }
@@ -69,7 +78,7 @@ $customer = "insert into Customer_info(MerchantID,CName,Cellphone,Address,Note)
 //$obj->CheckOut();
 $Response = (string)$obj->CheckOutString();
 
-echo "<div style=\"display:none\">$Response</div>"; 
+echo "<div style=\"display:none\">$Response</div>";
 // 自動將表單送出
 echo '<script>document.getElementById("__ecpayForm").submit();</script>';
 ?>
