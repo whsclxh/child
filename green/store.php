@@ -82,6 +82,10 @@ $customer = "insert into Customer_info(MerchantID,CName,Cellphone,Address,Note)
     if(!(mysqli_query($link,$customer))){
         echo "<script>alert('customer資料儲存失敗!');</script>";
     }
+$cart = "update shopping_cart set MerchantTradeNo='$MerchantTradeNo";
+    if(!(mysqli_query($link,$cart))){
+        echo "<script>alert('cart資料儲存失敗!');</script>";
+    }
 //產生訂單(auto submit至ECPay)
 //$obj->CheckOut();
 $Response = (string)$obj->CheckOutString();
