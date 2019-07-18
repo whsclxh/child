@@ -25,7 +25,7 @@ $TradeNo=$_POST['TradeNo'];
 $sql1 = "SELECT * FROM paylist WHERE Account='$Account'";
 $result1 = mysqli_query($link,$sql1);
 $paylistr = @mysqli_fetch_all($result1);
-$a=cost($paylistr);
+$a=count($paylistr[0]);
 echo $a;
 print_r($paylistr[0]);
 
