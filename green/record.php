@@ -157,9 +157,9 @@ $paylistrow = mysqli_num_rows($result);
             var tdNode2=trNode.insertCell();
             tdNode2.innerHTML='<?php echo "$row[6]"; ?>';
             var tdNode3=trNode.insertCell();
-            tdNode3.innerHTML='<?php echo "$row[9]"; ?>';
+            tdNode3.innerHTML='<?php echo "$row[13]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<?php echo "$row[13]"; ?>';
+            tdNode4.innerHTML='<?php echo "$row[8]"; ?>';
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML="<?php echo "$row[12]"; ?>";
             <?php } ?>
@@ -218,6 +218,8 @@ $paylistrow = mysqli_num_rows($result);
 <div id="div1">
 </div>
 </form>
+<br>
+<br>
 <div id="pagiDiv" align="center" style="width:40%">
         <span id="spanFirst">第一頁</span>  
         <span id="spanPre">上一頁</span>  
@@ -228,9 +230,7 @@ $paylistrow = mysqli_num_rows($result);
 <div style="width:100%;" style="display:inline">
 <div class="right" style="float:right; text-align:center; display:inline" >
   	<ul>
-      <li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
-      |
-      <li><a href="record.php" data-ajax="false">回到紀錄 </a></li>
+      <li><a href="purchase.php" data-ajax="false">回到商品頁面 </a></li>
     </ul>
     </div>
 </div>
