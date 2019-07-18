@@ -64,8 +64,8 @@ for ($i=0; $i <$Product_number ; $i++) {
 );
 $ItemNames .=$ItemName[$i].'#';
 }
-$merchandise = "insert into front(HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay,PeriodAmount,PeriodType,Frequency,ExecTimes) 
-           values('$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemNames','$TotalAmount','$TradeDesc','$ChoosePayment','0','$PeriodAmount','$PeriodType','$Frequency','$ExecTimes')";
+$merchandise = "insert into front(Account,cardinal,HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay,PeriodAmount,PeriodType,Frequency,ExecTimes) 
+           values('$Account',' ','$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemNames','$TotalAmount','$TradeDesc','$ChoosePayment','0','$PeriodAmount','$PeriodType','$Frequency','$ExecTimes')";
     if(!(mysqli_query($link,$merchandise))){
         echo "<script>alert('merchandise資料儲存失敗!');</script>";
     }

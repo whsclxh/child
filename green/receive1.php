@@ -52,14 +52,14 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
         $delete_cart="DELETE FROM shopping_cart WHERE MerchantTradeNo='$MerchantTradeNo'";  //刪除資料
         mysqli_query($link,$delete_cart)or die ("無法刪除".mysqli_error()); //執行sql語法
         if(mysqli_query($link,$update)){
-            $greturn="update front set pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
+            $greturn="update front set cardinal='$cardinal',pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
         if(mysqli_query($link,$greturn)){            
             echo '<meta http-equiv=REFRESH CONTENT=0;url=receive.php>';
         }else{
             die("pay成功儲存失敗".mysqli_error());
         }
     }else{
-        $greturn="update front set pay='failed' where MerchantTradeNo='$MerchantTradeNo'";
+        $greturn="update front set cardinal='$cardinal',pay='failed' where MerchantTradeNo='$MerchantTradeNo'";
         mysqli_query($link,$greturn)or die ("pay失敗儲存失敗".mysql_error()); //執行sql語法
     }
     }else{
@@ -68,13 +68,13 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
         $delete_cart="DELETE FROM shopping_cart WHERE MerchantTradeNo='$MerchantTradeNo'";  //刪除資料
         mysqli_query($link,$delete_cart)or die ("無法刪除".mysqli_error()); //執行sql語法
         if(mysqli_query($link,$update)){
-            $greturn="update front set pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
+            $greturn="update front set cardinal='$cardinal',pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
         if(mysqli_query($link,$greturn)){            
         }else{
             die("pay成功儲存失敗".mysqli_error());
         }
     }else{
-        $greturn="update front set pay='failed' where MerchantTradeNo='$MerchantTradeNo'";
+        $greturn="update front set cardinal='$cardinal',pay='failed' where MerchantTradeNo='$MerchantTradeNo'";
         mysqli_query($link,$greturn)or die ("pay失敗儲存失敗".mysql_error()); //執行sql語法
     }
     }
