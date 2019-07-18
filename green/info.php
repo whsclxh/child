@@ -2,7 +2,7 @@
 <?php
 if($_SESSION['Account'] == null){
     echo "<script>alert('您尚未登入!');</script>";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.html>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=Home.html>';
 }
 ?>
 <?php

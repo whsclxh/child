@@ -255,7 +255,7 @@ if($_SESSION['Account'] != null){
 }
 else{   
         echo "<script>alert('技術上失誤,請洽服務人員!');</script>";
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=Home.php>';
 }
 mysqli_close($link);
 ?>

@@ -27,12 +27,12 @@ if($_SESSION['Account'] != null && $Password != null){
         $sql = "update user set Email='$Email',Password='$Password',Phone='$Phone',Name='$Name',Gender='$Gender',Address='$Address',Zipcode='$Zipcode',Birth='$Birth' where Account='$id'";
         if(mysqli_query($link, $sql)){
                 echo "<script>alert('修改成功!');</script>";
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.html>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=Home.html>';
                 unset($_SESSION['Account']);
         }
         else {   
                 echo "<script>alert('修改失敗,請洽服務人員!');</script>";
-                echo '<meta http-equiv=REFRESH CONTENT=2;url=Topic.php>';
+                echo '<meta http-equiv=REFRESH CONTENT=0;url=Topic.php>';
         }
 }
 // else if($pw == null || $pw2 == null || $pw != $pw2) {
@@ -41,7 +41,7 @@ if($_SESSION['Account'] != null && $Password != null){
 // }
 else {
         echo "<script>alert('技術上失誤,請洽服務人員!');</script>";
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=Topic.html>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=Topic.html>';
 }
 
 

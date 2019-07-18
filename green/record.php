@@ -3,7 +3,7 @@
 include("mysql_connect.php");
 if($_SESSION['Account'] == null){
     echo "<script>alert('您尚未登入!');</script>";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.html>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=Home.html>';
 }
 $Account = $_SESSION['Account'];
 $PL = "SELECT * FROM front WHERE Account='$Account' and cardinal!=' ' ORDER BY cardinal+0 DESC";

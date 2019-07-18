@@ -2,7 +2,7 @@
 <?php
 if($_SESSION['Account'] == null){
     echo "<script>alert('您尚未登入!');</script>";
-    echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.html>';
+    echo '<meta http-equiv=REFRESH CONTENT=0;url=Home.html>';
 }
 ?>
 <?php
@@ -20,10 +20,10 @@ if($checkr==null){
 							 ItemName11,ItemName12,ItemName13,ItemName14,ItemName15,ItemName16,ItemName17,ItemName18,ItemName19,ItemName20)
 					values('$Account','$Product_number','$ItemName[0]','$ItemName[1]','$ItemName[2]','$ItemName[3]','$ItemName[5]','$ItemName[5]','$ItemName[6]','$ItemName[7]','$ItemName[8]','$ItemName[9]','$ItemName[10]','$ItemName[11]','$ItemName[12]','$ItemName[13]','$ItemName[14]','$ItemName[15]','$ItemName[16]','$ItemName[17]','$ItemName[18]','$ItemName[19]')";
 if(mysqli_query($link,$cart)){
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=shopping_cart.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=shopping_cart.php>';
 }else{
         echo "<script>alert('failed');</script>";
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=purchase.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=purchase.php>';
  }
 }else{
 	$Merge_Item=Array();
