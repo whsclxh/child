@@ -6,7 +6,7 @@ if($_SESSION['Account'] == null){
     echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.html>';
 }
 $Account = $_SESSION['Account'];
-$PL = "SELECT * FROM front WHERE Account='$Account' ORDER BY cardinal+0 DESC";
+$PL = "SELECT * FROM front WHERE Account='$Account' and cardinal!=' ' ORDER BY cardinal+0 DESC";
 $result = mysqli_query($link,$PL);
 $paylistrow = mysqli_num_rows($result);
 ?>
@@ -159,7 +159,7 @@ $paylistrow = mysqli_num_rows($result);
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$row[9]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<?php echo "$row[8]"; ?>';
+            tdNode4.innerHTML='<?php echo "$row[13]"; ?>';
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML="<?php echo "$row[12]"; ?>";
             <?php } ?>
