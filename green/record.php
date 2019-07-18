@@ -107,8 +107,8 @@ $paylistrow = mysqli_num_rows($result);
         background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
     }
 </style>
-<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="pagination.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/pagination.js"></script>
     <script type="text/javascript">
         function go(v){
             var a = document.getElementById("math_data");                                         //設置input value
