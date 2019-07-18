@@ -243,7 +243,7 @@ if($_SESSION['Account'] != null){
                 </fieldset>
                 <br>
                 <div>
-                    <button class='btn btn-primary' onclick="javascript:location.href='Topic.php'">返回</button>
+                    <button class='btn btn-primary' onclick="javascript:location.href='purchase.php'">返回</button>
                         
                     <button type='submit' class='btn btn-primary' id='button' name="button">提交</button>
                 </div>

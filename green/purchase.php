@@ -80,8 +80,6 @@ $num_rows = mysqli_num_rows($result);
 </head>
 <body>
     <div id="header" name="header">
-        <span><a href="purchase.php">purchase</a></span>
-        |
         <span><a href="update.php">update</a></span>
         |
         <span><a href="record.php">record</a></span>
