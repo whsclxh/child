@@ -149,19 +149,19 @@ $paylistrow = mysqli_num_rows($result);
             <?php
             $sql = "SELECT * FROM front where Account = '$Account' AND cardinal = '$x'";
             $result = mysqli_query($link,$sql);
-            $score_sql = @mysqli_fetch_row($result);
+            $row_sql = @mysqli_fetch_row($result);
             ?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
             tdNode1.innerHTML="<?php echo $s; ?>";
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<?php echo "$row[6]"; ?>';
+            tdNode2.innerHTML='<?php echo "$row_sql[6]"; ?>';
             var tdNode3=trNode.insertCell();
-            tdNode3.innerHTML='<?php echo "$row[13]"; ?>';
+            tdNode3.innerHTML='<?php echo "$row_sql[13]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<?php echo "$row[8]"; ?>';
+            tdNode4.innerHTML='<?php echo "$row_sql[8]"; ?>';
             var tdNode5=trNode.insertCell();
-            tdNode5.innerHTML="<?php echo "$row[12]"; ?>";
+            tdNode5.innerHTML="<?php echo "$row_sql[12]"; ?>";
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
