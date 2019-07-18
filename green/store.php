@@ -1,4 +1,12 @@
+<?php session_start(); ?>
 <?php
+if($_SESSION['Account'] == null){
+    echo "<script>alert('您尚未登入!');</script>";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.html>';
+}
+?>
+<?php
+$Account=$_SESSION['Account'];
 require_once 'ECPay.Payment.Integration.php';
 include("mysql_connect.php");
 $PL = "SELECT * FROM product_list ORDER BY cost+0 ASC";
