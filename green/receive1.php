@@ -22,12 +22,6 @@ $StoreID=$_POST['StoreID'];
 $TradeAmt=$_POST['TradeAmt'];
 $TradeDate=$_POST['TradeDate'];
 $TradeNo=$_POST['TradeNo'];
-$sql1 = "SELECT * FROM paylist WHERE Account='$Account'";
-$result1 = mysqli_query($link,$sql1);
-$paylistr = @mysqli_fetch_all($result1);
-$a=count($paylistr[0]);
-echo $a;
-print_r($paylistr[0]);
 
 // 重新整理回傳參數。
 $arParameters = $_POST;
@@ -46,7 +40,11 @@ foreach ($arParameters as $keys => $value) {
         $arFeedback[$keys] = $value;
     }
 }
- 
+$sql1 = "SELECT * FROM paylist WHERE Account='$Account'";
+$result1 = mysqli_query($link,$sql1);
+$paylistr = @mysqli_fetch_all($result1);
+mysqli_free_result ( $paylistr );
+$amount=count($paylistr);
 // 計算出 CheckMacValue
 $CheckMacValue = ECPay_CheckMacValue::generate( $arParameters, ECPay_HashKey, ECPay_HashIV );
 if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
