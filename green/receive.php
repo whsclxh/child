@@ -6,6 +6,8 @@ $cardinal=$_POST['cardinal'];
 $sql1 = "SELECT * FROM paylist where Account = '$Account' and cardinal=$cardinal";
 $result1 = mysqli_query($link,$sql1);
 $paylistr = @mysqli_fetch_row($result1);
+$delete_front="DELETE FROM front WHERE Account='$Account' and cardinal=' ' ";  //刪除資料
+mysqli_query($link,$delete_front)or die ("無法刪除".mysqli_error()); //執行sql語法
 ?>
 <link rel="stylesheet" href="css/receive.css" crossorigin="anonymous">
 <!DOCTYPE html>
