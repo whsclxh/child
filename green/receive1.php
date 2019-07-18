@@ -70,7 +70,6 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
         if(mysqli_query($link,$update)){
             $greturn="update front set pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
         if(mysqli_query($link,$greturn)){            
-            echo '<meta http-equiv=REFRESH CONTENT=0;url=receive.php>';
         }else{
             die("pay成功儲存失敗".mysqli_error());
         }
@@ -85,4 +84,10 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
 } 
 // 接收到資訊回應綠界
 
+?>
+<form id=form1 action="receive.php" method="post">
+    <input type="hidden" name="cardinal" <?php echo "value='$cardinal'"; ?>>
+</form>
+<?php
+echo '<script>document.getElementById("form1").submit();</script>';
 ?>
