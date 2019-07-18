@@ -8,21 +8,30 @@ if($_SESSION['Account'] == null){
 <?php
 include("mysql_connect.php");
 $Account=$_SESSION['Account'];
-$ItemName=$_POST['ItemName'];
-$Product_number=count($ItemName);
-$MerchantID=$_POST['MerchantID'];
+$list = "SELECT * FROM shopping_cart where Account = '$Account'";
+$result = mysqli_query($link,$list);
+$listr = @mysqli_fetch_row($result);
+
+$Product_number=$listr[1];
 $TotalAmount=0;
+$multiple=array();
 $cost=array();
-for($x=0;$x<$Product_number;$x++){
-    $PL = "SELECT * FROM product_list where product='$ItemName[$x]'";
+for($x=3;$x<$Product_number+3;$x++){
+    $PL = "SELECT * FROM product_list where product='$listr[$x]'";
     $result = mysqli_query($link,$PL);
     $row = mysqli_fetch_array($result);
-    $cost[$x]=$row[1];
-    $TotalAmount+=$cost[$x];
+    $cost[$x-3]=$row[1];
+    $ItemName[$x-3]=$listr[$x];    
 }
+
 $sql = "SELECT * FROM user where Account = '$Account'";
 $result = mysqli_query($link,$sql);
 $row = @mysqli_fetch_row($result);
+
+for ($i=0; $i <$Product_number ; $i++) {
+    $qua[$i]=$_POST['qua'.$i];
+    $TotalAmount+=$cost[$i]*$qua[$i];
+}
 ?>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" href="bootstrap/css/sb-admin-2.css" crossorigin="anonymous">
@@ -33,7 +42,11 @@ $row = @mysqli_fetch_row($result);
         return a+x.toString();
     }
     function get_cost_name(x){
-        var a='ItemName_cost';
+        var a='cost';
+        return a+x.toString();
+    }
+    function get_qua_name(x){
+        var a='qua';
         return a+x.toString();
     }
 	function getRandom(){
@@ -63,13 +76,18 @@ $row = @mysqli_fetch_row($result);
             tableNode.setAttribute("class","hor-minimalist-b");
             //上面确定了 现在开始创建
             <?php for($x=0;$x< $Product_number;$x++){ ?>
+            <?php $z=$x+3; ?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
-            tdNode1.innerHTML='<?php echo "$MerchantID"; ?>';
+            tdNode1.innerHTML='2000132';
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<?php echo "$ItemName[$x]" ?>';
+            tdNode2.innerHTML='<?php echo "$listr[$z]" ?>';
             var tdNode3=trNode.insertCell();
-            tdNode3.innerHTML='<?php echo "$cost[$x]"; ?>';
+            tdNode3.innerHTML='<?php echo "$qua[$x]"; ?>';
+            var tdNode4=trNode.insertCell();
+            tdNode4.innerHTML='<?php echo "$cost[$x]"; ?>';
+            var tdNode5=trNode.insertCell();
+            tdNode5.innerHTML='<?php echo $qua[$x]*$cost[$x]; ?>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("hor-minimalist-b");
@@ -80,18 +98,27 @@ $row = @mysqli_fetch_row($result);
             var cell1 = row.insertCell(1);
             cell1.innerHTML = "<b>商品名稱</b>";
             var cell2 = row.insertCell(2);            
-            cell2.innerHTML = "<b>價錢</b>";
+            cell2.innerHTML = "<b>數量</b>";
+            var cell3 = row.insertCell(3);            
+            cell3.innerHTML = "<b>價錢</b>";
+            var cell4 = row.insertCell(4);            
+            cell4.innerHTML = "<b>小計</b>";
             <?php for($y=0;$y< $Product_number;$y++){ ?>
             var product_input=document.createElement("input");
             product_input.setAttribute("type","hidden");
             product_input.setAttribute("name",get_pruduct_name(<?php echo "$y"; ?>));
             product_input.setAttribute("value","<?php echo "$ItemName[$y]";?>");
             document.getElementById("hideinput").appendChild(product_input);
-            var product_input=document.createElement("input");
-            product_input.setAttribute("type","hidden");
-            product_input.setAttribute("name",get_cost_name(<?php echo "$y"; ?>));
-            product_input.setAttribute("value","<?php echo "$cost[$y]";?>");
-            document.getElementById("hideinput").appendChild(product_input);
+            var cost_input=document.createElement("input");
+            cost_input.setAttribute("type","hidden");
+            cost_input.setAttribute("name",get_cost_name(<?php echo "$y"; ?>));
+            cost_input.setAttribute("value","<?php echo "$cost[$y]";?>");
+            document.getElementById("hideinput").appendChild(cost_input);
+            var qua_input=document.createElement("input");
+            qua_input.setAttribute("type","hidden");
+            qua_input.setAttribute("name",get_qua_name(<?php echo "$y"; ?>));
+            qua_input.setAttribute("value","<?php echo "$qua[$y]";?>");
+            document.getElementById("hideinput").appendChild(qua_input);
             <?php } ?>            
             };
     </script>

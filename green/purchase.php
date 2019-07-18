@@ -1,5 +1,17 @@
+<?php session_start(); ?>
+<?php
+if($_SESSION['Account'] == null){
+    echo "<script>alert('您尚未登入!');</script>";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.html>';
+}
+?>
 <?php 
 include("mysql_connect.php");
+$Account=$_SESSION['Account'];
+$list = "SELECT * FROM shopping_cart where Account = '$Account'";
+$listre = mysqli_query($link,$list);
+$listr = @mysqli_fetch_row($listre);
+
 $PL = "SELECT * FROM product_list  ORDER BY cost+0 DESC";
 $result = mysqli_query($link,$PL);
 $num_rows = mysqli_num_rows($result);
@@ -8,20 +20,31 @@ $num_rows = mysqli_num_rows($result);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/purchase.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/purchase.css">
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/pagination.js"></script>
     <script>
-    $(document).ready(function(){
-        $("#button").click(function(){
-            if ( $("input[name='ItemName[]']:checked").length == 0 ) {
-                alert('必須擇一商品');
-                return false;
-            }else{
+    var cart=[];
+    <?php for($q=1;$q<=$num_rows;$q++){ ?>
+    $(document).ready(function(){                
+        $("#ItemName<?php echo $q; ?>").click(function(){
+            var product=$(this).val();
+            <?php for($k=3;$k<$listr[1]+3;$k++){?>
+                if(product=='<?php echo $listr[$k]; ?>'){
+                    alert('此商品已在購物車中!');
+                    return false;
+                }
+            <?php } ?> 
+            var input=document.createElement("input");
+            input.setAttribute("name","insert");
+            input.setAttribute("id","insert");
+            input.setAttribute("value",product);
+            input.setAttribute("type","hidden");
+            document.getElementById("hideinput").appendChild(input);
             document.form1.submit();
-        }
         })
     })
+    <?php } ?>
     function getRandom(){
         return Math.floor(Math.random()*15)+5;
     };
@@ -53,12 +76,44 @@ $num_rows = mysqli_num_rows($result);
         var lastSpan;
         var pageNumSpan;
         var currPageSpan;
+    </script>
+</head>
+<body>
+    <div id="header" name="header">
+        <span><a href="purchase.php">purchase</a></span>
+        |
+        <span><a href="update.php">update</a></span>
+        |
+        <span><a href="record.php">record</a></span>
+        |
+        <span><a href="logout.php">logout</a></span>
+        |
+        <span id="shopping_cart" name="shopping_cart"><a href="shopping_cart.php">shopping_cart(<?php echo $listr[1]; ?>)</a></span>  
+    </div>
+<form action="insert_cart.php" method="post" name="form1" id="form1">
+    <div id="hideinput"></div>
+<div class="container" align="center">
+    <h2 style="margin-top: 2%">商品列表</h2>
+    <h3 id="you"></h3>
 
-        window.onload=function(){
-            //页面标签变量
-            var tradeno=document.getElementById('MerchantTradeNo');
-            tradeno.value=a;
-            tableNode=document.createElement("table");//获得对象
+    <div id="div1"></div>
+    <br>
+    
+
+<div id="pagiDiv" align="center" style="width:40%">
+        <span id="spanFirst">第一頁</span>  
+        <span id="spanPre">上一頁</span>  
+        <span id="spanNext">下一頁</span>  
+        <span id="spanLast">最後一頁</span>  
+        第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
+</div>
+</div>
+</form>
+
+</body>
+</html>
+<script type="text/javascript">
+        tableNode=document.createElement("table");//获得对象
             tableNode.setAttribute("id","table");
             tableNode.setAttribute("cellspacing","0");
             tableNode.setAttribute("class","table table-striped");
@@ -73,7 +128,7 @@ $num_rows = mysqli_num_rows($result);
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$row[1]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<td><input type=\"checkbox\" name=\"ItemName[]\" id=\"ItemName" <?php echo"value=\"$row[0]\""; ?>></td>';
+            tdNode4.innerHTML='<td><button type=\"button\" name=\"ItemName<?php echo $x; ?>\" id=\"ItemName<?php echo $x; ?>\" <?php echo"value=\"$row[0]\""; ?>>放入購物車</td>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
@@ -112,46 +167,5 @@ $num_rows = mysqli_num_rows($result);
         /* For removing the last border */
         $("table td:last-child, table th:last-child").addClass("last");
          });
-        }
-    </script>
-</head>
-<body align="center">
-
-<div class="container" align="center">
-    <h2 style="margin-top: 2%">商品列表</h2>
-    <h3 id="you"></h3>
-<form action="info.php" method="post" name="form1" id="form1">
-<div id="div1">
-</div>
-    <input type="hidden" name="API_URL" value="https://payment-stage.ecpay.com.tw" class="form-control"/>
-    <input type="hidden" name="MerchantID" value="2000132" class="form-control"/>
-    <input type="hidden" name="HashKey" value="5294y06JbISpM5x9" class="form-control"/>
-    <input type="hidden" name="HashIV" value="v77hoKGq4kWxNNIS" class="form-control"/>
-    <input type="hidden" name="ServiceURL" value="https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5" class="form-control"/>
-    <input type="hidden" name="MerchantTradeNo" id="MerchantTradeNo" class="form-control"/>
-    <input type="hidden" name="MerchantTradeDate" value="2019/08/30 12:34:56" class="form-control"/>
-    <input type="hidden" name="PaymentType" value="aio" class="form-control"/>
-    <input type="hidden" name="TotalAmount" value="999" class="form-control"/>
-    <input type="hidden" name="TradeDesc" value="Desc" class="form-control"/>
-    <input type="hidden" name="ReturnURL" value="http://whsclxh.ddns.net/green/receive.php" class="form-control"/>
-    <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/receive.php" class="form-control"/>
-    <input type="hidden" name="ClientBackURL" value="http://whsclxh.ddns.net/green/payEcpay.php" class="form-control"/>
-    <input type="hidden" name="PaymentInfoURL" value="http://whsclxh.ddns.net/green/receivepayment.php" class="form-control"/>
-    <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/clientredirect.php" class="form-control"/>
-    <input type="hidden" name="ChoosePayment" value="Credit">
-    <input type="hidden" name="CreditInstallment" value="12,24" class="form-control"/>
-    <br><br>
-    <div align="center"><button type="submit" name="button" id="button">綠界線上支付</button></div>
-</form>
-<br>
-<div id="pagiDiv" align="center" style="width:40%">
-        <span id="spanFirst">第一頁</span>  
-        <span id="spanPre">上一頁</span>  
-        <span id="spanNext">下一頁</span>  
-        <span id="spanLast">最後一頁</span>  
-        第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
-</div>
-</div>
-
-</body>
-</html>
+        
+</script>

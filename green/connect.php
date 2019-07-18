@@ -19,7 +19,7 @@ $row = @mysqli_fetch_row($result);
 if($id != null && $pw != null && $row[0] == $id && $row[2] == $pw){
         //將帳號寫入session，方便驗證使用者身份
         $_SESSION['Account'] = $id;
-        echo '<meta http-equiv=REFRESH CONTENT=1;url=Topic.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=1;url=purchase.php>';
 }
 else{
         echo '<meta http-equiv=REFRESH CONTENT=1;url=Home.html>';
