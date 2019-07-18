@@ -40,22 +40,21 @@ foreach ($arParameters as $keys => $value) {
         $arFeedback[$keys] = $value;
     }
 }
-$sql1 = "SELECT * FROM paylist WHERE Account='$Account'";
-$result1 = mysqli_query($link,$sql1);
-$paylistr = @mysqli_fetch_all($result1);
-mysqli_free_result ( $result1);
-$amount=count($paylistr);
+$PL = "SELECT * FROM paylist ORDER BY cost+0 DESC WHERE Account='$Account'";
+$result = mysqli_query($link,$PL);
+$row = @mysqli_fetch_row($result);
 // 計算出 CheckMacValue
 $CheckMacValue = ECPay_CheckMacValue::generate( $arParameters, ECPay_HashKey, ECPay_HashIV );
 if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
-    $update = "insert into paylist(Account,CheckMacValue, CustomField1, CustomField2, CustomField3, CustomField4, MerchantID, MerchantTradeNo, PaymentDate, PaymentType, PaymentTypeChargeFee, RtnCode, RtnMsg, SimulatePaid, StoreID, TradeAmt, TradeDate, TradeNo) values('$Account','$CheckMacValue','$CustomField1','$CustomField2','$CustomField3','$CustomField4','$MerchantID','$MerchantTradeNo','$PaymentDate','$PaymentType','$PaymentTypeChargeFee','$RtnCode','$RtnMsg','$SimulatePaid','$StoreID','$TradeAmt','$TradeDate','$TradeNo')";
-    $delete_cart="DELETE FROM shopping_cart WHERE MerchantTradeNo='$MerchantTradeNo'";  //刪除資料
-
-    mysqli_query($link,$delete_cart)or die ("無法刪除".mysqli_error()); //執行sql語法
-    if(mysqli_query($link,$update)){
-        $greturn="update front set pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
+    if($row[1]==null){
+        $cardinal=1;
+        $update = "insert into paylist(Account,cardinal,CheckMacValue, CustomField1, CustomField2, CustomField3, CustomField4, MerchantID, MerchantTradeNo, PaymentDate, PaymentType, PaymentTypeChargeFee, RtnCode, RtnMsg, SimulatePaid, StoreID, TradeAmt, TradeDate, TradeNo) values('$Account','$cardinal','$CheckMacValue','$CustomField1','$CustomField2','$CustomField3','$CustomField4','$MerchantID','$MerchantTradeNo','$PaymentDate','$PaymentType','$PaymentTypeChargeFee','$RtnCode','$RtnMsg','$SimulatePaid','$StoreID','$TradeAmt','$TradeDate','$TradeNo')";
+        $delete_cart="DELETE FROM shopping_cart WHERE MerchantTradeNo='$MerchantTradeNo'";  //刪除資料
+        mysqli_query($link,$delete_cart)or die ("無法刪除".mysqli_error()); //執行sql語法
+        if(mysqli_query($link,$update)){
+            $greturn="update front set pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
         if(mysqli_query($link,$greturn)){            
-            echo '<meta http-equiv=REFRESH CONTENT=0;url=receive1.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=0;url=receive.php>';
         }else{
             die("pay成功儲存失敗".mysqli_error());
         }
@@ -63,8 +62,25 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
         $greturn="update front set pay='failed' where MerchantTradeNo='$MerchantTradeNo'";
         mysqli_query($link,$greturn)or die ("pay失敗儲存失敗".mysql_error()); //執行sql語法
     }
-}
-else{
+    }else{
+        $cardinal=$row[1]+1;
+        $update = "insert into paylist(Account,cardinal,CheckMacValue, CustomField1, CustomField2, CustomField3, CustomField4, MerchantID, MerchantTradeNo, PaymentDate, PaymentType, PaymentTypeChargeFee, RtnCode, RtnMsg, SimulatePaid, StoreID, TradeAmt, TradeDate, TradeNo) values('$Account','$cardinal','$CheckMacValue','$CustomField1','$CustomField2','$CustomField3','$CustomField4','$MerchantID','$MerchantTradeNo','$PaymentDate','$PaymentType','$PaymentTypeChargeFee','$RtnCode','$RtnMsg','$SimulatePaid','$StoreID','$TradeAmt','$TradeDate','$TradeNo')";
+        $delete_cart="DELETE FROM shopping_cart WHERE MerchantTradeNo='$MerchantTradeNo'";  //刪除資料
+        mysqli_query($link,$delete_cart)or die ("無法刪除".mysqli_error()); //執行sql語法
+        if(mysqli_query($link,$update)){
+            $greturn="update front set pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
+        if(mysqli_query($link,$greturn)){            
+            echo '<meta http-equiv=REFRESH CONTENT=0;url=receive.php>';
+        }else{
+            die("pay成功儲存失敗".mysqli_error());
+        }
+    }else{
+        $greturn="update front set pay='failed' where MerchantTradeNo='$MerchantTradeNo'";
+        mysqli_query($link,$greturn)or die ("pay失敗儲存失敗".mysql_error()); //執行sql語法
+    }
+    }
+    
+}else{
     echo "not match ";
 } 
 // 接收到資訊回應綠界
