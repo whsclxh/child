@@ -40,7 +40,7 @@ foreach ($arParameters as $keys => $value) {
         $arFeedback[$keys] = $value;
     }
 }
-$PL = "SELECT * FROM paylist ORDER BY cost+0 DESC WHERE Account='$Account'";
+$PL = "SELECT * FROM paylist WHERE Account='$Account' ORDER BY cardinal+0 DESC";
 $result = mysqli_query($link,$PL);
 $row = @mysqli_fetch_row($result);
 // 計算出 CheckMacValue
