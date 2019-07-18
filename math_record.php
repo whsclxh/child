@@ -230,7 +230,7 @@ $list = @mysqli_fetch_row($result1);
   	<ul>
       <li><a href="Topic.php" data-ajax="false">回到首頁 </a></li>
       |
-      <li><a href="record.php".php" data-ajax="false">回到紀錄 </a></li>
+      <li><a href="record.php" data-ajax="false">回到紀錄 </a></li>
     </ul>
     </div>
 </div>
