@@ -197,8 +197,8 @@ $row = @mysqli_fetch_row($result);
     <input type="hidden" name="PaymentType" value="aio"/>
     <input type="hidden" name="TotalAmount" value="999"/>
     <input type="hidden" name="TradeDesc" value="Desc"/>
-    <input type="hidden" name="ReturnURL" value="http://whsclxh.ddns.net/green/receive.php"/>
-    <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/receive.php"/>
+    <input type="hidden" name="ReturnURL" value="http://whsclxh.ddns.net/green/receive1.php"/>
+    <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/receive1.php"/>
     <input type="hidden" name="ClientBackURL" value="http://whsclxh.ddns.net/green/payEcpay.php"/>
     <input type="hidden" name="PaymentInfoURL" value="http://whsclxh.ddns.net/green/receivepayment.php"/>
     <input type="hidden" name="ClientRedirectURL" value="http://whsclxh.ddns.net/green/clientredirect.php"/>
