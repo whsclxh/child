@@ -86,9 +86,9 @@ $num_rows = mysqli_num_rows($result);
         |
         <span><a href="record.php">record</a></span>
         |
-        <span><a href="logout.php">logout</a></span>
+        <span id="shopping_cart" name="shopping_cart"><a href="shopping_cart.php">shopping_cart(<?php echo $listr[1]; ?>)</a></span>
         |
-        <span id="shopping_cart" name="shopping_cart"><a href="shopping_cart.php">shopping_cart(<?php echo $listr[1]; ?>)</a></span>  
+        <span><a href="logout.php">logout</a></span>  
     </div>
 <form action="insert_cart.php" method="post" name="form1" id="form1">
     <div id="hideinput"></div>
