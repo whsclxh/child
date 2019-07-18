@@ -2,6 +2,7 @@
 <?php
 require_once 'ECPay.Payment.Integration.php';
 include("mysql_connect.php");
+$Account=$_SESSION['Account'];
 $cardinal=$_POST['cardinal'];
 $sql1 = "SELECT * FROM paylist where Account = '$Account' and cardinal=$cardinal";
 $result1 = mysqli_query($link,$sql1);
