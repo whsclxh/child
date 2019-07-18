@@ -43,7 +43,7 @@ foreach ($arParameters as $keys => $value) {
 $sql1 = "SELECT * FROM paylist WHERE Account='$Account'";
 $result1 = mysqli_query($link,$sql1);
 $paylistr = @mysqli_fetch_all($result1);
-mysqli_free_result ( $paylistr );
+mysqli_free_result ( $result1);
 $amount=count($paylistr);
 // 計算出 CheckMacValue
 $CheckMacValue = ECPay_CheckMacValue::generate( $arParameters, ECPay_HashKey, ECPay_HashIV );
