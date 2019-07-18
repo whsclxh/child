@@ -2,6 +2,7 @@
 <?php
 require_once 'ECPay.Payment.Integration.php';
 include("mysql_connect.php");
+
 define( 'ECPay_MerchantID', '2000132' );
 define( 'ECPay_HashKey', '5294y06JbISpM5x9' );
 define( 'ECPay_HashIV', 'v77hoKGq4kWxNNIS' );
@@ -22,6 +23,9 @@ $StoreID=$_POST['StoreID'];
 $TradeAmt=$_POST['TradeAmt'];
 $TradeDate=$_POST['TradeDate'];
 $TradeNo=$_POST['TradeNo'];
+$sql1 = "SELECT * FROM paylist where MerchantTradeNo = '$MerchantTradeNo'";
+$result1 = mysqli_query($link,$sql1);
+$paylistr = @mysqli_fetch_row($result1);
 // 重新整理回傳參數。
 $arParameters = $_POST;
 foreach ($arParameters as $keys => $value) {
@@ -45,6 +49,9 @@ $CheckMacValue = ECPay_CheckMacValue::generate( $arParameters, ECPay_HashKey, EC
  
 // 必須要支付成功並且驗證碼正確
 if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
+    if($paylistr[7]==$MerchantTradeNo){
+        return false;
+    }else{
     $update = "insert into paylist(Account,CheckMacValue, CustomField1, CustomField2, CustomField3, CustomField4, MerchantID, MerchantTradeNo, PaymentDate, PaymentType, PaymentTypeChargeFee, RtnCode, RtnMsg, SimulatePaid, StoreID, TradeAmt, TradeDate, TradeNo) values('$Account','$CheckMacValue','$CustomField1','$CustomField2','$CustomField3','$CustomField4','$MerchantID','$MerchantTradeNo','$PaymentDate','$PaymentType','$PaymentTypeChargeFee','$RtnCode','$RtnMsg','$SimulatePaid','$StoreID','$TradeAmt','$TradeDate','$TradeNo')";
     $delete_cart="DELETE FROM shopping_cart WHERE MerchantTradeNo='$MerchantTradeNo'";  //刪除資料
 
@@ -60,6 +67,7 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
             
         }
     }
+}
 }
 else{
     echo "not match ";
