@@ -17,8 +17,8 @@ $Product_number=$listr[1];
 $TotalAmount=0;
 $final=array();
 
-for($x=2;$x<$Product_number+2;$x++){
-    $final[$x-2]=$listr[$x];
+for($x=3;$x<$Product_number+3;$x++){
+    $final[$x-3]=$listr[$x];
 }
 
 $cancel=$_POST['cancel'];
