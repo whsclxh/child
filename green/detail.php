@@ -76,7 +76,7 @@ $listr = @mysqli_fetch_row($result1);
 </div>
 <div align="center">
 	<button onclick="javascript:location.href='purchase.php'">返回商品列表</button>
-	<button name="button" id="button" onclick="javascript:location.href='listr.php'">加入購物車</button>
+	<button name="button" id="button">加入購物車</button>
 </div>
 <form id="form1" name="form1" action="insert_cart.php" method="post">
 	<div id="div2" name="div2"></div>
