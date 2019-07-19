@@ -139,7 +139,7 @@ $listrow = mysqli_num_rows($result);
             //上面确定了 现在开始创建
 
             <?php for($x=$listrow;$x>0;$x--){ ?>
-            <?php $s=$paylistrow-$x+1; ?>
+            <?php $s=$listrow-$x+1; ?>
             <?php $row = mysqli_fetch_array($result);?>
             <?php
             $sql = "SELECT * FROM product_list where Account = '$Account' AND cardinal = '$x'";
