@@ -19,15 +19,11 @@ $row = mysqli_fetch_row($result);
 <table id="newspaper-a" name="newspaper-a">
 	<thead>
 		<tr>
-			<th>資訊</th>
-			<th>值</th>
+			<th>商品名稱</th>
+			<th><?php echo $row[3]; ?></th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>商品名稱</td>
-			<td><?php echo $row[3]; ?></td>
-		</tr>
 		<tr>
 			<td>商品品牌</td>
 			<td><?php echo $row[4]; ?></td>
