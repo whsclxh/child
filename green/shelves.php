@@ -53,7 +53,7 @@ if($_SESSION['Account'] == null){
   </fieldset>
   <br>
   <div>
-    <button class="btn btn-primary" onclick="javascript:location.href='Home.html'">返回首頁</button>
+    <button class="btn btn-primary" onclick="javascript:location.href='purchase.php'">返回商品頁</button>
     <button type="submit" class="btn btn-primary" id="button">提交</button>
     </div>
 </form>
