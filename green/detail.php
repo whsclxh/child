@@ -28,7 +28,7 @@ $listr = @mysqli_fetch_row($result1);
             input.setAttribute("value",<?php echo $list[3]; ?>);
             input.setAttribute("type","hidden");
             document.getElementById("div2").appendChild(input);
-            <?php for($i=3;$i<=$list[1]+3;i++){ ?>
+            <?php for($i=3;$i<=$list[1]+3;$i++){ ?>
             <?php if($listr[$i]==$list[3]) { ?>
             	alert('此商品已在購物車中!');
             	return false;
