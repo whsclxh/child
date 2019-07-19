@@ -57,16 +57,17 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
             $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'";
             $listre = mysqli_query($link,$list);
             $listr = @mysqli_fetch_row($listre);
-            $first=explode("#", $list[8]);
+            $first=explode("#", $listr[8]);
             $c=count($first);
             for ($i=0;$i<$c-1;$i++) {
                 $second[$i]=explode("*",$first[$i]);
             }
-            for($j=0;$j<$c-1;$J++){
+            for($j=0;$j<$c-1;$j++){
                 $l = "SELECT * FROM product_list where Product = '$second[$j][0]'";
                 $li = mysqli_query($link,$l);
                 $lis = @mysqli_fetch_row($li);
-                $up="update front set Amount='$lis[8]-$second[$j][1]' where Product = '$second[$j][0]'";
+                $third=(int)$lis[8]-(int)$second[$j][1];
+                $up="update front set Amount='$third' where Product = '$second[$j][0]'";
                 mysqli_query($link,$up)or die ("Amount更新失敗".mysql_error());
             }            
             echo '<meta http-equiv=REFRESH CONTENT=0;url=receive.php>';
@@ -88,16 +89,17 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
             $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'";
             $listre = mysqli_query($link,$list);
             $listr = @mysqli_fetch_row($listre);
-            $first=explode("#", $list[8]);
+            $first=explode("#", $listr[8]);
             $c=count($first);
             for ($i=0;$i<$c-1;$i++) {
                 $second[$i]=explode("*",$first[$i]);
             }
-            for($j=0;$j<$c-1;$J++){
+            for($j=0;$j<$c-1;$j++){
                 $l = "SELECT * FROM product_list where Product = '$second[$j][0]'";
                 $li = mysqli_query($link,$l);
                 $lis = @mysqli_fetch_row($li);
-                $up="update front set Amount='$lis[8]-$second[$j][1]' where Product = '$second[$j][0]'";
+                $third=(int)$lis[8]-(int)$second[$j][1];
+                $up="update front set Amount='$third' where Product = '$second[$j][0]'";
                 mysqli_query($link,$up)or die ("Amount更新失敗".mysql_error());
             }
         if(mysqli_query($link,$greturn)){            
