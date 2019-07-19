@@ -32,6 +32,8 @@ for ($i=0; $i <$Product_number ; $i++) {
     $qua[$i]=$_POST['qua'.$i];
     $TotalAmount+=$cost[$i]*$qua[$i];
 }
+date_default_timezone_set('Asia/Taipei');
+$the_time=date("Y/m/d H:i:s");
 ?>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" href="bootstrap/css/sb-admin-2.css" crossorigin="anonymous">
@@ -220,7 +222,7 @@ for ($i=0; $i <$Product_number ; $i++) {
     <input type="hidden" name="HashIV" value="v77hoKGq4kWxNNIS"/>
     <input type="hidden" name="ServiceURL" value="https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5"/>
     <input type="hidden" name="MerchantTradeNo" id="MerchantTradeNo"/>
-    <input type="hidden" name="MerchantTradeDate" value="2019/08/30 12:34:56"/>
+    <input type="hidden" name="MerchantTradeDate" <?php echo "value=\"$the_time\""; ?>/>
     <input type="hidden" name="PaymentType" value="aio"/>
     <input type="hidden" name="TotalAmount" value="999"/>
     <input type="hidden" name="TradeDesc" value="Desc"/>
