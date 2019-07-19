@@ -60,17 +60,19 @@ $PeriodAmount = (int)$_POST['TotalAmount'];
 $PeriodType = (string)$_POST['PeriodType'];
 $Frequency = (int)$_POST['Frequency'];
 $ExecTimes = (int)$_POST['ExecTimes'];
+
 for ($i=0; $i <$Product_number ; $i++) {
+    $Price[$i]=$_POST['cost'.$i];
+    $qua[$i]=$_POST['qua'.$i];
     $ItemName[$i]=$_POST['ItemName'.$i];
-    $Price[$i]=$_POST['ItemName_cost'.$i];
     array_push($obj->Send['Items'], array(
         'Name' => $ItemName[$i],
         'Price' => $Price[$i],
         'Currency' => "元",
-        'Quantity' => (int)"1"
+        'Quantity' => (int)$qua[$i]
     )
 );
-$ItemNames .=$ItemName[$i].'#';
+$ItemNames .=$ItemName[$i].'*'.$qua[$i].'#';
 }
 $merchandise = "insert into front(Account,cardinal,HashKey,HashIV,MerchantID,MerchantTradeNo,MerchantTradeDate,PaymentType,ItemName,TotalAmount,TradeDesc,ChoosePayment,pay,PeriodAmount,PeriodType,Frequency,ExecTimes) 
            values('$Account',' ','$HashKey','$HashIV','$MerchantID','$MerchantTradeNo','$MerchantTradeDate','$PaymentType','$ItemNames','$TotalAmount','$TradeDesc','$ChoosePayment','0','$PeriodAmount','$PeriodType','$Frequency','$ExecTimes')";

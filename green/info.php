@@ -235,5 +235,8 @@ for ($i=0; $i <$Product_number ; $i++) {
     <input type="hidden" name="TotalAmount" <?php echo "value=\"$TotalAmount\""; ?>>
     <input type="hidden" name="Product_number" <?php echo "value=\"$Product_number\""; ?>>
     <br>
+    <div align="center">
+    <button onclick="javascript:location.href='shopping_cart.php'">回到購物車</button>
     <button type="submit">前往付款頁面</button>
+    </div>
 </form>
