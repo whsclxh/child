@@ -21,17 +21,21 @@ $the_time=date("Y/m/d H:i:s");
 $PL = "SELECT * FROM product_list WHERE Account='$Account' ORDER BY cardinal+0 DESC";
 $result = mysqli_query($link,$PL);
 $row = @mysqli_fetch_row($result);
-if($row[0]==null){
+$PL1 = "SELECT * FROM product_list  ORDER BY cardinal+0 DESC";
+$result1 = mysqli_query($link,$PL1);
+$row1 = @mysqli_fetch_row($result1);
+$list=$row1[0]+1;
+if($row[1]==null){
 	$cardinal=1;
-	$insert="insert into product_list(cardinal,Account,Product,Brand,Texture,Specification,Cost,Amount,Weight,The_Date)values
-	('$cardinal','$Account','$Product','$Brand','$Texture','$Specification','$Cost','$Amount','$Weight','$the_time')";
+	$insert="insert into product_list(list,cardinal,Account,Product,Brand,Texture,Specification,Cost,Amount,Weight,The_Date)values
+	('list','$cardinal','$Account','$Product','$Brand','$Texture','$Specification','$Cost','$Amount','$Weight','$the_time')";
 	if(mysqli_query($link,$insert))
 	echo '<meta http-equiv=REFRESH CONTENT=0;url=shelves_list.php>';
 	else echo "無法添加".mysqli_error();
 }else{
-	$cardinal=$row[0]+1;
-	$insert="insert into product_list(cardinal,Account,Product,Brand,Texture,Specification,Cost,Amount,Weight,The_Date)values
-	('$cardinal','$Account','$Product','$Brand','$Texture','$Specification','$Cost','$Amount','$Weight','$the_time')";
+	$cardinal=$row[1]+1;
+	$insert="insert into product_list(list,cardinal,Account,Product,Brand,Texture,Specification,Cost,Amount,Weight,The_Date)values
+	('$list','$cardinal','$Account','$Product','$Brand','$Texture','$Specification','$Cost','$Amount','$Weight','$the_time')";
 	if(mysqli_query($link,$insert))
 	echo '<meta http-equiv=REFRESH CONTENT=0;url=shelves_list.php>';
 	else echo "無法添加".mysqli_error();

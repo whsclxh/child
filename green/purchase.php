@@ -133,11 +133,11 @@ $num_rows = mysqli_num_rows($result);
             var tdNode1=trNode.insertCell();
             tdNode1.innerHTML='<?php echo "$x"; ?>';
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<?php echo "$row[2]" ?>';
+            tdNode2.innerHTML='<?php echo "$row[3]" ?>';
             var tdNode3=trNode.insertCell();
-            tdNode3.innerHTML='<?php echo "$row[6]"; ?>';
+            tdNode3.innerHTML='<?php echo "$row[7]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<td><button type=\"button\" name=\"ItemName<?php echo $x; ?>\" id=\"ItemName<?php echo $x; ?>\" <?php echo"value=\"$x\""; ?>>放入購物車</td>';
+            tdNode4.innerHTML='<td><button type=\"button\" name=\"ItemName<?php echo $x; ?>\" id=\"ItemName<?php echo $x; ?>\" <?php echo"value=\"$row[3]\""; ?>>放入購物車</td>';
             var tdNode4=trNode.insertCell();
             tdNode4.innerHTML='<td><button type=\"button\" name=\"detail<?php echo $x; ?>\" id=\"detail<?php echo $x; ?>\" <?php echo"value=\"$x\""; ?>>詳細資料</td>';
             <?php } ?>

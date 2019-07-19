@@ -150,13 +150,13 @@ $listrow = mysqli_num_rows($result);
             var tdNode1=trNode.insertCell();
             tdNode1.innerHTML="<?php echo $s; ?>";
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<?php echo "$row_sql[2]"; ?>';
+            tdNode2.innerHTML='<?php echo "$row_sql[3]"; ?>';
             var tdNode3=trNode.insertCell();
-            tdNode3.innerHTML='<?php echo "$row_sql[6]"; ?>';
+            tdNode3.innerHTML='<?php echo "$row_sql[7]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<?php echo "$row_sql[7]"; ?>';
+            tdNode4.innerHTML='<?php echo "$row_sql[8]"; ?>';
             var tdNode5=trNode.insertCell();
-            tdNode5.innerHTML="<?php echo "$row_sql[9]"; ?>";
+            tdNode5.innerHTML="<?php echo "$row_sql[10]"; ?>";
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
