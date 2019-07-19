@@ -6,11 +6,11 @@ if($_SESSION['Account'] == null){
 }
 ?>
 <?php
+include("mysql_connect.php");
 $Account=$_SESSION['Account'];
 $PL = "SELECT * FROM product_list WHERE Account='$Account' ORDER BY cardinal+0 DESC";
 $result = mysqli_query($link,$PL);
 $listrow = mysqli_num_rows($result);
-echo "$listrow";
 ?>
 <!DOCTYPE html>
 <html lang="en">
