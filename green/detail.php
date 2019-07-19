@@ -15,7 +15,7 @@ $row = mysqli_fetch_row($result);
 ?>
 <link rel="stylesheet" href="css/table.css" crossorigin="anonymous">
 <link rel="stylesheet" href="css/detail.css" crossorigin="anonymous">
-<table id="#newspaper-a" names="#newspaper-a">
+<table id="#newspaper-a" name="#newspaper-a">
 	<thead>
 		<tr>
 			<th>資訊</th>
