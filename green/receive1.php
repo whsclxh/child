@@ -45,7 +45,7 @@ $result = mysqli_query($link,$PL);
 $row = @mysqli_fetch_row($result);
 // 計算出 CheckMacValue
 $CheckMacValue = ECPay_CheckMacValue::generate( $arParameters, ECPay_HashKey, ECPay_HashIV );
-if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){    
+if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
     if($row[1]==null){
         $cardinal=1;
         $update = "insert into paylist(Account,cardinal,CheckMacValue, CustomField1, CustomField2, CustomField3, CustomField4, MerchantID, MerchantTradeNo, PaymentDate, PaymentType, PaymentTypeChargeFee, RtnCode, RtnMsg, SimulatePaid, StoreID, TradeAmt, TradeDate, TradeNo) values('$Account','$cardinal','$CheckMacValue','$CustomField1','$CustomField2','$CustomField3','$CustomField4','$MerchantID','$MerchantTradeNo','$PaymentDate','$PaymentType','$PaymentTypeChargeFee','$RtnCode','$RtnMsg','$SimulatePaid','$StoreID','$TradeAmt','$TradeDate','$TradeNo')";
@@ -53,23 +53,7 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
         mysqli_query($link,$delete_cart)or die ("無法刪除".mysqli_error()); //執行sql語法
         if(mysqli_query($link,$update)){
             $greturn="update front set cardinal='$cardinal',pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
-        if(mysqli_query($link,$greturn)){
-            $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'";
-            $listre = mysqli_query($link,$list);
-            $listr = @mysqli_fetch_row($listre);
-            $first=explode("#", $listr[8]);
-            $c=count($first);
-            for ($i=0;$i<$c-1;$i++) {
-                $second[$i]=explode("*",$first[$i]);
-            }
-            for($j=0;$j<$c-1;$j++){
-                $l = "SELECT * FROM product_list where Product = '$second[$j][0]'";
-                $li = mysqli_query($link,$l);
-                $lis = @mysqli_fetch_row($li);
-                $third=(int)$lis[8]-(int)$second[$j][1];
-                $up="update front set Amount='$third' where Product = '$second[$j][0]'";
-                mysqli_query($link,$up)or die ("Amount更新失敗".mysql_error());
-            }            
+        if(mysqli_query($link,$greturn)){            
             echo '<meta http-equiv=REFRESH CONTENT=0;url=receive.php>';
         }else{
             die("pay成功儲存失敗".mysqli_error());
@@ -85,23 +69,6 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
         mysqli_query($link,$delete_cart)or die ("無法刪除".mysqli_error()); //執行sql語法
         if(mysqli_query($link,$update)){
             $greturn="update front set cardinal='$cardinal',pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
-            if(mysqli_query($link,$greturn)){
-            $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'";
-            $listre = mysqli_query($link,$list);
-            $listr = @mysqli_fetch_row($listre);
-            $first=explode("#", $listr[8]);
-            $c=count($first);
-            for ($i=0;$i<$c-1;$i++) {
-                $second[$i]=explode("*",$first[$i]);
-            }
-            for($j=0;$j<$c-1;$j++){
-                $l = "SELECT * FROM product_list where Product = '$second[$j][0]'";
-                $li = mysqli_query($link,$l);
-                $lis = @mysqli_fetch_row($li);
-                $third=(int)$lis[8]-(int)$second[$j][1];
-                $up="update front set Amount='$third' where Product = '$second[$j][0]'";
-                mysqli_query($link,$up)or die ("Amount更新失敗".mysql_error());
-            }
         if(mysqli_query($link,$greturn)){            
         }else{
             die("pay成功儲存失敗".mysqli_error());
