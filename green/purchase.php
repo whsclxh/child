@@ -43,7 +43,7 @@ $num_rows = mysqli_num_rows($result);
             document.getElementById("hideinput").appendChild(input);
             document.form1.submit();
         });
-        $("#detail").click(function(){
+        $("#detail<?php echo $q; ?>").click(function(){
             var detail=$(this).val();
             var input=document.createElement("input");
             input.setAttribute("name","detail");
@@ -143,7 +143,7 @@ $num_rows = mysqli_num_rows($result);
             var tdNode4=trNode.insertCell();
             tdNode4.innerHTML='<td><button type=\"button\" name=\"ItemName<?php echo $x; ?>\" id=\"ItemName<?php echo $x; ?>\" <?php echo"value=\"$row[3]\""; ?>>放入購物車</td>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<td><button type=\"button\" name=\"detail\" id=\"detail\" <?php echo"value=\"$x\""; ?>>詳細資料</td>';
+            tdNode4.innerHTML='<td><button type=\"button\" name=\"detail<?php echo $x; ?>\" id=\"detail<?php echo $x; ?>\" <?php echo"value=\"$x\""; ?>>詳細資料</td>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
