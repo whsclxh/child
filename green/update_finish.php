@@ -1,4 +1,10 @@
 <?php session_start(); ?>
+<?php
+if($_SESSION['Account'] == null){
+    echo "<script>alert('您尚未登入!');</script>";
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=Home.html>';
+}
+?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 include 'mysql_connect.php';

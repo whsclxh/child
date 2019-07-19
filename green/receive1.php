@@ -49,7 +49,7 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
     if($row[1]==null){
         $cardinal=1;
         $update = "insert into paylist(Account,cardinal,CheckMacValue, CustomField1, CustomField2, CustomField3, CustomField4, MerchantID, MerchantTradeNo, PaymentDate, PaymentType, PaymentTypeChargeFee, RtnCode, RtnMsg, SimulatePaid, StoreID, TradeAmt, TradeDate, TradeNo) values('$Account','$cardinal','$CheckMacValue','$CustomField1','$CustomField2','$CustomField3','$CustomField4','$MerchantID','$MerchantTradeNo','$PaymentDate','$PaymentType','$PaymentTypeChargeFee','$RtnCode','$RtnMsg','$SimulatePaid','$StoreID','$TradeAmt','$TradeDate','$TradeNo')";
-        $delete_cart="DELETE FROM shopping_cart WHERE MerchantTradeNo='$MerchantTradeNo'";  //刪除資料
+        $delete_cart="DELETE FROM shopping_cart WHERE MerchantTradeNo='$MerchantTradeNo' or Account='$Account'";  //刪除資料
         mysqli_query($link,$delete_cart)or die ("無法刪除".mysqli_error()); //執行sql語法
         if(mysqli_query($link,$update)){
             $greturn="update front set cardinal='$cardinal',pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
