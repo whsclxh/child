@@ -1,14 +1,15 @@
 <?php session_start(); ?>
-<?php 
-include("mysql_connect.php");
+<?php
 if($_SESSION['Account'] == null){
     echo "<script>alert('您尚未登入!');</script>";
     echo '<meta http-equiv=REFRESH CONTENT=0;url=Home.html>';
 }
-$Account = $_SESSION['Account'];
-$PL = "SELECT * FROM front WHERE Account='$Account' and cardinal!=' ' ORDER BY cardinal+0 DESC";
+?>
+<?php
+$Account=$_SESSION['Account'];
+$PL = "SELECT * FROM product_list WHERE Account='$Account' ORDER BY cardinal+0 DESC";
 $result = mysqli_query($link,$PL);
-$paylistrow = mysqli_num_rows($result);
+$listrow = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -136,7 +137,7 @@ $paylistrow = mysqli_num_rows($result);
             tableNode.setAttribute("class","table table-striped");
             //上面确定了 现在开始创建
 
-            <?php for($x=$paylistrow;$x>0;$x--){ ?>
+            <?php for($x=$listrow;$x>0;$x--){ ?>
             <?php $s=$paylistrow-$x+1; ?>
             <?php $row = mysqli_fetch_array($result);?>
             <?php
@@ -148,13 +149,13 @@ $paylistrow = mysqli_num_rows($result);
             var tdNode1=trNode.insertCell();
             tdNode1.innerHTML="<?php echo $s; ?>";
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<?php echo "$row_sql[6]"; ?>';
+            tdNode2.innerHTML='<?php echo "$row_sql[2]"; ?>';
             var tdNode3=trNode.insertCell();
-            tdNode3.innerHTML='<?php echo "$row_sql[13]"; ?>';
+            tdNode3.innerHTML='<?php echo "$row_sql[6]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<?php echo "$row_sql[8]"; ?>';
+            tdNode4.innerHTML='<?php echo "$row_sql[7]"; ?>';
             var tdNode5=trNode.insertCell();
-            tdNode5.innerHTML="<?php echo "$row_sql[12]"; ?>";
+            tdNode5.innerHTML="<?php echo "$row_sql[9]"; ?>";
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
@@ -163,13 +164,13 @@ $paylistrow = mysqli_num_rows($result);
             var cell0 = row.insertCell(0);
             cell0.innerHTML = "<b>編號</b>";
             var cell1 = row.insertCell(1);
-            cell1.innerHTML = "<b>訂購時間</b>";
+            cell1.innerHTML = "<b>商品名稱</b>";
             var cell2 = row.insertCell(2);            
-            cell2.innerHTML = "<b>訂購金額</b>";
+            cell2.innerHTML = "<b>商品金額</b>";
             var cell3 = row.insertCell(3);
-            cell3.innerHTML = "<b>商品名稱</b>";
+            cell3.innerHTML = "<b>商品數量</b>";
             var cell4 = row.insertCell(4);
-            cell4.innerHTML = "<b>訂單狀況</b>";
+            cell4.innerHTML = "<b>上架時間</b>";
             blockTable = document.getElementById("table");
             preSpan = document.getElementById("spanPre");
             firstSpan = document.getElementById("spanFirst");

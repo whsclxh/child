@@ -190,7 +190,7 @@ $the_time=date("Y/m/d H:i:s");
     <input type="text" name="Address" required="required" class="form-control" <?php echo "value='$row[6]'";?>/>
     </div>
     <br><br>
-    <input type="checkbox" value="1" name="Regular_quota" id="Regular_quota">定期定額
+    <!--<input type="checkbox" value="1" name="Regular_quota" id="Regular_quota">定期定額
     <div id="div2" style="display: none;">
     <h2>定期定額</h2>
     <div style="border-style:solid; padding:5px; border-width: 1px;">
@@ -209,7 +209,7 @@ $the_time=date("Y/m/d H:i:s");
     </div>
     </div>
     <br><br>
-    </div>
+    </div>!-->
     <h2>備註</h2>
     <div style="border-style:solid; padding:5px; border-width: 1px;">
     <label>備註</label>
