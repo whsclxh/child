@@ -15,6 +15,7 @@ $row = mysqli_fetch_row($result);
 ?>
 <link rel="stylesheet" href="css/table.css" crossorigin="anonymous">
 <link rel="stylesheet" href="css/detail.css" crossorigin="anonymous">
+<div align="center" id="div1">
 <table id="newspaper-a" name="newspaper-a">
 	<thead>
 		<tr>
@@ -53,3 +54,4 @@ $row = mysqli_fetch_row($result);
 		</tr>
 	</tbody>
 </table>
+</div>
