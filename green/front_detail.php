@@ -9,7 +9,7 @@ if($_SESSION['detail'] == null){
     echo "<script>alert('請重新選擇!');</script>";
     echo '<meta http-equiv=REFRESH CONTENT=0;url=purchase.php>';
 }else{
-	echo "<script>alert($_SESSION['detail']);</script>";
+	echo "<script>alert('0');</script>";
 	echo '<meta http-equiv=REFRESH CONTENT=0;url=detail.php>';
 }
 ?>
