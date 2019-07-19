@@ -26,7 +26,7 @@ for($x=3;$x<$Product_number+3;$x++){
     $PL = "SELECT * FROM product_list where product='$listr[$x]'";
     $result = mysqli_query($link,$PL);
     $row = mysqli_fetch_array($result);
-    $cost[$x-3]=$row[6];
+    $cost[$x-3]=$row[7];
     $TotalAmount+=$cost[$x];
     $final[$x-3]=$listr[$x];
 }
