@@ -127,7 +127,7 @@ $num_rows = mysqli_num_rows($result);
             tableNode.setAttribute("cellspacing","0");
             tableNode.setAttribute("class","table table-striped");
             //上面确定了 现在开始创建
-            <?php for($x=1;$x< $num_rows;$x++){ ?>
+            <?php for($x=1;$x<= $num_rows;$x++){ ?>
             <?php $row = mysqli_fetch_array($result);?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
