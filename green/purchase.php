@@ -42,6 +42,17 @@ $num_rows = mysqli_num_rows($result);
             input.setAttribute("type","hidden");
             document.getElementById("hideinput").appendChild(input);
             document.form1.submit();
+        });
+        $("#detail<?php echo $q; ?>").click(function(){
+            var detail=$(this).val();
+            var input=document.createElement("input");
+            input.setAttribute("name","detail");
+            input.setAttribute("id","detail");
+            input.setAttribute("value",detail);
+            input.setAttribute("type","hidden");
+            document.getElementById("hideinput").appendChild(input);
+            document.form1.action="front_detail.php"; 
+            document.form1.submit(); 
         })
     })
     <?php } ?>
@@ -127,6 +138,8 @@ $num_rows = mysqli_num_rows($result);
             tdNode3.innerHTML='<?php echo "$row[6]"; ?>';
             var tdNode4=trNode.insertCell();
             tdNode4.innerHTML='<td><button type=\"button\" name=\"ItemName<?php echo $x; ?>\" id=\"ItemName<?php echo $x; ?>\" <?php echo"value=\"$row[0]\""; ?>>放入購物車</td>';
+            var tdNode4=trNode.insertCell();
+            tdNode4.innerHTML='<td><button type=\"button\" name=\"detail<?php echo $x; ?>\" id=\"detail<?php echo $x; ?>\" <?php echo"value=\"$row[0]\""; ?>>詳細資料</td>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
@@ -140,6 +153,8 @@ $num_rows = mysqli_num_rows($result);
             cell2.innerHTML = "<b>價錢</b>";
             var cell3 = row.insertCell(3);
             cell3.innerHTML = "<b>選擇</b>";
+            var cell4 = row.insertCell(4);
+            cell4.innerHTML = "<b>詳情</b>";
             blockTable = document.getElementById("table");
             preSpan = document.getElementById("spanPre");
             firstSpan = document.getElementById("spanFirst");
