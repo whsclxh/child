@@ -34,8 +34,8 @@ $listr = @mysqli_fetch_row($result1);
             	alert('此商品已在購物車中!');
             	return false;
         	<?php }?>
+        	<?php }?>
         	document.form1.submit();
-    		<?php }?>
         })
     })
 </script>
