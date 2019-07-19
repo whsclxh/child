@@ -122,9 +122,9 @@ $num_rows = mysqli_num_rows($result);
             var tdNode1=trNode.insertCell();
             tdNode1.innerHTML='<?php echo "$x"; ?>';
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<?php echo "$row[0]" ?>';
+            tdNode2.innerHTML='<?php echo "$row[2]" ?>';
             var tdNode3=trNode.insertCell();
-            tdNode3.innerHTML='<?php echo "$row[1]"; ?>';
+            tdNode3.innerHTML='<?php echo "$row[6]"; ?>';
             var tdNode4=trNode.insertCell();
             tdNode4.innerHTML='<td><button type=\"button\" name=\"ItemName<?php echo $x; ?>\" id=\"ItemName<?php echo $x; ?>\" <?php echo"value=\"$row[0]\""; ?>>放入購物車</td>';
             <?php } ?>
