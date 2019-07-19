@@ -116,5 +116,8 @@ mysqli_query($link,$delete_front)or die ("無法刪除".mysqli_error()); //執�
         </tbody>
     </table>
     </div>
+    <div align="cemter">
+        <button onclick="javascript:location.href='purchase.php'">回到商品頁面</button>
+    </div>
 </body>
 </html>
