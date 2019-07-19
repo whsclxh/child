@@ -13,33 +13,42 @@ $PL = "SELECT * FROM product_list WHERE list='$detail' ORDER BY cost+0 DESC";
 $result = mysqli_query($link,$PL);
 $row = mysqli_fetch_row($result);
 ?>
-<table>
-	<tr>
-		<td>商品名稱</td>
-		<td><?php echo $row[3]; ?></td>
-	</tr>
-	<tr>
-		<td>商品品牌</td>
-		<td><?php echo $row[4]; ?></td>
-	</tr>
-	<tr>
-		<td>商品質地</td>
-		<td><?php echo $row[5]; ?></td>
-	</tr>
-	<tr>
-		<td>商品規格</td>
-		<td><?php echo $row[6]; ?></td>
-	</tr>
-	<tr>
-		<td>商品重量</td>
-		<td><?php echo $row[9]; ?></td>
-	</tr>
-	<tr>
-		<td>商品價格</td>
-		<td><?php echo $row[7]; ?></td>
-	</tr>
-	<tr>
-		<td>商品剩餘數量</td>
-		<td><?php echo $row[8]; ?></td>
-	</tr>
+<link rel="stylesheet" href="css/table.css" crossorigin="anonymous">
+<table id="#newspaper-a">
+	<thead>
+		<tr>
+			<th>資訊</th>
+			<th>值</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>商品名稱</td>
+			<td><?php echo $row[3]; ?></td>
+		</tr>
+		<tr>
+			<td>商品品牌</td>
+			<td><?php echo $row[4]; ?></td>
+		</tr>
+		<tr>
+			<td>商品質地</td>
+			<td><?php echo $row[5]; ?></td>
+		</tr>
+		<tr>
+			<td>商品規格</td>
+			<td><?php echo $row[6]; ?></td>
+		</tr>
+		<tr>
+			<td>商品重量</td>
+			<td><?php echo $row[9]; ?></td>
+		</tr>
+		<tr>
+			<td>商品價格</td>
+			<td><?php echo $row[7]; ?></td>
+		</tr>
+		<tr>
+			<td>商品剩餘數量</td>
+			<td><?php echo $row[8]; ?></td>
+		</tr>
+	</tbody>
 </table>
