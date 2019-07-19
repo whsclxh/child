@@ -95,6 +95,10 @@ $num_rows = mysqli_num_rows($result);
         |
         <span><a href="record.php">record</a></span>
         |
+        <span><a href="shelves.php">shelves</a></span>
+        |
+        <span><a href="shelves_list.php">shelves_list</a></span>
+        |
         <span id="shopping_cart" name="shopping_cart"><a href="shopping_cart.php">shopping_cart(<?php if($listr[1]!=null)echo $listr[1]; else echo "0"; ?>)</a></span>
         |
         <span><a href="logout.php">logout</a></span>  
