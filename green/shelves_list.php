@@ -141,7 +141,7 @@ $listrow = mysqli_num_rows($result);
             <?php $s=$paylistrow-$x+1; ?>
             <?php $row = mysqli_fetch_array($result);?>
             <?php
-            $sql = "SELECT * FROM front where Account = '$Account' AND cardinal = '$x'";
+            $sql = "SELECT * FROM product_list where Account = '$Account' AND cardinal = '$x'";
             $result = mysqli_query($link,$sql);
             $row_sql = @mysqli_fetch_row($result);
             ?>
