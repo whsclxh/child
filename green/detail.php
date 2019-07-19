@@ -12,6 +12,7 @@ $detail=$_SESSION['detail'];
 $PL = "SELECT * FROM product_list WHERE list='$detail' ORDER BY cost+0 DESC";
 $result = mysqli_query($link,$PL);
 $row = mysqli_fetch_row($result);
+
 $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $result1 = mysqli_query($link,$list);
 $listr = @mysqli_fetch_row($result1);
@@ -25,11 +26,11 @@ $listr = @mysqli_fetch_row($result1);
         	var input=document.createElement("input");
             input.setAttribute("name","insert");
             input.setAttribute("id","insert");
-            input.setAttribute("value",<?php echo $list[3]; ?>);
+            input.setAttribute("value",<?php echo $row[3]; ?>);
             input.setAttribute("type","hidden");
             document.getElementById("div2").appendChild(input);
-            <?php for($i=3;$i<=$list[1]+3;$i++){ ?>
-            <?php if($listr[$i]==$list[3]) { ?>
+            <?php for($i=3;$i<=$row[1]+3;$i++){ ?>
+            <?php if($listr[$i]==$row[3]) { ?>
             	alert('此商品已在購物車中!');
             	return false;
         	<?php }?>
