@@ -12,9 +12,32 @@ $detail=$_SESSION['detail'];
 $PL = "SELECT * FROM product_list WHERE list='$detail' ORDER BY cost+0 DESC";
 $result = mysqli_query($link,$PL);
 $row = mysqli_fetch_row($result);
+$list = "SELECT * FROM shopping_cart where Account = '$Account'";
+$result1 = mysqli_query($link,$list);
+$listr = @mysqli_fetch_row($result1);
 ?>
 <link rel="stylesheet" href="css/table.css" crossorigin="anonymous">
 <link rel="stylesheet" href="css/detail.css" crossorigin="anonymous">
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+        $("#button").click(function(){
+        	var input=document.createElement("input");
+            input.setAttribute("name","insert");
+            input.setAttribute("id","insert");
+            input.setAttribute("value",<?php echo $list[3]; ?>);
+            input.setAttribute("type","hidden");
+            document.getElementById("div2").appendChild(input);
+            <?php for($i=3;$i<=$list[1]+3;i++){ ?>
+            <?php if($listr[$i]==$list[3]) { ?>
+            	alert('此商品已在購物車中!');
+            	return false;
+        	<?php }?>
+        	document.form1.submit();
+    		<?php }?>
+        })
+    })
+</script>
 <div align="center" id="div1">
 <table id="newspaper-a" name="newspaper-a">
 	<thead>
@@ -51,3 +74,10 @@ $row = mysqli_fetch_row($result);
 	</tbody>
 </table>
 </div>
+<div align="center">
+	<button onclick="javascript:location.href='purchase.php'">返回商品列表</button>
+	<button name="button" id="button" onclick="javascript:location.href='listr.php'">加入購物車</button>
+</div>
+<form id="form1" name="form1" action="insert_cart.php" method="post">
+	<div id="div2" name="div2"></div>
+</form>
