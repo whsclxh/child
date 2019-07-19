@@ -26,7 +26,7 @@ $listr = @mysqli_fetch_row($result1);
         	var input=document.createElement("input");
             input.setAttribute("name","insert");
             input.setAttribute("id","insert");
-            input.setAttribute("value",<?php echo $row[3]; ?>);
+            input.setAttribute("value",'<?php echo $row[3]; ?>');
             input.setAttribute("type","hidden");
             document.getElementById("div2").appendChild(input);
             <?php for($i=3;$i<=$row[1]+3;$i++){ ?>
