@@ -27,13 +27,13 @@ if($row[0]==null){
 	('$cardinal','$Account','$Product','$Brand','$Texture','$Specification','$Cost','$Amount','$Weight','$the_time')";
 	if(mysqli_query($link,$insert))
 	echo '<meta http-equiv=REFRESH CONTENT=0;url=shelves_list.php>';
-	else die ("無法添加".mysqli_error());
+	else echo "無法添加".mysqli_error();
 }else{
 	$cardinal=$[0]+1;
 	$insert="insert into product_list(cardinal,Account,Product,Brand,Texture,Specification,Cost,Amount,Weight,The_Date)values
 	('$cardinal','$Account','$Product','$Brand','$Texture','$Specification','$Cost','$Amount','$Weight','$the_time')";
 	if(mysqli_query($link,$insert))
 	echo '<meta http-equiv=REFRESH CONTENT=0;url=shelves_list.php>';
-	else die ("無法添加".mysqli_error());
+	else echo "無法添加".mysqli_error();
 }
 ?>
