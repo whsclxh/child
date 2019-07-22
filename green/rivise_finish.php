@@ -20,7 +20,7 @@ date_default_timezone_set('Asia/Taipei');
 $the_time=date("Y/m/d H:i:s");
 
 
-$updata="update product_list set product='$Product',Brand='$Brand',Texture='$Texture',Specification='$Specification',cost='$Cost',Amount='$Amount',Weight='$Weight',The_Date='$the_time' where Account='$Account' AND product='C'";
+$updata="update product_list set product='$Product',Brand='$Brand',Texture='$Texture',Specification='$Specification',cost='$Cost',Amount='$Amount',Weight='$Weight',The_Date='$the_time' where Account='$Account' AND product='$revise'";
  mysqli_query($link,$updata)or die ("product更改失敗".mysql_error()); //執行sql語法
 
 /*$PL = "SELECT * FROM product_list WHERE Account='$Account' ORDER BY cardinal+0 DESC";
@@ -43,6 +43,6 @@ if($row[1]==null){
 	('$list','$cardinal','$Account','$Product','$Brand','$Texture','$Specification','$Cost','$Amount','$Weight','$the_time')";
 	if(mysqli_query($link,$insert))
 	echo '<meta http-equiv=REFRESH CONTENT=0;url=shelves_list.php>';
-	else echo "無法添加".mysqli_error();*/
-}
+	else echo "無法添加".mysqli_error();
+}*/
 ?>
