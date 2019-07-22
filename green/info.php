@@ -54,6 +54,10 @@ $the_time=date("Y/m/d H:i:s");
 	function getRandom(){
         return Math.floor(Math.random()*15)+5;
     };
+    function cancel(){
+        document.form1.action="shopping_cart.php";
+        return false;
+    }
     var chars = ['0','1','2','3','4','5','6','7','8','9',
                 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
                 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -239,7 +243,7 @@ $the_time=date("Y/m/d H:i:s");
     <input type="hidden" name="Product_number" <?php echo "value=\"$Product_number\""; ?>>
     <br>
     <div align="center">
-    <button onclick="javascript:location.href='shopping_cart.php'">回到購物車</button>
+    <button onclick="cancel()">回到購物車</button>
     <button type="submit">前往付款頁面</button>
     </div>
 </form>
