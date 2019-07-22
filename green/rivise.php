@@ -9,7 +9,7 @@ if($_SESSION['Account'] == null){
 include("mysql_connect.php");
 $Account=$_SESSION['Account'];
 $rivise=$_SESSION['revise'];
-$record="SELECT * FROM product_list where Account='$Account' AND product='$revise'"
+$record="SELECT * FROM product_list where Account='$Account' AND product='$rivise'"
 $result = mysqli_query($link,$record);
 $row = @mysqli_fetch_row($result);
 ?>
