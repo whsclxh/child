@@ -58,14 +58,18 @@ $CNr = @mysqli_fetch_row($CNre);
             document.form1.action="front_detail.php"; 
             document.form1.submit(); 
         })
+    })
+    <?php } ?>
+
+    $(document).ready(function(){
         $("#shopping_cart").click(function(){
-            <?php if($listr[0]==null){ ?>
-                alert('請至少選擇一樣商品再前往購物車');
-                return false;
+            <?php if ($listr[0]==null){ ?>
+            alert('s');    
+            return false;                
             <?php } ?>
         })
     })
-    <?php } ?>
+
     function getRandom(){
         return Math.floor(Math.random()*15)+5;
     };
@@ -111,7 +115,7 @@ $CNr = @mysqli_fetch_row($CNre);
         |
         <span><a href="shelves_list.php">shelves_list</a></span>
         |
-        <span id="shopping_cart" name="shopping_cart"><a href="shopping_cart.php">shopping_cart(<?php if($listr[1]!=null)echo $listr[1]; else echo "0"; ?>)</a></span>
+        <span id="shopping_cart" name="shopping_cart"><a id="shopping_cart" name="shopping_cart" href="shopping_cart.php">shopping_cart(<?php if($listr[1]!=null)echo $listr[1]; else echo "0"; ?>)</a></span>
         |
         <span><a href="logout.php">logout</a></span>  
     </div>
