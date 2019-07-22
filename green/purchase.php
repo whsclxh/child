@@ -15,6 +15,10 @@ $listr = @mysqli_fetch_row($listre);
 $PL = "SELECT * FROM product_list  where Amount>0 ORDER BY cost+0 DESC";
 $result = mysqli_query($link,$PL);
 $num_rows = mysqli_num_rows($result);
+
+$CN = "SELECT * FROM user where Account = '$Account'";
+$CNre = mysqli_query($link,$CN);
+$CNr = @mysqli_fetch_row($CNre);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,6 +95,7 @@ $num_rows = mysqli_num_rows($result);
 </head>
 <title>商品頁</title>
 <body>
+    <h3><?php $CNr[4] ?> 您好</h3>
     <div id="header" name="header">
         <span><a href="update.php">update</a></span>
         |
@@ -108,7 +113,6 @@ $num_rows = mysqli_num_rows($result);
     <div id="hideinput"></div>
 <div class="container" align="center">
     <h2 style="margin-top: 2%">商品列表</h2>
-    <h3 id="you"></h3>
 
     <div id="div1"></div>
     <br>
