@@ -8,13 +8,10 @@ if($_SESSION['Account'] == null){
 <?php
 include("mysql_connect.php");
 $Account=$_SESSION['Account'];
-$check=false;
 $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $result = mysqli_query($link,$list);
 $listr = @mysqli_fetch_row($result);
-if($listr!=null){
-    $check=true;
-}
+
 $Product_number=$listr[1];
 $TotalAmount=0;
 $cost=array();
@@ -51,15 +48,9 @@ $c=count($final);
         		return a+x.toString();
     		}
     		function info(){
-                if(<?php echo $check; ?>){
-                    alert('請至少選擇一樣商品再前往結帳!');
-                    document.form1.action="purchase.php";
-                    return false;
-                }else{
-    			    document.form1.action="info.php"; 
-    			    document.form1.submit();
-                } 
-    		}
+                document.form1.action="info.php"; 
+    			document.form1.submit();
+            }
     		function turn(){
     			document.form1.action="purchase.php";
     			return false;

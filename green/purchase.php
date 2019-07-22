@@ -58,6 +58,12 @@ $CNr = @mysqli_fetch_row($CNre);
             document.form1.action="front_detail.php"; 
             document.form1.submit(); 
         })
+        $("#shopping_cart").click(function(){
+            <?php if($listr==null){ ?>
+                alert('請至少選擇一樣商品再前往購物車');
+                return false;
+            <?php } ?>
+        })
     })
     <?php } ?>
     function getRandom(){
