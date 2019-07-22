@@ -71,7 +71,7 @@ if($_SESSION['Account'] != null){
                     </div>
                     <div class="form-group">
                         <label><span style="color: red;">*</span>性別</label>
-                        <select class="form-control" id="sex" name="sex" <?php echo "value='$row[4]'";?>>
+                        <select class="form-control" id="sex" name="sex" <?php echo "value='$row[5]'";?>>
                             <option value="M">男</option>
                             <option value="F">女</option>
                         </select>
