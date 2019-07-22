@@ -14,8 +14,6 @@ $list_row = mysqli_num_rows($listre);
 $listr = @mysqli_fetch_row($listre);
 if($listr==null||$listr[2]==0){
     $check=0;
-}else{
-    $check=1;
 }
 
 $PL = "SELECT * FROM product_list  where Amount>0 ORDER BY cost+0 DESC";
@@ -44,7 +42,8 @@ $CNr = @mysqli_fetch_row($CNre);
                     alert('此商品已在購物車中!');
                     return false;
                 }
-            <?php } ?> 
+            <?php } ?>
+            <?php $check=1; ?> 
             var input=document.createElement("input");
             input.setAttribute("name","insert");
             input.setAttribute("id","insert");
