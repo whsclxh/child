@@ -13,7 +13,9 @@ $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'
                 $second[$i]=explode("*",$first[$i]);
             }
             for($j=0;$j<$c-1;$j++){
-                $l = "SELECT * FROM product_list where Product = '$second[$j][0]'";
+                $k=$second[$j][0];
+                echo "$k";
+                $l = "SELECT * FROM product_list where Product = '$k'";
                 $li = mysqli_query($link,$l);
                 $lis = @mysqli_fetch_row($li);
                 echo "$lis[8]";
