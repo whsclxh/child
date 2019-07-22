@@ -2,7 +2,7 @@
 <?php
 include("mysql_connect.php");
 $Account=$_SESSION['Account'];
-$cardinal='2';
+$cardinal='3';
 $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'";
             $listre = mysqli_query($link,$list);
             $listr = @mysqli_fetch_row($listre);
