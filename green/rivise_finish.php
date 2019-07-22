@@ -7,7 +7,7 @@ if($_SESSION['Account'] == null){
 ?>
 <?php
 include("mysql_connect.php");
-$rivise=$_SESSION['rivise'];
+$revise=$_SESSION['revise'];
 $Account=$_SESSION['Account'];
 $Product=$_POST['Product'];
 $Brand=$_POST['Brand'];
@@ -20,7 +20,7 @@ date_default_timezone_set('Asia/Taipei');
 $the_time=date("Y/m/d H:i:s");
 
 
-$updata="update product_list set product='$Product',Brand='$Brand',Texture='$Texture',Specification='$Specification',cost='$Cost',Amount='$Amount',Weight='$Weight',The_Date='$the_time' where Account='$Account AND product='$rivise'";
+$updata="update product_list set product='$Product',Brand='$Brand',Texture='$Texture',Specification='$Specification',cost='$Cost',Amount='$Amount',Weight='$Weight',The_Date='$the_time' where Account='$Account AND product='$revise'";
  mysqli_query($link,$updata)or die ("product更改失敗".mysql_error()); //執行sql語法
 
 /*$PL = "SELECT * FROM product_list WHERE Account='$Account' ORDER BY cardinal+0 DESC";
