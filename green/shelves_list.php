@@ -20,6 +20,32 @@ $listrow = mysqli_num_rows($result);
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/sheives_list.css">
     <script type="text/javascript" src="js/pagination.js"></script>
+    <script>
+    <?php for($q=1;$q<=$listrow;$q++){ ?>
+    $(document).ready(function(){                
+        $("#rivise<?php echo $q; ?>").click(function(){
+            var product=$(this).val();
+            var input=document.createElement("input");
+            input.setAttribute("name","rivise");
+            input.setAttribute("id","rivise");
+            input.setAttribute("value",product);
+            input.setAttribute("type","hidden");
+            document.getElementById("hideinput").appendChild(input);
+            document.form1.submit();
+        });
+        $("#obtained<?php echo $q; ?>").click(function(){
+            var detail=$(this).val();
+            var input=document.createElement("input");
+            input.setAttribute("name","obtained");
+            input.setAttribute("id","obtained");
+            input.setAttribute("value",detail);
+            input.setAttribute("type","hidden");
+            document.getElementById("hideinput").appendChild(input);
+            document.form1.submit(); 
+        })
+    })
+    <?php } ?>
+    </script>
     <script type="text/javascript">
         //全局变量
         var numCount;       //数据总数量
@@ -115,32 +141,6 @@ $listrow = mysqli_num_rows($result);
         $("table td:last-child, table th:last-child").addClass("last");
 });
         };
-    </script>
-    <script>
-    <?php for($q=1;$q<=$listrow;$q++){ ?>
-    $(document).ready(function(){                
-        $("#rivise<?php echo $q; ?>").click(function(){
-            var product=$(this).val();
-            var input=document.createElement("input");
-            input.setAttribute("name","rivise");
-            input.setAttribute("id","rivise");
-            input.setAttribute("value",product);
-            input.setAttribute("type","hidden");
-            document.getElementById("hideinput").appendChild(input);
-            document.form1.submit();
-        });
-        $("#obtained<?php echo $q; ?>").click(function(){
-            var detail=$(this).val();
-            var input=document.createElement("input");
-            input.setAttribute("name","obtained");
-            input.setAttribute("id","obtained");
-            input.setAttribute("value",detail);
-            input.setAttribute("type","hidden");
-            document.getElementById("hideinput").appendChild(input);
-            document.form1.submit(); 
-        })
-    })
-    <?php } ?>
     </script>
 </head>
 <body align="center">
