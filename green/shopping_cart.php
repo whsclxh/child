@@ -12,7 +12,7 @@ $Account=$_SESSION['Account'];
 $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $result = mysqli_query($link,$list);
 $listr = @mysqli_fetch_row($result);
-
+print_r($listr);
 $Product_number=$listr[1];
 $TotalAmount=0;
 $cost=array();
