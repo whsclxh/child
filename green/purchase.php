@@ -12,6 +12,9 @@ $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $listre = mysqli_query($link,$list);
 $list_row = mysqli_num_rows($listre);
 $listr = @mysqli_fetch_row($listre);
+if($listr==null){
+    echo "string";
+}
 
 $PL = "SELECT * FROM product_list  where Amount>0 ORDER BY cost+0 DESC";
 $result = mysqli_query($link,$PL);
