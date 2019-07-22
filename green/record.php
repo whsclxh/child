@@ -72,6 +72,8 @@ $paylistrow = mysqli_num_rows($result);
             $sql = "SELECT * FROM front where Account = '$Account' AND cardinal = '$x'";
             $result = mysqli_query($link,$sql);
             $row_sql = @mysqli_fetch_row($result);
+            $first=explode("#", $row_sql[8]);
+            $c=count($first)-1;
             ?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
@@ -81,7 +83,12 @@ $paylistrow = mysqli_num_rows($result);
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$row_sql[13]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<?php echo "$row_sql[8]"; ?>';
+            tdNode4.innerHTML='<?php 
+                for($u=0;$u<$c;$u++){
+                    echo "$first[$u]";
+                    echo "<br>"
+                }
+             ?>';
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML="<?php echo "$row_sql[12]"; ?>";
             <?php } ?>
