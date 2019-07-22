@@ -86,7 +86,7 @@ $paylistrow = mysqli_num_rows($result);
             tdNode4.innerHTML='<?php 
                 for($u=0;$u<$c;$u++){
                     echo "$first[$u]";
-                    echo "<br>"
+                    echo "<br>";
                 }
              ?>';
             var tdNode5=trNode.insertCell();
