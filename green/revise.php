@@ -29,7 +29,7 @@ $row = @mysqli_fetch_row($result);
 <body>
 	<form name="form1" method="post" action="rivise_finish.php">
   <fieldset>
-    <legend style="color: black; font-weight: bold;">上架貨物</legend>
+    <legend style="color: black; font-weight: bold;">修改商品資訊</legend>
     <div class="form-group">
       <label><span style="color: red;">*</span>商品名稱</label>
       <input type="text" class="form-control" id="Product" placeholder="輸入名稱" name="Product" required="required" <?php echo "value='$row[3]'"; ?>>
