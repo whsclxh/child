@@ -49,7 +49,7 @@ $c=count($final);
         		return a+x.toString();
     		}
     		function info(){
-                if(<?php echo $listr[0]; ?>==null){
+                if(<?php echo "$listr[0]"; ?>==null){
                     alert('請至少選擇一樣商品再前往結帳!');
                     document.form1.action="purchase.php";
                     return false;
