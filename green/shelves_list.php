@@ -86,6 +86,8 @@ $listrow = mysqli_num_rows($result);
 <div class="right" style="float:right; text-align:center; display:inline" >
   	<ul>
       <li><a href="purchase.php" data-ajax="false">回到商品頁面 </a></li>
+      |
+      <li><a href="shelves.php" data-ajax="false">上架商品</a></li>
     </ul>
     </div>
 </div>

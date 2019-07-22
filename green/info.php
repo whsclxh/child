@@ -186,7 +186,7 @@ $the_time=date("Y/m/d H:i:s");
     <label><span style="color: red;">*</span>姓名</label>
     <input type="text" name="CName" required="required" class="form-control" <?php echo "value='$row[4]'";?>/>
     <label><span style="color: red;">*</span>手機</label>
-    <input type="text" name="Cellphone" required="required" pattern="\d{4}[-]\d{6}" class="form-control" <?php echo "value='$row[3]'";?>/>
+    <input type="text" name="Cellphone" required="required" class="form-control" <?php echo "value='$row[3]'";?>/>
     <label><span style="color: red;">*</span>地址</label>
     <input type="text" name="Address" required="required" class="form-control" <?php echo "value='$row[6]'";?>/>
     </div>
