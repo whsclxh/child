@@ -12,7 +12,7 @@ $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $listre = mysqli_query($link,$list);
 $listr = @mysqli_fetch_row($listre);
 
-$PL = "SELECT * FROM product_list  ORDER BY cost+0 DESC";
+$PL = "SELECT * FROM product_list  where Amount>0 ORDER BY cost+0 DESC";
 $result = mysqli_query($link,$PL);
 $num_rows = mysqli_num_rows($result);
 ?>
