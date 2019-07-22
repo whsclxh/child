@@ -10,9 +10,9 @@
   <link rel="stylesheet" type="text/css" href="css/city.css">
   <link rel="stylesheet" type="text/css" href="css/body.css">
   <script src="js/intlTelInput.js"></script>
-  <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/jquery.twzipcode.min.js"></script>
   <script src="js/comfirm.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
 </head>
 <title>申請帳號</title>
 <body>
