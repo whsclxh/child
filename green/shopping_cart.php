@@ -49,7 +49,7 @@ $c=count($final);
         		return a+x.toString();
     		}
     		function info(){
-                if(<?php echo $listr; ?>==0){
+                if(<?php echo $listr[0]; ?>==null){
                     alert('請至少選擇一樣商品再前往結帳!');
                     document.form1.action="purchase.php";
                     return false;
@@ -67,7 +67,7 @@ $c=count($final);
 <br><br>
 <div style=" margin: 0 auto;">
 <h2 style="text-align:  center;">購物車</h2>
-<form  method="POST" name="form1" id="form1">
+<form action="a.php" method="POST" name="form1" id="form1">
 	<div id="div1"></div>
     <div id="hideinput"></div>
   <div align="center">
@@ -121,7 +121,6 @@ $c=count($final);
 						input.setAttribute("value","<?php echo"$x" ?>");
 						input.setAttribute("type","hidden");
 						document.getElementById("hideinput").appendChild(input);
-                        document.form1.action="a.php";
 						document.form1.submit();
         			});
         		});
