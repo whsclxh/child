@@ -71,7 +71,9 @@ for ($i=0; $i <$Product_number ; $i++) {
     $row = mysqli_fetch_array($result2);
     if($row[8]<$qua[$i]){
         echo "<script>alert('庫存不足，請重新選擇，庫存剩下$row[8]')</script>";
-        echo '<meta http-equiv=REFRESH CONTENT=0;url=shopping_cart.php>';
+        $sub=false;
+    }else{
+        $sub=true;
     }
     array_push($obj->Send['Items'], array(
         'Name' => $ItemName[$i],
@@ -102,5 +104,9 @@ $Response = (string)$obj->CheckOutString();
 
 echo "<div style=\"display:none\">$Response</div>";
 // 自動將表單送出
-echo '<script>document.getElementById("__ecpayForm").submit();</script>';
+if($sub){
+    echo '<script>document.getElementById("__ecpayForm").submit();</script>';
+}else{
+     echo '<meta http-equiv=REFRESH CONTENT=0;url=shopping_cart.php>';
+}
 ?>
