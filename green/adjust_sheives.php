@@ -10,15 +10,15 @@ include("mysql_connect.php");
 $Account=$_SESSION['Account'];
 $_SESSION['obtained']=$_POST['obtained'];
 $obtained=$_SESSION['obtained'];
-$_SESSION['rivise']=$_POST['rivise'];
-$rivise=$_SESSION['revise'];
+$_SESSION['revise']=$_POST['revise'];
+$revise=$_SESSION['revise'];
 if($_SESSION['obtained'] != null){
      $delete_product="DELETE FROM product_list WHERE product='$obtained' AND Account='$Account'";  //刪除資料
      mysqli_query($link,$delete_product)or die ("無法刪除".mysqli_error()); //執行sql語法
      echo '<meta http-equiv=REFRESH CONTENT=0;url=shelves_list.php>';
 }else{
-	if($_SESSION['rivise']!=null){
-		echo '<meta http-equiv=REFRESH CONTENT=0;url=rivise.php>';
+	if($_SESSION['revise']!=null){
+		echo '<meta http-equiv=REFRESH CONTENT=0;url=revise.php>';
 	}
 	else{
 		echo "<script>alert('請重新選擇!');</script>";

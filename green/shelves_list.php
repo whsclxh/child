@@ -23,11 +23,11 @@ $listrow = mysqli_num_rows($result);
     <script>
     <?php for($q=1;$q<=$listrow;$q++){ ?>
     $(document).ready(function(){                
-        $("#rivise<?php echo $q; ?>").click(function(){
+        $("#revise<?php echo $q; ?>").click(function(){
             var product=$(this).val();
             var input=document.createElement("input");
-            input.setAttribute("name","rivise");
-            input.setAttribute("id","rivise");
+            input.setAttribute("name","revise");
+            input.setAttribute("id","revise");
             input.setAttribute("value",product);
             input.setAttribute("type","hidden");
             document.getElementById("hideinput").appendChild(input);
@@ -118,7 +118,7 @@ $listrow = mysqli_num_rows($result);
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML="<?php echo "$row_sql[10]"; ?>";
             var tdNode6=trNode.insertCell();
-            tdNode6.innerHTML='<td><button type=\"button\" name=\"rivise<?php echo $x; ?>\" id=\"rivise<?php echo $x; ?>\" <?php echo"value=\"$row_sql[3]\""; ?>>修改商品資訊</td>';
+            tdNode6.innerHTML='<td><button type=\"button\" name=\"revise<?php echo $x; ?>\" id=\"revise<?php echo $x; ?>\" <?php echo"value=\"$row_sql[3]\""; ?>>修改商品資訊</td>';
             var tdNode7=trNode.insertCell();
             tdNode7.innerHTML='<td><button type=\"button\" name=\"obtained<?php echo $x; ?>\" id=\"obtained<?php echo $x; ?>\" <?php echo"value=\"$row_sql[3]\""; ?>>下架</td>';
             <?php } ?>
