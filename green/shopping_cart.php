@@ -12,6 +12,9 @@ $Account=$_SESSION['Account'];
 $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $result = mysqli_query($link,$list);
 $listr = @mysqli_fetch_row($result);
+if(!($listr)){
+    $g=0;
+}
 
 $Product_number=$listr[1];
 $TotalAmount=0;
@@ -49,7 +52,7 @@ $c=count($final);
         		return a+x.toString();
     		}
     		function info(){
-                if(<?php echo "$listr[0]"; ?>==null){
+                if(<?php echo $g; ?>==0){
                     alert('請至少選擇一樣商品再前往結帳!');
                     document.form1.action="purchase.php";
                     return false;
