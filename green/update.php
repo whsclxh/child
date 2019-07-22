@@ -15,7 +15,7 @@ if($_SESSION['Account'] == null){
 <link rel="stylesheet" type="text/css" href="css/city.css">
 <link rel="stylesheet" type="text/css" href="css/body.css">
 <script src="js/intlTelInput.js"></script>
-<script src="jquery-3.4.1.min.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/jquery.twzipcode.min.js"></script>
 <script src="js/comfirm.js"></script>
 <title>修改資料</title>
