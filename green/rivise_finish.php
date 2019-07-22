@@ -22,7 +22,7 @@ $the_time=date("Y/m/d H:i:s");
 
 $updata="update product_list set product='$Product',Brand='$Brand',Texture='$Texture',Specification='$Specification',cost='$Cost',Amount='$Amount',Weight='$Weight',The_Date='$the_time' where Account='$Account' AND product='$revise'";
 if(mysqli_query($link,$updata)){
-	echo '<meta http-equiv=REFRESH CONTENT=0;url=product_list.php>';
+	echo '<meta http-equiv=REFRESH CONTENT=0;url=shelves_list.php>';
 }
 else{
 	echo "<script>alert('product更改失敗'.mysql_error());</script>"; //執行sql語法
