@@ -7,14 +7,16 @@ if($_SESSION['Account'] == null){
 ?>
 <?php 
 include("mysql_connect.php");
-$check=0;
+$check=true;
 $Account=$_SESSION['Account'];
 $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $listre = mysqli_query($link,$list);
 $list_row = mysqli_num_rows($listre);
 $listr = @mysqli_fetch_row($listre);
-if($listr==null){
-    $check=0;
+if($list_row==0){
+    $check=false;
+}else if($list_row==1&&$listr[1]==0){
+    $check=false;
 }
 
 $PL = "SELECT * FROM product_list  where Amount>0 ORDER BY cost+0 DESC";
@@ -44,7 +46,6 @@ $CNr = @mysqli_fetch_row($CNre);
                     return false;
                 }
             <?php } ?>
-            <?php $check=1; ?> 
             var input=document.createElement("input");
             input.setAttribute("name","insert");
             input.setAttribute("id","insert");
@@ -69,7 +70,7 @@ $CNr = @mysqli_fetch_row($CNre);
 
     $(document).ready(function(){
         $("#shopping_cart").click(function(){
-            if(<?php echo "$list_row"; ?>==0||<?php echo "$check"; ?>==0){
+            if(!<?php echo "$check"; ?>){
                 alert('請至少選擇一樣商品再前往購物車');
                 return false;
             }
