@@ -16,7 +16,7 @@ $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'
                 $l = "SELECT * FROM product_list where Product = '$second[$j][0]'";
                 $li = mysqli_query($link,$l);
                 $lis = @mysqli_fetch_row($li);
-                echo "$list[8]";
+                echo "$lis[8]";
                 $third=(int)$lis[8]-(int)$second[$j][1];
                 print($third);
             }
