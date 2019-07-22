@@ -7,12 +7,13 @@ if($_SESSION['Account'] == null){
 ?>
 <?php 
 include("mysql_connect.php");
+$check=0;
 $Account=$_SESSION['Account'];
 $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $listre = mysqli_query($link,$list);
 $list_row = mysqli_num_rows($listre);
 $listr = @mysqli_fetch_row($listre);
-if($listr==null||$listr[2]==0){
+if($listr==null||$listr[1]==0){
     $check=0;
 }
 
