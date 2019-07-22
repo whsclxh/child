@@ -13,7 +13,7 @@ $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $listre = mysqli_query($link,$list);
 $list_row = mysqli_num_rows($listre);
 $listr = @mysqli_fetch_row($listre);
-if($listr==null||$listr[1]==0){
+if($listr==null){
     $check=0;
 }
 
