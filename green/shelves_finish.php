@@ -28,7 +28,7 @@ $list=$row1[0]+1;
 if($row[1]==null){
 	$cardinal=1;
 	$insert="insert into product_list(list,cardinal,Account,Product,Brand,Texture,Specification,Cost,Amount,Weight,The_Date)values
-	('list','$cardinal','$Account','$Product','$Brand','$Texture','$Specification','$Cost','$Amount','$Weight','$the_time')";
+	('$list','$cardinal','$Account','$Product','$Brand','$Texture','$Specification','$Cost','$Amount','$Weight','$the_time')";
 	if(mysqli_query($link,$insert))
 	echo '<meta http-equiv=REFRESH CONTENT=0;url=shelves_list.php>';
 	else echo "無法添加".mysqli_error();
