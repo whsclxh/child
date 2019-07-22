@@ -87,7 +87,7 @@ $paylistrow = mysqli_num_rows($result);
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML='<?php echo "$row_sql[12]"; ?>';
             var tdNode6=trNode.insertCell();
-            tdNode6.innerHTML='<a id="order" name="order">點擊查看</a>';
+            tdNode6.innerHTML='<a id="order" name="order" href="order.php">點擊查看</a>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
