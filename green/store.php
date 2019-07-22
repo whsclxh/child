@@ -67,7 +67,7 @@ for ($i=0; $i <$Product_number ; $i++) {
     $check="SELECT * FROM product_list where product='$qua[$i]'";
     $result2=mysqli_query($link,$check);
     $row = mysqli_fetch_array($result2);
-    if($row[8]<$qua[i]){
+    if($row[8]<$Price[i]){
         echo "<script>alert('庫存不足，請重新選擇，庫存剩下$row[8]')</script>";
         echo '<meta http-equiv=REFRESH CONTENT=0;url=shopping_cart.php>';
     }
