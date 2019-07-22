@@ -64,14 +64,14 @@ $ExecTimes = (int)$_POST['ExecTimes'];
 for ($i=0; $i <$Product_number ; $i++) {
     $Price[$i]=$_POST['cost'.$i];
     $qua[$i]=$_POST['qua'.$i];
-    $check="SELECT * FROM product_list where product='$qua[$i]'";
+    $ItemName[$i]=$_POST['ItemName'.$i];
+    $check="SELECT * FROM product_list where product='$ItemName[$i]'";
     $result2=mysqli_query($link,$check);
     $row = mysqli_fetch_array($result2);
-    if($row[8]<$Price[i]){
+    if($row[8]<$qua[i]){
         echo "<script>alert('庫存不足，請重新選擇，庫存剩下$row[8]')</script>";
         echo '<meta http-equiv=REFRESH CONTENT=0;url=shopping_cart.php>';
     }
-    $ItemName[$i]=$_POST['ItemName'.$i];
     array_push($obj->Send['Items'], array(
         'Name' => $ItemName[$i],
         'Price' => $Price[$i],
