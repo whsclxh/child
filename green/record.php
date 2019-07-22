@@ -83,14 +83,11 @@ $paylistrow = mysqli_num_rows($result);
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$row_sql[13]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<?php 
-                for($u=0;$u<$c;$u++){
-                    echo "$first[$u]";
-                    echo "<br>";
-                }
-             ?>';
+            tdNode4.innerHTML='<?php for($u=0;$u<$c;$u++){ echo "$first[$u]"; echo "<br>"; } ?>';
             var tdNode5=trNode.insertCell();
-            tdNode5.innerHTML="<?php echo "$row_sql[12]"; ?>";
+            tdNode5.innerHTML='<?php echo "$row_sql[12]"; ?>';
+            var tdNode6=trNode.insertCell();
+            tdNode6.innerHTML='<a id="order" name="order">點擊查看</a>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
@@ -106,6 +103,8 @@ $paylistrow = mysqli_num_rows($result);
             cell3.innerHTML = "<b>商品名稱</b>";
             var cell4 = row.insertCell(4);
             cell4.innerHTML = "<b>訂單狀況</b>";
+            var cell5 = row.insertCell(5);
+            cell5.innerHTML = "<b>詳細資訊</b>";
             blockTable = document.getElementById("table");
             preSpan = document.getElementById("spanPre");
             firstSpan = document.getElementById("spanFirst");
