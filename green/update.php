@@ -49,11 +49,11 @@ if($_SESSION['Account'] != null){
                     </div>
                     <div class='form-group' name='psw'>
                         <label><span style="color: red;">*</span>密碼</label>
-                        <input type='password' class='form-control' id='Password' placeholder='至少8碼 至多15碼' name='Password' onblur='yanzheng(this.value)' value=" ">
+                        <input type='password' class='form-control' id='Password' placeholder='至少8碼 至多15碼' name='Password' onblur='yanzheng(this.value)' value="">
                     </div>
                     <div class='form-group'>
                         <label><span style="color: red;">*</span>再次輸入密碼</label>
-                        <input type='password' class='form-control' id='PasswordAgain' placeholder='至少8碼 至多15碼' name='PasswordAgain' onblur='testpw()' value=" ">
+                        <input type='password' class='form-control' id='PasswordAgain' placeholder='至少8碼 至多15碼' name='PasswordAgain' onblur='testpw()' value="">
                     </div>
                     <div class="form-group">
                         <label><span style="color: red;">*</span>姓名</label>
