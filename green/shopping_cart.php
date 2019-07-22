@@ -49,8 +49,14 @@ $c=count($final);
         		return a+x.toString();
     		}
     		function info(){
-    			document.form1.action="info.php"; 
-    			document.form1.submit(); 
+                if(<?php echo $listr; ?>==null){
+                    alert('請至少選擇一樣商品再前往結帳!');
+                    document.form1.action="purchase.php";
+                    return false;
+                }else{
+    			    document.form1.action="info.php"; 
+    			    document.form1.submit();
+                } 
     		}
     		function turn(){
     			document.form1.action="purchase.php";
