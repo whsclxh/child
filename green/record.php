@@ -16,14 +16,27 @@ $paylistrow = mysqli_num_rows($result);
 <head>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/pagination.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#order").click(function(){
+            var order=$(this).val();
+            var order_input=document.createElement("input");
+            order_input.setAttribute("type","hidden");
+            order_input.setAttribute("name","order");
+            order_input.setAttribute("id","order");
+            order_input.setAttribute("value",order);
+            document.getElementById("hideinput").appendChild(order_input);
+        })
+    })
+</script>
 </head>
 <body align="center">
 <title>購買紀錄</title>
 <div class="container" align="center" >
     <h2 style="margin-top: 2%">購買紀錄</h2>
-<form action="math_before_past_record.php" method="post" name="form1" data-ajax="false">
-<div id="div1">
-</div>
+<form action="past_order.php" method="post" name="form1" data-ajax="false">
+<div id="div1"></div>
+<div id="hideinput" name="hideinput"></div>
 </form>
 <br>
 <br>
@@ -87,7 +100,7 @@ $paylistrow = mysqli_num_rows($result);
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML='<?php echo "$row_sql[12]"; ?>';
             var tdNode6=trNode.insertCell();
-            tdNode6.innerHTML='<a id="order" name="order" href="order.php">點擊查看</a>';
+            tdNode6.innerHTML='<a id="order" name="order" href="past_order.php" value="$x">點擊查看</a>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
