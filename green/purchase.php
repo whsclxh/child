@@ -63,10 +63,10 @@ $CNr = @mysqli_fetch_row($CNre);
 
     $(document).ready(function(){
         $("#shopping_cart").click(function(){
-            <?php if ($listr[0]==null){ ?>
-            alert('s');    
-            return false;                
-            <?php } ?>
+            if(<?php echo "listr[0]"; ?>==null){
+                alert('d');
+                return false;
+            }
         })
     })
 
