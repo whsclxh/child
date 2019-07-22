@@ -13,7 +13,7 @@ $listre = mysqli_query($link,$list);
 $list_row = mysqli_num_rows($listre);
 $listr = @mysqli_fetch_row($listre);
 if($listr==null){
-    echo "string";
+    $check=0;
 }
 
 $PL = "SELECT * FROM product_list  where Amount>0 ORDER BY cost+0 DESC";
@@ -67,14 +67,9 @@ $CNr = @mysqli_fetch_row($CNre);
 
     $(document).ready(function(){
         $("#shopping_cart").click(function(){
-            if(<?php echo "$list_row"; ?>==0){
+            if(<?php echo "$list_row"; ?>==0||<?php echo "$check"; ?>==0){
                 alert('請至少選擇一樣商品再前往購物車');
                 return false;
-            }else{
-                if(<?php echo "$listr[2]"; ?>==0){
-                    alert('請至少選擇一樣商品再前往購物車');
-                    return false;
-                }
             }
         })
     })
