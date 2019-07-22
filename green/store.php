@@ -60,7 +60,7 @@ $PeriodAmount = (int)$_POST['TotalAmount'];
 $PeriodType = (string)$_POST['PeriodType'];
 $Frequency = (int)$_POST['Frequency'];
 $ExecTimes = (int)$_POST['ExecTimes'];
-
+$sub=true;
 for ($i=0; $i <$Product_number ; $i++) {
     $Price[$i]=$_POST['cost'.$i];
     $qua[$i]=$_POST['qua'.$i];
@@ -69,10 +69,9 @@ for ($i=0; $i <$Product_number ; $i++) {
     $check="SELECT * FROM product_list where product='$j'";
     $result2=mysqli_query($link,$check);
     $row = mysqli_fetch_array($result2);
-    $sub=true;
     if($row[8]<$qua[$i]){
-        echo "<script>alert('$j庫存不足，請重新選擇，庫存剩下$row[8]')</script>";
         $sub=false;
+        echo "<script>alert('庫存不足，請重新選擇，庫存剩下$row[8]')</script>";
     }
     array_push($obj->Send['Items'], array(
         'Name' => $ItemName[$i],
