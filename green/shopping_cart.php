@@ -12,7 +12,7 @@ $Account=$_SESSION['Account'];
 $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $result = mysqli_query($link,$list);
 $listr = @mysqli_fetch_row($result);
-print_r($listr);
+
 $Product_number=$listr[1];
 $TotalAmount=0;
 $cost=array();
@@ -67,7 +67,7 @@ $c=count($final);
 <br><br>
 <div style=" margin: 0 auto;">
 <h2 style="text-align:  center;">購物車</h2>
-<form action="a.php" method="POST" name="form1" id="form1">
+<form  method="POST" name="form1" id="form1">
 	<div id="div1"></div>
     <div id="hideinput"></div>
   <div align="center">
@@ -121,6 +121,7 @@ $c=count($final);
 						input.setAttribute("value","<?php echo"$x" ?>");
 						input.setAttribute("type","hidden");
 						document.getElementById("hideinput").appendChild(input);
+                        document.form1.action="a.php";
 						document.form1.submit();
         			});
         		});
