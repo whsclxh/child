@@ -64,7 +64,7 @@ $CNr = @mysqli_fetch_row($CNre);
 
     $(document).ready(function(){
         $("#shopping_cart").click(function(){
-            if(<?php echo "$list_row"; ?>==0||<?php echo "listr[2]"; ?>==0){
+            if(<?php echo "$list_row"; ?>==0||<?php echo "$listr[2]"; ?>==0){
                 alert('請至少選擇一樣商品再前往購物車');
                 return false;
             }
