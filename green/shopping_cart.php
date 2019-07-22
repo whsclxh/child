@@ -12,7 +12,7 @@ $Account=$_SESSION['Account'];
 $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $result = mysqli_query($link,$list);
 $listr = @mysqli_fetch_row($result);
-if(!($listr)){
+if($listr==null){
     $g=0;
 }
 
