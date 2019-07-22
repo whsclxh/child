@@ -69,12 +69,10 @@ for ($i=0; $i <$Product_number ; $i++) {
     $check="SELECT * FROM product_list where product='$j'";
     $result2=mysqli_query($link,$check);
     $row = mysqli_fetch_array($result2);
+    $sub=true;
     if($row[8]<$qua[$i]){
         echo "<script>alert('$j庫存不足，請重新選擇，庫存剩下$row[8]')</script>";
         $sub=false;
-        break;
-    }else{
-        $sub=true;
     }
     array_push($obj->Send['Items'], array(
         'Name' => $ItemName[$i],
