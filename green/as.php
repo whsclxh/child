@@ -18,7 +18,8 @@ $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'
                 $li = mysqli_query($link,$l);
                 $lis = @mysqli_fetch_row($li);
                 $third=(int)$lis[8]-(int)$second[$j][1];
-                $up="updata product_list set Amount=$third where list='$lis[0]'";
+                $m=$list[0];
+                $up="updata product_list set Amount='$third' where list='$m'";
                 mysqli_query($link,$up)or die ("pay失敗儲存失敗".mysql_error());
             }
 
