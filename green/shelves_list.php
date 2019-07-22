@@ -16,100 +16,9 @@ $listrow = mysqli_num_rows($result);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title><style type="text/css">
-    body{
-    }
-    table .table-striped{
-    }
-    table thead tr{
-        text-align: center;
-        height: 30px;
-        background: #deeeee;
-        padding: 5px;
-        margin: 0;
-        border: 0px;
-    }
-    table tbody td{
-        text-align: center;
-        height:30px;
-        margin: 0;
-        padding: 5px;
-        border:0px;
-    }
-    table tbody tr{
-        background-color: #FFFACD;
-    }
-    .span6{
-        /*width:500px;*/
-        float:inherit;
-        margin:10px;
-    }
-    #pagiDiv span{
-        background:#FFFAF0;
-        border-radius: .2em;
-        padding:5px;
-    }
-    table {
-        overflow:hidden;
-        border:1px solid #d3d3d3;
-        background:#fefefe;
-        width:40%;
-        margin:5% auto 0;
-        margin-top: 3%;
-        -moz-border-radius:5px; /* FF1+ */
-        -webkit-border-radius:5px; /* Saf3-4 */
-        border-radius:5px;
-        -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-        -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    }
-    
-    th, td {padding:18px 28px 18px; text-align:center; }
-    
-    th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
-    
-    td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
-    
-    tr.odd-row td {background:#f6f6f6;}
-    table tbody tr  :hover{background:  #FFDD55;}
-    
-    td.first, th.first {text-align:center;}
-    
-    td.last {border-right:none;}
-    tr:first-child th.first {
-        -moz-border-radius-topleft:5px;
-        -webkit-border-top-left-radius:5px; /* Saf3-4 */
-    }
-    
-    tr:first-child th.last {
-        -moz-border-radius-topright:5px;
-        -webkit-border-top-right-radius:5px; /* Saf3-4 */
-    }
-    
-    tr:last-child td.first {
-        -moz-border-radius-bottomleft:5px;
-        -webkit-border-bottom-left-radius:5px; /* Saf3-4 */
-    }
-    
-    tr:last-child td.last {
-        -moz-border-radius-bottomright:5px;
-        -webkit-border-bottom-right-radius:5px; /* Saf3-4 */
-    }
-    td {
-        background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
-        background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
-    }
-    
-    tr.odd-row td {
-        background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
-        background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
-    }
-    
-    th {
-        background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
-        background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
-    }
-</style>
-<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <title>商品上架紀錄</title>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/sheives_list.css">
     <script type="text/javascript" src="js/pagination.js"></script>
     <script type="text/javascript">
         //全局变量
@@ -157,6 +66,10 @@ $listrow = mysqli_num_rows($result);
             tdNode4.innerHTML='<?php echo "$row_sql[8]"; ?>';
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML="<?php echo "$row_sql[10]"; ?>";
+            var tdNode6=trNode.insertCell();
+            tdNode6.innerHTML="<td><button type=\"button\" name=\"rivise<?php echo $x; ?>\" id=\"rivise<?php echo $x; ?>\" <?php echo"value=\"$row_sql[3]\""; ?>>修改商品資訊</td>";
+            var tdNode7=trNode.insertCell();
+            tdNode7.innerHTML="<td><button type=\"button\" name=\"obtained<?php echo $x; ?>\" id=\"obtained<?php echo $x; ?>\" <?php echo"value=\"$row_sql[3]\""; ?>>下架</td>";
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
@@ -171,7 +84,11 @@ $listrow = mysqli_num_rows($result);
             var cell3 = row.insertCell(3);
             cell3.innerHTML = "<b>商品數量</b>";
             var cell4 = row.insertCell(4);
-            cell4.innerHTML = "<b>上架時間</b>";
+            cell4.innerHTML = "<b>最後修改/上架時間</b>";
+            var cell5 = row.insertCell(5);
+            cell5.innerHTML = "<b>更改資訊</b>";
+            var cell6 = row.insertCell(6);
+            cell6.innerHTML = "<b>下架</b>";
             blockTable = document.getElementById("table");
             preSpan = document.getElementById("spanPre");
             firstSpan = document.getElementById("spanFirst");
@@ -199,19 +116,40 @@ $listrow = mysqli_num_rows($result);
 });
         };
     </script>
+    <script>
+    <?php for($q=0;$q<$listrow;$q++){ ?>
+    $(document).ready(function(){                
+        $("#rivise<?php echo $q; ?>").click(function(){
+            var product=$(this).val();
+            var input=document.createElement("input");
+            input.setAttribute("name","rivise");
+            input.setAttribute("id","rivise");
+            input.setAttribute("value",product);
+            input.setAttribute("type","hidden");
+            document.getElementById("hideinput").appendChild(input);
+            document.form1.submit();
+        });
+        $("#obtained<?php echo $q; ?>").click(function(){
+            var detail=$(this).val();
+            var input=document.createElement("input");
+            input.setAttribute("name","obtained");
+            input.setAttribute("id","obtained");
+            input.setAttribute("value",detail);
+            input.setAttribute("type","hidden");
+            document.getElementById("hideinput").appendChild(input);
+            document.form1.submit(); 
+        })
+    })
+    <?php } ?>
+    </script>
 </head>
-<style>
-    .right ul li {
-    display:inline;
-}
-</style>
 <body align="center">
 
 <div class="container" align="center" >
     <h2 style="margin-top: 2%">商品上架紀錄</h2>
-<form action="math_before_past_record.php" method="post" name="form1" data-ajax="false">
-<div id="div1">
-</div>
+<form action="adjust_sheives.php" method="post" name="form1" data-ajax="false">
+<div id="div1"></div>
+<div id="hideinput"></div>
 </form>
 <br>
 <br>
