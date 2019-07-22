@@ -89,6 +89,7 @@ $num_rows = mysqli_num_rows($result);
         var currPageSpan;
     </script>
 </head>
+<title>商品頁</title>
 <body>
     <div id="header" name="header">
         <span><a href="update.php">update</a></span>

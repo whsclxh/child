@@ -57,6 +57,7 @@ $c=count($final);
     			return false;
     		}
 </script>
+<title>購物車</title>
 <br><br>
 <div style=" margin: 0 auto;">
 <h2 style="text-align:  center;">購物車</h2>

@@ -17,7 +17,7 @@ if($_SESSION['Account'] == null){
   <link rel="stylesheet" type="text/css" href="css/body.css">
   <script src="jquery-3.4.1.min.js"></script>
 </head>
-<title>申請帳號</title>
+<title>上架貨物</title>
 <body>
 	<form name="form1" method="post" action="shelves_finish.php">
   <fieldset>

@@ -64,6 +64,7 @@ $listrow = mysqli_num_rows($result);
         var currPageSpan;
     </script>
 </head>
+<title>上架貨物列表</title>
 <body align="center">
 
 <div class="container" align="center" >

@@ -15,7 +15,7 @@ mysqli_query($link,$delete_front)or die ("無法刪除".mysqli_error()); //執�
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>支付詳情</title>
 </head>
 <body>
     <div style="border: 0 auto" align="center">

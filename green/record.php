@@ -204,7 +204,7 @@ $paylistrow = mysqli_num_rows($result);
 }
 </style>
 <body align="center">
-
+<title>購買紀錄</title>
 <div class="container" align="center" >
     <h2 style="margin-top: 2%">購買紀錄</h2>
 <form action="math_before_past_record.php" method="post" name="form1" data-ajax="false">

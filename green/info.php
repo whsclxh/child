@@ -172,6 +172,7 @@ $the_time=date("Y/m/d H:i:s");
         });
         });
     </script>
+<title>確認資訊</title>
 <h3 align="center" style="margin-top: 40px;">寄送填寫資料頁</h3>
 <br><br>
 <div style="width: 40%; margin: 0 auto;">

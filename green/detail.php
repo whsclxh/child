@@ -39,6 +39,7 @@ $listr = @mysqli_fetch_row($result1);
         })
     })
 </script>
+<title>詳細資料</title>
 <div align="center" id="div1">
 <table id="newspaper-a" name="newspaper-a">
 	<thead>
