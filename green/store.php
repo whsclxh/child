@@ -65,7 +65,8 @@ for ($i=0; $i <$Product_number ; $i++) {
     $Price[$i]=$_POST['cost'.$i];
     $qua[$i]=$_POST['qua'.$i];
     $ItemName[$i]=$_POST['ItemName'.$i];
-    $check="SELECT * FROM product_list where product='$ItemName[$i]'";
+    $j=$ItemName[$i];
+    $check="SELECT * FROM product_list where product='$j'";
     $result2=mysqli_query($link,$check);
     $row = mysqli_fetch_array($result2);
     if($row[8]<$qua[i]){
@@ -101,5 +102,5 @@ $Response = (string)$obj->CheckOutString();
 
 echo "<div style=\"display:none\">$Response</div>";
 // 自動將表單送出
-echo '<script>document.getElementById("__ecpayForm").submit();</script>';
+//echo '<script>document.getElementById("__ecpayForm").submit();</script>';
 ?>
