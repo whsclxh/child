@@ -31,11 +31,11 @@ $cart="update shopping_cart set Amount='$Product_number',MerchantTradeNo='0',Ite
        echo '<meta http-equiv=REFRESH CONTENT=0;url=shopping_cart.php>';
 	}else{
        echo "<script>alert('failed');</script>";
-       echo '<meta http-equiv=REFRESH CONTENT=0;url=Topic.php>';
+       echo '<meta http-equiv=REFRESH CONTENT=0;url=purchase.php>';
     }
 }else{
 	echo "<script>alert('failed');</script>";
-	echo '<meta http-equiv=REFRESH CONTENT=0;url=Topic.php>';
+	echo '<meta http-equiv=REFRESH CONTENT=0;url=purchase.php>';
 }
 
 ?>

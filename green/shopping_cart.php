@@ -72,7 +72,7 @@ $c=count($final);
     <div id="hideinput"></div>
   <div align="center">
   	<button onclick="turn()">回商品列表</button>
-  	<button type="submit" onclick="info()">前往付款頁面</button>
+  	<button onclick="info()">前往付款頁面</button>
   </div>
 </form>
 <script type="text/javascript">
