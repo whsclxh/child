@@ -13,12 +13,13 @@ $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'
                 $second[$i]=explode("*",$first[$i]);
             }
             print_r($second);
-            /*for($j=0;$j<$c-1;$j++){
+            for($j=0;$j<$c-1;$j++){
                 $l = "SELECT * FROM product_list where Product = '$second[$j][0]'";
                 $li = mysqli_query($link,$l);
                 $lis = @mysqli_fetch_row($li);
                 $third=(int)$lis[8]-(int)$second[$j][1];
+                print($third);
             }
-print_r($third);*/
+
 
 ?>
