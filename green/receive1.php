@@ -54,11 +54,29 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
             if(mysqli_query($link,$update)){
                 $greturn="update front set cardinal='$cardinal',pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
                 if(mysqli_query($link,$greturn)){
-                       
-                    echo '<meta http-equiv=REFRESH CONTENT=0;url=receive.php>';
-                }else{
-                    die("pay成功儲存失敗".mysqli_error());
-                }
+                    $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'";
+                    $listre = mysqli_query($link,$list);
+                    $listr = @mysqli_fetch_row($listre);
+                    $first=explode("#", $listr[8]);
+                    $c=count($first);
+                    $second=arraY();
+                    for ($i=0;$i<$c-1;$i++) {
+                        $second[$i]=explode("*",$first[$i]);
+                    }
+                    for($j=0;$j<$c-1;$j++){
+                        $k=$second[$j][0];
+                        $l = "SELECT * FROM product_list where Product = '$k'";
+                        $li = mysqli_query($link,$l);
+                        $lis = @mysqli_fetch_row($li);
+                        $third=(int)$lis[8]-(int)$second[$j][1];
+                        $m=$lis[0];
+                        $up="update product_list set Amount='$third' where list='$m'";
+                        mysqli_query($link,$up)or die ("pay失敗儲存失敗".mysql_error());
+                    }   
+                        echo '<meta http-equiv=REFRESH CONTENT=0;url=receive.php>';
+                    }else{
+                        die("pay成功儲存失敗".mysqli_error());
+                    }
             }else{
                 $greturn="update front set cardinal='$cardinal',pay='failed' where MerchantTradeNo='$MerchantTradeNo'";
                 mysqli_query($link,$greturn)or die ("pay失敗儲存失敗".mysql_error()); //執行sql語法
@@ -71,7 +89,25 @@ if ( $_POST['RtnCode'] =='1' && $CheckMacValue == $_POST['CheckMacValue'] ){
             if(mysqli_query($link,$update)){
                 $greturn="update front set cardinal='$cardinal',pay='succeeded' where MerchantTradeNo='$MerchantTradeNo'";
                 if(mysqli_query($link,$greturn)){
-                                
+                    $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'";
+                    $listre = mysqli_query($link,$list);
+                    $listr = @mysqli_fetch_row($listre);
+                    $first=explode("#", $listr[8]);
+                    $c=count($first);
+                    $second=arraY();
+                    for ($i=0;$i<$c-1;$i++) {
+                        $second[$i]=explode("*",$first[$i]);
+                    }   
+                    for($j=0;$j<$c-1;$j++){
+                        $k=$second[$j][0];
+                        $l = "SELECT * FROM product_list where Product = '$k'";
+                        $li = mysqli_query($link,$l);
+                        $lis = @mysqli_fetch_row($li);
+                        $third=(int)$lis[8]-(int)$second[$j][1];
+                        $m=$lis[0];
+                        $up="update product_list set Amount='$third' where list='$m'";
+                        mysqli_query($link,$up)or die ("pay失敗儲存失敗".mysql_error());
+                    }                
                 }else{
                     die("pay成功儲存失敗".mysqli_error());
                 }
