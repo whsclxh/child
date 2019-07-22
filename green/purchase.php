@@ -95,7 +95,7 @@ $CNr = @mysqli_fetch_row($CNre);
 </head>
 <title>商品頁</title>
 <body>
-    <h3><?php $CNr[4] ?> 您好</h3>
+    <h3><?php echo $CNr[4]; ?> 您好</h3>
     <div id="header" name="header">
         <span><a href="update.php">update</a></span>
         |
