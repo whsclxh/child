@@ -67,9 +67,9 @@ $listrow = mysqli_num_rows($result);
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML="<?php echo "$row_sql[10]"; ?>";
             var tdNode6=trNode.insertCell();
-            tdNode6.innerHTML="<td><button type=\"button\" name=\"rivise<?php echo $x; ?>\" id=\"rivise<?php echo $x; ?>\" <?php echo"value=\"$row_sql[3]\""; ?>>修改商品資訊</td>";
+            tdNode6.innerHTML='<td><button type=\"button\" name=\"rivise<?php echo $x; ?>\" id=\"rivise<?php echo $x; ?>\" <?php echo"value=\"$row_sql[3]\""; ?>>修改商品資訊</td>';
             var tdNode7=trNode.insertCell();
-            tdNode7.innerHTML="<td><button type=\"button\" name=\"obtained<?php echo $x; ?>\" id=\"obtained<?php echo $x; ?>\" <?php echo"value=\"$row_sql[3]\""; ?>>下架</td>";
+            tdNode7.innerHTML='<td><button type=\"button\" name=\"obtained<?php echo $x; ?>\" id=\"obtained<?php echo $x; ?>\" <?php echo"value=\"$row_sql[3]\""; ?>>下架</td>';
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
