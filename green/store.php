@@ -71,7 +71,7 @@ for ($i=0; $i <$Product_number ; $i++) {
     $row = mysqli_fetch_array($result2);
     if($row[8]<$qua[$i]){
         $sub=false;
-        echo "<script>alert($j+'庫存不足，請重新選擇，庫存剩下$row[8]')</script>";
+        echo "<script>alert('$j'+'庫存不足，請重新選擇，庫存剩下$row[8]')</script>";
     }
     array_push($obj->Send['Items'], array(
         'Name' => $ItemName[$i],
