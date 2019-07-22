@@ -14,13 +14,12 @@ $list = "SELECT * FROM front where Account = '$Account' AND cardinal='$cardinal'
             }
             for($j=0;$j<$c-1;$j++){
                 $k=$second[$j][0];
-                echo "$k";
                 $l = "SELECT * FROM product_list where Product = '$k'";
                 $li = mysqli_query($link,$l);
                 $lis = @mysqli_fetch_row($li);
-                echo "$lis[8]";
                 $third=(int)$lis[8]-(int)$second[$j][1];
-                print($third);
+                $up="updata product_list set Amount=$third where list='$lis[0]'";
+                mysqli_query($link,$up)or die ("pay失敗儲存失敗".mysql_error());
             }
 
 
