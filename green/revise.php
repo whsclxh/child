@@ -52,11 +52,11 @@ $row = @mysqli_fetch_row($result);
     </div>
     <div class="form-group">
       <label><span style="color: red;">*</span>商品數量</label>
-      <input type="text" class="form-control" id="Amount" placeholder="輸入數量" name="Amount" required="required" <?php echo "value='$row[9]'"; ?>>
+      <input type="text" class="form-control" id="Amount" placeholder="輸入數量" name="Amount" required="required" <?php echo "value='$row[8]'"; ?>>
     </div>
     <div class="form-group">
       <label>商品重量</label>
-      <input type="text" class="form-control" id="Weight" placeholder="輸入重量" name="Weight" <?php echo "value='$row[8]'"; ?>>
+      <input type="text" class="form-control" id="Weight" placeholder="輸入重量" name="Weight" <?php echo "value='$row[9]'"; ?>>
     </div>
   </fieldset>
   <br>
