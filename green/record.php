@@ -12,124 +12,53 @@ $paylistrow = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" type="text/css" href="css/sheives_list.css">
 <head>
-    <meta charset="UTF-8">
-    <title></title><style type="text/css">
-    body{
-    }
-    table .table-striped{
-    }
-    table thead tr{
-        text-align: center;
-        height: 30px;
-        background: #deeeee;
-        padding: 5px;
-        margin: 0;
-        border: 0px;
-    }
-    table tbody td{
-        text-align: center;
-        height:30px;
-        margin: 0;
-        padding: 5px;
-        border:0px;
-    }
-    table tbody tr{
-        background-color: #FFFACD;
-    }
-    .span6{
-        /*width:500px;*/
-        float:inherit;
-        margin:10px;
-    }
-    #pagiDiv span{
-        background:#FFFAF0;
-        border-radius: .2em;
-        padding:5px;
-    }
-    table {
-        overflow:hidden;
-        border:1px solid #d3d3d3;
-        background:#fefefe;
-        width:40%;
-        margin:5% auto 0;
-        margin-top: 3%;
-        -moz-border-radius:5px; /* FF1+ */
-        -webkit-border-radius:5px; /* Saf3-4 */
-        border-radius:5px;
-        -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-        -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    }
-    
-    th, td {padding:18px 28px 18px; text-align:center; }
-    
-    th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
-    
-    td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
-    
-    tr.odd-row td {background:#f6f6f6;}
-    table tbody tr  :hover{background:  #FFDD55;}
-    
-    td.first, th.first {text-align:center;}
-    
-    td.last {border-right:none;}
-    tr:first-child th.first {
-        -moz-border-radius-topleft:5px;
-        -webkit-border-top-left-radius:5px; /* Saf3-4 */
-    }
-    
-    tr:first-child th.last {
-        -moz-border-radius-topright:5px;
-        -webkit-border-top-right-radius:5px; /* Saf3-4 */
-    }
-    
-    tr:last-child td.first {
-        -moz-border-radius-bottomleft:5px;
-        -webkit-border-bottom-left-radius:5px; /* Saf3-4 */
-    }
-    
-    tr:last-child td.last {
-        -moz-border-radius-bottomright:5px;
-        -webkit-border-bottom-right-radius:5px; /* Saf3-4 */
-    }
-    td {
-        background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
-        background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
-    }
-    
-    tr.odd-row td {
-        background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
-        background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
-    }
-    
-    th {
-        background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
-        background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
-    }
-</style>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/pagination.js"></script>
-    <script type="text/javascript">
-        //全局变量
-        var numCount;       //数据总数量
-        var columnsCounts;  //数据列数量
-        var pageCount;      //每页显示的数量
-        var pageNum;        //总页数
-        var currPageNum ;   //当前页数
+<script type="text/javascript" src="js/pagination.js"></script>
+</head>
+<body align="center">
+<title>購買紀錄</title>
+<div class="container" align="center" >
+    <h2 style="margin-top: 2%">購買紀錄</h2>
+<form action="math_before_past_record.php" method="post" name="form1" data-ajax="false">
+<div id="div1">
+</div>
+</form>
+<br>
+<br>
+<div id="pagiDiv" align="center" style="width:40%">
+        <span id="spanFirst">第一頁</span>  
+        <span id="spanPre">上一頁</span>  
+        <span id="spanNext">下一頁</span>  
+        <span id="spanLast">最後一頁</span>  
+        第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
+</div>
+<div style="width:100%;" style="display:inline">
+<div class="right" style="float:right; text-align:center; display:inline" >
+  	<ul>
+      <li><a href="purchase.php" data-ajax="false">回到商品頁面 </a></li>
+    </ul>
+    </div>
+</div>
+</div>
+</body>
+</html>
+    <script>
+            var numCount;       //数据总数量
+            var columnsCounts;  //数据列数量
+            var pageCount;      //每页显示的数量
+            var pageNum;        //总页数
+            var currPageNum ;   //当前页数
 
-        //页面标签变量
-        var blockTable;
-        var preSpan;
-        var firstSpan;
-        var nextSpan;
-        var lastSpan;
-        var pageNumSpan;
-        var currPageSpan;
-
-
-
-        window.onload=function(){
             //页面标签变量
+            var blockTable;
+            var preSpan;
+            var firstSpan;
+            var nextSpan;
+            var lastSpan;
+            var pageNumSpan;
+            var currPageSpan;
             tableNode=document.createElement("table");//获得对象
             tableNode.setAttribute("id","table");
             tableNode.setAttribute("cellspacing","0");
@@ -194,39 +123,5 @@ $paylistrow = mysqli_num_rows($result);
         $("table td:first-child, table th:first-child").addClass("first");
         /* For removing the last border */
         $("table td:last-child, table th:last-child").addClass("last");
-});
-        };
+    });
     </script>
-</head>
-<style>
-    .right ul li {
-    display:inline;
-}
-</style>
-<body align="center">
-<title>購買紀錄</title>
-<div class="container" align="center" >
-    <h2 style="margin-top: 2%">購買紀錄</h2>
-<form action="math_before_past_record.php" method="post" name="form1" data-ajax="false">
-<div id="div1">
-</div>
-</form>
-<br>
-<br>
-<div id="pagiDiv" align="center" style="width:40%">
-        <span id="spanFirst">第一頁</span>  
-        <span id="spanPre">上一頁</span>  
-        <span id="spanNext">下一頁</span>  
-        <span id="spanLast">最後一頁</span>  
-        第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
-</div>
-<div style="width:100%;" style="display:inline">
-<div class="right" style="float:right; text-align:center; display:inline" >
-  	<ul>
-      <li><a href="purchase.php" data-ajax="false">回到商品頁面 </a></li>
-    </ul>
-    </div>
-</div>
-</div>
-</body>
-</html>
