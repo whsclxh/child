@@ -117,7 +117,7 @@ $listrow = mysqli_num_rows($result);
         };
     </script>
     <script>
-    <?php for($q=0;$q<$listrow;$q++){ ?>
+    <?php for($q=1;$q<=$listrow;$q++){ ?>
     $(document).ready(function(){                
         $("#rivise<?php echo $q; ?>").click(function(){
             var product=$(this).val();
