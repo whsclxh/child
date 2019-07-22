@@ -7,16 +7,16 @@ if($_SESSION['Account'] == null){
 ?>
 <?php 
 include("mysql_connect.php");
-$check=true;
+$check=1;
 $Account=$_SESSION['Account'];
 $list = "SELECT * FROM shopping_cart where Account = '$Account'";
 $listre = mysqli_query($link,$list);
 $list_row = mysqli_num_rows($listre);
 $listr = @mysqli_fetch_row($listre);
 if($list_row==0){
-    $check=false;
+    $check=0;
 }else if($list_row==1&&$listr[1]==0){
-    $check=false;
+    $check=0;
 }
 
 $PL = "SELECT * FROM product_list  where Amount>0 ORDER BY cost+0 DESC";
@@ -70,7 +70,7 @@ $CNr = @mysqli_fetch_row($CNre);
 
     $(document).ready(function(){
         $("#shopping_cart").click(function(){
-            if(!<?php echo "$check"; ?>){
+            if(<?php echo "$check"; ?>==0){
                 alert('請至少選擇一樣商品再前往購物車');
                 return false;
             }
