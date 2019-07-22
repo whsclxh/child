@@ -62,11 +62,36 @@ $listrow = mysqli_num_rows($result);
         var lastSpan;
         var pageNumSpan;
         var currPageSpan;
+    </script>
+</head>
+<body align="center">
 
-
-
-        window.onload=function(){
-            //页面标签变量
+<div class="container" align="center" >
+    <h2 style="margin-top: 2%">商品上架紀錄</h2>
+<form action="adjust_sheives.php" method="post" name="form1" data-ajax="false">
+<div id="div1"></div>
+<div id="hideinput"></div>
+</form>
+<br>
+<br>
+<div id="pagiDiv" align="center" style="width:40%">
+        <span id="spanFirst">第一頁</span>  
+        <span id="spanPre">上一頁</span>  
+        <span id="spanNext">下一頁</span>  
+        <span id="spanLast">最後一頁</span>  
+        第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
+</div>
+<div style="width:100%;" style="display:inline">
+<div class="right" style="float:right; text-align:center; display:inline" >
+  	<ul>
+      <li><a href="purchase.php" data-ajax="false">回到商品頁面 </a></li>
+    </ul>
+    </div>
+</div>
+</div>
+</body>
+</html>
+<script>
             tableNode=document.createElement("table");//获得对象
             tableNode.setAttribute("id","table");
             tableNode.setAttribute("cellspacing","0");
@@ -140,33 +165,4 @@ $listrow = mysqli_num_rows($result);
         /* For removing the last border */
         $("table td:last-child, table th:last-child").addClass("last");
 });
-        };
-    </script>
-</head>
-<body align="center">
-
-<div class="container" align="center" >
-    <h2 style="margin-top: 2%">商品上架紀錄</h2>
-<form action="adjust_sheives.php" method="post" name="form1" data-ajax="false">
-<div id="div1"></div>
-<div id="hideinput"></div>
-</form>
-<br>
-<br>
-<div id="pagiDiv" align="center" style="width:40%">
-        <span id="spanFirst">第一頁</span>  
-        <span id="spanPre">上一頁</span>  
-        <span id="spanNext">下一頁</span>  
-        <span id="spanLast">最後一頁</span>  
-        第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
-</div>
-<div style="width:100%;" style="display:inline">
-<div class="right" style="float:right; text-align:center; display:inline" >
-  	<ul>
-      <li><a href="purchase.php" data-ajax="false">回到商品頁面 </a></li>
-    </ul>
-    </div>
-</div>
-</div>
-</body>
-</html>
+</script>
