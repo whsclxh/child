@@ -184,7 +184,7 @@ $the_time=date("Y/m/d H:i:s");
 <div id="div1"></div>
 
 </div>
-<form action="store.php" method="POST">
+<form action="store.php" method="POST" name="form1" id="form1">
 	<h2>付款人資訊</h2>
 	<div style="border-style:solid; padding:5px; border-width: 1px;">
     <label><span style="color: red;">*</span>姓名</label>
