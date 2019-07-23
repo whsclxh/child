@@ -30,6 +30,32 @@ for($j=0;$j<$c;$j++){
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/pagination.js"></script>
 <link rel="stylesheet" href="css/receive.css" crossorigin="anonymous">
+<body align="center">
+<title>購買明細</title>
+<div class="container" align="center" >
+    <h2 style="margin-top: 2%">購買明細</h2>
+<form action="past_order.php" method="post" name="form1" data-ajax="false">
+<div id="div1"></div>
+<div id="hideinput" name="hideinput"></div>
+</form>
+<br>
+<br>
+<div id="pagiDiv" align="center" style="width:40%">
+        <span id="spanFirst">第一頁</span>  
+        <span id="spanPre">上一頁</span>  
+        <span id="spanNext">下一頁</span>  
+        <span id="spanLast">最後一頁</span>  
+        第 <span id="spanPageNum"></span> 頁/共 <span id="spanTotalPage"></span> 頁
+</div>
+<div style="width:100%;" style="display:inline">
+<div class="right" style="float:right; text-align:center; display:inline" >
+  	<ul>
+      <li><a href="record.php" data-ajax="false">回到購買紀錄 </a></li>
+    </ul>
+    </div>
+</div>
+</div>
+</body>
 <script type="text/javascript">
 			var numCount;       //数据总数量
         	var columnsCounts;  //数据列数量
