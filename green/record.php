@@ -134,7 +134,7 @@ $paylistrow = mysqli_num_rows($result);
     </script>
     <script>
     $(document).ready(function(){
-        $("#order").click(function(){
+        $("#order").on("click",(function(){
             alert('a');
             var order=$(this).val();
             var order_input=document.createElement("input");
