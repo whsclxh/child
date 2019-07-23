@@ -35,7 +35,7 @@ for($j=0;$j<$c;$j++){
 <title>購買明細</title>
 <div class="container" align="center" >
     <h2 style="margin-top: 2%">購買明細</h2>
-    <h5><span>購買日期:<?php echo "$payr[6]"; ?></span>|<span>支付方式:<?php echo "$payr[11]"; ?></span>|<span>訂單編號:<?php echo "$payr[11]"; ?></span></h5>
+    <h5><span>購買日期:<?php echo "$payr[6]"; ?></span>&nbsp|&nbsp<span>支付方式:<?php echo "$payr[11]"; ?></span>&nbsp|&nbsp<span>訂單編號:<?php echo "$payr[5]"; ?></span></h5>
 <form action="past_order.php" method="post" name="form1" data-ajax="false">
 <div id="div1"></div>
 <div id="hideinput" name="hideinput"></div>
