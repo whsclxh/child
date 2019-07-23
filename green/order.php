@@ -94,7 +94,7 @@ for($j=0;$j<$c;$j++){
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$a"; ?>';
             var tdNode5=trNode.insertCell();
-            tdNode5.innerHTML='<?php echo "$p*$price[$x]"; ?>';
+            tdNode5.innerHTML='<?php echo $a*$price[$x]; ?>';
             var tdNode6=trNode.insertCell();
             tdNode6.innerHTML='<?php echo "$payr[12]" ?>';
             <?php } ?>
