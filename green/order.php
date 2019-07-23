@@ -36,7 +36,7 @@ for($j=0;$j<$c;$j++){
 <div class="container" align="center" >
     <h2 style="margin-top: 2%">購買明細</h2>
     <h5><span>購買日期:<?php echo "$payr[6]"; ?></span>&nbsp|&nbsp<span>支付方式:<?php echo "$payr[11]"; ?></span>&nbsp|&nbsp<span>訂單編號:<?php echo "$payr[5]"; ?></span>&nbsp|&nbsp<span>商品總額:<?php echo "$payr[13]"; ?></span></h5>
-<form action="past_order.php" method="post" name="form1" data-ajax="false">
+<form action="front_detail.php" method="post" name="form1" data-ajax="false">
 <div id="div1"></div>
 <div id="hideinput" name="hideinput"></div>
 </form>
@@ -86,9 +86,9 @@ for($j=0;$j<$c;$j++){
             ?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
-            tdNode1.innerHTML='<a><?php echo "$y"; ?><a>';
+            tdNode1.innerHTML='<?php echo "$y"; ?>';
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<?php echo "$p"; ?>';
+            tdNode2.innerHTML='<a href="#"><?php echo "$p"; ?></a>';
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$price[$x]"; ?>';
             var tdNode3=trNode.insertCell();
