@@ -26,10 +26,22 @@ for($j=0;$j<$c;$j++){
 	$costr = mysqli_query($link,$cost);
 	$costrr = mysqli_fetch_row($costr);
 	$price[$j]=$costrr[7];
+    $list[$j]=$costrr[0];
 }
 ?>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/pagination.js"></script>
+<script>
+    function go(x){
+            var detail_input=document.createElement("input");
+            detail_input.setAttribute("type","hidden");
+            detail_input.setAttribute("name","detail");
+            detail_input.setAttribute("id","detail");
+            detail_input.setAttribute("value",x);
+            document.getElementById("hideinput").appendChild(detail_input);
+            document.form1.submit();
+        }
+</script>
 <link rel="stylesheet" href="css/sheives_list.css" crossorigin="anonymous">
 <body align="center">
 <title>購買明細</title>
@@ -88,7 +100,7 @@ for($j=0;$j<$c;$j++){
             var tdNode1=trNode.insertCell();
             tdNode1.innerHTML='<?php echo "$y"; ?>';
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<a href="#"><?php echo "$p"; ?></a>';
+            tdNode2.innerHTML='<a href="#" <?php echo "onclick=go($list[$x])" ?>><?php echo "$p"; ?></a>';
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$price[$x]"; ?>';
             var tdNode3=trNode.insertCell();
