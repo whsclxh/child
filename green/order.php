@@ -86,7 +86,7 @@ for($j=0;$j<$c;$j++){
             ?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
-            tdNode1.innerHTML='<?php echo "$y"; ?>';
+            tdNode1.innerHTML='<a><?php echo "$y"; ?><a>';
             var tdNode2=trNode.insertCell();
             tdNode2.innerHTML='<?php echo "$p"; ?>';
             var tdNode3=trNode.insertCell();
