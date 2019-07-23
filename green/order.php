@@ -27,7 +27,6 @@ for($j=0;$j<$c;$j++){
 	$costrr = mysqli_fetch_row($costr);
 	$price[$j]=$costrr[7];
 }
-print_r($price);
 ?>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/pagination.js"></script>
@@ -78,7 +77,7 @@ print_r($price);
             tableNode.setAttribute("cellspacing","0");
             tableNode.setAttribute("class","table table-striped");
             //上面确定了 现在开始创建
-            <?php for($x=1;$x<= $c;$x++){ ?>
+            <?php for($x=0;$x<$c;$x++){ ?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
             tdNode1.innerHTML='<?php echo "$x"; ?>';
