@@ -27,7 +27,7 @@ $paylistrow = mysqli_num_rows($result);
             order_input.setAttribute("id","order");
             order_input.setAttribute("value",order);
             document.getElementById("hideinput").appendChild(order_input);
-            document.form1.submit();
+            //document.form1.submit();
         })
     })
 </script>
