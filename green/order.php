@@ -78,15 +78,20 @@ for($j=0;$j<$c;$j++){
             tableNode.setAttribute("class","table table-striped");
             //上面确定了 现在开始创建
             <?php for($x=0;$x<$c;$x++){ ?>
+            <?php
+            $y=$x+1;
+            $p=$second[$x][0];
+            $a=$second[$x][1]; 
+            ?>
             var trNode=tableNode.insertRow();
             var tdNode1=trNode.insertCell();
-            tdNode1.innerHTML='<?php echo "$x"; ?>';
+            tdNode1.innerHTML='<?php echo "$y"; ?>';
             var tdNode2=trNode.insertCell();
-            tdNode2.innerHTML='<?php echo "$second[$x][0]" ?>';
+            tdNode2.innerHTML='<?php echo "$p"; ?>';
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$price[$x]"; ?>';
             var tdNode3=trNode.insertCell();
-            tdNode3.innerHTML='<?php echo "$second[$x][1]"; ?>';
+            tdNode3.innerHTML='<?php echo "$a"; ?>';
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML='<?php echo "$payr[13]" ?>';
             var tdNode6=trNode.insertCell();
