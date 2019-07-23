@@ -13,7 +13,7 @@ $sql = "SELECT * FROM front WHERE Account='$Account' AND cardinal='$order'";
 $paylist = mysqli_query($link,$sql);
 $payr = mysqli_fetch_row($paylist);
 $first=explode("#", $payr[8]);
-
+print_r($first);
 
 
 $c=count($first)-1;
