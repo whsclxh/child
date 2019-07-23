@@ -163,7 +163,7 @@ $CNr = @mysqli_fetch_row($CNre);
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$row[7]"; ?>';
             var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML='<input type="number" name="amount" id="amount" min=1 <?php echo "max='$row[8]'"; ?> value=1 required>';
+            tdNode4.innerHTML="<input type=\"number\" name=\"amount\" id=\"amount\" min=\"1\" <?php echo "max='$row[8]'"; ?> value=\"1\" required>";
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML='<?php echo "$row[8]"; ?>';
             var tdNode6=trNode.insertCell();
