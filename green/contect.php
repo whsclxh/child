@@ -1,4 +1,4 @@
-<form id="form1" name="form1" method="post" action="sendmail.php">
+<form id="form1" name="form1" method="post" action="sendEmail.php">
     <fieldset>
     <legend>留言給我們</legend>
     <label>您的大名：</label>
