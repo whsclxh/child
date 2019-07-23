@@ -9,6 +9,7 @@ if($_SESSION['Account'] == null){
 include("mysql_connect.php");
 $Account = $_SESSION['Account'];
 $order = $_POST['order'];
+echo "<script>alert($order)</script>";
 $_SESSION['order'] = $_POST['order'];
 if($_SESSION['order'] == null){
     echo "<script>alert('請重新選擇!');</script>";
