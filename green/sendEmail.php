@@ -1,5 +1,7 @@
 <?php
-    require_once('PHPMailer/src/PHPMailer.php');
+    include("class.phpmailer.php"); //匯入PHPMailer類別
+    require 'PHPMailer/src/Exception.php';
+    require 'PHPMailer/src/SMTP.php';
     $C_name=$_POST['C_name'];
     $C_email=$_POST['C_email'];
     $C_tel=$_POST['C_tel'];
@@ -19,7 +21,6 @@
     $mail->FromName = "XXX";                  //寄件者姓名
     $mail->Subject ="這是一封測試信"; //郵件標題
     $mail->Body = "親愛的 ".$C_name."(".$C_email.")，您好：<br /><br />電話:".$C_tel."<br />回應內容:".$C_message; //郵件內容
-    $mail->addAttachment('../uploadfile/file/dirname.png','new.jpg'); //附件，改以新的檔名寄出
     $mail->IsHTML(true);                             //郵件內容為html
     $mail->AddAddress("$C_email");            //收件者郵件及名稱
     if(!$mail->Send()){
