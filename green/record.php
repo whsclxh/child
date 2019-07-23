@@ -134,7 +134,7 @@ $paylistrow = mysqli_num_rows($result);
     </script>
     <script>
     $(document).ready(function(){
-        $("#order").on("click",(function(){
+        $("#order").on("click",function(){
             alert('a');
             var order=$(this).val();
             var order_input=document.createElement("input");
@@ -144,6 +144,6 @@ $paylistrow = mysqli_num_rows($result);
             order_input.setAttribute("value",order);
             document.getElementById("hideinput").appendChild(order_input);
             //document.form1.submit();
-        }))
+        })
     })
 </script>
