@@ -25,7 +25,7 @@
     if(!$mail->Send()){
         echo "Error: " . $mail->ErrorInfo;
     }else{
-        echo "<b>感謝您的留言，您的建議是我們前進的動力!</b>";
+        echo "<b>感謝您的留言，您的建議是我們前進的動 力!</b>";
     }
     
 ?>
