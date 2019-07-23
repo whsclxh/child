@@ -21,7 +21,7 @@ $the_time=date("Y/m/d H:i:s");
 $PL = "SELECT * FROM product_list WHERE Account='$Account' ORDER BY cardinal+0 DESC";
 $result = mysqli_query($link,$PL);
 $row = @mysqli_fetch_row($result);
-$PL1 = "SELECT * FROM product_list  ORDER BY cardinal+0 DESC";
+$PL1 = "SELECT * FROM product_list  ORDER BY list+0 DESC";
 $result1 = mysqli_query($link,$PL1);
 $row1 = @mysqli_fetch_row($result1);
 $list=$row1[0]+1;
