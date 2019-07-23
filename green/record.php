@@ -16,21 +16,7 @@ $paylistrow = mysqli_num_rows($result);
 <head>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/pagination.js"></script>
-<script>
-    $(document).ready(function(){
-        $("#order").click(function(){
-            alert('a');
-            var order=$(this).val();
-            var order_input=document.createElement("input");
-            order_input.setAttribute("type","hidden");
-            order_input.setAttribute("name","order");
-            order_input.setAttribute("id","order");
-            order_input.setAttribute("value",order);
-            document.getElementById("hideinput").appendChild(order_input);
-            //document.form1.submit();
-        })
-    })
-</script>
+
 </head>
 <body align="center">
 <title>購買紀錄</title>
@@ -146,3 +132,18 @@ $paylistrow = mysqli_num_rows($result);
         $("table td:last-child, table th:last-child").addClass("last");
     });
     </script>
+    <script>
+    $(document).ready(function(){
+        $("#order").click(function(){
+            alert('a');
+            var order=$(this).val();
+            var order_input=document.createElement("input");
+            order_input.setAttribute("type","hidden");
+            order_input.setAttribute("name","order");
+            order_input.setAttribute("id","order");
+            order_input.setAttribute("value",order);
+            document.getElementById("hideinput").appendChild(order_input);
+            //document.form1.submit();
+        })
+    })
+</script>
