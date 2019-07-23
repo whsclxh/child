@@ -39,9 +39,11 @@ for($j=0;$j<$c;$j++){
 <form action="past_order.php" method="post" name="form1" data-ajax="false">
 <div id="div1"></div>
 <div id="hideinput" name="hideinput"></div>
+<h5><span>總價:<?php echo "$payr[13]"; ?></span></h5>
 </form>
 <br>
 <br>
+
 <div id="pagiDiv" align="center" style="width:40%">
         <span id="spanFirst">第一頁</span>  
         <span id="spanPre">上一頁</span>  
