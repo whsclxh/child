@@ -1,5 +1,5 @@
 <?php
-    require_once('./PHPMailer/PHPMailerAutoload.php');
+    require_once('PHPMailer/src/PHPMailer.php');
     $C_name=$_POST['C_name'];
     $C_email=$_POST['C_email'];
     $C_tel=$_POST['C_tel'];
