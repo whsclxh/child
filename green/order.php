@@ -13,14 +13,13 @@ $sql = "SELECT * FROM front WHERE Account='$Account' AND cardinal='$order'";
 $paylist = mysqli_query($link,$sql);
 $payr = mysqli_fetch_row($paylist);
 $first=explode("#", $payr[8]);
-print_r($first);
 
 
 $c=count($first)-1;
 for($i=0;$i<$c;$i++){
 	$second[$i]=explode("*",$first[$i]);
 }
-print_r($second);
+
 for($j=0;$j<$c;$j++){
 	$k=$second[$j][0];
 	$cost = "SELECT * FROM product_list WHERE product='$k'";
@@ -28,6 +27,7 @@ for($j=0;$j<$c;$j++){
 	$costrr = mysqli_fetch_row($costr);
 	$price[$j]=$costrr[7];
 }
+print_r($price);
 ?>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/pagination.js"></script>
