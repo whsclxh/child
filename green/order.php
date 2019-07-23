@@ -18,10 +18,11 @@ $first=explode("#", $payr[8]);
 
 $c=count($first)-1;
 for($i=0;$i<$c;$i++){
-	$second[i]=explode("*",$first[i]);
+	$second[$i]=explode("*",$first[$i]);
 }
 for($j=0;$j<$c;$j++){
-	$cost = "SELECT * FROM product_list WHERE product='$second[$j][0]'";
+	$k=$second[$j][0];
+	$cost = "SELECT * FROM product_list WHERE product='$k'";
 	$costr = mysqli_query($link,$cost);
 	$costrr = mysqli_fetch_row($costr);
 	$price[$j]=$costrr[7];
