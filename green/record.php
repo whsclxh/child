@@ -88,7 +88,7 @@ $paylistrow = mysqli_num_rows($result);
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML='<?php echo "$row_sql[12]"; ?>';
             var tdNode6=trNode.insertCell();
-            tdNode6.innerHTML="<a id=\"order\" name=\"order\" <?php echo "value='$x'"; ?>>點擊查看</a>";
+            tdNode6.innerHTML="<a <?php echo "onclick=go($x)"; ?>>點擊查看</a>";
             <?php } ?>
             document.getElementById("div1").appendChild(tableNode);//添加到那个位置
             var table = document.getElementById("table");
@@ -133,17 +133,13 @@ $paylistrow = mysqli_num_rows($result);
     });
     </script>
     <script>
-    $(document).ready(function(){
-        $("#order").on("click",function(){
-            alert('a');
-            var order=$(this).val();
+        function go(x){
             var order_input=document.createElement("input");
             order_input.setAttribute("type","hidden");
             order_input.setAttribute("name","order");
             order_input.setAttribute("id","order");
-            order_input.setAttribute("value",order);
+            order_input.setAttribute("value",x);
             document.getElementById("hideinput").appendChild(order_input);
-            //document.form1.submit();
-        })
-    })
-</script>
+            document.form1.submit();
+        }
+    </script>
