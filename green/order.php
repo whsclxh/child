@@ -20,6 +20,7 @@ $c=count($first)-1;
 for($i=0;$i<$c;$i++){
 	$second[$i]=explode("*",$first[$i]);
 }
+print_r($second);
 for($j=0;$j<$c;$j++){
 	$k=$second[$j][0];
 	$cost = "SELECT * FROM product_list WHERE product='$k'";
