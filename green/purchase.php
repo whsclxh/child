@@ -162,10 +162,10 @@ $CNr = @mysqli_fetch_row($CNre);
             tdNode2.innerHTML='<?php echo "$row[3]" ?>';
             var tdNode3=trNode.insertCell();
             tdNode3.innerHTML='<?php echo "$row[7]"; ?>';
-            var tdNode4=trNode.insertCell();
-            tdNode4.innerHTML="<input type=\"number\" name=\"amount\" id=\"amount\" min=\"1\" <?php echo "max='$row[8]'"; ?> value=\"1\" required>";
             var tdNode5=trNode.insertCell();
             tdNode5.innerHTML='<?php echo "$row[8]"; ?>';
+            var tdNode6=trNode.insertCell();
+            tdNode6.innerHTML='<td><button type=\"button\" name=\"ItemName<?php echo $x; ?>\" id=\"ItemName<?php echo $x; ?>\" <?php echo"value=\"$row[3]\""; ?>>放入購物車</td>';
             var tdNode7=trNode.insertCell();
             tdNode7.innerHTML='<td><button type=\"button\" name=\"detail<?php echo $x; ?>\" id=\"detail<?php echo $x; ?>\" <?php echo"value=\"$row[0]\""; ?>>詳細資料</td>';
             <?php } ?>
