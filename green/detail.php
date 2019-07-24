@@ -50,6 +50,10 @@ $listr = @mysqli_fetch_row($result1);
 	</thead>
 	<tbody>
 		<tr>
+			<td>賣家</td>
+			<td><?php echo $row[2]; ?></td>
+		</tr>
+		<tr>
 			<td>商品品牌</td>
 			<td><?php echo $row[4]; ?></td>
 		</tr>
