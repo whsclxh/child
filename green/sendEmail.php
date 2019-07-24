@@ -34,7 +34,7 @@
     $mail->From = "zxc1900542@gmail.com";        //寄件者信箱
     $mail->FromName = "password";                  //寄件者姓名
     $mail->Subject ="----------------------------請確認您的密碼----------------------------"; //郵件標題
-    $mail->Body = "請確認您的密碼並記下"."<br>帳號:".$row[0]."<br>密碼:".$password;//郵件內容
+    $mail->Body = "請確認您的密碼並在登入系統後更改密碼"."<br>帳號:".$row[0]."<br>密碼:".$password;//郵件內容
     $mail->IsHTML(true);                             //郵件內容為html
     $mail->AddAddress("$email");            //收件者郵件及名稱
     if(!$mail->Send()){
