@@ -55,11 +55,11 @@ $listr = @mysqli_fetch_row($result1);
 		</tr>
 		<tr>
 			<td>商品品牌</td>
-			<td><?php echo $row[4]; ?></td>
+			<td><?php if($row[4]!="") echo $row[4]; else echo "-"; ?></td>
 		</tr>
 		<tr>
 			<td>商品質地</td>
-			<td><?php echo $row[5]; ?></td>
+			<td><?php if($row[5]!="") echo $row[5]; else echo "-"; ?></td>
 		</tr>
 		<tr>
 			<td>商品規格</td>
@@ -67,7 +67,7 @@ $listr = @mysqli_fetch_row($result1);
 		</tr>
 		<tr>
 			<td>商品重量</td>
-			<td><?php echo $row[9]; ?></td>
+			<td><?php if($row[9]!="") echo $row[9]; else echo "-"; ?></td>
 		</tr>
 		<tr>
 			<td>商品價格</td>
