@@ -32,7 +32,7 @@ if($_SESSION['Account'] != null && $Password != null){
         //更新資料庫資料語法
         $sql = "update user set Email='$Email',Password='$Password',Phone='$Phone',Name='$Name',Gender='$Gender',Address='$Address',Zipcode='$Zipcode',Birth='$Birth' where Account='$id'";
         if(mysqli_query($link, $sql)){
-                echo "<script>alert('修改成功!');</script>";
+                echo "<script>alert('修改成功,請重新登入!');</script>";
                 echo '<meta http-equiv=REFRESH CONTENT=0;url=Home.html>';
                 unset($_SESSION['Account']);
         }
