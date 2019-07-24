@@ -44,8 +44,13 @@
         echo '<meta http-equiv=REFRESH CONTENT=1;url=ForgetPassword1.html>';
         echo "<script>alert('寄信發生錯誤：'. $mail->ErrorInfo);</script>";
     }else{
-        echo '<meta http-equiv=REFRESH CONTENT=1;url=Home.php>';
-        echo "<script>alert('已送出信件!請到信箱收信並重新登入並修改密碼');</script>";
+        $updata="update user set Password='$password' where Account='$account' AND Email='$email'";
+        if(mysqli_query($link,$greturn)){
+            echo '<meta http-equiv=REFRESH CONTENT=1;url=Home.html>';
+            echo "<script>alert('已送出信件!請到信箱收信並重新登入並修改密碼');</script>";
+        }else{
+            die ("pay失敗儲存失敗".mysql_error()); //執行sql語法
+        }
     }
     
 ?>
