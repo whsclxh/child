@@ -6,7 +6,6 @@ body {
      -o-background-size:cover;
      background-size:cover;
      height:100%;
-     overflow:hidden;
     }
     body form{
       margin-right: 30%;
