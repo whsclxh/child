@@ -38,10 +38,10 @@ $obj->Send['ClientRedirectURL'] = $_POST['ClientRedirectURL'];
 $obj->Send['PaymentInfoURL'] = $_POST['PaymentInfoURL'];
 $obj->Send['OrderResultURL'] = $_POST['ReturnURL'];
 
-$obj->SendExtend['PeriodAmount']=$PeriodAmount;
+/*$obj->SendExtend['PeriodAmount']=$PeriodAmount;
 $obj->SendExtend['PeriodType']=$PeriodType;
 $obj->SendExtend['Frequency']=$Frequency;
-$obj->SendExtend['ExecTimes']=$ExecTimes;
+$obj->SendExtend['ExecTimes']=$ExecTimes;*/
 
 $HashKey=$_POST['HashKey'];
 $HashIV=$_POST['HashIV'];
