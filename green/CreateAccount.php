@@ -29,15 +29,15 @@
     </div>
     <div class="form-group" name="psw">
       <label><span style="color: red;">*</span>密碼</label>
-      <input type="password" class="form-control" id="Password" autocomplete="off" placeholder="至少8碼 至多15碼" name="Password" min="8" max="15" onblur='yanzheng(this.value)'>
+      <input type="password" class="form-control" id="Password" autocomplete="new-password" placeholder="至少8碼 至多15碼" name="Password" min="8" max="15" onblur='yanzheng(this.value)'>
     </div>
     <div class="form-group">
       <label><span style="color: red;">*</span>再次輸入密碼</label>
-      <input type="password" class="form-control" id="PasswordAgain" autocomplete="off" placeholder="至少8碼 至多15碼" name="PasswordAgain" min="8" max="15" onblur='testpw()'>
+      <input type="password" class="form-control" id="PasswordAgain" autocomplete="new-password" placeholder="至少8碼 至多15碼" name="PasswordAgain" min="8" max="15" onblur='testpw()'>
     </div>
     <div class="form-group">
       <label><span style="color: red;">*</span>姓名</label>
-      <input type="text" class="form-control" id="Uname" autocomplete="off" placeholder="輸入姓名" name="Uname">
+      <input type="text" class="form-control" id="Uname" autocomplete="new-password" placeholder="輸入姓名" name="Uname">
     </div>
     <div class="form-group">
       <label><span style="color: red;">*</span>手機</label>
