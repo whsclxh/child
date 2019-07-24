@@ -12,6 +12,12 @@ include("mysql_connect.php");
 $PL = "SELECT * FROM product_list ORDER BY cost+0 ASC";
 $result = mysqli_query($link,$PL);
 $num_rows = mysqli_num_rows($result);
+
+$PeriodAmount = $_POST['TotalAmount'];
+$PeriodType = $_POST['PeriodType'];
+$Frequency = $_POST['Frequency'];
+$ExecTimes = $_POST['ExecTimes'];
+
 $obj = new \ECPay_AllInOne();
 //服務參數
 $obj->ServiceURL  = $_POST['ServiceURL'];
@@ -31,17 +37,11 @@ $obj->Send['ClientBackURL'] = $_POST['ClientBackURL'];
 $obj->Send['ClientRedirectURL'] = $_POST['ClientRedirectURL'];
 $obj->Send['PaymentInfoURL'] = $_POST['PaymentInfoURL'];
 $obj->Send['OrderResultURL'] = $_POST['ReturnURL'];
-$obj->Send['PeriodAmount'] = $_POST['TotalAmount'];
-$obj->Send['PeriodType'] = $_POST['PeriodType'];
-$obj->Send['Frequency'] = $_POST['Frequency'];
-$obj->Send['ExecTimes'] = $_POST['ExecTimes'];
-//訂單的商品資料
-$arPayMentExtend = new \ECPay_Credit();
-$arPayMentExtend->arPayMentExtend['CreditInstallment'] = $_POST['CreditInstallment'];
-$arPayMentExtend->arPayMentExtend['PeriodAmount'] = $_POST['TotalAmount'];
-$arPayMentExtend->arPayMentExtend['PeriodType'] = $_POST['PeriodType'];
-$arPayMentExtend->arPayMentExtend['Frequency'] = $_POST['Frequency'];
-$arPayMentExtend->arPayMentExtend['ExecTimes'] = $_POST['ExecTimes']; 
+
+$obj->SendExtend['PeriodAmount']=$PeriodAmount;
+$obj->SendExtend['PeriodType']=$PeriodType;
+$obj->SendExtend['Frequency']=$Frequency;
+$obj->SendExtend['ExecTimes']=$ExecTimes;
 
 $HashKey=$_POST['HashKey'];
 $HashIV=$_POST['HashIV'];
