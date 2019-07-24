@@ -41,11 +41,11 @@
     $mail->AddAddress("$email");            //收件者郵件及名稱
     if(!$mail->Send()){
         echo "Error: " . $mail->ErrorInfo;
-        echo '<meta http-equiv=REFRESH CONTENT=1;url=ForgetPassword1.html>';
+        echo '<meta http-equiv=REFRESH CONTENT=1;url=ForgetPassword.html>';
         echo "<script>alert('寄信發生錯誤：'. $mail->ErrorInfo);</script>";
     }else{
         $updata="update user set Password='$password' where Account='$account' AND Email='$email'";
-        if(mysqli_query($link,$greturn)){
+        if(mysqli_query($link,$updata)){
             echo '<meta http-equiv=REFRESH CONTENT=1;url=Home.html>';
             echo "<script>alert('已送出信件!請到信箱收信並重新登入並修改密碼');</script>";
         }else{
